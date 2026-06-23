@@ -47,15 +47,16 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 | Tipo | Sin web | Solo redes | Con web | Total |
 |------|---------|------------|---------|-------|
 | Restaurantes / Comida | 9 | 4 | 16 | 29 |
-| Talleres mecánicos | 5 | 1 | 4 | 10 |
+| Tiendas ropa / textil / accesorios | 1 | 11 | 0 | 12 |
 | Tiendas alimentación | 7 | 0 | 0 | 7 |
 | Tienda regalos | 1 | 0 | 0 | 1 |
 | Otros (paellas, lechona, café, etc.) | 0 | 0 | 3 | 3 |
-| **Total** | **22** | **5** | **23** | **50** |
+| **Total** | **18** | **16** | **16** | **50** |
 
-- IDs activos: b1-b25 (no-web), b30-b34 (social-only), b36-b41 (has-web), b50-b63 (nuevos has-web)
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b63
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
+- Talleres eliminados y reemplazados en sesión 6: b9, b10, b18, b20, b21, b22, b24, b25, b33, b38, b39, b40, b41
 
 ## Archivos del proyecto
 
@@ -98,11 +99,27 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - Se agregó `seed.json` con los 50 negocios para poblar la DB
 - Se agregó `package.json` con dependencias express + better-sqlite3
 
+### Sesión 5 (2026-06-22)
+- Se detectaron y corrigieron 4 bugs de sintaxis JS introducidos al generar el modo dual en sesión 4:
+  - `exportCSV`: `\n` partido en 2 líneas literales → JS inválido
+  - `renderDashboard`: patrón `\''` → `\'` en stats (faltaba comilla de cierre)
+  - Varios onclick: `\''` → `\'` en `setStatus`, `addNote`, `deleteBusiness`, `restoreBusiness`, `setPriority`
+  - `onfocus`: `\'\'` → `''` perdió escapes en textarea
+- Se verificó con `node --check` que el script completo compila sin errores
+- Se subió a GitHub → Vercel auto-desplegó la corrección
+- Se confirmó que la página funciona con datos centralizados vía API
+
+### Sesión 6 (2026-06-22)
+- Se eliminaron los 13 talleres de DATA (b9, b10, b18, b20, b21, b22, b24, b25, b33, b38, b39, b40, b41)
+- Se reemplazaron por 13 tiendas de ropa/textil/accesorios con redes sociales (11 social-only, 1 no-web, 1 con web)
+- Nuevas: Vestidos de Baño Bogotá, Fajas y Moda, AKA, Shaloom Boutique, Seventh, Maria Mulata, Stacia Store, Somo Ilius, Gothic Store, Violeta Inesperada, Avril Boutique, Amatita Bisutería, Inrya - Ropa Hindú
+- Balance mejorado: Sin web 18, Solo redes 16, Con web 16 (antes era 22/5/23)
+- Se actualizó `datos.json`, `seed.json` y `DATA_FALLBACK` en `index.html`
+
 ## Pendiente / Próximos pasos
 - [x] Configurar Nginx reverse proxy para `agy.culturavpn.pro` con SSL (hecho por el usuario via NPM)
 - [x] Poner API_URL en index.html apuntando a `https://agy.culturavpn.pro/api`
 - [ ] Apify MCP no disponible sin token; buscar fuente alternativa de datos si se quieren más negocios SIN web
-- [ ] Ideal: encontrar más restaurantes/tiendas/talleres sin web para balancear
 - [ ] En el futuro: expandir prospección a Medellín y Cali
 - [ ] Diseñar landing pages con Open Design cuando haya clientes
 
