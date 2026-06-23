@@ -134,10 +134,33 @@ body.dark-mode .btn-delete:hover { background: #3d1a1a; color: #f87171; }
 .dark-toggle:hover { background: #f3f4f6; }
 body.dark-mode .dark-toggle:hover { background: #33343d; }
 @media (max-width: 700px) { .card { flex-direction: column; } .card .actions { min-width: unset; } .controls { flex-direction: column; } .search-box { min-width: unset; width: 100%; } }
+
+/* Login */
+.login-screen{position:fixed;inset:0;z-index:9999;background:#f0f2f5;display:flex;align-items:center;justify-content:center}
+.login-box{background:white;padding:40px;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.1);width:340px;max-width:90vw;text-align:center}
+.login-icon{font-size:40px;margin-bottom:12px}
+.login-box h2{font-size:20px;color:#1a1a2e;margin-bottom:24px}
+.login-input{width:100%;padding:11px 14px;margin-bottom:12px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;outline:none}
+.login-input:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,0.15)}
+.login-error{color:#ef4444;font-size:13px;margin-bottom:12px;display:none}
+body.dark-mode .login-screen{background:#121212}
+body.dark-mode .login-box{background:#1e1e2a;box-shadow:0 4px 24px rgba(0,0,0,0.4)}
+body.dark-mode .login-box h2{color:#f0f0f0}
+body.dark-mode .login-input{background:#2a2a3a;border-color:#3a3a4a;color:#f0f0f0}
 </style>
 </head>
 <body>
-<div class="container">
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <div class="login-icon">🔐</div>
+    <h2>Acceso a Prospección</h2>
+    <input type="text" class="login-input" id="loginUser" placeholder="Usuario" autocomplete="off">
+    <input type="password" class="login-input" id="loginPass" placeholder="Contraseña">
+    <p class="login-error" id="loginError">Credenciales incorrectas</p>
+    <button class="btn btn-primary" id="loginBtn" style="width:100%;justify-content:center;padding:12px">Ingresar</button>
+  </div>
+</div>
+<div class="container" id="mainContent" style="display:none">
 
 <h1> Prospección Web · Bogotá</h1>
 <p class="subtitle" id="subtitle">Conectando...</p>
@@ -252,16 +275,39 @@ var DATA_FALLBACK = [
 {id:"b66",name:"BeneFit Ropa Tallas Grandes",phone:"+57 300 203 5911",phoneClean:"573002035911",addr:"Cl. 109 #18C-10, Bogotá",cat:"Ropa Mujer Tallas Grandes",webType:"has-web",webUrl:"http://www.b-fit.com.co",webLabel:"b-fit.com.co",social:[{"platform":"whatsapp","url":"https://wa.me/573002035911","label":"WhatsApp"}],lat:null,lng:null},
 {id:"b67",name:"Jenne Riveros Designer",phone:"+57 321 218 3037",phoneClean:"573212183037",addr:"Cra. 58 128B-21, Bogotá",cat:"Vestidos de Novia",webType:"has-web",webUrl:"https://vestidosdenovia.company.site",webLabel:"vestidosdenovia.company.site",social:[{"platform":"whatsapp","url":"https://wa.me/573212183037","label":"WhatsApp"}],lat:null,lng:null},
 {id:"b68",name:"Alquiler Smoking Bogotá",phone:"+57 301 625 6476",phoneClean:"573016256476",addr:"Bogotá",cat:"Alquiler de Smoking / Trajes",webType:"has-web",webUrl:"https://alquilersmokingbogota.com",webLabel:"alquilersmokingbogota.com",social:[{"platform":"whatsapp","url":"https://wa.me/573016256476","label":"WhatsApp"}],lat:null,lng:null},
-{id:"b69",name:"Click2Dress",addr:"Cl. 93B #11A-84 Local 302, CC Portobelo, Bogotá",cat:"Alquiler de Vestidos de Fiesta",webType:"has-web",webUrl:"https://click2dress.com",webLabel:"click2dress.com",social:[],lat:null,lng:null},
-{id:"b70",name:"Paola Dimaya Alta Costura",addr:"Cra. 15 #119-59, Bogotá",cat:"Alquiler Trajes de Etiqueta",webType:"has-web",webUrl:"https://www.paoladimaya.com",webLabel:"paoladimaya.com",social:[],lat:null,lng:null},
-{id:"b71",name:"Sarta & Bguest",addr:"Bogotá",cat:"Alquiler de Vestidos",webType:"social-only",webUrl:"https://instagram.com/sartavestidos",webLabel:"Instagram",social:[{"platform":"instagram","url":"https://instagram.com/sartavestidos","label":"Instagram"},{"platform":"instagram","url":"https://instagram.com/bguest.co","label":"Instagram"}],propuesta:"https://lp-sarta-bguest.vercel.app",lat:null,lng:null},
-{id:"b72",name:"Cherie Boutique",addr:"CC Unicentro Local 2-109, Bogotá",cat:"Boutique / Ropa Mujer",webType:"has-web",webUrl:"https://cherie.com.co",webLabel:"cherie.com.co",social:[],lat:null,lng:null},
-{id:"b73",name:"By Caicedo",addr:"Bogotá",cat:"Ropa Mujer / Moda Femenina",webType:"has-web",webUrl:"https://bycaicedo.com",webLabel:"bycaicedo.com",social:[],lat:null,lng:null},
-{id:"b74",name:"Karissa Moda",addr:"Bogotá",cat:"Ropa Mujer",webType:"has-web",webUrl:"https://karissamoda.com",webLabel:"karissamoda.com",social:[],lat:null,lng:null},
-{id:"b75",name:"Alison Ropa Tejida",addr:"Bogotá",cat:"Ropa Tejida / Suéteres",webType:"has-web",webUrl:"https://alison.com.co",webLabel:"alison.com.co",social:[],lat:null,lng:null},
-{id:"b76",name:"Zigzag Design For Men",addr:"Bogotá",cat:"Trajes Hombre / Alquiler",webType:"has-web",webUrl:"https://zigzagdesignformen.com.co",webLabel:"zigzagdesignformen.com.co",social:[],lat:null,lng:null},
-{id:"b77",name:"Bettina Spitz María Antonieta",addr:"Bogotá",cat:"Ropa Mujer / Alta Costura",webType:"has-web",webUrl:"https://bettinaspitz.com",webLabel:"bettinaspitz.com",social:[],lat:null,lng:null}
+{id:"b69",name:"Click2Dress",phone:"+57 320 948 1061",phoneClean:"573209481061",addr:"Cl. 93B #11A-84 Local 302, CC Portobelo, Bogotá",cat:"Alquiler de Vestidos de Fiesta",webType:"has-web",webUrl:"https://click2dress.com",webLabel:"click2dress.com",social:[{platform:"whatsapp",url:"https://wa.me/573209481061",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/click2dress/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/alquilerdevestidosclick2dress/",label:"Facebook"}],lat:null,lng:null},
+{id:"b70",name:"Paola Dimaya Alta Costura",phone:"+57 301 625 6476",phoneClean:"573016256476",addr:"Cra. 13A #88-55, Bogotá",cat:"Alquiler Trajes de Etiqueta",webType:"has-web",webUrl:"https://www.paoladimaya.com",webLabel:"paoladimaya.com",social:[{platform:"whatsapp",url:"https://wa.me/573016256476",label:"WhatsApp"},{platform:"whatsapp",url:"https://wa.me/573182004949",label:"WhatsApp"}],propuesta:"https://lp-paola-dimaya.vercel.app",lat:null,lng:null},
+{id:"b71",name:"Sarta & Bguest",phone:"+57 313 870 7291",phoneClean:"573138707291",addr:"Cra. 11A #95-15, Bogotá",cat:"Alquiler de Vestidos",webType:"has-web",webUrl:"https://sarta-bguest.com",webLabel:"sarta-bguest.com",social:[{"platform":"whatsapp","url":"https://wa.me/573138707291","label":"WhatsApp"},{"platform":"instagram","url":"https://instagram.com/sartavestidos","label":"Instagram"},{"platform":"instagram","url":"https://instagram.com/bguest.co","label":"Instagram"}],propuesta:"https://lp-sarta-bguest.vercel.app",lat:null,lng:null},
+{id:"b72",name:"Cherie Boutique",phone:"+57 315 863 1774",phoneClean:"573158631774",addr:"CR. 15 #123-30, CC Unicentro Local 2-109, Bogotá",cat:"Boutique / Ropa Mujer",webType:"has-web",webUrl:"https://cherie.com.co",webLabel:"cherie.com.co",social:[{platform:"whatsapp",url:"https://wa.me/573158631774",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/cheriemoda",label:"Instagram"}],lat:null,lng:null},
+{id:"b73",name:"By Caicedo",phone:"+57 300 856 3936",phoneClean:"573008563936",addr:"Bogotá",cat:"Ropa Mujer / Moda Femenina",webType:"has-web",webUrl:"https://bycaicedo.com",webLabel:"bycaicedo.com",social:[{platform:"whatsapp",url:"https://wa.me/573008563936",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/bycaicedo/",label:"Instagram"},{platform:"facebook",url:"https://web.facebook.com/bycaicedo/",label:"Facebook"}],lat:null,lng:null},
+{id:"b74",name:"Karissa Moda",phone:"+57 311 353 6499",phoneClean:"573113536499",addr:"Bogotá",cat:"Ropa Mujer",webType:"has-web",webUrl:"https://karissamoda.com",webLabel:"karissamoda.com",social:[{platform:"whatsapp",url:"https://wa.me/573113536499",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/karissa_moda/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/profile.php?id=61573952170844",label:"Facebook"},{platform:"tiktok",url:"https://www.tiktok.com/@_karissa4",label:"TikTok"}],lat:null,lng:null},
+{id:"b75",name:"Alison Ropa Tejida",phone:"+57 1 630 7871",phoneClean:"5716307871",addr:"Cra. 25 #73-33, Bogotá",cat:"Ropa Tejida / Suéteres",webType:"has-web",webUrl:"https://alison.com.co",webLabel:"alison.com.co",social:[{platform:"whatsapp",url:"https://wa.me/5716307871",label:"WhatsApp"}],lat:null,lng:null},
+{id:"b76",name:"Zigzag Design For Men",phone:"+57 312 553 9406",phoneClean:"573125539406",addr:"Calle 60 #9-87 Local 987, CC Aquarium, Bogotá",cat:"Trajes Hombre / Alquiler",webType:"has-web",webUrl:"https://zigzagdesignformen.com.co",webLabel:"zigzagdesignformen.com.co",social:[{platform:"whatsapp",url:"https://wa.me/573125539406",label:"WhatsApp"},{platform:"facebook",url:"https://www.facebook.com/zigzagdesignconfecciones2015",label:"Facebook"},{platform:"instagram",url:"https://www.instagram.com/zigzag_design_slimfit/",label:"Instagram"},{platform:"tiktok",url:"https://www.tiktok.com/@zigzagdesignmodaslimfit",label:"TikTok"}],lat:null,lng:null},
+{id:"b77",name:"Bettina Spitz María Antonieta",phone:"+57 322 749 0834",phoneClean:"573227490834",addr:"Calle 84A #12-18, Bogotá",cat:"Ropa Mujer / Alta Costura",webType:"has-web",webUrl:"https://bettinaspitz.com",webLabel:"bettinaspitz.com",social:[{platform:"whatsapp",url:"https://wa.me/573227490834",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/bettinaspitz/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/bettinaspitzmoda/",label:"Facebook"},{platform:"tiktok",url:"https://www.tiktok.com/@bettinaspitzbogota",label:"TikTok"}],lat:null,lng:null}
 ];
+
+/* Auth */
+var AUTH_KEY = 'prospeccion_auth';
+var authUser = localStorage.getItem(AUTH_KEY);
+if(authUser === 'gestion'){
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('mainContent').style.display = 'block';
+}
+document.getElementById('loginBtn').addEventListener('click', function(){
+  var u = document.getElementById('loginUser').value.trim();
+  var p = document.getElementById('loginPass').value.trim();
+  if(u === 'gestion' && p === 'gestion'){
+    localStorage.setItem(AUTH_KEY, 'gestion');
+    document.getElementById('loginError').style.display = 'none';
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('mainContent').style.display = 'block';
+    if(typeof initApp === 'function') initApp();
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+  }
+});
+document.getElementById('loginUser').addEventListener('keydown', function(e){ if(e.key === 'Enter') document.getElementById('loginPass').focus(); });
+document.getElementById('loginPass').addEventListener('keydown', function(e){ if(e.key === 'Enter') document.getElementById('loginBtn').click(); });
 
 var DATA = [];
 var CATEGORIES = [];
@@ -723,7 +769,7 @@ initOffline();
 }
 }
 
-initApp();
+if(localStorage.getItem(AUTH_KEY) === 'gestion') initApp();
 </script>
 </body>
 </html>

@@ -1107,38 +1107,70 @@
     "name": "Click2Dress",
     "cat": "Alquiler de Vestidos de Fiesta",
     "addr": "Cl. 93B #11A-84 Local 302, CC Portobelo, Bogotá",
-    "phone": "",
+    "phone": "+57 320 948 1061",
     "webType": "has-web",
     "webUrl": "https://click2dress.com",
     "webLabel": "click2dress.com",
-    "phoneClean": "",
-    "social": [],
+    "phoneClean": "573209481061",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573209481061",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/click2dress/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/alquilerdevestidosclick2dress/",
+        "label": "Facebook"
+      }
+    ],
     "propuesta": ""
   },
   {
     "id": "b70",
     "name": "Paola Dimaya Alta Costura",
     "cat": "Alquiler Trajes de Etiqueta",
-    "addr": "Cra. 15 #119-59, Bogotá",
-    "phone": "",
+    "addr": "Cra. 13A #88-55, Bogotá",
+    "phone": "+57 301 625 6476",
     "webType": "has-web",
     "webUrl": "https://www.paoladimaya.com",
     "webLabel": "paoladimaya.com",
-    "phoneClean": "",
-    "social": [],
-    "propuesta": ""
+    "phoneClean": "573016256476",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573016256476",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573182004949",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-paola-dimaya.vercel.app"
   },
   {
     "id": "b71",
     "name": "Sarta & Bguest",
     "cat": "Alquiler de Vestidos",
-    "addr": "Bogotá",
-    "phone": "",
-    "webType": "social-only",
-    "webUrl": "https://instagram.com/sartavestidos",
-    "webLabel": "Instagram",
-    "phoneClean": "",
+    "addr": "Cra. 11A #95-15, Bogotá",
+    "phone": "+57 313 870 7291",
+    "webType": "has-web",
+    "webUrl": "https://sarta-bguest.com",
+    "webLabel": "sarta-bguest.com",
+    "phoneClean": "573138707291",
     "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573138707291",
+        "label": "WhatsApp"
+      },
       {
         "platform": "instagram",
         "url": "https://instagram.com/sartavestidos",
@@ -1156,13 +1188,24 @@
     "id": "b72",
     "name": "Cherie Boutique",
     "cat": "Boutique / Ropa Mujer",
-    "addr": "CC Unicentro Local 2-109, Bogotá",
-    "phone": "",
+    "addr": "CR. 15 #123-30, CC Unicentro Local 2-109, Bogotá",
+    "phone": "+57 315 863 1774",
     "webType": "has-web",
     "webUrl": "https://cherie.com.co",
     "webLabel": "cherie.com.co",
-    "phoneClean": "",
-    "social": [],
+    "phoneClean": "573158631774",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573158631774",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/cheriemoda",
+        "label": "Instagram"
+      }
+    ],
     "propuesta": ""
   },
   {
@@ -1170,12 +1213,28 @@
     "name": "By Caicedo",
     "cat": "Ropa Mujer / Moda Femenina",
     "addr": "Bogotá",
-    "phone": "",
+    "phone": "+57 300 856 3936",
     "webType": "has-web",
     "webUrl": "https://bycaicedo.com",
     "webLabel": "bycaicedo.com",
-    "phoneClean": "",
-    "social": [],
+    "phoneClean": "573008563936",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573008563936",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/bycaicedo/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://web.facebook.com/bycaicedo/",
+        "label": "Facebook"
+      }
+    ],
     "propuesta": ""
   },
   {
@@ -1183,51 +1242,120 @@
     "name": "Karissa Moda",
     "cat": "Ropa Mujer",
     "addr": "Bogotá",
-    "phone": "",
+    "phone": "+57 311 353 6499",
     "webType": "has-web",
     "webUrl": "https://karissamoda.com",
     "webLabel": "karissamoda.com",
-    "phoneClean": "",
-    "social": [],
+    "phoneClean": "573113536499",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573113536499",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/karissa_moda/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/profile.php?id=61573952170844",
+        "label": "Facebook"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@_karissa4",
+        "label": "TikTok"
+      }
+    ],
     "propuesta": ""
   },
   {
     "id": "b75",
     "name": "Alison Ropa Tejida",
     "cat": "Ropa Tejida / Suéteres",
-    "addr": "Bogotá",
-    "phone": "",
+    "addr": "Cra. 25 #73-33, Bogotá",
+    "phone": "+57 1 630 7871",
     "webType": "has-web",
     "webUrl": "https://alison.com.co",
     "webLabel": "alison.com.co",
-    "phoneClean": "",
-    "social": [],
+    "phoneClean": "5716307871",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5716307871",
+        "label": "WhatsApp"
+      }
+    ],
     "propuesta": ""
   },
   {
     "id": "b76",
     "name": "Zigzag Design For Men",
     "cat": "Trajes Hombre / Alquiler",
-    "addr": "Bogotá",
-    "phone": "",
+    "addr": "Calle 60 #9-87 Local 987, CC Aquarium, Bogotá",
+    "phone": "+57 312 553 9406",
     "webType": "has-web",
     "webUrl": "https://zigzagdesignformen.com.co",
     "webLabel": "zigzagdesignformen.com.co",
-    "phoneClean": "",
-    "social": [],
+    "phoneClean": "573125539406",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573125539406",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/zigzagdesignconfecciones2015",
+        "label": "Facebook"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/zigzag_design_slimfit/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@zigzagdesignmodaslimfit",
+        "label": "TikTok"
+      }
+    ],
     "propuesta": ""
   },
   {
     "id": "b77",
     "name": "Bettina Spitz María Antonieta",
     "cat": "Ropa Mujer / Alta Costura",
-    "addr": "Bogotá",
-    "phone": "",
+    "addr": "Calle 84A #12-18, Bogotá",
+    "phone": "+57 322 749 0834",
     "webType": "has-web",
     "webUrl": "https://bettinaspitz.com",
     "webLabel": "bettinaspitz.com",
-    "phoneClean": "",
-    "social": [],
+    "phoneClean": "573227490834",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573227490834",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/bettinaspitz/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/bettinaspitzmoda/",
+        "label": "Facebook"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@bettinaspitzbogota",
+        "label": "TikTok"
+      }
+    ],
     "propuesta": ""
   }
 ]

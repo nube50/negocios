@@ -65,8 +65,10 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 
 - `busqueda/index.html` — herramienta principal de prospección
 - `busqueda/datos.json` — respaldo JSON de los datos
-- `landing-pages/` — (vacío) para landing pages de clientes
-- `recursos/` — (vacío) assets/imágenes
+- `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
+  - `sarta-bguest.html` — Sarta & Bguest
+  - `paola-dimaya.html` — Paola Dimaya Alta Costura
+- `recursos/` — assets/imágenes (vacío, usamos CDN)
 - `opencode.json` — config MCP de Apify
 - `AGENTS.md` — este archivo
 
@@ -155,6 +157,95 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - Frontend muestra badge "Propuesta" en la tarjeta si el negocio tiene LP asignada
 - Sarta & Bguest (b71) tiene su propuesta vinculada a la LP desplegada
 - Se actualizó `server.js`, `seed.json`, `datos.json` y `DATA_FALLBACK`
+
+### Sesión 11 (2026-06-23) — Landing page Paola Dimaya Alta Costura
+- Se diseñó y desplegó LP profesional para Paola Dimaya: `https://lp-paola-dimaya.vercel.app`
+- Stack LP definitivo: **GSAP + ScrollTrigger** (animaciones avanzadas), **Font Awesome** (iconos CDN), **Google Fonts** (Playfair Display + Inter), **Unsplash** (imágenes CDN)
+- Dark theme editorial con acentos dorados, adaptado al nicho de alta costura/lujo
+- Secciones: Hero (split text GSAP), Stats (contador animado), Sobre Mí, Servicios, Galería (lightbox), Precios, Cobertura, Testimonios (carrusel), CTA, Contacto, Footer
+- Despliegue via servidor Oracle Cloud: SCP el HTML al server, luego `vercel deploy --prod` desde `/root/`
+- Al crear LP nueva, **subir a Vercel como proyecto independiente** (ej: `lp-nombre-negocio.vercel.app`)
+- Lección aprendida: Vercel ya no acepta single-file deployments → crear directorio con `index.html` + `vercel.json` si es necesario
+- Corregido: cambio de imagen "Sobre Mí" por foto de mujer (no abstract/diamantes), eliminación de imágenes irrelevantes (zapatos, etc), CTAs cambiados de "agendar cita" a "invitar al showroom / WhatsApp"
+
+## Metodología Landing Pages
+
+### Stack estándar (para TODAS las LPs)
+| Herramienta | Uso |
+|---|---|
+| **GSAP + ScrollTrigger** | Animaciones avanzadas: split text, parallax, stagger, magnetic hover, counter animation, timelines |
+| **Font Awesome 6 CDN** | Iconos profesionales vectoriales por CDN |
+| **Google Fonts** | Playfair Display (serif elegante) + Inter (sans limpio) |
+| **Unsplash** | Imágenes de alta calidad CDN (gratis) |
+| **HTML auto-contenido** | Un solo archivo, sin build steps, sin dependencias |
+
+### Secciones tipo por nicho
+- **Moda/Lujo/Alta Costura**: Hero editorial oscuro, galería con lightbox, testimonios, cobertura, contacto
+- **Restaurantes/Comida**: Hero cálido, menú, galería de platos, horarios, ubicación, reservas WhatsApp
+- **Tiendas/Ropa**: Hero moderno, catálogo productos, tallas, envíos, redes sociales, WhatsApp
+
+### Lo que NO debe tener una LP
+- Imágenes irrelevantes al negocio (cada foto debe ser del rubro del negocio)
+- "Agendar cita" si el negocio no requiere agenda (usar "Escríbenos" / "Visítanos" / WhatsApp directo)
+- Información genérica sin personalizar
+- **Sección de Precios** (esta LP es una propuesta, no un ecommerce — los precios se negocian directo con el cliente)
+
+### Lo que DEBE tener cada LP
+- Información real del negocio (dirección exacta, teléfono, horarios)
+- Testimonios reales (de Google Maps, website del negocio, redes sociales)
+- WhatsApp directo al número del negocio en cada CTA
+- Diseño acorde al tipo de negocio (colores, tipografía, tono visual)
+- Imágenes relevantes: del nicho, preferiblemente del rubro (ej: vestidos de novia para una boutique nupcial)
+- Mapa de Google Maps con la ubicación exacta
+- Adaptabilidad mobile-first
+- Imagen real de la dueña/diseñadora en el "Sobre Mí" si es posible; si no, foto de una diseñadora/dueña de negocio (NO una modelo/novia/cliente genérica)
+
+### Patrón LP para Alta Costura / Moda / Novias (basado en Paola Dimaya)
+Este es el template mental para crear una LP de este nicho rápidamente:
+
+| Elemento | Qué poner |
+|---|---|
+| **Paleta** | Fondo negro/dark (#0a0a0a, #121212), dorados (#c9a96e, #d4af37), texto marfil (#f5f0eb) |
+| **Tipografía** | Playfair Display (serif, títulos elegantes) + Inter (sans, legible) |
+| **Hero** | Foto gran angular del taller/showroom o vestido; título "Nombre + Alta Costura"; subtítulo "Alta Costura · Bogotá"; CTA "Escribir ahora" (WhatsApp) + "Ver servicios" |
+| **Stats bar** | 3 columnas: años de experiencia / clientas atendidas / % satisfacción. Animación contadora GSAP |
+| **Sobre Mí** | Grid 2 cols: imagen de la diseñadora (con marco decorativo dorado) + texto con historia del negocio, técnica, materiales. Firma itálica al final |
+| **Servicios** | Grid 2x2. Cada card: icono FA + título + descripción real + precio "Desde $X.XXX.XXX". Sin sección de precios aparte |
+| **Galería** | Grid 3 cols con 6 fotos de vestidos/modelos. Lightbox al hacer clic. Imágenes de Unsplash de vestidos de novia |
+| **Cobertura** | 4 columnas con zonas de atención (Chapinero, Usaquén, Zona Rosa, etc) |
+| **Testimonios** | Carrusel con 3 slides, quotes reales del negocio, autor + rol. Autoplay 5s |
+| **CTA final** | "¿Lista para tu vestido ideal?" + 2 botones: WhatsApp + "Cómo llegar" |
+| **Contacto** | Dirección, teléfono, email, horarios + Google Maps embed en grayscale |
+| **Footer** | Logo, tagline, iconos sociales (WhatsApp, Instagram, Facebook), copyright |
+| **WhatsApp float** | Botón flotante verde en toda la página |
+
+**Para replicar esta LP**: buscar en `datos.json` un negocio del mismo nicho (cat: "Alquiler Trajes de Etiqueta", "Alquiler de Vestidos", "Boutique / Ropa Mujer"), extraer su info, y producir el HTML con los mismos patrones de secciones, animaciones y paleta.
+
+### Workflow de despliegue Vercel
+```
+1. Crear HTML en landing-pages/nombre-negocio.html
+2. SCP al servidor: cat archivo.html | ssh root@xray.culturavpn.pro "cat > /root/lp-nombre/index.html"
+3. SSH al servidor:
+   ssh root@xray.culturavpn.pro
+   export PATH=$PATH:/root/.npm-global/bin
+   cd /root/lp-nombre
+   vercel deploy --prod --yes .
+4. La URL será: https://lp-nombre-negocio.vercel.app
+5. Actualizar propuesta en datos — ver abajo
+```
+- El servidor Oracle Cloud (`xray.culturavpn.pro`) tiene Vercel CLI instalado en `/root/.npm-global/bin/`
+- Cada LP es un proyecto independiente en Vercel (bajo team `nube50s-projects`)
+- No usar single-file deployments (obsoleto) — siempre crear un directorio con `index.html`
+
+### Regla: actualizar propuesta al crear una LP
+**Siempre** que se despliegue una LP, hay que actualizar el campo `propuesta` del negocio en **los 4 lugares**:
+
+1. `busqueda/index.html` — añadir `propuesta:"https://lp-nombre.vercel.app"` en el objeto DATA del negocio
+2. `busqueda/datos.json` — cambiar `"propuesta": ""` → `"propuesta": "https://lp-nombre.vercel.app"`
+3. `busqueda/seed.json` — igual que datos.json
+4. Servidor DB: `sqlite3 /root/agenxy/agenxy.db "UPDATE negocios SET propuesta='URL' WHERE id='ID';"`
+
+Esto hace que en la herramienta de prospección aparezca el badge **Propuesta** en la tarjeta del negocio, con link directo a la LP.
 
 ## Pendiente / Próximos pasos
 - [x] Configurar Nginx reverse proxy para `agy.culturavpn.pro` con SSL (hecho por el usuario via NPM)
