@@ -70,7 +70,10 @@ VALUES (@id, @name, @cat, @addr, @phone, @phoneClean, @webType, @webUrl, @webLab
 `);
 
 const tx = db.transaction(() => {
-for (const n of negocios) insert.run(n);
+for (const n of negocios) {
+if (n.social && typeof n.social !== 'string') n.social = JSON.stringify(n.social);
+insert.run(n);
+}
 });
 
 tx();
@@ -111,7 +114,10 @@ INSERT OR REPLACE INTO negocios (id, name, cat, addr, phone, phoneClean, webType
 VALUES (@id, @name, @cat, @addr, @phone, @phoneClean, @webType, @webUrl, @webLabel, @social)
 `);
 const tx = db.transaction(() => {
-for (const n of items) insert.run(n);
+for (const n of items) {
+if (n.social && typeof n.social !== 'string') n.social = JSON.stringify(n.social);
+insert.run(n);
+}
 });
 tx();
 res.json({ ok: true, inserted: items.length });
