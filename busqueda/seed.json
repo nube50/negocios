@@ -8,7 +8,14 @@
     "phoneClean": "573103077085",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573103077085",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b2",
@@ -19,7 +26,14 @@
     "phoneClean": "573133534064",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573133534064",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b3",
@@ -30,7 +44,14 @@
     "phoneClean": "5714314507",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5714314507",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b4",
@@ -41,7 +62,14 @@
     "phoneClean": "573133748762",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573133748762",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b5",
@@ -52,7 +80,14 @@
     "phoneClean": "573223675640",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573223675640",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b6",
@@ -63,7 +98,14 @@
     "phoneClean": "573229071444",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573229071444",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b7",
@@ -74,7 +116,14 @@
     "phoneClean": "573246238800",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573246238800",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b8",
@@ -85,29 +134,60 @@
     "phoneClean": "573107933967",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573107933967",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b9",
     "name": "Vestidos de Baño Bogotá",
-    "phone": "+57 310 788 1548",
-    "addr": "Restrepo, Bogotá",
     "cat": "Vestidos de Baño / Ropa de Playa",
+    "addr": "Restrepo, Bogotá",
+    "phone": "+57 310 788 1548",
+    "phoneClean": "573107881548",
     "webType": "social-only",
     "webUrl": "https://instagram.com/vestidos_banobogota",
-    "lat": 4.574,
-    "lng": -74.1
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573107881548",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/vestidos_banobogota",
+        "label": "Instagram"
+      }
+    ]
   },
   {
     "id": "b10",
     "name": "Fajas y Moda",
-    "phone": "+57 300 535 4876",
-    "addr": "Calle 140 No. 11-58, CC La Puerta del Sol, Cedritos",
     "cat": "Ropa Femenina / Fajas",
+    "addr": "Calle 140 No. 11-58, CC La Puerta del Sol, Cedritos",
+    "phone": "+57 300 535 4876",
+    "phoneClean": "573005354876",
     "webType": "social-only",
     "webUrl": "https://instagram.com/fajasymoda_bogota",
-    "lat": 4.725,
-    "lng": -74.04
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573005354876",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/fajasymoda_bogota",
+        "label": "Instagram"
+      }
+    ]
   },
   {
     "id": "b11",
@@ -118,7 +198,14 @@
     "phoneClean": "5712524691",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712524691",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b12",
@@ -129,7 +216,14 @@
     "phoneClean": "573108714075",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573108714075",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b13",
@@ -140,7 +234,14 @@
     "phoneClean": "5718116587",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5718116587",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b14",
@@ -151,7 +252,14 @@
     "phoneClean": "5714633760",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5714633760",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b15",
@@ -162,7 +270,14 @@
     "phoneClean": "5712289192",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712289192",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b16",
@@ -173,7 +288,14 @@
     "phoneClean": "573012034240",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573012034240",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b17",
@@ -184,18 +306,37 @@
     "phoneClean": "5716810306",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5716810306",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b18",
     "name": "AKA",
-    "phone": "+57 311 595 3856",
-    "addr": "Centro Mayor Local 1-016, Bogotá",
     "cat": "Moda y Accesorios",
+    "addr": "Centro Mayor Local 1-016, Bogotá",
+    "phone": "+57 311 595 3856",
+    "phoneClean": "573115953856",
     "webType": "social-only",
     "webUrl": "https://instagram.com/tiendasaka",
-    "lat": 4.62,
-    "lng": -74.12
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573115953856",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/tiendasaka",
+        "label": "Instagram"
+      }
+    ]
   },
   {
     "id": "b19",
@@ -206,40 +347,68 @@
     "phoneClean": "573174030580",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573174030580",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b20",
     "name": "Shaloom Boutique y Accesorios",
-    "phone": "+57 1 415 0091",
-    "addr": "Carrera 104a #20-33 Of 306, Fontibón",
     "cat": "Boutique / Ropa Mujer",
+    "addr": "Carrera 104a #20-33 Of 306, Fontibón",
+    "phone": "+57 1 415 0091",
+    "phoneClean": "5714150091",
     "webType": "social-only",
     "webUrl": "",
-    "lat": 4.68,
-    "lng": -74.15
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5714150091",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b21",
     "name": "Seventh",
-    "phone": "+57 1 612 2281",
-    "addr": "CC Hacienda Santa Bárbara Local D211, Usaquén",
     "cat": "Ropa Formal Mujer",
+    "addr": "CC Hacienda Santa Bárbara Local D211, Usaquén",
+    "phone": "+57 1 612 2281",
+    "phoneClean": "5716122281",
     "webType": "no-web",
     "webUrl": "",
-    "lat": 4.7,
-    "lng": -74.03
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5716122281",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b22",
     "name": "Maria Mulata",
-    "phone": "+57 305 429 9909",
-    "addr": "Calle 140 #9-69, Feria artesanal Local ñ12, Bogotá",
     "cat": "Ropa Rockera / Alternativa",
+    "addr": "Calle 140 #9-69, Feria artesanal Local ñ12, Bogotá",
+    "phone": "+57 305 429 9909",
+    "phoneClean": "573054299909",
     "webType": "social-only",
     "webUrl": "",
-    "lat": 4.725,
-    "lng": -74.035
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573054299909",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b23",
@@ -250,29 +419,60 @@
     "phoneClean": "573043333626",
     "webType": "no-web",
     "webUrl": "",
-    "webLabel": ""
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573043333626",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b24",
     "name": "Stacia Store",
-    "phone": "+57 300 478 0637",
-    "addr": "Calle 22 #14-53, Bogotá",
     "cat": "Tienda de Ropa",
+    "addr": "Calle 22 #14-53, Bogotá",
+    "phone": "+57 300 478 0637",
+    "phoneClean": "573004780637",
     "webType": "social-only",
     "webUrl": "https://instagram.com/stacia_store",
-    "lat": 4.59,
-    "lng": -74.08
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573004780637",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/stacia_store",
+        "label": "Instagram"
+      }
+    ]
   },
   {
     "id": "b25",
     "name": "Somo Ilius",
-    "phone": "+57 322 374 4097",
-    "addr": "Barrio Perdomo, Bogotá",
     "cat": "Ropa Unisex",
+    "addr": "Barrio Perdomo, Bogotá",
+    "phone": "+57 322 374 4097",
+    "phoneClean": "573223744097",
     "webType": "social-only",
     "webUrl": "https://instagram.com/ilius1_",
-    "lat": 4.56,
-    "lng": -74.15
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573223744097",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/ilius1_",
+        "label": "Instagram"
+      }
+    ]
   },
   {
     "id": "b30",
@@ -283,7 +483,19 @@
     "phoneClean": "573143429820",
     "webType": "social-only",
     "webUrl": "https://instagram.com/restaurantebuque",
-    "webLabel": "Instagram"
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573143429820",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/restaurantebuque",
+        "label": "Instagram"
+      }
+    ]
   },
   {
     "id": "b31",
@@ -294,7 +506,19 @@
     "phoneClean": "573103091475",
     "webType": "social-only",
     "webUrl": "https://www.facebook.com/lunadeparisgourmet",
-    "webLabel": "Facebook"
+    "webLabel": "facebook.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573103091475",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/lunadeparisgourmet",
+        "label": "Facebook"
+      }
+    ]
   },
   {
     "id": "b32",
@@ -305,18 +529,37 @@
     "phoneClean": "573202002512",
     "webType": "social-only",
     "webUrl": "https://wa.me/message/RZNR3TPBASSHO1",
-    "webLabel": "WhatsApp"
+    "webLabel": "wa.me",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573202002512",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b33",
     "name": "Gothic Store",
-    "phone": "+57 304 497 4326",
-    "addr": "Engativá, Bogotá",
     "cat": "Ropa Gótica / Alternativa",
+    "addr": "Engativá, Bogotá",
+    "phone": "+57 304 497 4326",
+    "phoneClean": "573044974326",
     "webType": "social-only",
     "webUrl": "https://facebook.com/GothicStoreBogota",
-    "lat": 4.69,
-    "lng": -74.12
+    "webLabel": "facebook.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573044974326",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/GothicStoreBogota",
+        "label": "Facebook"
+      }
+    ]
   },
   {
     "id": "b34",
@@ -327,7 +570,19 @@
     "phoneClean": "573112462241",
     "webType": "social-only",
     "webUrl": "http://facebook.com/profile.php?id=843410249106742",
-    "webLabel": "Facebook"
+    "webLabel": "facebook.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573112462241",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "http://facebook.com/profile.php?id=843410249106742",
+        "label": "Facebook"
+      }
+    ]
   },
   {
     "id": "b36",
@@ -338,7 +593,14 @@
     "phoneClean": "573023280777",
     "webType": "has-web",
     "webUrl": "http://www.restaurantesaira.com/",
-    "webLabel": "restaurantesaira.com"
+    "webLabel": "restaurantesaira.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573023280777",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b37",
@@ -349,51 +611,86 @@
     "phoneClean": "573046578373",
     "webType": "has-web",
     "webUrl": "http://www.ilnonno.co/",
-    "webLabel": "ilnonno.co"
+    "webLabel": "ilnonno.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573046578373",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b38",
     "name": "Violeta Inesperada",
-    "phone": "+57 319 381 4367",
-    "addr": "Bogotá",
     "cat": "Boutique Vintage / Ropa",
+    "addr": "Bogotá",
+    "phone": "+57 319 381 4367",
+    "phoneClean": "573193814367",
     "webType": "social-only",
     "webUrl": "",
-    "lat": 4.65,
-    "lng": -74.06
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573193814367",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b39",
     "name": "Avril Boutique",
-    "phone": "+57 319 318 3824",
-    "addr": "Calle 156 #7C-44, Bogotá",
     "cat": "Boutique de Moda",
+    "addr": "Calle 156 #7C-44, Bogotá",
+    "phone": "+57 319 318 3824",
+    "phoneClean": "573193183824",
     "webType": "social-only",
     "webUrl": "",
-    "lat": 4.738,
-    "lng": -74.03
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573193183824",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b40",
     "name": "Amatita Bisutería",
-    "phone": "+57 321 393 2805",
-    "addr": "Calle 147 101-57 Local 240, CC Fiesta Suba",
     "cat": "Bisutería Artesanal",
+    "addr": "Calle 147 101-57 Local 240, CC Fiesta Suba",
+    "phone": "+57 321 393 2805",
+    "phoneClean": "573213932805",
     "webType": "social-only",
     "webUrl": "",
-    "lat": 4.745,
-    "lng": -74.085
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573213932805",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b41",
     "name": "Inrya - Ropa Hindú",
-    "phone": "+57 312 341 5807",
-    "addr": "Cra. 58 #137B-01, CC Porto Alegre Local 123, Bogotá",
     "cat": "Ropa Hindú / Moda Oriental",
+    "addr": "Cra. 58 #137B-01, CC Porto Alegre Local 123, Bogotá",
+    "phone": "+57 312 341 5807",
+    "phoneClean": "573123415807",
     "webType": "social-only",
     "webUrl": "",
-    "lat": 4.72,
-    "lng": -74.05
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573123415807",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b50",
@@ -404,7 +701,14 @@
     "phoneClean": "573224366350",
     "webType": "has-web",
     "webUrl": "https://zequedapaellas.com/",
-    "webLabel": "zequedapaellas.com"
+    "webLabel": "zequedapaellas.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573224366350",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b51",
@@ -415,7 +719,14 @@
     "phoneClean": "573175224626",
     "webType": "has-web",
     "webUrl": "https://lechonadomicilio.com/",
-    "webLabel": "lechonadomicilio.com"
+    "webLabel": "lechonadomicilio.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573175224626",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b52",
@@ -426,7 +737,14 @@
     "phoneClean": "573237351526",
     "webType": "has-web",
     "webUrl": "https://pepitosng.com/",
-    "webLabel": "pepitosng.com"
+    "webLabel": "pepitosng.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573237351526",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b53",
@@ -437,7 +755,14 @@
     "phoneClean": "573112615249",
     "webType": "has-web",
     "webUrl": "https://cafemonstruo.com/",
-    "webLabel": "cafemonstruo.com"
+    "webLabel": "cafemonstruo.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573112615249",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b54",
@@ -448,7 +773,14 @@
     "phoneClean": "573102211729",
     "webType": "has-web",
     "webUrl": "https://www.pizzardi.com.co/",
-    "webLabel": "pizzardi.com.co"
+    "webLabel": "pizzardi.com.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573102211729",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b55",
@@ -459,7 +791,14 @@
     "phoneClean": "573108791933",
     "webType": "has-web",
     "webUrl": "https://diestrorestaurante.com/",
-    "webLabel": "diestrorestaurante.com"
+    "webLabel": "diestrorestaurante.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573108791933",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b56",
@@ -470,7 +809,14 @@
     "phoneClean": "573195384563",
     "webType": "has-web",
     "webUrl": "https://lachurrasqueria.com/",
-    "webLabel": "lachurrasqueria.com"
+    "webLabel": "lachurrasqueria.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573195384563",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b57",
@@ -481,7 +827,14 @@
     "phoneClean": "573114911522",
     "webType": "has-web",
     "webUrl": "https://donjediondo.com/",
-    "webLabel": "donjediondo.com"
+    "webLabel": "donjediondo.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573114911522",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b58",
@@ -492,7 +845,14 @@
     "phoneClean": "573164051805",
     "webType": "has-web",
     "webUrl": "https://www.lapuertadelacatedral.com/",
-    "webLabel": "lapuertadelacatedral.com"
+    "webLabel": "lapuertadelacatedral.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573164051805",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b59",
@@ -503,7 +863,14 @@
     "phoneClean": "573227850936",
     "webType": "has-web",
     "webUrl": "https://tamalechona.com/",
-    "webLabel": "tamalechona.com"
+    "webLabel": "tamalechona.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573227850936",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b60",
@@ -514,7 +881,14 @@
     "phoneClean": "573143799074",
     "webType": "has-web",
     "webUrl": "https://elreydelalechona.co/",
-    "webLabel": "elreydelalechona.co"
+    "webLabel": "elreydelalechona.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573143799074",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b61",
@@ -525,7 +899,14 @@
     "phoneClean": "5716743901",
     "webType": "has-web",
     "webUrl": "https://roerik.com/",
-    "webLabel": "roerik.com"
+    "webLabel": "roerik.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5716743901",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b62",
@@ -536,7 +917,14 @@
     "phoneClean": "573143560172",
     "webType": "has-web",
     "webUrl": "https://www.panaderiabellasuiza.com/",
-    "webLabel": "panaderiabellasuiza.com"
+    "webLabel": "panaderiabellasuiza.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573143560172",
+        "label": "WhatsApp"
+      }
+    ]
   },
   {
     "id": "b63",
@@ -547,6 +935,13 @@
     "phoneClean": "573208032421",
     "webType": "has-web",
     "webUrl": "https://www.xlgourmet.com/",
-    "webLabel": "xlgourmet.com"
+    "webLabel": "xlgourmet.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573208032421",
+        "label": "WhatsApp"
+      }
+    ]
   }
 ]

@@ -40,6 +40,7 @@ phoneClean TEXT NOT NULL DEFAULT '',
 webType TEXT NOT NULL DEFAULT 'no-web',
 webUrl TEXT NOT NULL DEFAULT '',
 webLabel TEXT NOT NULL DEFAULT '',
+social TEXT NOT NULL DEFAULT '[]',
 status TEXT NOT NULL DEFAULT 'pendiente',
 priority TEXT NOT NULL DEFAULT 'warm',
 notes TEXT NOT NULL DEFAULT '[]',
@@ -64,8 +65,8 @@ negocios = [];
 }
 
 const insert = db.prepare(`
-INSERT OR IGNORE INTO negocios (id, name, cat, addr, phone, phoneClean, webType, webUrl, webLabel)
-VALUES (@id, @name, @cat, @addr, @phone, @phoneClean, @webType, @webUrl, @webLabel)
+INSERT OR IGNORE INTO negocios (id, name, cat, addr, phone, phoneClean, webType, webUrl, webLabel, social)
+VALUES (@id, @name, @cat, @addr, @phone, @phoneClean, @webType, @webUrl, @webLabel, @social)
 `);
 
 const tx = db.transaction(() => {
@@ -106,8 +107,8 @@ app.post('/api/negocios', (req, res) => {
 try {
 const items = Array.isArray(req.body) ? req.body : [req.body];
 const insert = db.prepare(`
-INSERT OR REPLACE INTO negocios (id, name, cat, addr, phone, phoneClean, webType, webUrl, webLabel)
-VALUES (@id, @name, @cat, @addr, @phone, @phoneClean, @webType, @webUrl, @webLabel)
+INSERT OR REPLACE INTO negocios (id, name, cat, addr, phone, phoneClean, webType, webUrl, webLabel, social)
+VALUES (@id, @name, @cat, @addr, @phone, @phoneClean, @webType, @webUrl, @webLabel, @social)
 `);
 const tx = db.transaction(() => {
 for (const n of items) insert.run(n);
