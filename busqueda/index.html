@@ -683,13 +683,20 @@ state._deleted.push(r.id);
 }
 });
 Object.keys(existingState).forEach(function(k) {
-if (k === '_deleted' || k === '__exported') return;
+if (k === '__exported') return;
+if (k === '_deleted') {
+if (!state._deleted) state._deleted = [];
+(existingState._deleted || []).forEach(function(id) {
+if (state._deleted.indexOf(id) === -1) state._deleted.push(id);
+});
+return;
+}
 if (state[k]) {
 var ex = existingState[k];
 if (ex) {
-state[k].status = ex.status || state[k].status;
-state[k].priority = ex.priority || state[k].priority;
-state[k].notes = ex.notes || state[k].notes;
+if (ex.status) state[k].status = ex.status;
+if (ex.priority) state[k].priority = ex.priority;
+if (ex.notes && ex.notes.length) state[k].notes = ex.notes;
 }
 } else {
 state[k] = existingState[k];

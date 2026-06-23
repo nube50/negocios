@@ -137,6 +137,16 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - Totales actualizados: Sin web 18, Solo redes 17, Con web 29, Total **64**
 - Balance mejorado: ahora hay **14 negocios en alquiler de trajes/vestidos/boutiques** con presencia web
 
+### Sesión 9 (2026-06-23) — Fix: preservación de datos de usuario
+- **CRÍTICO**: se corrigió el proceso para NUNCA perder datos de usuario al agregar/quitar negocios
+- Servidor: `seedDB()` reemplazado por `syncSeed()` que solo hace `INSERT OR IGNORE` de IDs NUEVOS, **nunca borra ni sobreescribe datos existentes**
+- Servidor: `POST /api/negocios` cambió de `INSERT OR REPLACE` a `INSERT OR IGNORE`
+- Servidor: nuevo endpoint `PUT /api/negocios/bulk-state` para restaurar estado desde localStorage
+- Frontend: al cargar desde servidor **preserva** el estado existente en localStorage (status, priority, notes, deleted) y solo actualiza datos del negocio
+- Frontend: nuevo botón `⇧ Server` en la toolbar para enviar estado local al servidor
+- Frontend: merge de `_deleted` preserva eliminaciones locales aunque el servidor no las tenga
+- Se actualizó `AGENTS.md` con las nuevas instrucciones de operación segura
+
 ## Pendiente / Próximos pasos
 - [x] Configurar Nginx reverse proxy para `agy.culturavpn.pro` con SSL (hecho por el usuario via NPM)
 - [x] Poner API_URL en index.html apuntando a `https://agy.culturavpn.pro/api`
