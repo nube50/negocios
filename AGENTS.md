@@ -99,8 +99,8 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - Se agregó `package.json` con dependencias express + better-sqlite3
 
 ## Pendiente / Próximos pasos
-- [ ] Configurar Nginx reverse proxy o subdominio para el API (el usuario lo hará manualmente)
-- [ ] Poner API_URL en index.html apuntando al servidor real cuando esté accesible
+- [x] Configurar Nginx reverse proxy para `agy.culturavpn.pro` con SSL (hecho por el usuario via NPM)
+- [x] Poner API_URL en index.html apuntando a `https://agy.culturavpn.pro/api`
 - [ ] Apify MCP no disponible sin token; buscar fuente alternativa de datos si se quieren más negocios SIN web
 - [ ] Ideal: encontrar más restaurantes/tiendas/talleres sin web para balancear
 - [ ] En el futuro: expandir prospección a Medellín y Cali
