@@ -254,7 +254,7 @@ var DATA_FALLBACK = [
 {id:"b68",name:"Alquiler Smoking Bogotá",phone:"+57 301 625 6476",phoneClean:"573016256476",addr:"Bogotá",cat:"Alquiler de Smoking / Trajes",webType:"has-web",webUrl:"https://alquilersmokingbogota.com",webLabel:"alquilersmokingbogota.com",social:[{"platform":"whatsapp","url":"https://wa.me/573016256476","label":"WhatsApp"}],lat:null,lng:null},
 {id:"b69",name:"Click2Dress",addr:"Cl. 93B #11A-84 Local 302, CC Portobelo, Bogotá",cat:"Alquiler de Vestidos de Fiesta",webType:"has-web",webUrl:"https://click2dress.com",webLabel:"click2dress.com",social:[],lat:null,lng:null},
 {id:"b70",name:"Paola Dimaya Alta Costura",addr:"Cra. 15 #119-59, Bogotá",cat:"Alquiler Trajes de Etiqueta",webType:"has-web",webUrl:"https://www.paoladimaya.com",webLabel:"paoladimaya.com",social:[],lat:null,lng:null},
-{id:"b71",name:"Sarta & Bguest",addr:"Bogotá",cat:"Alquiler de Vestidos",webType:"social-only",webUrl:"https://instagram.com/sartavestidos",webLabel:"Instagram",social:[{"platform":"instagram","url":"https://instagram.com/sartavestidos","label":"Instagram"},{"platform":"instagram","url":"https://instagram.com/bguest.co","label":"Instagram"}],lat:null,lng:null},
+{id:"b71",name:"Sarta & Bguest",addr:"Bogotá",cat:"Alquiler de Vestidos",webType:"social-only",webUrl:"https://instagram.com/sartavestidos",webLabel:"Instagram",social:[{"platform":"instagram","url":"https://instagram.com/sartavestidos","label":"Instagram"},{"platform":"instagram","url":"https://instagram.com/bguest.co","label":"Instagram"}],propuesta:"https://lp-sarta-bguest.vercel.app",lat:null,lng:null},
 {id:"b72",name:"Cherie Boutique",addr:"CC Unicentro Local 2-109, Bogotá",cat:"Boutique / Ropa Mujer",webType:"has-web",webUrl:"https://cherie.com.co",webLabel:"cherie.com.co",social:[],lat:null,lng:null},
 {id:"b73",name:"By Caicedo",addr:"Bogotá",cat:"Ropa Mujer / Moda Femenina",webType:"has-web",webUrl:"https://bycaicedo.com",webLabel:"bycaicedo.com",social:[],lat:null,lng:null},
 {id:"b74",name:"Karissa Moda",addr:"Bogotá",cat:"Ropa Mujer",webType:"has-web",webUrl:"https://karissamoda.com",webLabel:"karissamoda.com",social:[],lat:null,lng:null},
@@ -622,6 +622,7 @@ html += '<textarea class="note-input" placeholder="Escribe una nota personalizad
 html += '</div>';
 html += '<div class="actions">';
 html += webBadge;
+if (d.propuesta) html += '<a href="' + d.propuesta + '" target="_blank" class="badge has-web" style="background:#6366f1;text-decoration:none;cursor:pointer;font-size:10px;padding:2px 6px;border-radius:4px;color:#fff;display:inline-block;margin-bottom:4px">Propuesta</a> ';
 html += '<a href="tel:' + d.phoneClean + '" class="phone-link">📞 Llamar</a>';
 html += '<a href="https://wa.me/' + d.phoneClean + '?text=' + waMsg + '" target="_blank" class="wa-link">💬 WhatsApp</a>';
 html += '<a href="' + mapsUrl + '" target="_blank" class="wa-link" style="background:#ea580c">📍 Maps</a>';
@@ -666,7 +667,7 @@ var apiData = resp.data;
 DATA = apiData.map(function(r) {
 var social = [];
 try { social = typeof r.social === 'string' ? JSON.parse(r.social) : (r.social || []); } catch(e) {}
-return { id: r.id, name: r.name, cat: r.cat, addr: r.addr, phone: r.phone, phoneClean: r.phoneClean, webType: r.webType, webUrl: r.webUrl, webLabel: r.webLabel, social: social };
+return { id: r.id, name: r.name, cat: r.cat, addr: r.addr, phone: r.phone, phoneClean: r.phoneClean, webType: r.webType, webUrl: r.webUrl, webLabel: r.webLabel, social: social, propuesta: r.propuesta || '' };
 });
 DATA.forEach(function(d) { if (CATEGORIES.indexOf(d.cat) === -1) CATEGORIES.push(d.cat); });
 CATEGORIES.sort();

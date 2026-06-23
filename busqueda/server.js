@@ -41,6 +41,7 @@ function initDB() {
       webUrl TEXT NOT NULL DEFAULT '',
       webLabel TEXT NOT NULL DEFAULT '',
       social TEXT NOT NULL DEFAULT '[]',
+      propuesta TEXT NOT NULL DEFAULT '',
       status TEXT NOT NULL DEFAULT 'pendiente',
       priority TEXT NOT NULL DEFAULT 'warm',
       notes TEXT NOT NULL DEFAULT '[]',
@@ -62,13 +63,14 @@ function syncSeed() {
   }
 
   const insert = db.prepare(`
-    INSERT OR IGNORE INTO negocios (id, name, cat, addr, phone, phoneClean, webType, webUrl, webLabel, social)
-    VALUES (@id, @name, @cat, @addr, @phone, @phoneClean, @webType, @webUrl, @webLabel, @social)
+    INSERT OR IGNORE INTO negocios (id, name, cat, addr, phone, phoneClean, webType, webUrl, webLabel, social, propuesta)
+    VALUES (@id, @name, @cat, @addr, @phone, @phoneClean, @webType, @webUrl, @webLabel, @social, @propuesta)
   `);
 
   let inserted = 0;
   for (const n of negocios) {
     if (n.social && typeof n.social !== 'string') n.social = JSON.stringify(n.social);
+    if (!n.propuesta) n.propuesta = '';
     const result = insert.run(n);
     if (result.changes > 0) inserted++;
   }
@@ -106,12 +108,13 @@ app.post('/api/negocios', (req, res) => {
   try {
     const items = Array.isArray(req.body) ? req.body : [req.body];
     const insert = db.prepare(`
-      INSERT OR IGNORE INTO negocios (id, name, cat, addr, phone, phoneClean, webType, webUrl, webLabel, social)
-      VALUES (@id, @name, @cat, @addr, @phone, @phoneClean, @webType, @webUrl, @webLabel, @social)
+      INSERT OR IGNORE INTO negocios (id, name, cat, addr, phone, phoneClean, webType, webUrl, webLabel, social, propuesta)
+      VALUES (@id, @name, @cat, @addr, @phone, @phoneClean, @webType, @webUrl, @webLabel, @social, @propuesta)
     `);
     let inserted = 0;
     for (const n of items) {
       if (n.social && typeof n.social !== 'string') n.social = JSON.stringify(n.social);
+      if (!n.propuesta) n.propuesta = '';
       const result = insert.run(n);
       if (result.changes > 0) inserted++;
     }
@@ -126,12 +129,13 @@ app.put('/api/negocios/sync', (req, res) => {
   try {
     const items = Array.isArray(req.body) ? req.body : [req.body];
     const insert = db.prepare(`
-      INSERT OR IGNORE INTO negocios (id, name, cat, addr, phone, phoneClean, webType, webUrl, webLabel, social)
-      VALUES (@id, @name, @cat, @addr, @phone, @phoneClean, @webType, @webUrl, @webLabel, @social)
+      INSERT OR IGNORE INTO negocios (id, name, cat, addr, phone, phoneClean, webType, webUrl, webLabel, social, propuesta)
+      VALUES (@id, @name, @cat, @addr, @phone, @phoneClean, @webType, @webUrl, @webLabel, @social, @propuesta)
     `);
     let inserted = 0;
     for (const n of items) {
       if (n.social && typeof n.social !== 'string') n.social = JSON.stringify(n.social);
+      if (!n.propuesta) n.propuesta = '';
       const result = insert.run(n);
       if (result.changes > 0) inserted++;
     }
