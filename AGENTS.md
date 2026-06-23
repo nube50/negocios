@@ -147,6 +147,15 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - Frontend: merge de `_deleted` preserva eliminaciones locales aunque el servidor no las tenga
 - Se actualizó `AGENTS.md` con las nuevas instrucciones de operación segura
 
+### Sesión 10 (2026-06-23) — Landing page Sarta & Bguest + campo propuesta
+- Se creó skill `landing-page-designer` en `.opencode/skills/` y `~/.config/opencode/skills/`
+- Se diseñó landing page profesional para Sarta & Bguest en `landing-pages/sarta-bguest.html`
+- Se desplegó en Vercel como proyecto independiente: `https://lp-sarta-bguest.vercel.app`
+- Se agregó campo `propuesta` a la DB (columna SQLite), API y frontend
+- Frontend muestra badge "Propuesta" en la tarjeta si el negocio tiene LP asignada
+- Sarta & Bguest (b71) tiene su propuesta vinculada a la LP desplegada
+- Se actualizó `server.js`, `seed.json`, `datos.json` y `DATA_FALLBACK`
+
 ## Pendiente / Próximos pasos
 - [x] Configurar Nginx reverse proxy para `agy.culturavpn.pro` con SSL (hecho por el usuario via NPM)
 - [x] Poner API_URL en index.html apuntando a `https://agy.culturavpn.pro/api`
