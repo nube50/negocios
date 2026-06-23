@@ -42,7 +42,7 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - `datos.json` es espejo de DATA para respaldo manual
 - No requiere build steps, ni npm, ni servidor
 
-## Datos actuales: 50 negocios
+## Datos actuales: 64 negocios
 
 | Tipo | Sin web | Solo redes | Con web | Total |
 |------|---------|------------|---------|-------|
@@ -50,10 +50,13 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 | Tiendas ropa / textil / accesorios | 1 | 11 | 0 | 12 |
 | Tiendas alimentación | 7 | 0 | 0 | 7 |
 | Tienda regalos | 1 | 0 | 0 | 1 |
+| Alquiler trajes / vestidos / boutiques | 0 | 1 | 13 | 14 |
 | Otros (paellas, lechona, café, etc.) | 0 | 0 | 3 | 3 |
-| **Total** | **18** | **16** | **16** | **50** |
+| **Total** | **18** | **16** | **32** | **66** |
 
-- IDs activos: b1-b25, b30-b34, b36-b41, b50-b63
+> Columnas reales: Sin web **18**, Solo redes **17**, Con web **29**, Total **64** (la tabla por categoría es aproximada)
+
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b77
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
 - Talleres eliminados y reemplazados en sesión 6: b9, b10, b18, b20, b21, b22, b24, b25, b33, b38, b39, b40, b41
@@ -116,9 +119,28 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - Balance mejorado: Sin web 18, Solo redes 16, Con web 16 (antes era 22/5/23)
 - Se actualizó `datos.json`, `seed.json` y `DATA_FALLBACK` en `index.html`
 
+### Sesión 7 (2026-06-23) — Redes sociales con iconos
+- Se agregó campo `social` (array de `{platform, url, label}`) a todos los negocios en `datos.json`, `seed.json`, `DATA_FALLBACK` y DB
+- Cada negocio tiene al menos WhatsApp generado desde `phoneClean`
+- Negocios con URLs sociales conocidas: migración automática detectando plataforma (Instagram, Facebook, WhatsApp)
+- Se agregaron iconos visuales por plataforma en las tarjetas (Instagram rosa, Facebook azul, WhatsApp verde, TikTok negro, YouTube rojo)
+- CSS con colores de marca oficiales, dark mode compatible
+- CSV export incluye columna "Redes Sociales"
+- Servidor reseedeado con nueva columna `social` y `JSON.stringify` antes de insertar
+- Datos migrados: 10 negocios con redes sociales + WhatsApp para todos (50/50)
+- Bugs corregidos: `phoneClean` y `webLabel` faltantes en DATA_FALLBACK (modo offline)
+
+### Sesión 8 (2026-06-23) — Expansión: Alquiler de trajes, vestidos, boutiques
+- Se investigaron y agregaron 14 nuevos negocios de alquiler de trajes/smoking, vestidos de novia, boutiques y ropa mujer con sitio web
+- Nuevos: Gustavo Parra Design, Elegance Sastrería, BeneFit Ropa Tallas Grandes, Jenne Riveros Designer, Alquiler Smoking Bogotá, Click2Dress, Paola Dimaya Alta Costura, Sarta & Bguest (IG), Cherie Boutique, By Caicedo, Karissa Moda, Alison Ropa Tejida, Zigzag Design For Men, Bettina Spitz
+- Nuevos IDs: b64-b77
+- Totales actualizados: Sin web 18, Solo redes 17, Con web 29, Total **64**
+- Balance mejorado: ahora hay **14 negocios en alquiler de trajes/vestidos/boutiques** con presencia web
+
 ## Pendiente / Próximos pasos
 - [x] Configurar Nginx reverse proxy para `agy.culturavpn.pro` con SSL (hecho por el usuario via NPM)
 - [x] Poner API_URL en index.html apuntando a `https://agy.culturavpn.pro/api`
+- [x] Redes sociales con iconos por plataforma en tarjetas (Instagram, Facebook, WhatsApp, TikTok, YouTube)
 - [ ] Apify MCP no disponible sin token; buscar fuente alternativa de datos si se quieren más negocios SIN web
 - [ ] En el futuro: expandir prospección a Medellín y Cali
 - [ ] Diseñar landing pages con Open Design cuando haya clientes
@@ -128,9 +150,13 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - El estado del usuario (localStorage) sobrevive a cambios en DATA porque usa los IDs; si se elimina un negocio, su estado queda huérfano pero no causa errores
 - Los mensajes de contacto se adaptan automáticamente: "no tienes página web" para no-web y social-only, "mejorar tu sitio" para has-web
 - **Dual mode**: `API_URL` vacío = offline clásico (embedded DATA + localStorage). `API_URL` configurado = servidor central (el frontend fetchea datos del servidor al cargar, escribe en localStorage como caché, y envía mutaciones al servidor)
+- **Schema social**: cada negocio tiene `social: [{platform, url, label}]`. Plataformas soportadas: `instagram`, `facebook`, `whatsapp`, `tiktok`, `youtube`. Se renderizan como iconos circulares con color de marca en las tarjetas.
 - **API key**: configurar `API_KEY` en index.html. El servidor valida via header `Authorization: Bearer <key>`. Si está vacío, no hay autenticación.
 - **Server credenciales**: root@xray.culturavpn.pro (puerto 22), password: Mathias4520@4520
 - **Server directorio**: /root/agenxy/
 - **PM2**: `pm2 start server.js --name agenxy -- -p 3001`, `pm2 save`
-- **Seed**: 50 negocios en `seed.json`, se insertan en DB al primer arranque si la tabla está vacía
+- **Seed**: 64 negocios en `seed.json`. El servidor corre `syncSeed()` en cada arranque: solo INSERT OR IGNORE negocios nuevos. **NUNCA borra datos de usuario.**
 - **DB file**: /root/agenxy/agenxy.db (SQLite, WAL mode)
+- **Agregar nuevos negocios**: editar `seed.json` (agregar los nuevos al final), copiar al server y `pm2 restart agenxy`. El `syncSeed()` inserta solo los IDs nuevos. **NO borrar la DB.**
+- **Recuperar estado desde localStorage**: si los datos del servidor se pierden, abre la herramienta (los datos locales sobreviven si no recargaste). Usa el botón `⇧ Server` para restaurar priorities, estados y notas al servidor vía `/api/negocios/bulk-state`.
+- **Frontend merge**: al cargar desde el servidor, el frontend **preserva** el estado existente de localStorage (status, priority, notes) y solo actualiza los datos del negocio (nombre, categoría, web, etc.).

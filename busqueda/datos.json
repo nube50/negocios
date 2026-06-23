@@ -956,5 +956,214 @@
         "label": "WhatsApp"
       }
     ]
+  },
+  {
+    "id": "b64",
+    "name": "Gustavo Parra Design",
+    "cat": "Alquiler de Trajes / Smoking",
+    "addr": "Tv. 76 #84-25, Bogotá",
+    "phone": "+57 301 619 3899",
+    "webType": "has-web",
+    "webUrl": "https://gustavoparradesign.com",
+    "webLabel": "gustavoparradesign.com",
+    "phoneClean": "573016193899",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573016193899",
+        "label": "WhatsApp"
+      }
+    ]
+  },
+  {
+    "id": "b65",
+    "name": "Elegance Sastrería",
+    "cat": "Sastrería / Alquiler Smoking",
+    "addr": "Cl. 127D #58-12, Bogotá",
+    "phone": "+57 311 539 8539",
+    "webType": "has-web",
+    "webUrl": "https://elegancesastreria.com",
+    "webLabel": "elegancesastreria.com",
+    "phoneClean": "573115398539",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573115398539",
+        "label": "WhatsApp"
+      }
+    ]
+  },
+  {
+    "id": "b66",
+    "name": "BeneFit Ropa Tallas Grandes",
+    "cat": "Ropa Mujer Tallas Grandes",
+    "addr": "Cl. 109 #18C-10, Bogotá",
+    "phone": "+57 300 203 5911",
+    "webType": "has-web",
+    "webUrl": "http://www.b-fit.com.co",
+    "webLabel": "b-fit.com.co",
+    "phoneClean": "573002035911",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573002035911",
+        "label": "WhatsApp"
+      }
+    ]
+  },
+  {
+    "id": "b67",
+    "name": "Jenne Riveros Designer",
+    "cat": "Vestidos de Novia",
+    "addr": "Cra. 58 128B-21, Bogotá",
+    "phone": "+57 321 218 3037",
+    "webType": "has-web",
+    "webUrl": "https://vestidosdenovia.company.site",
+    "webLabel": "vestidosdenovia.company.site",
+    "phoneClean": "573212183037",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573212183037",
+        "label": "WhatsApp"
+      }
+    ]
+  },
+  {
+    "id": "b68",
+    "name": "Alquiler Smoking Bogotá",
+    "cat": "Alquiler de Smoking / Trajes",
+    "addr": "Bogotá",
+    "phone": "+57 301 625 6476",
+    "webType": "has-web",
+    "webUrl": "https://alquilersmokingbogota.com",
+    "webLabel": "alquilersmokingbogota.com",
+    "phoneClean": "573016256476",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573016256476",
+        "label": "WhatsApp"
+      }
+    ]
+  },
+  {
+    "id": "b69",
+    "name": "Click2Dress",
+    "cat": "Alquiler de Vestidos de Fiesta",
+    "addr": "Cl. 93B #11A-84 Local 302, CC Portobelo, Bogotá",
+    "phone": "",
+    "webType": "has-web",
+    "webUrl": "https://click2dress.com",
+    "webLabel": "click2dress.com",
+    "phoneClean": "",
+    "social": []
+  },
+  {
+    "id": "b70",
+    "name": "Paola Dimaya Alta Costura",
+    "cat": "Alquiler Trajes de Etiqueta",
+    "addr": "Cra. 15 #119-59, Bogotá",
+    "phone": "",
+    "webType": "has-web",
+    "webUrl": "https://www.paoladimaya.com",
+    "webLabel": "paoladimaya.com",
+    "phoneClean": "",
+    "social": []
+  },
+  {
+    "id": "b71",
+    "name": "Sarta & Bguest",
+    "cat": "Alquiler de Vestidos",
+    "addr": "Bogotá",
+    "phone": "",
+    "webType": "social-only",
+    "webUrl": "https://instagram.com/sartavestidos",
+    "webLabel": "Instagram",
+    "phoneClean": "",
+    "social": [
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/sartavestidos",
+        "label": "Instagram"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/bguest.co",
+        "label": "Instagram"
+      }
+    ]
+  },
+  {
+    "id": "b72",
+    "name": "Cherie Boutique",
+    "cat": "Boutique / Ropa Mujer",
+    "addr": "CC Unicentro Local 2-109, Bogotá",
+    "phone": "",
+    "webType": "has-web",
+    "webUrl": "https://cherie.com.co",
+    "webLabel": "cherie.com.co",
+    "phoneClean": "",
+    "social": []
+  },
+  {
+    "id": "b73",
+    "name": "By Caicedo",
+    "cat": "Ropa Mujer / Moda Femenina",
+    "addr": "Bogotá",
+    "phone": "",
+    "webType": "has-web",
+    "webUrl": "https://bycaicedo.com",
+    "webLabel": "bycaicedo.com",
+    "phoneClean": "",
+    "social": []
+  },
+  {
+    "id": "b74",
+    "name": "Karissa Moda",
+    "cat": "Ropa Mujer",
+    "addr": "Bogotá",
+    "phone": "",
+    "webType": "has-web",
+    "webUrl": "https://karissamoda.com",
+    "webLabel": "karissamoda.com",
+    "phoneClean": "",
+    "social": []
+  },
+  {
+    "id": "b75",
+    "name": "Alison Ropa Tejida",
+    "cat": "Ropa Tejida / Suéteres",
+    "addr": "Bogotá",
+    "phone": "",
+    "webType": "has-web",
+    "webUrl": "https://alison.com.co",
+    "webLabel": "alison.com.co",
+    "phoneClean": "",
+    "social": []
+  },
+  {
+    "id": "b76",
+    "name": "Zigzag Design For Men",
+    "cat": "Trajes Hombre / Alquiler",
+    "addr": "Bogotá",
+    "phone": "",
+    "webType": "has-web",
+    "webUrl": "https://zigzagdesignformen.com.co",
+    "webLabel": "zigzagdesignformen.com.co",
+    "phoneClean": "",
+    "social": []
+  },
+  {
+    "id": "b77",
+    "name": "Bettina Spitz María Antonieta",
+    "cat": "Ropa Mujer / Alta Costura",
+    "addr": "Bogotá",
+    "phone": "",
+    "webType": "has-web",
+    "webUrl": "https://bettinaspitz.com",
+    "webLabel": "bettinaspitz.com",
+    "phoneClean": "",
+    "social": []
   }
 ]

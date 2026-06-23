@@ -177,6 +177,7 @@ body.dark-mode .dark-toggle:hover { background: #33343d; }
 <button class="btn btn-success" onclick="exportReport()"> Resumen</button>
 <button class="btn btn-outline" onclick="document.getElementById('importFile').click()"> Importar JSON</button>
 <input type="file" id="importFile" accept=".json" style="display:none" onchange="importJSON(event)">
+<button class="btn btn-outline" onclick="syncToServer()" id="syncBtn"> Server</button>
 </div>
 
 <div id="resultsInfo" style="font-size:12px;color:#666;margin-bottom:8px;"></div>
@@ -244,6 +245,22 @@ var DATA_FALLBACK = [
 {id:"b61",name:"Roerik Café y Pizzería",phone:"+57 1 674 3901",phoneClean:"5716743901",addr:"Calle 174a #49B-06, Suba, Bogotá",cat:"Cafetería / Pizzería",webType:"has-web",webUrl:"https://roerik.com/",social:[{platform:"whatsapp",url:"https://wa.me/5716743901",label:"WhatsApp"}],lat:null,lng:null},
 {id:"b62",name:"Bella Suiza Panadería y Pastelería",phone:"+57 314 356 0172",phoneClean:"573143560172",addr:"Calle 132 #7A-91, Bella Suiza, Bogotá",cat:"Panadería / Pastelería",webType:"has-web",webUrl:"https://www.panaderiabellasuiza.com/",social:[{platform:"whatsapp",url:"https://wa.me/573143560172",label:"WhatsApp"}],lat:null,lng:null},
 {id:"b63",name:"XL Gourmet",phone:"+57 320 803 2421",phoneClean:"573208032421",addr:"Calle 8va Sur #32D-12, Ciudad Montes, Bogotá",cat:"Comida Rápida (Hamburguesas)",webType:"has-web",webUrl:"https://www.xlgourmet.com/",social:[{platform:"whatsapp",url:"https://wa.me/573208032421",label:"WhatsApp"}],lat:null,lng:null}
+,
+
+{id:"b64",name:"Gustavo Parra Design",phone:"+57 301 619 3899",phoneClean:"573016193899",addr:"Tv. 76 #84-25, Bogotá",cat:"Alquiler de Trajes / Smoking",webType:"has-web",webUrl:"https://gustavoparradesign.com",webLabel:"gustavoparradesign.com",social:[{"platform":"whatsapp","url":"https://wa.me/573016193899","label":"WhatsApp"}],lat:null,lng:null},
+{id:"b65",name:"Elegance Sastrería",phone:"+57 311 539 8539",phoneClean:"573115398539",addr:"Cl. 127D #58-12, Bogotá",cat:"Sastrería / Alquiler Smoking",webType:"has-web",webUrl:"https://elegancesastreria.com",webLabel:"elegancesastreria.com",social:[{"platform":"whatsapp","url":"https://wa.me/573115398539","label":"WhatsApp"}],lat:null,lng:null},
+{id:"b66",name:"BeneFit Ropa Tallas Grandes",phone:"+57 300 203 5911",phoneClean:"573002035911",addr:"Cl. 109 #18C-10, Bogotá",cat:"Ropa Mujer Tallas Grandes",webType:"has-web",webUrl:"http://www.b-fit.com.co",webLabel:"b-fit.com.co",social:[{"platform":"whatsapp","url":"https://wa.me/573002035911","label":"WhatsApp"}],lat:null,lng:null},
+{id:"b67",name:"Jenne Riveros Designer",phone:"+57 321 218 3037",phoneClean:"573212183037",addr:"Cra. 58 128B-21, Bogotá",cat:"Vestidos de Novia",webType:"has-web",webUrl:"https://vestidosdenovia.company.site",webLabel:"vestidosdenovia.company.site",social:[{"platform":"whatsapp","url":"https://wa.me/573212183037","label":"WhatsApp"}],lat:null,lng:null},
+{id:"b68",name:"Alquiler Smoking Bogotá",phone:"+57 301 625 6476",phoneClean:"573016256476",addr:"Bogotá",cat:"Alquiler de Smoking / Trajes",webType:"has-web",webUrl:"https://alquilersmokingbogota.com",webLabel:"alquilersmokingbogota.com",social:[{"platform":"whatsapp","url":"https://wa.me/573016256476","label":"WhatsApp"}],lat:null,lng:null},
+{id:"b69",name:"Click2Dress",addr:"Cl. 93B #11A-84 Local 302, CC Portobelo, Bogotá",cat:"Alquiler de Vestidos de Fiesta",webType:"has-web",webUrl:"https://click2dress.com",webLabel:"click2dress.com",social:[],lat:null,lng:null},
+{id:"b70",name:"Paola Dimaya Alta Costura",addr:"Cra. 15 #119-59, Bogotá",cat:"Alquiler Trajes de Etiqueta",webType:"has-web",webUrl:"https://www.paoladimaya.com",webLabel:"paoladimaya.com",social:[],lat:null,lng:null},
+{id:"b71",name:"Sarta & Bguest",addr:"Bogotá",cat:"Alquiler de Vestidos",webType:"social-only",webUrl:"https://instagram.com/sartavestidos",webLabel:"Instagram",social:[{"platform":"instagram","url":"https://instagram.com/sartavestidos","label":"Instagram"},{"platform":"instagram","url":"https://instagram.com/bguest.co","label":"Instagram"}],lat:null,lng:null},
+{id:"b72",name:"Cherie Boutique",addr:"CC Unicentro Local 2-109, Bogotá",cat:"Boutique / Ropa Mujer",webType:"has-web",webUrl:"https://cherie.com.co",webLabel:"cherie.com.co",social:[],lat:null,lng:null},
+{id:"b73",name:"By Caicedo",addr:"Bogotá",cat:"Ropa Mujer / Moda Femenina",webType:"has-web",webUrl:"https://bycaicedo.com",webLabel:"bycaicedo.com",social:[],lat:null,lng:null},
+{id:"b74",name:"Karissa Moda",addr:"Bogotá",cat:"Ropa Mujer",webType:"has-web",webUrl:"https://karissamoda.com",webLabel:"karissamoda.com",social:[],lat:null,lng:null},
+{id:"b75",name:"Alison Ropa Tejida",addr:"Bogotá",cat:"Ropa Tejida / Suéteres",webType:"has-web",webUrl:"https://alison.com.co",webLabel:"alison.com.co",social:[],lat:null,lng:null},
+{id:"b76",name:"Zigzag Design For Men",addr:"Bogotá",cat:"Trajes Hombre / Alquiler",webType:"has-web",webUrl:"https://zigzagdesignformen.com.co",webLabel:"zigzagdesignformen.com.co",social:[],lat:null,lng:null},
+{id:"b77",name:"Bettina Spitz María Antonieta",addr:"Bogotá",cat:"Ropa Mujer / Alta Costura",webType:"has-web",webUrl:"https://bettinaspitz.com",webLabel:"bettinaspitz.com",social:[],lat:null,lng:null}
 ];
 
 var DATA = [];
@@ -373,6 +390,24 @@ var a = document.createElement('a');
 a.href = URL.createObjectURL(blob);
 a.download = 'prospeccion_bogota.json';
 a.click();
+}
+
+function syncToServer() {
+if (!API_URL) { alert('No hay servidor configurado (API_URL vacío)'); return; }
+var state = getState();
+var payload = {};
+Object.keys(state).forEach(function(k) {
+if (k === '_deleted' || k === '__exported') return;
+payload[k] = state[k];
+});
+var opts = { method: 'PUT', headers: apiHeaders(), body: JSON.stringify(payload) };
+fetch(API_URL + '/negocios/bulk-state', opts)
+.then(function(r) { return r.json(); })
+.then(function(resp) {
+if (resp.ok) alert(resp.updated + ' registros sincronizados al servidor');
+else alert('Error: ' + (resp.error || 'desconocido'));
+})
+.catch(function(err) { alert('Error de conexión: ' + err.message); });
 }
 
 function importJSON(event) {
@@ -635,6 +670,8 @@ return { id: r.id, name: r.name, cat: r.cat, addr: r.addr, phone: r.phone, phone
 });
 DATA.forEach(function(d) { if (CATEGORIES.indexOf(d.cat) === -1) CATEGORIES.push(d.cat); });
 CATEGORIES.sort();
+var existingState = {};
+try { existingState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e) {}
 var state = {};
 apiData.forEach(function(r) {
 var notes = [];
@@ -643,6 +680,19 @@ state[r.id] = { status: r.status || 'pendiente', priority: r.priority || 'warm',
 if (r.deleted) {
 if (!state._deleted) state._deleted = [];
 state._deleted.push(r.id);
+}
+});
+Object.keys(existingState).forEach(function(k) {
+if (k === '_deleted' || k === '__exported') return;
+if (state[k]) {
+var ex = existingState[k];
+if (ex) {
+state[k].status = ex.status || state[k].status;
+state[k].priority = ex.priority || state[k].priority;
+state[k].notes = ex.notes || state[k].notes;
+}
+} else {
+state[k] = existingState[k];
 }
 });
 localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
