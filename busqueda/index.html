@@ -488,7 +488,7 @@ var statTypeMap = { 'no-web':'no-web', 'social-only':'social-only', 'has-web':'h
 var statsHtml = '';
 statConfig.forEach(function(c) {
 var active = sectionFilter === statTypeMap[c.key] ? 'active' : '';
-statsHtml += '<div class="stat-card ' + c.cls + ' ' + active + '" onclick="setSectionFilter(\' + (statTypeMap[c.key] || '') + \')"><div class="num">' + counts[c.key] + '</div><div class="label">' + c.label + '</div></div>';
+statsHtml += '<div class="stat-card ' + c.cls + ' ' + active + '" onclick="setSectionFilter(\'' + (statTypeMap[c.key] || '') + '\')"><div class="num">' + counts[c.key] + '</div><div class="label">' + c.label + '</div></div>';
 });
 document.getElementById('statsRow').innerHTML = statsHtml;
 
@@ -521,7 +521,7 @@ var prioIcons = { hot: '🔥', warm: '💤', cold: '❄️' };
 var statusLabels = { pendiente: 'Pend', contactado: 'Cont', convertido: 'Conv', rechazado: 'Desc' };
 var statusBtns = '';
 ['pendiente', 'contactado', 'convertido', 'rechazado'].forEach(function(s) {
-statusBtns += '<button class="status-btn ' + (st === s ? 's-' + s : '') + '" onclick="setStatus(\' + d.id + \',\' + s + \')">' + statusLabels[s] + '</button>';
+statusBtns += '<button class="status-btn ' + (st === s ? 's-' + s : '') + '" onclick="setStatus(\'' + d.id + '\',\'' + s + '\')">' + statusLabels[s] + '</button>';
 });
 
 var quickNotes = [
@@ -542,28 +542,28 @@ notesHtml += n.text + '</div>';
 
 var quickBtnsHtml = '';
 quickNotes.forEach(function(q) {
-quickBtnsHtml += '<button class="status-btn" onclick="addNote(\' + d.id + \',\' + q.emoji + ' ' + q.label + \')" title="' + q.label + '">' + q.emoji + '</button>';
+quickBtnsHtml += '<button class="status-btn" onclick="addNote(\'' + d.id + '\',\'' + q.emoji + ' ' + q.label + '\')" title="' + q.label + '">' + q.emoji + '</button>';
 });
 
 if (isDel) {
-html += '<div class="card deleted"><div class="info"><div class="name" style="text-decoration:line-through;opacity:.7">' + d.name + '</div><div class="meta">' + d.phone + ' · ' + d.cat + '</div></div><div class="actions" style="justify-content:center"><span class="badge no-web">Eliminado</span><button class="btn-restore" onclick="restoreBusiness(\' + d.id + \')">Restaurar</button></div></div>';
+html += '<div class="card deleted"><div class="info"><div class="name" style="text-decoration:line-through;opacity:.7">' + d.name + '</div><div class="meta">' + d.phone + ' · ' + d.cat + '</div></div><div class="actions" style="justify-content:center"><span class="badge no-web">Eliminado</span><button class="btn-restore" onclick="restoreBusiness(\'' + d.id + '\')">Restaurar</button></div></div>';
 } else {
 html += '<div class="card status-' + st + '">';
 html += '<div class="info">';
-html += '<div class="name">' + prioIcons[pr] + ' ' + d.name + ' <button class="btn-delete" onclick="deleteBusiness(\' + d.id + \')" title="Eliminar">✕</button></div>';
+html += '<div class="name">' + prioIcons[pr] + ' ' + d.name + ' <button class="btn-delete" onclick="deleteBusiness(\'' + d.id + '\')" title="Eliminar">✕</button></div>';
 html += '<div class="meta"><strong>Categoria:</strong> ' + d.cat + '</div>';
 html += '<div class="meta">' + d.addr + ' <a href="' + mapsUrl + '" target="_blank" class="web-link" title="Ver en Google Maps">📍 Ver mapa</a></div>';
 html += webMeta;
 html += '<div class="phone">' + d.phone + '</div>';
 html += '<div style="margin-top:6px"><span style="font-size:10px;font-weight:600;color:#6b7280">Prioridad:</span> ';
-html += '<button class="status-btn ' + (pr === 'hot' ? 's-convertido' : '') + '" onclick="setPriority(\' + d.id + \',\'hot\')">🔥</button> ';
-html += '<button class="status-btn ' + (pr === 'warm' ? 's-contactado' : '') + '" onclick="setPriority(\' + d.id + \',\'warm\')">💤</button> ';
-html += '<button class="status-btn ' + (pr === 'cold' ? 's-rechazado' : '') + '" onclick="setPriority(\' + d.id + \',\'cold\')">❄️</button> ';
+html += '<button class="status-btn ' + (pr === 'hot' ? 's-convertido' : '') + '" onclick="setPriority(\'' + d.id + '\',\'hot\')">🔥</button> ';
+html += '<button class="status-btn ' + (pr === 'warm' ? 's-contactado' : '') + '" onclick="setPriority(\'' + d.id + '\',\'warm\')">💤</button> ';
+html += '<button class="status-btn ' + (pr === 'cold' ? 's-rechazado' : '') + '" onclick="setPriority(\'' + d.id + '\',\'cold\')">❄️</button> ';
 html += '</div>';
 html += '<div class="note-label">Historial de actividad</div>';
 html += '<div style="max-height:120px;overflow-y:auto;margin-bottom:4px">' + (notesHtml || '<div style="font-size:11px;color:#bbb;padding:4px 0">Sin actividad registrada</div>') + '</div>';
 html += '<div style="display:flex;gap:2px;flex-wrap:wrap;margin-bottom:4px">' + quickBtnsHtml + '</div>';
-html += '<textarea class="note-input" placeholder="Escribe una nota personalizada..." onchange="addNote(\' + d.id + \',this.value)" onfocus="this.value=''"></textarea>';
+html += '<textarea class="note-input" placeholder="Escribe una nota personalizada..." onchange="addNote(\'' + d.id + '\',this.value)" onfocus="this.value=\'\'"></textarea>';
 html += '</div>';
 html += '<div class="actions">';
 html += webBadge;
