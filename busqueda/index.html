@@ -65,6 +65,8 @@ h1 { text-align: center; color: #1a1a2e; margin-bottom: 4px; font-size: 26px; }
 .phone-link:hover { background: #1d4ed8; }
 .wa-link { background: #25D366; color: white; }
 .wa-link:hover { background: #1ebe5d; }
+.propuesta-link { display: inline-flex; align-items: center; justify-content: center; gap: 4px; padding: 5px 10px; border-radius: 6px; text-decoration: none; font-size: 11px; font-weight: 600; transition: all .2s; background: #6366f1; color: white; }
+.propuesta-link:hover { background: #4f46e5; }
 .badge { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 10px; font-weight: 600; letter-spacing: .2px; }
 .badge.no-web { background: #fef2f2; color: #dc2626; }
 .badge.social-only { background: #fff7ed; color: #ea580c; }
@@ -676,7 +678,7 @@ html += '<textarea class="note-input" placeholder="Escribe una nota personalizad
 html += '</div>';
 html += '<div class="actions">';
 html += webBadge;
-if (d.propuesta) html += '<a href="' + d.propuesta + '" target="_blank" class="badge has-web" style="background:#6366f1;text-decoration:none;cursor:pointer;font-size:10px;padding:2px 6px;border-radius:4px;color:#fff;display:inline-block;margin-bottom:4px">Propuesta</a> ';
+if (d.propuesta) html += '<a href="' + d.propuesta + '" target="_blank" class="propuesta-link">Propuesta</a> ';
 html += '<a href="tel:' + d.phoneClean + '" class="phone-link">📞 Llamar</a>';
 html += '<a href="https://wa.me/' + d.phoneClean + '?text=' + waMsg + '" target="_blank" class="wa-link">💬 WhatsApp</a>';
 html += '<a href="' + mapsUrl + '" target="_blank" class="wa-link" style="background:#ea580c">📍 Maps</a>';
