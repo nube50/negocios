@@ -129,7 +129,7 @@ body.dark-mode .dark-toggle:hover { background: #33343d; }
 <div class="container">
 
 <h1> Prospección Web · Bogotá</h1>
-<p class="subtitle">Datos incluidos en el HTML · Tus estados/notas se guardan solos al cerrar</p>
+<p class="subtitle" id="subtitle">Conectando...</p>
 
 <div class="stats-row" id="statsRow"></div>
 
@@ -179,10 +179,10 @@ Usa Exportar/Importar JSON para respaldar o mover tus datos entre dispositivos
 </div>
 
 <script>
-// ============================================================
-// DATOS DE NEGOCIOS — El AI actualiza esto con nuevas búsquedas
-// ============================================================
-var DATA = [
+var API_URL = '';
+var API_KEY = '';
+var STORAGE_KEY = 'prospeccion_bogota';
+var DATA_FALLBACK = [
 {id:"b1",name:"Restaurante Tabasco - Comida Tradicional Mexicana",cat:"Restaurante",addr:"Cra. 99 #20B-40, Fontibon",phone:"+57 310 3077085",phoneClean:"573103077085",webType:"no-web",webUrl:"",webLabel:""},
 {id:"b2",name:"El sazon de las Paisas",cat:"Restaurante",addr:"Cl. 71A #90b - 25, Bogota",phone:"+57 313 3534064",phoneClean:"573133534064",webType:"no-web",webUrl:"",webLabel:""},
 {id:"b3",name:"Tranvia Restaurante",cat:"Restaurante",addr:"Cra. 103d #8315, Bogota",phone:"+57 14314507",phoneClean:"5714314507",webType:"no-web",webUrl:"",webLabel:""},
@@ -235,10 +235,23 @@ var DATA = [
 {id:"b63",name:"XL Gourmet",cat:"Comida Rápida (Hamburguesas)",addr:"Calle 8va Sur #32D-12, Ciudad Montes, Bogotá",phone:"+57 320 803 2421",phoneClean:"573208032421",webType:"has-web",webUrl:"https://www.xlgourmet.com/",webLabel:"xlgourmet.com"}
 ];
 
-// ============================================================
-// GESTION DE ESTADO (localStorage)
-// ============================================================
-var STORAGE_KEY = 'prospeccion_bogota';
+var DATA = [];
+var CATEGORIES = [];
+var sectionFilter = null;
+var showDeleted = false;
+
+function apiHeaders() {
+var h = { 'Content-Type': 'application/json' };
+if (API_KEY) h['Authorization'] = 'Bearer ' + API_KEY;
+return h;
+}
+
+function apiCall(method, path, body) {
+if (!API_URL) return;
+var opts = { method: method, headers: apiHeaders() };
+if (body) opts.body = JSON.stringify(body);
+fetch(API_URL + path, opts).catch(function(){});
+}
 
 function getState() {
 try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e) { return {}; }
@@ -254,6 +267,7 @@ var s = getState();
 if (!s[id]) s[id] = {};
 s[id].status = st;
 saveState(s);
+apiCall('PUT', '/negocios/' + id + '/status', { status: st });
 render();
 }
 
@@ -267,6 +281,7 @@ var s = getState();
 if (!s[id]) s[id] = {};
 s[id].priority = p;
 saveState(s);
+apiCall('PUT', '/negocios/' + id + '/priority', { priority: p });
 render();
 }
 
@@ -279,13 +294,6 @@ if (typeof n === 'string') return [{ts: '', text: n}];
 return n;
 }
 
-function setNotes(id, arr) {
-var s = getState();
-if (!s[id]) s[id] = {};
-s[id].notes = arr;
-saveState(s);
-}
-
 function addNote(id, text) {
 var s = getState();
 if (!s[id]) s[id] = {};
@@ -295,6 +303,7 @@ var existing = s[id].notes;
 if (!existing || typeof existing === 'string') existing = [];
 s[id].notes = existing.concat({ts: ts, text: text});
 saveState(s);
+apiCall('PUT', '/negocios/' + id + '/notes', { note: text });
 render();
 }
 
@@ -304,6 +313,7 @@ var s = getState();
 if (!s._deleted) s._deleted = [];
 if (s._deleted.indexOf(id) === -1) s._deleted.push(id);
 saveState(s);
+apiCall('DELETE', '/negocios/' + id);
 render();
 }
 
@@ -311,15 +321,9 @@ function restoreBusiness(id) {
 var s = getState();
 if (s._deleted) s._deleted = s._deleted.filter(function(d) { return d !== id; });
 saveState(s);
+apiCall('POST', '/negocios/' + id + '/restore');
 render();
 }
-
-// ============================================================
-// FILTROS
-// ============================================================
-var CATEGORIES = [];
-DATA.forEach(function(d) { if (CATEGORIES.indexOf(d.cat) === -1) CATEGORIES.push(d.cat); });
-CATEGORIES.sort();
 
 function initFilters() {
 var sel = document.getElementById('categoryFilter');
@@ -339,9 +343,6 @@ document.getElementById('webFilter').value = '';
 render();
 }
 
-var sectionFilter = null;
-var showDeleted = false;
-
 function setSectionFilter(type) {
 sectionFilter = sectionFilter === type ? null : type;
 render();
@@ -353,9 +354,6 @@ document.getElementById('showDeletedBtn').textContent = showDeleted ? 'Ocultar e
 render();
 }
 
-// ============================================================
-// EXPORT / IMPORT
-// ============================================================
 function exportJSON() {
 var state = getState();
 var payload = { version: 1, exportedAt: new Date().toISOString(), data: state };
@@ -396,8 +394,9 @@ var notesArr = getNotes(d.id);
 var nt = notesArr.map(function(n) { return (n.ts ? n.ts + ' ' : '') + n.text; }).join(' | ');
 rows.push([d.name, d.phone, d.addr, d.cat, d.webType === 'no-web' ? 'Sin web' : d.webType === 'social-only' ? 'Redes' : 'Con web', d.webUrl, st, prLabels[pr], nt]);
 });
-var csv = rows.map(function(r) { return r.map(function(v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(','); }).join('\n');
-var blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+var csv = rows.map(function(r) { return r.map(function(v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(','); }).join('
+');
+var blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' });
 var a = document.createElement('a');
 a.href = URL.createObjectURL(blob);
 a.download = 'prospeccion_bogota.csv';
@@ -441,9 +440,6 @@ a.download = 'resumen_prospeccion.txt';
 a.click();
 }
 
-// ============================================================
-// RENDER
-// ============================================================
 function render() {
 var search = document.getElementById('searchBox').value.toLowerCase().trim();
 var catFilter = document.getElementById('categoryFilter').value;
@@ -474,7 +470,6 @@ if (webFilter && d.webType !== webFilter) return false;
 return true;
 });
 
-// Stats
 var statConfig = [
 {key:'total', cls:'total', label:'Activos'},
 {key:'eliminados', cls:'total', label:'Eliminados'},
@@ -494,13 +489,12 @@ var statTypeMap = { 'no-web':'no-web', 'social-only':'social-only', 'has-web':'h
 var statsHtml = '';
 statConfig.forEach(function(c) {
 var active = sectionFilter === statTypeMap[c.key] ? 'active' : '';
-statsHtml += '<div class="stat-card ' + c.cls + ' ' + active + '" onclick="setSectionFilter(\'' + (statTypeMap[c.key] || '') + '\')"><div class="num">' + counts[c.key] + '</div><div class="label">' + c.label + '</div></div>';
+statsHtml += '<div class="stat-card ' + c.cls + ' ' + active + '" onclick="setSectionFilter(\' + (statTypeMap[c.key] || '') + \')"><div class="num">' + counts[c.key] + '</div><div class="label">' + c.label + '</div></div>';
 });
 document.getElementById('statsRow').innerHTML = statsHtml;
 
 document.getElementById('resultsInfo').textContent = 'Mostrando ' + filtered.length + ' de ' + activeData.length + ' activos · ' + deletedData.length + ' eliminados' + (showDeleted ? ' (mostrando eliminados)' : '');
 
-// Cards
 var html = '';
 filtered.forEach(function(d) {
 var st = state[d.id] ? (state[d.id].status || 'pendiente') : 'pendiente';
@@ -523,19 +517,14 @@ var waMsg = d.webType === 'has-web'
 ? encodeURIComponent('¡Hola ' + d.name.split('-')[0].trim() + '! Vi tu sitio web y me gustaria comentarte algunas ideas para mejorarlo. ¿Te interesaria?')
 : encodeURIComponent('¡Hola ' + d.name.split('-')[0].trim() + '! Te contactaba porque vi tu negocio en Google Maps y note que no tienes pagina web. Me dedico a crear sitios web profesionales para negocios en Bogota. ¿Te interesaria saber mas?');
 
-// Priority indicator
 var prioIcons = { hot: '🔥', warm: '💤', cold: '❄️' };
-var prioLabels = { hot: 'Caliente', warm: 'Tibio', cold: 'Frío' };
 
-// Status buttons
 var statusLabels = { pendiente: 'Pend', contactado: 'Cont', convertido: 'Conv', rechazado: 'Desc' };
 var statusBtns = '';
-var statusKeys = ['pendiente', 'contactado', 'convertido', 'rechazado'];
-statusKeys.forEach(function(s) {
-statusBtns += '<button class="status-btn ' + (st === s ? 's-' + s : '') + '" onclick="setStatus(\'' + d.id + '\',\'' + s + '\')">' + statusLabels[s] + '</button>';
+['pendiente', 'contactado', 'convertido', 'rechazado'].forEach(function(s) {
+statusBtns += '<button class="status-btn ' + (st === s ? 's-' + s : '') + '" onclick="setStatus(\' + d.id + \',\' + s + \')">' + statusLabels[s] + '</button>';
 });
 
-// Quick notes
 var quickNotes = [
 {label:'No contestó', emoji:'📵'},
 {label:'Dejé mensaje', emoji:'💬'},
@@ -545,7 +534,6 @@ var quickNotes = [
 {label:'No le interesa', emoji:'👎'}
 ];
 
-// Notes HTML
 var notesHtml = '';
 notesArr.forEach(function(n) {
 notesHtml += '<div style="font-size:11px;color:#555;padding:2px 0;border-bottom:1px solid #f0f0f0">';
@@ -555,28 +543,28 @@ notesHtml += n.text + '</div>';
 
 var quickBtnsHtml = '';
 quickNotes.forEach(function(q) {
-quickBtnsHtml += '<button class="status-btn" onclick="addNote(\'' + d.id + '\',\'' + q.emoji + ' ' + q.label + '\')" title="' + q.label + '">' + q.emoji + '</button>';
+quickBtnsHtml += '<button class="status-btn" onclick="addNote(\' + d.id + \',\' + q.emoji + ' ' + q.label + \')" title="' + q.label + '">' + q.emoji + '</button>';
 });
 
 if (isDel) {
-html += '<div class="card deleted"><div class="info"><div class="name" style="text-decoration:line-through;opacity:.7">' + d.name + '</div><div class="meta">' + d.phone + ' · ' + d.cat + '</div></div><div class="actions" style="justify-content:center"><span class="badge no-web">Eliminado</span><button class="btn-restore" onclick="restoreBusiness(\'' + d.id + '\')">Restaurar</button></div></div>';
+html += '<div class="card deleted"><div class="info"><div class="name" style="text-decoration:line-through;opacity:.7">' + d.name + '</div><div class="meta">' + d.phone + ' · ' + d.cat + '</div></div><div class="actions" style="justify-content:center"><span class="badge no-web">Eliminado</span><button class="btn-restore" onclick="restoreBusiness(\' + d.id + \')">Restaurar</button></div></div>';
 } else {
 html += '<div class="card status-' + st + '">';
 html += '<div class="info">';
-html += '<div class="name">' + prioIcons[pr] + ' ' + d.name + ' <button class="btn-delete" onclick="deleteBusiness(\'' + d.id + '\')" title="Eliminar">✕</button></div>';
+html += '<div class="name">' + prioIcons[pr] + ' ' + d.name + ' <button class="btn-delete" onclick="deleteBusiness(\' + d.id + \')" title="Eliminar">✕</button></div>';
 html += '<div class="meta"><strong>Categoria:</strong> ' + d.cat + '</div>';
 html += '<div class="meta">' + d.addr + ' <a href="' + mapsUrl + '" target="_blank" class="web-link" title="Ver en Google Maps">📍 Ver mapa</a></div>';
 html += webMeta;
 html += '<div class="phone">' + d.phone + '</div>';
 html += '<div style="margin-top:6px"><span style="font-size:10px;font-weight:600;color:#6b7280">Prioridad:</span> ';
-html += '<button class="status-btn ' + (pr === 'hot' ? 's-convertido' : '') + '" onclick="setPriority(\'' + d.id + '\',\'hot\')">🔥</button> ';
-html += '<button class="status-btn ' + (pr === 'warm' ? 's-contactado' : '') + '" onclick="setPriority(\'' + d.id + '\',\'warm\')">💤</button> ';
-html += '<button class="status-btn ' + (pr === 'cold' ? 's-rechazado' : '') + '" onclick="setPriority(\'' + d.id + '\',\'cold\')">❄️</button> ';
+html += '<button class="status-btn ' + (pr === 'hot' ? 's-convertido' : '') + '" onclick="setPriority(\' + d.id + \',\'hot\')">🔥</button> ';
+html += '<button class="status-btn ' + (pr === 'warm' ? 's-contactado' : '') + '" onclick="setPriority(\' + d.id + \',\'warm\')">💤</button> ';
+html += '<button class="status-btn ' + (pr === 'cold' ? 's-rechazado' : '') + '" onclick="setPriority(\' + d.id + \',\'cold\')">❄️</button> ';
 html += '</div>';
 html += '<div class="note-label">Historial de actividad</div>';
 html += '<div style="max-height:120px;overflow-y:auto;margin-bottom:4px">' + (notesHtml || '<div style="font-size:11px;color:#bbb;padding:4px 0">Sin actividad registrada</div>') + '</div>';
 html += '<div style="display:flex;gap:2px;flex-wrap:wrap;margin-bottom:4px">' + quickBtnsHtml + '</div>';
-html += '<textarea class="note-input" placeholder="Escribe una nota personalizada..." onchange="addNote(\'' + d.id + '\',this.value)" onfocus="this.value=\'\'"></textarea>';
+html += '<textarea class="note-input" placeholder="Escribe una nota personalizada..." onchange="addNote(\' + d.id + \',this.value)" onfocus="this.value=''"></textarea>';
 html += '</div>';
 html += '<div class="actions">';
 html += webBadge;
@@ -592,9 +580,6 @@ html += '</div>';
 document.getElementById('businessList').innerHTML = html;
 }
 
-// ============================================================
-// MODO OSCURO
-// ============================================================
 function initDarkMode() {
 var dark = localStorage.getItem(STORAGE_KEY + '_dark') === 'true';
 if (dark) { document.body.classList.add('dark-mode'); document.getElementById('darkToggle').textContent = '☀️'; }
@@ -605,9 +590,61 @@ document.getElementById('darkToggle').textContent = on ? '☀️' : '🌙';
 localStorage.setItem(STORAGE_KEY + '_dark', on);
 }
 
+function initOffline() {
+DATA = DATA_FALLBACK;
+DATA.forEach(function(d) { if (CATEGORIES.indexOf(d.cat) === -1) CATEGORIES.push(d.cat); });
+CATEGORIES.sort();
 initFilters();
 initDarkMode();
+document.getElementById('subtitle').textContent = 'Modo offline · Tus estados/notas se guardan en el navegador';
 render();
+}
+
+function initAPIMode() {
+document.getElementById('subtitle').textContent = 'Conectando con el servidor...';
+var opts = { headers: { 'Content-Type': 'application/json' } };
+if (API_KEY) opts.headers['Authorization'] = 'Bearer ' + API_KEY;
+fetch(API_URL + '/negocios', opts)
+.then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+.then(function(resp) {
+if (!resp.ok) throw new Error(resp.error || 'API error');
+var apiData = resp.data;
+DATA = apiData.map(function(r) {
+return { id: r.id, name: r.name, cat: r.cat, addr: r.addr, phone: r.phone, phoneClean: r.phoneClean, webType: r.webType, webUrl: r.webUrl, webLabel: r.webLabel };
+});
+DATA.forEach(function(d) { if (CATEGORIES.indexOf(d.cat) === -1) CATEGORIES.push(d.cat); });
+CATEGORIES.sort();
+var state = {};
+apiData.forEach(function(r) {
+var notes = [];
+try { notes = typeof r.notes === 'string' ? JSON.parse(r.notes) : (r.notes || []); } catch(e) {}
+state[r.id] = { status: r.status || 'pendiente', priority: r.priority || 'warm', notes: notes };
+if (r.deleted) {
+if (!state._deleted) state._deleted = [];
+state._deleted.push(r.id);
+}
+});
+localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+initFilters();
+initDarkMode();
+document.getElementById('subtitle').textContent = 'Conectado al servidor · Los cambios se sincronizan automáticamente';
+render();
+})
+.catch(function(err) {
+console.warn('API no disponible, usando datos locales:', err);
+initOffline();
+});
+}
+
+function initApp() {
+if (API_URL) {
+initAPIMode();
+} else {
+initOffline();
+}
+}
+
+initApp();
 </script>
 </body>
 </html>
