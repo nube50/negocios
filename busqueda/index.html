@@ -158,6 +158,10 @@ body.dark-mode .login-box{background:#1e1e2a;box-shadow:0 4px 24px rgba(0,0,0,0.
 body.dark-mode .login-box h2{color:#f0f0f0}
 body.dark-mode .login-input{background:#2a2a3a;border-color:#3a3a4a;color:#f0f0f0}
 </style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
 <div class="login-screen" id="loginScreen">
@@ -251,7 +255,7 @@ var DATA_FALLBACK = [
 {id:"b21",name:"Seventh",phone:"+57 1 612 2281",phoneClean:"5716122281",addr:"CC Hacienda Santa Bárbara Local D211, Usaquén",cat:"Ropa Formal Mujer",webType:"no-web",webUrl:"",social:[{platform:"whatsapp",url:"https://wa.me/5716122281",label:"WhatsApp"}],lat:4.7,lng:-74.03},
 {id:"b22",name:"Maria Mulata",phone:"+57 305 429 9909",phoneClean:"573054299909",addr:"Calle 140 #9-69, Feria artesanal Local ñ12, Bogotá",cat:"Ropa Rockera / Alternativa",webType:"social-only",webUrl:"",social:[{platform:"whatsapp",url:"https://wa.me/573054299909",label:"WhatsApp"}],lat:4.725,lng:-74.035},
 {id:"b23",name:"Restaurante Azul Clarito",phone:"+57 304 3333626",phoneClean:"573043333626",addr:"Cl. 86 #103 d 07, Bogota",cat:"Restaurante",webType:"no-web",webUrl:"",social:[{platform:"whatsapp",url:"https://wa.me/573043333626",label:"WhatsApp"}],lat:null,lng:null},
-{id:"b24",name:"Stacia Store",phone:"+57 300 478 0637",phoneClean:"573004780637",addr:"Calle 22 #14-53, Bogotá",cat:"Tienda de Ropa",webType:"social-only",webUrl:"https://instagram.com/stacia_store",social:[{platform:"whatsapp",url:"https://wa.me/573004780637",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/stacia_store",label:"Instagram"}],lat:4.59,lng:-74.08},
+{id:"b24",name:"Stacia Store",phone:"+57 300 478 0637",phoneClean:"573004780637",addr:"Calle 22 #14-53, Bogotá",cat:"Tienda de Ropa",webType:"social-only",webUrl:"https://instagram.com/stacia_store",social:[{platform:"whatsapp",url:"https://wa.me/573004780637",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/stacia_store",label:"Instagram"}],lat:4.59,lng:-74.08,propuesta:"https://lp-stacia-store.vercel.app"},
 {id:"b25",name:"Somo Ilius",phone:"+57 322 374 4097",phoneClean:"573223744097",addr:"Barrio Perdomo, Bogotá",cat:"Ropa Unisex",webType:"social-only",webUrl:"https://instagram.com/ilius1_",social:[{platform:"whatsapp",url:"https://wa.me/573223744097",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/ilius1_",label:"Instagram"}],lat:4.56,lng:-74.15},
 {id:"b30",name:"Restaurante Buque Gourmet",phone:"+57 314 3429820",phoneClean:"573143429820",addr:"Cl. 22b # 42-15, Bogota",cat:"Restaurante",webType:"social-only",webUrl:"https://instagram.com/restaurantebuque",social:[{platform:"whatsapp",url:"https://wa.me/573143429820",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/restaurantebuque",label:"Instagram"}],lat:null,lng:null},
 {id:"b31",name:"Restaurante Luna de Paris",phone:"+57 310 3091475",phoneClean:"573103091475",addr:"Cl. 86 #103d - 19, Engativa",cat:"Restaurante",webType:"social-only",webUrl:"https://www.facebook.com/lunadeparisgourmet",social:[{platform:"whatsapp",url:"https://wa.me/573103091475",label:"WhatsApp"},{platform:"facebook",url:"https://www.facebook.com/lunadeparisgourmet",label:"Facebook"}],lat:null,lng:null},
@@ -819,6 +823,7 @@ initOffline();
 }
 
 if(localStorage.getItem(AUTH_KEY) === 'gestion') initApp();
+if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 </script>
 </body>
 </html>
