@@ -419,6 +419,43 @@ sel.appendChild(o);
 });
 }
 
+var pollTimer = null;
+
+function startPolling() {
+  if (pollTimer) return;
+  pollTimer = setInterval(function() {
+    var opts = { headers: { 'Content-Type': 'application/json' } };
+    if (API_KEY) opts.headers['Authorization'] = 'Bearer ' + API_KEY;
+    fetch(API_URL + '/negocios', opts)
+      .then(function(r) { return r.json(); })
+      .then(function(resp) {
+        if (!resp.ok) return;
+        var local = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        var changed = false;
+        resp.data.forEach(function(r) {
+          var notes = [];
+          try { notes = typeof r.notes === 'string' ? JSON.parse(r.notes) : (r.notes || []); } catch(e) {}
+          var serverState = { status: r.status || 'pendiente', priority: r.priority || 'warm', notes: notes };
+          if (r.deleted) {
+            if (!local._deleted) local._deleted = [];
+            if (local._deleted.indexOf(r.id) === -1) { local._deleted.push(r.id); changed = true; }
+          } else {
+            if (local._deleted) { var idx = local._deleted.indexOf(r.id); if (idx !== -1) { local._deleted.splice(idx, 1); changed = true; } }
+          }
+          var cur = local[r.id];
+          if (!cur) { local[r.id] = serverState; changed = true; return; }
+          ['status','priority'].forEach(function(k) { if (serverState[k] !== cur[k]) { cur[k] = serverState[k]; changed = true; } });
+          if (serverState.notes.length > cur.notes.length) { cur.notes = serverState.notes; changed = true; }
+        });
+        if (changed) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(local));
+          render();
+        }
+      })
+      .catch(function() {});
+  }, 15000);
+}
+
 function resetFilters() {
 document.getElementById('searchBox').value = '';
 document.getElementById('categoryFilter').value = '';
@@ -764,9 +801,11 @@ initFilters();
 initDarkMode();
 document.getElementById('subtitle').textContent = 'Conectado al servidor · Los cambios se sincronizan automáticamente';
 render();
+startPolling();
 })
 .catch(function(err) {
 console.warn('API no disponible, usando datos locales:', err);
+if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
 initOffline();
 });
 }
