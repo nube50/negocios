@@ -709,7 +709,7 @@ html += '<div class="meta"><strong>Categoria:</strong> ' + d.cat + '</div>';
 html += '<div class="meta">' + d.addr + ' <a href="' + mapsUrl + '" target="_blank" class="web-link" title="Ver en Google Maps">📍 Ver mapa</a></div>';
 html += webMeta;
 html += '<div class="phone">' + d.phone + '</div>';
-d.social.forEach(function(s) { if (s.platform === 'whatsapp') { var ap = s.url.replace('https://wa.me/',''); if (ap !== d.phoneClean) { html += '<div class="phone-alt">📞 +' + ap.slice(0,3) + ' ' + ap.slice(3) + ' <span style="font-size:10px;color:#6b7280">(' + s.label.replace('WhatsApp ','') + ')</span></div>'; } } });
+d.social.forEach(function(s) { if (s.platform === 'whatsapp') { var ap = s.url.replace('https://wa.me/',''); if (ap !== d.phoneClean) { html += '<div class="phone-alt">📞 +' + ap.slice(0,2) + ' ' + ap.slice(2,5) + ' ' + ap.slice(5,8) + ' ' + ap.slice(8) + ' <span style="font-size:10px;color:#6b7280">(' + s.label.replace('WhatsApp ','') + ')</span></div>'; } } });
 html += '<div style="margin-top:6px"><span style="font-size:10px;font-weight:600;color:#6b7280">Prioridad:</span> ';
 html += '<button class="status-btn ' + (pr === 'hot' ? 's-convertido' : '') + '" onclick="setPriority(\'' + d.id + '\',\'hot\')">🔥</button> ';
 html += '<button class="status-btn ' + (pr === 'warm' ? 's-contactado' : '') + '" onclick="setPriority(\'' + d.id + '\',\'warm\')">💤</button> ';
