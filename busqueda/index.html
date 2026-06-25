@@ -56,6 +56,7 @@ h1 { text-align: center; color: #1a1a2e; margin-bottom: 4px; font-size: 26px; }
 .card .meta { font-size: 12px; color: #666; line-height: 1.5; }
 .card .meta strong { color: #333; }
 .card .phone { font-size: 14px; font-weight: 700; color: #2563eb; margin-top: 4px; }
+.card .phone-alt { font-size: 12px; font-weight: 500; color: #2563eb; margin-top: 2px; opacity: 0.85; }
 .web-link { color: #2563eb; text-decoration: none; font-size: 12px; }
 .web-link:hover { text-decoration: underline; }
 
@@ -80,6 +81,7 @@ h1 { text-align: center; color: #1a1a2e; margin-bottom: 4px; font-size: 26px; }
 .social-icon.whatsapp { background:#25D366; }
 .social-icon.tiktok { background:#000; }
 .social-icon.youtube { background:#FF0000; }
+.social-icon.telegram { background:#0088cc; }
 .social-icon.link { background:#6b7280; }
 body.dark-mode .social-icon { box-shadow:0 1px 4px rgba(0,0,0,0.4); }
 
@@ -267,7 +269,7 @@ var DATA_FALLBACK = [
 {id:"b38",name:"Violeta Inesperada",phone:"+57 319 381 4367",phoneClean:"573193814367",addr:"Bogotá",cat:"Boutique Vintage / Ropa",webType:"social-only",webUrl:"",social:[{platform:"whatsapp",url:"https://wa.me/573193814367",label:"WhatsApp"}],lat:4.65,lng:-74.06},
 {id:"b39",name:"Avril Boutique",phone:"+57 319 318 3824",phoneClean:"573193183824",addr:"Calle 156 #7C-44, Bogotá",cat:"Boutique de Moda",webType:"social-only",webUrl:"",social:[{platform:"whatsapp",url:"https://wa.me/573193183824",label:"WhatsApp"}],lat:4.738,lng:-74.03},
 {id:"b40",name:"Amatita Bisutería",phone:"+57 321 393 2805",phoneClean:"573213932805",addr:"Calle 147 101-57 Local 240, CC Fiesta Suba",cat:"Bisutería Artesanal",webType:"social-only",webUrl:"",social:[{platform:"whatsapp",url:"https://wa.me/573213932805",label:"WhatsApp"}],lat:4.745,lng:-74.085},
-{id:"b41",name:"Inrya - Ropa Hindú",phone:"+57 312 341 5807",phoneClean:"573123415807",addr:"Cra. 58 #137B-01, CC Porto Alegre Local 123, Bogotá",cat:"Ropa Hindú / Moda Oriental",webType:"social-only",webUrl:"",social:[{platform:"whatsapp",url:"https://wa.me/573123415807",label:"WhatsApp"}],lat:4.72,lng:-74.05},
+{id:"b41",name:"Inrya - Ropa Hindú",phone:"+57 312 341 5807",phoneClean:"573123415807",addr:"Cra. 58 #137B-01, CC Porto Alegre Local 123, Bogotá",cat:"Ropa Hindú / Moda Oriental",webType:"has-web",webUrl:"https://inrya.ueniweb.com",social:[{platform:"whatsapp",url:"https://wa.me/573123415807",label:"WhatsApp"}],lat:4.72,lng:-74.05},
 {id:"b50",name:"ZeQueda Paellas",phone:"+57 322 436 6350",phoneClean:"573224366350",addr:"Bogotá (envíos a Bogotá, Chía y Sabana Norte)",cat:"Paellas a Domicilio",webType:"has-web",webUrl:"https://zequedapaellas.com/",social:[{platform:"whatsapp",url:"https://wa.me/573224366350",label:"WhatsApp"}],lat:null,lng:null},
 {id:"b51",name:"Lechonería La Exquisita",phone:"+57 317 522 4626",phoneClean:"573175224626",addr:"Calle 28sur #18a-70, Bogotá",cat:"Lechonería",webType:"has-web",webUrl:"https://lechonadomicilio.com/",social:[{platform:"whatsapp",url:"https://wa.me/573175224626",label:"WhatsApp"}],lat:null,lng:null},
 {id:"b52",name:"Naguara Lunch",phone:"+57 323 735 1526",phoneClean:"573237351526",addr:"Carrera 23c #32-46 Sur, Bogotá",cat:"Comida Rápida Venezolana",webType:"has-web",webUrl:"https://pepitosng.com/",social:[{platform:"whatsapp",url:"https://wa.me/573237351526",label:"WhatsApp"}],lat:null,lng:null},
@@ -294,7 +296,7 @@ var DATA_FALLBACK = [
 {id:"b71",name:"Sarta & Bguest",phone:"+57 313 870 7291",phoneClean:"573138707291",addr:"Cra. 11A #95-15, Bogotá",cat:"Alquiler de Vestidos",webType:"has-web",webUrl:"https://sarta-bguest.com",webLabel:"sarta-bguest.com",social:[{"platform":"whatsapp","url":"https://wa.me/573138707291","label":"WhatsApp"},{"platform":"instagram","url":"https://instagram.com/sartavestidos","label":"Instagram"},{"platform":"instagram","url":"https://instagram.com/bguest.co","label":"Instagram"}],propuesta:"https://lp-sarta-bguest.vercel.app",lat:null,lng:null},
 {id:"b72",name:"Cherie Boutique",phone:"+57 315 863 1774",phoneClean:"573158631774",addr:"CR. 15 #123-30, CC Unicentro Local 2-109, Bogotá",cat:"Boutique / Ropa Mujer",webType:"has-web",webUrl:"https://cherie.com.co",webLabel:"cherie.com.co",social:[{platform:"whatsapp",url:"https://wa.me/573158631774",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/cheriemoda",label:"Instagram"}],lat:null,lng:null},
 {id:"b73",name:"By Caicedo",phone:"+57 300 856 3936",phoneClean:"573008563936",addr:"Bogotá",cat:"Ropa Mujer / Moda Femenina",webType:"has-web",webUrl:"https://bycaicedo.com",webLabel:"bycaicedo.com",social:[{platform:"whatsapp",url:"https://wa.me/573008563936",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/bycaicedo/",label:"Instagram"},{platform:"facebook",url:"https://web.facebook.com/bycaicedo/",label:"Facebook"}],lat:null,lng:null},
-{id:"b74",name:"Karissa Moda",phone:"+57 311 353 6499",phoneClean:"573113536499",addr:"Bogotá",cat:"Ropa Mujer",webType:"has-web",webUrl:"https://karissamoda.com",webLabel:"karissamoda.com",social:[{platform:"whatsapp",url:"https://wa.me/573113536499",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/karissa_moda/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/profile.php?id=61573952170844",label:"Facebook"},{platform:"tiktok",url:"https://www.tiktok.com/@_karissa4",label:"TikTok"}],lat:null,lng:null},
+{id:"b74",name:"Karissa Moda",phone:"+57 311 353 6499",phoneClean:"573113536499",addr:"Cra. 11 #10-27, Bogotá",cat:"Ropa Mujer / Moda Femenina",webType:"has-web",webUrl:"https://karissamoda.com",webLabel:"karissamoda.com",social:[{platform:"whatsapp",url:"https://wa.me/573113536499",label:"WhatsApp (principal)"},{platform:"instagram",url:"https://www.instagram.com/karissa_moda/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/profile.php?id=61573952170844",label:"Facebook"},{platform:"tiktok",url:"https://www.tiktok.com/@_karissa4",label:"TikTok"},{platform:"telegram",url:"https://t.me/+gEb2zBv5LOo0YmE5",label:"Telegram"},{platform:"whatsapp",url:"https://wa.me/573134399687",label:"WhatsApp (mayorista)"},{platform:"whatsapp",url:"https://wa.me/573144122015",label:"WhatsApp (alterno)"},{platform:"link",url:"https://beaconsai.com/karissamoda",label:"Beaconsai"}],lat:4.598,lng:-74.075},
 {id:"b75",name:"Alison Ropa Tejida",phone:"+57 1 630 7871",phoneClean:"5716307871",addr:"Cra. 25 #73-33, Bogotá",cat:"Ropa Tejida / Suéteres",webType:"has-web",webUrl:"https://alison.com.co",webLabel:"alison.com.co",social:[{platform:"whatsapp",url:"https://wa.me/5716307871",label:"WhatsApp"}],lat:null,lng:null},
 {id:"b76",name:"Zigzag Design For Men",phone:"+57 312 553 9406",phoneClean:"573125539406",addr:"Calle 60 #9-87 Local 987, CC Aquarium, Bogotá",cat:"Trajes Hombre / Alquiler",webType:"has-web",webUrl:"https://zigzagdesignformen.com.co",webLabel:"zigzagdesignformen.com.co",social:[{platform:"whatsapp",url:"https://wa.me/573125539406",label:"WhatsApp"},{platform:"facebook",url:"https://www.facebook.com/zigzagdesignconfecciones2015",label:"Facebook"},{platform:"instagram",url:"https://www.instagram.com/zigzag_design_slimfit/",label:"Instagram"},{platform:"tiktok",url:"https://www.tiktok.com/@zigzagdesignmodaslimfit",label:"TikTok"}],lat:null,lng:null},
 {id:"b77",name:"Bettina Spitz María Antonieta",phone:"+57 322 749 0834",phoneClean:"573227490834",addr:"Calle 84A #12-18, Bogotá",cat:"Ropa Mujer / Alta Costura",webType:"has-web",webUrl:"https://bettinaspitz.com",webLabel:"bettinaspitz.com",social:[{platform:"whatsapp",url:"https://wa.me/573227490834",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/bettinaspitz/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/bettinaspitzmoda/",label:"Facebook"},{platform:"tiktok",url:"https://www.tiktok.com/@bettinaspitzbogota",label:"TikTok"}],lat:null,lng:null}
@@ -645,7 +647,7 @@ var pr = getPriority(d.id);
 var notesArr = getNotes(d.id);
 var isDel = deleted.indexOf(d.id) !== -1;
 
-var platformIcon = { instagram:'IG', facebook:'FB', whatsapp:'WA', tiktok:'TT', youtube:'YT', link:'🌐' };
+var platformIcon = { instagram:'IG', facebook:'FB', whatsapp:'WA', tiktok:'TT', youtube:'YT', telegram:'TG', link:'🌐' };
 
 var webBadge = d.webType === 'no-web' ? '<span class="badge no-web">Sin sitio web</span>' :
 d.webType === 'social-only' ? '<span class="badge social-only">Solo redes</span>' :
@@ -707,6 +709,7 @@ html += '<div class="meta"><strong>Categoria:</strong> ' + d.cat + '</div>';
 html += '<div class="meta">' + d.addr + ' <a href="' + mapsUrl + '" target="_blank" class="web-link" title="Ver en Google Maps">📍 Ver mapa</a></div>';
 html += webMeta;
 html += '<div class="phone">' + d.phone + '</div>';
+d.social.forEach(function(s) { if (s.platform === 'whatsapp') { var ap = s.url.replace('https://wa.me/',''); if (ap !== d.phoneClean) { html += '<div class="phone-alt">📞 +' + ap.slice(0,3) + ' ' + ap.slice(3) + ' <span style="font-size:10px;color:#6b7280">(' + s.label.replace('WhatsApp ','') + ')</span></div>'; } } });
 html += '<div style="margin-top:6px"><span style="font-size:10px;font-weight:600;color:#6b7280">Prioridad:</span> ';
 html += '<button class="status-btn ' + (pr === 'hot' ? 's-convertido' : '') + '" onclick="setPriority(\'' + d.id + '\',\'hot\')">🔥</button> ';
 html += '<button class="status-btn ' + (pr === 'warm' ? 's-contactado' : '') + '" onclick="setPriority(\'' + d.id + '\',\'warm\')">💤</button> ';

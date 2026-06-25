@@ -480,10 +480,11 @@
         "label": "Instagram"
       }
     ],
-    "propuesta": ""
+    "propuesta": "https://lp-stacia-store.vercel.app"
   },
   {
     "id": "b25",
+    "name": "Amatita Bisutería",,
     "name": "Somo Ilius",
     "phone": "+57 322 374 4097",
     "addr": "Barrio Perdomo, Bogotá",
@@ -727,8 +728,9 @@
     "phone": "+57 312 341 5807",
     "addr": "Cra. 58 #137B-01, CC Porto Alegre Local 123, Bogotá",
     "cat": "Ropa Hindú / Moda Oriental",
-    "webType": "social-only",
-    "webUrl": "",
+    "webType": "has-web",
+    "webUrl": "https://inrya.ueniweb.com",
+    "webLabel": "inrya.ueniweb.com",
     "lat": 4.72,
     "lng": -74.05,
     "phoneClean": "573123415807",
@@ -1240,8 +1242,8 @@
   {
     "id": "b74",
     "name": "Karissa Moda",
-    "cat": "Ropa Mujer",
-    "addr": "Bogotá",
+    "cat": "Ropa Mujer / Moda Femenina",
+    "addr": "Cra. 11 #10-27, Bogotá",
     "phone": "+57 311 353 6499",
     "webType": "has-web",
     "webUrl": "https://karissamoda.com",
@@ -1251,7 +1253,7 @@
       {
         "platform": "whatsapp",
         "url": "https://wa.me/573113536499",
-        "label": "WhatsApp"
+        "label": "WhatsApp (principal)"
       },
       {
         "platform": "instagram",
@@ -1267,6 +1269,26 @@
         "platform": "tiktok",
         "url": "https://www.tiktok.com/@_karissa4",
         "label": "TikTok"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/+gEb2zBv5LOo0YmE5",
+        "label": "Telegram"
+      },
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573134399687",
+        "label": "WhatsApp (mayorista)"
+      },
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573144122015",
+        "label": "WhatsApp (alterno)"
+      },
+      {
+        "platform": "link",
+        "url": "https://beaconsai.com/karissamoda",
+        "label": "Beaconsai"
       }
     ],
     "propuesta": ""

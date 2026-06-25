@@ -68,6 +68,7 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
   - `sarta-bguest.html` — Sarta & Bguest
   - `paola-dimaya.html` — Paola Dimaya Alta Costura
+  - `stacia-store.html` — Stacia Store (Luxury Brand, Armenia)
 - `recursos/` — assets/imágenes (vacío, usamos CDN)
 - `opencode.json` — config MCP de Apify
 - `AGENTS.md` — este archivo
@@ -159,6 +160,15 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - Se actualizó `server.js`, `seed.json`, `datos.json` y `DATA_FALLBACK`
 
 ### Sesión 11 (2026-06-23) — Landing page Paola Dimaya Alta Costura
+
+### Sesión 12 (2026-06-23) — Hero con video background + correcciones visuales
+- Se reemplazó imagen estática del hero por video background (Mixkit 51225, mujer probándose vestido de novia)
+- **Bug corregido**: el video no se veía porque `opacity:0.35` + `brightness(0.5)` lo ocultaban — se eliminaron los filtros
+- Overlay del hero se aclaró (`0.7→0.25→0.1` en vez de `0.95→0.6→0.3`) para que el video sea protagonista
+- Se agregó gradient inferior en el hero para transición suave a negro
+- Video en 720p (3MB) con fallback a 1080p para carga rápida
+- `preload="auto"` para inicio inmediato
+- Desplegado en `https://lp-paola-dimaya.vercel.app`
 - Se diseñó y desplegó LP profesional para Paola Dimaya: `https://lp-paola-dimaya.vercel.app`
 - Stack LP definitivo: **GSAP + ScrollTrigger** (animaciones avanzadas), **Font Awesome** (iconos CDN), **Google Fonts** (Playfair Display + Inter), **Unsplash** (imágenes CDN)
 - Dark theme editorial con acentos dorados, adaptado al nicho de alta costura/lujo
@@ -167,6 +177,47 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - Al crear LP nueva, **subir a Vercel como proyecto independiente** (ej: `lp-nombre-negocio.vercel.app`)
 - Lección aprendida: Vercel ya no acepta single-file deployments → crear directorio con `index.html` + `vercel.json` si es necesario
 - Corregido: cambio de imagen "Sobre Mí" por foto de mujer (no abstract/diamantes), eliminación de imágenes irrelevantes (zapatos, etc), CTAs cambiados de "agendar cita" a "invitar al showroom / WhatsApp"
+
+### Sesión 13 (2026-06-24) — Landing page Stacia Store + bugs
+- Se diseñó y desplegó LP para Stacia Store (`landing-pages/stacia-store.html`) en `https://lp-stacia-store.vercel.app`
+- Se ejecutó scraper Instagram `api-empire/instagram-post-scraper`: 12 posts extraídos de @stacia_store
+- Stats reales del perfil: 31.3K seguidores, 857 posts, 535 seguidos
+- Galería con 5 embeds oficiales de Instagram (no hotlinking de CDN de IG — bloqueado por 403)
+- Ubicación corregida: Armenia, Quindío (Calle 22 #14-53) — NO Bogotá
+- **Bugs encontrados y corregidos**:
+  - `--white` no definido en CSS → botón Instagram con texto invisible sobre el gradiente
+  - `</div>` faltante en sección Location → estructura HTML rota, anidamiento incorrecto
+  - GSAP `.from()` causaba flash de botones (el navegador pinta el primer frame con opacity:1 antes de que GSAP los ponga en 0)
+  - `preload="none"` + lazy load JS rompía el autoplay del video
+  - WhatsApp float no se renderizaba (insertado via JS al final + `!important` en CSS)
+  - Mixkit preview URLs devolvían 403; se usó direct download URL (assets.mixkit.co/videos/8908/8908-720.mp4)
+- Hero padding cambiado a `padding-top: 14vh` en vez de centrado vertical
+- Scroll indicator "Descubre" con chevrones dorados (animación float + arrowBounce, similar Paola Dimaya)
+- Fallback 3s por si GSAP CDN falla (revela hero elements manualmente)
+
+### Sesión 14 (2026-06-24) — PWA: Gestión Negocios instalable
+- Se agregó soporte PWA a `busqueda/index.html`:
+  - `manifest.json` — nombre "Gestión Negocios", display standalone, icono SVG con lupa dorada
+  - `icon.svg` — icono vectorial 512×512, fondo oscuro + lupa dorada (#c9a96e)
+  - `sw.js` — Service Worker con estrategia Cache First: cachea index.html + assets en install
+  - Meta tags apple-mobile-web-app para iOS
+  - Auto-registro del SW al cargar la página
+- La app ahora se puede instalar desde el navegador (Chrome "Agregar a pantalla de inicio", Safari "Compartir → Agregar a Inicio")
+- Funciona 100% offline una vez cacheada (los datos están embebidos + localStorage)
+
+### Lecciones aprendidas para futuras LPs (evitar estos errores)
+| Error | Solución |
+|---|---|
+| Botón IG invisible por `--white` no definido | Definir TODAS las variables CSS en `:root` antes de usarlas. Hacer un checklist de vars |
+| HTML anidado mal (div sin cerrar) | Verificar con validador HTML (ej: `node --check` o validador W3C) antes de deployar |
+| GSAP `.from()` = flash de contenido | Usar CSS `opacity: 0` inicial + `.to()` en GSAP. NO usar `.from()` |
+| `preload="none"` rompe autoplay | Usar `preload="auto"` siempre en videos del hero |
+| WhatsApp float no se ve | Insertar via JS al final del body (no confiar en posición estática). Usar `!important` en CSS |
+| CDN de Instagram (scontent-lax, fna.fbcdn) da 403 | No hotlinkear. Usar embed oficial (`<blockquote>` + embed.js) o bajar imágenes manualmente |
+| Mixkit preview URL da 403 | Usar direct download: `assets.mixkit.co/videos/{id}/{id}-720.mp4`. Mixkit free = solo personal use |
+| Coverr hotlinking funcional con CDN | `cdn.coverr.co/videos/{slug}/1080p.mp4`. Licencia comercial gratuita |
+| Vercel single-file deprecated | Siempre crear un directorio con `index.html` |
+| Sin fallback si GSAP CDN falla | Agregar `setTimeout` 3s que revele hero elements con `style.opacity='1'` |
 
 ## Metodología Landing Pages
 
@@ -246,6 +297,49 @@ Este es el template mental para crear una LP de este nicho rápidamente:
 4. Servidor DB: `sqlite3 /root/agenxy/agenxy.db "UPDATE negocios SET propuesta='URL' WHERE id='ID';"`
 
 Esto hace que en la herramienta de prospección aparezca el badge **Propuesta** en la tarjeta del negocio, con link directo a la LP.
+
+## Metodología de Recolección de Datos (REGLAS OBLIGATORIAS)
+
+### 🔴 REGLA #1: Cruzar información de TODAS las fuentes disponibles
+
+**Siempre** que se busque/agregue un negocio al sistema, se debe obtener información de **múltiples fuentes**, no solo de Google Maps:
+
+| Fuente | Qué buscar |
+|---|---|
+| **Google Maps** | Nombre, dirección, teléfono, categoría, horarios, rating, sitio web |
+| **Sitio web del negocio** | Teléfono(s), dirección(es), email, horarios, redes sociales, productos/servicios |
+| **Redes sociales (Instagram, Facebook, TikTok, etc.)** | Teléfono actualizado, ubicación, historias/destacados, información de perfil, enlaces |
+| **Directorios (Páginas Amarillas, UENI, etc.)** | Teléfonos alternativos, direcciones adicionales, datos de registro |
+
+### 🔴 REGLA #2: Conservar TODA la información, aunque sea contradictoria
+
+- Si Google Maps muestra un teléfono y el sitio web/red social muestra otro **diferente**: guardar AMBOS
+- Si hay múltiples direcciones (sucursales): guardar TODAS
+- El campo `phone` debe contener el principal, pero las alternativas deben registrarse en `social` como `phone-alt` o en notas
+- Estructura sugerida para múltiples teléfonos: usar el principal en `phone` y agregar entries extra en `social` con platform `"phone-alt"` y label descriptivo
+- Para múltiples direcciones: usar `addr` principal y agregar las demás en `notes` o campo `addrAlt`
+
+### 🔴 REGLA #3: Determinar el webType correcto según TODAS las fuentes
+
+- `no-web`: sin sitio web ni redes sociales
+- `social-only`: tiene Instagram/Facebook/TikTok pero NO sitio web propio
+- `has-web`: tiene sitio web propio (aunque sea simple como UENI, Wix, etc.)
+
+Si Google Maps dice "sin web" pero encuentras un perfil de Instagram + sitio UENI → es `has-web`
+Si Google Maps dice "sin web" pero encuentras Instagram → es `social-only`
+
+### 🔴 REGLA #4: Investigar redes sociales siempre
+
+- Buscar Instagram, Facebook, TikTok, YouTube del negocio aunque Google Maps no los muestre
+- Usar el nombre del negocio + "Instagram", "Facebook", etc. en búsqueda web
+- Las redes sociales suelen tener la información más actualizada del negocio
+- Agregar TODAS las encontradas al array `social` del negocio
+
+### 🔴 REGLA #5: Actualizar datos existentes
+
+- Si un negocio ya existe en el sistema pero se encuentra información nueva/actualizada: **actualizar**
+- No crear duplicados — verificar siempre si el negocio ya existe (por nombre, dirección, teléfono)
+- Si hay datos contradictorios entre fuentes, dar prioridad a: Redes Sociales > Sitio Web > Google Maps
 
 ## Pendiente / Próximos pasos
 - [x] Configurar Nginx reverse proxy para `agy.culturavpn.pro` con SSL (hecho por el usuario via NPM)
