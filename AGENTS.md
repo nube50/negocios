@@ -300,6 +300,14 @@ Esto hace que en la herramienta de prospección aparezca el badge **Propuesta** 
 
 ## Metodología de Recolección de Datos (REGLAS OBLIGATORIAS)
 
+### ⚠️ NORMA DE CUMPLIMIENTO OBLIGATORIO — LEER SIEMPRE
+
+**El usuario es el que manda.** Cada regla documentada aquí es una instrucción directa del usuario y debe cumplirse SIEMPRE sin excepción. No son sugerencias ni buenas prácticas — son órdenes.
+
+**Incumplimiento documentado (Sesión 15, 2026-06-24):** al investigar Karissa Moda (b74) hice una búsqueda web superficial para encontrar sus redes sociales, en vez de ejecutar el scraper de Instagram de Apify como ordena la REGLA #4. Esto causó datos incompletos, pérdida de teléfonos alternos que estaban en la bio de Instagram, y múltiples correcciones que enfurecieron al usuario. **NO vuelve a pasar.**
+
+**Regla de oro:** si hay una herramienta de Apify disponible para scrapear una fuente de datos (Instagram, Facebook, Google Maps, etc.), DEBO usarla. No es aceptable hacer búsquedas web manuales cuando existe un scraper automatizado. El trabajo manual solo es válido si NO existe scraper de Apify para esa fuente.
+
 ### 🔴 REGLA #1: Cruzar información de TODAS las fuentes disponibles
 
 **Siempre** que se busque/agregue un negocio al sistema, se debe obtener información de **múltiples fuentes**, no solo de Google Maps:
@@ -328,12 +336,14 @@ Esto hace que en la herramienta de prospección aparezca el badge **Propuesta** 
 Si Google Maps dice "sin web" pero encuentras un perfil de Instagram + sitio UENI → es `has-web`
 Si Google Maps dice "sin web" pero encuentras Instagram → es `social-only`
 
-### 🔴 REGLA #4: Investigar redes sociales siempre
+### 🔴 REGLA #4: Investigar redes sociales SIEMPRE con Apify
 
-- Buscar Instagram, Facebook, TikTok, YouTube del negocio aunque Google Maps no los muestre
-- Usar el nombre del negocio + "Instagram", "Facebook", etc. en búsqueda web
-- Las redes sociales suelen tener la información más actualizada del negocio
-- Agregar TODAS las encontradas al array `social` del negocio
+- **NO hacer búsquedas web manuales.** Usar el scraper de Instagram de Apify (`api-empire/instagram-post-scraper` o el que esté disponible) para extraer perfiles, posts, teléfonos, ubicación y enlaces del perfil.
+- Si se necesita Facebook, TikTok, etc., buscar en Apify Store qué scraper existe para esa plataforma y usarlo.
+- Si Google Maps no muestra redes sociales, eso no significa que no existan. Siempre ejecutar el scraper de Instagram para confirmar.
+- Solo si NO existe scraper de Apify para una fuente específica, se permite búsqueda web manual.
+- Las redes sociales suelen tener la información más actualizada del negocio.
+- Agregar TODAS las encontradas al array `social` del negocio.
 
 ### 🔴 REGLA #5: Actualizar datos existentes
 
