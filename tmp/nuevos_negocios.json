@@ -1,0 +1,236 @@
+[
+  {
+    "id": "b98",
+    "name": "OBA Consultorio Odontológico",
+    "cat": "Consultorio Odontológico",
+    "addr": "Cra. 19 #102 – 53 Consultorio 518, Usaquén, Bogotá",
+    "phone": "+57 319 731 4116",
+    "phoneClean": "573197314116",
+    "webType": "has-web",
+    "webUrl": "https://obaconsultorio.com/",
+    "webLabel": "obaconsultorio.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573197314116",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/oba_consultorio/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/people/Consultorio-Odontológico-Boulevard/100063563560668/?locale=es_LA",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.703,
+    "lng": -74.051,
+    "propuesta": ""
+  },
+  {
+    "id": "b99",
+    "name": "Consultorio Odontológico Dani-Dent",
+    "cat": "Consultorio Odontológico",
+    "addr": "Calle 24 No. 11-73 Sur, San José, Bogotá D.C.",
+    "phone": "(601) 272-6106",
+    "phoneClean": "576012726106",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/576012726106",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.568,
+    "lng": -74.137,
+    "propuesta": ""
+  },
+  {
+    "id": "b100",
+    "name": "Consultorio Odontológico Dr. Amauri Ariza Moreno",
+    "cat": "Consultorio Odontológico",
+    "addr": "Carrera 13 38-86 Consult 208, Bogotá D.C.",
+    "phone": "(1) 2328946",
+    "phoneClean": "5712328946",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712328946",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.635,
+    "lng": -74.081,
+    "propuesta": ""
+  },
+  {
+    "id": "b101",
+    "name": "Consultorio Odontológico Dra. Tatiana Amórtegui",
+    "cat": "Consultorio Odontológico",
+    "addr": "Cra. 14 No. 98-95 Consl 204, Chicó, Bogotá D.C.",
+    "phone": "(601) 610-7279",
+    "phoneClean": "576016107279",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/576016107279",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.667,
+    "lng": -74.056,
+    "propuesta": ""
+  },
+  {
+    "id": "b102",
+    "name": "Consultorio Odontológico Integral",
+    "cat": "Consultorio Odontológico",
+    "addr": "Carrera 17#50-77, Bogotá, Cundinamarca",
+    "phone": "+57 322 446 0316",
+    "phoneClean": "573224460316",
+    "webType": "has-web",
+    "webUrl": "https://consultoriodontologicointegral.com/",
+    "webLabel": "consultoriodontologicointegral.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573224460316",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/consultoriodontologicointegral/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.655,
+    "lng": -74.075,
+    "propuesta": ""
+  },
+  {
+    "id": "b103",
+    "name": "Clínicas Dentales Colsanitas",
+    "cat": "Clínica Dental",
+    "addr": "Varía por sede, Bogotá",
+    "phone": "+57 (310) 3107676",
+    "phoneClean": "573103107676",
+    "webType": "has-web",
+    "webUrl": "https://www.colsanitas.com/en/red-de-atencion/clinicas-dentales-colsanitas",
+    "webLabel": "colsanitas.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573103107676",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/dentalnetwork/",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.609,
+    "lng": -74.081,
+    "propuesta": ""
+  },
+  {
+    "id": "b104",
+    "name": "Clínica Dental Bogotá - Centro médico Dalí Chicó norte",
+    "cat": "Clínica Dental",
+    "addr": "Cra. 18 #80 06, Chapinero, Bogotá",
+    "phone": "+57 318 643 7326",
+    "phoneClean": "573186437326",
+    "webType": "has-web",
+    "webUrl": "https://periodoncistajohannacalderon.com/locations/consultorio-odontologico-en-bogota/",
+    "webLabel": "periodoncistajohannacalderon.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573186437326",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/periodoncista_johanna_calderon/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/DraJohannaCalderon",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.658,
+    "lng": -74.061,
+    "propuesta": ""
+  },
+  {
+    "id": "b105",
+    "name": "Clínica Dental Odontología Estética Bogotá | Dra. María Marín",
+    "cat": "Clínica Dental",
+    "addr": "Bogotá, Dirección específica no proporcionada",
+    "phone": "No proporcionado en resultados",
+    "phoneClean": "",
+    "webType": "has-web",
+    "webUrl": "https://odontologamariamarin.com/",
+    "webLabel": "odontologamariamarin.com",
+    "social": [
+      {
+        "platform": "instagram",
+        "url": "No encontrado en resultados",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.609,
+    "lng": -74.081,
+    "propuesta": ""
+  },
+  {
+    "id": "b106",
+    "name": "Consultorio Odontológico Dr. José Emanuel Rodríguez David",
+    "cat": "Consultorio Odontológico",
+    "addr": "Calle B, 22000 La Romana, República Dominicana",
+    "phone": "+1-809-349-4106",
+    "phoneClean": "18093494106",
+    "webType": "has-web",
+    "webUrl": "https://www.yellowpages.do/phone-1-8093494106-dentista-La-Romana-DOEN67172.html",
+    "webLabel": "yellowpages.do",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/18093494106",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 18.451,
+    "lng": -68.979,
+    "propuesta": ""
+  },
+  {
+    "id": "b107",
+    "name": "Consultorio Dental Sonrisas Sanas.",
+    "cat": "Consultorio Dental",
+    "addr": "Cochabamba, Bolivia",
+    "phone": "No proporcionado en resultados",
+    "phoneClean": "",
+    "webType": "has-web",
+    "webUrl": "https://www.findhealthclinics.org/BO/Cochabamba/161834184023707/Consultorio-Dental-Sonrisas-Sanas.",
+    "webLabel": "findhealthclinics.org",
+    "social": [],
+    "lat": -17.389,
+    "lng": -66.156,
+    "propuesta": ""
+  }
+]
