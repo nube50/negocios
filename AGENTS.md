@@ -300,26 +300,18 @@ Si alguna falla, **no desplegar** hasta corregir.
 - **Experiencia responsive garantizada**: probar en viewport ≤375px ANTES de desplegar. Sin scroll horizontal, sin elementos cortados, sin botones fuera de lugar
 - Imagen real de la dueña/diseñadora en el "Sobre Mí" si es posible; si no, foto de una diseñadora/dueña de negocio (NO una modelo/novia/cliente genérica)
 
-### Patrón LP para Alta Costura / Moda / Novias (basado en Paola Dimaya)
-Este es el template mental para crear una LP de este nicho rápidamente:
+### Patrón LP para Bares / Pubs / Discotecas / Gastrobares
+Este es el estándar obligatorio para diseñar landing pages en el nicho de entretenimiento nocturno:
 
-| Elemento | Qué poner |
+| Elemento | Requisito / Implementación |
 |---|---|
-| **Paleta** | Fondo negro/dark (#0a0a0a, #121212), dorados (#c9a96e, #d4af37), texto marfil (#f5f0eb) |
-| **Tipografía** | Playfair Display (serif, títulos elegantes) + Inter (sans, legible) |
-| **Hero** | Foto gran angular del taller/showroom o vestido; título "Nombre + Alta Costura"; subtítulo "Alta Costura · Bogotá"; CTA "Escribir ahora" (WhatsApp) + "Ver servicios" |
-| **Stats bar** | 3 columnas: años de experiencia / clientas atendidas / % satisfacción. Animación contadora GSAP |
-| **Sobre Mí** | Grid 2 cols: imagen de la diseñadora (con marco decorativo dorado) + texto con historia del negocio, técnica, materiales. Firma itálica al final |
-| **Servicios** | Grid 2x2. Cada card: icono FA + título + descripción real + precio "Desde $X.XXX.XXX". Sin sección de precios aparte |
-| **Galería** | Grid 3 cols con 6 fotos de vestidos/modelos. Lightbox al hacer clic. Imágenes de Unsplash de vestidos de novia |
-| **Cobertura** | 4 columnas con zonas de atención (Chapinero, Usaquén, Zona Rosa, etc) |
-| **Testimonios** | Carrusel con 3 slides, quotes reales del negocio, autor + rol. Autoplay 5s |
-| **CTA final** | "¿Lista para tu vestido ideal?" + 2 botones: WhatsApp + "Cómo llegar" |
-| **Contacto** | Dirección, teléfono, email, horarios + Google Maps embed en grayscale |
-| **Footer** | Logo, tagline, iconos sociales (WhatsApp, Instagram, Facebook), copyright |
-| **WhatsApp float** | Botón flotante verde en toda la página |
+| **Video Hero (OBLIGATORIO)** | **URLs directas MP4 de Mixkit CDN** (`https://assets.mixkit.co/videos/{id}/{id}-720.mp4`). <br>⚠️ **REGLAS DE VIDEO**: <br>1. **Jamás usar Coverr ni URLs con redirección**: `cdn.coverr.co/...` devuelve HTTP 301 a páginas HTML que rompen el reproductor.<br>2. **Verificar el tema real antes de publicar**: Comprobar el nombre en `Content-Disposition` vía `curl -I` para evitar errores (ej: no usar videos de gimnasio en bares).<br>3. **Brillo y Transparencia**: Opacidad del video en `opacity: 0.9` y overlay gradiente suave (`rgba(0,0,0,0.15)` a `0.5`) para que el video sea brillante y visible.<br>4. **Autoplay fluido**: Usar `<video autoplay muted loop playsinline class="hero-video-bg" preload="auto">` (`muted` es indispensable para autoplay en navegadores). |
+| **Paleta Visual** | **Pub / Lounge**: Fondo noche oscura (`#080709`), acentos ámbar y dorado cálido (`#e5a93c`, `#d4af37`), bordes sutiles.<br>**Bar Afro / Tropical / Disco**: Fondo negro nocturno (`#070608`), acentos neón/coral (`#f4a261`, `#ff4b5c`) y dorado tropical. |
+| **Tipografía** | Sans-serif moderna y bold para títulos (`Inter` 800/900 o `Syne`) + cuerpo legible y limpio. |
+| **Stats Bar** | 4 ítems: % Ambiente / Variedad Coctelería o Cervezas / Ritmos Musicales / Estrellas de Atención. |
+| **Secciones Clave** | 1. **Hero**: Video brillante + Título impactante + CTAs a WhatsApp y Ubicación.<br>2. **Concepto**: Historia del bar, experiencia de consumo, filosofía de coctelería o gastronomía.<br>3. **Ritmos / Música**: Estilos musicales principales (Salsa, Champeta, Rock, DJ Sets, Live Shows).<br>4. **Carta Insignia**: Grid 4 cards con fotos HD de tragos de autor, cervezas de tiro o tapas.<br>5. **Galería**: Grid 6 fotos con modal Lightbox interactivo.<br>6. **Testimonios**: Reseñas de clientes de Google Reviews / redes.<br>7. **Ubicación & Horarios**: Dirección exacta, horarios por día, mapa embed y botón flotante de WhatsApp. |
 
-**Para replicar esta LP**: buscar en `datos.json` un negocio del mismo nicho (cat: "Alquiler Trajes de Etiqueta", "Alquiler de Vestidos", "Boutique / Ropa Mujer"), extraer su info, y producir el HTML con los mismos patrones de secciones, animaciones y paleta.
+**Para replicar esta LP**: Buscar en `datos.json` un negocio del nicho "Bar / Discoteca / Pub / Gastrobar", extraer sus datos reales, y aplicar la estructura de video en directo, colores y animaciones GSAP.
 
 ### Workflow de despliegue Vercel
 ```
@@ -551,6 +543,15 @@ git push origin main
 - Se actualizó la prioridad a **🔥 Caliente (`hot`)** en la base de datos del servidor y `seed.json` para todos los negocios con Landing Page en Vercel (`b24`, `b66`, `b70`, `b71`, `b73`, `b74`).
 - Se corrigió la función `initAPIMode()` en `busqueda/index.html` para respetar la prioridad/estado provenientes de la API sobre la caché vieja de `localStorage`.
 - **REGLA OBLIGATORIA #6 incorporada**: Todo cambio debe desplegarse inmediatamente a Vercel con `git push origin main` sin requerir solicitud previa del usuario.
+
+### Sesión 18 (2026-08-13) — Landing Pages La Negra Bar & Salvatore's Bar + Patrón de Video Hero
+- Se crearon y desplegaron propuestas de Landing Page para **La Negra Bar** (`b109`) en `https://lp-la-negra-bar.vercel.app` y **Salvatore's Bar** (`b119`) en `https://lp-salvatores-bar.vercel.app`.
+- **Diagnóstico y Corrección de Video de Fondo**:
+  - Se identificó que las URLs de Coverr (`cdn.coverr.co/...`) redirigían con HTTP 301 a páginas HTML en lugar de entregar archivos MP4 directos, lo que bloqueaba la reproducción automática en los navegadores.
+  - Se migró a **URLs directas MP4 de Mixkit CDN** (`https://assets.mixkit.co/videos/{id}/{id}-720.mp4`).
+  - Se corrigieron los IDs temáticos: para La Negra Bar se colocó video de rumba/pista de baile con luces (`mixkit-341`) y DJ (`mixkit-23208`), eliminando videos no acordes (ej. gimnasio). Para Salvatore's Bar se configuró ambiente de pub refinado (`mixkit-4043`) y barra de cervezas (`mixkit-8711`).
+  - Se incrementó el brillo aumentando la opacidad a **`opacity: 0.9`** y suavizando los gradientes oscuros.
+- Se documentó el **Patrón LP para Bares / Pubs / Discotecas / Gastrobares** en `AGENTS.md`.
 
 ---
 
