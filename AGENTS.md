@@ -400,6 +400,12 @@ Si Google Maps dice "sin web" pero encuentras Instagram → es `social-only`
 - No crear duplicados — verificar siempre si el negocio ya existe (por nombre, dirección, teléfono)
 - Si hay datos contradictorios entre fuentes, dar prioridad a: Redes Sociales > Sitio Web > Google Maps
 
+### 🔴 REGLA #6: Despliegue Inmediato a Vercel (OBLIGATORIO)
+
+- **SIEMPRE que se realice CUALQUIER cambio** (nuevos negocios, edición de HTML, cambio de prioridades/estados, landing pages, corrección de bugs, etc.), es **OBLIGATORIO** hacer `git add`, `git commit` y `git push origin main` inmediatamente.
+- Vercel despliega automáticamente la app en `https://negocios-woad.vercel.app/` directamente desde la rama `main` de GitHub.
+- **NUNCA dejar cambios solo guardados en local.** El usuario debe ver siempre los cambios reflejados al instante en la URL de Vercel sin tener que pedir que se desplieguen.
+
 ## Historial de sesiones
 
 ### Sesión 16 (2026-07-11) — Agregados 20 salones de uñas/spa/estética
@@ -530,6 +536,21 @@ ssh root@xray.culturavpn.pro "pm2 restart agenxy && sleep 2 && curl -s https://a
 - Actualizar tabla "Datos actuales"
 - Agregar entrada en "Historial de sesiones" con fecha, scraper usado, totales
 - Verificar contadores: Sin web / Solo redes / Con web
+
+### 9. Desplegar en Vercel (OBLIGATORIO)
+```bash
+git add .
+git commit -m "Descripción de los cambios realizados"
+git push origin main
+# Vercel desplegará automáticamente los cambios a https://negocios-woad.vercel.app/
+```
+
+---
+
+### Sesión 17 (2026-08-13) — Prioridad Caliente LPs + Regla Despliegue Vercel
+- Se actualizó la prioridad a **🔥 Caliente (`hot`)** en la base de datos del servidor y `seed.json` para todos los negocios con Landing Page en Vercel (`b24`, `b66`, `b70`, `b71`, `b73`, `b74`).
+- Se corrigió la función `initAPIMode()` en `busqueda/index.html` para respetar la prioridad/estado provenientes de la API sobre la caché vieja de `localStorage`.
+- **REGLA OBLIGATORIA #6 incorporada**: Todo cambio debe desplegarse inmediatamente a Vercel con `git push origin main` sin requerir solicitud previa del usuario.
 
 ---
 
