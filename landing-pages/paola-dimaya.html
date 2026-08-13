@@ -58,9 +58,10 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:1000;
   padding:20px 40px;
   display:flex;justify-content:space-between;align-items:center;
-  transition:var(--transition);mix-blend-mode:difference
+  background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);
+  transition:var(--transition)
 }
-nav.scrolled{background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);padding:12px 40px;mix-blend-mode:normal}
+nav.scrolled{background:rgba(10,10,10,0.97);backdrop-filter:blur(20px);padding:12px 40px}
 .nav-logo{font-family:var(--font-serif);font-size:22px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
 .nav-links{display:flex;gap:32px;list-style:none;font-size:13px;letter-spacing:2px;text-transform:uppercase}
 .nav-links a{position:relative;transition:color 0.3s}
@@ -75,10 +76,17 @@ nav.scrolled{background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);padding:1
   background:var(--black);overflow:hidden
 }
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:0.35;filter:grayscale(0.4) brightness(0.5)}
+.hero-bg video{width:100%;height:100%;object-fit:cover}
 .hero-overlay{
-  position:absolute;inset:0;z-index:1;
-  background:linear-gradient(135deg,rgba(10,10,10,0.95) 30%,rgba(10,10,10,0.6) 60%,rgba(10,10,10,0.3) 100%)
+  position:absolute;inset:0;z-index:1
+}
+.hero-overlay::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(10,10,10,0.7) 25%,rgba(10,10,10,0.25) 60%,rgba(10,10,10,0.1) 100%)
+}
+.hero-overlay::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:180px;
+  background:linear-gradient(to top,var(--black) 10%,transparent)
 }
 .hero-content{position:relative;z-index:2;padding:0 24px;max-width:1200px;margin:0 auto;width:100%}
 .hero-subtitle{font-size:14px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;font-weight:300}
@@ -104,12 +112,17 @@ nav.scrolled{background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);padding:1
 .btn-gold-outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}
 .btn-gold-outline:hover{background:var(--gold);color:var(--black);transform:translateY(-2px)}
 .hero-scroll-indicator{
-  position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:2;
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)
+  position:absolute;bottom:80px;left:50%;transform:translateX(-50%);z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);
+  animation:float 3s ease-in-out infinite
 }
-.scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s ease infinite}
-@keyframes scrollPulse{0%,100%{opacity:0.3}50%{opacity:1}}
+@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
+.hero-scroll-indicator span{opacity:0.9;letter-spacing:4px;text-shadow:0 0 20px rgba(201,169,110,0.15)}
+.scroll-arrows{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--gold)}
+.scroll-arrows i{font-size:16px;line-height:1;animation:arrowBounce 1.8s ease infinite;filter:drop-shadow(0 0 6px rgba(201,169,110,0.2))}
+.scroll-arrows i:nth-child(2){animation-delay:0.25s}
+@keyframes arrowBounce{0%,100%{opacity:0.4;transform:translateY(0)}50%{opacity:1;transform:translateY(5px)}}
 
 /* Section Headers */
 .section-header{text-align:center;margin-bottom:80px}
@@ -290,7 +303,8 @@ footer .copyright{font-size:12px;color:var(--muted);letter-spacing:1px}
   .contact-content{grid-template-columns:1fr;gap:48px}
   .hero-title{font-size:clamp(36px,10vw,56px)}
   .hero-content{padding:0 20px}
-  .hero-scroll-indicator{display:none}
+  .hero-scroll-indicator{bottom:70px}
+  .hero-scroll-indicator span{font-size:10px}
   .stats-bar{grid-template-columns:1fr;margin-top:0}
 }
 @media(max-width:480px){
@@ -326,7 +340,10 @@ footer .copyright{font-size:12px;color:var(--muted);letter-spacing:1px}
 
 <section class="hero" id="hero">
   <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=1920&q=80" alt="Vestido de novia alta costura" loading="eager">
+    <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=1920&q=80">
+      <source src="https://assets.mixkit.co/videos/51225/51225-720.mp4" type="video/mp4">
+      <source src="https://assets.mixkit.co/videos/51225/51225-1080.mp4" type="video/mp4">
+    </video>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -347,7 +364,10 @@ footer .copyright{font-size:12px;color:var(--muted);letter-spacing:1px}
   </div>
   <div class="hero-scroll-indicator" id="scrollIndicator">
     <span>Descubre</span>
-    <div class="scroll-line"></div>
+    <div class="scroll-arrows">
+      <i class="fas fa-chevron-down"></i>
+      <i class="fas fa-chevron-down"></i>
+    </div>
   </div>
 </section>
 
@@ -625,7 +645,7 @@ function initAnimations(){
     }
   });
 
-  gsap.from('.hero-bg img',{
+  gsap.from('.hero-bg video',{
     scale:1.2,duration:1.5,ease:'power2.out',delay:0.4
   });
 
@@ -653,7 +673,7 @@ function initAnimations(){
     scrollTrigger:{trigger:'.coverage-grid',start:'top 85%'}
   });
 
-  gsap.to('.hero-bg img',{
+  gsap.to('.hero-bg video',{
     yPercent:15,scale:1.1,ease:'none',
     scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}
   });

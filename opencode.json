@@ -5,6 +5,25 @@
       "type": "remote",
       "url": "https://mcp.apify.com/?tools=actors,docs,compass/google-maps-extractor",
       "enabled": true
+    },
+    "open-design": {
+      "type": "command",
+      "command": "C:\\Users\\th\\AppData\\Local\\Programs\\Open Design\\Open Design.exe",
+      "args": [
+        "C:\\Users\\th\\AppData\\Local\\Programs\\Open Design\\resources\\app\\prebundled\\daemon\\daemon-cli.mjs",
+        "mcp"
+      ],
+      "env": {
+        "ELECTRON_RUN_AS_NODE": "1",
+        "OD_DATA_DIR": "C:\\Users\\th\\AppData\\Roaming\\Open Design\\namespaces\\release-stable-win\\data",
+        "OD_SIDECAR_IPC_PATH": "\\\\.\\pipe\\open-design-release-stable-win-daemon"
+      },
+      "enabled": true
     }
-  }
+  },
+  "instructions": [
+    "README.md",
+    "AGENTS.md",
+    ".opencode/skills/landing-page-designer/SKILL.md"
+  ]
 }

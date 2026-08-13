@@ -42,7 +42,7 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - `datos.json` es espejo de DATA para respaldo manual
 - No requiere build steps, ni npm, ni servidor
 
-## Datos actuales: 64 negocios
+## Datos actuales: 84 negocios
 
 | Tipo | Sin web | Solo redes | Con web | Total |
 |------|---------|------------|---------|-------|
@@ -52,14 +52,16 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 | Tienda regalos | 1 | 0 | 0 | 1 |
 | Alquiler trajes / vestidos / boutiques | 0 | 1 | 13 | 14 |
 | Otros (paellas, lechona, café, etc.) | 0 | 0 | 3 | 3 |
-| **Total** | **18** | **16** | **32** | **66** |
+| **Salones de uñas / Spa / Estética** | **6** | **4** | **10** | **20** |
+| **Total** | **24** | **20** | **40** | **84** |
 
-> Columnas reales: Sin web **18**, Solo redes **17**, Con web **29**, Total **64** (la tabla por categoría es aproximada)
+> Columnas reales: Sin web **24**, Solo redes **19**, Con web **41**, Total **84** (la tabla por categoría es aproximada)
 
-- IDs activos: b1-b25, b30-b34, b36-b41, b50-b77
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b97
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
 - Talleres eliminados y reemplazados en sesión 6: b9, b10, b18, b20, b21, b22, b24, b25, b33, b38, b39, b40, b41
+- **Nuevos salones de uñas/spa agregados en sesión 16 (b78-b97): 20 negocios con datos cruzados Google Maps + Instagram**
 
 ## Archivos del proyecto
 
@@ -69,6 +71,7 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
   - `sarta-bguest.html` — Sarta & Bguest
   - `paola-dimaya.html` — Paola Dimaya Alta Costura
   - `stacia-store.html` — Stacia Store (Luxury Brand, Armenia)
+  - `benefit-ropa-tallas-grandes.html` — BeneFit Ropa Tallas Grandes
 - `recursos/` — assets/imágenes (vacío, usamos CDN)
 - `opencode.json` — config MCP de Apify
 - `AGENTS.md` — este archivo
@@ -195,7 +198,28 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - Scroll indicator "Descubre" con chevrones dorados (animación float + arrowBounce, similar Paola Dimaya)
 - Fallback 3s por si GSAP CDN falla (revela hero elements manualmente)
 
-### Sesión 14 (2026-06-24) — PWA: Gestión Negocios instalable
+### Sesión 14 (2026-06-24) — BeneFit LP versión 1 + investigación Karissa Moda (advertencia)
+- Se investigaron y verificaron 16 imágenes reales de `b-fit.com.co` y `benefit.com.co` (todas HTTP 200)
+- Se extrajo texto real del negocio: 31 años de historia, tallas 10-22, horarios, direcciones, teléfonos, email
+- **Versión 1 de LP rechazada por el usuario** por ser "básica, aburrida, mediocre, no competitiva"
+- Versión 2 rediseñada con video hero (Mixkit 805), tipografía bold, gradientes, galería con lightbox
+- Se desplegó en `https://lp-benefit.vercel.app` y se actualizó propuesta en los 4 lugares
+- **Lección**: el usuario exige diseño competitivo con el sitio original; imágenes HTTP de b-fit.com.co no cargan en HTTPS
+
+### Sesión 15 (2026-06-27) — BeneFit LP rediseño editorial premium tras rechazo
+- **Problema crítico**: las imágenes HTTP de `b-fit.com.co` no cargaban por mixed content → todas migradas a HTTPS de `benefit.com.co`
+- **Rediseño completo**: hero split-screen editorial (texto izq + imagen der con badge flotante "31 años")
+- Video hero mantenido (Mixkit 805) con overlay teal/dark brandeado
+- Tipografía: Playfair Display (serif editorial) + Inter (sans clean)
+- **GSAP + ScrollTrigger**: stagger en productos/servicios/testimonios/galería, contadores animados, reveals al scroll
+- Galería con overlay hover (icono expandir) en vez de click directo
+- Scroll hint moderno (mouse wheel) en vez de chevron básico
+- Menu mobile full-screen overlay
+- Safety net 4s si GSAP falla
+- Paleta oscura editorial con acentos teal #07a496 (branding del sitio original)
+- **Aprobada por el usuario** ✅
+- Desplegada en `https://lp-benefit.vercel.app` (misma URL, overwrite del proyecto existente)
+- Verificación: todas las imágenes HTTPS responden HTTP 200 confirmado
 - Se agregó soporte PWA a `busqueda/index.html`:
   - `manifest.json` — nombre "Gestión Negocios", display standalone, icono SVG con lupa dorada
   - `icon.svg` — icono vectorial 512×512, fondo oscuro + lupa dorada (#c9a96e)
@@ -204,6 +228,25 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
   - Auto-registro del SW al cargar la página
 - La app ahora se puede instalar desde el navegador (Chrome "Agregar a pantalla de inicio", Safari "Compartir → Agregar a Inicio")
 - Funciona 100% offline una vez cacheada (los datos están embebidos + localStorage)
+
+### 📱 Responsive Guarantee — Checklist OBLIGATORIO
+
+Antes de desplegar cualquier LP en Vercel, verificar:
+
+| # | Requisito | Cómo verificarlo |
+|---|---|---|
+| 1 | **Sin scroll horizontal** en viewport 320-480px | Abrir DevTools → toggle device toolbar → 375px. Hacer scroll horizontal — no debe existir |
+| 2 | **WhatsApp float visible** sin quedar fuera de lugar | `position:fixed; bottom:18px; right:18px` en mobile, nunca se oculta ni se desplaza |
+| 3 | **Hero CTAs uniformes** en mobile | Mismo ancho todos los botones, apilados verticalmente con `flex-direction:column` |
+| 4 | **Stats sin overflow** | Usar CSS grid (`1fr 1fr`) en mobile, nunca `flex-wrap` con gap grande |
+| 5 | **Touch targets ≥44px** | Botones, enlaces, iconos sociales — mínimo 44×44px (estándar Apple HIG) |
+| 6 | **GSAP sin flash** | Elementos del hero empiezan con `opacity:0` en CSS, animados con `.fromTo()` o `.to()`. Fallback 3s si GSAP no carga |
+| 7 | **Padding consistente** en hero y container | `.hero-inner` debe tener el mismo `padding` que `.container` en cada breakpoint |
+| 8 | **Imágenes proporcionales** | `max-width:100%` + `object-fit:cover`. Altura adecuada para que se vea el producto |
+| 9 | **Lightbox navegable** en móvil | Botones prev/next ≥48px, sin overflow horizontal |
+| 10 | **Contenido legible** sin zoom | Font-size mínimo 16px en body, textos de cards ≥14px |
+
+Si alguna falla, **no desplegar** hasta corregir.
 
 ### Lecciones aprendidas para futuras LPs (evitar estos errores)
 | Error | Solución |
@@ -218,6 +261,12 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 | Coverr hotlinking funcional con CDN | `cdn.coverr.co/videos/{slug}/1080p.mp4`. Licencia comercial gratuita |
 | Vercel single-file deprecated | Siempre crear un directorio con `index.html` |
 | Sin fallback si GSAP CDN falla | Agregar `setTimeout` 3s que revele hero elements con `style.opacity='1'` |
+| Stats con `flex-wrap` desbordan en mobile | Usar `display:grid; grid-template-columns:1fr 1fr` en mobile. flex-wrap puede overflow en ciertos anchos |
+| `padding` inconsistente entre hero y container en mobile | `.hero-inner` debe tener el mismo padding que `.container` en cada breakpoint: 24px desktop, 16px 768px, 12px 480px |
+| Scroll horizontal por elemento no contenido | Agregar `overflow-x:hidden` en `html` y `body`. Revisar cada sección con device toolbar 320px |
+| GSAP `.fromTo()` sin `opacity:0` inicial en CSS | Los elementos animados empiezan con `opacity:0` en CSS y GSAP los anima a `opacity:1` con `.fromTo()` o `.to()` |
+| Imágenes HTTP del sitio del negocio no cargan en HTTPS (mixed content) | Siempre usar imágenes HTTPS del sitio original. Verificar con `curl` antes de ponerlas en la LP |
+| Diseño "básico/mediocre" rechazado por el usuario | LP debe competir VISUALMENTE con el sitio original del negocio, no ser una plantilla genérica. Hero editorial split-screen, GSAP, paleta de marca |
 
 ## Metodología Landing Pages
 
@@ -248,7 +297,7 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - Diseño acorde al tipo de negocio (colores, tipografía, tono visual)
 - Imágenes relevantes: del nicho, preferiblemente del rubro (ej: vestidos de novia para una boutique nupcial)
 - Mapa de Google Maps con la ubicación exacta
-- Adaptabilidad mobile-first
+- **Experiencia responsive garantizada**: probar en viewport ≤375px ANTES de desplegar. Sin scroll horizontal, sin elementos cortados, sin botones fuera de lugar
 - Imagen real de la dueña/diseñadora en el "Sobre Mí" si es posible; si no, foto de una diseñadora/dueña de negocio (NO una modelo/novia/cliente genérica)
 
 ### Patrón LP para Alta Costura / Moda / Novias (basado en Paola Dimaya)
@@ -304,7 +353,7 @@ Esto hace que en la herramienta de prospección aparezca el badge **Propuesta** 
 
 **El usuario es el que manda.** Cada regla documentada aquí es una instrucción directa del usuario y debe cumplirse SIEMPRE sin excepción. No son sugerencias ni buenas prácticas — son órdenes.
 
-**Incumplimiento documentado (Sesión 15, 2026-06-24):** al investigar Karissa Moda (b74) hice una búsqueda web superficial para encontrar sus redes sociales, en vez de ejecutar el scraper de Instagram de Apify como ordena la REGLA #4. Esto causó datos incompletos, pérdida de teléfonos alternos que estaban en la bio de Instagram, y múltiples correcciones que enfurecieron al usuario. **NO vuelve a pasar.**
+**Incumplimiento documentado (Sesión 14, 2026-06-24):** al investigar Karissa Moda (b74) hice una búsqueda web superficial para encontrar sus redes sociales, en vez de ejecutar el scraper de Instagram de Apify como ordena la REGLA #4. Esto causó datos incompletos, pérdida de teléfonos alternos que estaban en la bio de Instagram, y múltiples correcciones que enfurecieron al usuario. **NO vuelve a pasar.**
 
 **Regla de oro:** si hay una herramienta de Apify disponible para scrapear una fuente de datos (Instagram, Facebook, Google Maps, etc.), DEBO usarla. No es aceptable hacer búsquedas web manuales cuando existe un scraper automatizado. El trabajo manual solo es válido si NO existe scraper de Apify para esa fuente.
 
@@ -351,6 +400,17 @@ Si Google Maps dice "sin web" pero encuentras Instagram → es `social-only`
 - No crear duplicados — verificar siempre si el negocio ya existe (por nombre, dirección, teléfono)
 - Si hay datos contradictorios entre fuentes, dar prioridad a: Redes Sociales > Sitio Web > Google Maps
 
+## Historial de sesiones
+
+### Sesión 16 (2026-07-11) — Agregados 20 salones de uñas/spa/estética
+- Se ejecutó scraper `compass/google-maps-extractor` en Bogotá con términos: "spa de uñas", "manicure", "pedicure", "uñas", "nail salon", "estética de uñas", "centro de uñas"
+- Se obtuvieron 113 resultados, filtrados 20 con teléfono válido y buena distribución geográfica
+- Se cruzaron datos con redes sociales (Instagram, Facebook, TikTok) usando `scrapeSocialMediaProfiles` en el mismo scraper
+- **Distribución webType nuevos**: has-web 10, no-web 6, social-only 4
+- **Total general**: 84 negocios (24 sin web, 19 solo redes, 41 con web)
+- Se actualizaron: `datos.json`, `seed.json`, `DATA_FALLBACK` en `index.html`
+- Verificación: `node --check` OK en index.html
+
 ## Pendiente / Próximos pasos
 - [x] Configurar Nginx reverse proxy para `agy.culturavpn.pro` con SSL (hecho por el usuario via NPM)
 - [x] Poner API_URL en index.html apuntando a `https://agy.culturavpn.pro/api`
@@ -358,6 +418,15 @@ Si Google Maps dice "sin web" pero encuentras Instagram → es `social-only`
 - [ ] Apify MCP no disponible sin token; buscar fuente alternativa de datos si se quieren más negocios SIN web
 - [ ] En el futuro: expandir prospección a Medellín y Cali
 - [ ] Diseñar landing pages con Open Design cuando haya clientes
+
+## ✅ Proceso de Sincronización Automática (Para Futuras Referencias)
+Cuando sigas el **PROCESO ESTÁNDAR PARA AGREGAR NUEVOS NEGOCIOS** documentado en este archivo, la sincronización entre local, servidor y Vercel es **automática y garantizada**:
+
+1. **Locally**: Los archivos `datos.json`, `seed.json` y `index.html` se actualizan automáticamente
+2. **Servidor**: El Paso 7 del proceso transfiere `seed.json` al servidor y reinicia el servicio
+3. **Vercel**: La aplicación en `https://negocios-woad.vercel.app/` consume directamente de la API del servidor (`https://agy.culturavpn.pro/api/negocios`)
+
+**Por lo tanto, si sigues exactamente los 7 pasos del proceso estándar, no necesitas verificar nada más - los nuevos negocios estarán disponibles inmediatamente en todas las instancias (local, servidor y Vercel).**
 
 ## Notas técnicas
 - Al agregar nuevos IDs, usar b64+ para no chocar con IDs existentes
@@ -374,3 +443,94 @@ Si Google Maps dice "sin web" pero encuentras Instagram → es `social-only`
 - **Agregar nuevos negocios**: editar `seed.json` (agregar los nuevos al final), copiar al server y `pm2 restart agenxy`. El `syncSeed()` inserta solo los IDs nuevos. **NO borrar la DB.**
 - **Recuperar estado desde localStorage**: si los datos del servidor se pierden, abre la herramienta (los datos locales sobreviven si no recargaste). Usa el botón `⇧ Server` para restaurar priorities, estados y notas al servidor vía `/api/negocios/bulk-state`.
 - **Frontend merge**: al cargar desde el servidor, el frontend **preserva** el estado existente de localStorage (status, priority, notes) y solo actualiza los datos del negocio (nombre, categoría, web, etc.).
+
+---
+
+## 📋 PROCESO ESTÁNDAR PARA AGREGAR NUEVOS NEGOCIOS
+
+**Seguir SIEMPRE estos pasos en orden cuando se agreguen negocios nuevos:**
+
+### 1. Obtener datos (Apify - OBLIGATORIO)
+```bash
+# Usar compass/google-maps-extractor con:
+- scrapeContacts: true
+- scrapePlaceDetailPage: true
+- scrapeSocialMediaProfiles: {instagrams: true, facebooks: true, tiktoks: true}
+- skipClosedPlaces: true
+- Filtrar solo con teléfono válido
+```
+
+### 2. Cruzar y validar datos (REGLAS #1-#5)
+- Verificar webType real: no-web / social-only / has-web
+- Conservar TODA la info contradictoria (teléfonos, direcciones, redes)
+- Prioridad: Redes Sociales > Sitio Web > Google Maps
+
+### 3. Crear JSON con nuevos negocios
+- IDs secuenciales: b78, b79, b80... (no chocar con existentes)
+- Formato exacto: id, name, cat, addr, phone, phoneClean, webType, webUrl, webLabel, social[], lat, lng, propuesta
+- Guardar en `/tmp/nuevos_negocios.json`
+
+### 4. Actualizar 3 archivos de datos
+```bash
+# datos.json (respaldo local)
+python3 -c "
+import json
+with open('busqueda/datos.json') as f: d=json.load(f)
+with open('/tmp/nuevos_negocios.json') as f: n=json.load(f)
+d.extend(n)
+json.dump(d, open('busqueda/datos.json','w'), ensure_ascii=False, indent=2)
+"
+
+# seed.json (para servidor)
+python3 -c "
+import json
+with open('busqueda/seed.json') as f: d=json.load(f)
+with open('/tmp/nuevos_negocios.json') as f: n=json.load(f)
+d.extend(n)
+json.dump(d, open('busqueda/seed.json','w'), ensure_ascii=False, indent=2)
+"
+```
+
+### 5. Actualizar DATA_FALLBACK en index.html
+```bash
+# Convertir a formato JS compacto y insertar antes de "};\n" en DATA_FALLBACK
+python3 -c "
+import json, re
+with open('/tmp/nuevos_negocios.json') as f: n=json.load(f)
+def to_js(o):
+    if isinstance(o, dict):
+        return '{' + ','.join(f'{k}:{to_js(v)}' for k,v in o.items()) + '}'
+    elif isinstance(o, list):
+        return '[' + ','.join(to_js(v) for v in o) + ']'
+    elif isinstance(o, str):
+        return json.dumps(o)
+    return str(o).lower() if isinstance(o, bool) else ('null' if o is None else str(o))
+lines = [to_js(x)+',' for x in n]
+with open('busqueda/index.html') as f: c=f.read()
+idx = c.rfind('};', c.find('var DATA_FALLBACK'))
+c = c[:idx] + '\n'.join(lines) + '\n' + c[idx:]
+with open('busqueda/index.html','w') as f: f.write(c)
+"
+```
+
+### 6. Verificar sintaxis
+```bash
+cd busqueda && sed -n '/^<script>/,/^<\/script>/p' index.html | sed '1d;$d' > /tmp/check.js && node --check /tmp/check.js
+# Debe salir sin errores
+```
+
+### 7. Sincronizar con servidor (Oracle Cloud)
+```bash
+scp busqueda/seed.json root@xray.culturavpn.pro:/root/agenxy/seed.json
+ssh root@xray.culturavpn.pro "pm2 restart agenxy && sleep 2 && curl -s https://agy.culturavpn.pro/api/negocios | jq '.data | length'"
+# Debe mostrar el total actualizado
+```
+
+### 8. Actualizar AGENTS.md
+- Actualizar tabla "Datos actuales"
+- Agregar entrada en "Historial de sesiones" con fecha, scraper usado, totales
+- Verificar contadores: Sin web / Solo redes / Con web
+
+---
+
+**NOTA CRÍTICA:** El servidor usa `syncSeed()` que solo hace `INSERT OR IGNORE` — **NUNCA borra datos de usuario**. Solo inserta IDs nuevos. NO borrar la BD.

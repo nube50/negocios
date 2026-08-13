@@ -1,0 +1,62 @@
+ASUNTO: Propuesta web para Paola Dimaya Alta Costura — Cultura Agéntica
+
+---
+
+Estimada Paola,
+
+Me complace contactarla luego de nuestro acercamiento anterior. Como conversamos, he preparado una propuesta concreta de página web para **Paola Dimaya Alta Costura**, diseñada específicamente para su negocio de alquiler de trajes de etiqueta y alta costura en Bogotá.
+
+🔗 **Puede ver la propuesta funcional aquí:**
+https://lp-paola-dimaya.vercel.app
+
+---
+
+### Qué incluye la propuesta
+
+Esta landing page está lista para usar y contempla:
+
+- **Hero editorial** con video de fondo (mujer probándose vestido de novia), titular claro y CTA directo a WhatsApp
+- **Barra de estadísticas** animada: años de experiencia, clientas atendidas, % satisfacción
+- **Sección "Sobre mí"** con su historia, técnica y materiales — con foto de diseñadora (no modelo genérica)
+- **Servicios en grid 2×2** con iconos, descripción real y precio "Desde $X.XXX.XXX"
+- **Galería** de 6 vestidos con lightbox navegable
+- **Cobertura** por zonas de Bogotá (Chapinero, Usaquén, Zona Rosa, etc.)
+- **Testimonios** en carrusel automático (quotes reales de su negocio)
+- **CTA final** dual: WhatsApp + "Cómo llegar" con Google Maps embed en grayscale
+- **WhatsApp flotante** visible en toda la página
+- **Footer** con logo, tagline, redes sociales y copyright
+- **100% responsive** (probado en 320px–1920px), sin scroll horizontal, touch targets ≥44px
+- **GSAP + ScrollTrigger** para animaciones suaves (stagger, reveals, contadores)
+- **Fallback 3s** si GSAP no carga
+- **PWA ready** (instalable como app)
+
+Stack: HTML único, sin build, sin dependencias propias — Google Fonts (Playfair Display + Inter), Font Awesome 6 CDN, Unsplash para imágenes, video Mixkit 720p (3MB).
+
+---
+
+### Inversión y siguientes pasos
+
+- **Desarrollo e implementación:** $1.200.000 COP (pago único)
+- **Dominio propio** (ej: paoladimaya.co): ~$50.000–$80.000 COP/año (opcional, se gestiona aparte)
+- **Hosting Vercel gratis** incluido (SSL, CDN global, 99.99% uptime)
+- **Entrega:** 5 días hábiles tras confirmación
+- **Soporte 30 días** post-entrega para ajustes menores
+
+Si le interesa, coordinamos una llamada breve (15 min) para resolver dudas, definir textos finales de la sección "Sobre mí" y testimonios, y agendar la puesta en marcha.
+
+---
+
+### Contacto
+
+**Cultura Agéntica**  
+Desarrollo web para negocios locales en Bogotá  
+📱 WhatsApp: https://wa.me/573194509370  
+📞 Tel: 319 450 9370  
+✉️ Email: (pendiente — usar WhatsApp como canal principal)
+
+---
+
+Quedo atenta a sus comentarios.
+
+Cordialmente,  
+**Equipo Cultura Agéntica**

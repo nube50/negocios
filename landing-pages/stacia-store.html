@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stacia Store · Luxury Brand Armenia</title>
+<meta name="description" content="Luxury brand de ropa y accesorios en Armenia, Quindío. Jeans, vestidos, sandalias, perfumes. Calle 22 #14-53. Envíos worldwide.">
+<meta property="og:title" content="Stacia Store · Luxury Brand">
+<meta property="og:description" content="Luxury brand · Armenia, Quindío. Ropa, accesorios y perfumes originales. Envíos worldwide.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lp-stacia-store.vercel.app">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+  --black: #0a0a0a;
+  --dark: #121212;
+  --darker: #1a1a1a;
+  --gray: #2a2a2a;
+  --text: #e8e8e8;
+  --text-light: #999;
+  --cream: #f5f0eb;
+  --gold: #c9a96e;
+  --gold-light: #e8d5a8;
+  --white: #ffffff;
+  --whatsapp: #25d366;
+  --instagram: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--black);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  color: var(--cream);
+}
+h2 .highlight { color: var(--gold); }
+.section-subtitle {
+  text-align: center;
+  color: var(--text-light);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-size: 1rem;
+}
+section { padding: 5rem 1.5rem; position: relative; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-line {
+  width: 40px;
+  height: 3px;
+  background: var(--gold);
+  margin: 0 auto 1rem;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 2rem;
+  padding-top: 14vh;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.hero-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5) saturate(1.1);
+}
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.85) 100%);
+}
+.hero-content { position: relative; z-index: 2; max-width: 800px; }
+.hero-badge,
+.hero h1,
+.hero-tagline,
+.hero-desc,
+.hero-cta .btn,
+.hero-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(201,169,110,0.12);
+  color: var(--gold-light);
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(201,169,110,0.25);
+}
+.hero h1 {
+  font-size: 5rem;
+  color: var(--cream);
+  line-height: 1.05;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+.hero h1 .outline {
+  -webkit-text-stroke: 1.5px var(--cream);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.hero-tagline {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.hero-desc {
+  color: rgba(255,255,255,0.6);
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+.btn-wa { background: var(--whatsapp); color: var(--black); }
+.btn-wa:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.3); }
+.btn-ig {
+  background: var(--instagram);
+  color: var(--white);
+}
+.btn-ig:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(220,39,67,0.3); }
+.btn-outline {
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: var(--cream);
+  background: transparent;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold-light); background: rgba(201,169,110,0.1); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  animation: float 3s ease-in-out infinite;
+  cursor: pointer;
+}
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+.hero-scroll span {
+  opacity: 0.9;
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px rgba(201,169,110,0.15);
+}
+.hero-scroll .scroll-arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--gold);
+}
+.hero-scroll .scroll-arrows i {
+  font-size: 16px;
+  line-height: 1;
+  animation: arrowBounce 1.8s ease infinite;
+  filter: drop-shadow(0 0 6px rgba(201,169,110,0.2));
+}
+.hero-scroll .scroll-arrows i:nth-child(2) { animation-delay: 0.25s; }
+@keyframes arrowBounce {
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(5px); }
+}
+
+/* Stats Bar */
+.stats-bar {
+  background: var(--dark);
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0.3rem;
+}
+
+/* About */
+.about {
+  background: var(--black);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.about-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.about-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.about-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,169,110,0.15), transparent);
+}
+.about-content h2 { text-align: left; }
+.about-content .section-line { margin: 0 0 1rem; }
+.about-content p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+.about-feat {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.about-feat i { color: var(--gold); font-size: 0.9rem; }
+
+/* Instagram Gallery */
+.gallery {
+  background: var(--black);
+}
+.ig-embeds {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.ig-embeds blockquote {
+  min-height: 400px;
+  background: var(--darker);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.ig-embeds iframe {
+  width: 100% !important;
+  min-height: 400px !important;
+  border-radius: 12px;
+}
+
+/* Categories */
+.categories { background: var(--dark); }
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.cat-card {
+  background: var(--darker);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.cat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+.cat-card .icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  display: block;
+  color: var(--gold);
+}
+.cat-card h4 { font-size: 1rem; color: var(--cream); margin-bottom: 0.3rem; }
+.cat-card p { font-size: 0.8rem; color: var(--text-light); }
+
+/* Location */
+.location { background: var(--black); }
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.location-info h3 {
+  font-size: 1.5rem;
+  color: var(--cream);
+  margin-bottom: 1rem;
+}
+.location-info .section-line { margin: 0 0 1rem; }
+.location-detail {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  align-items: flex-start;
+}
+.location-detail i {
+  color: var(--gold);
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  min-width: 1.5rem;
+}
+.location-detail p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; }
+.location-detail strong { color: var(--text); }
+.location-map {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  filter: grayscale(1) brightness(0.7);
+  transition: filter 0.3s ease;
+}
+.location-map:hover { filter: grayscale(0.5) brightness(0.9); }
+.location-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* CTA Final */
+.cta-section {
+  background: linear-gradient(135deg, var(--dark) 0%, #1a0f0f 50%, var(--dark) 100%);
+  text-align: center;
+  padding: 6rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(201,169,110,0.06) 0%, transparent 70%);
+}
+.cta-section h2 { font-size: 3rem; margin-bottom: 0.5rem; }
+.cta-section p { color: var(--text-light); margin-bottom: 2rem; font-size: 1.05rem; }
+
+/* Footer */
+footer {
+  background: var(--black);
+  padding: 3rem 1.5rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--cream);
+  margin-bottom: 0.3rem;
+}
+.footer-tagline {
+  color: var(--text-light);
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.footer-social a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  background: var(--darker);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.footer-social a:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+.footer-copy {
+  color: var(--text-light);
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* WhatsApp Float */
+.whatsapp-float {
+  position: fixed !important;
+  bottom: 1.5rem !important;
+  right: 1.5rem !important;
+  }
+@media (min-width: 1024px) {
+  .whatsapp-float { right: calc((100vw - 1100px) / 2 + 1rem) !important; }
+}
+.whatsapp-float {
+  width: 56px !important;
+  height: 56px !important;
+  background: #25d366 !important;
+  color: #0a0a0a !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.6rem !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.3) !important;
+  z-index: 99999 !important;
+  transition: all 0.3s ease;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37,211,102,0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero { padding-top: 10vh; padding-left: 1.5rem; padding-right: 1.5rem; }
+  .hero h1 { font-size: 3rem; }
+  .hero-scroll { bottom: 50px; }
+  .hero-tagline { font-size: 0.8rem; letter-spacing: 2px; }
+  .hero-desc { font-size: 0.9rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-image { height: 280px; }
+  .ig-embeds { grid-template-columns: 1fr; }
+  .location-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .location-map { height: 250px; }
+  .stats-grid { gap: 2rem; }
+  .stat-value { font-size: 2rem; }
+  h2 { font-size: 1.8rem; }
+  section { padding: 3rem 1.2rem; }
+  .cta-section h2 { font-size: 1.8rem; }
+  .cta-section { padding: 4rem 1.5rem; }
+  .cat-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+}
+@media (max-width: 480px) {
+  .hero { padding-top: 8vh; padding-left: 1.2rem; padding-right: 1.2rem; }
+  .hero h1 { font-size: 2.5rem; }
+  .hero-tagline { font-size: 0.7rem; letter-spacing: 1px; }
+  .about-image { height: 220px; }
+  .whatsapp-float { width: 48px !important; height: 48px !important; font-size: 1.3rem !important; bottom: 1rem !important; right: 1rem !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80" id="heroVideo">
+      <source src="https://assets.mixkit.co/videos/8908/8908-720.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Armenia · Quindío</div>
+    <h1>
+      <span class="outline">STACIA</span><br>
+      STORE
+    </h1>
+    <p class="hero-tagline">Luxury Brand · Ropa &amp; Accesorios</p>
+    <p class="hero-desc">Luxury brand con envíos worldwide. Outfits que hablan por ti. Domicilios en Armenia.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/573004780637" target="_blank" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Escríbenos</a>
+      <a href="https://instagram.com/stacia_store" target="_blank" class="btn btn-ig"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="#gallery" class="btn btn-outline">Ver Colección</a>
+    </div>
+  </div>
+  <div class="hero-scroll" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+    <span>Descubre</span>
+    <div class="scroll-arrows">
+      <i class="fas fa-chevron-down"></i>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats-bar">
+  <div class="container stats-grid">
+    <div class="stat-item"><div class="stat-value" data-target="31300">0</div><div class="stat-label">Seguidores en IG</div></div>
+    <div class="stat-item"><div class="stat-value" data-target="857">0</div><div class="stat-label">Posts en IG</div></div>
+    <div class="stat-item"><div class="stat-value" data-target="535">0</div><div class="stat-label">Seguidos</div></div>
+    <div class="stat-item"><div class="stat-value" data-target="100">0</div><div class="stat-label">% Luxury</div></div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-image-wrapper">
+      <img src="https://images.unsplash.com/photo-1766934587163-186d20bf3d40?w=700&q=85" alt="Stacia Store - Boutique de ropa y accesorios" class="about-image">
+    </div>
+    <div class="about-content">
+      <div class="section-line"></div>
+      <h2>Más que <span class="highlight">moda</span>, una actitud</h2>
+      <p>En Stacia Store creemos que la ropa es una extensión de tu personalidad. Por eso seleccionamos cada prenda y accesorio para que encuentres tu estilo único en el corazón de Bogotá.</p>
+      <p>📍 Calle 22 #14-53, Armenia, Quindío. Domicilios en Armenia y envíos worldwide. Moda con actitud, precio justo y atención personalizada.</p>
+      <div class="about-features">
+        <div class="about-feat"><i class="fas fa-check"></i> Ropa y accesorios</div>
+        <div class="about-feat"><i class="fas fa-check"></i> Perfumes originales</div>
+        <div class="about-feat"><i class="fas fa-check"></i> Atención personalizada</div>
+        <div class="about-feat"><i class="fas fa-check"></i> Envíos a Colombia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery con Instagram embeds (carga las imágenes reales desde Instagram) -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <h2>Lo <span class="highlight">último</span> en Instagram</h2>
+    <p class="section-subtitle">Outfits, tendencias y looks que inspiran. Posteamos en @stacia_store</p>
+    <div class="ig-embeds">
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DWCNzG5EbX0/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DRQDwpKCS4j/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DNhEs18NM6f/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DQ96qv8D_Vo/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DOZse_BCeQg/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DLjDl0woX7D/" data-instgrm-version="14"></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="categories" id="categories">
+  <div class="container">
+    <h2>Descubrí nuestra <span class="highlight">colección</span></h2>
+    <p class="section-subtitle">Todo lo que necesitás para armar tu look perfecto</p>
+    <div class="cat-grid">
+      <div class="cat-card"><div class="icon"><i class="fas fa-vest"></i></div><h4>Jeans</h4><p>Cello, barrel, flare y más</p></div>
+      <div class="cat-card"><div class="icon"><i class="fas fa-vest"></i></div><h4>Vestidos</h4><p>Elegantes y casuales</p></div>
+      <div class="cat-card"><div class="icon"><i class="fas fa-shoe-prints"></i></div><h4>Sandalias</h4><p>Nueva temporada</p></div>
+      <div class="cat-card"><div class="icon"><i class="fas fa-spray-can-sparkles"></i></div><h4>Perfumes</h4><p>100% originales</p></div>
+      <div class="cat-card"><div class="icon"><i class="fas fa-gem"></i></div><h4>Accesorios</h4><p>Bisutería, carteras, cinturones</p></div>
+      <div class="cat-card"><div class="icon"><i class="fas fa-tshirt"></i></div><h4>Blusas &amp; Tops</h4><p>Bustiers, crop tops, básicos</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Location -->
+<section class="location" id="location">
+  <div class="container location-grid">
+    <div class="location-info">
+      <div class="section-line"></div>
+      <h3>Visitános</h3>
+      <div class="location-detail">
+        <i class="fas fa-location-dot"></i>
+        <div><strong>Dirección</strong><p>Calle 22 #14-53, Armenia, Quindío</p></div>
+      </div>
+      <div class="location-detail">
+        <i class="fas fa-clock"></i>
+        <div><strong>Horario</strong><p>Lun - Sáb: 9:30 AM - 7:30 PM<br>Dom: 9:30 AM - 7:30 PM</p></div>
+      </div>
+      <div class="location-detail">
+        <i class="fas fa-phone"></i>
+        <div><strong>Teléfono</strong><p><a href="tel:+573004780637" style="color:var(--text-light);text-decoration:none;">+57 300 478 0637</a></p></div>
+      </div>
+      <div class="location-detail">
+        <i class="fab fa-instagram"></i>
+        <div><strong>Instagram</strong><p><a href="https://instagram.com/stacia_store" target="_blank" style="color:var(--text-light);text-decoration:none;">@stacia_store</a></p></div>
+      </div>
+      <div class="location-detail">
+        <i class="fas fa-link"></i>
+        <div><strong>Linktree</strong><p><a href="https://beacons.ai/staciastore" target="_blank" style="color:var(--text-light);text-decoration:none;">beacons.ai/staciastore</a></p></div>
+      </div>
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="https://wa.me/573004780637" target="_blank" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Escribinos</a>
+        <a href="https://maps.google.com/maps?q=Calle+22+%2314-53+Armenia+Quind%C3%ADo" target="_blank" class="btn btn-outline"><i class="fas fa-map-pin"></i> Cómo llegar</a>
+      </div>
+    </div>
+    <div class="location-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.123!2d-75.6803!3d4.4972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e37914b5b5b5b5b%3A0x0!2sCalle+22+%2314-53%2C+Armenia%2C+Quind%C3%ADo!5e0!3m2!1ses!2sco!4v1" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Final -->
+<section class="cta-section" id="contacto">
+  <div class="container">
+    <h2>¿Listo para tu <span class="highlight">próximo look</span>?</h2>
+    <p>Escribinos por WhatsApp y te asesoramos gratis</p>
+    <a href="https://wa.me/573004780637" target="_blank" class="btn btn-wa" style="font-size:1.1rem;padding:1rem 2.5rem;"><i class="fab fa-whatsapp"></i> Quiero mi outfit</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-brand">Stacia Store</div>
+  <p class="footer-tagline">Luxury Brand · Armenia, Quindío</p>
+  <div class="footer-social">
+    <a href="https://wa.me/573004780637" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://instagram.com/stacia_store" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://beacons.ai/staciastore" target="_blank"><i class="fas fa-link"></i></a>
+  </div>
+  <p class="footer-copy">&copy; 2026 Stacia Store · Todos los derechos reservados</p>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/573004780637" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+<!-- Instagram Embed Script -->
+<script async src="//www.instagram.com/embed.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+heroTl
+  .to('.hero-badge', { y: 0, opacity: 1, duration: 0.8 })
+  .to('.hero h1', { y: 0, opacity: 1, duration: 1 }, '-=0.3')
+  .to('.hero-tagline', { y: 0, opacity: 1, duration: 0.8 }, '-=0.5')
+  .to('.hero-desc', { y: 0, opacity: 1, duration: 0.8 }, '-=0.4')
+  .to('.hero-cta .btn', { y: 0, opacity: 1, stagger: 0.15, duration: 0.6 }, '-=0.3')
+  .to('.hero-scroll', { y: 0, opacity: 1, duration: 0.5 }, '-=0.2');
+
+gsap.utils.toArray('.stat-item').forEach(item => {
+  const el = item.querySelector('.stat-value');
+  const target = parseInt(el.dataset.target);
+  ScrollTrigger.create({
+    trigger: item,
+    start: 'top 85%',
+    onEnter: () => {
+      gsap.to(el, {
+        duration: 2,
+        ease: 'power2.out',
+        innerHTML: target,
+        snap: { innerHTML: 1 },
+        modifiers: { innerHTML: v => Math.round(parseInt(v)).toLocaleString() }
+});
+    },
+    once: true
+  });
+});
+
+gsap.utils.toArray('section:not(.hero):not(.stats-bar)').forEach(section => {
+  gsap.from(section.querySelector('h2'), {
+    scrollTrigger: { trigger: section, start: 'top 80%' },
+    y: 40, opacity: 0, duration: 0.8, ease: 'power2.out'
+  });
+});
+
+gsap.utils.toArray('.cat-card').forEach((card, i) => {
+  gsap.from(card, {
+    scrollTrigger: { trigger: card, start: 'top 85%' },
+    y: 30, opacity: 0, duration: 0.5, delay: i * 0.08, ease: 'power2.out'
+  });
+});
+
+gsap.from('.about-image', {
+  scrollTrigger: { trigger: '.about-image', start: 'top 80%' },
+  x: -40, opacity: 0, duration: 0.8, ease: 'power2.out'
+});
+
+gsap.from('.about-content p', {
+  scrollTrigger: { trigger: '.about-content', start: 'top 80%' },
+  y: 20, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out'
+});
+
+gsap.from('.location-info', {
+  scrollTrigger: { trigger: '.location-info', start: 'top 80%' },
+  x: -30, opacity: 0, duration: 0.8, ease: 'power2.out'
+});
+
+gsap.from('.location-map', {
+  scrollTrigger: { trigger: '.location-map', start: 'top 80%' },
+  x: 30, opacity: 0, duration: 0.8, ease: 'power2.out'
+});
+
+// Fallback: si GSAP no carga, revelar hero elements
+setTimeout(() => {
+  document.querySelectorAll('.hero-badge, .hero h1, .hero-tagline, .hero-desc, .hero-cta .btn, .hero-scroll').forEach(el => {
+    el.style.opacity = '1';
+    el.style.transform = 'translateY(0)';
+  });
+}, 3000);
+
+
+</script>
+</body>
+</html>
