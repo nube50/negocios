@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Coq · Speakeasy & Club | Zona Rosa Bogotá</title>
+  <meta name="description" content="El Coq es el speakeasy bar & club de culto más exclusivo de Bogotá. Coctelería de autor, House music, DJs internacionales y el mejor ambiente en El Retiro / Zona T.">
+  
+  <!-- Google Fonts: Syne + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #09070a;
+      --bg-card: #141017;
+      --bg-card-hover: #1c1722;
+      --accent-red: #e63946;
+      --accent-gold: #d4af37;
+      --accent-gold-light: #f3e5ab;
+      --text-main: #f5f3f7;
+      --text-muted: #a39ca8;
+      --border-color: rgba(212, 175, 55, 0.15);
+      --font-title: 'Syne', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Helper Utilities */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      background: rgba(230, 57, 70, 0.12);
+      border: 1px solid rgba(230, 57, 70, 0.3);
+      color: var(--accent-red);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 650px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      border: none;
+      min-height: 48px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-red), #c1121f);
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(230, 57, 70, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(230, 57, 70, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      transform: translateY(-3px);
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 0;
+      background: rgba(9, 7, 10, 0.7);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+      font-family: var(--font-title);
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent-red);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      padding-bottom: 60px;
+      overflow: hidden;
+    }
+
+    .hero-video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0.9;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(9,7,10,0.12) 0%, rgba(9,7,10,0.5) 60%, #09070a 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 780px;
+    }
+
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: 4.2rem;
+      font-weight: 900;
+      margin-bottom: 24px;
+      line-height: 1.08;
+      letter-spacing: -1px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--accent-red), var(--accent-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.7rem;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 480px) {
+      .hero-btns {
+        flex-direction: column;
+      }
+      .hero-btns .btn {
+        width: 100%;
+      }
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      position: relative;
+      z-index: 3;
+      margin-top: 60px;
+      padding: 30px;
+      background: rgba(20, 16, 23, 0.75);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .stats-bar {
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+        gap: 16px;
+      }
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-title);
+      font-size: 2.25rem;
+      font-weight: 900;
+      color: var(--accent-gold);
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* Concept Section */
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 0;
+      }
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .concept-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .concept-img-wrapper {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .concept-img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .concept-img-wrapper:hover .concept-img {
+      transform: scale(1.03);
+    }
+
+    .concept-badge-overlay {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      padding: 20px;
+      background: rgba(9, 7, 10, 0.88);
+      backdrop-filter: blur(15px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Music & DJs Section */
+    .music-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .music-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 32px 24px;
+      transition: all 0.3s ease;
+    }
+
+    .music-card:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-5px);
+      border-color: var(--accent-red);
+    }
+
+    .music-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: rgba(230, 57, 70, 0.1);
+      color: var(--accent-red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .music-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .music-card p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* Cocktails Section */
+    .cocktails-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .cocktail-card {
+      background: var(--bg-card);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .cocktail-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent-gold);
+    }
+
+    .cocktail-img-box {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cocktail-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .cocktail-card:hover .cocktail-img {
+      transform: scale(1.08);
+    }
+
+    .cocktail-tag {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(9, 7, 10, 0.85);
+      backdrop-filter: blur(8px);
+      color: var(--accent-gold);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .cocktail-info {
+      padding: 24px;
+    }
+
+    .cocktail-info h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .cocktail-info p {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    /* Gallery Section */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      height: 260px;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(9,7,10,0.85), transparent);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(15px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      color: #fff;
+      font-size: 32px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      min-width: 44px;
+      min-height: 44px;
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .testi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .testi-stars {
+      color: var(--accent-gold);
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .testi-text {
+      font-size: 15px;
+      color: var(--text-main);
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .testi-author {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .testi-role {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Location & Hours Section */
+    .location-box {
+      background: var(--bg-card);
+      border-radius: 24px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 900px) {
+      .location-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .location-info {
+      padding: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .location-info {
+        padding: 24px;
+      }
+    }
+
+    .info-list {
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(230, 57, 70, 0.1);
+      color: var(--accent-red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .info-detail h4 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .info-detail p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border: 0;
+      filter: grayscale(85%) invert(90%) contrast(120%);
+    }
+
+    /* Footer */
+    footer {
+      background: #050406;
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-title);
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+      background: var(--accent-red);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-top: 20px;
+    }
+
+    /* WhatsApp Float Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+    }
+
+    /* GSAP opacity zero initial */
+    .gsap-reveal {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="logo">
+        🍸 EL COQ <span>CLUB</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#concepto">El Speakeasy</a></li>
+        <li><a href="#sonido">Música & DJs</a></li>
+        <li><a href="#cocteles">Coctelería</a></li>
+        <li><a href="#galeria">Ambiente</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+      </ul>
+      <a href="https://wa.me/576112496?text=Hola%20El%20Coq%2C%20quisiera%20consultar%20por%20reservas" target="_blank" class="btn btn-primary btn-sm">
+        <i class="fa-brands fa-whatsapp"></i> Reservar Mesa
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop playsinline class="hero-video-bg" preload="auto">
+      <source src="https://assets.mixkit.co/videos/23208/23208-720.mp4" type="video/mp4">
+      <source src="https://assets.mixkit.co/videos/4043/4043-720.mp4" type="video/mp4">
+      <source src="https://assets.mixkit.co/videos/4174/4174-720.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content gsap-reveal">
+      <span class="badge-tag"><i class="fa-solid fa-martini-glass"></i> Speakeasy & Club · Zona Rosa Bogotá</span>
+      <h1 class="hero-title">House Music, <span>Coctelería de Autor</span> & El Secreto de la Noche</h1>
+      <p class="hero-subtitle">El bar de culto más icónico de El Retiro. Sets de DJ internacionales, iluminación tenue rojiza, mixología de nivel mundial y una vibra inigualable en Bogotá.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/576112496?text=Hola%20El%20Coq%2C%20quisiera%20reservar%20una%20mesa%20para%20este%20fin%20de%20semana" target="_blank" class="btn btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> Reservar por WhatsApp
+        </a>
+        <a href="#ubicacion" class="btn btn-outline">
+          <i class="fa-solid fa-location-dot"></i> Ubicación (Calle 84 Bis #14-02)
+        </a>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-number" data-target="100">%</div>
+          <div class="stat-label">Vibra Speakeasy</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="12">+</div>
+          <div class="stat-label">Cocteles Insignia</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">House</div>
+          <div class="stat-label">Deep & Nu-Disco</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="5">⭐</div>
+          <div class="stat-label">El Bar de Culto #1</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concepto Section -->
+  <section class="section" id="concepto">
+    <div class="container">
+      <div class="concept-grid">
+        <div class="gsap-reveal">
+          <span class="badge-tag"><i class="fa-solid fa-gem"></i> La Experiencia El Coq</span>
+          <h2 class="section-title">Un Refugio de Culto en la Zona Rosa</h2>
+          <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 20px;">
+            Oculto tras una entrada discreta en El Retiro, <strong>El Coq</strong> es la leyenda de la rumba alternativa sofisticada en Bogotá. Una estética vintage francesa, su icónico árbol iluminado y la penumbra rojiza crean un universo íntimo donde cada noche es inolvidable.
+          </p>
+          <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 30px;">
+            Diseñado para exigentes del buen beber y del baile elegante, en El Coq coinciden mentes creativas, DJs de vanguardia y amantes de la mixología de autor.
+          </p>
+          <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+            <div>
+              <h4 style="color: var(--accent-gold); font-size: 18px;"><i class="fa-solid fa-candle-holder"></i> Iluminación Tenue & Chic</h4>
+              <p style="font-size: 13px; color: var(--text-muted);">Atmósfera cálida y mística en rojo y oro.</p>
+            </div>
+            <div>
+              <h4 style="color: var(--accent-red); font-size: 18px;"><i class="fa-solid fa-sliders"></i> Sonido de Alta Fidelidad</h4>
+              <p style="font-size: 13px; color: var(--text-muted);">Curaduría electrónica sin concesiones comerciales.</p>
+            </div>
+          </div>
+        </div>
+        <div class="concept-img-wrapper gsap-reveal">
+          <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=800&auto=format&fit=crop" alt="El Coq Interior Speakeasy" class="concept-img">
+          <div class="concept-badge-overlay">
+            <h4 style="color: var(--accent-gold); font-size: 16px;"><i class="fa-solid fa-location-dot"></i> Zona Rosa / El Retiro</h4>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Calle 84 Bis #14-02 · El punto definitivo de la noche sofisticada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Musica & DJs Section -->
+  <section class="section" id="sonido" style="background: rgba(20, 16, 23, 0.4);">
+    <div class="container">
+      <div style="text-align: center;" class="gsap-reveal">
+        <span class="badge-tag"><i class="fa-solid fa-compact-disc"></i> La Curaduría Sonora</span>
+        <h2 class="section-title">Ritmos & Sets El Coq</h2>
+        <p class="section-desc" style="margin: 0 auto 48px;">Una selección musical hipnótica pensada para el baile constante y refinado.</p>
+      </div>
+
+      <div class="music-grid">
+        <div class="music-card gsap-reveal">
+          <div class="music-icon"><i class="fa-solid fa-record-vinyl"></i></div>
+          <h3>House & Deep House</h3>
+          <p>Líneas de bajo profundas, vocales soul y ritmos elegantes que marcan el pulso de la noche.</p>
+        </div>
+        <div class="music-card gsap-reveal">
+          <div class="music-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Nu-Disco & Indie Dance</h3>
+          <p>Sintetizadores retro, vibras de los 80s reinventadas y beats contagiosos de pista.</p>
+        </div>
+        <div class="music-card gsap-reveal">
+          <div class="music-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+          <h3>DJs Nacionales & Invitados</h3>
+          <p>Sets en vivo de selectores locales referentes e invitados internacionales de la escena club.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cocteleria Section -->
+  <section class="section" id="cocteles">
+    <div class="container">
+      <div style="text-align: center;" class="gsap-reveal">
+        <span class="badge-tag"><i class="fa-solid fa-wine-glass"></i> Coctelería de Autor</span>
+        <h2 class="section-title">El Arte de la Mixología</h2>
+        <p class="section-desc" style="margin: 0 auto 48px;">Destilados de alta gama, macerados artesanales y jarabes hechos en casa.</p>
+      </div>
+
+      <div class="cocktails-grid">
+        <div class="cocktail-card gsap-reveal">
+          <div class="cocktail-img-box">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=800&auto=format&fit=crop" alt="Coq Spritz" class="cocktail-img">
+            <span class="cocktail-tag">Insignia</span>
+          </div>
+          <div class="cocktail-info">
+            <h3>Coq Royal Spritz</h3>
+            <p>Licor de flor de saúco St. Germain, Prosecco DOC, tónica artesanal de pomelo y piel de limón.</p>
+          </div>
+        </div>
+
+        <div class="cocktail-card gsap-reveal">
+          <div class="cocktail-img-box">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop" alt="Smoked Mezcalita" class="cocktail-img">
+            <span class="cocktail-tag">Ahumado</span>
+          </div>
+          <div class="cocktail-info">
+            <h3>Smoked Mezcalita</h3>
+            <p>Mezcal silvestre artesanal, Ancho Reyes, zumo de lima recién exprimido y escarchado de sal de gusano.</p>
+          </div>
+        </div>
+
+        <div class="cocktail-card gsap-reveal">
+          <div class="cocktail-img-box">
+            <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=800&auto=format&fit=crop" alt="Espresso Coq Martini" class="cocktail-img">
+            <span class="cocktail-tag">Favorito</span>
+          </div>
+          <div class="cocktail-info">
+            <h3>Espresso Coq Martini</h3>
+            <p>Vodka destilado de grano, licor de café de finca, espresso caliente y granos de cacao tostado.</p>
+          </div>
+        </div>
+
+        <div class="cocktail-card gsap-reveal">
+          <div class="cocktail-img-box">
+            <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?q=80&w=800&auto=format&fit=crop" alt="French Velvet Negroni" class="cocktail-img">
+            <span class="cocktail-tag">Sofisticado</span>
+          </div>
+          <div class="cocktail-info">
+            <h3>French Velvet Negroni</h3>
+            <p>Gin de botánicos alpinos, Campari envejecido en barrica, Vermouth Rosso y gotas de bíter de cacao.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería Section -->
+  <section class="section" id="galeria" style="background: rgba(20, 16, 23, 0.4);">
+    <div class="container">
+      <div style="text-align: center;" class="gsap-reveal">
+        <span class="badge-tag"><i class="fa-solid fa-camera"></i> Galería</span>
+        <h2 class="section-title">Atmósfera El Coq</h2>
+        <p class="section-desc" style="margin: 0 auto 48px;">Luces tenues, detalles vintage y la vibra mística de nuestras noches.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item gsap-reveal" onclick="openLightbox('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1200&auto=format&fit=crop')">
+          <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=600&auto=format&fit=crop" alt="Barra Principal" class="gallery-img">
+          <div class="gallery-overlay"><span style="color: var(--accent-gold); font-weight:700;"><i class="fa-solid fa-expand"></i> Ampliar</span></div>
+        </div>
+        <div class="gallery-item gsap-reveal" onclick="openLightbox('https://images.unsplash.com/photo-1574096079513-d8259312b785?q=80&w=1200&auto=format&fit=crop')">
+          <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?q=80&w=600&auto=format&fit=crop" alt="Tragos de Autor" class="gallery-img">
+          <div class="gallery-overlay"><span style="color: var(--accent-gold); font-weight:700;"><i class="fa-solid fa-expand"></i> Ampliar</span></div>
+        </div>
+        <div class="gallery-item gsap-reveal" onclick="openLightbox('https://images.unsplash.com/photo-1571266028243-e4733b0f0bb1?q=80&w=1200&auto=format&fit=crop')">
+          <img src="https://images.unsplash.com/photo-1571266028243-e4733b0f0bb1?q=80&w=600&auto=format&fit=crop" alt="DJ Set & Luces" class="gallery-img">
+          <div class="gallery-overlay"><span style="color: var(--accent-gold); font-weight:700;"><i class="fa-solid fa-expand"></i> Ampliar</span></div>
+        </div>
+        <div class="gallery-item gsap-reveal" onclick="openLightbox('https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=1200&auto=format&fit=crop')">
+          <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=600&auto=format&fit=crop" alt="Lounge Nocturno" class="gallery-img">
+          <div class="gallery-overlay"><span style="color: var(--accent-gold); font-weight:700;"><i class="fa-solid fa-expand"></i> Ampliar</span></div>
+        </div>
+        <div class="gallery-item gsap-reveal" onclick="openLightbox('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1200&auto=format&fit=crop')">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=600&auto=format&fit=crop" alt="Cóctel en Mesa" class="gallery-img">
+          <div class="gallery-overlay"><span style="color: var(--accent-gold); font-weight:700;"><i class="fa-solid fa-expand"></i> Ampliar</span></div>
+        </div>
+        <div class="gallery-item gsap-reveal" onclick="openLightbox('https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=1200&auto=format&fit=crop')">
+          <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=600&auto=format&fit=crop" alt="Fiesta Nocturna" class="gallery-img">
+          <div class="gallery-overlay"><span style="color: var(--accent-gold); font-weight:700;"><i class="fa-solid fa-expand"></i> Ampliar</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align: center;" class="gsap-reveal">
+        <span class="badge-tag"><i class="fa-solid fa-star"></i> Opiniones de Visitantes</span>
+        <h2 class="section-title">El Visto Bueno de la Zona Rosa</h2>
+        <p class="section-desc" style="margin: 0 auto 48px;">Comentarios reales de la comunidad y conocedores de la rumba en Bogotá.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testi-card gsap-reveal">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testi-text">"El mejor speakeasy de Bogotá. El árbol iluminado en el centro, las luces rojas y la música House le dan una magia que no existe en otro sitio."</p>
+          <div class="testi-author">Mateo Silva</div>
+          <div class="testi-role">Google Review</div>
+        </div>
+        <div class="testi-card gsap-reveal">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testi-text">"Los cócteles son impecables y la selección de DJs de música electrónica es increíble. El sitio para empezar y quedarse toda la noche."</p>
+          <div class="testi-author">Carolina Restrepo</div>
+          <div class="testi-role">Resident Advisor Review</div>
+        </div>
+        <div class="testi-card gsap-reveal">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testi-text">"Ambiente reservado, chic y muy exclusivo en El Retiro. Atención impecable de los bartenders y excelente vibra."</p>
+          <div class="testi-author">Sebastián Gómez</div>
+          <div class="testi-role">Local Guide</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Hours Section -->
+  <section class="section" id="ubicacion">
+    <div class="container">
+      <div class="location-box gsap-reveal">
+        <div class="location-info">
+          <span class="badge-tag"><i class="fa-solid fa-map-location-dot"></i> Encuéntranos</span>
+          <h2 class="section-title" style="font-size: 2.2rem;">Ubicación & Reservas</h2>
+          <p style="color: var(--text-muted); font-size: 14px;">Te esperamos en el corazón del sector El Retiro / Zona Rosa.</p>
+          
+          <ul class="info-list">
+            <li class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="info-detail">
+                <h4>Dirección Exacta</h4>
+                <p>Calle 84 Bis #14-02, El Retiro / Zona Rosa, Chapinero, Bogotá D.C.</p>
+              </div>
+            </li>
+            <li class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="info-detail">
+                <h4>Horarios de Atención</h4>
+                <p>Miércoles a Sábado: 8:00 PM – 3:00 AM</p>
+              </div>
+            </li>
+            <li class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="info-detail">
+                <h4>Teléfono & Consultas</h4>
+                <p>+57 601 611 2496 / WhatsApp: +57 611 2496</p>
+              </div>
+            </li>
+          </ul>
+
+          <div style="margin-top: 32px;">
+            <a href="https://wa.me/576112496?text=Hola%20El%20Coq%2C%20quisiera%20consultar%20por%20reservas%20de%20mesa" target="_blank" class="btn btn-primary">
+              <i class="fa-brands fa-whatsapp"></i> Contactar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.602517865761!2d-74.0565!3d4.6675!2m3!1f02f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a5f00000001%3A0x1!2sCl.+84+Bis+%2314-02%2C+Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">🍸 EL COQ <span>CLUB</span></div>
+      <p style="color: var(--text-muted); font-size: 14px;">Speakeasy · House Music · Coctelería de Autor · El Retiro, Bogotá</p>
+      
+      <div class="footer-socials">
+        <a href="https://wa.me/576112496" target="_blank" class="social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://instagram.com/elcoqcoq/" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://elcoq.co/" target="_blank" class="social-btn" title="Website Official"><i class="fa-solid fa-globe"></i></a>
+      </div>
+
+      <div class="copyright">
+        © 2026 El Coq · Bogotá D.C., Colombia. Propuesta de desarrollo web.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal Container -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="Ampliada" class="lightbox-img" id="lightboxImg">
+  </div>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/576112496?text=Hola%20El%20Coq%2C%20quisiera%20reservar%20una%20mesa" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    // Lightbox Functionality
+    function openLightbox(url) {
+      document.getElementById('lightboxImg').src = url;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    // Safety Fallback if GSAP CDN fails
+    setTimeout(function() {
+      document.querySelectorAll('.gsap-reveal').forEach(function(el) {
+        el.style.opacity = '1';
+      });
+    }, 2500);
+
+    // GSAP Animations
+    document.addEventListener("DOMContentLoaded", function() {
+      if (typeof gsap !== "undefined") {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Reveal elements on scroll
+        gsap.utils.toArray('.gsap-reveal').forEach(function(el) {
+          gsap.fromTo(el, 
+            { opacity: 0, y: 30 },
+            { 
+              opacity: 1, 
+              y: 0, 
+              duration: 1, 
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 85%",
+                toggleActions: "play none none none"
+              }
+            }
+          );
+        });
+      }
+    });
+  </script>
+</body>
+</html>
