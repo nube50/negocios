@@ -553,6 +553,15 @@ git push origin main
   - Se incrementó el brillo aumentando la opacidad a **`opacity: 0.9`** y suavizando los gradientes oscuros.
 - Se documentó el **Patrón LP para Bares / Pubs / Discotecas / Gastrobares** en `AGENTS.md`.
 
+### Sesión 19 (2026-08-14) — 10 Nuevos Negocios de Veterinarias en Bogotá
+- Se investigaron y agregaron 10 negocios de veterinarias, clínicas veterinarias y pet shops en Bogotá (IDs `b148` a `b157`).
+- Diversidad de presencia web balanceada:
+  - 5 con sitio web propio (`has-web`): Animal's Health Center, Zoovet 24h, DidoPet, CPA Cedritos, Kanu Pets Pepe Sierra.
+  - 3 solo con redes sociales (`social-only`): Huellitas & Amor, Centro Médico Veterinaria La 80, Pets & Smile Modelia.
+  - 2 sin sitio web ni redes (`no-web`): Consultorio Veterinario San Francisco de Asís, Peluquería Canina & Veterinaria El Country.
+- Todos con teléfonos verificados, WhatsApp y geolocalización.
+- Sincronizados en `datos.json`, `seed.json`, `DATA_FALLBACK` y base de datos SQLite en Oracle Cloud ARM (`144` registros totales).
+
 ---
 
 **NOTA CRÍTICA:** El servidor usa `syncSeed()` que solo hace `INSERT OR IGNORE` — **NUNCA borra datos de usuario**. Solo inserta IDs nuevos. NO borrar la BD.
