@@ -316,16 +316,15 @@ Este es el estándar obligatorio para diseñar landing pages en el nicho de entr
 ### Workflow de despliegue Vercel
 ```
 1. Crear HTML en landing-pages/nombre-negocio.html
-2. SCP al servidor: cat archivo.html | ssh root@xray.culturavpn.pro "cat > /root/lp-nombre/index.html"
+2. SCP al servidor: cat archivo.html | ssh cultura "cat > /root/lp-nombre/index.html"
 3. SSH al servidor:
-   ssh root@xray.culturavpn.pro
-   export PATH=$PATH:/root/.npm-global/bin
+   ssh cultura
    cd /root/lp-nombre
    vercel deploy --prod --yes .
 4. La URL será: https://lp-nombre-negocio.vercel.app
 5. Actualizar propuesta en datos — ver abajo
 ```
-- El servidor Oracle Cloud (`xray.culturavpn.pro`) tiene Vercel CLI instalado en `/root/.npm-global/bin/`
+- El servidor (`cultura`) tiene Vercel CLI instalado globalmente (`/usr/bin/vercel`)
 - Cada LP es un proyecto independiente en Vercel (bajo team `nube50s-projects`)
 - No usar single-file deployments (obsoleto) — siempre crear un directorio con `index.html`
 
@@ -517,10 +516,10 @@ cd busqueda && sed -n '/^<script>/,/^<\/script>/p' index.html | sed '1d;$d' > /t
 # Debe salir sin errores
 ```
 
-### 7. Sincronizar con servidor (Oracle Cloud)
+### 7. Sincronizar con servidor
 ```bash
-scp busqueda/seed.json root@xray.culturavpn.pro:/root/agenxy/seed.json
-ssh root@xray.culturavpn.pro "pm2 restart agenxy && sleep 2 && curl -s https://agy.culturavpn.pro/api/negocios | jq '.data | length'"
+scp busqueda/seed.json cultura:/root/agenxy/seed.json
+ssh cultura "pm2 restart agenxy && sleep 2 && curl -s https://agy.culturavpn.pro/api/negocios | jq '.data | length'"
 # Debe mostrar el total actualizado
 ```
 
@@ -561,6 +560,13 @@ git push origin main
   - 2 sin sitio web ni redes (`no-web`): Consultorio Veterinario San Francisco de Asís, Peluquería Canina & Veterinaria El Country.
 - Todos con teléfonos verificados, WhatsApp y geolocalización.
 - Sincronizados en `datos.json`, `seed.json`, `DATA_FALLBACK` y base de datos SQLite en Oracle Cloud ARM (`144` registros totales).
+
+### Sesión 20 (2026-08-21) — Reconstrucción de Servidor en Alias 'cultura'
+- Se restauró completamente el backend en el nuevo servidor accesible vía alias SSH `cultura`.
+- Se configuró `/root/agenxy` con Express, SQLite (`better-sqlite3`), `server.js` y `seed.json` con los 144 negocios.
+- Se configuró PM2 como servicio permanente con auto-arranque (`pm2 startup` y `pm2 save`).
+- Se instaló y autenticó Vercel CLI globalmente (`culturapro`).
+- Se verificó la integración con Nginx Proxy Manager en `https://agy.culturavpn.pro/api` respondiendo con HTTP 200 y 144 negocios.
 
 ---
 
