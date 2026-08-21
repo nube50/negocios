@@ -473,7 +473,8 @@
         "label": "Instagram"
       }
     ],
-    "propuesta": "https://lp-stacia-store.vercel.app"
+    "propuesta": "https://lp-stacia-store.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b25",
@@ -1049,7 +1050,8 @@
         "label": "WhatsApp"
       }
     ],
-    "propuesta": "https://lp-benefit.vercel.app"
+    "propuesta": "https://lp-benefit.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b67",
@@ -1140,7 +1142,8 @@
         "label": "WhatsApp"
       }
     ],
-    "propuesta": "https://lp-paola-dimaya.vercel.app"
+    "propuesta": "https://lp-paola-dimaya.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b71",
@@ -1169,7 +1172,8 @@
         "label": "Instagram"
       }
     ],
-    "propuesta": "https://lp-sarta-bguest.vercel.app"
+    "propuesta": "https://lp-sarta-bguest.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b72",
@@ -1222,7 +1226,8 @@
         "label": "Facebook"
       }
     ],
-    "propuesta": "https://lp-karissa-moda.vercel.app"
+    "propuesta": "https://lp-karissa-moda.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b74",
@@ -1276,7 +1281,8 @@
         "label": "Beaconsai"
       }
     ],
-    "propuesta": "https://lp-karissa-moda.vercel.app"
+    "propuesta": "https://lp-karissa-moda.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b75",
@@ -2580,7 +2586,8 @@
         "label": "Facebook"
       }
     ],
-    "propuesta": "https://lp-la-negra-bar.vercel.app"
+    "propuesta": "https://lp-la-negra-bar.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b110",
@@ -2824,7 +2831,8 @@
     "phoneClean": "5713415555",
     "propuesta": "https://lp-salvatores-bar.vercel.app",
     "lat": 4.711,
-    "lng": -74.0721
+    "lng": -74.0721,
+    "priority": "hot"
   },
   {
     "name": "Teatro Jorge Eliécer Gaitán - Bar",
