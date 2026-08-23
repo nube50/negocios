@@ -1,695 +1,1085 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sarta & Bguest · Alquiler de Vestidos de Fiesta</title>
-<meta name="description" content="Alquiler de vestidos de fiesta, formales, prom y cóctel en Bogotá. Moda sostenible, elegante y accesible. Sarta y Bguest, dos marcas, un mismo local.">
-<meta property="og:title" content="Sarta & Bguest · Alquiler de Vestidos">
-<meta property="og:description" content="Lucé elegante en cada ocasión. Alquiler de vestidos de fiesta en Bogotá. Sostenible, accesible, premium.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://sarta-bguest.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --rose: #d4a5a5;
-  --rose-dark: #c48989;
-  --blush: #f5e6e0;
-  --cream: #faf5f0;
-  --dark: #2d2b2b;
-  --text: #3d3b3b;
-  --text-light: #7a7676;
-  --white: #ffffff;
-  --gold: #c9a96e;
-  --gold-light: #e8d5a8;
-  --whatsapp: #25d366;
-  --instagram: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', sans-serif;
-  color: var(--text);
-  background: var(--cream);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; }
-h2 {
-  font-size: 2.2rem;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: var(--dark);
-}
-h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: var(--gold);
-  margin: 0.8rem auto 0;
-}
-.section-subtitle {
-  text-align: center;
-  color: var(--text-light);
-  font-weight: 300;
-  max-width: 600px;
-  margin: 0 auto 3rem;
-  font-size: 1.05rem;
-}
-section { padding: 5rem 1.5rem; }
-.container { max-width: 1100px; margin: 0 auto; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarta & Bguest | Alquiler de Vestidos de Fiesta, Gala & Eventos en Bogotá</title>
+  <meta name="description" content="Sarta & Bguest: El showroom exclusivo de alquiler de vestidos de gala, fiesta y matrimonio en Bogotá. Alta costura, marcas internacionales y asesoría de imagen personalizada.">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👗</text></svg>">
 
-/* Hero */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  background: linear-gradient(135deg, var(--dark) 0%, #3d2a2a 50%, var(--dark) 100%);
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(201,169,110,0.08) 0%, transparent 70%);
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 40px,
-    rgba(201,169,110,0.02) 40px,
-    rgba(201,169,110,0.02) 41px
-  );
-}
-.hero-content { position: relative; z-index: 2; }
-.hero-badge {
-  display: inline-block;
-  background: rgba(201,169,110,0.15);
-  color: var(--gold-light);
-  padding: 0.4rem 1.2rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(201,169,110,0.3);
-}
-.hero h1 {
-  font-size: 3.8rem;
-  color: var(--white);
-  line-height: 1.1;
-  margin-bottom: 0.3rem;
-}
-.hero h1 em { font-style: italic; color: var(--gold-light); }
-.hero-tagline {
-  font-size: 1.3rem;
-  color: var(--rose);
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  margin-bottom: 2rem;
-  font-weight: 400;
-}
-.hero-desc {
-  color: rgba(255,255,255,0.7);
-  max-width: 520px;
-  margin: 0 auto 2.5rem;
-  font-size: 1rem;
-  font-weight: 300;
-}
-.hero-cta {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.9rem 2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-.btn-wa { background: var(--whatsapp); color: var(--white); }
-.btn-wa:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.3); }
-.btn-ig {
-  background: var(--instagram);
-  color: var(--white);
-}
-.btn-ig:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(220,39,67,0.3); }
-.btn-outline-light {
-  border: 1.5px solid rgba(255,255,255,0.3);
-  color: var(--white);
-  background: transparent;
-}
-.btn-outline-light:hover { border-color: var(--gold); color: var(--gold-light); background: rgba(201,169,110,0.1); }
-.hero-scroll {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(255,255,255,0.4);
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  animation: bounce 2s infinite;
-}
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
-}
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-/* Marca dual */
-.brands-showcase {
-  background: var(--white);
-  padding: 4rem 1.5rem;
-  text-align: center;
-}
-.brands-grid {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin: 2rem auto 0;
-}
-.brand-card {
-  flex: 1;
-  min-width: 240px;
-  max-width: 340px;
-  padding: 2.5rem 1.5rem;
-  border-radius: 16px;
-  background: var(--cream);
-  transition: transform 0.3s ease;
-}
-.brand-card:hover { transform: translateY(-4px); }
-.brand-card h3 { font-size: 1.5rem; color: var(--dark); margin-bottom: 0.5rem; }
-.brand-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
-.brand-divider {
-  width: 1px;
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, var(--gold-light), transparent);
-  align-self: center;
-}
+  <style>
+    :root {
+      --bg-dark: #050b08;
+      --bg-card: #0c1712;
+      --bg-card-hover: #14241d;
+      --accent-gold: #d4af37;
+      --accent-gold-light: #f3e5ab;
+      --accent-emerald: #10b981;
+      --text-main: #f7faf8;
+      --text-muted: #9bb0a5;
+      --border-color: rgba(212, 175, 55, 0.2);
+      --font-title: 'Playfair Display', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
 
-/* Categorías */
-.categories { background: var(--blush); }
-.cat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
-}
-.cat-card {
-  background: var(--white);
-  border-radius: 12px;
-  padding: 1.8rem 1rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: default;
-  border: 1px solid rgba(0,0,0,0.04);
-}
-.cat-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
-.cat-card .icon {
-  font-size: 2rem;
-  margin-bottom: 0.6rem;
-  display: block;
-}
-.cat-card h4 { font-size: 0.95rem; margin-bottom: 0.3rem; }
-.cat-card .count {
-  font-size: 0.8rem;
-  color: var(--text-light);
-  font-weight: 300;
-}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* Cómo funciona */
-.how-it-works { background: var(--white); }
-.steps {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  counter-reset: step;
-}
-.step {
-  flex: 1;
-  min-width: 180px;
-  max-width: 280px;
-  text-align: center;
-  padding: 2rem 1rem;
-  position: relative;
-}
-.step-num {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--dark);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  margin: 0 auto 1rem;
-}
-.step h4 { margin-bottom: 0.5rem; font-size: 1rem; }
-.step p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
 
-/* Precios */
-.pricing { background: var(--cream); }
-.price-info {
-  text-align: center;
-  max-width: 500px;
-  margin: 0 auto;
-}
-.price-range {
-  font-size: 2rem;
-  font-family: 'Playfair Display', serif;
-  color: var(--dark);
-  margin-bottom: 0.5rem;
-}
-.price-range span { color: var(--gold); }
-.price-desc { color: var(--text-light); font-size: 0.9rem; margin-bottom: 2rem; }
-.deposit-box {
-  background: var(--white);
-  border-radius: 12px;
-  padding: 1.5rem;
-  max-width: 380px;
-  margin: 0 auto;
-  border: 1px solid rgba(201,169,110,0.2);
-}
-.deposit-box strong { color: var(--dark); }
-.deposit-box p { font-size: 0.85rem; color: var(--text-light); margin-top: 0.3rem; }
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
 
-/* Instagram grid */
-.instagram-section { background: var(--white); }
-.ig-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-.ig-item {
-  aspect-ratio: 1;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  background: var(--blush);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  color: var(--text-light);
-  text-align: center;
-  padding: 1rem;
-  transition: transform 0.3s ease;
-}
-.ig-item:hover { transform: scale(1.02); }
-.ig-item .ig-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.6));
-  color: #fff;
-  padding: 1.5rem 0.5rem 0.5rem;
-  font-size: 0.75rem;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.ig-item:hover .ig-label { opacity: 1; }
-.ig-cta {
-  text-align: center;
-}
-.ig-cta .btn { margin-top: 0.5rem; }
+    @media (max-width: 768px) { .container { padding: 0 16px; } }
 
-/* Testimonios */
-.testimonials { background: var(--blush); }
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-.testi-card {
-  background: var(--white);
-  border-radius: 14px;
-  padding: 2rem;
-  position: relative;
-}
-.testi-card::before {
-  content: '\201C';
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: var(--gold-light);
-  position: absolute;
-  top: 0.5rem;
-  left: 1rem;
-  line-height: 1;
-}
-.testi-card p { font-size: 0.9rem; font-style: italic; color: var(--text); margin-bottom: 1rem; }
-.testi-author { font-size: 0.85rem; color: var(--rose-dark); font-weight: 500; }
+    h1, h2, h3, h4, .font-title {
+      font-family: var(--font-title);
+      line-height: 1.2;
+    }
 
-/* Ubicación */
-.location { background: var(--white); }
-.location-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-.location-info h3 { font-size: 1.3rem; margin-bottom: 1rem; }
-.location-info p { margin-bottom: 0.5rem; color: var(--text-light); font-size: 0.95rem; }
-.location-info strong { color: var(--text); }
-.location-info .hours { margin-top: 1rem; }
-.location-info .hours td { padding: 0.2rem 1rem 0.2rem 0; font-size: 0.9rem; color: var(--text-light); }
-.location-info .hours td:first-child { font-weight: 500; color: var(--text); }
-.location-map {
-  border-radius: 14px;
-  overflow: hidden;
-  height: 300px;
-  background: var(--blush);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.location-map a {
-  text-decoration: none;
-  color: var(--text-light);
-  font-size: 0.9rem;
-  text-align: center;
-  padding: 2rem;
-}
-.location-map a:hover { color: var(--dark); }
+    .badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold-light);
+      padding: 8px 22px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+    }
 
-/* WhatsApp flotante */
-.float-wa {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 60px;
-  height: 60px;
-  background: var(--whatsapp);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-  transition: transform 0.3s ease;
-  text-decoration: none;
-}
-.float-wa:hover { transform: scale(1.1); }
-.float-wa svg { width: 28px; height: 28px; fill: white; }
+    .section-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent-gold-light) 75%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-/* Footer */
-footer {
-  background: var(--dark);
-  color: rgba(255,255,255,0.6);
-  text-align: center;
-  padding: 3rem 1.5rem;
-  font-size: 0.85rem;
-}
-footer .social-links { margin-bottom: 1.5rem; display: flex; gap: 1rem; justify-content: center; }
-footer .social-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: rgba(255,255,255,0.5);
-  text-decoration: none;
-  font-size: 0.85rem;
-  transition: color 0.3s;
-}
-footer .social-links a:hover { color: var(--gold-light); }
-footer p { margin-bottom: 0.3rem; }
+    @media (max-width: 768px) { .section-title { font-size: 2.2rem; } }
 
-/* Animaciones */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-in.visible { opacity: 1; transform: translateY(0); }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin-bottom: 48px;
+    }
 
-/* Responsive */
-@media (max-width: 768px) {
-  h2 { font-size: 1.7rem; }
-  .hero h1 { font-size: 2.2rem; }
-  .hero-tagline { font-size: 1rem; }
-  .hero-cta .btn { width: 100%; justify-content: center; }
-  .brand-divider { display: none; }
-  .brands-grid { flex-direction: column; align-items: center; }
-  .location-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .testimonial-grid { grid-template-columns: 1fr; }
-  .cat-grid { grid-template-columns: repeat(2, 1fr); }
-  .ig-grid { grid-template-columns: repeat(2, 1fr); }
-  .step { min-width: 100%; }
-}
-</style>
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 34px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      cursor: pointer;
+      min-height: 52px;
+      min-width: 44px;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-gold), #9a781b);
+      color: #050b08;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(212, 175, 55, 0.6);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.04);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      transform: translateY(-4px);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: all 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(5, 11, 8, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 14px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: var(--font-title);
+      letter-spacing: 1px;
+    }
+
+    .brand-logo span { color: var(--accent-gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    @media (max-width: 920px) { .nav-links { display: none; } }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14.5px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--accent-gold); }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 130px;
+      padding-bottom: 70px;
+      overflow: hidden;
+    }
+
+    .hero-video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0.92;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(5,11,8,0.2) 0%, rgba(5,11,8,0.65) 55%, #050b08 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 860px;
+    }
+
+    .hero-title {
+      font-size: 4.4rem;
+      font-weight: 900;
+      margin-bottom: 22px;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) { .hero-title { font-size: 2.7rem; } }
+
+    .hero-title .highlight {
+      background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+    }
+
+    .hero-desc {
+      font-size: 1.3rem;
+      color: #e5e0ea;
+      margin-bottom: 40px;
+      max-width: 680px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+    }
+
+    .stats-section {
+      position: relative;
+      z-index: 5;
+      padding: 44px 0;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 16px;
+      }
+    }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 900;
+      font-family: var(--font-title);
+      color: var(--accent-gold);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+
+    .section-padding { padding: 110px 0; }
+    @media (max-width: 768px) { .section-padding { padding: 70px 0; } }
+
+    /* Interactive Occasion Selector */
+    .occasion-tabs {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .occ-btn {
+      padding: 12px 26px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .occ-btn.active, .occ-btn:hover {
+      background: var(--accent-gold);
+      color: #050b08;
+      border-color: var(--accent-gold);
+    }
+
+    /* Dress Collection Grid */
+    .dress-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .dress-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.35s ease;
+    }
+
+    .dress-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-gold);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+    }
+
+    .dress-img-wrap {
+      position: relative;
+      height: 380px;
+      overflow: hidden;
+    }
+
+    .dress-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .dress-card:hover .dress-img-wrap img { transform: scale(1.08); }
+
+    .dress-tag {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(5, 11, 8, 0.88);
+      backdrop-filter: blur(10px);
+      color: var(--accent-gold-light);
+      border: 1px solid var(--accent-gold);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .dress-body { padding: 28px 24px; }
+    .dress-title { font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .dress-details { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+
+    /* Fitting Journey Grid */
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .journey-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 36px 26px;
+      transition: all 0.35s ease;
+    }
+
+    .journey-card:hover {
+      transform: translateY(-8px);
+      background: var(--bg-card-hover);
+      border-color: var(--accent-gold);
+    }
+
+    .journey-step {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent-gold);
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .journey-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .journey-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; } }
+
+    .gallery-item {
+      position: relative;
+      height: 280px;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(5, 11, 8, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay i { font-size: 2.2rem; color: var(--accent-gold); }
+
+    /* VIP Fitting Reservation */
+    .reservation-card {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.16), rgba(16, 185, 129, 0.1));
+      border: 1px solid var(--accent-gold);
+      border-radius: 32px;
+      padding: 56px 40px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    }
+
+    @media (max-width: 768px) { .reservation-card { padding: 36px 20px; } }
+
+    .res-form {
+      max-width: 650px;
+      margin: 32px auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      text-align: left;
+    }
+
+    @media (max-width: 580px) { .res-form { grid-template-columns: 1fr; } }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-gold-light);
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      background: rgba(5, 11, 8, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: #fff;
+      font-size: 14px;
+      font-family: var(--font-body);
+      outline: none;
+    }
+
+    .form-control:focus { border-color: var(--accent-gold); }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 36px;
+    }
+
+    .stars { color: #ffb703; margin-bottom: 18px; font-size: 14px; }
+    .test-text { color: #e5e0ea; font-size: 15px; font-style: italic; margin-bottom: 24px; line-height: 1.65; }
+    .test-author { display: flex; align-items: center; gap: 16px; }
+    .test-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-gold), #9a781b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #050b08;
+    }
+
+    .location-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 28px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) { .location-box { grid-template-columns: 1fr; } }
+    .location-info { padding: 50px; }
+    @media (max-width: 768px) { .location-info { padding: 28px; } }
+
+    .info-item { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 28px; }
+    .info-icon { font-size: 1.5rem; color: var(--accent-gold); min-width: 28px; }
+    .info-text h4 { font-size: 17px; color: #fff; margin-bottom: 6px; font-weight: 700; }
+    .info-text p { color: var(--text-muted); font-size: 14.5px; }
+
+    .map-wrap { min-height: 360px; width: 100%; }
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(120%);
+    }
+
+    footer {
+      background: #020504;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 60px 0 30px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .footer-social { display: flex; gap: 14px; }
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+
+    .social-btn:hover {
+      background: var(--accent-gold);
+      color: #050b08;
+      transform: translateY(-4px);
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      background: #25d366;
+      color: #fff;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+      z-index: 9999;
+      text-decoration: none;
+      transition: all 0.35s ease;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.12);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.7);
+    }
+
+    .modal-lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.94);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-lightbox.active { display: flex; }
+    .modal-lightbox img {
+      max-width: 92%;
+      max-height: 85vh;
+      border-radius: 16px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.9);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      color: #fff;
+      font-size: 38px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+  </style>
 </head>
 <body>
 
-<!-- WhatsApp flotante -->
-<a class="float-wa" href="https://wa.link/regmox" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<!-- Hero -->
-<section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-badge">Dos marcas · Un mismo local</span>
-    <h1>Sarta <em>&amp;</em> Bguest</h1>
-    <p class="hero-tagline">Be our guest · Un estilo de vida sostenible también te hace lucir bien</p>
-    <p class="hero-desc">Alquila y lleva en cada ocasión un look diferente con la elegancia y calidad de nuestros vestidos. Formal, prom, cóctel, madre de novia y más.</p>
-    <div class="hero-cta">
-      <a class="btn btn-wa" href="https://wa.link/regmox" target="_blank">WhatsApp</a>
-      <a class="btn btn-ig" href="https://instagram.com/sartavestidos" target="_blank">Instagram</a>
-      <a class="btn btn-outline-light" href="https://instagram.com/bguest.co" target="_blank">Bguest IG</a>
-    </div>
-  </div>
-  <div class="hero-scroll">Descubre más</div>
-</section>
-
-<!-- Marcas duales -->
-<section class="brands-showcase fade-in">
-  <div class="container">
-    <h2>Dos marcas, un mismo propósito</h2>
-    <p class="section-subtitle">Dos conceptos que se complementan para ofrecerte la mejor experiencia en alquiler de vestidos en Bogotá.</p>
-    <div class="brands-grid">
-      <div class="brand-card">
-        <h3>Sarta</h3>
-        <p>Alquiler VIP de vestidos de fiesta y smokings. Elegancia, calidad y un servicio premium para las ocasiones más especiales. También disponibles para venta.</p>
-      </div>
-      <div class="brand-divider"></div>
-      <div class="brand-card">
-        <h3>Bguest</h3>
-        <p>Alquiler y venta de vestidos con un enfoque fresco y versátil. El guardarropa perfecto para cada evento, con estilo y comodidad.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Categorías -->
-<section class="categories fade-in">
-  <div class="container">
-    <h2>Descubre nuestra colección</h2>
-    <p class="section-subtitle">Más de 287 vestidos en 40+ colores, desde la talla 0 hasta la 18. Encuentra el look perfecto para tu evento.</p>
-    <div class="cat-grid">
-      <div class="cat-card"><span class="icon">&#127802;</span><h4>Formal</h4><span class="count">202 vestidos</span></div>
-      <div class="cat-card"><span class="icon">&#127881;</span><h4>Prom</h4><span class="count">87 vestidos</span></div>
-      <div class="cat-card"><span class="icon">&#127796;</span><h4>Tropicales y campestres</h4><span class="count">58 vestidos</span></div>
-      <div class="cat-card"><span class="icon">&#127864;</span><h4>Cóctel · Cortos</h4><span class="count">47 vestidos</span></div>
-      <div class="cat-card"><span class="icon">&#128151;</span><h4>Mamá de novia</h4><span class="count">47 vestidos</span></div>
-      <div class="cat-card"><span class="icon">&#128716;</span><h4>Abrigos</h4><span class="count">9 unidades</span></div>
-      <div class="cat-card"><span class="icon">&#128088;</span><h4>Jumpsuits</h4><span class="count">8 unidades</span></div>
-      <div class="cat-card"><span class="icon">&#129730;</span><h4>Embarazada</h4><span class="count">6 vestidos</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- Cómo funciona -->
-<section class="how-it-works fade-in">
-  <div class="container">
-    <h2>Cómo funciona</h2>
-    <p class="section-subtitle">Alquilar es más fácil de lo que piensas. En cuatro pasos tienes el vestido perfecto para tu evento.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h4>Visítanos y pruébate</h4>
-        <p>Ven a nuestro almacén, explora nuestra colección y pruébate los vestidos que más te gusten. Nosotros hacemos los ajustes necesarios.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h4>Reserva</h4>
-        <p>Una vez escojas tu look, cancela el 100% del valor del alquiler para apartarlo. Tu vestido te espera.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h4>Recoge y luce</h4>
-        <p>Recoge tu vestido el jueves o viernes antes de tu evento. Un depósito reembolsable de $100,000 COP lo asegura.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <h4>Devuelve</h4>
-        <p>Devuelve el lunes o martes después del evento. Nosotros nos encargamos de la lavandería y te devolvemos tu depósito.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Precios -->
-<section class="pricing fade-in">
-  <div class="container">
-    <h2>Precios accesibles</h2>
-    <p class="section-subtitle">Lucir espectacular no tiene que costar una fortuna. Alquila por una fracción del precio de venta.</p>
-    <div class="price-info">
-      <div class="price-range">$60,000 <span>—</span> $370,000 COP</div>
-      <p class="price-desc">Rango de precios por alquiler, dependiendo del diseño, material y complejidad del vestido.</p>
-      <div class="deposit-box">
-        <p><strong>Depósito reembolsable:</strong> $100,000 COP</p>
-        <p>Se devuelve al entregar el vestido en las mismas condiciones.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Instagram -->
-<section class="instagram-section fade-in">
-  <div class="container">
-    <h2>Síguenos en Instagram</h2>
-    <p class="section-subtitle">Descubre nuestros últimos diseños, promociones y looks inspiradores. Más de 58K seguidores nos respaldan.</p>
-    <div class="ig-grid">
-      <div class="ig-item" style="background: linear-gradient(135deg, #f5e6e0, #e8d5c4);">
-        Vestidos de fiesta 2026
-        <span class="ig-label">@sartavestidos</span>
-      </div>
-      <div class="ig-item" style="background: linear-gradient(135deg, #d4a5a5, #c48989); color: #fff;">
-        Nuevos diseños
-        <span class="ig-label">@bguest.co</span>
-      </div>
-      <div class="ig-item" style="background: linear-gradient(135deg, #e8d5a8, #c9a96e);">
-        Colección prom
-        <span class="ig-label">@sartavestidos</span>
-      </div>
-      <div class="ig-item" style="background: linear-gradient(135deg, #2d2b2b, #4a3f3f); color: #fff;">
-        Looks sostenibles
-        <span class="ig-label">@bguest.co</span>
-      </div>
-      <div class="ig-item" style="background: linear-gradient(135deg, #f5e6e0, #d4a5a5);">
-        Bodas 2026
-        <span class="ig-label">@sartavestidos</span>
-      </div>
-      <div class="ig-item" style="background: linear-gradient(135deg, #c9a96e, #e8d5a8);">
-        Detalles que importan
-        <span class="ig-label">@bguest.co</span>
-      </div>
-    </div>
-    <div class="ig-cta">
-      <a class="btn btn-ig" href="https://instagram.com/sartavestidos" target="_blank">Síguenos en Instagram</a>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonios -->
-<section class="testimonials fade-in">
-  <div class="container">
-    <h2>Lo que dicen nuestras clientas</h2>
-    <p class="section-subtitle">La satisfacción de quien confía en nosotros es nuestra mejor tarjeta de presentación.</p>
-    <div class="testimonial-grid">
-      <div class="testi-card">
-        <p>Alquilar fue la mejor decisión. El vestido era hermoso, los ajustes perfectos y el proceso muy sencillo. Volveré sin duda.</p>
-        <div class="testi-author">— María Fernanda</div>
-      </div>
-      <div class="testi-card">
-        <p>Me encantó la variedad de colores y estilos. Pude probarme varios vestidos hasta encontrar el ideal. El equipo es muy amable y profesional.</p>
-        <div class="testi-author">— Carolina R.</div>
-      </div>
-      <div class="testi-card">
-        <p>El concepto de moda sostenible me parece increíble. Lucí espectacular en la fiesta y no tuve que gastar una fortuna. Altamente recomendadas.</p>
-        <div class="testi-author">— Andrea López</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Ubicación -->
-<section class="location fade-in">
-  <div class="container">
-    <h2>Visítanos</h2>
-    <p class="section-subtitle">Te esperamos en nuestro almacén en Bogotá. Ven a probarte y descubre tu próximo look.</p>
-    <div class="location-grid">
-      <div class="location-info">
-        <h3>Sarta &amp; Bguest</h3>
-        <p><strong>Dirección:</strong> Cra 11A #95-15, Bogotá, Colombia</p>
-        <p><strong>Teléfono:</strong> <a href="tel:+573138707291" style="color:var(--rose-dark);text-decoration:none;">313 870 7291</a></p>
-        <table class="hours">
-          <tr><td>Lunes a viernes</td><td>10:30 AM - 7:30 PM</td></tr>
-          <tr><td>Sábados</td><td>10:30 AM - 6:00 PM</td></tr>
-        </table>
-        <div style="margin-top: 1.5rem;">
-          <a class="btn btn-wa" href="https://wa.link/regmox" target="_blank">Escríbenos por WhatsApp</a>
-        </div>
-      </div>
-      <div class="location-map">
-        <a href="https://www.google.com/maps/search/?api=1&query=Sarta+Bguest+Cra+11A+95-15+Bogota" target="_blank">
-          <div style="font-size:3rem;margin-bottom:0.5rem;">&#128205;</div>
-          <div>Ver en Google Maps</div>
-          <div style="font-size:0.8rem;margin-top:0.3rem;opacity:0.6;">Cra 11A #95-15, Bogotá</div>
+  <!-- Navigation -->
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand-logo">
+        <i class="fa-solid fa-vest-patches" style="color: var(--accent-gold);"></i> SARTA & <span>BGUEST</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#coleccion">Colección de Vestidos</a></li>
+        <li><a href="#proceso">Cómo Funciona</a></li>
+        <li><a href="#galeria">Lookbook</a></li>
+        <li><a href="#opiniones">Clientas Felices</a></li>
+        <li><a href="#ubicacion">Showroom</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#cita" class="btn btn-primary" style="padding: 10px 24px; font-size: 13.5px; min-height: 42px;">
+          <i class="fa-brands fa-whatsapp"></i> Agendar Cita
         </a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="social-links">
-      <a href="https://instagram.com/sartavestidos" target="_blank">Instagram Sarta</a>
-      <a href="https://instagram.com/bguest.co" target="_blank">Instagram Bguest</a>
-      <a href="https://facebook.com/SartaColombia" target="_blank">Facebook Sarta</a>
-      <a href="https://facebook.com/BGuest.co" target="_blank">Facebook Bguest</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop playsinline class="hero-video-bg" preload="auto">
+      <source src="https://assets.mixkit.co/videos/51225/51225-720.mp4" type="video/mp4">
+      <source src="https://assets.mixkit.co/videos/8908/8908-720.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge-tag"><i class="fa-solid fa-crown"></i> SHOWROOM DE ALQUILER DE ALTA GALA</div>
+        <h1 class="hero-title">
+          EL VESTIDO SOÑADO PARA TU <span class="highlight">NOCHE INOLVIDABLE</span>
+        </h1>
+        <p class="hero-desc">
+          Alquila vestidos de alta costura, gala, grados y matrimonios en Bogotá. Asesoría de imagen personalizada y ajustes a tu silueta para que luzcas impecable.
+        </p>
+        <div class="hero-actions">
+          <a href="#cita" class="btn btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> Agendar Cita en Showroom
+          </a>
+          <a href="#coleccion" class="btn btn-outline">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Ver Colección
+          </a>
+        </div>
+      </div>
     </div>
-    <p>&copy; 2026 Sarta &amp; Bguest · Bogotá, Colombia</p>
-    <p style="font-size:0.8rem;opacity:0.5;">Alquiler de vestidos de fiesta · Moda sostenible · Hecho con amor</p>
-  </div>
-</footer>
+  </section>
 
-<script>
-(function() {
-  // Fade-in al scroll
-  var els = document.querySelectorAll('.fade-in');
-  if (els.length) {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-      });
-    }, { threshold: 0.15 });
-    els.forEach(function(el) { observer.observe(el); });
-  }
-  // Mostrar algunos elementos inmediatamente visibles
-  setTimeout(function() {
-    els.forEach(function(el) {
-      var rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight) el.classList.add('visible');
+  <!-- Stats Bar -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number">250+</div>
+          <div class="stat-label">Vestidos Exclusivos</div>
+        </div>
+        <div>
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Ajuste Personalizado</div>
+        </div>
+        <div>
+          <div class="stat-number">4.9★</div>
+          <div class="stat-label">Calificación en Bogotá</div>
+        </div>
+        <div>
+          <div class="stat-number">Showroom</div>
+          <div class="stat-label">Bogotá D.C.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dress Collection -->
+  <section id="coleccion" class="section-padding">
+    <div class="container">
+      <div class="badge-tag"><i class="fa-solid fa-gem"></i> Curaduría Exclusiva</div>
+      <h2 class="section-title">VESTIDOS PARA CADA OCASIÓN</h2>
+      <p class="section-desc">
+        Diseños sofisticados en telas prémium, cortes favorecedores y los colores más en tendencia de la temporada.
+      </p>
+
+      <div class="dress-grid">
+        <div class="dress-card">
+          <div class="dress-img-wrap">
+            <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80" alt="Vestido Gala Esmeralda">
+            <span class="dress-tag">Gala de Noche</span>
+          </div>
+          <div class="dress-body">
+            <h3 class="dress-title">Vestido Imperial Esmeralda</h3>
+            <p class="dress-details">Satén de seda pesado con escote drapeado, espalda descubierta y abertura lateral sutil para eventos de máxima etiqueta.</p>
+          </div>
+        </div>
+
+        <div class="dress-card">
+          <div class="dress-img-wrap">
+            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80" alt="Vestido Sirena Dorado">
+            <span class="dress-tag">Matrimonios</span>
+          </div>
+          <div class="dress-body">
+            <h3 class="dress-title">Vestido Sirena Gold Sparkle</h3>
+            <p class="dress-details">Silueta sirena ajustada con bordados en pedrería fina y micro-lentejuelas que capturan la luz con elegancia absoluta.</p>
+          </div>
+        </div>
+
+        <div class="dress-card">
+          <div class="dress-img-wrap">
+            <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80" alt="Vestido Rojo Pasión">
+            <span class="dress-tag">Graduaciones</span>
+          </div>
+          <div class="dress-body">
+            <h3 class="dress-title">Vestido Red Velvet & Chiffon</h3>
+            <p class="dress-details">Estructura corsetada con falda amplia en chifón liviano con movimiento espectacular para bailar toda la velada.</p>
+          </div>
+        </div>
+
+        <div class="dress-card">
+          <div class="dress-img-wrap">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Vestido Azul Medianoche">
+            <span class="dress-tag">Cóctel & Eventos</span>
+          </div>
+          <div class="dress-body">
+            <h3 class="dress-title">Vestido Midnight Navy Blue</h3>
+            <p class="dress-details">Líneas minimalistas de alta sastrería con manga asimétrica y tela stretch que moldea la figura a la perfección.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section id="proceso" class="section-padding" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="badge-tag"><i class="fa-solid fa-list-check"></i> Experiencia Sin Estrés</div>
+      <h2 class="section-title">¿CÓMO FUNCIONA EL ALQUILER?</h2>
+      <p class="section-desc">Disfruta de estrenar alta costura en cada celebración en 4 sencillos pasos.</p>
+
+      <div class="journey-grid">
+        <div class="journey-card">
+          <div class="journey-step">PASO 01</div>
+          <h3 class="journey-title">Agenda tu Cita</h3>
+          <p class="journey-desc">Elige fecha y hora para visitar nuestro showroom exclusivo con atención personalizada y sin prisas.</p>
+        </div>
+
+        <div class="journey-card">
+          <div class="journey-step">PASO 02</div>
+          <h3 class="journey-title">Prueba & Asesoría</h3>
+          <p class="journey-desc">Pruébate tus favoritos con la guía de nuestra asesora para encontrar el corte y color que mejor te favorezca.</p>
+        </div>
+
+        <div class="journey-card">
+          <div class="journey-step">PASO 03</div>
+          <h3 class="journey-title">Ajustes & Lavandería</h3>
+          <p class="journey-desc">Realizamos los ajustes de bastilla a tu calzado y te entregamos el vestido impecable y listo para lucir.</p>
+        </div>
+
+        <div class="journey-card">
+          <div class="journey-step">PASO 04</div>
+          <h3 class="journey-title">Devolución Fácil</h3>
+          <p class="journey-desc">Disfruta de tu evento y devuélvelo después; nosotros nos encargamos del cuidado y la tintorería especializada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lookbook Galería -->
+  <section id="galeria" class="section-padding">
+    <div class="container">
+      <div class="badge-tag"><i class="fa-solid fa-camera"></i> Galería de Estilo</div>
+      <h2 class="section-title">LOOKBOOK DE NUESTRAS INVITADAS</h2>
+      <p class="section-desc">Mujeres reales brillando en los eventos más importantes de Colombia.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1000&q=80')">
+          <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=600&q=80" alt="Vestido Gala Sarta">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=1000&q=80')">
+          <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80" alt="Vestido Dorado Sarta">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1000&q=80')">
+          <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=600&q=80" alt="Vestido Rojo Sarta">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80')">
+          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" alt="Vestido Azul Sarta">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?auto=format&fit=crop&w=1000&q=80')">
+          <img src="https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?auto=format&fit=crop&w=600&q=80" alt="Vestido de Noche">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=1000&q=80')">
+          <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=600&q=80" alt="Showroom Sarta">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Appointment Box -->
+  <section id="cita" class="section-padding" style="padding-top: 20px;">
+    <div class="container">
+      <div class="reservation-card">
+        <div class="badge-tag"><i class="fa-solid fa-calendar-heart"></i> Agenda tu Prueba</div>
+        <h2 style="font-size: 2.8rem; margin-bottom: 14px;">RESERVA TU ASESORÍA EN SHOWROOM</h2>
+        <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 620px; margin: 0 auto;">
+          Cuéntanos sobre tu evento y agenda una sesión de prueba personalizada con nuestras expertas.
+        </p>
+
+        <form class="res-form" onsubmit="sendSartaBooking(event)">
+          <div class="form-group">
+            <label><i class="fa-solid fa-glass-cheers"></i> Tipo de Evento</label>
+            <select class="form-control" id="sarta-event">
+              <option value="Matrimonio de Noche / Gala">Matrimonio de Noche / Gala</option>
+              <option value="Matrimonio de Día / Jardín">Matrimonio de Día / Jardín</option>
+              <option value="Grado / Prom">Grado / Celebración Académica</option>
+              <option value="Evento Corporativo / Coctel">Evento Corporativo / Cóctel</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-calendar-day"></i> Fecha Aproximada del Evento</label>
+            <select class="form-control" id="sarta-time">
+              <option value="En los próximos 15 días">Próximos 15 días (Urgente)</option>
+              <option value="En este mes" selected>En este mes</option>
+              <option value="En los próximos 2 a 3 meses">En los próximos 2 a 3 meses</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label><i class="fa-solid fa-ruler-combined"></i> Talla Habitual de Vestido</label>
+            <select class="form-control" id="sarta-size">
+              <option value="Talla XS - S (6 a 8)">Talla XS - S (6 a 8)</option>
+              <option value="Talla M (10 a 12)" selected>Talla M (10 a 12)</option>
+              <option value="Talla L - XL (14 a 16)">Talla L - XL (14 a 16)</option>
+              <option value="Talla Plus (18+)">Talla Plus (18+)</option>
+            </select>
+          </div>
+
+          <div style="grid-column: 1 / -1; margin-top: 10px;">
+            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 16px;">
+              <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Agendar Cita en WhatsApp
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="opiniones" class="section-padding" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="badge-tag"><i class="fa-solid fa-star"></i> Testimonios</div>
+      <h2 class="section-title">LO QUE DICEN NUESTRAS CLIENTAS</h2>
+      <p class="section-desc">Experiencias reales de mujeres que deslumbraron con nuestros vestidos.</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="test-text">"Alquilé mi vestido para la boda de mi hermana y fue la mejor decisión. El vestido parecía nuevo, me quedó a la medida exacta y recibí elogios toda la noche."</p>
+          <div class="test-author">
+            <div class="test-avatar">MG</div>
+            <div>
+              <h4 style="color:#fff; font-size:15px; font-weight:700;">Mariana Gómez</h4>
+              <p style="color:var(--text-muted); font-size:12px;">Hermana de la Novia • Bogotá</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="test-text">"La atención en el showroom es súper dedicada. Tienen opciones de marcas de lujo a una fracción de lo que costaría comprarlo. ¡100% recomendadas!"</p>
+          <div class="test-author">
+            <div class="test-avatar">CA</div>
+            <div>
+              <h4 style="color:#fff; font-size:15px; font-weight:700;">Catalina Aristizábal</h4>
+              <p style="color:var(--text-muted); font-size:12px;">Invitada de Gala • Bogotá</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="test-text">"Excelente variedad en tallas y colores. El proceso de entrega y devolución es comodísimo. Ya es mi lugar de confianza para cada evento social."</p>
+          <div class="test-author">
+            <div class="test-avatar">SR</div>
+            <div>
+              <h4 style="color:#fff; font-size:15px; font-weight:700;">Sofía Restrepo</h4>
+              <p style="color:var(--text-muted); font-size:12px;">Graduanda • Bogotá</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicación & Showroom -->
+  <section id="ubicacion" class="section-padding">
+    <div class="container">
+      <div class="badge-tag"><i class="fa-solid fa-location-dot"></i> Dónde Estamos</div>
+      <h2 class="section-title">VISÍTANOS EN NUESTRO SHOWROOM</h2>
+      <p class="section-desc">Atención exclusiva con cita previa para garantizar tu privacidad y comodidad.</p>
+
+      <div class="location-box">
+        <div class="location-info">
+          <div class="info-item">
+            <i class="fa-solid fa-building info-icon"></i>
+            <div class="info-text">
+              <h4>Ubicación</h4>
+              <p>Showroom Privado, Bogotá D.C., Colombia</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-clock info-icon"></i>
+            <div class="info-text">
+              <h4>Horarios de Citas</h4>
+              <p>Lunes a Sábado: 10:00 AM – 7:00 PM<br>(Atención únicamente con cita previa)</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-phone info-icon"></i>
+            <div class="info-text">
+              <h4>Contacto Directo</h4>
+              <p>+57 310 812 6047</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 32px;">
+            <a href="https://wa.me/573108126047?text=%C2%A1Hola%20Sarta%20%26%20Bguest!%20Quisiera%20solicitar%20la%20direcci%C3%B3n%20exacta%20y%20agendar%20mi%20cita." target="_blank" class="btn btn-outline" style="width: 100%;">
+              <i class="fa-brands fa-whatsapp"></i> Solicitar Dirección en WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.541297595462!2d-74.0531!3d4.6782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a8f4c5!2sBogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h3 style="font-family: var(--font-title); color: #fff; margin-bottom: 8px;">SARTA & BGUEST</h3>
+          <p>Alquiler de vestidos de fiesta, gala y matrimonios en Bogotá.</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/sartabguest/" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/573108126047" target="_blank" class="social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; text-align: center; font-size: 13px;">
+        <p>© 2026 Sarta & Bguest Bogotá. Propuesta de diseño web profesional de alta conversión.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/573108126047?text=%C2%A1Hola%20Sarta%20%26%20Bguest!%20Deseo%20informaci%C3%B3n%20sobre%20el%20alquiler%20de%20vestidos." target="_blank" class="wa-float" title="Hablar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="modal-lightbox" onclick="closeLightbox()">
+    <button class="modal-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="Vista previa de vestido">
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      var nav = document.getElementById('navbar');
+      if (window.scrollY > 50) { nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
     });
-  }, 100);
-})();
-</script>
+
+    function sendSartaBooking(e) {
+      e.preventDefault();
+      const eventType = document.getElementById('sarta-event').value;
+      const eventTime = document.getElementById('sarta-time').value;
+      const size = document.getElementById('sarta-size').value;
+      
+      const msg = encodeURIComponent("¡Hola Sarta & Bguest! Quisiera agendar una cita en el showroom:\n👗 Evento: " + eventType + "\n📅 Fecha: " + eventTime + "\n📏 Talla: " + size + "\n¿Qué disponibilidad de horarios tienen?");
+      window.open("https://wa.me/573108126047?text=" + msg, '_blank');
+    }
+
+    function openLightbox(url) {
+      document.getElementById('lightbox-img').src = url;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
