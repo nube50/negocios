@@ -2,191 +2,379 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Free Nails Spa | Salón de Uñas & Estética • Zona Rosa Bogotá</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Nails Spa Zona Rosa | Salón de Uñas & Estética Chapinero Bogotá</title>
+  <meta name="description" content="Free Nails Spa en la Zona Rosa de Bogotá (Kr 13 #82-49). Manicure ruso, uñas acrílicas, semipermanente, spa de pies y diseño de autor en Chapinero.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💅</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
-      --bg-dark: #0e090b; --bg-surface: #191216; --bg-card: #241a20;
-      --text-main: #f8fafc; --text-muted: #a3959d;
-      --accent-rose: #f43f5e; --accent-gold: #fbcfe8;
-      --border-hairline: rgba(244,63,94,0.18);
-      --radius-md: 16px; --radius-lg: 24px;
+      --bg-dark: #080a0c;
+      --bg-card: #10141a;
+      --bg-card-hover: #18202a;
+      --accent-main: #38bdf8;
+      --accent-light: #7dd3fc;
+      --accent-gold: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: rgba(56, 189, 248, 0.2);
+      --font-title: 'Playfair Display', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    html, body { font-family:'Plus Jakarta Sans', sans-serif; background:var(--bg-dark); color:var(--text-main); line-height:1.6; overflow-x:hidden; }
-    .container { width:100%; max-width:1240px; margin:0 auto; padding:0 24px; }
-    
-    .nav-wrapper { position:fixed; top:24px; left:0; width:100%; z-index:1000; display:flex; justify-content:center; padding:0 20px; pointer-events:none; }
-    .nav-dock { pointer-events:auto; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:12px 28px; background:rgba(25,18,22,0.85); backdrop-filter:blur(20px); border:1px solid var(--border-hairline); border-radius:100px; max-width:960px; width:100%; }
-    .brand { font-family:'Italiana', serif; font-size:1.3rem; font-weight:700; color:#fff; text-decoration:none; }
-    .brand span { color:var(--accent-rose); }
-    .btn-dock { padding:10px 22px; background:linear-gradient(135deg, var(--accent-rose), #be123c); color:#fff; border-radius:100px; font-size:0.84rem; font-weight:700; text-decoration:none; }
-
-    .hero { position:relative; min-height:100vh; display:flex; align-items:center; padding:140px 0 80px; overflow:hidden; }
-    .hero-video { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; opacity:0.92; z-index:1; }
-    .hero-overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(180deg, rgba(14,9,11,0.3) 0%, rgba(14,9,11,0.75) 60%, var(--bg-dark) 100%); z-index:2; }
-    .hero-content { position:relative; z-index:10; max-width:820px; }
-    .hero-badge { display:inline-flex; align-items:center; gap:8px; padding:6px 16px; background:rgba(244,63,94,0.15); border:1px solid var(--border-hairline); border-radius:100px; font-size:0.75rem; font-weight:700; color:var(--accent-gold); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:20px; }
-    .hero-title { font-family:'Italiana', serif; font-size:clamp(3.2rem, 6.5vw, 5.2rem); font-weight:400; line-height:1.02; color:#fff; margin-bottom:20px; }
-    .hero-title em { color:var(--accent-rose); font-style:italic; }
-    .hero-desc { font-size:1.15rem; color:#cbd5e1; max-width:580px; margin-bottom:36px; }
-    .hero-btns { display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
-    .btn-main { display:inline-flex; align-items:center; gap:10px; padding:16px 36px; background:linear-gradient(135deg, var(--accent-rose), #be123c); color:#fff; border-radius:100px; font-size:0.95rem; font-weight:700; text-decoration:none; box-shadow:0 10px 30px rgba(244,63,94,0.4); }
-
-    .styles-section { padding:100px 0; background:var(--bg-surface); }
-    .section-head { margin-bottom:50px; text-align:center; }
-    .section-head h2 { font-family:'Italiana', serif; font-size:3rem; color:#fff; font-weight:400; }
-    .section-head h2 span { color:var(--accent-rose); font-style:italic; }
-    
-    .styles-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
-    .styles-list { display:flex; flex-direction:column; gap:16px; }
-    .style-item { background:var(--bg-card); border:1px solid var(--border-hairline); border-radius:var(--radius-md); padding:20px 24px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; transition:all 0.3s ease; }
-    .style-item.active, .style-item:hover { border-color:var(--accent-rose); transform:translateX(8px); }
-    .style-item h4 { font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:4px; }
-    .style-item p { font-size:0.85rem; color:var(--text-muted); }
-    
-    .style-preview { background:var(--bg-card); border:1px solid var(--border-hairline); border-radius:var(--radius-lg); padding:20px; }
-    .style-preview img { width:100%; height:360px; object-fit:cover; border-radius:var(--radius-md); margin-bottom:16px; }
-    
-    .booking-box { padding:100px 0; background:var(--bg-dark); }
-    .book-card { background:var(--bg-card); border:1px solid var(--border-hairline); border-radius:var(--radius-lg); padding:50px; max-width:920px; margin:0 auto; display:grid; grid-template-columns:1fr 1.2fr; gap:40px; }
-    .form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
-    .form-group label { font-size:0.78rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); }
-    .form-control { padding:14px; background:#0e090b; border:1px solid var(--border-hairline); border-radius:8px; color:#fff; font-family:inherit; }
-    .btn-submit { width:100%; padding:16px; background:linear-gradient(135deg, #25D366, #128C7E); color:#fff; border:none; border-radius:100px; font-weight:700; font-size:1rem; cursor:pointer; }
-    
-    .wa-float { position:fixed; bottom:24px; right:24px; width:60px; height:60px; background:linear-gradient(135deg, #25D366, #128C7E); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; text-decoration:none; z-index:9999; box-shadow:0 10px 30px rgba(37,211,102,0.4); }
-    @media(max-width:992px){ .styles-grid, .book-card { grid-template-columns:1fr; } .style-preview { display:none; } }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; overflow-x: hidden; background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-body); scroll-behavior: smooth; line-height: 1.6; }
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+    @media (max-width: 768px) { .container { padding: 0 16px; } }
+    h1, h2, h3, h4, .font-title { font-family: var(--font-title); line-height: 1.2; font-weight: 700; }
+    .badge-tag { display: inline-flex; align-items: center; gap: 10px; background: rgba(56, 189, 248, 0.14); border: 1px solid var(--accent-main); color: var(--accent-light); padding: 8px 22px; border-radius: 50px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 22px; }
+    .section-title { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; background: linear-gradient(135deg, #ffffff 30%, var(--accent-light) 75%, var(--accent-main) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    @media (max-width: 768px) { .section-title { font-size: 2.1rem; } }
+    .section-desc { color: var(--text-muted); font-size: 1.15rem; max-width: 700px; margin-bottom: 48px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 34px; border-radius: 50px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); cursor: pointer; min-height: 52px; min-width: 44px; border: none; }
+    .btn-primary { background: linear-gradient(135deg, var(--accent-main), #0284c7); color: #080a0c; box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4); }
+    .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(56, 189, 248, 0.6); }
+    .btn-outline { background: rgba(255, 255, 255, 0.04); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(12px); }
+    .btn-outline:hover { background: rgba(255, 255, 255, 0.12); border-color: var(--accent-main); color: var(--accent-light); transform: translateY(-4px); }
+    header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 20px 0; transition: all 0.3s ease; }
+    header.scrolled { background: rgba(8, 10, 12, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); padding: 14px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; font-size: 1.45rem; font-weight: 800; font-family: var(--font-title); }
+    .brand-logo span { color: var(--accent-main); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    @media (max-width: 920px) { .nav-links { display: none; } }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 14.5px; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--accent-light); }
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 130px; padding-bottom: 70px; overflow: hidden; }
+    .hero-video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; opacity: 0.92; }
+    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(8,10,12,0.2) 0%, rgba(8,10,12,0.65) 55%, #080a0c 100%); z-index: 2; }
+    .hero-content { position: relative; z-index: 3; max-width: 860px; }
+    .hero-title { font-size: 4rem; font-weight: 900; margin-bottom: 22px; line-height: 1.1; }
+    @media (max-width: 768px) { .hero-title { font-size: 2.6rem; } }
+    .hero-title .highlight { background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-main) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-desc { font-size: 1.25rem; color: #e2e8f0; margin-bottom: 40px; max-width: 680px; text-shadow: 0 2px 12px rgba(0,0,0,0.8); }
+    .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; }
+    @media (max-width: 480px) { .hero-actions { flex-direction: column; } .hero-actions .btn { width: 100%; } }
+    .stats-section { position: relative; z-index: 5; padding: 44px 0; background: var(--bg-card); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+    @media (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; } }
+    .stat-number { font-size: 2.6rem; font-weight: 900; font-family: var(--font-title); color: var(--accent-light); margin-bottom: 4px; }
+    .stat-label { color: var(--text-muted); font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
+    .section-padding { padding: 110px 0; }
+    @media (max-width: 768px) { .section-padding { padding: 70px 0; } }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+    .service-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 36px 28px; transition: all 0.35s ease; }
+    .service-card:hover { transform: translateY(-8px); background: var(--bg-card-hover); border-color: var(--accent-main); box-shadow: 0 20px 45px rgba(0,0,0,0.5); }
+    .service-icon { font-size: 2.5rem; color: var(--accent-light); margin-bottom: 18px; }
+    .service-title { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .service-desc { color: var(--text-muted); font-size: 14.5px; line-height: 1.6; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    @media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; } }
+    .gallery-item { position: relative; height: 280px; border-radius: 20px; overflow: hidden; cursor: pointer; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .gallery-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(8, 10, 12, 0.65); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay i { font-size: 2.2rem; color: var(--accent-main); }
+    .reservation-card { background: linear-gradient(135deg, rgba(56, 189, 248, 0.16), rgba(245, 158, 11, 0.1)); border: 1px solid var(--accent-main); border-radius: 32px; padding: 56px 40px; text-align: center; box-shadow: 0 25px 60px rgba(0,0,0,0.6); }
+    @media (max-width: 768px) { .reservation-card { padding: 36px 20px; } }
+    .res-form { max-width: 650px; margin: 32px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; }
+    @media (max-width: 580px) { .res-form { grid-template-columns: 1fr; } }
+    .form-group label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-light); margin-bottom: 8px; }
+    .form-control { width: 100%; background: rgba(8, 10, 12, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 14px 16px; color: #fff; font-size: 14px; font-family: var(--font-body); outline: none; }
+    .form-control:focus { border-color: var(--accent-main); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+    .testimonial-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 36px; }
+    .stars { color: #ffb703; margin-bottom: 18px; font-size: 14px; }
+    .test-text { color: #e2e8f0; font-size: 15px; font-style: italic; margin-bottom: 24px; line-height: 1.65; }
+    .test-author { display: flex; align-items: center; gap: 16px; }
+    .test-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-main), #0284c7); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #080a0c; }
+    .location-box { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 28px; overflow: hidden; }
+    @media (max-width: 768px) { .location-box { grid-template-columns: 1fr; } }
+    .location-info { padding: 50px; }
+    @media (max-width: 768px) { .location-info { padding: 28px; } }
+    .info-item { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 28px; }
+    .info-icon { font-size: 1.5rem; color: var(--accent-main); min-width: 28px; }
+    .info-text h4 { font-size: 17px; color: #fff; margin-bottom: 6px; font-weight: 700; }
+    .info-text p { color: var(--text-muted); font-size: 14.5px; }
+    .map-wrap { min-height: 360px; width: 100%; }
+    .map-wrap iframe { width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(120%); }
+    footer { background: #040507; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 60px 0 30px; color: var(--text-muted); font-size: 14px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; margin-bottom: 36px; }
+    .footer-social { display: flex; gap: 14px; }
+    .social-btn { width: 44px; height: 44px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; transition: all 0.3s ease; font-size: 16px; }
+    .social-btn:hover { background: var(--accent-main); color: #080a0c; transform: translateY(-4px); }
+    .wa-float { position: fixed; bottom: 26px; right: 26px; background: #25d366; color: #fff; width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5); z-index: 9999; text-decoration: none; transition: all 0.35s ease; }
+    .wa-float:hover { transform: scale(1.12); box-shadow: 0 15px 40px rgba(37, 211, 102, 0.7); }
+    .modal-lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.94); z-index: 10000; display: none; align-items: center; justify-content: center; padding: 24px; }
+    .modal-lightbox.active { display: flex; }
+    .modal-lightbox img { max-width: 92%; max-height: 85vh; border-radius: 16px; box-shadow: 0 15px 50px rgba(0,0,0,0.9); }
+    .modal-close { position: absolute; top: 24px; right: 24px; color: #fff; font-size: 38px; cursor: pointer; background: transparent; border: none; }
   </style>
 </head>
 <body>
-  <div class="nav-wrapper">
-    <nav class="nav-dock">
-      <a href="#" class="brand">Free Nails Spa <span>• Nails Spa</span></a>
-      <a href="#turno" class="btn-dock">Agendar Turno</a>
-    </nav>
-  </div>
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand-logo">
+        💅 FREE NAILS <span>ZONA ROSA</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#opiniones">Reseñas</a></li>
+        <li><a href="#ubicacion">Sede</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#cita" class="btn btn-primary" style="padding: 10px 24px; font-size: 13.5px; min-height: 42px;">
+          <i class="fa-brands fa-whatsapp"></i> Contactar
+        </a>
+      </div>
+    </div>
+  </header>
 
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto">
-      <source src="https://assets.mixkit.co/videos/36105/36105-720.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline class="hero-video-bg" preload="auto">
+      <source src="https://assets.mixkit.co/videos/43644/43644-720.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge"><i class="fa-solid fa-sparkles"></i> Salón de Uñas & Estética • Zona Rosa</div>
-        <h1 class="hero-title">El arte de lucir unas <em>Uñas Perfectas</em></h1>
-        <p class="hero-desc">Manicure ruso, uñas acrílicas esculpidas y pedispa en un ambiente relajante de Zona Rosa.</p>
-        <div class="hero-btns">
-          <a href="#turno" class="btn-main"><i class="fa-brands fa-whatsapp"></i> Agendar Turno por WhatsApp</a>
+        <div class="badge-tag"><i class='fa-solid fa-gem'></i> SPA DE UÑAS EXCLUSIVO EN ZONA ROSA</div>
+        <h1 class="hero-title">DISEÑO DE AUTOR & <span class="highlight">MANICURE PREMIUM</span></h1>
+        <p class="hero-desc">El estudio de uñas consentido en Chapinero. Técnicas rusas, esmaltado semipermanente de larga duración y spa relajante en un ambiente chic.</p>
+        <div class="hero-actions">
+          <a href="#cita" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Solicitar Cita por WhatsApp</a>
+          <a href="#servicios" class="btn btn-outline"><i class="fa-solid fa-list"></i> Conocer Servicios</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="tecnicas" class="styles-section">
+  <section class="stats-section">
+    <div class="container"><div class="stats-grid"><div><div class='stat-number'>Zona Rosa</div><div class='stat-label'>Kr 13 #82-49</div></div><div><div class='stat-number'>21+ Días</div><div class='stat-label'>Duración Semipermanente</div></div><div><div class='stat-number'>4.9★</div><div class='stat-label'>Calificación Clientas</div></div><div><div class='stat-number'>100%</div><div class='stat-label'>Bioseguridad</div></div></div></div>
+  </section>
+
+  <section id="servicios" class="section-padding">
     <div class="container">
-      <div class="section-head">
-        <h2>Técnicas <span>& Tendencias</span></h2>
-        <p style="color:var(--text-muted)">Cuidado profundo con esmaltes orgánicos de máxima duración.</p>
-      </div>
-      <div class="styles-grid">
-        <div class="styles-list">
-          <div class="style-item active" onclick="updateStyle('s1', this)">
-            <div>
-              <h4>Manicure Ruso con Torno</h4>
-              <p>Limpieza milimétrica de cutícula y esmaltado semipermanente bajo piel.</p>
-            </div>
-          </div>
-          <div class="style-item" onclick="updateStyle('s2', this)">
-            <div>
-              <h4>Esculpidas en Polygel / Acrílicas</h4>
-              <p>Extensiones ligeras, resistentes y con curvatura C perfecta.</p>
-            </div>
-          </div>
-          <div class="style-item" onclick="updateStyle('s3', this)">
-            <div>
-              <h4>Nail Art de Autor & Efecto Espejo</h4>
-              <p>Diseños a mano alzada, encapsulados con pan de oro y glitter importado.</p>
-            </div>
-          </div>
+      <div class="badge-tag"><i class='fa-solid fa-hand-sparkles'></i> Menú de Belleza</div>
+      <h2 class="section-title">SERVICIOS DE UÑAS & SPA</h2>
+      <p class="section-desc">Cuidamos la salud natural de tus uñas con los mejores productos importados y esterilización hospitalaria.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-paint-roller"></i></div>
+          <h3 class="service-title">Manicure Ruso & Semipermanente</h3>
+          <p class="service-desc">Limpieza profunda de cutícula combinada con esmaltado semipermanente impecable por más de 21 días.</p>
         </div>
-        <div class="style-preview">
-          <img id="styleImg" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=85" alt="Nails Spa Free Nails Spa">
-          <h3 id="styleTitle" style="color:#fff; font-size:1.4rem; margin-bottom:6px;">Manicure Ruso con Torno</h3>
-          <p id="styleDesc" style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">Acabado limpio de larga duración sin dañar la lámina ungueal natural.</p>
-          <a href="#turno" class="btn-main" style="padding:10px 24px; font-size:0.85rem;">Elegir este Estilo</a>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3 class="service-title">Uñas Acrílicas & Polygel</h3>
+          <p class="service-desc">Extensiones anatómicas esculpidas con acabados naturales, baby boomer, encapsulados y pedrería fina.</p>
         </div>
-      </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-spa"></i></div>
+          <h3 class="service-title">Spa Pedicure Deluxe</h3>
+          <p class="service-desc">Exfoliación con sales marinas, mascarilla hidratante, retiro de asperezas y masaje podal relajante.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3 class="service-title">Pestañas & Diseño de Cejas</h3>
+          <p class="service-desc">Lifting de pestañas con keratina, laminado de cejas y depilación con hilo para una mirada impactante.</p>
+        </div></div>
     </div>
   </section>
 
-  <section id="turno" class="booking-box">
+  <section id="galeria" class="section-padding" style="background: var(--bg-card);">
     <div class="container">
-      <div class="book-card">
-        <div>
-          <span style="color:var(--accent-rose); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Reserva VIP</span>
-          <h3>Agenda tu Sesión de Spa</h3>
-          <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:20px;">Bebida de cortesía (Mimosa o Café) y sillones masajeadores durante tu servicio.</p>
-          <p style="color:#d1cbc4; font-size:0.85rem;"><i class="fa-solid fa-location-dot" style="color:var(--accent-rose)"></i> Calle 85 #12-40, Zona Rosa, Bogotá</p>
-          <p style="color:#d1cbc4; font-size:0.85rem; margin-top:8px;"><i class="fa-solid fa-phone" style="color:var(--accent-rose)"></i> +57 314 567 8901</p>
+      <div class="badge-tag"><i class="fa-solid fa-camera"></i> Instalaciones & Casos</div>
+      <h2 class="section-title">NUESTROS ESPACIOS & ATENCIÓN</h2>
+      <p class="section-desc">Instalaciones higiénicas y modernas pensadas para la mejor experiencia.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1000&q=80')"><img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="Instalaciones"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80')"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80" alt="Atención profesional"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80')"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Salón de atención"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=1000&q=80')"><img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&q=80" alt="Tecnología"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80')"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Consulta médica"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1000&q=80')"><img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=600&q=80" alt="Instalaciones"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cita" class="section-padding" style="padding-top: 20px;">
+    <div class="container">
+      <div class="reservation-card">
+        <div class="badge-tag"><i class='fa-solid fa-heart'></i> Reserva tu Cita</div>
+        <h2 style="font-size: 2.8rem; margin-bottom: 14px;">RESERVA TU EXPERIENCIA FREE NAILS</h2>
+        <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 620px; margin: 0 auto;">Asegura tu turno con nuestras artistas de uñas en la Zona Rosa.</p>
+        <form class="res-form" onsubmit="sendFreeNailsBooking(event)">
+          
+          <div class="form-group" style="">
+            <label><i class="fa-solid fa-user"></i> Tu Nombre</label>
+            <input type="text" class="form-control" id="fn-name" placeholder="Ej. Valentina Gómez" required>
+          </div>
+          <div class="form-group" style="">
+            <label><i class="fa-solid fa-wand-magic-sparkles"></i> Servicio Deseado</label>
+            <select class="form-control" id="fn-serv"><option value='Manicure Semipermanente'>Manicure Semipermanente</option><option value='Uñas Acrílicas / Polygel'>Uñas Acrílicas / Polygel</option><option value='Spa Pedicure Deluxe'>Spa Pedicure Deluxe</option><option value='Combo Manicure + Pedicure Spa'>Combo Manicure + Pedicure Spa</option><option value='Lifting de Pestañas / Cejas'>Lifting de Pestañas / Cejas</option></select>
+          </div>
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label><i class="fa-solid fa-calendar-day"></i> Día & Hora Preferida</label>
+            <select class="form-control" id="fn-day"><option value='Hoy Mismo'>Hoy Mismo</option><option value='Mañana Mañana'>Mañana Mañana</option><option value='Mañana Tarde'>Mañana Tarde</option><option value='Fin de Semana'>Fin de Semana</option></select>
+          </div>
+          <div style="grid-column: 1 / -1; margin-top: 10px;">
+            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 16px;">
+              <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Enviar Solicitud a WhatsApp
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="opiniones" class="section-padding" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="badge-tag"><i class="fa-solid fa-comment-dots"></i> Reseñas Verificadas</div>
+      <h2 class="section-title">OPINIONES DE NUESTROS CLIENTES</h2>
+      <p class="section-desc">Testimonios reales en Google Reviews y redes sociales.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="test-text">"El manicure ruso me duró intacto 4 semanas. El lugar es hermoso y la atención de las manicuristas es de 10."</p>
+          <div class="test-author">
+            <div class="test-avatar">VP</div>
+            <div>
+              <h4 style="color:#fff; font-size:15px; font-weight:700;">Valeria Pinzón</h4>
+              <p style="color:var(--text-muted); font-size:12px;">Zona Rosa • Chapinero</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <div class="form-group">
-            <label>Tu Nombre</label>
-            <input type="text" id="sName" class="form-control" placeholder="Ej. Daniela Ospina">
+        <div class="testimonial-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="test-text">"Mis uñas acrílicas quedaron súper delgadas y naturales, nada toscas. Súper recomendado en Bogotá."</p>
+          <div class="test-author">
+            <div class="test-avatar">SM</div>
+            <div>
+              <h4 style="color:#fff; font-size:15px; font-weight:700;">Sara Morales</h4>
+              <p style="color:var(--text-muted); font-size:12px;">Uñas Acrílicas • Bogotá</p>
+            </div>
           </div>
-          <div class="form-group">
-            <label>Servicio Deseado</label>
-            <select id="sService" class="form-control">
-              <option>Manicure Ruso Semipermanente</option>
-              <option>Uñas Acrílicas / Polygel Esculpidas</option>
-              <option>Pedicure Spa con Hidromasaje</option>
-              <option>Pestañas Pelo a Pelo / Lifting</option>
-            </select>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="test-text">"El spa de pies es un sueño después de una semana pesada de trabajo. Excelente música y café."</p>
+          <div class="test-author">
+            <div class="test-avatar">CG</div>
+            <div>
+              <h4 style="color:#fff; font-size:15px; font-weight:700;">Camila Galvis</h4>
+              <p style="color:var(--text-muted); font-size:12px;">Pedicure Spa • Chicó</p>
+            </div>
           </div>
-          <div class="form-group">
-            <label>Horario Preferido</label>
-            <select id="sTime" class="form-control">
-              <option>Mañana (9:00 AM - 1:00 PM)</option>
-              <option>Tarde (2:00 PM - 7:00 PM)</option>
-            </select>
+        </div></div>
+    </div>
+  </section>
+
+  <section id="ubicacion" class="section-padding">
+    <div class="container">
+      <div class="badge-tag"><i class="fa-solid fa-map-pin"></i> Ubicación</div>
+      <h2 class="section-title">ENCUÉNTRANOS EN BOGOTÁ</h2>
+      <p class="section-desc">Instalaciones seguras y de fácil acceso.</p>
+      <div class="location-box">
+        <div class="location-info">
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot info-icon"></i>
+            <div class="info-text">
+              <h4>Dirección</h4>
+              <p>Carrera 13 # 82-49, Local 113, Chapinero / Zona Rosa, Bogotá</p>
+            </div>
           </div>
-          <button type="button" onclick="sendSpaWhatsApp()" class="btn-submit"><i class="fa-brands fa-whatsapp"></i> Confirmar Turno por WhatsApp</button>
+          <div class="info-item">
+            <i class="fa-solid fa-clock info-icon"></i>
+            <div class="info-text">
+              <h4>Horarios</h4>
+              <p>Lunes a Sábado: 8:30 AM – 7:30 PM | Domingos: 10:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-phone info-icon"></i>
+            <div class="info-text">
+              <h4>Línea WhatsApp</h4>
+              <p>+57 319 6594961</p>
+            </div>
+          </div>
+          <div style="margin-top: 32px;">
+            <a href="https://maps.google.com/?q=Carrera+13+%23+82-49,+Local+113,+Chapinero,+Bogota" target="_blank" class="btn btn-outline" style="width: 100%;">
+              <i class="fa-solid fa-diamond-turn-right"></i> Abrir en Google Maps
+            </a>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7123987123!2d-74.062!3d4.668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a567!2sBogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <a href="https://wa.me/573145678901?text=Hola%20Free Nails Spa,%20quisiera%20solicitar%20un%20turno%20de%20spa." target="_blank" rel="noopener noreferrer" class="wa-float"><i class="fa-brands fa-whatsapp"></i></a>
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h3 style="font-family: var(--font-title); color: #fff; margin-bottom: 8px;">FREE NAILS ZONA ROSA</h3>
+          <p>Salón de uñas y estética en la Zona Rosa de Chapinero, Bogotá.</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/freenailsspabogota" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/573196594961" target="_blank" class="social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; text-align: center; font-size: 13px;">
+        <p>© 2026 FREE NAILS ZONA ROSA. Propuesta de diseño web profesional de alta conversión.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/573196594961?text=%C2%A1Hola!%20Deseo%20informaci%C3%B3n%20y%20agendar%20una%20cita." target="_blank" class="wa-float" title="Hablar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <div id="lightbox" class="modal-lightbox" onclick="closeLightbox()">
+    <button class="modal-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="Vista previa">
+  </div>
 
   <script>
-    const sData = {
-      s1: { img: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=85', title: 'Manicure Ruso con Torno', desc: 'Acabado limpio de larga duración sin dañar la lámina ungueal natural.' },
-      s2: { img: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=800&q=85', title: 'Esculpidas en Polygel / Acrílicas', desc: 'Estructuras fuertes y estilizadas adaptadas al largo y forma que prefieras.' },
-      s3: { img: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=800&q=85', title: 'Nail Art de Autor & Efecto Espejo', desc: 'Diseños personalizados con pigmentos cromados y encapsulados de alta fijación.' }
-    };
-    function updateStyle(k, el) {
-      document.querySelectorAll('.style-item').forEach(i => i.classList.remove('active'));
-      el.classList.add('active');
-      const d = sData[k];
-      if(d) {
-        document.getElementById('styleImg').src = d.img;
-        document.getElementById('styleTitle').innerText = d.title;
-        document.getElementById('styleDesc').innerText = d.desc;
-      }
+    window.addEventListener('scroll', function() {
+      var nav = document.getElementById('navbar');
+      if (window.scrollY > 50) { nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+    });
+
+    function sendFreeNailsBooking(e) {
+      e.preventDefault();
+      var msg = "¡Hola Free Nails Spa Zona Rosa! Deseo agendar una cita:\n";
+      var form = e.target;
+      var inputs = form.querySelectorAll('input, select');
+      inputs.forEach(function(inp) {
+        if(inp.id) {
+          var lbl = inp.previousElementSibling ? inp.previousElementSibling.innerText : inp.id;
+          msg += "• " + lbl + ": " + inp.value + "\n";
+        }
+      });
+      msg += "¿Qué disponibilidad tienen?";
+      window.open("https://wa.me/573196594961?text=" + encodeURIComponent(msg), '_blank');
     }
-    function sendSpaWhatsApp() {
-      const n = document.getElementById('sName').value.trim() || 'Cliente';
-      const s = document.getElementById('sService').value;
-      const t = document.getElementById('sTime').value;
-      const msg = '¡Hola ' + 'Free Nails Spa' + '! Mi nombre es *' + n + '*. Deseo solicitar un turno para *' + s + '* en el horario de *' + t + '*.';
-      window.open('https://wa.me/573145678901?text=' + encodeURIComponent(msg), '_blank');
+
+    function openLightbox(url) {
+      document.getElementById('lightbox-img').src = url;
+      document.getElementById('lightbox').classList.add('active');
     }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
   </script>
 </body>
 </html>
