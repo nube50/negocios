@@ -3,41 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Negra Bar | Ritmos Afros, Coctelería Tropical & Rumba en Chapinero, Bogotá</title>
-  <meta name="description" content="La Negra Bar: El templo de la cultura afrocaribeña y la rumba en Chapinero, Bogotá. Salsa brava, champeta, dancehall, coctelería ancestral de autor y la mejor energía nocturna.">
+  <title>La Negra Bar | Ritmos Afros, Coctelería Ancestral & Rumba en Chapinero, Bogotá</title>
+  <meta name="description" content="La Negra Bar: El templo de la cultura afrocaribeña y la rumba en Chapinero, Bogotá. Salsa brava, champeta, dancehall, coctelería ancestral y la mejor vibra caribeña.">
   
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍹</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>">
 
   <!-- Google Fonts: Syne + Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
   
   <!-- Font Awesome Icons CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
-      --bg-dark: #070608;
-      --bg-card: #121015;
-      --bg-card-hover: #1b1722;
-      --accent-gold: #f4a261;
-      --accent-coral: #e76f51;
-      --accent-neon: #06d6a0;
-      --accent-pink: #ef476f;
-      --text-main: #f5f3f7;
-      --text-muted: #a49ea8;
-      --border-color: rgba(244, 162, 97, 0.16);
+      --bg-dark: #060408;
+      --bg-card: #100c14;
+      --bg-card-hover: #181220;
+      --accent-gold: #f7b05b;
+      --accent-coral: #f25c54;
+      --accent-neon: #00f5d4;
+      --accent-pink: #f72585;
+      --accent-glow: rgba(247, 176, 91, 0.25);
+      --text-main: #f8f6fa;
+      --text-muted: #a89fae;
+      --border-color: rgba(247, 176, 91, 0.16);
       --font-title: 'Syne', sans-serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html, body {
       width: 100%;
@@ -49,18 +45,44 @@
       line-height: 1.6;
     }
 
-    /* Container */
+    /* Ambient Background Glows */
+    .ambient-glow-1 {
+      position: absolute;
+      top: 10%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(242, 92, 84, 0.18) 0%, rgba(0,0,0,0) 70%);
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .ambient-glow-2 {
+      position: absolute;
+      bottom: 20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 245, 212, 0.12) 0%, rgba(0,0,0,0) 70%);
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
     .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 0 24px;
+      position: relative;
+      z-index: 2;
     }
 
     @media (max-width: 768px) {
-      .container {
-        padding: 0 16px;
-      }
+      .container { padding: 0 16px; }
     }
 
     /* Typography */
@@ -72,39 +94,39 @@
     .badge-tag {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(244, 162, 97, 0.12);
+      gap: 10px;
+      background: rgba(247, 176, 91, 0.12);
       border: 1px solid var(--accent-gold);
       color: var(--accent-gold);
-      padding: 6px 18px;
+      padding: 8px 20px;
       border-radius: 50px;
       font-size: 13px;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(247, 176, 91, 0.15);
     }
 
     .section-title {
-      font-size: 2.85rem;
-      font-weight: 800;
+      font-size: 3rem;
+      font-weight: 900;
       margin-bottom: 16px;
-      background: linear-gradient(135deg, #ffffff 10%, var(--accent-gold) 100%);
+      background: linear-gradient(135deg, #ffffff 10%, var(--accent-gold) 60%, var(--accent-coral) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
     }
 
     @media (max-width: 768px) {
-      .section-title {
-        font-size: 2.1rem;
-      }
+      .section-title { font-size: 2.2rem; }
     }
 
     .section-desc {
       color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 680px;
-      margin-bottom: 40px;
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin-bottom: 48px;
     }
 
     /* Buttons */
@@ -113,58 +135,60 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 14px 30px;
+      padding: 16px 34px;
       border-radius: 50px;
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 800;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
       cursor: pointer;
-      min-height: 48px;
+      min-height: 52px;
       min-width: 44px;
+      border: none;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
-      color: #070608;
-      box-shadow: 0 10px 25px rgba(231, 111, 81, 0.35);
+      color: #060408;
+      box-shadow: 0 10px 30px rgba(242, 92, 84, 0.4);
     }
 
     .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(231, 111, 81, 0.55);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 18px 40px rgba(242, 92, 84, 0.6);
     }
 
     .btn-outline {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.04);
       color: #fff;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
 
     .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.12);
       border-color: var(--accent-gold);
       color: var(--accent-gold);
-      transform: translateY(-3px);
+      transform: translateY(-4px);
     }
 
-    /* Header & Nav */
+    /* Header */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      padding: 18px 0;
-      transition: background 0.3s, backdrop-filter 0.3s;
+      padding: 20px 0;
+      transition: all 0.3s ease;
     }
 
     header.scrolled {
-      background: rgba(7, 6, 8, 0.92);
-      backdrop-filter: blur(15px);
+      background: rgba(6, 4, 8, 0.94);
+      backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-color);
-      padding: 12px 0;
+      padding: 14px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .nav-inner {
@@ -179,54 +203,43 @@
       gap: 12px;
       text-decoration: none;
       color: #fff;
-      font-size: 1.5rem;
-      font-weight: 800;
+      font-size: 1.6rem;
+      font-weight: 900;
       font-family: var(--font-title);
+      letter-spacing: -0.5px;
     }
 
-    .brand-logo span {
-      color: var(--accent-gold);
-    }
+    .brand-logo span { color: var(--accent-gold); }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 36px;
       list-style: none;
     }
 
-    @media (max-width: 860px) {
-      .nav-links {
-        display: none;
-      }
+    @media (max-width: 920px) {
+      .nav-links { display: none; }
     }
 
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-weight: 500;
-      font-size: 14px;
+      font-weight: 600;
+      font-size: 14.5px;
       transition: color 0.3s;
     }
 
-    .nav-links a:hover {
-      color: var(--accent-gold);
-    }
+    .nav-links a:hover { color: var(--accent-gold); }
 
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    /* Hero Section with Video */
+    /* Hero Section */
     .hero {
       position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding-top: 100px;
-      padding-bottom: 60px;
+      padding-top: 130px;
+      padding-bottom: 70px;
       overflow: hidden;
     }
 
@@ -238,7 +251,7 @@
       height: 100%;
       object-fit: cover;
       z-index: 1;
-      opacity: 0.9;
+      opacity: 0.92;
     }
 
     .hero-overlay {
@@ -247,103 +260,101 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, rgba(7, 6, 8, 0.25) 0%, rgba(7, 6, 8, 0.65) 65%, #070608 100%);
+      background: linear-gradient(180deg, rgba(6,4,8,0.25) 0%, rgba(6,4,8,0.65) 55%, #060408 100%);
       z-index: 2;
     }
 
     .hero-content {
       position: relative;
       z-index: 3;
-      max-width: 780px;
+      max-width: 860px;
     }
 
     .hero-title {
-      font-size: 4rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      line-height: 1.08;
+      font-size: 4.4rem;
+      font-weight: 900;
+      margin-bottom: 22px;
+      line-height: 1.05;
       text-transform: uppercase;
-      letter-spacing: -0.5px;
+      letter-spacing: -1px;
     }
 
     @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
-      }
+      .hero-title { font-size: 2.7rem; }
     }
 
     .hero-title .highlight {
-      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-coral) 100%);
+      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-coral) 50%, var(--accent-pink) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 40px rgba(247, 176, 91, 0.4);
     }
 
     .hero-desc {
-      font-size: 1.25rem;
-      color: #e2dde7;
-      margin-bottom: 36px;
-      max-width: 620px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      font-size: 1.3rem;
+      color: #e5e0ea;
+      margin-bottom: 40px;
+      max-width: 680px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+      font-weight: 400;
     }
 
     .hero-actions {
       display: flex;
-      gap: 16px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     @media (max-width: 480px) {
-      .hero-actions {
-        flex-direction: column;
-      }
-      .hero-actions .btn {
-        width: 100%;
-      }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
     }
 
-    /* Live Equalizer Pulse */
+    /* Live Equalizer Visualizer */
     .vibe-pulse {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      background: rgba(6, 214, 160, 0.12);
+      gap: 12px;
+      background: rgba(0, 245, 212, 0.12);
       border: 1px solid var(--accent-neon);
       color: var(--accent-neon);
-      padding: 6px 16px;
+      padding: 8px 20px;
       border-radius: 50px;
       font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 20px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      box-shadow: 0 0 25px rgba(0, 245, 212, 0.25);
     }
 
     .equalizer-bars {
       display: flex;
       align-items: flex-end;
-      gap: 3px;
-      height: 14px;
+      gap: 4px;
+      height: 16px;
     }
 
     .eq-bar {
-      width: 3px;
+      width: 3.5px;
       background-color: var(--accent-neon);
       border-radius: 2px;
-      animation: eqBounce 1.2s infinite ease-in-out alternate;
+      animation: eqBounce 1.1s infinite ease-in-out alternate;
     }
 
-    .eq-bar:nth-child(2) { animation-delay: 0.2s; height: 60%; }
+    .eq-bar:nth-child(2) { animation-delay: 0.2s; height: 65%; }
     .eq-bar:nth-child(3) { animation-delay: 0.4s; height: 100%; }
-    .eq-bar:nth-child(4) { animation-delay: 0.1s; height: 40%; }
+    .eq-bar:nth-child(4) { animation-delay: 0.15s; height: 45%; }
+    .eq-bar:nth-child(5) { animation-delay: 0.35s; height: 80%; }
 
     @keyframes eqBounce {
       0% { height: 20%; }
       100% { height: 100%; }
     }
 
-    /* Stats Bar */
+    /* Stats Section */
     .stats-section {
       position: relative;
       z-index: 5;
-      padding: 40px 0;
+      padding: 44px 0;
       background: var(--bg-card);
       border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
@@ -359,118 +370,144 @@
     @media (max-width: 768px) {
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 24px 16px;
+        gap: 28px 16px;
       }
     }
 
     .stat-number {
-      font-size: 2.6rem;
-      font-weight: 800;
+      font-size: 2.8rem;
+      font-weight: 900;
       font-family: var(--font-title);
       color: var(--accent-gold);
       margin-bottom: 4px;
+      letter-spacing: -1px;
     }
 
     .stat-label {
       color: var(--text-muted);
       font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 600;
+      letter-spacing: 1.5px;
+      font-weight: 700;
     }
 
-    /* Rhythm Experience Section */
-    .section-padding {
-      padding: 100px 0;
-    }
+    /* Common Padding */
+    .section-padding { padding: 110px 0; }
+    @media (max-width: 768px) { .section-padding { padding: 70px 0; } }
 
-    @media (max-width: 768px) {
-      .section-padding {
-        padding: 60px 0;
-      }
-    }
-
-    .rhythm-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .rhythm-card {
+    /* Interactive Rhythm Booth Card */
+    .sound-booth {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 32px 24px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      border-radius: 28px;
+      padding: 40px;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     }
 
-    .rhythm-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent-coral), var(--accent-gold));
-      opacity: 0;
-      transition: opacity 0.3s;
+    @media (max-width: 860px) {
+      .sound-booth { grid-template-columns: 1fr; padding: 24px; }
     }
 
-    .rhythm-card:hover {
-      transform: translateY(-8px);
-      background: var(--bg-card-hover);
-      border-color: rgba(244, 162, 97, 0.4);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    .rhythm-tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
-    .rhythm-card:hover::before {
-      opacity: 1;
-    }
-
-    .rhythm-icon {
-      font-size: 2.2rem;
-      color: var(--accent-gold);
-      margin-bottom: 20px;
-    }
-
-    .rhythm-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
+    .rhythm-tab-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
       color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: left;
     }
 
-    .rhythm-desc {
+    .rhythm-tab-btn.active, .rhythm-tab-btn:hover {
+      background: linear-gradient(135deg, rgba(242, 92, 84, 0.2), rgba(247, 176, 91, 0.15));
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      transform: translateX(8px);
+    }
+
+    .rhythm-display {
+      background: #09070c;
+      border: 1px solid rgba(247, 176, 91, 0.2);
+      border-radius: 20px;
+      padding: 32px;
+      position: relative;
+    }
+
+    .rhythm-badge-genre {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-neon);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .rhythm-headline {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .rhythm-body-text {
       color: var(--text-muted);
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 24px;
     }
 
-    /* Cocktails Section */
+    .rhythm-meter {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      font-size: 13px;
+      color: #e5e0ea;
+    }
+
+    /* Cocktail Cards */
     .cocktails-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
     }
 
     .cocktail-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 20px;
+      border-radius: 24px;
       overflow: hidden;
-      transition: transform 0.3s, border-color 0.3s;
+      transition: all 0.35s ease;
+      position: relative;
     }
 
     .cocktail-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
       border-color: var(--accent-gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
     }
 
     .cocktail-img-wrap {
       position: relative;
-      height: 220px;
+      height: 240px;
       overflow: hidden;
     }
 
@@ -478,68 +515,56 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s ease;
     }
 
-    .cocktail-card:hover .cocktail-img-wrap img {
-      transform: scale(1.08);
-    }
+    .cocktail-card:hover .cocktail-img-wrap img { transform: scale(1.1); }
 
     .cocktail-tag {
       position: absolute;
-      top: 14px;
-      right: 14px;
-      background: rgba(7, 6, 8, 0.85);
-      backdrop-filter: blur(8px);
+      top: 16px;
+      right: 16px;
+      background: rgba(6, 4, 8, 0.88);
+      backdrop-filter: blur(10px);
       color: var(--accent-gold);
       border: 1px solid var(--accent-gold);
-      padding: 4px 12px;
+      padding: 5px 14px;
       border-radius: 30px;
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .cocktail-body {
-      padding: 24px;
-    }
+    .cocktail-body { padding: 28px 24px; }
 
     .cocktail-name {
-      font-size: 1.25rem;
-      font-weight: 700;
+      font-size: 1.35rem;
+      font-weight: 800;
       color: #fff;
       margin-bottom: 8px;
     }
 
     .cocktail-ingredients {
       color: var(--text-muted);
-      font-size: 13.5px;
-      line-height: 1.5;
+      font-size: 14px;
+      line-height: 1.6;
     }
 
     /* Gallery Grid */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 18px;
     }
 
-    @media (max-width: 768px) {
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    @media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; } }
 
     .gallery-item {
       position: relative;
-      height: 260px;
-      border-radius: 16px;
+      height: 280px;
+      border-radius: 20px;
       overflow: hidden;
       cursor: pointer;
     }
@@ -548,7 +573,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s ease;
     }
 
     .gallery-overlay {
@@ -557,7 +582,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(7, 6, 8, 0.6);
+      background: rgba(6, 4, 8, 0.65);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -565,133 +590,119 @@
       transition: opacity 0.3s ease;
     }
 
-    .gallery-item:hover img {
-      transform: scale(1.08);
-    }
-
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
 
     .gallery-overlay i {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: var(--accent-gold);
     }
 
-    /* Testimonials Carousel / Grid */
+    /* VIP Reservation Interactive Box */
+    .reservation-card {
+      background: linear-gradient(135deg, rgba(242, 92, 84, 0.15), rgba(247, 176, 91, 0.08));
+      border: 1px solid var(--accent-gold);
+      border-radius: 32px;
+      padding: 56px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    }
+
+    @media (max-width: 768px) {
+      .reservation-card { padding: 36px 20px; }
+    }
+
+    .res-form {
+      max-width: 650px;
+      margin: 32px auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      text-align: left;
+    }
+
+    @media (max-width: 580px) {
+      .res-form { grid-template-columns: 1fr; }
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      background: rgba(6, 4, 8, 0.85);
+      border: 1px solid rgba(247, 176, 91, 0.3);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: #fff;
+      font-size: 14px;
+      font-family: var(--font-body);
+      outline: none;
+    }
+
+    .form-control:focus { border-color: var(--accent-gold); }
+
+    /* Testimonials */
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
+      gap: 28px;
     }
 
     .testimonial-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 32px;
+      border-radius: 24px;
+      padding: 36px;
       position: relative;
     }
 
-    .stars {
-      color: #ffb703;
-      margin-bottom: 16px;
-      font-size: 14px;
-    }
-
-    .test-text {
-      color: #e5e0ea;
-      font-size: 15px;
-      font-style: italic;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    .test-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
+    .stars { color: #ffb703; margin-bottom: 18px; font-size: 14px; }
+    .test-text { color: #e5e0ea; font-size: 15px; font-style: italic; margin-bottom: 24px; line-height: 1.65; }
+    .test-author { display: flex; align-items: center; gap: 16px; }
     .test-avatar {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      color: #000;
+      font-weight: 800;
+      color: #060408;
+      font-size: 15px;
     }
 
-    .author-name {
-      font-weight: 700;
-      color: #fff;
-      font-size: 14px;
-    }
-
-    .author-role {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    /* Location & Map Section */
+    /* Location Box */
     .location-box {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      gap: 36px;
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 24px;
+      border-radius: 28px;
       overflow: hidden;
     }
 
-    @media (max-width: 768px) {
-      .location-box {
-        grid-template-columns: 1fr;
-      }
-    }
+    @media (max-width: 768px) { .location-box { grid-template-columns: 1fr; } }
+    .location-info { padding: 50px; }
+    @media (max-width: 768px) { .location-info { padding: 28px; } }
 
-    .location-info {
-      padding: 48px;
-    }
+    .info-item { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 28px; }
+    .info-icon { font-size: 1.5rem; color: var(--accent-gold); min-width: 28px; }
+    .info-text h4 { font-size: 17px; color: #fff; margin-bottom: 6px; font-weight: 700; }
+    .info-text p { color: var(--text-muted); font-size: 14.5px; }
 
-    @media (max-width: 768px) {
-      .location-info {
-        padding: 24px;
-      }
-    }
-
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .info-icon {
-      font-size: 1.4rem;
-      color: var(--accent-gold);
-      min-width: 24px;
-    }
-
-    .info-text h4 {
-      font-size: 16px;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-
-    .info-text p {
-      color: var(--text-muted);
-      font-size: 14px;
-    }
-
-    .map-wrap {
-      min-height: 340px;
-      width: 100%;
-    }
-
+    .map-wrap { min-height: 360px; width: 100%; }
     .map-wrap iframe {
       width: 100%;
       height: 100%;
@@ -699,34 +710,11 @@
       filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(120%);
     }
 
-    /* CTA Section */
-    .cta-box {
-      background: linear-gradient(135deg, rgba(231, 111, 81, 0.15), rgba(244, 162, 97, 0.08));
-      border: 1px solid var(--accent-gold);
-      border-radius: 24px;
-      padding: 60px 40px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-box h2 {
-      font-size: 2.6rem;
-      margin-bottom: 16px;
-    }
-
-    .cta-box p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 32px;
-    }
-
     /* Footer */
     footer {
-      background: #040305;
+      background: #030204;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 50px 0 24px;
+      padding: 60px 0 30px;
       color: var(--text-muted);
       font-size: 14px;
     }
@@ -736,18 +724,14 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 20px;
-      margin-bottom: 30px;
+      gap: 24px;
+      margin-bottom: 36px;
     }
 
-    .footer-social {
-      display: flex;
-      gap: 14px;
-    }
-
+    .footer-social { display: flex; gap: 14px; }
     .social-btn {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -757,37 +741,38 @@
       color: #fff;
       text-decoration: none;
       transition: all 0.3s ease;
+      font-size: 16px;
     }
 
     .social-btn:hover {
       background: var(--accent-gold);
-      color: #000;
-      transform: translateY(-3px);
+      color: #060408;
+      transform: translateY(-4px);
     }
 
     /* WhatsApp Float */
     .wa-float {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      bottom: 26px;
+      right: 26px;
       background: #25d366;
       color: #fff;
-      width: 60px;
-      height: 60px;
+      width: 62px;
+      height: 62px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 32px;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
       z-index: 9999;
       text-decoration: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.35s ease;
     }
 
     .wa-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.65);
+      transform: scale(1.12);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.7);
     }
 
     /* Modal / Lightbox */
@@ -797,23 +782,20 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.92);
+      background: rgba(0, 0, 0, 0.94);
       z-index: 10000;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 24px;
     }
 
-    .modal-lightbox.active {
-      display: flex;
-    }
-
+    .modal-lightbox.active { display: flex; }
     .modal-lightbox img {
-      max-width: 90%;
+      max-width: 92%;
       max-height: 85vh;
-      border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+      border-radius: 16px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.9);
     }
 
     .modal-close {
@@ -821,7 +803,7 @@
       top: 24px;
       right: 24px;
       color: #fff;
-      font-size: 36px;
+      font-size: 38px;
       cursor: pointer;
       background: transparent;
       border: none;
@@ -830,6 +812,10 @@
 </head>
 <body>
 
+  <!-- Background Ambient Auras -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
   <!-- Navigation -->
   <header id="navbar">
     <div class="container nav-inner">
@@ -837,14 +823,14 @@
         <i class="fa-solid fa-fire-flame-curved" style="color: var(--accent-coral);"></i> LA NEGRA <span>BAR</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#ritmos">Ritmos</a></li>
-        <li><a href="#cocteleria">Coctelería</a></li>
+        <li><a href="#sonido">El Picó Sonoro</a></li>
+        <li><a href="#cocteleria">Botica Ancestral</a></li>
         <li><a href="#galeria">Ambiente</a></li>
-        <li><a href="#opiniones">Opiniones</a></li>
+        <li><a href="#opiniones">Voces</a></li>
         <li><a href="#ubicacion">Ubicación</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="https://wa.me/573124417308?text=%C2%A1Hola%20La%20Negra%20Bar!%20Quisiera%20reservar%20una%20mesa%20para%20este%20fin%20de%20semana." target="_blank" class="btn btn-primary" style="padding: 10px 22px; font-size: 13px;">
+        <a href="#reservas" class="btn btn-primary" style="padding: 10px 24px; font-size: 13.5px; min-height: 42px;">
           <i class="fa-brands fa-whatsapp"></i> Reservar Mesa
         </a>
       </div>
@@ -867,21 +853,22 @@
             <div class="eq-bar"></div>
             <div class="eq-bar"></div>
             <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
           </div>
-          <span>CULTURA & RUMBA AFROCARIBEÑA EN CHAPINERO</span>
+          <span>TEMPLO AFROCARIBEÑO & RUMBA EN CHAPINERO</span>
         </div>
         <h1 class="hero-title">
-          LA VERDADERA <span class="highlight">FIESTA CARIBE</span> EN BOGOTÁ
+          LA AUTÉNTICA <span class="highlight">FIESTA CARIBE</span> EN BOGOTÁ
         </h1>
         <p class="hero-desc">
-          El templo sonoro donde convergen la champeta, la salsa brava, el dancehall y la coctelería ancestral. Ven a vivir la noche con sabor, cadencia y pura buena energía.
+          El santuario sonoro donde convergen la champeta brava, la salsa pesada, el dancehall y la coctelería ancestral del Pacífico. Vive la noche con cadencia, golpe y pura buena energía.
         </p>
         <div class="hero-actions">
-          <a href="https://wa.me/573124417308?text=%C2%A1Hola!%20Quiero%20conocer%20la%20programaci%C3%B3n%20y%20reservar%20en%20La%20Negra%20Bar." target="_blank" class="btn btn-primary">
-            <i class="fa-brands fa-whatsapp"></i> Reservar por WhatsApp
+          <a href="#reservas" class="btn btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> Reservar Experiencia VIP
           </a>
-          <a href="#ubicacion" class="btn btn-outline">
-            <i class="fa-solid fa-location-dot"></i> ¿Cómo Llegar?
+          <a href="#sonido" class="btn btn-outline">
+            <i class="fa-solid fa-compact-disc"></i> Explorar Ritmos
           </a>
         </div>
       </div>
@@ -897,8 +884,8 @@
           <div class="stat-label">Sabor & Cadencia</div>
         </div>
         <div>
-          <div class="stat-number">15+</div>
-          <div class="stat-label">Cocteles de Autor</div>
+          <div class="stat-number">16+</div>
+          <div class="stat-label">Cocteles Ancestrales</div>
         </div>
         <div>
           <div class="stat-number">4.8★</div>
@@ -912,91 +899,101 @@
     </div>
   </section>
 
-  <!-- Ritmos & Experiencia Sonora -->
-  <section id="ritmos" class="section-padding">
+  <!-- El Picó Sonoro (Interactive Sound System) -->
+  <section id="sonido" class="section-padding">
     <div class="container">
-      <div class="badge-tag"><i class="fa-solid fa-compact-disc"></i> Curaduría Sonora</div>
-      <h2 class="section-title">LOS RITMOS QUE MUEVEN NUESTRA NOCHE</h2>
+      <div class="badge-tag"><i class="fa-solid fa-sliders"></i> Curaduría Sonora</div>
+      <h2 class="section-title">EL PICÓ SONORO: NUESTRA IDENTIDAD</h2>
       <p class="section-desc">
-        En La Negra Bar no ponemos música al azar: seleccionamos los mejores clásicos y tendencias de la música negra, caribeña y tropical para que nadie se quede sentado.
+        En La Negra Bar la música es sagrada. Haz clic en cada género para descubrir el golpe sonoro que hace arder nuestra pista de baile.
       </p>
 
-      <div class="rhythm-grid">
-        <div class="rhythm-card">
-          <div class="rhythm-icon"><i class="fa-solid fa-drum"></i></div>
-          <h3 class="rhythm-title">Champeta & Terapia</h3>
-          <p class="rhythm-desc">Desde los clásicos del picó cartagenero hasta la champeta urbana que enciende la pista de baile desde temprano.</p>
+      <div class="sound-booth">
+        <div class="rhythm-tabs">
+          <button class="rhythm-tab-btn active" onclick="selectGenre('champeta', this)">
+            <span><i class="fa-solid fa-drum" style="margin-right: 10px; color: var(--accent-gold);"></i> Champeta & Picó</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button class="rhythm-tab-btn" onclick="selectGenre('salsa', this)">
+            <span><i class="fa-solid fa-music" style="margin-right: 10px; color: var(--accent-coral);"></i> Salsa Brava & Son</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button class="rhythm-tab-btn" onclick="selectGenre('dancehall', this)">
+            <span><i class="fa-solid fa-fire" style="margin-right: 10px; color: var(--accent-pink);"></i> Dancehall & Reggae</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button class="rhythm-tab-btn" onclick="selectGenre('afrobeat', this)">
+            <span><i class="fa-solid fa-headphones" style="margin-right: 10px; color: var(--accent-neon);"></i> Afrobeat & Dembow</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
-        <div class="rhythm-card">
-          <div class="rhythm-icon"><i class="fa-solid fa-music"></i></div>
-          <h3 class="rhythm-title">Salsa Brava & Son</h3>
-          <p class="rhythm-desc">Descarga salsera pesada, guaguancó y son cubano con sabor genuino para los amantes del buen golpe y el baile.</p>
-        </div>
-        <div class="rhythm-card">
-          <div class="rhythm-icon"><i class="fa-solid fa-fire"></i></div>
-          <h3 class="rhythm-title">Dancehall & Reggae</h3>
-          <p class="rhythm-desc">Vibraciones de Kingston y San Andrés con bajos potentes, grooves irresistibles y líricas de pura fiesta caribeña.</p>
-        </div>
-        <div class="rhythm-card">
-          <div class="rhythm-icon"><i class="fa-solid fa-headphones"></i></div>
-          <h3 class="rhythm-title">Afrobeat & Dembow</h3>
-          <p class="rhythm-desc">Los sonidos globales de Lagos a Santo Domingo fusionados para una experiencia de rumba contemporánea e inolvidable.</p>
+
+        <div class="rhythm-display" id="genre-display">
+          <div class="rhythm-badge-genre" id="g-tag">CARTAGENA & PALENQUE SOUND</div>
+          <h3 class="rhythm-headline" id="g-title">Champeta Criolla & Terapia Urbana</h3>
+          <p class="rhythm-body-text" id="g-desc">
+            El corazón de nuestra fiesta. Desde los vinilos legendarios de El Sayayín, Charles King y Viviano Torres hasta las producciones de picó más explosivas que te hacen mover los pies desde el primer beat.
+          </p>
+          <div class="rhythm-meter">
+            <span><i class="fa-solid fa-bolt" style="color: var(--accent-gold);"></i> Energía: <strong>100% Pura Fiesta</strong></span>
+            <span><i class="fa-solid fa-heart" style="color: var(--accent-coral);"></i> Vibra: <strong>Cero Pose</strong></span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Coctelería Insignia -->
+  <!-- Botica Ancestral (Coctelería) -->
   <section id="cocteleria" class="section-padding" style="background: var(--bg-card);">
     <div class="container">
-      <div class="badge-tag"><i class="fa-solid fa-martini-glass-citrus"></i> Barra de Autor</div>
-      <h2 class="section-title">COCTELERÍA TROPICAL & ANCESTRAL</h2>
+      <div class="badge-tag"><i class="fa-solid fa-martini-glass-citrus"></i> Botica Ancestral</div>
+      <h2 class="section-title">DESTILADOS DEL PACÍFICO & CARIBE</h2>
       <p class="section-desc">
-        Sabores autóctonos del Pacífico y Caribe colombiano elevados con técnicas de coctelería contemporánea y destilados de primera calidad.
+        Coctelería de autor creada con viche artesanal, macerados de corozo, lulo silvestre y rones especiados de las costas colombianas.
       </p>
 
       <div class="cocktails-grid">
         <div class="cocktail-card">
           <div class="cocktail-img-wrap">
-            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=700&q=80" alt="Viche Sour">
-            <span class="cocktail-tag">Ancestral</span>
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=700&q=80" alt="Viche Sour Pacífico">
+            <span class="cocktail-tag">Insignia Ancestral</span>
           </div>
           <div class="cocktail-body">
             <h3 class="cocktail-name">Viche Sour Pacífico</h3>
-            <p class="cocktail-ingredients">Destilado de caña artesanal del Pacífico, zumo de maracuyá fresco, miel de agave y toque de hierbabuena.</p>
+            <p class="cocktail-ingredients">Viche artesanal de caña destilado en el Chocó, zumo de maracuyá fresco, miel de agave, amargo de angostura y toque de hierbabuena fresca.</p>
           </div>
         </div>
 
         <div class="cocktail-card">
           <div class="cocktail-img-wrap">
-            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=700&q=80" alt="Corozo Smash">
-            <span class="cocktail-tag">Insignia</span>
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=700&q=80" alt="Corozo Caribe Smash">
+            <span class="cocktail-tag">Favorito de la Casa</span>
           </div>
           <div class="cocktail-body">
             <h3 class="cocktail-name">Corozo Caribe Smash</h3>
-            <p class="cocktail-ingredients">Reducción artesanal de corozo costeño, ron añejo especiado, limón tahití y soda tónica refrescante.</p>
+            <p class="cocktail-ingredients">Reducción casera de corozo costeño, ron añejo especiado de 8 años, gotas de limón mandarino, menta triturada y soda tónica helada.</p>
           </div>
         </div>
 
         <div class="cocktail-card">
           <div class="cocktail-img-wrap">
-            <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=700&q=80" alt="Lulada con Ron">
-            <span class="cocktail-tag">Popular</span>
-          </div>
-          <div class="cocktail-body">
-            <h3 class="cocktail-name">Lulada Negra Gold</h3>
-            <p class="cocktail-ingredients">Pulpa de lulo macerada al instante, ron dorado premium, leche condensada ahumada y hielo frappé.</p>
-          </div>
-        </div>
-
-        <div class="cocktail-card">
-          <div class="cocktail-img-wrap">
-            <img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=700&q=80" alt="Mojito de Maracuyá">
+            <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=700&q=80" alt="Lulada Negra Gold">
             <span class="cocktail-tag">Refrescante</span>
           </div>
           <div class="cocktail-body">
-            <h3 class="cocktail-name">Mojito Tropical Mango</h3>
-            <p class="cocktail-ingredients">Ron blanco del Caribe, puré de mango biche, hojas de menta fresca, limón mandarino y jarabe de jengibre.</p>
+            <h3 class="cocktail-name">Lulada Negra Gold</h3>
+            <p class="cocktail-ingredients">Pulpa de lulo macerada en copa de cobre con ron blanco prémium, leche condensada infusionada en cardamomo y hielo frappé artesanal.</p>
+          </div>
+        </div>
+
+        <div class="cocktail-card">
+          <div class="cocktail-img-wrap">
+            <img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=700&q=80" alt="Mojito Mango Biche">
+            <span class="cocktail-tag">Tropical Heat</span>
+          </div>
+          <div class="cocktail-body">
+            <h3 class="cocktail-name">Mojito Mango Biche</h3>
+            <p class="cocktail-ingredients">Ron caribeño dorado, puré de mango biche con sal de mar, jugo de limón tahití, hojas de menta maceradas y jarabe de jengibre.</p>
           </div>
         </div>
       </div>
@@ -1006,37 +1003,87 @@
   <!-- Galería de Ambiente -->
   <section id="galeria" class="section-padding">
     <div class="container">
-      <div class="badge-tag"><i class="fa-solid fa-camera"></i> Experiencia La Negra</div>
-      <h2 class="section-title">EL AMBIENTE QUE SE VIVE EN CADA NOCHE</h2>
+      <div class="badge-tag"><i class="fa-solid fa-camera"></i> La Atmósfera</div>
+      <h2 class="section-title">EL AMBIENTE QUE SE ENCIENDE CADA FIN DE SEMANA</h2>
       <p class="section-desc">
-        Luces tenues, decoración tropical con alma y la mejor vibra de amigos, parejas y amantes de la buena rumba en Bogotá.
+        Iluminación cálida, detalles tropicales y la gente más bacana de Bogotá gozando hasta las 3:00 AM.
       </p>
 
       <div class="gallery-grid">
         <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80')">
-          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" alt="Rumba La Negra Bar">
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" alt="Pista de Baile La Negra Bar">
           <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=1000&q=80')">
-          <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=600&q=80" alt="Barra de Cocteles">
+          <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=600&q=80" alt="Barra de Cocteles La Negra">
           <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=1000&q=80')">
-          <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=600&q=80" alt="DJ Set y Pista">
+          <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=600&q=80" alt="Cabina de DJ La Negra Bar">
           <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80')">
-          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Gente Bailando">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Fiesta en La Negra Bar">
           <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1520110120835-c96534a4c9e4?auto=format&fit=crop&w=1000&q=80')">
-          <img src="https://images.unsplash.com/photo-1520110120835-c96534a4c9e4?auto=format&fit=crop&w=600&q=80" alt="Brindis Tropical">
+          <img src="https://images.unsplash.com/photo-1520110120835-c96534a4c9e4?auto=format&fit=crop&w=600&q=80" alt="Tragos Tropicales">
           <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=1000&q=80')">
-          <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=600&q=80" alt="Noche de Rumba">
+          <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=600&q=80" alt="Noche Inolvidable">
           <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive VIP Reservation Box -->
+  <section id="reservas" class="section-padding" style="padding-top: 20px;">
+    <div class="container">
+      <div class="reservation-card">
+        <div class="badge-tag"><i class="fa-solid fa-sparkles"></i> Reserva Directa WhatsApp</div>
+        <h2 style="font-size: 2.8rem; margin-bottom: 14px;">PLANEA TU NOCHE EN LA NEGRA</h2>
+        <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 620px; margin: 0 auto;">
+          Personaliza los detalles de tu visita y genera tu reserva directa con nuestro equipo por WhatsApp.
+        </p>
+
+        <form class="res-form" onsubmit="sendCustomReservation(event)">
+          <div class="form-group">
+            <label><i class="fa-solid fa-calendar-day"></i> Día de Visita</label>
+            <select class="form-control" id="res-day">
+              <option value="Jueves">Jueves (Noche Tropical)</option>
+              <option value="Viernes">Viernes (Salsa Brava & Champeta)</option>
+              <option value="Sábado" selected>Sábado (Gran Rumba Afrocaribeña)</option>
+              <option value="Víspera de Festivo">Víspera de Festivo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-users"></i> Número de Personas</label>
+            <select class="form-control" id="res-people">
+              <option value="2 a 4 personas">Pareja / Grupo pequeño (2 a 4)</option>
+              <option value="5 a 8 personas" selected>Grupo de amigos (5 a 8)</option>
+              <option value="9 a 15 personas">Mesa grande (9 a 15)</option>
+              <option value="Más de 15 personas">Celebración / Cumpleaños (15+)</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label><i class="fa-solid fa-champagne-glasses"></i> Motivo de la Reserva</label>
+            <select class="form-control" id="res-occasion">
+              <option value="Noche de Rumba y Amigos">Noche de Rumba con Amigos</option>
+              <option value="Celebración de Cumpleaños">Celebración de Cumpleaños (incluye sorpresa)</option>
+              <option value="Integración / Evento Empresarial">Integración / Evento Empresarial</option>
+            </select>
+          </div>
+
+          <div style="grid-column: 1 / -1; margin-top: 10px;">
+            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 16px;">
+              <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Confirmar Reserva por WhatsApp
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -1044,43 +1091,43 @@
   <!-- Testimonios -->
   <section id="opiniones" class="section-padding" style="background: var(--bg-card);">
     <div class="container">
-      <div class="badge-tag"><i class="fa-solid fa-star"></i> Voces de la Noche</div>
+      <div class="badge-tag"><i class="fa-solid fa-star"></i> Reseñas Reales</div>
       <h2 class="section-title">LO QUE DICEN QUIENES NOS VISITAN</h2>
-      <p class="section-desc">Opiniones reales de visitantes y amantes de la fiesta afrocaribeña en Bogotá.</p>
+      <p class="section-desc">Comentarios de clientes verificados en Google Maps y redes sociales.</p>
 
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="test-text">"El mejor lugar de Chapinero para bailar sin parar. La champeta y la salsa son de otro nivel, y los tragos con viche son deliciosos. ¡Volveré siempre!"</p>
+          <p class="test-text">"El mejor bar de Chapinero para bailar sin parar. La música caribeña y los tragos con viche artesanal son increíbles. ¡Es una parada obligatoria cada fin de semana!"</p>
           <div class="test-author">
             <div class="test-avatar">CM</div>
             <div>
-              <div class="author-name">Camila Morales</div>
-              <div class="author-role">Google Review • Local Guide</div>
+              <h4 style="color:#fff; font-size:15px;">Camila Morales</h4>
+              <p style="color:var(--text-muted); font-size:12px;">Google Review • Local Guide</p>
             </div>
           </div>
         </div>
 
         <div class="testimonial-card">
           <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="test-text">"Un sitio con alma propia. Cero pretensiones y 100% sabor. Excelente música, atención de primera y seguridad. Muy recomendado para celebrar cumpleaños."</p>
+          <p class="test-text">"Un sitio con personalidad única. Cero pretensiones y 100% sabor. Excelente atención de los meseros y la seguridad muy cuidada. Celebramos un cumpleaños genial."</p>
           <div class="test-author">
             <div class="test-avatar">AR</div>
             <div>
-              <div class="author-name">Andrés Rincón</div>
-              <div class="author-role">Google Review • Cliente Frecuente</div>
+              <h4 style="color:#fff; font-size:15px;">Andrés Rincón</h4>
+              <p style="color:var(--text-muted); font-size:12px;">Google Review • Cliente Frecuente</p>
             </div>
           </div>
         </div>
 
         <div class="testimonial-card">
           <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="test-text">"Hacía falta un bar así en Bogotá. La selección musical es impecable y el ambiente es una delicia para desconectarse de la semana con buena vibra."</p>
+          <p class="test-text">"Hacía falta un bar así en Bogotá. La selección musical es impecable y la energía de la gente es deliciosa para desconectarse de la rutina."</p>
           <div class="test-author">
             <div class="test-avatar">VP</div>
             <div>
-              <div class="author-name">Valentina Palacio</div>
-              <div class="author-role">Google Review • Visitante</div>
+              <h4 style="color:#fff; font-size:15px;">Valentina Palacio</h4>
+              <p style="color:var(--text-muted); font-size:12px;">Google Review • Visitante</p>
             </div>
           </div>
         </div>
@@ -1093,7 +1140,7 @@
     <div class="container">
       <div class="badge-tag"><i class="fa-solid fa-map-location-dot"></i> Punto de Encuentro</div>
       <h2 class="section-title">UBICACIÓN & HORARIOS</h2>
-      <p class="section-desc">Estamos ubicados en el corazón vibrante de Chapinero, Bogotá.</p>
+      <p class="section-desc">Estamos ubicados estratégicamente en Chapinero Central.</p>
 
       <div class="location-box">
         <div class="location-info">
@@ -1108,7 +1155,7 @@
           <div class="info-item">
             <i class="fa-solid fa-clock info-icon"></i>
             <div class="info-text">
-              <h4>Horarios de Atención</h4>
+              <h4>Horarios de Rumba</h4>
               <p>Jueves a Sábado: 7:00 PM – 3:00 AM<br>Vísperas de festivo: 7:00 PM – 3:00 AM</p>
             </div>
           </div>
@@ -1116,7 +1163,7 @@
           <div class="info-item">
             <i class="fa-solid fa-phone info-icon"></i>
             <div class="info-text">
-              <h4>Reservas & Eventos</h4>
+              <h4>Línea de Reservas</h4>
               <p>+57 312 441 7308</p>
             </div>
           </div>
@@ -1135,26 +1182,13 @@
     </div>
   </section>
 
-  <!-- CTA Box -->
-  <section class="section-padding" style="padding-top: 0;">
-    <div class="container">
-      <div class="cta-box">
-        <h2>¿LISTO PARA VIVIR LA NOCHE EN LA NEGRA?</h2>
-        <p>Asegura tu mesa con antelación para grupos, cumpleaños o celebraciones especiales. Escríbenos directamente a WhatsApp.</p>
-        <a href="https://wa.me/573124417308?text=%C2%A1Hola%20La%20Negra%20Bar!%20Deseo%20reservar%20una%20mesa%20para%20este%20fin%20de%20semana." target="_blank" class="btn btn-primary" style="font-size: 16px; padding: 16px 36px;">
-          <i class="fa-brands fa-whatsapp"></i> Reservar Ahora por WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-inner">
         <div>
-          <h3 style="font-family: var(--font-title); color: #fff; margin-bottom: 6px;">LA NEGRA BAR</h3>
-          <p>El templo de la fiesta caribeña y los ritmos afros en Chapinero, Bogotá.</p>
+          <h3 style="font-family: var(--font-title); color: #fff; margin-bottom: 8px;">LA NEGRA BAR</h3>
+          <p>El templo de los ritmos afros y la coctelería ancestral en Chapinero, Bogotá.</p>
         </div>
         <div class="footer-social">
           <a href="https://instagram.com/lanegra.bar/" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1162,7 +1196,7 @@
           <a href="https://wa.me/573124417308" target="_blank" class="social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
-      <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center; font-size: 13px;">
+      <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; text-align: center; font-size: 13px;">
         <p>© 2026 La Negra Bar Bogotá. Propuesta de diseño web profesional de alta conversión.</p>
       </div>
     </div>
@@ -1190,6 +1224,50 @@
       }
     });
 
+    // Sound Booth Genre Selector
+    const genres = {
+      champeta: {
+        tag: 'CARTAGENA & PALENQUE SOUND',
+        title: 'Champeta Criolla & Terapia Urbana',
+        desc: 'El corazón de nuestra fiesta. Desde los vinilos legendarios de El Sayayín, Charles King y Viviano Torres hasta las producciones de picó más explosivas que te hacen mover los pies desde el primer beat.'
+      },
+      salsa: {
+        tag: 'DESCARGA & GUAGUANCÓ',
+        title: 'Salsa Brava Pesada & Son Cubano',
+        desc: 'Golpe de timbal, trombones que rugen y sabor genuino para los salseros de verdad. Sonidos de La Fania, Sonora Ponceña, Ismael Rivera y las orquestas más finas del Caribe.'
+      },
+      dancehall: {
+        tag: 'KINGSTON & SAN ANDRÉS VIBES',
+        title: 'Dancehall, Reggae & Roots',
+        desc: 'Vibraciones caribeñas con bajos profundos y líricas contagiosas. Desde los clásicos del roots reggae hasta el dancehall moderno que llena de fuego la pista.'
+      },
+      afrobeat: {
+        tag: 'GLOBAL AFRO GROOVES',
+        title: 'Afrobeats, Amapiano & Dembow',
+        desc: 'La vanguardia de la música africana contemporánea: ritmos sincopados de Lagos, Accra y Sudáfrica fusionados con dembow caribeño para una atmósfera hipnótica.'
+      }
+    };
+
+    function selectGenre(key, btn) {
+      document.querySelectorAll('.rhythm-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const g = genres[key];
+      document.getElementById('g-tag').textContent = g.tag;
+      document.getElementById('g-title').textContent = g.title;
+      document.getElementById('g-desc').textContent = g.desc;
+    }
+
+    // Custom Reservation to WhatsApp
+    function sendCustomReservation(e) {
+      e.preventDefault();
+      const day = document.getElementById('res-day').value;
+      const people = document.getElementById('res-people').value;
+      const occasion = document.getElementById('res-occasion').value;
+      
+      const msg = encodeURIComponent();
+      window.open(, '_blank');
+    }
+
     // Lightbox functions
     function openLightbox(url) {
       document.getElementById('lightbox-img').src = url;
@@ -1200,7 +1278,6 @@
       document.getElementById('lightbox').classList.remove('active');
     }
 
-    // Keyboard support for Lightbox
     window.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeLightbox();
     });
