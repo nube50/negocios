@@ -568,6 +568,49 @@ git push origin main
 - Se instaló y autenticó Vercel CLI globalmente (`culturapro`).
 - Se verificó la integración con Nginx Proxy Manager en `https://agy.culturavpn.pro/api` respondiendo con HTTP 200 y 144 negocios.
 
+### Sesión 21 (2026-08-23) — Instalación Global de Skills y Rediseño Visual Completo de Bares
+- Se instalaron globalmente **51 habilidades (*skills*) del sistema** en `~/.agents/skills/`, `~/.gemini/antigravity/builtin/skills/`, `~/.claude/skills/`, `~/.hermes/skills/` y `~/.openclaw/skills/`.
+- Se ejecutó un **rediseño visual e interactivo integral** para todas las propuestas de bares del proyecto aplicando `frontend-design`, `web-design-guidelines`, `theme-factory` y `deploy-to-vercel`:
+  - **La Negra Bar** (`b109`): Identidad Afro-Futurista & Caribeña, módulo interactivo *"El Picó Sonoro"* con selector de géneros en vivo, coctelería ancestral con viche y lulo, ecualizador visual dinámico y formulario con enlace de reserva a WhatsApp formateado.
+  - **Salvatore's Bar** (`b119`): Identidad Gastropub Clásico & Rock Lounge con tipografía `Cinzel`, pizarrón interactivo de cervezas de barril con métricas ABV e IBU, cocina de autor y generador de reserva de mesa.
+  - **El Coq** (`b108`): Speakeasy subterráneo y club en El Retiro en terciopelo carmesí y oro champaña, viaje interactivo *"El Ritual de la Noche"*, alquimia de autor y conserje VIP para servicio de botellas y mesas exclusivas.
+- Todas las LPs cuentan con:
+  - Video de fondo Mixkit MP4 directo con `opacity: 0.92` y gradientes suaves.
+  - Modal Lightbox accesible con cierre por tecla `Esc` y touch targets $\ge 44$px.
+  - Cero desborde horizontal garantizado en pantallas de 320px a 480px (`overflow-x: hidden`).
+  - Despliegue en Vercel en `https://lp-la-negra-bar.vercel.app`, `https://lp-salvatores-bar.vercel.app` y `https://lp-el-coq.vercel.app` (HTTP 200 OK).
+
+---
+
+## 🍸 Framework Estándar para Landing Pages de Entretenimiento & Bares
+
+Al crear o rediseñar propuestas para bares, discotecas o gastrobares, seguir obligatoriamente este patrón:
+
+1. **Identidad Visual Diferenciada**:
+   - Cada propuesta debe tener una paleta de color única de 4-5 tonos (Fondo oscuro profundo, color dominante de marca, color de acento brillante, texto luminoso y bordes con baja opacidad).
+   - Tipografía con personalidad: Display potente (`Syne`, `Cinzel`, `Plus Jakarta Sans`) combinada con cuerpo geométrico limpio (`Inter`, `Plus Jakarta Sans`).
+
+2. **Video Hero MP4 Directo**:
+   - Usar enlaces directos a Mixkit CDN (`https://assets.mixkit.co/videos/{id}/{id}-720.mp4`).
+   - `preload="auto"`, `autoplay`, `muted`, `loop`, `playsinline`.
+   - Opacidad del video $\ge 0.9$ con gradiente superior/inferior transparente a negro para garantizar protagonismo visual.
+
+3. **Módulo Interactivo Distintivo**:
+   - Incluir siempre un componente interactivo nativo JS sin recarga de página (ej. Selector de géneros musicales, pizarrón de barriles con medidores ABV/IBU, o simulador del ritual de ingreso speakeasy).
+
+4. **Generador Dinámico de Reservas a WhatsApp**:
+   - Los formularios no envían a un backend tradicional: capturan los inputs del usuario (día, número de personas, motivo/área) y construyen una URL de WhatsApp codificada (`encodeURIComponent`) con el mensaje pre-redactado listo para enviar.
+
+5. **Galería con Modal Lightbox Accesible**:
+   - Grid responsive de imágenes HD con efecto hover zoom.
+   - Lightbox modal en pantalla completa con soporte táctil, botón de cierre claro y evento de teclado `Esc`.
+
+6. **Garantía Responsive (Mobile-First)**:
+   - `overflow-x: hidden` en `html` y `body`.
+   - Botones apilados verticalmente en pantallas $\le 480$px.
+   - Botón flotante de WhatsApp fijado en `bottom: 24px; right: 24px; z-index: 9999;` con `touch-target` $\ge 44\times 44$px.
+
 ---
 
 **NOTA CRÍTICA:** El servidor usa `syncSeed()` que solo hace `INSERT OR IGNORE` — **NUNCA borra datos de usuario**. Solo inserta IDs nuevos. NO borrar la BD.
+
