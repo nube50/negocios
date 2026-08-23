@@ -675,6 +675,18 @@ git push origin main
 - Todas las 22 propuestas están enlazadas en `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK) y la base de datos SQLite en Oracle Cloud ARM (`cultura`) con estado **🔥 Caliente (`priority: "hot"`)**.
 - Todas verificadas en producción respondiendo **HTTP 200 OK**.
 
+### Sesión 23 (2026-08-23) — Auditoría de Experiencia, Diagnóstico de Scroll y Restauración Completa de Versiones Robustas
+- **Evaluación Crítica de Diseño y Experiencia de Usuario**:
+  - Se identificó que la integración de librerías de scroll suave artificial (`Lenis`) generaba una sensación de pesadez y lentitud en la navegación no deseada por el usuario.
+  - Se determinó que los intentos de simplificación modular eliminaban secciones completas de alto valor percibido (galerías con lightbox, testimonios de clientes reales, tablas de precios detalladas, historias y mapas de ubicación).
+  - Se corrigió el video de odontología para `roberto-granados.html`, `clinica-dental-dali.html` y `sonrisas-dental-spa.html`, integrando el video clínico verificado **Mixkit 9027** (procedimiento odontológico real bajo lámpara clínica con instrumental especializado).
+- **Acciones Ejecutadas**:
+  - Se restauraron al 100% las versiones completas y robustas originales de las **22 Landing Pages** desde el historial de Git (`006019a`).
+  - Se eliminaron todos los bloqueos o frenos de scroll para garantizar una navegación nativa, ultra rápida y ligera tanto en móvil como en escritorio.
+  - Se verificó que todas las páginas conservan la totalidad de sus secciones (Hero con video de fondo a `opacity: 0.92`, Galería con Lightbox, Testimonios, Menús/Precios, Formulario a WhatsApp, Mapas y Horarios).
+  - Se realizó el redespliegue completo a producción en **Vercel** de los 22 proyectos desde el servidor `cultura`.
+  - Se sincronizaron todos los cambios en el repositorio de GitHub (`fc474f9`).
+
 ---
 
 ## 🍸 Framework Estándar para Landing Pages de Entretenimiento & Bares
