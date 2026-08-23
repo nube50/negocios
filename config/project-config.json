@@ -1,0 +1,41 @@
+{
+  "project": {
+    "name": "Prospección Web para Negocios - Landing Pages Premium",
+    "type": "landing-pages-portfolio",
+    "default_agent": "antigravity"
+  },
+  "skills": {
+    "required": [
+      "fable-design-system",
+      "cinematic-landing-kit",
+      "gpt-taste",
+      "frontend-design",
+      "taste-skill"
+    ],
+    "optional": [
+      "web-design-guidelines"
+    ],
+    "global_path": "~/.agents/skills/",
+    "enforce_required": true,
+    "auto_load": true
+  },
+  "design_system": {
+    "philosophy": "premium-first",
+    "cinematic": true,
+    "animation": "gsap-lenis",
+    "typography": "luxury",
+    "color_palette": "warm-premium"
+  },
+  "tasks": {
+    "landing_page_creation": {
+      "required_skills": [
+        "fable-design-system",
+        "cinematic-landing-kit",
+        "gpt-taste",
+        "frontend-design"
+      ],
+      "enforce": true,
+      "block_generic_designs": true
+    }
+  }
+}
