@@ -578,7 +578,29 @@ git push origin main
   - Video de fondo Mixkit MP4 directo con `opacity: 0.92` y gradientes suaves.
   - Modal Lightbox accesible con cierre por tecla `Esc` y touch targets $\ge 44$px.
   - Cero desborde horizontal garantizado en pantallas de 320px a 480px (`overflow-x: hidden`).
-  - Despliegue en Vercel en `https://lp-la-negra-bar.vercel.app`, `https://lp-salvatores-bar.vercel.app` y `https://lp-el-coq.vercel.app` (HTTP 200 OK).
+  ### Sesión 22 (2026-08-23) — 14 Nuevas Propuestas Desplegadas (Total: 22 Propuestas Activas)
+- Se diseñaron, codificaron y desplegaron **14 nuevas Landing Pages de alta conversión** para negocios de alto potencial en Bogotá, abarcando 5 nichos:
+  1. **Veterinarias**:
+     - `b153` Veterinaria Huellitas & Amor (`https://lp-huellitas-amor.vercel.app`)
+     - `b149` Clínica Veterinaria Zoovet 24 Horas (`https://lp-zoovet-24h.vercel.app`)
+     - `b154` Centro Médico Veterinario La 80 (`https://lp-veterinaria-la80.vercel.app`)
+  2. **Spas de Uñas & Belleza**:
+     - `b92` Free Nails Spa Zona Rosa (`https://lp-free-nails-spa.vercel.app`)
+     - `b88` Meraki Nails Spa (`https://lp-meraki-nails.vercel.app`)
+     - `b81` NELEH Beauty Service (`https://lp-neleh-beauty.vercel.app`)
+  3. **Odontología & Estética Dental**:
+     - `b136` Roberto Granados - Diseño de Sonrisa (`https://lp-roberto-granados.vercel.app`)
+     - `b132` Sonrisas Dental Spa Urgencias (`https://lp-sonrisas-dental-spa.vercel.app`)
+     - `b104` Clínica Dental Bogotá Dalí (`https://lp-clinica-dental-dali.vercel.app`)
+  4. **Gastronomía Gourmet & Eventos**:
+     - `b50` ZeQueda Paellas (`https://lp-zequeda-paellas.vercel.app`)
+     - `b8` La Bolonesa Café Ristorante (`https://lp-la-bolonesa.vercel.app`)
+     - `b56` La Churrasquería Beef & Wine (`https://lp-la-churrasqueria.vercel.app`)
+  5. **Sastrería & Novias**:
+     - `b64` Gustavo Parra Design (`https://lp-gustavo-parra.vercel.app`)
+     - `b67` Jenne Riveros Designer (`https://lp-jenne-riveros.vercel.app`)
+- Todas las 22 propuestas están enlazadas en `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK) y la base de datos SQLite en Oracle Cloud ARM (`cultura`) con estado **🔥 Caliente (`priority: "hot"`)**.
+- Todas verificadas en producción respondiendo **HTTP 200 OK**.
 
 ---
 
