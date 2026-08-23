@@ -268,6 +268,27 @@ Si alguna falla, **no desplegar** hasta corregir.
 | Imágenes HTTP del sitio del negocio no cargan en HTTPS (mixed content) | Siempre usar imágenes HTTPS del sitio original. Verificar con `curl` antes de ponerlas en la LP |
 | Diseño "básico/mediocre" rechazado por el usuario | LP debe competir VISUALMENTE con el sitio original del negocio, no ser una plantilla genérica. Hero editorial split-screen, GSAP, paleta de marca |
 
+## 💎 Configuración Global y Obligatoria de Skills Premium de Diseño
+
+Todas las tareas de creación, rediseño o propuesta de Landing Pages (LPs) deben aplicar **OBLIGATORIA Y PRIORITARIAMENTE** las 6 habilidades prémium instaladas globalmente en el sistema:
+
+| Skill | Núcleo & Rol | Aplicación Práctica en Cada LP |
+|---|---|---|
+| **`fable-design-system`** | **Arquitectura Visual de Autor** | Pensamiento de diseño no lineal, paletas cromáticas sobrias, espaciado proporcional áureo, micro-interacciones sutiles y eliminación de layouts predecibles. |
+| **`cinematic-landing-kit`** | **Estética Apple × Cartier** | Hero cinematográfico con video/canvas de alta fidelidad, iluminación ambiental reactiva (`#ambient`), transiciones suaves y atmósfera de lujo. |
+| **`gpt-taste`** | **Narrativa de Conversión AIDA** | Estructura persuasiva (Atención, Interés, Deseo, Acción), titulares con gancho emocional, copywriting adaptado al nicho y eliminación de textos de relleno. |
+| **`frontend-design`** | **Tipografía & Jerarquía Prémium** | Emparejamiento tipográfico editorial (Display con Serif o Sans geométrica), contraste cromático refinado y ritmo vertical impecable. |
+| **`taste-skill`** | **Curaduría & Acabados de Lujo** | Tarjetas con bordes translúcidos (`border: 1px solid rgba(255,255,255,0.08)`), badges flotantes, sombras difusas y estética ultra-pulida. |
+| **`web-design-guidelines`** | **Auditoría & Rendimiento 60fps** | Cero desborde horizontal (320px–480px), contraste WCAG AA, touch targets $\ge 44$px, optimización de video MP4 y carga ultra-rápida. |
+
+### Reglas de Ejecución Automática de Diseño:
+1. **PROHIBIDO EL DISEÑO GENÉRICO O "PLANTILLA IA"**: Queda estrictamente vetado generar fondos planos con tarjetas blancas genéricas o estilos bootstrap básicos.
+2. **ATMÓSFERA INMERSIVA (HERO CINEMATOGRÁFICO)**: Cada LP debe iniciar con un hero dinámico con video background (`Mixkit direct MP4`), opacidad controlada ($\ge 0.9$) y gradientes suaves que garanticen legibilidad y fuerza visual.
+3. **MÓDULO INTERACTIVO DE AUTOR**: Cada landing page debe incorporar un componente interactivo nativo (calculadora, cotizador, selector de turnos o simulador) que conecte con WhatsApp formateado.
+4. **RESPONSIVE MOBILE-FIRST**: Verificación obligatoria de viewport $\le 375$px antes de cualquier despliegue.
+
+---
+
 ## Metodología Landing Pages
 
 ### Stack estándar (para TODAS las LPs)
