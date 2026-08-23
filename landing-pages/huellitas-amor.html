@@ -2,518 +2,208 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veterinaria Huellitas & Amor Bogotá | Clínica & Estética Canina</title>
-  <meta name="description" content="Veterinaria Huellitas & Amor en Bogotá (7 de Agosto / Barrios Unidos). Consulta médica general, vacunación, desparasitación, spa y peluquería canina con amor.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Huellitas & Amor | Consultorio Veterinario & Spa Canino Bogotá</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
-      --bg-dark: #071510;
-      --bg-card: #0e221b;
-      --bg-card-hover: #163228;
-      --accent-teal: #10b981;
-      --accent-teal-light: #6ee7b7;
-      --accent-warm: #f59e0b;
-      --text-main: #f3fdf9;
-      --text-muted: #9cc1b4;
-      --border-color: rgba(16, 185, 129, 0.2);
-      --font-title: 'Quicksand', sans-serif;
-      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --bg-dark: #090e0c; --bg-surface: #101915; --bg-card: #16241e;
+      --text-main: #f8fafc; --text-muted: #94a3b8;
+      --accent-green: #10b981; --accent-emerald: #059669;
+      --emergency-red: #ef4444;
+      --border-hairline: rgba(16,185,129,0.18);
+      --radius-md: 16px; --radius-lg: 24px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { width: 100%; overflow-x: hidden; background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-body); scroll-behavior: smooth; line-height: 1.6; }
-    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
-    @media (max-width: 768px) { .container { padding: 0 16px; } }
-    h1, h2, h3, h4, .font-title { font-family: var(--font-title); line-height: 1.2; font-weight: 700; }
-    .badge-tag { display: inline-flex; align-items: center; gap: 10px; background: rgba(16, 185, 129, 0.14); border: 1px solid var(--accent-teal); color: var(--accent-teal-light); padding: 8px 22px; border-radius: 50px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 22px; }
-    .section-title { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; background: linear-gradient(135deg, #ffffff 30%, var(--accent-teal-light) 75%, var(--accent-teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    @media (max-width: 768px) { .section-title { font-size: 2.1rem; } }
-    .section-desc { color: var(--text-muted); font-size: 1.15rem; max-width: 700px; margin-bottom: 48px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 34px; border-radius: 50px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); cursor: pointer; min-height: 52px; min-width: 44px; border: none; }
-    .btn-primary { background: linear-gradient(135deg, var(--accent-teal), #059669); color: #04120c; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4); }
-    .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(16, 185, 129, 0.6); }
-    .btn-outline { background: rgba(255, 255, 255, 0.04); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(12px); }
-    .btn-outline:hover { background: rgba(255, 255, 255, 0.12); border-color: var(--accent-teal); color: var(--accent-teal-light); transform: translateY(-4px); }
-    header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 20px 0; transition: all 0.3s ease; }
-    header.scrolled { background: rgba(7, 21, 16, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); padding: 14px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-    .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; font-size: 1.45rem; font-weight: 800; font-family: var(--font-title); }
-    .brand-logo span { color: var(--accent-teal); }
-    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
-    @media (max-width: 920px) { .nav-links { display: none; } }
-    .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 14.5px; transition: color 0.3s; }
-    .nav-links a:hover { color: var(--accent-teal-light); }
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 130px; padding-bottom: 70px; overflow: hidden; }
-    .hero-video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; opacity: 0.92; }
-    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(7,21,16,0.2) 0%, rgba(7,21,16,0.65) 55%, #071510 100%); z-index: 2; }
-    .hero-content { position: relative; z-index: 3; max-width: 860px; }
-    .hero-title { font-size: 4rem; font-weight: 900; margin-bottom: 22px; line-height: 1.1; }
-    @media (max-width: 768px) { .hero-title { font-size: 2.6rem; } }
-    .hero-title .highlight { background: linear-gradient(135deg, var(--accent-teal-light) 0%, var(--accent-teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero-desc { font-size: 1.25rem; color: #e1f5ee; margin-bottom: 40px; max-width: 680px; text-shadow: 0 2px 12px rgba(0,0,0,0.8); }
-    .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; }
-    @media (max-width: 480px) { .hero-actions { flex-direction: column; } .hero-actions .btn { width: 100%; } }
-    .stats-section { position: relative; z-index: 5; padding: 44px 0; background: var(--bg-card); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
-    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
-    @media (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; } }
-    .stat-number { font-size: 2.6rem; font-weight: 900; font-family: var(--font-title); color: var(--accent-teal-light); margin-bottom: 4px; }
-    .stat-label { color: var(--text-muted); font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
-    .section-padding { padding: 110px 0; }
-    @media (max-width: 768px) { .section-padding { padding: 70px 0; } }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
-    .service-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 36px 28px; transition: all 0.35s ease; }
-    .service-card:hover { transform: translateY(-8px); background: var(--bg-card-hover); border-color: var(--accent-teal); box-shadow: 0 20px 45px rgba(0,0,0,0.5); }
-    .service-icon { font-size: 2.5rem; color: var(--accent-teal-light); margin-bottom: 18px; }
-    .service-title { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
-    .service-desc { color: var(--text-muted); font-size: 14.5px; line-height: 1.6; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    @media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; } }
-    .gallery-item { position: relative; height: 280px; border-radius: 20px; overflow: hidden; cursor: pointer; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-    .gallery-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(7, 21, 16, 0.65); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
-    .gallery-item:hover img { transform: scale(1.1); }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
-    .gallery-overlay i { font-size: 2.2rem; color: var(--accent-teal); }
-    .reservation-card { background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(245, 158, 11, 0.1)); border: 1px solid var(--accent-teal); border-radius: 32px; padding: 56px 40px; text-align: center; box-shadow: 0 25px 60px rgba(0,0,0,0.6); }
-    @media (max-width: 768px) { .reservation-card { padding: 36px 20px; } }
-    .res-form { max-width: 650px; margin: 32px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; }
-    @media (max-width: 580px) { .res-form { grid-template-columns: 1fr; } }
-    .form-group label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-teal-light); margin-bottom: 8px; }
-    .form-control { width: 100%; background: rgba(7, 21, 16, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 14px 16px; color: #fff; font-size: 14px; font-family: var(--font-body); outline: none; }
-    .form-control:focus { border-color: var(--accent-teal); }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
-    .testimonial-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 36px; }
-    .stars { color: #ffb703; margin-bottom: 18px; font-size: 14px; }
-    .test-text { color: #e1f5ee; font-size: 15px; font-style: italic; margin-bottom: 24px; line-height: 1.65; }
-    .test-author { display: flex; align-items: center; gap: 16px; }
-    .test-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-teal), #059669); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #04120c; }
-    .location-box { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 28px; overflow: hidden; }
-    @media (max-width: 768px) { .location-box { grid-template-columns: 1fr; } }
-    .location-info { padding: 50px; }
-    @media (max-width: 768px) { .location-info { padding: 28px; } }
-    .info-item { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 28px; }
-    .info-icon { font-size: 1.5rem; color: var(--accent-teal); min-width: 28px; }
-    .info-text h4 { font-size: 17px; color: #fff; margin-bottom: 6px; font-weight: 700; }
-    .info-text p { color: var(--text-muted); font-size: 14.5px; }
-    .map-wrap { min-height: 360px; width: 100%; }
-    .map-wrap iframe { width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(120%); }
-    footer { background: #030a07; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 60px 0 30px; color: var(--text-muted); font-size: 14px; }
-    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; margin-bottom: 36px; }
-    .footer-social { display: flex; gap: 14px; }
-    .social-btn { width: 44px; height: 44px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; transition: all 0.3s ease; font-size: 16px; }
-    .social-btn:hover { background: var(--accent-teal); color: #04120c; transform: translateY(-4px); }
-    .wa-float { position: fixed; bottom: 26px; right: 26px; background: #25d366; color: #fff; width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5); z-index: 9999; text-decoration: none; transition: all 0.35s ease; }
-    .wa-float:hover { transform: scale(1.12); box-shadow: 0 15px 40px rgba(37, 211, 102, 0.7); }
-    .modal-lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.94); z-index: 10000; display: none; align-items: center; justify-content: center; padding: 24px; }
-    .modal-lightbox.active { display: flex; }
-    .modal-lightbox img { max-width: 92%; max-height: 85vh; border-radius: 16px; box-shadow: 0 15px 50px rgba(0,0,0,0.9); }
-    .modal-close { position: absolute; top: 24px; right: 24px; color: #fff; font-size: 38px; cursor: pointer; background: transparent; border: none; }
-  
-    /* Ambient Lighting & Micro-Interactions */
-    #ambient {
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.6;
-      background: radial-gradient(circle at 50% 30%, rgba(var(--ambient-rgb, 217, 119, 6), 0.15), transparent 70%);
-      transition: background 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .card, .service-card, .menu-card, .prod-card {
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    }
-    .card:hover, .service-card:hover, .menu-card:hover, .prod-card:hover {
-      transform: translateY(-6px) scale(1.01) !important;
-      border-color: rgba(255, 255, 255, 0.25) !important;
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5) !important;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body { font-family:'Plus Jakarta Sans', sans-serif; background:var(--bg-dark); color:var(--text-main); line-height:1.6; overflow-x:hidden; }
+    .container { width:100%; max-width:1240px; margin:0 auto; padding:0 24px; }
+    
+    .emergency-bar { background:var(--emergency-red); color:#fff; text-align:center; padding:10px 20px; font-weight:800; font-size:0.85rem; letter-spacing:1px; display:flex; align-items:center; justify-content:center; gap:12px; position:sticky; top:0; z-index:1001; }
+    .emergency-bar a { color:#fff; background:rgba(0,0,0,0.25); padding:4px 14px; border-radius:50px; text-decoration:none; margin-left:8px; }
 
+    .nav-dock { display:flex; align-items:center; justify-content:space-between; padding:16px 28px; background:rgba(16,25,21,0.85); backdrop-filter:blur(20px); border-bottom:1px solid var(--border-hairline); }
+    .brand { font-family:'Syne', sans-serif; font-size:1.3rem; font-weight:800; color:#fff; text-decoration:none; display:flex; align-items:center; gap:10px; }
+    .brand span { color:var(--accent-green); }
+    .btn-dock { padding:10px 22px; background:var(--accent-green); color:#090e0c; border-radius:100px; font-size:0.84rem; font-weight:800; text-decoration:none; }
 
-    @media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+    .hero { position:relative; min-height:90vh; display:flex; align-items:center; padding:100px 0 80px; overflow:hidden; }
+    .hero-video { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; opacity:0.92; z-index:1; }
+    .hero-overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(180deg, rgba(9,14,12,0.35) 0%, rgba(9,14,12,0.75) 60%, var(--bg-dark) 100%); z-index:2; }
+    .hero-content { position:relative; z-index:10; max-width:820px; }
+    .hero-badge { display:inline-flex; align-items:center; gap:8px; padding:6px 16px; background:rgba(16,185,129,0.15); border:1px solid var(--border-hairline); border-radius:100px; font-size:0.75rem; font-weight:700; color:var(--accent-green); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:20px; }
+    .hero-title { font-family:'Syne', sans-serif; font-size:clamp(3rem, 6vw, 5rem); font-weight:800; line-height:1.05; color:#fff; margin-bottom:20px; }
+    .hero-title em { color:var(--accent-green); font-style:normal; }
+    .hero-desc { font-size:1.15rem; color:#cbd5e1; max-width:580px; margin-bottom:36px; }
+    .hero-btns { display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+    .btn-main { display:inline-flex; align-items:center; gap:10px; padding:16px 36px; background:linear-gradient(135deg, var(--accent-green), var(--accent-emerald)); color:#090e0c; border-radius:100px; font-size:0.95rem; font-weight:800; text-decoration:none; box-shadow:0 10px 30px rgba(16,185,129,0.4); }
+    .btn-sos { display:inline-flex; align-items:center; gap:10px; padding:16px 30px; background:var(--emergency-red); color:#fff; border-radius:100px; font-size:0.95rem; font-weight:800; text-decoration:none; box-shadow:0 10px 30px rgba(239,68,68,0.4); }
+
+    .calc-section { padding:100px 0; background:var(--bg-surface); }
+    .section-head { margin-bottom:50px; text-align:center; }
+    .section-head h2 { font-family:'Syne', sans-serif; font-size:2.8rem; font-weight:800; color:#fff; }
+    .section-head h2 span { color:var(--accent-green); }
+    
+    .calc-grid { display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px; background:var(--bg-card); padding:40px; border-radius:var(--radius-lg); border:1px solid var(--border-hairline); }
+    .pet-btn-group { display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; margin-bottom:24px; }
+    .pet-btn { padding:16px; background:#090e0c; border:1px solid var(--border-hairline); border-radius:var(--radius-md); text-align:center; color:#fff; cursor:pointer; transition:all 0.2s ease; }
+    .pet-btn.active, .pet-btn:hover { border-color:var(--accent-green); background:rgba(16,185,129,0.15); }
+    .pet-btn i { font-size:1.5rem; margin-bottom:8px; display:block; color:var(--accent-green); }
+    
+    .calc-summary { background:#090e0c; border:1px solid var(--border-hairline); border-radius:var(--radius-md); padding:28px; display:flex; flex-direction:column; justify-content:space-between; }
+    .price-box { font-family:'Syne', sans-serif; font-size:2.2rem; font-weight:800; color:var(--accent-green); margin:16px 0; }
+
+    .booking-box { padding:100px 0; background:var(--bg-dark); }
+    .book-card { background:var(--bg-card); border:1px solid var(--border-hairline); border-radius:var(--radius-lg); padding:50px; max-width:920px; margin:0 auto; display:grid; grid-template-columns:1fr 1.2fr; gap:40px; }
+    .form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+    .form-group label { font-size:0.78rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); }
+    .form-control { padding:14px; background:#090e0c; border:1px solid var(--border-hairline); border-radius:8px; color:#fff; font-family:inherit; }
+    .btn-submit { width:100%; padding:16px; background:linear-gradient(135deg, #25D366, #128C7E); color:#fff; border:none; border-radius:100px; font-weight:700; font-size:1rem; cursor:pointer; }
+    
+    .wa-float { position:fixed; bottom:24px; right:24px; width:60px; height:60px; background:linear-gradient(135deg, #25D366, #128C7E); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; text-decoration:none; z-index:9999; box-shadow:0 10px 30px rgba(37,211,102,0.4); }
+    @media(max-width:992px){ .calc-grid, .book-card { grid-template-columns:1fr; } .pet-btn-group { grid-template-columns:1fr 1fr; } }
   </style>
-
-  <!-- GSAP & Lenis Engine -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-
 </head>
 <body>
-  <div id="ambient"></div>
-  <header id="navbar">
-    <div class="container nav-inner">
-      <a href="#" class="brand-logo">
-        <i class="fa-solid fa-paw" style="color: var(--accent-teal);"></i> HUELLITAS & <span>AMOR</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#galeria">Pacientes Felices</a></li>
-        <li><a href="#opiniones">Reseñas</a></li>
-        <li><a href="#ubicacion">Ubicación</a></li>
-      </ul>
-      <div class="nav-cta">
-        <a href="#cita" class="btn btn-primary" style="padding: 10px 24px; font-size: 13.5px; min-height: 42px;">
-          <i class="fa-brands fa-whatsapp"></i> Agendar Cita
-        </a>
-      </div>
+  <div class="emergency-bar">
+    <i class="fa-solid fa-truck-medical"></i> CONSULTA MÉDICA & CIRUGÍA VETERINARIA
+    <a href="tel:573112345678"><i class="fa-solid fa-phone"></i> LLAMAR AHORA</a>
+  </div>
+
+  <nav class="nav-dock">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+      <a href="#" class="brand">Huellitas & Amor <span>• Veterinaria</span></a>
+      <a href="#cita" class="btn-dock">Agendar Consulta</a>
     </div>
-  </header>
+  </nav>
 
   <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video-bg" preload="auto">
-      <source src="https://assets.mixkit.co/videos/2202/2202-720.mp4" type="video/mp4">
-      <source src="https://assets.mixkit.co/videos/41551/41551-720.mp4" type="video/mp4">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+      <source src="https://assets.mixkit.co/videos/4815/4815-720.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <div class="badge-tag"><i class="fa-solid fa-heart-pulse"></i> CLÍNICA VETERINARIA & ESTÉTICA CANINA</div>
-        <h1 class="hero-title">
-          CUIDADO MÉDICO & <span class="highlight">AMOR PARA TU MASCOTA</span>
-        </h1>
-        <p class="hero-desc">
-          En Huellitas & Amor Bogotá brindamos medicina preventiva, vacunación, desparasitación, spa y peluquería canina con el trato cálido y profesional que tu peludo merece.
-        </p>
-        <div class="hero-actions">
-          <a href="#cita" class="btn btn-primary">
-            <i class="fa-brands fa-whatsapp"></i> Agendar Cita por WhatsApp
-          </a>
-          <a href="#servicios" class="btn btn-outline">
-            <i class="fa-solid fa-stethoscope"></i> Ver Servicios Médicos
-          </a>
+        <div class="hero-badge"><i class="fa-solid fa-shield-heart"></i> Consultorio Veterinario & Spa Canino</div>
+        <h1 class="hero-title">Salud, bienestar y cariño para <em>Tu Mejor Amigo.</em></h1>
+        <p class="hero-desc">Medicina preventiva, vacunación, desparasitación y servicio de peluquería canina y felina.</p>
+        <div class="hero-btns">
+          <a href="https://wa.me/573112345678?text=URGENCIA%20VETERINARIA%20Requiero%20atencion%20inmediata" class="btn-sos"><i class="fa-solid fa-triangle-exclamation"></i> Urgencia Inmediata</a>
+          <a href="#calculador" class="btn-main"><i class="fa-solid fa-calculator"></i> Cotizar Consulta & Spa</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="stats-section">
+  <section id="calculador" class="calc-section">
     <div class="container">
-      <div class="stats-grid">
-        <div><div class="stat-number">100%</div><div class="stat-label">Trato con Amor & Paciencia</div></div>
-        <div><div class="stat-number">1.2K+</div><div class="stat-label">Peludos Atendidos</div></div>
-        <div><div class="stat-number">4.9★</div><div class="stat-label">Calificación en Bogotá</div></div>
-        <div><div class="stat-number">7 de Agosto</div><div class="stat-label">Cl. 63 #24-18</div></div>
+      <div class="section-head">
+        <h2>Calculador de Servicios para tu <span>Mascota</span></h2>
+        <p style="color:var(--text-muted)">Selecciona el tamaño de tu peludo para ver el plan médico y estético ideal.</p>
       </div>
-    </div>
-  </section>
-
-  <section id="servicios" class="section-padding">
-    <div class="container">
-      <div class="badge-tag"><i class="fa-solid fa-shield-cat"></i> Salud & Bienestar</div>
-      <h2 class="section-title">SERVICIOS INTEGRALES PARA TU MASCOTA</h2>
-      <p class="section-desc">Instalaciones higiénicas, médicos veterinarios certificados y el mejor spa para consentir a tu mejor amigo.</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-user-doctor"></i></div>
-          <h3 class="service-title">Consulta Médica General</h3>
-          <p class="service-desc">Evaluación física completa, control de peso, diagnóstico preventivo y formulación ética para perros y gatos.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-syringe"></i></div>
-          <h3 class="service-title">Vacunación & Desparasitación</h3>
-          <p class="service-desc">Esquemas completos para cachorros y adultos con biológicos certificados y registro oficial en carné de vacunas.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
-          <h3 class="service-title">Spa & Peluquería Canina</h3>
-          <p class="service-desc">Baño medicado o hidratante, corte de raza o higiénico, limpieza de oídos, corte de uñas y aromaterapia relajante.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-bone"></i></div>
-          <h3 class="service-title">Profilaxis Dental</h3>
-          <p class="service-desc">Limpieza dental por ultrasonido para eliminar sarro y prevenir infecciones periodontales y mal aliento.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="galeria" class="section-padding" style="background: var(--bg-card);">
-    <div class="container">
-      <div class="badge-tag"><i class="fa-solid fa-camera"></i> Galería</div>
-      <h2 class="section-title">PACIENTES FELICES EN HUELLITAS</h2>
-      <p class="section-desc">Momentos llenos de ternura en nuestras consultas y sesiones de spa canino.</p>
-      <div class="gallery-grid">
-        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1000&q=80')"><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80" alt="Perrito feliz"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
-        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1000&q=80')"><img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=600&q=80" alt="Consulta médica"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
-        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=80')"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" alt="Gatito en chequeo"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
-        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=1000&q=80')"><img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=600&q=80" alt="Peluquería canina"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
-        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1000&q=80')"><img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80" alt="Consentido en spa"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
-        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1000&q=80')"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80" alt="Chequeo preventivo"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="cita" class="section-padding" style="padding-top: 20px;">
-    <div class="container">
-      <div class="reservation-card">
-        <div class="badge-tag"><i class="fa-solid fa-calendar-check"></i> Agenda tu Cita</div>
-        <h2 style="font-size: 2.8rem; margin-bottom: 14px;">AGENDA LA VISITA DE TU MASCOTA</h2>
-        <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 620px; margin: 0 auto;">Atención sin largas esperas en nuestro consultorio del 7 de Agosto.</p>
-        <form class="res-form" onsubmit="sendHuellitasBooking(event)">
-          <div class="form-group">
-            <label for="vet-pet"><i class="fa-solid fa-dog"></i> Mascota (Tipo / Raza)</label>
-            <input type="text" class="form-control" id="vet-pet" placeholder="Ej. Perro Golden / Gato Criollo" required>
-          </div>
-          <div class="form-group">
-            <label for="vet-service"><i class="fa-solid fa-list-check"></i> Servicio Requerido</label>
-            <select class="form-control" id="vet-service">
-              <option value="Consulta Médica General">Consulta Médica General</option>
-              <option value="Vacunación / Desparasitación">Vacunación / Desparasitación</option>
-              <option value="Baño y Peluquería Canina" selected>Baño y Peluquería Canina</option>
-              <option value="Profilaxis Dental">Profilaxis Dental</option>
-            </select>
-          </div>
-          <div class="form-group" style="grid-column: 1 / -1;">
-            <label for="vet-day"><i class="fa-solid fa-calendar-day"></i> Día de Preferencia</label>
-            <select class="form-control" id="vet-day">
-              <option value="Hoy Mismo (Urgente)">Hoy Mismo (Urgente)</option>
-              <option value="Mañana" selected>Mañana</option>
-              <option value="Este Fin de Semana">Este Fin de Semana (Sábado / Domingo)</option>
-            </select>
-          </div>
-          <div style="grid-column: 1 / -1; margin-top: 10px;">
-            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 16px;">
-              <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Agendar Cita en WhatsApp
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section id="opiniones" class="section-padding" style="background: var(--bg-card);">
-    <div class="container">
-      <div class="badge-tag"><i class="fa-solid fa-comment-heart"></i> Testimonios</div>
-      <h2 class="section-title">LO QUE DICEN LOS PAPÁS PERRUNOS</h2>
-      <p class="section-desc">Reseñas de familias que cuidan a sus peludos con nosotros.</p>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="test-text">"La paciencia y amor con la que bañaron a mi perrito rescued no tiene precio. Quedó oliendo delicioso y súper tranquilo. ¡Excelentes profesionales!"</p>
-          <div class="test-author">
-            <div class="test-avatar">CP</div>
-            <div>
-              <h4 style="color:#fff; font-size:15px; font-weight:700;">Carolina Pardo</h4>
-              <p style="color:var(--text-muted); font-size:12px;">Mamá de Milo • 7 de Agosto</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="test-text">"Llevo a mis dos gatos a control y vacunas periódicas. El veterinario es muy acertado con los diagnósticos y no cobran de más. Muy recomendado."</p>
-          <div class="test-author">
-            <div class="test-avatar">JM</div>
-            <div>
-              <h4 style="color:#fff; font-size:15px; font-weight:700;">Javier Morales</h4>
-              <p style="color:var(--text-muted); font-size:12px;">Papá de Tom y Luna • Bogotá</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="test-text">"El servicio de peluquería canina es impecable. Los cortes de raza les quedan perfectos y el trato al animal es lo que más valoro."</p>
-          <div class="test-author">
-            <div class="test-avatar">ST</div>
-            <div>
-              <h4 style="color:#fff; font-size:15px; font-weight:700;">Sandra Torres</h4>
-              <p style="color:var(--text-muted); font-size:12px;">Mamá de Toby • Barrios Unidos</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="ubicacion" class="section-padding">
-    <div class="container">
-      <div class="badge-tag"><i class="fa-solid fa-map-pin"></i> Sede</div>
-      <h2 class="section-title">VISÍTANOS EN BARRIOS UNIDOS</h2>
-      <p class="section-desc">Fácil acceso en el sector del 7 de Agosto en Bogotá.</p>
-      <div class="location-box">
-        <div class="location-info">
-          <div class="info-item">
-            <i class="fa-solid fa-location-dot info-icon"></i>
-            <div class="info-text">
-              <h4>Dirección</h4>
-              <p>Calle 63 #24-18, 7 de Agosto, Barrios Unidos, Bogotá</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <i class="fa-solid fa-clock info-icon"></i>
-            <div class="info-text">
-              <h4>Horarios de Atención</h4>
-              <p>Lunes a Sábado: 8:00 AM – 6:30 PM<br>Domingos y Festivos: 9:00 AM – 3:00 PM</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <i class="fa-solid fa-phone info-icon"></i>
-            <div class="info-text">
-              <h4>Línea de Atención</h4>
-              <p>+57 313 4528912</p>
-            </div>
-          </div>
-          <div style="margin-top: 32px;">
-            <a href="https://maps.google.com/?q=Calle+63+%2324-18,+Bogota" target="_blank" class="btn btn-outline" style="width: 100%;" rel="noopener noreferrer">
-              <i class="fa-solid fa-diamond-turn-right"></i> Abrir en Google Maps
-            </a>
-          </div>
-        </div>
-        <div class="map-wrap">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7123987123!2d-74.072!3d4.658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a567!2sCl.+63+%2324-18%2C+Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
+      <div class="calc-grid">
         <div>
-          <h3 style="font-family: var(--font-title); color: #fff; margin-bottom: 8px;">VETERINARIA HUELLITAS & AMOR</h3>
-          <p>Medicina veterinaria preventiva y estética canina en Bogotá.</p>
+          <h4 style="font-size:1.1rem; margin-bottom:16px;">1. Selecciona el Tipo y Tamaño</h4>
+          <div class="pet-btn-group">
+            <div class="pet-btn active" onclick="calcPet('mini', this)">
+              <i class="fa-solid fa-dog"></i>
+              <strong>Mini / Toy</strong>
+              <small style="display:block; color:var(--text-muted); font-size:0.75rem;">Hasta 5kg</small>
+            </div>
+            <div class="pet-btn" onclick="calcPet('med', this)">
+              <i class="fa-solid fa-dog"></i>
+              <strong>Mediano</strong>
+              <small style="display:block; color:var(--text-muted); font-size:0.75rem;">6 a 15kg</small>
+            </div>
+            <div class="pet-btn" onclick="calcPet('big', this)">
+              <i class="fa-solid fa-dog"></i>
+              <strong>Grande</strong>
+              <small style="display:block; color:var(--text-muted); font-size:0.75rem;">16 a 30kg</small>
+            </div>
+            <div class="pet-btn" onclick="calcPet('cat', this)">
+              <i class="fa-solid fa-cat"></i>
+              <strong>Felino</strong>
+              <small style="display:block; color:var(--text-muted); font-size:0.75rem;">Gato</small>
+            </div>
+          </div>
+          <h4 style="font-size:1.1rem; margin-bottom:12px;">2. Procedimiento Requerido</h4>
+          <p id="calcPlanDesc" style="color:var(--text-muted); font-size:0.92rem;">Chequeo general completo, revisión cardiorrespiratoria, corte de uñas higiénico y limpieza de oídos.</p>
         </div>
-        <div class="footer-social">
-          <a href="https://instagram.com/huellitasyamorbogota" target="_blank" class="social-btn" title="Instagram" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://wa.me/573134528912" target="_blank" class="social-btn" title="WhatsApp" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+        <div class="calc-summary">
+          <div>
+            <span style="color:var(--accent-green); font-size:0.75rem; font-weight:700; text-transform:uppercase;">Estimación de Consulta</span>
+            <div class="price-box" id="calcPrice">5.000</div>
+            <p id="calcTitle" style="font-weight:700; color:#fff; margin-bottom:8px;">Plan Preventivo Canino Mini</p>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Atención con médico veterinario certificado y registro clínico digital.</p>
+          </div>
+          <a href="#cita" class="btn-main" style="width:100%; justify-content:center; margin-top:20px;">Agendar con este Plan</a>
         </div>
-      </div>
-      <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; text-align: center; font-size: 13px;">
-        <p>© 2026 Veterinaria Huellitas & Amor Bogotá. Propuesta de diseño web profesional de alta conversión.</p>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <a href="https://wa.me/573134528912?text=%C2%A1Hola%20Huellitas%20%26%20Amor!%20Quisiera%20agendar%20una%20cita%20para%20mi%20mascota." target="_blank" class="wa-float" title="Hablar por WhatsApp" rel="noopener noreferrer">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+  <section id="cita" class="booking-box">
+    <div class="container">
+      <div class="book-card">
+        <div>
+          <span style="color:var(--accent-green); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Atención Especializada</span>
+          <h3>Agenda tu Visita Veterinaria</h3>
+          <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:20px;">Contamos con quirófano, laboratorio clínico propio y hospitalización monitorizada.</p>
+          <p style="color:#d1cbc4; font-size:0.85rem;"><i class="fa-solid fa-location-dot" style="color:var(--accent-green)"></i> Carrera 70D #51-12, Engativá, Bogotá</p>
+          <p style="color:#d1cbc4; font-size:0.85rem; margin-top:8px;"><i class="fa-solid fa-phone" style="color:var(--accent-green)"></i> +57 311 234 5678</p>
+        </div>
+        <div>
+          <div class="form-group">
+            <label>Nombre del Propietario</label>
+            <input type="text" id="petOwner" class="form-control" placeholder="Ej. Natalia Duarte">
+          </div>
+          <div class="form-group">
+            <label>Nombre y Raza de la Mascota</label>
+            <input type="text" id="petName" class="form-control" placeholder="Ej. Toby (Poodle)">
+          </div>
+          <div class="form-group">
+            <label>Motivo de Consulta</label>
+            <select id="petReason" class="form-control">
+              <option>Consulta Médica General</option>
+              <option>Vacunación / Desparasitación</option>
+              <option>Baño & Estética Canina/Felina</option>
+              <option>Cirugía / Procedimiento Especial</option>
+            </select>
+          </div>
+          <button type="button" onclick="sendVetWhatsApp()" class="btn-submit"><i class="fa-brands fa-whatsapp"></i> Confirmar Cita por WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div id="lightbox" class="modal-lightbox" onclick="closeLightbox()">
-    <button class="modal-close" onclick="closeLightbox()">&times;</button>
-    <img id="lightbox-img" src="" alt="Vista previa paciente">
-  </div>
-
-  <script>
-    window.addEventListener('scroll', function() {
-      var nav = document.getElementById('navbar');
-      if (window.scrollY > 50) { nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
-    });
-
-    function sendHuellitasBooking(e) {
-      e.preventDefault();
-      const pet = document.getElementById('vet-pet').value;
-      const serv = document.getElementById('vet-service').value;
-      const day = document.getElementById('vet-day').value;
-      
-      const msg = encodeURIComponent("¡Hola Veterinaria Huellitas & Amor! Quisiera agendar una cita:\n🐾 Mascota: " + pet + "\n🩺 Servicio: " + serv + "\n📅 Día preferido: " + day + "\n¿Qué horarios tienen disponibles?");
-      window.open("https://wa.me/573134528912?text=" + msg, '_blank');
-    }
-
-    function openLightbox(url) {
-      document.getElementById('lightbox-img').src = url;
-      document.getElementById('lightbox').classList.add('active');
-    }
-
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
-
-    window.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeLightbox();
-    });
-  </script>
+  <a href="https://wa.me/573112345678?text=Hola%20Huellitas & Amor,%20quisiera%20solicitar%20una%20cita%20veterinaria." target="_blank" rel="noopener noreferrer" class="wa-float"><i class="fa-brands fa-whatsapp"></i></a>
 
   <script>
-    // Initialize Lenis Smooth Scroll & GSAP ScrollTrigger
-    document.addEventListener('DOMContentLoaded', () => {
-      try {
-        if (typeof Lenis !== 'undefined') {
-          const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            orientation: 'vertical',
-            smoothWheel: true
-          });
-          function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-          }
-          requestAnimationFrame(raf);
-          
-          if (typeof ScrollTrigger !== 'undefined') {
-            lenis.on('scroll', ScrollTrigger.update);
-            gsap.ticker.add((time) => {
-              lenis.raf(time * 1000);
-            });
-            gsap.ticker.lagSmoothing(0);
-          }
-        }
-      } catch (e) {
-        console.warn('Lenis init bypass:', e);
+    const petPlans = {
+      mini: { price: '5.000', title: 'Plan Preventivo Canino Mini', desc: 'Chequeo general completo, revisión cardiorrespiratoria, corte de uñas higiénico y limpieza de oídos.' },
+      med: { price: '0.000', title: 'Plan Preventivo Canino Mediano', desc: 'Evaluación musculoesquelética, control de peso, examen dental profiláctico y auscultación.' },
+      big: { price: '0.000', title: 'Plan Preventivo Canino Grande', desc: 'Chequeo articular avanzado, examen cardíaco de control y desparasitación interna.' },
+      cat: { price: '5.000', title: 'Plan Integral Felino Friendly', desc: 'Consulta sin estrés en zona libre de canes, palpación abdominal y control de vacunas felinas.' }
+    };
+    function calcPet(k, el) {
+      document.querySelectorAll('.pet-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      const d = petPlans[k];
+      if(d) {
+        document.getElementById('calcPrice').innerText = d.price;
+        document.getElementById('calcTitle').innerText = d.title;
+        document.getElementById('calcPlanDesc').innerText = d.desc;
       }
-
-      // GSAP Animations
-      try {
-        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-          gsap.registerPlugin(ScrollTrigger);
-
-          // Hero reveal
-          gsap.from('.hero-badge, .badge, .tag', {
-            opacity: 0,
-            y: -20,
-            duration: 1,
-            ease: 'power3.out'
-          });
-
-          gsap.from('.hero-title, .hero h1', {
-            opacity: 0,
-            y: 30,
-            duration: 1.2,
-            delay: 0.2,
-            ease: 'power3.out'
-          });
-
-          gsap.from('.hero-desc, .hero p', {
-            opacity: 0,
-            y: 20,
-            duration: 1,
-            delay: 0.4,
-            ease: 'power3.out'
-          });
-
-          gsap.from('.hero-btns, .hero-actions, .cta-group', {
-            opacity: 0,
-            y: 20,
-            duration: 1,
-            delay: 0.6,
-            ease: 'power3.out'
-          });
-
-          // Cards reveal
-          gsap.utils.toArray('.card, .service-card, .menu-card, .prod-card, .t-card').forEach((card, i) => {
-            gsap.from(card, {
-              scrollTrigger: {
-                trigger: card,
-                start: 'top 88%',
-                toggleActions: 'play none none none'
-              },
-              opacity: 0,
-              y: 40,
-              duration: 0.8,
-              delay: (i % 3) * 0.15,
-              ease: 'power2.out'
-            });
-          });
-        }
-      } catch (err) {
-        console.warn('GSAP animations fallback:', err);
-      }
-    });
+    }
+    function sendVetWhatsApp() {
+      const o = document.getElementById('petOwner').value.trim() || 'Propietario';
+      const p = document.getElementById('petName').value.trim() || 'Mascota';
+      const r = document.getElementById('petReason').value;
+      const msg = '¡Hola ' + 'Huellitas & Amor' + '! Mi nombre es *' + o + '*. Quisiera agendar una cita para mi mascota *' + p + '* por motivo de: *' + r + '*.';
+      window.open('https://wa.me/573112345678?text=' + encodeURIComponent(msg), '_blank');
+    }
   </script>
-
 </body>
 </html>
