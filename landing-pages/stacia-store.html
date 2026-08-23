@@ -633,9 +633,38 @@
       background: transparent;
       border: none;
     }
+  
+    /* Ambient Lighting & Micro-Interactions */
+    #ambient {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+      background: radial-gradient(circle at 50% 30%, rgba(var(--ambient-rgb, 217, 119, 6), 0.15), transparent 70%);
+      transition: background 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card, .service-card, .menu-card, .prod-card {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .card:hover, .service-card:hover, .menu-card:hover, .prod-card:hover {
+      transform: translateY(-6px) scale(1.01) !important;
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5) !important;
+    }
+
+
+    @media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
   </style>
+
+  <!-- GSAP & Lenis Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
 </head>
 <body>
+  <div id="ambient"></div>
 
   <!-- Navigation -->
   <header id="navbar">
@@ -851,7 +880,7 @@
 
         <form class="res-form" onsubmit="sendStaciaOrder(event)">
           <div class="form-group">
-            <label><i class="fa-solid fa-tag"></i> Categoría de Interés</label>
+            <label for="stacia-cat"><i class="fa-solid fa-tag"></i> Categoría de Interés</label>
             <select class="form-control" id="stacia-cat">
               <option value="Vestidos de Fiesta y Noche">Vestidos de Fiesta / Noche</option>
               <option value="Conjuntos en Lino y Sastrería" selected>Conjuntos en Lino & Sastrería</option>
@@ -861,7 +890,7 @@
           </div>
 
           <div class="form-group">
-            <label><i class="fa-solid fa-location-dot"></i> Ciudad de Destino para Envío</label>
+            <label for="stacia-city"><i class="fa-solid fa-location-dot"></i> Ciudad de Destino para Envío</label>
             <select class="form-control" id="stacia-city">
               <option value="Armenia (Recojo en Boutique o Domicilio)">Armenia (Boutique o Domicilio)</option>
               <option value="Bogotá D.C.">Bogotá D.C.</option>
@@ -873,7 +902,7 @@
           </div>
 
           <div class="form-group" style="grid-column: 1 / -1;">
-            <label><i class="fa-solid fa-ruler"></i> Talla Estimada</label>
+            <label for="stacia-size"><i class="fa-solid fa-ruler"></i> Talla Estimada</label>
             <select class="form-control" id="stacia-size">
               <option value="Talla XS / S">Talla XS / S (6 a 8)</option>
               <option value="Talla M" selected>Talla M (10 a 12)</option>
@@ -973,7 +1002,7 @@
           </div>
 
           <div style="margin-top: 32px;">
-            <a href="https://maps.google.com/?q=Calle+22+%2314-53,+Armenia,+Quindio" target="_blank" class="btn btn-outline" style="width: 100%;">
+            <a href="https://maps.google.com/?q=Calle+22+%2314-53,+Armenia,+Quindio" target="_blank" class="btn btn-outline" style="width: 100%;" rel="noopener noreferrer">
               <i class="fa-solid fa-diamond-turn-right"></i> Abrir en Google Maps
             </a>
           </div>
@@ -995,8 +1024,8 @@
           <p>Luxury Brand & Boutique femenina en Armenia, Quindío. Envíos worldwide.</p>
         </div>
         <div class="footer-social">
-          <a href="https://instagram.com/stacia_store" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://wa.me/573208890696" target="_blank" class="social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://instagram.com/stacia_store" target="_blank" class="social-btn" title="Instagram" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/573208890696" target="_blank" class="social-btn" title="WhatsApp" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
       <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; text-align: center; font-size: 13px;">
@@ -1006,7 +1035,7 @@
   </footer>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/573208890696?text=%C2%A1Hola%20Stacia%20Store!%20Quisiera%20asesor%C3%ADa%20para%20comprar." target="_blank" class="wa-float" title="Hablar por WhatsApp">
+  <a href="https://wa.me/573208890696?text=%C2%A1Hola%20Stacia%20Store!%20Quisiera%20asesor%C3%ADa%20para%20comprar." target="_blank" class="wa-float" title="Hablar por WhatsApp" rel="noopener noreferrer">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
@@ -1045,5 +1074,94 @@
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
+
+  <script>
+    // Initialize Lenis Smooth Scroll & GSAP ScrollTrigger
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        if (typeof Lenis !== 'undefined') {
+          const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            orientation: 'vertical',
+            smoothWheel: true
+          });
+          function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+          }
+          requestAnimationFrame(raf);
+          
+          if (typeof ScrollTrigger !== 'undefined') {
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add((time) => {
+              lenis.raf(time * 1000);
+            });
+            gsap.ticker.lagSmoothing(0);
+          }
+        }
+      } catch (e) {
+        console.warn('Lenis init bypass:', e);
+      }
+
+      // GSAP Animations
+      try {
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger);
+
+          // Hero reveal
+          gsap.from('.hero-badge, .badge, .tag', {
+            opacity: 0,
+            y: -20,
+            duration: 1,
+            ease: 'power3.out'
+          });
+
+          gsap.from('.hero-title, .hero h1', {
+            opacity: 0,
+            y: 30,
+            duration: 1.2,
+            delay: 0.2,
+            ease: 'power3.out'
+          });
+
+          gsap.from('.hero-desc, .hero p', {
+            opacity: 0,
+            y: 20,
+            duration: 1,
+            delay: 0.4,
+            ease: 'power3.out'
+          });
+
+          gsap.from('.hero-btns, .hero-actions, .cta-group', {
+            opacity: 0,
+            y: 20,
+            duration: 1,
+            delay: 0.6,
+            ease: 'power3.out'
+          });
+
+          // Cards reveal
+          gsap.utils.toArray('.card, .service-card, .menu-card, .prod-card, .t-card').forEach((card, i) => {
+            gsap.from(card, {
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 88%',
+                toggleActions: 'play none none none'
+              },
+              opacity: 0,
+              y: 40,
+              duration: 0.8,
+              delay: (i % 3) * 0.15,
+              ease: 'power2.out'
+            });
+          });
+        }
+      } catch (err) {
+        console.warn('GSAP animations fallback:', err);
+      }
+    });
+  </script>
+
 </body>
 </html>
