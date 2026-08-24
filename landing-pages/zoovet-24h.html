@@ -7,30 +7,29 @@
   <meta name="description" content="Atención médica veterinaria y urgencias 24 horas en Suba, Bogotá. Quirófano de alta complejidad, UCI, hospitalización monitorizada y laboratorio propio.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&family=JetBrains+Mono:wght@500;600&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
-      --bg-page: #f8fafc;
-      --bg-card: #ffffff;
-      --bg-card-hover: #f1f5f9;
-      --text-main: #0f172a;
-      --text-muted: #475569;
-      --text-faint: #94a3b8;
-      --emerald-main: #059669;
-      --emerald-glow: #10b981;
-      --emerald-light: #ecfdf5;
+      --bg-dark: #070b12;
+      --bg-surface: #0f172a;
+      --bg-card: #131d35;
+      --bg-card-hover: #1a2747;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+      --emerald: #10b981;
+      --emerald-dark: #059669;
+      --emerald-glow: rgba(16, 185, 129, 0.35);
       --danger-red: #ef4444;
       --danger-dark: #dc2626;
-      --border-line: rgba(15, 23, 42, 0.08);
-      --border-line-strong: rgba(15, 23, 42, 0.16);
-      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
-      --shadow-md: 0 12px 32px -8px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.05);
-      --shadow-lg: 0 24px 48px -12px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.06);
+      --line-emerald: rgba(16, 185, 129, 0.22);
+      --line-hairline: rgba(255, 255, 255, 0.08);
+      --shadow-card: 0 24px 48px -12px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(16, 185, 129, 0.12);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     html, body {
-      background: var(--bg-page);
+      background: var(--bg-dark);
       color: var(--text-main);
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 16px;
@@ -38,12 +37,35 @@
       overflow-x: hidden;
     }
 
+    /* Subtle Medical Grid Noise */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.04) 0, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.03) 0, transparent 45%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.8 0 0 0 0 0.8 0 0 0 0 0.8 0 0 0 0.02 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      mix-blend-mode: screen;
+      opacity: 0.35;
+    }
+
     .container { width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 48px; position: relative; }
     @media (max-width: 768px) { .container { padding: 0 20px; } }
 
+    /* Side Rails */
+    .side-rail { position: fixed; top: 0; bottom: 0; width: 36px; z-index: 100; pointer-events: none; display: flex; align-items: center; justify-content: center; }
+    .side-rail.left { left: 0; border-right: 1px solid var(--line-hairline); }
+    .side-rail.right { right: 0; border-left: 1px solid var(--line-hairline); }
+    .side-rail .rail-text { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.38em; text-transform: uppercase; color: var(--text-faint); writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; }
+    .side-rail.left .rail-text { transform: none; }
+    @media (max-width: 1280px) { .side-rail { display: none; } }
+
     /* Emergency Alert Header (24/7 Triage) */
     .emergency-banner {
-      background: linear-gradient(90deg, #b91c1c 0%, #dc2626 50%, #b91c1c 100%);
+      background: linear-gradient(90deg, #991b1b 0%, #dc2626 50%, #991b1b 100%);
       color: #ffffff;
       padding: 10px 0;
       font-size: 12px;
@@ -52,8 +74,8 @@
       text-transform: uppercase;
       position: sticky;
       top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+      z-index: 1001;
+      box-shadow: 0 4px 16px rgba(220, 38, 38, 0.35);
     }
     .emergency-inner {
       display: flex;
@@ -91,123 +113,127 @@
     }
     .btn-call-emergency:hover { background: #fee2e2; transform: translateY(-1px); }
 
-    /* Navigation */
-    .nav { padding: 20px 0; background: #ffffff; border-bottom: 1px solid var(--border-line); }
+    /* Main Navigation */
+    .nav { padding: 20px 0; background: rgba(7, 11, 18, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line-hairline); position: sticky; top: 38px; z-index: 1000; }
     .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-    .brand { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 10px; }
-    .brand span { color: var(--emerald-main); }
+    .brand { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .brand span { color: var(--emerald); }
     .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-    .nav-link { font-size: 13px; font-weight: 700; color: var(--text-muted); text-decoration: none; transition: color 0.18s ease; }
-    .nav-link:hover { color: var(--emerald-main); }
-    .btn-nav { padding: 10px 22px; background: var(--emerald-main); color: #fff; border-radius: 999px; font-size: 12.5px; font-weight: 700; text-decoration: none; transition: all 0.18s ease; box-shadow: 0 4px 14px rgba(5, 150, 105, 0.25); }
-    .btn-nav:hover { background: #047857; transform: translateY(-1px); }
+    .nav-link { font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); text-decoration: none; transition: color 0.18s ease; }
+    .nav-link:hover { color: var(--emerald); }
+    .btn-nav { padding: 10px 24px; background: linear-gradient(135deg, var(--emerald), var(--emerald-dark)); color: #070b12; border-radius: 999px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; transition: all 0.18s ease; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3); }
+    .btn-nav:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45); }
 
-    /* Section Tag Rules */
+    /* Section Rules */
     .sec-header { margin-bottom: 48px; text-align: center; }
-    .sec-tag { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: var(--emerald-main); background: var(--emerald-light); padding: 5px 14px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; }
-    .sec-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 3.8vw, 2.8rem); font-weight: 800; color: var(--text-main); line-height: 1.15; }
-    .sec-title span { color: var(--emerald-main); }
-    .sec-desc { color: var(--text-muted); font-size: 1.05rem; max-width: 620px; margin: 12px auto 0; }
+    .sec-tag { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: var(--emerald); background: rgba(16, 185, 129, 0.12); border: 1px solid var(--line-emerald); padding: 5px 16px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+    .sec-title { font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; color: #fff; line-height: 1.15; }
+    .sec-title span { color: var(--emerald); }
+    .sec-desc { color: var(--text-muted); font-size: 1.05rem; max-width: 640px; margin: 12px auto 0; }
 
-    /* Hero Section */
-    .hero { padding: 48px 0 90px; }
-    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
-    .live-status-pill { display: inline-flex; align-items: center; gap: 10px; padding: 6px 16px; background: #ffffff; border: 1px solid var(--border-line-strong); border-radius: 999px; font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 24px; box-shadow: var(--shadow-sm); }
-    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--emerald-glow); display: inline-block; box-shadow: 0 0 10px var(--emerald-glow); }
-    .hero-title { font-family: 'Syne', sans-serif; font-size: clamp(3rem, 5.2vw, 4.4rem); font-weight: 800; line-height: 1.05; color: var(--text-main); margin-bottom: 22px; letter-spacing: -0.02em; }
-    .hero-title span { color: var(--emerald-main); }
-    .hero-lead { font-size: 1.15rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 36px; max-width: 540px; }
+    /* Hero Section with Full-Bleed Video Background */
+    .hero { position: relative; min-height: 92vh; display: flex; align-items: center; padding: 120px 0 90px; overflow: hidden; }
+    .hero-video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.92; z-index: 1; }
+    .hero-dark-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,11,18,0.45) 0%, rgba(7,11,18,0.78) 55%, var(--bg-dark) 100%); z-index: 2; pointer-events: none; }
+    .hero-content { position: relative; z-index: 10; max-width: 860px; }
+
+    .live-status-pill { display: inline-flex; align-items: center; gap: 10px; padding: 6px 18px; background: rgba(15, 23, 42, 0.85); border: 1px solid var(--line-emerald); border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: var(--emerald); margin-bottom: 24px; backdrop-filter: blur(10px); }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--emerald); display: inline-block; box-shadow: 0 0 10px var(--emerald); }
+    .hero-title { font-family: 'Syne', sans-serif; font-size: clamp(3.2rem, 5.8vw, 5rem); font-weight: 800; line-height: 1.02; color: #ffffff; margin-bottom: 24px; letter-spacing: -0.02em; text-shadow: 0 4px 20px rgba(0,0,0,0.6); }
+    .hero-title span { color: var(--emerald); }
+    .hero-title em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; color: #e2e8f0; }
+    .hero-lead { font-size: 1.2rem; color: #cbd5e1; line-height: 1.65; margin-bottom: 38px; max-width: 620px; text-shadow: 0 2px 8px rgba(0,0,0,0.8); }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
-    .btn-hero-sos { display: inline-flex; align-items: center; gap: 10px; padding: 15px 32px; background: var(--danger-red); color: #fff; border-radius: 999px; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; box-shadow: 0 12px 24px rgba(239, 68, 68, 0.35); transition: all 0.18s ease; }
-    .btn-hero-sos:hover { background: var(--danger-dark); transform: translateY(-2px); }
-    .btn-hero-sec { display: inline-flex; align-items: center; gap: 10px; padding: 15px 28px; background: #ffffff; color: var(--text-main); border: 1px solid var(--border-line-strong); border-radius: 999px; font-size: 13.5px; font-weight: 700; text-decoration: none; box-shadow: var(--shadow-sm); transition: all 0.18s ease; }
-    .btn-hero-sec:hover { background: #f8fafc; border-color: var(--text-main); }
+    .btn-hero-sos { display: inline-flex; align-items: center; gap: 10px; padding: 16px 36px; background: linear-gradient(135deg, var(--danger-red), var(--danger-dark)); color: #fff; border-radius: 999px; font-size: 13.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none; box-shadow: 0 12px 28px rgba(239, 68, 68, 0.45); transition: all 0.18s ease; }
+    .btn-hero-sos:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(239, 68, 68, 0.6); }
+    .btn-hero-sec { display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid var(--line-emerald); border-radius: 999px; font-size: 13px; font-weight: 700; text-decoration: none; backdrop-filter: blur(10px); transition: all 0.18s ease; }
+    .btn-hero-sec:hover { background: rgba(16, 185, 129, 0.15); border-color: var(--emerald); }
 
-    .hero-media-card { position: relative; border-radius: 20px; overflow: hidden; background: #000; box-shadow: var(--shadow-lg); height: 520px; }
-    .hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.92; }
-    .hero-media-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.65) 100%); pointer-events: none; }
-    .hero-floating-badge { position: absolute; bottom: 24px; left: 24px; right: 24px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-radius: 14px; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow-md); }
-    .hero-floating-badge strong { font-family: 'Syne', sans-serif; font-size: 1.1rem; color: var(--text-main); display: block; }
-    .hero-floating-badge small { font-size: 0.82rem; color: var(--text-muted); }
+    .hero-annotation-box { position: absolute; bottom: 32px; right: 48px; z-index: 10; font-family: 'JetBrains Mono', monospace; font-size: 11px; background: rgba(7, 11, 18, 0.85); color: var(--emerald); padding: 8px 18px; border-radius: 6px; border: 1px solid var(--line-emerald); backdrop-filter: blur(12px); }
+    @media (max-width: 992px) { .hero-annotation-box { display: none; } }
 
     /* Medical Specialties Grid */
-    .services-section { padding: 90px 0; background: #ffffff; border-top: 1px solid var(--border-line); border-bottom: 1px solid var(--border-line); }
+    .services-section { padding: 100px 0; background: var(--bg-surface); border-top: 1px solid var(--line-hairline); border-bottom: 1px solid var(--line-hairline); }
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .service-card { background: var(--bg-page); border: 1px solid var(--border-line); border-radius: 16px; padding: 32px 28px; transition: all 0.22s ease; position: relative; }
-    .service-card:hover { transform: translateY(-4px); background: #ffffff; border-color: var(--emerald-main); box-shadow: var(--shadow-md); }
-    .service-icon { width: 52px; height: 52px; border-radius: 12px; background: var(--emerald-light); color: var(--emerald-main); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; }
-    .service-card h3 { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 10px; }
+    .service-card { background: var(--bg-card); border: 1px solid var(--line-hairline); border-radius: 16px; padding: 32px 28px; transition: all 0.22s ease; position: relative; box-shadow: var(--shadow-card); }
+    .service-card:hover { transform: translateY(-4px); background: var(--bg-card-hover); border-color: var(--emerald); }
+    .service-icon { width: 52px; height: 52px; border-radius: 12px; background: rgba(16, 185, 129, 0.12); color: var(--emerald); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; }
+    .service-card h3 { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
     .service-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
-    .service-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; color: var(--emerald-main); text-transform: uppercase; margin-top: 16px; display: inline-block; }
+    .service-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; color: var(--emerald); text-transform: uppercase; margin-top: 16px; display: inline-block; }
 
-    /* Interactive Pet Calculator (OpenDesign Component) */
-    .calc-section { padding: 100px 0; background: var(--bg-page); }
-    .calc-container { background: #ffffff; border: 1px solid var(--border-line-strong); border-radius: 24px; padding: 48px; box-shadow: var(--shadow-lg); display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; }
+    /* Interactive Pet Calculator */
+    .calc-section { padding: 100px 0; background: var(--bg-dark); }
+    .calc-container { background: var(--bg-surface); border: 1px solid var(--line-emerald); border-radius: 24px; padding: 48px; box-shadow: var(--shadow-card); display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; }
     .pet-selector-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0 32px; }
-    .pet-option-btn { background: var(--bg-page); border: 2px solid var(--border-line); border-radius: 14px; padding: 20px 14px; text-align: center; cursor: pointer; transition: all 0.2s ease; }
-    .pet-option-btn.active, .pet-option-btn:hover { border-color: var(--emerald-main); background: var(--emerald-light); }
-    .pet-option-btn i { font-size: 28px; color: var(--emerald-main); margin-bottom: 8px; display: block; }
-    .pet-option-btn strong { font-size: 0.92rem; font-weight: 800; color: var(--text-main); display: block; }
+    .pet-option-btn { background: var(--bg-card); border: 1.5px solid var(--line-hairline); border-radius: 14px; padding: 20px 14px; text-align: center; cursor: pointer; transition: all 0.2s ease; }
+    .pet-option-btn.active, .pet-option-btn:hover { border-color: var(--emerald); background: rgba(16, 185, 129, 0.15); }
+    .pet-option-btn i { font-size: 28px; color: var(--emerald); margin-bottom: 8px; display: block; }
+    .pet-option-btn strong { font-size: 0.92rem; font-weight: 800; color: #fff; display: block; }
     .pet-option-btn span { font-size: 0.75rem; color: var(--text-muted); }
 
-    .calc-result-box { background: linear-gradient(145deg, #064e3b 0%, #042f2e 100%); color: #ffffff; border-radius: 20px; padding: 36px 30px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-md); }
-    .calc-result-box .plan-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--emerald-glow); text-transform: uppercase; letter-spacing: 0.1em; }
+    .calc-result-box { background: linear-gradient(145deg, #064e3b 0%, #022c22 100%); color: #ffffff; border-radius: 20px; padding: 36px 30px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--emerald); box-shadow: 0 16px 36px rgba(0,0,0,0.5); }
+    .calc-result-box .plan-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--emerald); text-transform: uppercase; letter-spacing: 0.1em; }
     .calc-price { font-family: 'Syne', sans-serif; font-size: 2.8rem; font-weight: 800; color: #ffffff; margin: 12px 0 6px; }
     .calc-plan-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 12px; }
     .calc-features-list { list-style: none; font-size: 0.88rem; color: #cbd5e1; line-height: 1.8; margin-bottom: 24px; }
-    .calc-features-list li i { color: var(--emerald-glow); margin-right: 8px; }
-    .btn-calc-action { width: 100%; padding: 14px; background: var(--emerald-glow); color: #042f2e; border-radius: 999px; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; text-align: center; text-decoration: none; display: block; transition: all 0.18s ease; }
+    .calc-features-list li i { color: var(--emerald); margin-right: 8px; }
+    .btn-calc-action { width: 100%; padding: 14px; background: var(--emerald); color: #070b12; border-radius: 999px; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; text-align: center; text-decoration: none; display: block; transition: all 0.18s ease; box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4); }
     .btn-calc-action:hover { background: #34d399; transform: translateY(-1px); }
 
     /* 4-Step Medical Protocol */
-    .protocol-section { padding: 90px 0; background: #ffffff; border-top: 1px solid var(--border-line); }
+    .protocol-section { padding: 90px 0; background: var(--bg-surface); border-top: 1px solid var(--line-hairline); }
     .protocol-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
-    .protocol-card { background: var(--bg-page); border: 1px solid var(--border-line); border-radius: 16px; padding: 28px 24px; position: relative; }
-    .protocol-step-num { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 800; color: var(--emerald-main); margin-bottom: 12px; }
-    .protocol-card h4 { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px; }
+    .protocol-card { background: var(--bg-card); border: 1px solid var(--line-hairline); border-radius: 16px; padding: 28px 24px; position: relative; }
+    .protocol-step-num { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 800; color: var(--emerald); margin-bottom: 12px; }
+    .protocol-card h4 { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
     .protocol-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
 
-    /* Lightbox Clinical Facilities Gallery */
-    .facilities-section { padding: 90px 0; background: var(--bg-page); }
+    /* Facilities Gallery with Lightbox */
+    .facilities-section { padding: 90px 0; background: var(--bg-dark); }
     .facilities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
-    .facility-item { position: relative; height: 320px; border-radius: 16px; overflow: hidden; cursor: pointer; box-shadow: var(--shadow-sm); }
+    .facility-item { position: relative; height: 320px; border-radius: 16px; overflow: hidden; cursor: pointer; border: 1px solid var(--line-hairline); }
     .facility-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
     .facility-item:hover img { transform: scale(1.05); }
-    .facility-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,23,42,0.85) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; }
+    .facility-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7,11,18,0.85) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; }
     .facility-title { color: #fff; font-weight: 800; font-size: 1.1rem; font-family: 'Syne', sans-serif; }
-    .facility-tag { color: var(--emerald-glow); font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; }
+    .facility-tag { color: var(--emerald); font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; }
 
-    /* Real Testimonials */
-    .testi-section { padding: 90px 0; background: #ffffff; border-top: 1px solid var(--border-line); }
+    /* Testimonials */
+    .testi-section { padding: 90px 0; background: var(--bg-surface); border-top: 1px solid var(--line-hairline); }
     .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; }
-    .testi-card { background: var(--bg-page); border: 1px solid var(--border-line); border-radius: 16px; padding: 32px 26px; box-shadow: var(--shadow-sm); }
+    .testi-card { background: var(--bg-card); border: 1px solid var(--line-hairline); border-radius: 16px; padding: 32px 26px; box-shadow: var(--shadow-card); }
     .stars { color: #eab308; font-size: 14px; margin-bottom: 14px; }
-    .testi-text { font-size: 0.95rem; color: var(--text-main); line-height: 1.6; margin-bottom: 20px; font-style: italic; }
-    .testi-author { font-weight: 800; color: var(--text-main); font-size: 0.95rem; }
+    .testi-text { font-size: 0.95rem; color: #f1f5f9; line-height: 1.6; margin-bottom: 20px; font-style: italic; }
+    .testi-author { font-weight: 800; color: #fff; font-size: 0.95rem; }
     .testi-pet { font-size: 0.8rem; color: var(--text-muted); }
 
     /* Booking & Location */
-    .booking-section { padding: 100px 0; background: #0f172a; color: #ffffff; }
+    .booking-section { padding: 100px 0; background: #000000; color: #ffffff; border-top: 1px solid var(--line-emerald); }
     .booking-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; max-width: 1080px; margin: 0 auto; }
     .booking-info h3 { font-family: 'Syne', sans-serif; font-size: 2.6rem; font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
-    .booking-info h3 span { color: var(--emerald-glow); }
+    .booking-info h3 span { color: var(--emerald); }
     .booking-info p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 28px; }
     .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; font-size: 0.92rem; color: #e2e8f0; }
-    .contact-item i { color: var(--emerald-glow); font-size: 18px; margin-top: 4px; }
+    .contact-item i { color: var(--emerald); font-size: 18px; margin-top: 4px; }
 
-    .booking-form-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px; padding: 36px; }
+    .booking-form-box { background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line-emerald); border-radius: 20px; padding: 36px; }
     .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
     .form-group label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #94a3b8; }
-    .form-control { padding: 14px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; color: #fff; font-family: inherit; font-size: 0.95rem; }
-    .form-control:focus { outline: none; border-color: var(--emerald-glow); }
+    .form-control { padding: 14px 16px; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; color: #fff; font-family: inherit; font-size: 0.95rem; }
+    .form-control:focus { outline: none; border-color: var(--emerald); }
     .form-control option { background: #0f172a; color: #fff; }
-    .btn-submit-vet { width: 100%; padding: 16px; background: var(--emerald-main); color: #fff; border: none; border-radius: 999px; font-size: 13.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 12px 24px rgba(5, 150, 105, 0.4); transition: all 0.18s ease; }
-    .btn-submit-vet:hover { background: #047857; transform: translateY(-1px); }
+    .btn-submit-vet { width: 100%; padding: 16px; background: linear-gradient(135deg, var(--emerald), var(--emerald-dark)); color: #070b12; border: none; border-radius: 999px; font-size: 13.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 12px 24px rgba(16, 185, 129, 0.4); transition: all 0.18s ease; }
+    .btn-submit-vet:hover { transform: translateY(-1px); box-shadow: 0 16px 32px rgba(16, 185, 129, 0.55); }
+
+    /* Footer */
+    .footer { padding: 40px 0; border-top: 1px solid var(--line-hairline); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.14em; background: var(--bg-dark); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
 
     /* Lightbox Modal */
-    .lightbox-modal { position: fixed; inset: 0; z-index: 10000; background: rgba(15, 23, 42, 0.95); display: none; align-items: center; justify-content: center; padding: 24px; }
+    .lightbox-modal { position: fixed; inset: 0; z-index: 10000; background: rgba(7, 11, 18, 0.96); display: none; align-items: center; justify-content: center; padding: 24px; }
     .lightbox-modal.active { display: flex; }
-    .lightbox-img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 12px; }
+    .lightbox-img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 12px; border: 1px solid var(--line-emerald); }
     .lightbox-close { position: absolute; top: 24px; right: 24px; color: #fff; font-size: 32px; background: none; border: none; cursor: pointer; }
 
     /* WhatsApp Float */
@@ -223,6 +249,10 @@
   </style>
 </head>
 <body>
+
+  <!-- Side Rails -->
+  <div class="side-rail left"><div class="rail-text">ZOOVET 24H · HOSPITAL VETERINARIO · SUBA</div></div>
+  <div class="side-rail right"><div class="rail-text">UCI & QUIRÓFANO CONTINUO · MMXXVI</div></div>
 
   <!-- Emergency 24/7 Triage Topbar -->
   <div class="emergency-banner">
@@ -256,44 +286,34 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Full-Bleed Video Background -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div>
-          <div class="live-status-pill">
-            <span class="status-dot"></span>
-            <span>QUIRÓFANO, UCI & LABORATORIO ACTIVOS AHORA</span>
-          </div>
-          <h1 class="hero-title">El cuidado médico que tu mascota merece, <span>Las 24 Horas.</span></h1>
-          <p class="hero-lead">Clínica veterinaria de alta complejidad en Suba con hospitalización monitorizada, diagnóstico por imágenes de precisión y médicos veterinarios especialistas en turno continuo.</p>
-          <div class="hero-actions">
-            <a href="https://wa.me/573101234567?text=URGENCIA%20VETERINARIA%20Requiero%20atencion%20inmediata" class="btn-hero-sos">
-              <i class="fa-solid fa-truck-medical"></i> Ingreso a Urgencias 24/7
-            </a>
-            <a href="#calculador" class="btn-hero-sec">
-              <i class="fa-solid fa-calculator"></i> Cotizar Chequeo o Vacunación
-            </a>
-          </div>
-        </div>
+    <video class="hero-video-bg" autoplay muted loop playsinline preload="auto">
+      <source src="https://assets.mixkit.co/videos/4815/4815-720.mp4" type="video/mp4">
+    </video>
+    <div class="hero-dark-overlay"></div>
 
-        <div class="hero-media-card">
-          <video class="hero-video" autoplay muted loop playsinline preload="auto">
-            <source src="https://assets.mixkit.co/videos/4815/4815-720.mp4" type="video/mp4">
-          </video>
-          <div class="hero-media-overlay"></div>
-          <div class="hero-floating-badge">
-            <div>
-              <strong>Sede Principal Suba</strong>
-              <small>Calle 145 #92-30 · Parqueadero para clientes</small>
-            </div>
-            <div style="text-align:right;">
-              <span style="color:var(--emerald-main); font-weight:800; font-size:1.1rem;">365 DÍAS</span>
-              <small style="display:block;">Sin interrupción</small>
-            </div>
-          </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="live-status-pill">
+          <span class="status-dot"></span>
+          <span>QUIRÓFANO, UCI & LABORATORIO ACTIVOS EN ESTE MOMENTO</span>
+        </div>
+        <h1 class="hero-title">El cuidado médico que tu mascota merece, <span>Las 24 Horas.</span></h1>
+        <p class="hero-lead">Clínica veterinaria de alta complejidad en Suba con hospitalización monitorizada, diagnóstico por imágenes de precisión y médicos veterinarios especialistas en turno continuo.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/573101234567?text=URGENCIA%20VETERINARIA%20Requiero%20atencion%20inmediata" class="btn-hero-sos">
+            <i class="fa-solid fa-truck-medical"></i> Ingreso a Urgencias 24/7
+          </a>
+          <a href="#calculador" class="btn-hero-sec">
+            <i class="fa-solid fa-calculator"></i> Cotizar Chequeo o Vacunación
+          </a>
         </div>
       </div>
+    </div>
+
+    <div class="hero-annotation-box">
+      SEDE PRINCIPAL SUBA · CALLE 145 #92-30 · 365 DÍAS
     </div>
   </section>
 
@@ -363,7 +383,7 @@
 
       <div class="calc-container">
         <div>
-          <h4 style="font-size:1.1rem; font-weight:800; margin-bottom:12px;">1. Selecciona Tipo y Tamaño de Mascota:</h4>
+          <h4 style="font-size:1.1rem; font-weight:800; margin-bottom:12px; color:#fff;">1. Selecciona Tipo y Tamaño de Mascota:</h4>
           <div class="pet-selector-grid">
             <div class="pet-option-btn active" onclick="selectPet('mini', this)">
               <i class="fa-solid fa-dog"></i>
@@ -387,9 +407,9 @@
             </div>
           </div>
 
-          <h4 style="font-size:1.1rem; font-weight:800; margin-bottom:10px;">2. Cobertura del Chequeo Clínico:</h4>
+          <h4 style="font-size:1.1rem; font-weight:800; margin-bottom:10px; color:#fff;">2. Cobertura del Chequeo Clínico:</h4>
           <p id="calcDesc" style="color:var(--text-muted); font-size:0.95rem; line-height:1.6;">
-            Examen físico integral de 12 sistemas (cardiovascular, pulmonar, ocular, ótico, musculoesquelético y dental), control de peso e historial clínico digital.
+            Examen físico de 12 sistemas para razas pequeñas (Poodle, Yorkshire, Shih Tzu, etc.), control de peso, examen dental y limpieza de oídos básica.
           </p>
         </div>
 
@@ -516,7 +536,7 @@
     </div>
   </section>
 
-  <!-- Booking & Showroom / Location -->
+  <!-- Booking & Location -->
   <section id="cita" class="booking-section">
     <div class="container">
       <div class="booking-grid">
@@ -550,7 +570,7 @@
         </div>
 
         <div class="booking-form-box">
-          <h4 style="font-family:'Syne',sans-serif; font-size:1.4rem; margin-bottom:18px;">Agendar Consulta o Procedimiento</h4>
+          <h4 style="font-family:'Syne',sans-serif; font-size:1.4rem; margin-bottom:18px; color:#fff;">Agendar Consulta o Procedimiento</h4>
           
           <div class="form-group">
             <label>Nombre del Propietario / Tutor</label>
@@ -580,6 +600,16 @@
       </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>ZOOVET 24 HORAS © MMXXVI · HOSPITAL VETERINARIO SUBA, BOGOTÁ</div>
+        <div>SISTEMA DE DISEÑO CLÍNICO DE ALTA PRECISIÓN (OPENDESIGN)</div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Lightbox Modal -->
   <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
