@@ -695,41 +695,55 @@
         .from('.hero-actions', { y: 20, opacity: 0, stagger: 0.1 }, '-=0.7')
         .from('.hero-annotation-box', { opacity: 0, x: 20 }, '-=0.5');
 
-      // Section I: Medical Specialties Cards Stagger
-      gsap.from('.service-card', {
-        scrollTrigger: { trigger: '.services-grid', start: 'top 80%' },
-        y: 35, opacity: 0, stagger: 0.12, duration: 0.8, ease: 'power2.out'
-      });
+      // Section I: Medical Specialties Cards Stagger (Immediate trigger & visible fallback)
+      gsap.fromTo('.service-card', 
+        { y: 30, opacity: 0 }, 
+        { scrollTrigger: { trigger: '#servicios', start: 'top 95%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power2.out' }
+      );
 
       // Section II: Calculator Container Reveal
-      gsap.from('.calc-container', {
-        scrollTrigger: { trigger: '.calc-section', start: 'top 80%' },
-        scale: 0.96, opacity: 0, duration: 0.9, ease: 'power3.out'
-      });
+      gsap.fromTo('.calc-container', 
+        { y: 30, opacity: 0 }, 
+        { scrollTrigger: { trigger: '#calculador', start: 'top 95%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' }
+      );
 
       // Section III: 4-Step Protocol
-      gsap.from('.protocol-card', {
-        scrollTrigger: { trigger: '.protocol-grid', start: 'top 82%' },
-        y: 30, opacity: 0, stagger: 0.14, duration: 0.85, ease: 'power2.out'
-      });
+      gsap.fromTo('.protocol-card', 
+        { y: 30, opacity: 0 }, 
+        { scrollTrigger: { trigger: '#protocolo', start: 'top 95%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power2.out' }
+      );
 
       // Section IV: Facilities Gallery
-      gsap.from('.facility-item', {
-        scrollTrigger: { trigger: '.facilities-grid', start: 'top 82%' },
-        scale: 0.94, opacity: 0, stagger: 0.15, duration: 0.9, ease: 'power2.out'
-      });
+      gsap.fromTo('.facility-item', 
+        { scale: 0.95, opacity: 0 }, 
+        { scrollTrigger: { trigger: '#instalaciones', start: 'top 95%', toggleActions: 'play none none none' },
+          scale: 1, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power2.out' }
+      );
 
       // Section V: Testimonials
-      gsap.from('.testi-card', {
-        scrollTrigger: { trigger: '.testi-grid', start: 'top 82%' },
-        y: 30, opacity: 0, stagger: 0.15, duration: 0.85, ease: 'power2.out'
-      });
+      gsap.fromTo('.testi-card', 
+        { y: 30, opacity: 0 }, 
+        { scrollTrigger: { trigger: '#testimonios', start: 'top 95%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power2.out' }
+      );
 
       // Section VI: Booking Grid
-      gsap.from('.booking-grid', {
-        scrollTrigger: { trigger: '.booking-section', start: 'top 80%' },
-        y: 40, opacity: 0, duration: 1, ease: 'power3.out'
-      });
+      gsap.fromTo('.booking-grid', 
+        { y: 30, opacity: 0 }, 
+        { scrollTrigger: { trigger: '#cita', start: 'top 95%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' }
+      );
+
+      // Fallback: Ensure everything is 100% visible after 1.5s in case ScrollTrigger is blocked
+      setTimeout(() => {
+        document.querySelectorAll('.service-card, .calc-container, .protocol-card, .facility-item, .testi-card, .booking-grid').forEach(el => {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        });
+      }, 1500);
     }
   </script>
 </body>

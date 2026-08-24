@@ -576,48 +576,64 @@
         .from('.hero-annotation-box', { opacity: 0, x: 20 }, '-=0.5');
 
       // Section I: Manifesto & Stats Animation
-      gsap.from('.manifesto-quote', {
-        scrollTrigger: { trigger: '.manifesto-section', start: 'top 80%' },
-        y: 40, opacity: 0, duration: 1.1, ease: 'power3.out'
-      });
-      gsap.from('.stat-box', {
-        scrollTrigger: { trigger: '.stat-row', start: 'top 85%' },
-        y: 30, opacity: 0, stagger: 0.15, duration: 0.9, ease: 'power2.out'
-      });
+      gsap.fromTo('.manifesto-quote', 
+        { y: 30, opacity: 0 },
+        { scrollTrigger: { trigger: '#atelier', start: 'top 95%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, duration: 0.9, ease: 'power3.out' }
+      );
+      gsap.fromTo('.stat-box', 
+        { y: 30, opacity: 0 },
+        { scrollTrigger: { trigger: '#atelier', start: 'top 95%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, stagger: 0.1, duration: 0.8, ease: 'power2.out' }
+      );
 
       // Section II: Lookbook Cards Stagger
-      gsap.from('.look-card', {
-        scrollTrigger: { trigger: '.lookbook-grid', start: 'top 80%' },
-        x: -30, opacity: 0, stagger: 0.12, duration: 0.8, ease: 'power2.out'
-      });
-      gsap.from('.look-viewer', {
-        scrollTrigger: { trigger: '.lookbook-grid', start: 'top 80%' },
-        x: 30, opacity: 0, duration: 0.9, ease: 'power2.out'
-      });
+      gsap.fromTo('.look-card', 
+        { x: -30, opacity: 0 },
+        { scrollTrigger: { trigger: '#coleccion', start: 'top 95%', toggleActions: 'play none none none' },
+          x: 0, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power2.out' }
+      );
+      gsap.fromTo('.look-viewer', 
+        { x: 30, opacity: 0 },
+        { scrollTrigger: { trigger: '#coleccion', start: 'top 95%', toggleActions: 'play none none none' },
+          x: 0, opacity: 1, duration: 0.8, ease: 'power2.out' }
+      );
 
       // Section III: 4-Step Method
-      gsap.from('.method-card', {
-        scrollTrigger: { trigger: '.method-grid', start: 'top 82%' },
-        y: 35, opacity: 0, stagger: 0.14, duration: 0.85, ease: 'power2.out'
-      });
+      gsap.fromTo('.method-card', 
+        { y: 30, opacity: 0 },
+        { scrollTrigger: { trigger: '#metodo', start: 'top 95%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power2.out' }
+      );
 
       // Section IV: Gallery Items
-      gsap.from('.gallery-item', {
-        scrollTrigger: { trigger: '.gallery-grid', start: 'top 82%' },
-        scale: 0.94, opacity: 0, stagger: 0.15, duration: 0.9, ease: 'power2.out'
-      });
+      gsap.fromTo('.gallery-item', 
+        { scale: 0.95, opacity: 0 },
+        { scrollTrigger: { trigger: '#galeria', start: 'top 95%', toggleActions: 'play none none none' },
+          scale: 1, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power2.out' }
+      );
 
       // Section V: Testimonials
-      gsap.from('.testi-card', {
-        scrollTrigger: { trigger: '.testi-grid', start: 'top 82%' },
-        y: 30, opacity: 0, stagger: 0.15, duration: 0.85, ease: 'power2.out'
-      });
+      gsap.fromTo('.testi-card', 
+        { y: 30, opacity: 0 },
+        { scrollTrigger: { trigger: '#testimonios', start: 'top 95%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power2.out' }
+      );
 
       // Section VI: Booking Card
-      gsap.from('.booking-card', {
-        scrollTrigger: { trigger: '.booking-section', start: 'top 80%' },
-        y: 40, opacity: 0, duration: 1, ease: 'power3.out'
-      });
+      gsap.fromTo('.booking-card', 
+        { y: 30, opacity: 0 },
+        { scrollTrigger: { trigger: '#cita', start: 'top 95%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
+      );
+
+      // Fallback: Ensure everything is 100% visible after 1.5s in case ScrollTrigger is blocked
+      setTimeout(() => {
+        document.querySelectorAll('.manifesto-quote, .stat-box, .look-card, .look-viewer, .method-card, .gallery-item, .testi-card, .booking-card').forEach(el => {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        });
+      }, 1500);
     }
   </script>
 </body>
