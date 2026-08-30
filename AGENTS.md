@@ -270,76 +270,12 @@ Si alguna falla, **no desplegar** hasta corregir.
 | Imágenes HTTP del sitio del negocio no cargan en HTTPS (mixed content) | Siempre usar imágenes HTTPS del sitio original. Verificar con `curl` antes de ponerlas en la LP |
 | Diseño "básico/mediocre" rechazado por el usuario | LP debe competir VISUALMENTE con el sitio original del negocio, no ser una plantilla genérica. Hero editorial split-screen, GSAP, paleta de marca |
 
-## 💎 Configuración Global y Obligatoria de Skills Premium de Diseño
+## 🎨 Reglas de Diseño de Landing Pages (Directiva del Usuario)
 
-```json
-{
-  "project": {
-    "name": "Prospección Web para Negocios - Landing Pages Premium",
-    "type": "landing-pages-portfolio",
-    "default_agent": "antigravity"
-  },
-  "skills": {
-    "required": [
-      "fable-design-system",
-      "cinematic-landing-kit",
-      "gpt-taste",
-      "frontend-design",
-      "taste-skill"
-    ],
-    "optional": [
-      "web-design-guidelines"
-    ],
-    "global_path": "~/.agents/skills/",
-    "enforce_required": true,
-    "auto_load": true
-  },
-  "design_system": {
-    "philosophy": "premium-first",
-    "cinematic": true,
-    "animation": "gsap-lenis",
-    "typography": "luxury",
-    "color_palette": "warm-premium"
-  },
-  "tasks": {
-    "landing_page_creation": {
-      "required_skills": [
-        "fable-design-system",
-        "cinematic-landing-kit",
-        "gpt-taste",
-        "frontend-design"
-      ],
-      "enforce": true,
-      "block_generic_designs": true
-    }
-  }
-}
-```
-
-### ⚠️ REGLA DE ORO: NUNCA GENERES DISEÑOS GENÉRICOS
-Cada landing page debe ser única, con personalidad y diseñada para causar impacto visual inmediato.
-
-### 🛠️ SKILLS OBLIGATORIAS (DEBEN USARSE SIEMPRE)
-1. **`fable-design-system`**: Antes de codificar, declara un sistema de diseño con tipografía, paleta cromática sobria, espaciado áureo y jerarquía.
-2. **`cinematic-landing-kit`**: Implementa animaciones fluidas con GSAP, scroll suave (`Lenis`), hero cinematográfico inmersivo y capas de iluminación reactiva (`#ambient`).
-3. **`gpt-taste`**: Aplica estructura AIDA (Atención, Interés, Deseo, Acción), titulares de alto gancho emocional y HERO de máximo 2 líneas.
-4. **`frontend-design`**: Usa tipografía premium, grid system moderno, micro-interacciones con física de resorte y contraste refinado.
-5. **`taste-skill`**: Aplica estética "cara" (lujo accesible/editorial) con generoso respiro visual, bordes translúcidos (`border: 1px solid rgba(255,255,255,0.08)`) y micro-detalles.
-6. **`web-design-guidelines`**: Auditoría de accesibilidad, contraste WCAG AA, cero scroll horizontal (320px–480px) y rendimiento 60fps.
-
-### 🚫 PROHIBICIONES ESTRICTAS
-- ❌ **NO usar diseños "tailwind por defecto"** sin personalización profunda.
-- ❌ **NO usar fuentes genéricas** (Inter, Roboto, Sans-serif plano) sin contraste tipográfico editorial.
-- ❌ **NO generar layouts sin jerarquía visual clara** o tarjetas blancas planas estilo plantilla básica.
-- ❌ **NO usar colores planos** sin gradientes atmosféricos, texturas o iluminación ambiental.
-- ❌ **NO entregar un diseño sin auditarlo** con `web-design-guidelines`.
-
-### 🔄 FLUJO DE TRABAJO OBLIGATORIO PARA CADA LANDING PAGE
-1. **Fase de Concepto**: Usa `gpt-taste` para definir la estructura AIDA, la propuesta única de valor y el tono visual adaptado al nicho.
-2. **Fase de Sistema de Diseño**: Usa `fable-design-system` para declarar tipografía, paleta de colores de marca y escala proporcional.
-3. **Fase de Desarrollo**: Usa `frontend-design` y `cinematic-landing-kit` para codificar el HTML auto-contenido con video background MP4 HD y micro-interacciones.
-4. **Fase de Auditoría**: Usa `web-design-guidelines` para revisar responsive móvil ($\le 375$px), touch targets ($\ge 44$px) y contraste.
-5. **Fase de Entrega**: Presenta la LP con una explicación clara de las decisiones de diseño premium implementadas.
+- **El sistema de diseño rígido queda reseteado por completo.**
+- **De ahora en adelante, el usuario dará las instrucciones de diseño directamente para cada Landing Page** (estructura, estética, paleta de colores, tipografía, componentes y animaciones).
+- No imponer plantillas ni esquemas forzados: cada LP se construirá siguiendo estrictamente los requerimientos, preferencias y estilo que el usuario indique en su solicitud.
+- Se mantiene el estándar técnico: HTML auto-contenido, responsive nativo, carga rápida y WhatsApp directo al número del negocio.
 
 ---
 
@@ -700,33 +636,14 @@ git push origin main
 
 ---
 
-## 🍸 Framework Estándar para Landing Pages de Entretenimiento & Bares
+## 🎯 Enfoque de Diseño para Landing Pages
 
-Al crear o rediseñar propuestas para bares, discotecas o gastrobares, seguir obligatoriamente este patrón:
-
-1. **Identidad Visual Diferenciada**:
-   - Cada propuesta debe tener una paleta de color única de 4-5 tonos (Fondo oscuro profundo, color dominante de marca, color de acento brillante, texto luminoso y bordes con baja opacidad).
-   - Tipografía con personalidad: Display potente (`Syne`, `Cinzel`, `Plus Jakarta Sans`) combinada con cuerpo geométrico limpio (`Inter`, `Plus Jakarta Sans`).
-
-2. **Video Hero MP4 Directo**:
-   - Usar enlaces directos a Mixkit CDN (`https://assets.mixkit.co/videos/{id}/{id}-720.mp4`).
-   - `preload="auto"`, `autoplay`, `muted`, `loop`, `playsinline`.
-   - Opacidad del video $\ge 0.9$ con gradiente superior/inferior transparente a negro para garantizar protagonismo visual.
-
-3. **Módulo Interactivo Distintivo**:
-   - Incluir siempre un componente interactivo nativo JS sin recarga de página (ej. Selector de géneros musicales, pizarrón de barriles con medidores ABV/IBU, o simulador del ritual de ingreso speakeasy).
-
-4. **Generador Dinámico de Reservas a WhatsApp**:
-   - Los formularios no envían a un backend tradicional: capturan los inputs del usuario (día, número de personas, motivo/área) y construyen una URL de WhatsApp codificada (`encodeURIComponent`) con el mensaje pre-redactado listo para enviar.
-
-5. **Galería con Modal Lightbox Accesible**:
-   - Grid responsive de imágenes HD con efecto hover zoom.
-   - Lightbox modal en pantalla completa con soporte táctil, botón de cierre claro y evento de teclado `Esc`.
-
-6. **Garantía Responsive (Mobile-First)**:
-   - `overflow-x: hidden` en `html` y `body`.
-   - Botones apilados verticalmente en pantallas $\le 480$px.
-   - Botón flotante de WhatsApp fijado en `bottom: 24px; right: 24px; z-index: 9999;` con `touch-target` $\ge 44\times 44$px.
+- **100% Guiado por el Usuario**: El diseño, estilo, componentes y narrativa visual de cada LP se adaptan a las instrucciones específicas que el usuario entregue en cada solicitud.
+- **Estándar Técnico Mínimo**:
+  - Código limpio en un único archivo HTML auto-contenido (CSS y JS embebidos, librerías por CDN).
+  - Responsive Mobile-First (`overflow-x: hidden`, touch-targets accesibles $\ge 44$px).
+  - Botón de WhatsApp y enlaces directos con información real del negocio.
+  - Carga rápida y sin bloqueos de navegación.
 
 ---
 
