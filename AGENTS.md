@@ -42,7 +42,7 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - `datos.json` es espejo de DATA para respaldo manual
 - No requiere build steps, ni npm, ni servidor
 
-## Datos actuales: 84 negocios
+## Datos actuales: 154 negocios
 
 | Tipo | Sin web | Solo redes | Con web | Total |
 |------|---------|------------|---------|-------|
@@ -51,17 +51,18 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 | Tiendas alimentación | 7 | 0 | 0 | 7 |
 | Tienda regalos | 1 | 0 | 0 | 1 |
 | Alquiler trajes / vestidos / boutiques | 0 | 1 | 13 | 14 |
-| Otros (paellas, lechona, café, etc.) | 0 | 0 | 3 | 3 |
-| **Salones de uñas / Spa / Estética** | **6** | **4** | **10** | **20** |
-| **Total** | **24** | **20** | **40** | **84** |
+| Salones de uñas / Spa / Estética | 6 | 4 | 10 | 20 |
+| Odontología / Clínicas Dentales | 2 | 0 | 28 | 30 |
+| Bares / Pubs / Discotecas | 0 | 0 | 17 | 17 |
+| Veterinarias / Pet Shops | 7 | 0 | 3 | 10 |
+| **Energía Solar / Paneles Solares** | **0** | **10** | **0** | **10** |
+| Otros (paellas, lechona, café, etc.) | 0 | 0 | 4 | 4 |
+| **Total** | **33** | **39** | **82** | **154** |
 
-> Columnas reales: Sin web **24**, Solo redes **19**, Con web **41**, Total **84** (la tabla por categoría es aproximada)
-
-- IDs activos: b1-b25, b30-b34, b36-b41, b50-b97
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b167
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
-- Talleres eliminados y reemplazados en sesión 6: b9, b10, b18, b20, b21, b22, b24, b25, b33, b38, b39, b40, b41
-- **Nuevos salones de uñas/spa agregados en sesión 16 (b78-b97): 20 negocios con datos cruzados Google Maps + Instagram**
+- **Nuevos negocios de Energía Solar agregados en sesión 24 (b158-b167): 10 negocios sin sitio web con redes sociales y WhatsApp verificados**
 
 ## Archivos del proyecto
 
@@ -686,6 +687,24 @@ git push origin main
   - Se verificó que todas las páginas conservan la totalidad de sus secciones (Hero con video de fondo a `opacity: 0.92`, Galería con Lightbox, Testimonios, Menús/Precios, Formulario a WhatsApp, Mapas y Horarios).
   - Se realizó el redespliegue completo a producción en **Vercel** de los 22 proyectos desde el servidor `cultura`.
   - Se sincronizaron todos los cambios en el repositorio de GitHub (`fc474f9`).
+
+### Sesión 24 (2026-08-30) — 10 Nuevos Negocios de Energía Solar sin Sitio Web
+- Se investigaron y agregaron 10 negocios del sector de energía solar, kits fotovoltaicos y paneles solares en Bogotá (IDs `b158` a `b167`).
+- Todos bajo una única categoría unificada: **`Energía Solar`**.
+- Todos clasificados como `social-only` (sin sitio web propio, canales activos en WhatsApp, Facebook e Instagram):
+  - `b158`: Tierra Solar Colombia (Kennedy / Castilla)
+  - `b159`: Atsei de Colombia - Energía Solar (Barrios Unidos / Alcázares)
+  - `b160`: Sun Energy Bogotá (Centro / Santa Fe)
+  - `b161`: P-Solar Proyectos de Energía Solar (Fontibón / Montevideo)
+  - `b162`: Les Energías Renovables (Barrios Unidos / 7 de Agosto)
+  - `b163`: TB Plus Energy (Engativá / Las Ferias)
+  - `b164`: ZAC Electricidad & Energía Solar (Engativá / Minuto de Dios)
+  - `b165`: JCR Energy Paneles Solares (Chapinero / El Nogal)
+  - `b166`: Colpilas Energía Solar & Baterías (Puente Aranda / Galán)
+  - `b167`: Mati Energía Solar (Barrios Unidos / San Felipe)
+- Se actualizaron `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
+- Sincronización exitosa con servidor backend SQLite en Oracle Cloud ARM (`cultura`), alcanzando **154 negocios** totales.
+- Verificación de sintaxis con `node --check` superada con 0 errores.
 
 ---
 

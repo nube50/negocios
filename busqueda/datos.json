@@ -3310,5 +3310,275 @@
     "lat": 4.671,
     "lng": -74.057,
     "propuesta": ""
+  },
+  {
+    "id": "b158",
+    "name": "Tierra Solar Colombia",
+    "cat": "Energía Solar",
+    "addr": "Calle 7a # 74-79, Rincón de Los Ángeles - Castilla, Kennedy, Bogotá",
+    "phone": "+57 311 8247899",
+    "phoneClean": "573118247899",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573118247899",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/tierrasolarcolombia",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6468,
+    "lng": -74.1481,
+    "propuesta": ""
+  },
+  {
+    "id": "b159",
+    "name": "Atsei de Colombia - Energía Solar",
+    "cat": "Energía Solar",
+    "addr": "Calle 76 # 28B-05, Alcázares, Barrios Unidos, Bogotá",
+    "phone": "+57 300 7671405",
+    "phoneClean": "573007671405",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573007671405",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/atseicolombia",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6647,
+    "lng": -74.0692,
+    "propuesta": ""
+  },
+  {
+    "id": "b160",
+    "name": "Sun Energy Bogotá",
+    "cat": "Energía Solar",
+    "addr": "Carrera 12 # 19-76, Centro / Santa Fe, Bogotá",
+    "phone": "+57 320 3405497",
+    "phoneClean": "573203405497",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573203405497",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/sunenergycolombia",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6062,
+    "lng": -74.0728,
+    "propuesta": ""
+  },
+  {
+    "id": "b161",
+    "name": "P-Solar Proyectos de Energía Solar",
+    "cat": "Energía Solar",
+    "addr": "Carrera 68D # 13-40, Montevideo, Fontibón, Bogotá",
+    "phone": "+57 315 6157559",
+    "phoneClean": "573156157559",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573156157559",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/psolarcolombia",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6482,
+    "lng": -74.1205,
+    "propuesta": ""
+  },
+  {
+    "id": "b162",
+    "name": "Les Energías Renovables",
+    "cat": "Energía Solar",
+    "addr": "Carrera 24 # 63C-30, 7 de Agosto, Barrios Unidos, Bogotá",
+    "phone": "+57 304 3580803",
+    "phoneClean": "573043580803",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573043580803",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/les_energias_renovables",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/lesenergiasrenovables",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6528,
+    "lng": -74.0711,
+    "propuesta": ""
+  },
+  {
+    "id": "b163",
+    "name": "TB Plus Energy",
+    "cat": "Energía Solar",
+    "addr": "Calle 80 # 69-70, Bodega 35, Las Ferias, Engativá, Bogotá",
+    "phone": "+57 320 2563555",
+    "phoneClean": "573202563555",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573202563555",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/tbplusenergy",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6895,
+    "lng": -74.0883,
+    "propuesta": ""
+  },
+  {
+    "id": "b164",
+    "name": "ZAC Electricidad & Energía Solar",
+    "cat": "Energía Solar",
+    "addr": "Carrera 111 # 77-15, Minuto de Dios / Quirigua, Engativá, Bogotá",
+    "phone": "+57 310 8129450",
+    "phoneClean": "573108129450",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573108129450",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/zacelectricidad",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.7082,
+    "lng": -74.1245,
+    "propuesta": ""
+  },
+  {
+    "id": "b165",
+    "name": "JCR Energy Paneles Solares",
+    "cat": "Energía Solar",
+    "addr": "Carrera 12 # 79-08, El Nogal, Chapinero, Bogotá",
+    "phone": "+57 304 4128390",
+    "phoneClean": "573044128390",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573044128390",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/jcrenergy_col",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.6651,
+    "lng": -74.0583,
+    "propuesta": ""
+  },
+  {
+    "id": "b166",
+    "name": "Colpilas Energía Solar & Baterías",
+    "cat": "Energía Solar",
+    "addr": "Carrera 56 # 4B-84, Piso 2, Galán, Puente Aranda, Bogotá",
+    "phone": "+57 322 9120966",
+    "phoneClean": "573229120966",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573229120966",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/colpilas.colombia",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6215,
+    "lng": -74.1162,
+    "propuesta": ""
+  },
+  {
+    "id": "b167",
+    "name": "Mati Energía Solar",
+    "cat": "Energía Solar",
+    "addr": "Calle 68 # 20-45, San Felipe, Barrios Unidos, Bogotá",
+    "phone": "+57 300 6837081",
+    "phoneClean": "573006837081",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573006837081",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/mati_energiasolar",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/matienergiasolar",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6568,
+    "lng": -74.0684,
+    "propuesta": ""
   }
 ]
