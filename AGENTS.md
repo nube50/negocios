@@ -70,10 +70,21 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - `busqueda/datos.json` — respaldo JSON de los datos
 - `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
   - `sun-energy-bogota.html` — Sun Energy Bogotá (Energía Solar Fotovoltaica)
+  - `tierra-solar.html` — Tierra Solar Colombia (Energía Solar Fotovoltaica)
+  - `atsei-energia-solar.html` — Atsei de Colombia (Energía Solar Fotovoltaica)
+  - `p-solar.html` — P-Solar Proyectos de Energía Solar
+  - `les-energias-renovables.html` — Les Energías Renovables
+  - `tb-plus-energy.html` — TB Plus Energy (Almacenamiento LFP & Solar)
+  - `zac-electricidad.html` — ZAC Electricidad & Energía Solar
+  - `jcr-energy.html` — JCR Energy Paneles Solares (Luxury Solar)
+  - `colpilas-energia-solar.html` — Colpilas Energía Solar & Baterías
+  - `mati-energia-solar.html` — Mati Energía Solar (Creative & Residential Solar)
   - `sarta-bguest.html` — Sarta & Bguest
   - `paola-dimaya.html` — Paola Dimaya Alta Costura
   - `stacia-store.html` — Stacia Store (Luxury Brand, Armenia)
   - `benefit-ropa-tallas-grandes.html` — BeneFit Ropa Tallas Grandes
+- `design-systems/` — regencias y sistemas de diseño guardados
+  - `solar-premium-cinetico-v1.md` — Regencia Visual Solar Premium Cinético v1.0
 - `recursos/` — assets/imágenes (vacío, usamos CDN)
 - `opencode.json` — config MCP de Apify
 - `AGENTS.md` — este archivo

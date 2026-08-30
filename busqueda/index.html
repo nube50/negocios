@@ -234,160 +234,3598 @@ var API_URL = 'https://agy.culturavpn.pro/api';
 var API_KEY = '';
 var STORAGE_KEY = 'prospeccion_bogota';
 var DATA_FALLBACK = [
-  {id:"b1",name:"Restaurante Tabasco - Comida Tradicional Mexicana",cat:"Restaurante",addr:"Cra. 99 #20B-40, Fontibon",phone:"+57 310 3077085",phoneClean:"573103077085",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573103077085",label:"WhatsApp"}],propuesta:""},
-  {id:"b2",name:"El sazon de las Paisas",cat:"Restaurante",addr:"Cl. 71A #90b - 25, Bogota",phone:"+57 313 3534064",phoneClean:"573133534064",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573133534064",label:"WhatsApp"}],propuesta:""},
-  {id:"b3",name:"Tranvia Restaurante",cat:"Restaurante",addr:"Cra. 103d #8315, Bogota",phone:"+57 14314507",phoneClean:"5714314507",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/5714314507",label:"WhatsApp"}],propuesta:""},
-  {id:"b4",name:"Restaurante El Fogon De Mi Tierra",cat:"Restaurante",addr:"Cra. 71a #63A-08, Bogota",phone:"+57 313 3748762",phoneClean:"573133748762",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573133748762",label:"WhatsApp"}],propuesta:""},
-  {id:"b5",name:"Pasion Y Sazon",cat:"Restaurante",addr:"Carrera 113 #75-26, Bogota",phone:"+57 322 3675640",phoneClean:"573223675640",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573223675640",label:"WhatsApp"}],propuesta:""},
-  {id:"b6",name:"El Rincon del Chicamocha",cat:"Restaurante familiar",addr:"Cra. 69 #64F-14, Engativa",phone:"+57 322 9071444",phoneClean:"573229071444",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573229071444",label:"WhatsApp"}],propuesta:""},
-  {id:"b7",name:"Restaurante L'Escoffier",cat:"Restaurante",addr:"Cra. 69a #6520, Bogota",phone:"+57 324 6238800",phoneClean:"573246238800",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573246238800",label:"WhatsApp"}],propuesta:""},
-  {id:"b8",name:"La Bolonesa cafe Ristorante",cat:"Restaurante italiano",addr:"Cl 72 #99-4, Bogota",phone:"+57 310 7933967",phoneClean:"573107933967",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573107933967",label:"WhatsApp"}],propuesta:"https://lp-la-bolonesa.vercel.app",priority:"hot"},
-  {id:"b9",name:"Vestidos de Baño Bogotá",cat:"Vestidos de Baño / Ropa de Playa",addr:"Restrepo, Bogotá",phone:"+57 310 788 1548",phoneClean:"573107881548",webType:"social-only",webUrl:"https://instagram.com/vestidos_banobogota",webLabel:"instagram.com",social:[{platform:"whatsapp",url:"https://wa.me/573107881548",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/vestidos_banobogota",label:"Instagram"}],propuesta:""},
-  {id:"b10",name:"Fajas y Moda",cat:"Ropa Femenina / Fajas",addr:"Calle 140 No. 11-58, CC La Puerta del Sol, Cedritos",phone:"+57 300 535 4876",phoneClean:"573005354876",webType:"social-only",webUrl:"https://instagram.com/fajasymoda_bogota",webLabel:"instagram.com",social:[{platform:"whatsapp",url:"https://wa.me/573005354876",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/fajasymoda_bogota",label:"Instagram"}],propuesta:""},
-  {id:"b11",name:"Tienda Don Juan",cat:"Tienda de alimentacion",addr:"Cra. 73a, Zona 6, Bogota",phone:"+57 12524691",phoneClean:"5712524691",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/5712524691",label:"WhatsApp"}],propuesta:""},
-  {id:"b12",name:"Tienda de Barrio",cat:"Tienda de alimentacion",addr:"Cl. 64F #73, Zona 6",phone:"+57 310 8714075",phoneClean:"573108714075",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573108714075",label:"WhatsApp"}],propuesta:""},
-  {id:"b13",name:"TIENDASTORES",cat:"Tienda de alimentacion",addr:"Cra. 112A #75C-09, Engativa",phone:"+57 18116587",phoneClean:"5718116587",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/5718116587",label:"WhatsApp"}],propuesta:""},
-  {id:"b14",name:"Tienda El Palmar",cat:"Tienda de alimentacion",addr:"Cra. 89A #83-C, Engativa",phone:"+57 14633760",phoneClean:"5714633760",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/5714633760",label:"WhatsApp"}],propuesta:""},
-  {id:"b15",name:"Tienda (Tv. 94 L)",cat:"Tienda de alimentacion",addr:"Tv. 94 L #80-39, Engativa",phone:"+57 12289192",phoneClean:"5712289192",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/5712289192",label:"WhatsApp"}],propuesta:""},
-  {id:"b16",name:"Tienda La Vina",cat:"Tienda de alimentacion",addr:"Cra. 71d #72 B, Bogota",phone:"+57 301 2034240",phoneClean:"573012034240",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573012034240",label:"WhatsApp"}],propuesta:""},
-  {id:"b17",name:"Tienda De La Carrera 91",cat:"Tienda de alimentacion",addr:"Av. Cra. 91 #147 B 91, Suba",phone:"+57 16810306",phoneClean:"5716810306",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/5716810306",label:"WhatsApp"}],propuesta:""},
-  {id:"b18",name:"AKA",cat:"Moda y Accesorios",addr:"Centro Mayor Local 1-016, Bogotá",phone:"+57 311 595 3856",phoneClean:"573115953856",webType:"social-only",webUrl:"https://instagram.com/tiendasaka",webLabel:"instagram.com",social:[{platform:"whatsapp",url:"https://wa.me/573115953856",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/tiendasaka",label:"Instagram"}],propuesta:""},
-  {id:"b19",name:"La Tienda Favorita",cat:"Tienda de regalos",addr:"Carrera 92 # 64C 59, Bogota",phone:"+57 317 4030580",phoneClean:"573174030580",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573174030580",label:"WhatsApp"}],propuesta:""},
-  {id:"b20",name:"Shaloom Boutique y Accesorios",cat:"Boutique / Ropa Mujer",addr:"Carrera 104a #20-33 Of 306, Fontibón",phone:"+57 1 415 0091",phoneClean:"5714150091",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/5714150091",label:"WhatsApp"}],propuesta:""},
-  {id:"b21",name:"Seventh",cat:"Ropa Formal Mujer",addr:"CC Hacienda Santa Bárbara Local D211, Usaquén",phone:"+57 1 612 2281",phoneClean:"5716122281",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/5716122281",label:"WhatsApp"}],propuesta:""},
-  {id:"b22",name:"Maria Mulata",cat:"Ropa Rockera / Alternativa",addr:"Calle 140 #9-69, Feria artesanal Local ñ12, Bogotá",phone:"+57 305 429 9909",phoneClean:"573054299909",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573054299909",label:"WhatsApp"}],propuesta:""},
-  {id:"b23",name:"Restaurante Azul Clarito",cat:"Restaurante",addr:"Cl. 86 #103 d 07, Bogota",phone:"+57 304 3333626",phoneClean:"573043333626",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573043333626",label:"WhatsApp"}],propuesta:""},
-  {id:"b24",name:"Stacia Store",cat:"Tienda de Ropa",addr:"Calle 22 #14-53, Bogotá",phone:"+57 300 478 0637",phoneClean:"573004780637",webType:"social-only",webUrl:"https://instagram.com/stacia_store",webLabel:"instagram.com",social:[{platform:"whatsapp",url:"https://wa.me/573004780637",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/stacia_store",label:"Instagram"}],propuesta:"https://lp-stacia-store.vercel.app",priority:"hot"},
-  {id:"b25",name:"Somo Ilius",cat:"Ropa Unisex",addr:"Barrio Perdomo, Bogotá",phone:"+57 322 374 4097",phoneClean:"573223744097",webType:"social-only",webUrl:"https://instagram.com/ilius1_",webLabel:"instagram.com",social:[{platform:"whatsapp",url:"https://wa.me/573223744097",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/ilius1_",label:"Instagram"}],propuesta:""},
-  {id:"b30",name:"Restaurante Buque Gourmet",cat:"Restaurante",addr:"Cl. 22b # 42-15, Bogota",phone:"+57 314 3429820",phoneClean:"573143429820",webType:"social-only",webUrl:"https://instagram.com/restaurantebuque",webLabel:"instagram.com",social:[{platform:"whatsapp",url:"https://wa.me/573143429820",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/restaurantebuque",label:"Instagram"}],propuesta:""},
-  {id:"b31",name:"Restaurante Luna de Paris",cat:"Restaurante",addr:"Cl. 86 #103d - 19, Engativa",phone:"+57 310 3091475",phoneClean:"573103091475",webType:"social-only",webUrl:"https://www.facebook.com/lunadeparisgourmet",webLabel:"facebook.com",social:[{platform:"whatsapp",url:"https://wa.me/573103091475",label:"WhatsApp"},{platform:"facebook",url:"https://www.facebook.com/lunadeparisgourmet",label:"Facebook"}],propuesta:""},
-  {id:"b32",name:"La nostra famiglia",cat:"Restaurante italiano",addr:"Tv. 96a #76b-81, Engativa",phone:"+57 320 2002512",phoneClean:"573202002512",webType:"social-only",webUrl:"https://wa.me/message/RZNR3TPBASSHO1",webLabel:"wa.me",social:[{platform:"whatsapp",url:"https://wa.me/573202002512",label:"WhatsApp"}],propuesta:""},
-  {id:"b33",name:"Gothic Store",cat:"Ropa Gótica / Alternativa",addr:"Engativá, Bogotá",phone:"+57 304 497 4326",phoneClean:"573044974326",webType:"social-only",webUrl:"https://facebook.com/GothicStoreBogota",webLabel:"facebook.com",social:[{platform:"whatsapp",url:"https://wa.me/573044974326",label:"WhatsApp"},{platform:"facebook",url:"https://facebook.com/GothicStoreBogota",label:"Facebook"}],propuesta:""},
-  {id:"b34",name:"Bocatoma Comida Casual",cat:"Restaurante",addr:"Tv. 113f #67b09, Bogota",phone:"+57 311 2462241",phoneClean:"573112462241",webType:"social-only",webUrl:"http://facebook.com/profile.php?id=843410249106742",webLabel:"facebook.com",social:[{platform:"whatsapp",url:"https://wa.me/573112462241",label:"WhatsApp"},{platform:"facebook",url:"http://facebook.com/profile.php?id=843410249106742",label:"Facebook"}],propuesta:""},
-  {id:"b36",name:"Restaurante Saira",cat:"Restaurante",addr:"Cl. 9 #78-43, Bogota",phone:"+57 302 3280777",phoneClean:"573023280777",webType:"has-web",webUrl:"http://www.restaurantesaira.com/",webLabel:"restaurantesaira.com",social:[{platform:"whatsapp",url:"https://wa.me/573023280777",label:"WhatsApp"}],propuesta:""},
-  {id:"b37",name:"IL NONNO Trattoria de Barrio",cat:"Restaurante italiano",addr:"Dg. 81g #76 b 03, Engativa",phone:"+57 304 6578373",phoneClean:"573046578373",webType:"has-web",webUrl:"http://www.ilnonno.co/",webLabel:"ilnonno.co",social:[{platform:"whatsapp",url:"https://wa.me/573046578373",label:"WhatsApp"}],propuesta:""},
-  {id:"b38",name:"Violeta Inesperada",cat:"Boutique Vintage / Ropa",addr:"Bogotá",phone:"+57 319 381 4367",phoneClean:"573193814367",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573193814367",label:"WhatsApp"}],propuesta:""},
-  {id:"b39",name:"Avril Boutique",cat:"Boutique de Moda",addr:"Calle 156 #7C-44, Bogotá",phone:"+57 319 318 3824",phoneClean:"573193183824",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573193183824",label:"WhatsApp"}],propuesta:""},
-  {id:"b40",name:"Amatita Bisutería",cat:"Bisutería Artesanal",addr:"Calle 147 101-57 Local 240, CC Fiesta Suba",phone:"+57 321 393 2805",phoneClean:"573213932805",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573213932805",label:"WhatsApp"}],propuesta:""},
-  {id:"b41",name:"Inrya - Ropa Hindú",cat:"Ropa Hindú / Moda Oriental",addr:"Cra. 58 #137B-01, CC Porto Alegre Local 123, Bogotá",phone:"+57 312 341 5807",phoneClean:"573123415807",webType:"has-web",webUrl:"https://inrya.ueniweb.com",webLabel:"inrya.ueniweb.com",social:[{platform:"whatsapp",url:"https://wa.me/573123415807",label:"WhatsApp"}],propuesta:""},
-  {id:"b50",name:"ZeQueda Paellas",cat:"Paellas a Domicilio",addr:"Bogotá (envíos a Bogotá, Chía y Sabana Norte)",phone:"+57 322 436 6350",phoneClean:"573224366350",webType:"has-web",webUrl:"https://zequedapaellas.com/",webLabel:"zequedapaellas.com",social:[{platform:"whatsapp",url:"https://wa.me/573224366350",label:"WhatsApp"}],propuesta:"https://lp-zequeda-paellas.vercel.app",priority:"hot"},
-  {id:"b51",name:"Lechonería La Exquisita",cat:"Lechonería",addr:"Calle 28sur #18a-70, Bogotá",phone:"+57 317 522 4626",phoneClean:"573175224626",webType:"has-web",webUrl:"https://lechonadomicilio.com/",webLabel:"lechonadomicilio.com",social:[{platform:"whatsapp",url:"https://wa.me/573175224626",label:"WhatsApp"}],propuesta:""},
-  {id:"b52",name:"Naguara Lunch",cat:"Comida Rápida Venezolana",addr:"Carrera 23c #32-46 Sur, Bogotá",phone:"+57 323 735 1526",phoneClean:"573237351526",webType:"has-web",webUrl:"https://pepitosng.com/",webLabel:"pepitosng.com",social:[{platform:"whatsapp",url:"https://wa.me/573237351526",label:"WhatsApp"}],propuesta:""},
-  {id:"b53",name:"Café Monstruo",cat:"Cafetería / Pizzería",addr:"Carrera 18 #84-84, Bogotá",phone:"+57 311 261 5249",phoneClean:"573112615249",webType:"has-web",webUrl:"https://cafemonstruo.com/",webLabel:"cafemonstruo.com",social:[{platform:"whatsapp",url:"https://wa.me/573112615249",label:"WhatsApp"}],propuesta:""},
-  {id:"b54",name:"Pizzardi Artigianale",cat:"Pizzería",addr:"Calle 81 #11-17, Bogotá",phone:"+57 310 221 1729",phoneClean:"573102211729",webType:"has-web",webUrl:"https://www.pizzardi.com.co/",webLabel:"pizzardi.com.co",social:[{platform:"whatsapp",url:"https://wa.me/573102211729",label:"WhatsApp"}],propuesta:""},
-  {id:"b55",name:"Diestro Restaurante",cat:"Restaurante (Comida Española)",addr:"Bogotá (norte)",phone:"+57 310 879 1933",phoneClean:"573108791933",webType:"has-web",webUrl:"https://diestrorestaurante.com/",webLabel:"diestrorestaurante.com",social:[{platform:"whatsapp",url:"https://wa.me/573108791933",label:"WhatsApp"}],propuesta:""},
-  {id:"b56",name:"La Churrasquería Beef & Wine",cat:"Parrilla",addr:"Calle 69 #10A-35, Quinta Camacho, Bogotá",phone:"+57 319 538 4563",phoneClean:"573195384563",webType:"has-web",webUrl:"https://lachurrasqueria.com/",webLabel:"lachurrasqueria.com",social:[{platform:"whatsapp",url:"https://wa.me/573195384563",label:"WhatsApp"}],propuesta:"https://lp-la-churrasqueria.vercel.app",priority:"hot"},
-  {id:"b57",name:"Don Jediondo Sopitas y Parrilla",cat:"Restaurante (Comida Tradicional Colombiana)",addr:"Carrera 59b #79b-50, Bogotá",phone:"+57 311 491 1522",phoneClean:"573114911522",webType:"has-web",webUrl:"https://donjediondo.com/",webLabel:"donjediondo.com",social:[{platform:"whatsapp",url:"https://wa.me/573114911522",label:"WhatsApp"}],propuesta:""},
-  {id:"b58",name:"La Puerta de la Catedral",cat:"Restaurante (Cocina Colombiana)",addr:"Calle 11 #6-16, La Candelaria, Bogotá",phone:"+57 316 405 1805",phoneClean:"573164051805",webType:"has-web",webUrl:"https://www.lapuertadelacatedral.com/",webLabel:"lapuertadelacatedral.com",social:[{platform:"whatsapp",url:"https://wa.me/573164051805",label:"WhatsApp"}],propuesta:""},
-  {id:"b59",name:"Tamalechona",cat:"Comida Típica (Lechona y Tamales)",addr:"Calle 77 #100B-28, Bogotá",phone:"+57 322 785 0936",phoneClean:"573227850936",webType:"has-web",webUrl:"https://tamalechona.com/",webLabel:"tamalechona.com",social:[{platform:"whatsapp",url:"https://wa.me/573227850936",label:"WhatsApp"}],propuesta:""},
-  {id:"b60",name:"El Rey de la Lechona",cat:"Lechonería",addr:"Av. Caracas 28b-37 Sur, Barrio Olaya, Bogotá",phone:"+57 314 379 9074",phoneClean:"573143799074",webType:"has-web",webUrl:"https://elreydelalechona.co/",webLabel:"elreydelalechona.co",social:[{platform:"whatsapp",url:"https://wa.me/573143799074",label:"WhatsApp"}],propuesta:""},
-  {id:"b61",name:"Roerik Café y Pizzería",cat:"Cafetería / Pizzería",addr:"Calle 174a #49B-06, Suba, Bogotá",phone:"+57 1 674 3901",phoneClean:"5716743901",webType:"has-web",webUrl:"https://roerik.com/",webLabel:"roerik.com",social:[{platform:"whatsapp",url:"https://wa.me/5716743901",label:"WhatsApp"}],propuesta:""},
-  {id:"b62",name:"Bella Suiza Panadería y Pastelería",cat:"Panadería / Pastelería",addr:"Calle 132 #7A-91, Bella Suiza, Bogotá",phone:"+57 314 356 0172",phoneClean:"573143560172",webType:"has-web",webUrl:"https://www.panaderiabellasuiza.com/",webLabel:"panaderiabellasuiza.com",social:[{platform:"whatsapp",url:"https://wa.me/573143560172",label:"WhatsApp"}],propuesta:""},
-  {id:"b63",name:"XL Gourmet",cat:"Comida Rápida (Hamburguesas)",addr:"Calle 8va Sur #32D-12, Ciudad Montes, Bogotá",phone:"+57 320 803 2421",phoneClean:"573208032421",webType:"has-web",webUrl:"https://www.xlgourmet.com/",webLabel:"xlgourmet.com",social:[{platform:"whatsapp",url:"https://wa.me/573208032421",label:"WhatsApp"}],propuesta:""},
-  {id:"b64",name:"Gustavo Parra Design",cat:"Alquiler de Trajes / Smoking",addr:"Tv. 76 #84-25, Bogotá",phone:"+57 301 619 3899",webType:"has-web",webUrl:"https://gustavoparradesign.com",webLabel:"gustavoparradesign.com",phoneClean:"573016193899",social:[{platform:"whatsapp",url:"https://wa.me/573016193899",label:"WhatsApp"}],propuesta:"https://lp-gustavo-parra.vercel.app",priority:"hot"},
-  {id:"b65",name:"Elegance Sastrería",cat:"Sastrería / Alquiler Smoking",addr:"Cl. 127D #58-12, Bogotá",phone:"+57 311 539 8539",webType:"has-web",webUrl:"https://elegancesastreria.com",webLabel:"elegancesastreria.com",phoneClean:"573115398539",social:[{platform:"whatsapp",url:"https://wa.me/573115398539",label:"WhatsApp"}],propuesta:""},
-  {id:"b66",name:"BeneFit Ropa Tallas Grandes",cat:"Ropa Mujer Tallas Grandes",addr:"Cl. 109 #18C-10, Bogotá",phone:"+57 300 203 5911",webType:"has-web",webUrl:"http://www.b-fit.com.co",webLabel:"b-fit.com.co",phoneClean:"573002035911",social:[{platform:"whatsapp",url:"https://wa.me/573002035911",label:"WhatsApp"}],propuesta:"https://lp-benefit.vercel.app",priority:"hot"},
-  {id:"b67",name:"Jenne Riveros Designer",cat:"Vestidos de Novia",addr:"Cra. 58 128B-21, Bogotá",phone:"+57 321 218 3037",webType:"has-web",webUrl:"https://vestidosdenovia.company.site",webLabel:"vestidosdenovia.company.site",phoneClean:"573212183037",social:[{platform:"whatsapp",url:"https://wa.me/573212183037",label:"WhatsApp"}],propuesta:"https://lp-jenne-riveros.vercel.app",priority:"hot"},
-  {id:"b68",name:"Alquiler Smoking Bogotá",cat:"Alquiler de Smoking / Trajes",addr:"Bogotá",phone:"+57 301 625 6476",webType:"has-web",webUrl:"https://alquilersmokingbogota.com",webLabel:"alquilersmokingbogota.com",phoneClean:"573016256476",social:[{platform:"whatsapp",url:"https://wa.me/573016256476",label:"WhatsApp"}],propuesta:""},
-  {id:"b69",name:"Click2Dress",cat:"Alquiler de Vestidos de Fiesta",addr:"Cl. 93B #11A-84 Local 302, CC Portobelo, Bogotá",phone:"+57 320 948 1061",webType:"has-web",webUrl:"https://click2dress.com",webLabel:"click2dress.com",phoneClean:"573209481061",social:[{platform:"whatsapp",url:"https://wa.me/573209481061",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/click2dress/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/alquilerdevestidosclick2dress/",label:"Facebook"}],propuesta:""},
-  {id:"b70",name:"Paola Dimaya Alta Costura",cat:"Alquiler Trajes de Etiqueta",addr:"Cra. 13A #88-55, Bogotá",phone:"+57 301 625 6476",webType:"has-web",webUrl:"https://www.paoladimaya.com",webLabel:"paoladimaya.com",phoneClean:"573016256476",social:[{platform:"whatsapp",url:"https://wa.me/573016256476",label:"WhatsApp"},{platform:"whatsapp",url:"https://wa.me/573182004949",label:"WhatsApp"}],propuesta:"https://lp-paola-dimaya.vercel.app",priority:"hot"},
-  {id:"b71",name:"Sarta & Bguest",cat:"Alquiler de Vestidos",addr:"Cra. 11A #95-15, Bogotá",phone:"+57 313 870 7291",webType:"has-web",webUrl:"https://sarta-bguest.com",webLabel:"sarta-bguest.com",phoneClean:"573138707291",social:[{platform:"whatsapp",url:"https://wa.me/573138707291",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/sartavestidos",label:"Instagram"},{platform:"instagram",url:"https://instagram.com/bguest.co",label:"Instagram"}],propuesta:"https://lp-sarta-bguest.vercel.app",priority:"hot"},
-  {id:"b72",name:"Cherie Boutique",cat:"Boutique / Ropa Mujer",addr:"CR. 15 #123-30, CC Unicentro Local 2-109, Bogotá",phone:"+57 315 863 1774",webType:"has-web",webUrl:"https://cherie.com.co",webLabel:"cherie.com.co",phoneClean:"573158631774",social:[{platform:"whatsapp",url:"https://wa.me/573158631774",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/cheriemoda",label:"Instagram"}],propuesta:""},
-  {id:"b73",name:"By Caicedo",cat:"Ropa Mujer / Moda Femenina",addr:"Bogotá",phone:"+57 300 856 3936",webType:"has-web",webUrl:"https://bycaicedo.com",webLabel:"bycaicedo.com",phoneClean:"573008563936",social:[{platform:"whatsapp",url:"https://wa.me/573008563936",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/bycaicedo/",label:"Instagram"},{platform:"facebook",url:"https://web.facebook.com/bycaicedo/",label:"Facebook"}],propuesta:"https://lp-karissa-moda.vercel.app",priority:"hot"},
-  {id:"b74",name:"Karissa Moda",cat:"Ropa Mujer / Moda Femenina",addr:"Cra. 11 #10-27, Bogotá",phone:"+57 311 353 6499",webType:"has-web",webUrl:"https://karissamoda.com",webLabel:"karissamoda.com",phoneClean:"573113536499",social:[{platform:"whatsapp",url:"https://wa.me/573113536499",label:"WhatsApp (principal)"},{platform:"instagram",url:"https://www.instagram.com/karissa_moda/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/profile.php?id=61573952170844",label:"Facebook"},{platform:"tiktok",url:"https://www.tiktok.com/@_karissa4",label:"TikTok"},{platform:"telegram",url:"https://t.me/+gEb2zBv5LOo0YmE5",label:"Telegram"},{platform:"whatsapp",url:"https://wa.me/573134399687",label:"WhatsApp (mayorista)"},{platform:"whatsapp",url:"https://wa.me/573144122015",label:"WhatsApp (alterno)"},{platform:"link",url:"https://beaconsai.com/karissamoda",label:"Beaconsai"}],propuesta:"https://lp-karissa-moda.vercel.app",priority:"hot"},
-  {id:"b75",name:"Alison Ropa Tejida",cat:"Ropa Tejida / Suéteres",addr:"Cra. 25 #73-33, Bogotá",phone:"+57 1 630 7871",webType:"has-web",webUrl:"https://alison.com.co",webLabel:"alison.com.co",phoneClean:"5716307871",social:[{platform:"whatsapp",url:"https://wa.me/5716307871",label:"WhatsApp"}],propuesta:""},
-  {id:"b76",name:"Zigzag Design For Men",cat:"Trajes Hombre / Alquiler",addr:"Calle 60 #9-87 Local 987, CC Aquarium, Bogotá",phone:"+57 312 553 9406",webType:"has-web",webUrl:"https://zigzagdesignformen.com.co",webLabel:"zigzagdesignformen.com.co",phoneClean:"573125539406",social:[{platform:"whatsapp",url:"https://wa.me/573125539406",label:"WhatsApp"},{platform:"facebook",url:"https://www.facebook.com/zigzagdesignconfecciones2015",label:"Facebook"},{platform:"instagram",url:"https://www.instagram.com/zigzag_design_slimfit/",label:"Instagram"},{platform:"tiktok",url:"https://www.tiktok.com/@zigzagdesignmodaslimfit",label:"TikTok"}],propuesta:""},
-  {id:"b77",name:"Bettina Spitz María Antonieta",cat:"Ropa Mujer / Alta Costura",addr:"Calle 84A #12-18, Bogotá",phone:"+57 322 749 0834",webType:"has-web",webUrl:"https://bettinaspitz.com",webLabel:"bettinaspitz.com",phoneClean:"573227490834",social:[{platform:"whatsapp",url:"https://wa.me/573227490834",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/bettinaspitz/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/bettinaspitzmoda/",label:"Facebook"},{platform:"tiktok",url:"https://www.tiktok.com/@bettinaspitzbogota",label:"TikTok"}],propuesta:""},
-  {id:"b78",name:"Karol Nails Beauty Expert",cat:"Centro de Estética",addr:"Cra. 75 #24-24, Fontibón, Bogotá",phone:"+57 320 7741284",phoneClean:"573207741284",webType:"has-web",webUrl:"https://linktr.ee/Karol_nails31",webLabel:"linktr.ee",social:[{platform:"whatsapp",url:"https://wa.me/573207741284",label:"WhatsApp"}],propuesta:""},
-  {id:"b79",name:"Candy nails by Sharon Narvaez",cat:"Salón de Manicura y Pedicura",addr:"Cl. 69 #10a-29, Bogotá",phone:"+57 302 3199887",phoneClean:"573023199887",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573023199887",label:"WhatsApp"}],propuesta:""},
-  {id:"b80",name:"Magic Nails Pasadena",cat:"Salón de Manicura y Pedicura",addr:"Cra. 53 #102a-46, Bogotá",phone:"+57 323 8139069",phoneClean:"573238139069",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573238139069",label:"WhatsApp"}],propuesta:""},
-  {id:"b81",name:"NELEH BEAUTY SERVICE",cat:"Salón de Manicura y Pedicura",addr:"Cra. 18 #51-35, Teusaquillo, Bogotá",phone:"+57 300 1239231",phoneClean:"573001239231",webType:"social-only",webUrl:"https://www.instagram.com/neleh.sb/",webLabel:"instagram.com",social:[{platform:"whatsapp",url:"https://wa.me/573001239231",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/neleh.sb/",label:"Instagram"}],propuesta:"https://lp-neleh-beauty.vercel.app",priority:"hot"},
-  {id:"b82",name:"Magic Nails Parque 93",cat:"Salón de Manicura y Pedicura",addr:"Cl 93b #13-10, Chapinero, Bogotá",phone:"+57 350 5754007",phoneClean:"573505754007",webType:"has-web",webUrl:"https://www.tumagicnails.com/index.php/reservas/",webLabel:"tumagicnails.com",social:[{platform:"whatsapp",url:"https://wa.me/573505754007",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/magic_nailsls",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/profile.php?id=100063567043811",label:"Facebook"}],propuesta:""},
-  {id:"b83",name:"Super Wow Calle 105 - Spa de uñas",cat:"Salón de Manicura y Pedicura",addr:"Cra 19 #105-44, Bogotá",phone:"+57 321 3815261",phoneClean:"573213815261",webType:"has-web",webUrl:"https://superwow.com.co/sedes/super-wow-calle-105/",webLabel:"superwow.com.co",social:[{platform:"whatsapp",url:"https://wa.me/573213815261",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/superwownails",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/superwownails",label:"Facebook"},{platform:"tiktok",url:"https://www.tiktok.com/@superwownails",label:"TikTok"}],propuesta:""},
-  {id:"b84",name:"Magic Nails Zona G",cat:"Salón de Manicura y Pedicura",addr:"Cl. 68 #4A-19, Chapinero, Bogotá",phone:"+57 316 1851473",phoneClean:"573161851473",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573161851473",label:"WhatsApp"}],propuesta:""},
-  {id:"b85",name:"Mistú Nails & Wellness",cat:"Centro de Estética",addr:"Cra. 16 #93-11 Local 101, Chapinero, Bogotá",phone:"+57 322 8710848",phoneClean:"573228710848",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573228710848",label:"WhatsApp"}],propuesta:""},
-  {id:"b86",name:"Ooh Lala nails studio",cat:"Salón de Manicura y Pedicura",addr:"Parque de la 93, Cra. 14#90-20 Local 7, Bogotá",phone:"+57 312 3153790",phoneClean:"573123153790",webType:"has-web",webUrl:"http://reservas.lizto.co/ooh_lala_nails-gb",webLabel:"lizto.co",social:[{platform:"whatsapp",url:"https://wa.me/573123153790",label:"WhatsApp"}],propuesta:""},
-  {id:"b87",name:"ANTO Nails",cat:"Salón de Manicura y Pedicura",addr:"Cl. 94 #11a-48, Bogotá",phone:"+57 322 5545957",phoneClean:"573225545957",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573225545957",label:"WhatsApp"}],propuesta:""},
-  {id:"b88",name:"Meraki Nails Spa",cat:"Centro de Estética",addr:"Av. La Esperanza #44a-21, Teusaquillo, Bogotá",phone:"+57 310 7821647",phoneClean:"573107821647",webType:"social-only",webUrl:"https://www.instagram.com/meraki.spadeunas/",webLabel:"instagram.com",social:[{platform:"whatsapp",url:"https://wa.me/573107821647",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/meraki.spadeunas/",label:"Instagram"}],propuesta:"https://lp-meraki-nails.vercel.app",priority:"hot"},
-  {id:"b89",name:"Spa La Celestina Bogotá",cat:"Centro de Estética",addr:"Centro Comercial San Martín, Ak 7 #32-16 Locales 108A-137-138, Bogotá",phone:"+57 310 6046541",phoneClean:"573106046541",webType:"has-web",webUrl:"https://lacelestina.site.agendapro.com/co/sucursal/29133",webLabel:"agendapro.com",social:[{platform:"whatsapp",url:"https://wa.me/573106046541",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/agendapro_software",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/agendapro",label:"Facebook"}],propuesta:""},
-  {id:"b90",name:"Rose Studio Vip Nails Spa",cat:"Salón de Manicura y Pedicura",addr:"Cl. 65 #10-36, Bogotá",phone:"+57 316 1321177",phoneClean:"573161321177",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573161321177",label:"WhatsApp"}],propuesta:""},
-  {id:"b91",name:"HOLA GUAPA NAILS AND SPA",cat:"Centro de Estética",addr:"Cerca al Parque de la 93, Cl 93b #16-08 Local 102, Chapinero, Bogotá",phone:"+57 312 5798379",phoneClean:"573125798379",webType:"has-web",webUrl:"https://linktr.ee/holaguapanailsandspa",webLabel:"linktr.ee",social:[{platform:"whatsapp",url:"https://wa.me/573125798379",label:"WhatsApp"}],propuesta:""},
-  {id:"b92",name:"Free Nails Spa Zona Rosa",cat:"Centro de Estética",addr:"Kr 13 #82-49 Loc 113, Chapinero, Bogotá",phone:"+57 319 6594961",phoneClean:"573196594961",webType:"social-only",webUrl:"https://instagram.com/freenails_spa",webLabel:"instagram.com",social:[{platform:"whatsapp",url:"https://wa.me/573196594961",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/freenails_spa",label:"Instagram"}],propuesta:"https://lp-free-nails-spa.vercel.app",priority:"hot"},
-  {id:"b93",name:"Mi manicurista",cat:"Centro de Estética",addr:"A domicilio en Cra. 11 #93-62, Bogotá",phone:"+57 300 2075709",phoneClean:"573002075709",webType:"has-web",webUrl:"https://www.mimanicurista.com/",webLabel:"mimanicurista.com",social:[{platform:"whatsapp",url:"https://wa.me/573002075709",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/mimanicurista",label:"Instagram"},{platform:"facebook",url:"https://facebook.com/mimanicurista1",label:"Facebook"}],propuesta:""},
-  {id:"b94",name:"SENSEBENE",cat:"Salón de Manicura y Pedicura",addr:"Cra. 11 #95-79 Local 2, Chapinero, Bogotá",phone:"+57 322 3586131",phoneClean:"573223586131",webType:"has-web",webUrl:"http://sensebene.co/stores/sensebene-chico/",webLabel:"sensebene.co",social:[{platform:"whatsapp",url:"https://wa.me/573223586131",label:"WhatsApp"}],propuesta:""},
-  {id:"b95",name:"SECRETO DE UÑAS",cat:"Salón de Manicura y Pedicura",addr:"Cra 20 #58-08, Teusaquillo, Bogotá",phone:"+57 350 4997620",phoneClean:"573504997620",webType:"social-only",webUrl:"https://www.instagram.com/secretodeunas17/",webLabel:"instagram.com",social:[{platform:"whatsapp",url:"https://wa.me/573504997620",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/secretodeunas17/",label:"Instagram"}],propuesta:""},
-  {id:"b96",name:"La Emperatriz De Las Uñas",cat:"Tienda de Productos de Belleza",addr:"Ak 15 #84A-24 Loc 105, Chapinero, Bogotá",phone:"+57 305 4247671",phoneClean:"573054247671",webType:"has-web",webUrl:"http://laemperatriznailboutique.com/",webLabel:"laemperatriznailboutique.com",social:[{platform:"whatsapp",url:"https://wa.me/573054247671",label:"WhatsApp"}],propuesta:""},
-  {id:"b97",name:"Happy Nails & Spa Sede Chapinero",cat:"Spa",addr:"Kr 13 #58-89, Chapinero, Bogotá",phone:"+57 302 8671024",phoneClean:"573028671024",webType:"has-web",webUrl:"https://happynailsspa18.com/726-2/",webLabel:"happynailsspa18.com",social:[{platform:"whatsapp",url:"https://wa.me/573028671024",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/happynailsspa18",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/share",label:"Facebook"},{platform:"tiktok",url:"https://www.tiktok.com/@happynailsspa18",label:"TikTok"}],propuesta:""},
-  {id:"b98",name:"OBA Consultorio Odontológico",cat:"Consultorio Odontológico",addr:"Cra. 19 #102 – 53 Consultorio 518, Usaquén, Bogotá",phone:"+57 319 731 4116",phoneClean:"573197314116",webType:"has-web",webUrl:"https://obaconsultorio.com/",webLabel:"obaconsultorio.com",social:[{platform:"whatsapp",url:"https://wa.me/573197314116",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/oba_consultorio/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/people/Consultorio-Odontológico-Boulevard/100063563560668/?locale=es_LA",label:"Facebook"}],lat:4.703,lng:-74.051,propuesta:""},
-  {id:"b99",name:"Consultorio Odontológico Dani-Dent",cat:"Consultorio Odontológico",addr:"Calle 24 No. 11-73 Sur, San José, Bogotá D.C.",phone:"(601) 272-6106",phoneClean:"576012726106",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/576012726106",label:"WhatsApp"}],lat:4.568,lng:-74.137,propuesta:""},
-  {id:"b100",name:"Consultorio Odontológico Dr. Amauri Ariza Moreno",cat:"Consultorio Odontológico",addr:"Carrera 13 38-86 Consult 208, Bogotá D.C.",phone:"(1) 2328946",phoneClean:"5712328946",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/5712328946",label:"WhatsApp"}],lat:4.635,lng:-74.081,propuesta:""},
-  {id:"b101",name:"Consultorio Odontológico Dra. Tatiana Amórtegui",cat:"Consultorio Odontológico",addr:"Cra. 14 No. 98-95 Consl 204, Chicó, Bogotá D.C.",phone:"(601) 610-7279",phoneClean:"576016107279",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/576016107279",label:"WhatsApp"}],lat:4.667,lng:-74.056,propuesta:""},
-  {id:"b102",name:"Consultorio Odontológico Integral",cat:"Consultorio Odontológico",addr:"Carrera 17#50-77, Bogotá, Cundinamarca",phone:"+57 322 446 0316",phoneClean:"573224460316",webType:"has-web",webUrl:"https://consultoriodontologicointegral.com/",webLabel:"consultoriodontologicointegral.com",social:[{platform:"whatsapp",url:"https://wa.me/573224460316",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/consultoriodontologicointegral/",label:"Instagram"}],lat:4.655,lng:-74.075,propuesta:""},
-  {id:"b103",name:"Clínicas Dentales Colsanitas",cat:"Clínica Dental",addr:"Varía por sede, Bogotá",phone:"+57 (310) 3107676",phoneClean:"573103107676",webType:"has-web",webUrl:"https://www.colsanitas.com/en/red-de-atencion/clinicas-dentales-colsanitas",webLabel:"colsanitas.com",social:[{platform:"whatsapp",url:"https://wa.me/573103107676",label:"WhatsApp"},{platform:"facebook",url:"https://www.facebook.com/dentalnetwork/",label:"Facebook"}],lat:4.609,lng:-74.081,propuesta:""},
-  {id:"b104",name:"Clínica Dental Bogotá - Centro médico Dalí Chicó norte",cat:"Clínica Dental",addr:"Cra. 18 #80 06, Chapinero, Bogotá",phone:"+57 318 643 7326",phoneClean:"573186437326",webType:"has-web",webUrl:"https://periodoncistajohannacalderon.com/locations/consultorio-odontologico-en-bogota/",webLabel:"periodoncistajohannacalderon.com",social:[{platform:"whatsapp",url:"https://wa.me/573186437326",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/periodoncista_johanna_calderon/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/DraJohannaCalderon",label:"Facebook"}],lat:4.658,lng:-74.061,propuesta:"https://lp-clinica-dental-dali.vercel.app",priority:"hot"},
-  {id:"b105",name:"Clínica Dental Odontología Estética Bogotá | Dra. María Marín",cat:"Clínica Dental",addr:"Bogotá, Dirección específica no proporcionada",phone:"No proporcionado en resultados",phoneClean:"",webType:"has-web",webUrl:"https://odontologamariamarin.com/",webLabel:"odontologamariamarin.com",social:[{platform:"instagram",url:"No encontrado en resultados",label:"Instagram"}],lat:4.609,lng:-74.081,propuesta:""},
-  {id:"b106",name:"Consultorio Odontológico Dr. José Emanuel Rodríguez David",cat:"Consultorio Odontológico",addr:"Calle B, 22000 La Romana, República Dominicana",phone:"+1-809-349-4106",phoneClean:"18093494106",webType:"has-web",webUrl:"https://www.yellowpages.do/phone-1-8093494106-dentista-La-Romana-DOEN67172.html",webLabel:"yellowpages.do",social:[{platform:"whatsapp",url:"https://wa.me/18093494106",label:"WhatsApp"}],lat:18.451,lng:-68.979,propuesta:""},
-  {id:"b107",name:"Consultorio Dental Sonrisas Sanas.",cat:"Consultorio Dental",addr:"Cochabamba, Bolivia",phone:"No proporcionado en resultados",phoneClean:"",webType:"has-web",webUrl:"https://www.findhealthclinics.org/BO/Cochabamba/161834184023707/Consultorio-Dental-Sonrisas-Sanas.",webLabel:"findhealthclinics.org",social:[],lat:-17.389,lng:-66.156,propuesta:""},
-  {id:"b128",name:"OBA Consultorio Odontológico",cat:"Consultorio Odontológico",addr:"Cra. 19 #102 – 53 Consultorio 518, Bogotá",phone:"+57 319 731 4116",phoneClean:"573197314116",webType:"has-web",webUrl:"https://obaconsultorio.com/",webLabel:"obaconsultorio.com",social:[{platform:"whatsapp",url:"https://wa.me/573197314116",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/oba_consultorio/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/oba_consultorio/",label:"Facebook"}],lat:4.703,lng:-74.051,propuesta:""},
-  {id:"b129",name:"Consultorio Odontológico Integral",cat:"Consultorio Odontológico",addr:"Carrera 17#50-77 Bogotá, Cundinamarca",phone:"+57 322 446 0316",phoneClean:"573224460316",webType:"has-web",webUrl:"https://consultoriodontologicointegral.com/",webLabel:"consultoriodontologicointegral.com",social:[{platform:"whatsapp",url:"https://wa.me/573224460316",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/consultoriodontologicointegral/",label:"Instagram"},{platform:"tiktok",url:"https://www.tiktok.com/@consultoriodontologicointegral",label:"TikTok"}],lat:4.655,lng:-74.065,propuesta:""},
-  {id:"b130",name:"La Clínica Dental Bogotá",cat:"Clínica Dental",addr:"Cra. 18 #82-39, Localidad de Chapinero, Bogotá, Cundinamarca, Colombia",phone:"+57 601 918 2220",phoneClean:"576019182220",webType:"has-web",webUrl:"https://laclinicadental.com.co/",webLabel:"laclinicadental.com.co",social:[{platform:"whatsapp",url:"https://wa.me/576019182220",label:"WhatsApp"}],lat:4.645,lng:-74.057,propuesta:""},
-  {id:"b131",name:"Consultorio Odontológico Kennedy",cat:"Consultorio Odontológico",addr:"Calle 42 S 78 H-35 Bogotá",phone:"+57 601 450 4680",phoneClean:"576014504680",webType:"has-web",webUrl:"https://www.clinicaodontologicakennedy.com/",webLabel:"clinicaodontologicakennedy.com",social:[{platform:"whatsapp",url:"https://wa.me/573116185086",label:"WhatsApp"}],lat:4.675,lng:-74.065,propuesta:""},
-  {id:"b132",name:"Sonrisas Dental Spa (Odontología de urgencias)",cat:"Clínica Dental",addr:"Chapinero, Bogotá",phone:"+57 300 755 9918",phoneClean:"573007559918",webType:"has-web",webUrl:"https://www.smiledentalspacenter.com/",webLabel:"smiledentalspacenter.com",social:[{platform:"whatsapp",url:"https://wa.me/573007559918",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/ortodonciadianaburbano/",label:"Instagram"}],lat:4.665,lng:-74.055,propuesta:"https://lp-sonrisas-dental-spa.vercel.app",priority:"hot"},
-  {id:"b133",name:"Clínica Odontológica Protección Oral",cat:"Clínica Odontológica",addr:"Sede Norte y Sur en Bogotá",phone:"+57 310 450 4680",phoneClean:"573104504680",webType:"has-web",webUrl:"https://proteccionoral.com/",webLabel:"proteccionoral.com",social:[{platform:"whatsapp",url:"https://wa.me/573104504680",label:"WhatsApp"}],lat:4.67,lng:-74.045,propuesta:""},
-  {id:"b134",name:"Dentisalud Bogotá",cat:"Clínica Odontológica",addr:"Multiple sedes en Bogotá",phone:"+57 601 745 9000",phoneClean:"576017459000",webType:"has-web",webUrl:"https://www.dentisalud.com.co/clinica-odontologica/bogota/",webLabel:"dentisalud.com.co",social:[{platform:"whatsapp",url:"https://wa.me/576017459000",label:"WhatsApp"}],lat:4.65,lng:-74.08,propuesta:""},
-  {id:"b135",name:"Odontología Estética Bogotá | Dra. María Marín",cat:"Clínica Dental",addr:"Bogotá",phone:"+57 310 221 1729",phoneClean:"573102211729",webType:"has-web",webUrl:"https://odontologamariamarin.com/",webLabel:"odontologamariamarin.com",social:[{platform:"instagram",url:"https://www.instagram.com/odontologamariamarin/",label:"Instagram"}],lat:4.609,lng:-74.081,propuesta:""},
-  {id:"b136",name:"Roberto Granados - Diseño de Sonrisa",cat:"Consultorio Odontológico",addr:"Bogotá",phone:"+57 310 769 5841",phoneClean:"573107695841",webType:"has-web",webUrl:"https://robertogranados.com/diseno-de-sonrisa-en-bogota/",webLabel:"robertogranados.com",social:[{platform:"whatsapp",url:"https://wa.me/573107695841",label:"WhatsApp"}],lat:4.635,lng:-74.075,propuesta:"https://lp-roberto-granados.vercel.app",priority:"hot"},
-  {id:"b137",name:"Dientes y Sonrisa - Odontopediatría",cat:"Clínica Dental",addr:"Bogotá",phone:"+57 310 221 1729",phoneClean:"573102211729",webType:"has-web",webUrl:"https://www.dientesysonrisa.com/odontopediatria.html",webLabel:"dientesysonrisa.com",social:[{platform:"whatsapp",url:"https://wa.me/573102211729",label:"WhatsApp"}],lat:4.64,lng:-74.06,propuesta:""},
-  {id:"b138",name:"OBA Consultorio Odontológico",cat:"Consultorio Odontológico",addr:"Cra. 19 #102 – 53 Consultorio 518, Usaquén, Bogotá",phone:"+57 319 731 4116",phoneClean:"573197314116",webType:"has-web",webUrl:"https://obaconsultorio.com/",webLabel:"obaconsultorio.com",social:[{platform:"whatsapp",url:"https://wa.me/573197314116",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/oba_consultorio/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/people/Consultorio-Odontológico-Boulevard/100063563560668/?locale=es_LA",label:"Facebook"}],lat:4.703,lng:-74.051,propuesta:""},
-  {id:"b139",name:"Consultorio Odontológico Dani-Dent",cat:"Consultorio Odontológico",addr:"Calle 24 No. 11-73 Sur, San José, Bogotá D.C.",phone:"(601) 272-6106",phoneClean:"576012726106",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/576012726106",label:"WhatsApp"}],lat:4.568,lng:-74.137,propuesta:""},
-  {id:"b140",name:"Consultorio Odontológico Dr. Amauri Ariza Moreno",cat:"Consultorio Odontológico",addr:"Carrera 13 38-86 Consult 208, Bogotá D.C.",phone:"(1) 2328946",phoneClean:"5712328946",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/5712328946",label:"WhatsApp"}],lat:4.635,lng:-74.081,propuesta:""},
-  {id:"b141",name:"Consultorio Odontológico Dra. Tatiana Amórtegui",cat:"Consultorio Odontológico",addr:"Cra. 14 No. 98-95 Consl 204, Chicó, Bogotá D.C.",phone:"(601) 610-7279",phoneClean:"576016107279",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/576016107279",label:"WhatsApp"}],lat:4.667,lng:-74.056,propuesta:""},
-  {id:"b142",name:"Consultorio Odontológico Integral",cat:"Consultorio Odontológico",addr:"Carrera 17#50-77, Bogotá, Cundinamarca",phone:"+57 322 446 0316",phoneClean:"573224460316",webType:"has-web",webUrl:"https://consultoriodontologicointegral.com/",webLabel:"consultoriodontologicointegral.com",social:[{platform:"whatsapp",url:"https://wa.me/573224460316",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/consultoriodontologicointegral/",label:"Instagram"}],lat:4.655,lng:-74.075,propuesta:""},
-  {id:"b143",name:"Clínicas Dentales Colsanitas",cat:"Clínica Dental",addr:"Varía por sede, Bogotá",phone:"+57 (310) 3107676",phoneClean:"573103107676",webType:"has-web",webUrl:"https://www.colsanitas.com/en/red-de-atencion/clinicas-dentales-colsanitas",webLabel:"colsanitas.com",social:[{platform:"whatsapp",url:"https://wa.me/573103107676",label:"WhatsApp"},{platform:"facebook",url:"https://www.facebook.com/dentalnetwork/",label:"Facebook"}],lat:4.609,lng:-74.081,propuesta:""},
-  {id:"b144",name:"Clínica Dental Bogotá - Centro médico Dalí Chicó norte",cat:"Clínica Dental",addr:"Cra. 18 #80 06, Chapinero, Bogotá",phone:"+57 318 643 7326",phoneClean:"573186437326",webType:"has-web",webUrl:"https://periodoncistajohannacalderon.com/locations/consultorio-odontologico-en-bogota/",webLabel:"periodoncistajohannacalderon.com",social:[{platform:"whatsapp",url:"https://wa.me/573186437326",label:"WhatsApp"},{platform:"instagram",url:"https://www.instagram.com/periodoncista_johanna_calderon/",label:"Instagram"},{platform:"facebook",url:"https://www.facebook.com/DraJohannaCalderon",label:"Facebook"}],lat:4.658,lng:-74.061,propuesta:""},
-  {id:"b145",name:"Clínica Dental Odontología Estética Bogotá | Dra. María Marín",cat:"Clínica Dental",addr:"Bogotá, Dirección específica no proporcionada",phone:"No proporcionado en resultados",phoneClean:"",webType:"has-web",webUrl:"https://odontologamariamarin.com/",webLabel:"odontologamariamarin.com",social:[{platform:"instagram",url:"No encontrado en resultados",label:"Instagram"}],lat:4.609,lng:-74.081,propuesta:""},
-  {id:"b146",name:"Consultorio Odontológico Dr. José Emanuel Rodríguez David",cat:"Consultorio Odontológico",addr:"Calle B, 22000 La Romana, República Dominicana",phone:"+1-809-349-4106",phoneClean:"18093494106",webType:"has-web",webUrl:"https://www.yellowpages.do/phone-1-8093494106-dentista-La-Romana-DOEN67172.html",webLabel:"yellowpages.do",social:[{platform:"whatsapp",url:"https://wa.me/18093494106",label:"WhatsApp"}],lat:18.451,lng:-68.979,propuesta:""},
-  {id:"b147",name:"Consultorio Dental Sonrisas Sanas.",cat:"Consultorio Dental",addr:"Cochabamba, Bolivia",phone:"No proporcionado en resultados",phoneClean:"",webType:"has-web",webUrl:"https://www.findhealthclinics.org/BO/Cochabamba/161834184023707/Consultorio-Dental-Sonrisas-Sanas.",webLabel:"findhealthclinics.org",social:[],lat:-17.389,lng:-66.156,propuesta:""},
-  {id:"b108",name:"El Coq",cat:"Bar / Pub / Discoteca",addr:"Calle 84 Bis #14-02, Chapinero, Antiguo Country, Bogotá",phone:"+57 611 2496",phoneClean:"576112496",webType:"has-web",webUrl:"https://elcoq.co/",webLabel:"elcoq.co",social:[{platform:"whatsapp",url:"https://wa.me/576112496",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/elcoqcoq/",label:"Instagram"}],propuesta:"https://lp-el-coq.vercel.app",priority:"hot"},
-  {id:"b109",name:"La Negra Bar",cat:"Bar / Club / Nightlife",addr:"Carrera 7 #47-63, Chapinero, Bogotá",phone:"+57 312 4417308",phoneClean:"573124417308",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573124417308",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/lanegra.bar/",label:"Instagram"},{platform:"facebook",url:"https://facebook.com/LaNegraBta/",label:"Facebook"}],propuesta:"https://lp-la-negra-bar.vercel.app",priority:"hot"},
-  {id:"b110",name:"Ritmo Moderno Bogotá",cat:"Bar Alternativo",addr:"Carrera 4 #17-39, Bogotá Centro",phone:"+57 310 6296979",phoneClean:"573106296979",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573106296979",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/ritmomoderno/",label:"Instagram"},{platform:"tiktok",url:"https://tiktok.com/@ritmomoderno",label:"TikTok"}],propuesta:""},
-  {id:"b111",name:"Dali Bar Rooftop",cat:"Bar en Azotea / Rooftop Bar",addr:"Avenida Carrera 85 #12-71, Chapinero, Bogotá",phone:"+57 310 7682146",phoneClean:"573107682146",webType:"has-web",webUrl:"https://www.skylevels.co/es/americas/colombia/bogota/dali-bar-rooftop",webLabel:"skylevels.co",social:[{platform:"whatsapp",url:"https://wa.me/573107682146",label:"WhatsApp"}],propuesta:""},
-  {id:"b112",name:"Hoja Al Viento Bar",cat:"Bar Gay / LGBTQ+",addr:"Calle 12 #11-35, San Victorino, Bogotá",phone:"+57 324 3741979",phoneClean:"573243741979",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573243741979",label:"WhatsApp"}],propuesta:""},
-  {id:"b113",name:"Leos Bar Mística LGBTQ Chapinero",cat:"Bar LGBTQ+ / Karaoke",addr:"Chapinero, Bogotá",phone:"+57 300 1234567",phoneClean:"573001234567",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573001234567",label:"WhatsApp"}],propuesta:""},
-  {id:"b114",name:"The Monkey House",cat:"Bar / Pub",addr:"Calle 70A #8-55, Zona G, Chapinero, Bogotá",phone:"+57 310 9876543",phoneClean:"573109876543",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573109876543",label:"WhatsApp"},{platform:"facebook",url:"https://facebook.com/pg/TheMonkeyHouseBogota",label:"Facebook"}],propuesta:""},
-  {id:"b115",name:"Cabrera Resto-Bar",cat:"Bar / Restaurante",addr:"Chapinero, Bogotá",phone:"+57 315 5550123",phoneClean:"573155550123",webType:"has-web",webUrl:"https://cabrerarestobar.com/",webLabel:"cabrerarestobar.com",social:[{platform:"whatsapp",url:"https://wa.me/573155550123",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/cabrerarestobar/",label:"Instagram"}],propuesta:""},
-  {id:"b116",name:"La Santa Bar Chapinero",cat:"Bar Universitario",addr:"Chapinero, Bogotá",phone:"+57 310 1112233",phoneClean:"573101112233",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573101112233",label:"WhatsApp"},{platform:"facebook",url:"https://facebook.com/la.santa.bar.chapinero/",label:"Facebook"}],propuesta:""},
-  {id:"b117",name:"Dark Club Bogotá",cat:"Discoteca / Club",addr:"Calle 64 #13-35, 2do Piso, Chapinero, Bogotá",phone:"+57 310 4445566",phoneClean:"573104445566",webType:"has-web",webUrl:"https://linktr.ee/darkclubbar",webLabel:"linktr.ee/darkclubbar",social:[{platform:"whatsapp",url:"https://wa.me/573104445566",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/darkclubbar/",label:"Instagram"},{platform:"telegram",url:"https://t.me/darkclubbar",label:"Telegram"}],propuesta:""},
-  {name:"Andrés Carne de Res",cat:"Bar / Restaurante",addr:"Cra. 70 #11-38, Chía, Bogotá",phone:"+57 1 8862020",webType:"has-web",webUrl:"https://www.andrescarndederes.com/",webLabel:"andrescarndederes.com",social:[{platform:"whatsapp",url:"https://wa.me/5718862020",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/andrescarndederes",label:"Instagram"},{platform:"facebook",url:"https://facebook.com/AndresCarneDeRes",label:"Facebook"}],id:"b118",phoneClean:"5718862020",propuesta:"",lat:4.711,lng:-74.0721},
-  {name:"Salvatore's Bar",cat:"Bar / Pub",addr:"Carrera 13 #30-27, Bogotá",phone:"+57 1 3415555",webType:"has-web",webUrl:"https://salvatoresbar.com/",webLabel:"salvatoresbar.com",social:[{platform:"whatsapp",url:"https://wa.me/5713415555",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/salvatoresbarbogota",label:"Instagram"}],id:"b119",phoneClean:"5713415555",propuesta:"https://lp-salvatores-bar.vercel.app",lat:4.711,lng:-74.0721,priority:"hot"},
-  {name:"Teatro Jorge Eliécer Gaitán - Bar",cat:"Bar Cultural",addr:"Av. Corregidora #25-44, Bogotá",phone:"+57 1 3362020",webType:"has-web",webUrl:"https://www.teatrojorgeeliecergaitan.gov.co/",webLabel:"tejorgeeliecergaitan.gov.co",social:[{platform:"whatsapp",url:"https://wa.me/5713362020",label:"WhatsApp"},{platform:"facebook",url:"https://facebook.com/TeatroJorgeEliecerGaitan",label:"Facebook"}],id:"b120",phoneClean:"5713362020",propuesta:"",lat:4.711,lng:-74.0721},
-  {name:"Café Santiago",cat:"Bar / Café",addr:"Calle 12 #4-36, Bogotá",phone:"+57 1 2863030",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/5712863030",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/cafesantiagobogota",label:"Instagram"}],id:"b121",phoneClean:"5712863030",propuesta:"",lat:4.711,lng:-74.0721},
-  {name:"Azahar",cat:"Bar de Cockteles",addr:"Carrera 7 #32-12, Bogotá",phone:"+57 1 2864040",webType:"has-web",webUrl:"https://azahar.com.co/",webLabel:"azahar.com.co",social:[{platform:"whatsapp",url:"https://wa.me/5712864040",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/azaharbar",label:"Instagram"}],id:"b122",phoneClean:"5712864040",propuesta:"",lat:4.711,lng:-74.0721},
-  {name:"El Tintalero",cat:"Bar / Restaurante",addr:"Cra. 19 #37-40, Bogotá",phone:"+57 1 3478080",webType:"has-web",webUrl:"https://eltintalero.com/",webLabel:"eltintalero.com",social:[{platform:"whatsapp",url:"https://wa.me/5713478080",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/eltintalerobogota",label:"Instagram"}],id:"b123",phoneClean:"5713478080",propuesta:"",lat:4.711,lng:-74.0721},
-  {name:"La Puerta Falsa",cat:"Bar / Restaurante Tradicional",addr:"Calle 11 #6-58, Bogotá",phone:"+57 1 2864040",webType:"has-web",webUrl:"https://lapuertafalsa.com/",webLabel:"lapuertafalsa.com",social:[{platform:"whatsapp",url:"https://wa.me/5712864040",label:"WhatsApp"},{platform:"facebook",url:"https://facebook.com/LaPuertaFalsaBogota",label:"Facebook"}],id:"b124",phoneClean:"5712864040",propuesta:"",lat:4.711,lng:-74.0721},
-  {name:"Video Bélicos",cat:"Bar Temático",addr:"Carrera 13A #30-31, Bogotá",phone:"+57 1 2863030",webType:"has-web",webUrl:"https://videobelicos.com/",webLabel:"videobelicos.com",social:[{platform:"whatsapp",url:"https://wa.me/5712863030",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/videobelicos",label:"Instagram"},{platform:"tiktok",url:"https://tiktok.com/@videobelicos",label:"TikTok"}],id:"b125",phoneClean:"5712863030",propuesta:"",lat:4.711,lng:-74.0721},
-  {name:"Salvo Patria",cat:"Bar / Restaurante",addr:"Calle 12 #2-12, Bogotá",phone:"+57 1 2864040",webType:"has-web",webUrl:"https://salvopatriacafe.com/",webLabel:"salvopatriacafe.com",social:[{platform:"whatsapp",url:"https://wa.me/5712864040",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/salvopatriacafe",label:"Instagram"}],id:"b126",phoneClean:"5712864040",propuesta:"",lat:4.711,lng:-74.0721},
-  {name:"Hasta que se seque el Malecón",cat:"Bar / Parque",addr:"Cra. 30 #43-50, Bogotá",phone:"+57 1 2863030",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/5712863030",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/hastquese sequelemon",label:"Instagram"}],id:"b127",phoneClean:"5712863030",propuesta:"",lat:4.711,lng:-74.0721},
-  {id:"b148",name:"Animal's Health Center",cat:"Veterinaria / Clínica Veterinaria",addr:"Av. Cra. 30 # 86A-31, Polo Club / Castellana, Bogotá",phone:"+57 601 2572650",phoneClean:"576012572650",webType:"has-web",webUrl:"https://www.animalshealthcenter.com",webLabel:"animalshealthcenter.com",social:[{platform:"whatsapp",url:"https://wa.me/573154245987",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/animalshealthcenter/",label:"Instagram"}],lat:4.675,lng:-74.062,propuesta:""},
-  {id:"b149",name:"Clínica Veterinaria Zoovet 24 Horas",cat:"Clínica Veterinaria / Urgencias 24h",addr:"Av. Suba # 119-73, Suba, Bogotá",phone:"+57 320 6750505",phoneClean:"573206750505",webType:"has-web",webUrl:"https://clinicazoovet.com/",webLabel:"clinicazoovet.com",social:[{platform:"whatsapp",url:"https://wa.me/573206750505",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/clinicazoovetbogota/",label:"Instagram"}],lat:4.704,lng:-74.069,propuesta:"https://lp-zoovet-24h.vercel.app",priority:"hot"},
-  {id:"b150",name:"DidoPet Clínica Veterinaria",cat:"Clínica Veterinaria / Pet Shop",addr:"Ak. 9 # 121-76, Usaquén / Santa Bárbara, Bogotá",phone:"+57 601 9172122",phoneClean:"576019172122",webType:"has-web",webUrl:"https://didopet.com/",webLabel:"didopet.com",social:[{platform:"whatsapp",url:"https://wa.me/573102415860",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/didopetbogota/",label:"Instagram"}],lat:4.701,lng:-74.032,propuesta:""},
-  {id:"b151",name:"Clínica Protectora de Animales Cedritos",cat:"Clínica Veterinaria",addr:"Av. Calle 147 # 19-35, Cedritos, Bogotá",phone:"+57 601 7037309",phoneClean:"576017037309",webType:"has-web",webUrl:"https://clinicaprotectoradeanimales.co/",webLabel:"clinicaprotectoradeanimales.co",social:[{platform:"whatsapp",url:"https://wa.me/573115928174",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/cpaveterinaria/",label:"Instagram"}],lat:4.726,lng:-74.038,propuesta:""},
-  {id:"b152",name:"Kanu Pets Pepe Sierra",cat:"Veterinaria / Pet Shop",addr:"Av. Calle 116 # 15-44, Pepe Sierra, Usaquén, Bogotá",phone:"+57 601 3819870",phoneClean:"576013819870",webType:"has-web",webUrl:"https://www.kanu.pet/",webLabel:"kanu.pet",social:[{platform:"whatsapp",url:"https://wa.me/573168326094",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/kanupets/",label:"Instagram"}],lat:4.698,lng:-74.043,propuesta:""},
-  {id:"b153",name:"Veterinaria Huellitas & Amor Bogotá",cat:"Veterinaria / Estética Canina",addr:"Calle 63 # 24-18, 7 de Agosto, Barrios Unidos, Bogotá",phone:"+57 313 4528912",phoneClean:"573134528912",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573134528912",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/huellitasyamorbogota/",label:"Instagram"}],lat:4.654,lng:-74.072,propuesta:"https://lp-huellitas-amor.vercel.app",priority:"hot"},
-  {id:"b154",name:"Centro Médico Veterinario La 80",cat:"Veterinaria / Consultorio Médico",addr:"Calle 80 # 69P-12, Las Ferias, Engativá, Bogotá",phone:"+57 314 3829015",phoneClean:"573143829015",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573143829015",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/vetla80bogota/",label:"Instagram"}],lat:4.691,lng:-74.092,propuesta:"https://lp-veterinaria-la80.vercel.app",priority:"hot"},
-  {id:"b155",name:"Veterinaria Pets & Smile Modelia",cat:"Veterinaria / Peluquería Canina",addr:"Carrera 75 # 24D-32, Modelia, Fontibón, Bogotá",phone:"+57 318 7234901",phoneClean:"573187234901",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573187234901",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/petsandsmilemodelia/",label:"Instagram"}],lat:4.662,lng:-74.121,propuesta:""},
-  {id:"b156",name:"Consultorio Veterinario San Francisco de Asís",cat:"Consultorio Veterinario",addr:"Calle 45 # 13-68, Palermo, Teusaquillo, Bogotá",phone:"+57 601 2854910",phoneClean:"576012854910",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/576012854910",label:"WhatsApp"}],lat:4.634,lng:-74.068,propuesta:""},
-  {id:"b157",name:"Veterinaria & Peluquería Canina El Country",cat:"Veterinaria / Baño & Peluquería",addr:"Carrera 16 # 85-40, Antiguo Country, Chapinero, Bogotá",phone:"+57 601 6103482",phoneClean:"576016103482",webType:"no-web",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/576016103482",label:"WhatsApp"}],lat:4.671,lng:-74.057,propuesta:""},
-  {id:"b158",name:"Tierra Solar Colombia",cat:"Energía Solar",addr:"Calle 7a # 74-79, Rincón de Los Ángeles - Castilla, Kennedy, Bogotá",phone:"+57 311 8247899",phoneClean:"573118247899",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573118247899",label:"WhatsApp"},{platform:"facebook",url:"https://facebook.com/tierrasolarcolombia",label:"Facebook"}],lat:4.6468,lng:-74.1481,propuesta:""},
-  {id:"b159",name:"Atsei de Colombia - Energía Solar",cat:"Energía Solar",addr:"Calle 76 # 28B-05, Alcázares, Barrios Unidos, Bogotá",phone:"+57 300 7671405",phoneClean:"573007671405",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573007671405",label:"WhatsApp"},{platform:"facebook",url:"https://facebook.com/atseicolombia",label:"Facebook"}],lat:4.6647,lng:-74.0692,propuesta:""},
-  {id:"b160",name:"Sun Energy Bogotá",cat:"Energía Solar",addr:"Carrera 12 # 19-76, Centro / Santa Fe, Bogotá",phone:"+57 320 3405497",phoneClean:"573203405497",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573203405497",label:"WhatsApp"},{platform:"facebook",url:"https://facebook.com/sunenergycolombia",label:"Facebook"}],lat:4.6062,lng:-74.0728,propuesta:"https://lp-sun-energy-bogota.vercel.app",priority:"hot"},
-  {id:"b161",name:"P-Solar Proyectos de Energía Solar",cat:"Energía Solar",addr:"Carrera 68D # 13-40, Montevideo, Fontibón, Bogotá",phone:"+57 315 6157559",phoneClean:"573156157559",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573156157559",label:"WhatsApp"},{platform:"facebook",url:"https://facebook.com/psolarcolombia",label:"Facebook"}],lat:4.6482,lng:-74.1205,propuesta:""},
-  {id:"b162",name:"Les Energías Renovables",cat:"Energía Solar",addr:"Carrera 24 # 63C-30, 7 de Agosto, Barrios Unidos, Bogotá",phone:"+57 304 3580803",phoneClean:"573043580803",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573043580803",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/les_energias_renovables",label:"Instagram"},{platform:"facebook",url:"https://facebook.com/lesenergiasrenovables",label:"Facebook"}],lat:4.6528,lng:-74.0711,propuesta:""},
-  {id:"b163",name:"TB Plus Energy",cat:"Energía Solar",addr:"Calle 80 # 69-70, Bodega 35, Las Ferias, Engativá, Bogotá",phone:"+57 320 2563555",phoneClean:"573202563555",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573202563555",label:"WhatsApp"},{platform:"facebook",url:"https://facebook.com/tbplusenergy",label:"Facebook"}],lat:4.6895,lng:-74.0883,propuesta:""},
-  {id:"b164",name:"ZAC Electricidad & Energía Solar",cat:"Energía Solar",addr:"Carrera 111 # 77-15, Minuto de Dios / Quirigua, Engativá, Bogotá",phone:"+57 310 8129450",phoneClean:"573108129450",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573108129450",label:"WhatsApp"},{platform:"facebook",url:"https://facebook.com/zacelectricidad",label:"Facebook"}],lat:4.7082,lng:-74.1245,propuesta:""},
-  {id:"b165",name:"JCR Energy Paneles Solares",cat:"Energía Solar",addr:"Carrera 12 # 79-08, El Nogal, Chapinero, Bogotá",phone:"+57 304 4128390",phoneClean:"573044128390",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573044128390",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/jcrenergy_col",label:"Instagram"}],lat:4.6651,lng:-74.0583,propuesta:""},
-  {id:"b166",name:"Colpilas Energía Solar & Baterías",cat:"Energía Solar",addr:"Carrera 56 # 4B-84, Piso 2, Galán, Puente Aranda, Bogotá",phone:"+57 322 9120966",phoneClean:"573229120966",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573229120966",label:"WhatsApp"},{platform:"facebook",url:"https://facebook.com/colpilas.colombia",label:"Facebook"}],lat:4.6215,lng:-74.1162,propuesta:""},
-  {id:"b167",name:"Mati Energía Solar",cat:"Energía Solar",addr:"Calle 68 # 20-45, San Felipe, Barrios Unidos, Bogotá",phone:"+57 300 6837081",phoneClean:"573006837081",webType:"social-only",webUrl:"",webLabel:"",social:[{platform:"whatsapp",url:"https://wa.me/573006837081",label:"WhatsApp"},{platform:"instagram",url:"https://instagram.com/mati_energiasolar",label:"Instagram"},{platform:"facebook",url:"https://facebook.com/matienergiasolar",label:"Facebook"}],lat:4.6568,lng:-74.0684,propuesta:""}
+  {
+    "id": "b1",
+    "name": "Restaurante Tabasco - Comida Tradicional Mexicana",
+    "cat": "Restaurante",
+    "addr": "Cra. 99 #20B-40, Fontibon",
+    "phone": "+57 310 3077085",
+    "phoneClean": "573103077085",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573103077085",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b2",
+    "name": "El sazon de las Paisas",
+    "cat": "Restaurante",
+    "addr": "Cl. 71A #90b - 25, Bogota",
+    "phone": "+57 313 3534064",
+    "phoneClean": "573133534064",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573133534064",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b3",
+    "name": "Tranvia Restaurante",
+    "cat": "Restaurante",
+    "addr": "Cra. 103d #8315, Bogota",
+    "phone": "+57 14314507",
+    "phoneClean": "5714314507",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5714314507",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b4",
+    "name": "Restaurante El Fogon De Mi Tierra",
+    "cat": "Restaurante",
+    "addr": "Cra. 71a #63A-08, Bogota",
+    "phone": "+57 313 3748762",
+    "phoneClean": "573133748762",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573133748762",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b5",
+    "name": "Pasion Y Sazon",
+    "cat": "Restaurante",
+    "addr": "Carrera 113 #75-26, Bogota",
+    "phone": "+57 322 3675640",
+    "phoneClean": "573223675640",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573223675640",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b6",
+    "name": "El Rincon del Chicamocha",
+    "cat": "Restaurante familiar",
+    "addr": "Cra. 69 #64F-14, Engativa",
+    "phone": "+57 322 9071444",
+    "phoneClean": "573229071444",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573229071444",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b7",
+    "name": "Restaurante L'Escoffier",
+    "cat": "Restaurante",
+    "addr": "Cra. 69a #6520, Bogota",
+    "phone": "+57 324 6238800",
+    "phoneClean": "573246238800",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573246238800",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b8",
+    "name": "La Bolonesa cafe Ristorante",
+    "cat": "Restaurante italiano",
+    "addr": "Cl 72 #99-4, Bogota",
+    "phone": "+57 310 7933967",
+    "phoneClean": "573107933967",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573107933967",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-la-bolonesa.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b9",
+    "name": "Vestidos de Baño Bogotá",
+    "cat": "Vestidos de Baño / Ropa de Playa",
+    "addr": "Restrepo, Bogotá",
+    "phone": "+57 310 788 1548",
+    "phoneClean": "573107881548",
+    "webType": "social-only",
+    "webUrl": "https://instagram.com/vestidos_banobogota",
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573107881548",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/vestidos_banobogota",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b10",
+    "name": "Fajas y Moda",
+    "cat": "Ropa Femenina / Fajas",
+    "addr": "Calle 140 No. 11-58, CC La Puerta del Sol, Cedritos",
+    "phone": "+57 300 535 4876",
+    "phoneClean": "573005354876",
+    "webType": "social-only",
+    "webUrl": "https://instagram.com/fajasymoda_bogota",
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573005354876",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/fajasymoda_bogota",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b11",
+    "name": "Tienda Don Juan",
+    "cat": "Tienda de alimentacion",
+    "addr": "Cra. 73a, Zona 6, Bogota",
+    "phone": "+57 12524691",
+    "phoneClean": "5712524691",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712524691",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b12",
+    "name": "Tienda de Barrio",
+    "cat": "Tienda de alimentacion",
+    "addr": "Cl. 64F #73, Zona 6",
+    "phone": "+57 310 8714075",
+    "phoneClean": "573108714075",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573108714075",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b13",
+    "name": "TIENDASTORES",
+    "cat": "Tienda de alimentacion",
+    "addr": "Cra. 112A #75C-09, Engativa",
+    "phone": "+57 18116587",
+    "phoneClean": "5718116587",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5718116587",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b14",
+    "name": "Tienda El Palmar",
+    "cat": "Tienda de alimentacion",
+    "addr": "Cra. 89A #83-C, Engativa",
+    "phone": "+57 14633760",
+    "phoneClean": "5714633760",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5714633760",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b15",
+    "name": "Tienda (Tv. 94 L)",
+    "cat": "Tienda de alimentacion",
+    "addr": "Tv. 94 L #80-39, Engativa",
+    "phone": "+57 12289192",
+    "phoneClean": "5712289192",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712289192",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b16",
+    "name": "Tienda La Vina",
+    "cat": "Tienda de alimentacion",
+    "addr": "Cra. 71d #72 B, Bogota",
+    "phone": "+57 301 2034240",
+    "phoneClean": "573012034240",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573012034240",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b17",
+    "name": "Tienda De La Carrera 91",
+    "cat": "Tienda de alimentacion",
+    "addr": "Av. Cra. 91 #147 B 91, Suba",
+    "phone": "+57 16810306",
+    "phoneClean": "5716810306",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5716810306",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b18",
+    "name": "AKA",
+    "cat": "Moda y Accesorios",
+    "addr": "Centro Mayor Local 1-016, Bogotá",
+    "phone": "+57 311 595 3856",
+    "phoneClean": "573115953856",
+    "webType": "social-only",
+    "webUrl": "https://instagram.com/tiendasaka",
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573115953856",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/tiendasaka",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b19",
+    "name": "La Tienda Favorita",
+    "cat": "Tienda de regalos",
+    "addr": "Carrera 92 # 64C 59, Bogota",
+    "phone": "+57 317 4030580",
+    "phoneClean": "573174030580",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573174030580",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b20",
+    "name": "Shaloom Boutique y Accesorios",
+    "cat": "Boutique / Ropa Mujer",
+    "addr": "Carrera 104a #20-33 Of 306, Fontibón",
+    "phone": "+57 1 415 0091",
+    "phoneClean": "5714150091",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5714150091",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b21",
+    "name": "Seventh",
+    "cat": "Ropa Formal Mujer",
+    "addr": "CC Hacienda Santa Bárbara Local D211, Usaquén",
+    "phone": "+57 1 612 2281",
+    "phoneClean": "5716122281",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5716122281",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b22",
+    "name": "Maria Mulata",
+    "cat": "Ropa Rockera / Alternativa",
+    "addr": "Calle 140 #9-69, Feria artesanal Local ñ12, Bogotá",
+    "phone": "+57 305 429 9909",
+    "phoneClean": "573054299909",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573054299909",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b23",
+    "name": "Restaurante Azul Clarito",
+    "cat": "Restaurante",
+    "addr": "Cl. 86 #103 d 07, Bogota",
+    "phone": "+57 304 3333626",
+    "phoneClean": "573043333626",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573043333626",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b24",
+    "name": "Stacia Store",
+    "cat": "Tienda de Ropa",
+    "addr": "Calle 22 #14-53, Bogotá",
+    "phone": "+57 300 478 0637",
+    "phoneClean": "573004780637",
+    "webType": "social-only",
+    "webUrl": "https://instagram.com/stacia_store",
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573004780637",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/stacia_store",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": "https://lp-stacia-store.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b25",
+    "name": "Somo Ilius",
+    "cat": "Ropa Unisex",
+    "addr": "Barrio Perdomo, Bogotá",
+    "phone": "+57 322 374 4097",
+    "phoneClean": "573223744097",
+    "webType": "social-only",
+    "webUrl": "https://instagram.com/ilius1_",
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573223744097",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/ilius1_",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b30",
+    "name": "Restaurante Buque Gourmet",
+    "cat": "Restaurante",
+    "addr": "Cl. 22b # 42-15, Bogota",
+    "phone": "+57 314 3429820",
+    "phoneClean": "573143429820",
+    "webType": "social-only",
+    "webUrl": "https://instagram.com/restaurantebuque",
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573143429820",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/restaurantebuque",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b31",
+    "name": "Restaurante Luna de Paris",
+    "cat": "Restaurante",
+    "addr": "Cl. 86 #103d - 19, Engativa",
+    "phone": "+57 310 3091475",
+    "phoneClean": "573103091475",
+    "webType": "social-only",
+    "webUrl": "https://www.facebook.com/lunadeparisgourmet",
+    "webLabel": "facebook.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573103091475",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/lunadeparisgourmet",
+        "label": "Facebook"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b32",
+    "name": "La nostra famiglia",
+    "cat": "Restaurante italiano",
+    "addr": "Tv. 96a #76b-81, Engativa",
+    "phone": "+57 320 2002512",
+    "phoneClean": "573202002512",
+    "webType": "social-only",
+    "webUrl": "https://wa.me/message/RZNR3TPBASSHO1",
+    "webLabel": "wa.me",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573202002512",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b33",
+    "name": "Gothic Store",
+    "cat": "Ropa Gótica / Alternativa",
+    "addr": "Engativá, Bogotá",
+    "phone": "+57 304 497 4326",
+    "phoneClean": "573044974326",
+    "webType": "social-only",
+    "webUrl": "https://facebook.com/GothicStoreBogota",
+    "webLabel": "facebook.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573044974326",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/GothicStoreBogota",
+        "label": "Facebook"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b34",
+    "name": "Bocatoma Comida Casual",
+    "cat": "Restaurante",
+    "addr": "Tv. 113f #67b09, Bogota",
+    "phone": "+57 311 2462241",
+    "phoneClean": "573112462241",
+    "webType": "social-only",
+    "webUrl": "http://facebook.com/profile.php?id=843410249106742",
+    "webLabel": "facebook.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573112462241",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "http://facebook.com/profile.php?id=843410249106742",
+        "label": "Facebook"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b36",
+    "name": "Restaurante Saira",
+    "cat": "Restaurante",
+    "addr": "Cl. 9 #78-43, Bogota",
+    "phone": "+57 302 3280777",
+    "phoneClean": "573023280777",
+    "webType": "has-web",
+    "webUrl": "http://www.restaurantesaira.com/",
+    "webLabel": "restaurantesaira.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573023280777",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b37",
+    "name": "IL NONNO Trattoria de Barrio",
+    "cat": "Restaurante italiano",
+    "addr": "Dg. 81g #76 b 03, Engativa",
+    "phone": "+57 304 6578373",
+    "phoneClean": "573046578373",
+    "webType": "has-web",
+    "webUrl": "http://www.ilnonno.co/",
+    "webLabel": "ilnonno.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573046578373",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b38",
+    "name": "Violeta Inesperada",
+    "cat": "Boutique Vintage / Ropa",
+    "addr": "Bogotá",
+    "phone": "+57 319 381 4367",
+    "phoneClean": "573193814367",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573193814367",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b39",
+    "name": "Avril Boutique",
+    "cat": "Boutique de Moda",
+    "addr": "Calle 156 #7C-44, Bogotá",
+    "phone": "+57 319 318 3824",
+    "phoneClean": "573193183824",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573193183824",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b40",
+    "name": "Amatita Bisutería",
+    "cat": "Bisutería Artesanal",
+    "addr": "Calle 147 101-57 Local 240, CC Fiesta Suba",
+    "phone": "+57 321 393 2805",
+    "phoneClean": "573213932805",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573213932805",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b41",
+    "name": "Inrya - Ropa Hindú",
+    "cat": "Ropa Hindú / Moda Oriental",
+    "addr": "Cra. 58 #137B-01, CC Porto Alegre Local 123, Bogotá",
+    "phone": "+57 312 341 5807",
+    "phoneClean": "573123415807",
+    "webType": "has-web",
+    "webUrl": "https://inrya.ueniweb.com",
+    "webLabel": "inrya.ueniweb.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573123415807",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b50",
+    "name": "ZeQueda Paellas",
+    "cat": "Paellas a Domicilio",
+    "addr": "Bogotá (envíos a Bogotá, Chía y Sabana Norte)",
+    "phone": "+57 322 436 6350",
+    "phoneClean": "573224366350",
+    "webType": "has-web",
+    "webUrl": "https://zequedapaellas.com/",
+    "webLabel": "zequedapaellas.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573224366350",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-zequeda-paellas.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b51",
+    "name": "Lechonería La Exquisita",
+    "cat": "Lechonería",
+    "addr": "Calle 28sur #18a-70, Bogotá",
+    "phone": "+57 317 522 4626",
+    "phoneClean": "573175224626",
+    "webType": "has-web",
+    "webUrl": "https://lechonadomicilio.com/",
+    "webLabel": "lechonadomicilio.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573175224626",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b52",
+    "name": "Naguara Lunch",
+    "cat": "Comida Rápida Venezolana",
+    "addr": "Carrera 23c #32-46 Sur, Bogotá",
+    "phone": "+57 323 735 1526",
+    "phoneClean": "573237351526",
+    "webType": "has-web",
+    "webUrl": "https://pepitosng.com/",
+    "webLabel": "pepitosng.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573237351526",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b53",
+    "name": "Café Monstruo",
+    "cat": "Cafetería / Pizzería",
+    "addr": "Carrera 18 #84-84, Bogotá",
+    "phone": "+57 311 261 5249",
+    "phoneClean": "573112615249",
+    "webType": "has-web",
+    "webUrl": "https://cafemonstruo.com/",
+    "webLabel": "cafemonstruo.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573112615249",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b54",
+    "name": "Pizzardi Artigianale",
+    "cat": "Pizzería",
+    "addr": "Calle 81 #11-17, Bogotá",
+    "phone": "+57 310 221 1729",
+    "phoneClean": "573102211729",
+    "webType": "has-web",
+    "webUrl": "https://www.pizzardi.com.co/",
+    "webLabel": "pizzardi.com.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573102211729",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b55",
+    "name": "Diestro Restaurante",
+    "cat": "Restaurante (Comida Española)",
+    "addr": "Bogotá (norte)",
+    "phone": "+57 310 879 1933",
+    "phoneClean": "573108791933",
+    "webType": "has-web",
+    "webUrl": "https://diestrorestaurante.com/",
+    "webLabel": "diestrorestaurante.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573108791933",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b56",
+    "name": "La Churrasquería Beef & Wine",
+    "cat": "Parrilla",
+    "addr": "Calle 69 #10A-35, Quinta Camacho, Bogotá",
+    "phone": "+57 319 538 4563",
+    "phoneClean": "573195384563",
+    "webType": "has-web",
+    "webUrl": "https://lachurrasqueria.com/",
+    "webLabel": "lachurrasqueria.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573195384563",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-la-churrasqueria.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b57",
+    "name": "Don Jediondo Sopitas y Parrilla",
+    "cat": "Restaurante (Comida Tradicional Colombiana)",
+    "addr": "Carrera 59b #79b-50, Bogotá",
+    "phone": "+57 311 491 1522",
+    "phoneClean": "573114911522",
+    "webType": "has-web",
+    "webUrl": "https://donjediondo.com/",
+    "webLabel": "donjediondo.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573114911522",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b58",
+    "name": "La Puerta de la Catedral",
+    "cat": "Restaurante (Cocina Colombiana)",
+    "addr": "Calle 11 #6-16, La Candelaria, Bogotá",
+    "phone": "+57 316 405 1805",
+    "phoneClean": "573164051805",
+    "webType": "has-web",
+    "webUrl": "https://www.lapuertadelacatedral.com/",
+    "webLabel": "lapuertadelacatedral.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573164051805",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b59",
+    "name": "Tamalechona",
+    "cat": "Comida Típica (Lechona y Tamales)",
+    "addr": "Calle 77 #100B-28, Bogotá",
+    "phone": "+57 322 785 0936",
+    "phoneClean": "573227850936",
+    "webType": "has-web",
+    "webUrl": "https://tamalechona.com/",
+    "webLabel": "tamalechona.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573227850936",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b60",
+    "name": "El Rey de la Lechona",
+    "cat": "Lechonería",
+    "addr": "Av. Caracas 28b-37 Sur, Barrio Olaya, Bogotá",
+    "phone": "+57 314 379 9074",
+    "phoneClean": "573143799074",
+    "webType": "has-web",
+    "webUrl": "https://elreydelalechona.co/",
+    "webLabel": "elreydelalechona.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573143799074",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b61",
+    "name": "Roerik Café y Pizzería",
+    "cat": "Cafetería / Pizzería",
+    "addr": "Calle 174a #49B-06, Suba, Bogotá",
+    "phone": "+57 1 674 3901",
+    "phoneClean": "5716743901",
+    "webType": "has-web",
+    "webUrl": "https://roerik.com/",
+    "webLabel": "roerik.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5716743901",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b62",
+    "name": "Bella Suiza Panadería y Pastelería",
+    "cat": "Panadería / Pastelería",
+    "addr": "Calle 132 #7A-91, Bella Suiza, Bogotá",
+    "phone": "+57 314 356 0172",
+    "phoneClean": "573143560172",
+    "webType": "has-web",
+    "webUrl": "https://www.panaderiabellasuiza.com/",
+    "webLabel": "panaderiabellasuiza.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573143560172",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b63",
+    "name": "XL Gourmet",
+    "cat": "Comida Rápida (Hamburguesas)",
+    "addr": "Calle 8va Sur #32D-12, Ciudad Montes, Bogotá",
+    "phone": "+57 320 803 2421",
+    "phoneClean": "573208032421",
+    "webType": "has-web",
+    "webUrl": "https://www.xlgourmet.com/",
+    "webLabel": "xlgourmet.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573208032421",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b64",
+    "name": "Gustavo Parra Design",
+    "cat": "Alquiler de Trajes / Smoking",
+    "addr": "Tv. 76 #84-25, Bogotá",
+    "phone": "+57 301 619 3899",
+    "webType": "has-web",
+    "webUrl": "https://gustavoparradesign.com",
+    "webLabel": "gustavoparradesign.com",
+    "phoneClean": "573016193899",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573016193899",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-gustavo-parra.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b65",
+    "name": "Elegance Sastrería",
+    "cat": "Sastrería / Alquiler Smoking",
+    "addr": "Cl. 127D #58-12, Bogotá",
+    "phone": "+57 311 539 8539",
+    "webType": "has-web",
+    "webUrl": "https://elegancesastreria.com",
+    "webLabel": "elegancesastreria.com",
+    "phoneClean": "573115398539",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573115398539",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b66",
+    "name": "BeneFit Ropa Tallas Grandes",
+    "cat": "Ropa Mujer Tallas Grandes",
+    "addr": "Cl. 109 #18C-10, Bogotá",
+    "phone": "+57 300 203 5911",
+    "webType": "has-web",
+    "webUrl": "http://www.b-fit.com.co",
+    "webLabel": "b-fit.com.co",
+    "phoneClean": "573002035911",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573002035911",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-benefit.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b67",
+    "name": "Jenne Riveros Designer",
+    "cat": "Vestidos de Novia",
+    "addr": "Cra. 58 128B-21, Bogotá",
+    "phone": "+57 321 218 3037",
+    "webType": "has-web",
+    "webUrl": "https://vestidosdenovia.company.site",
+    "webLabel": "vestidosdenovia.company.site",
+    "phoneClean": "573212183037",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573212183037",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-jenne-riveros.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b68",
+    "name": "Alquiler Smoking Bogotá",
+    "cat": "Alquiler de Smoking / Trajes",
+    "addr": "Bogotá",
+    "phone": "+57 301 625 6476",
+    "webType": "has-web",
+    "webUrl": "https://alquilersmokingbogota.com",
+    "webLabel": "alquilersmokingbogota.com",
+    "phoneClean": "573016256476",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573016256476",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b69",
+    "name": "Click2Dress",
+    "cat": "Alquiler de Vestidos de Fiesta",
+    "addr": "Cl. 93B #11A-84 Local 302, CC Portobelo, Bogotá",
+    "phone": "+57 320 948 1061",
+    "webType": "has-web",
+    "webUrl": "https://click2dress.com",
+    "webLabel": "click2dress.com",
+    "phoneClean": "573209481061",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573209481061",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/click2dress/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/alquilerdevestidosclick2dress/",
+        "label": "Facebook"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b70",
+    "name": "Paola Dimaya Alta Costura",
+    "cat": "Alquiler Trajes de Etiqueta",
+    "addr": "Cra. 13A #88-55, Bogotá",
+    "phone": "+57 301 625 6476",
+    "webType": "has-web",
+    "webUrl": "https://www.paoladimaya.com",
+    "webLabel": "paoladimaya.com",
+    "phoneClean": "573016256476",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573016256476",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573182004949",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-paola-dimaya.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b71",
+    "name": "Sarta & Bguest",
+    "cat": "Alquiler de Vestidos",
+    "addr": "Cra. 11A #95-15, Bogotá",
+    "phone": "+57 313 870 7291",
+    "webType": "has-web",
+    "webUrl": "https://sarta-bguest.com",
+    "webLabel": "sarta-bguest.com",
+    "phoneClean": "573138707291",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573138707291",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/sartavestidos",
+        "label": "Instagram"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/bguest.co",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": "https://lp-sarta-bguest.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b72",
+    "name": "Cherie Boutique",
+    "cat": "Boutique / Ropa Mujer",
+    "addr": "CR. 15 #123-30, CC Unicentro Local 2-109, Bogotá",
+    "phone": "+57 315 863 1774",
+    "webType": "has-web",
+    "webUrl": "https://cherie.com.co",
+    "webLabel": "cherie.com.co",
+    "phoneClean": "573158631774",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573158631774",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/cheriemoda",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b73",
+    "name": "By Caicedo",
+    "cat": "Ropa Mujer / Moda Femenina",
+    "addr": "Bogotá",
+    "phone": "+57 300 856 3936",
+    "webType": "has-web",
+    "webUrl": "https://bycaicedo.com",
+    "webLabel": "bycaicedo.com",
+    "phoneClean": "573008563936",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573008563936",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/bycaicedo/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://web.facebook.com/bycaicedo/",
+        "label": "Facebook"
+      }
+    ],
+    "propuesta": "https://lp-karissa-moda.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b74",
+    "name": "Karissa Moda",
+    "cat": "Ropa Mujer / Moda Femenina",
+    "addr": "Cra. 11 #10-27, Bogotá",
+    "phone": "+57 311 353 6499",
+    "webType": "has-web",
+    "webUrl": "https://karissamoda.com",
+    "webLabel": "karissamoda.com",
+    "phoneClean": "573113536499",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573113536499",
+        "label": "WhatsApp (principal)"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/karissa_moda/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/profile.php?id=61573952170844",
+        "label": "Facebook"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@_karissa4",
+        "label": "TikTok"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/+gEb2zBv5LOo0YmE5",
+        "label": "Telegram"
+      },
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573134399687",
+        "label": "WhatsApp (mayorista)"
+      },
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573144122015",
+        "label": "WhatsApp (alterno)"
+      },
+      {
+        "platform": "link",
+        "url": "https://beaconsai.com/karissamoda",
+        "label": "Beaconsai"
+      }
+    ],
+    "propuesta": "https://lp-karissa-moda.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b75",
+    "name": "Alison Ropa Tejida",
+    "cat": "Ropa Tejida / Suéteres",
+    "addr": "Cra. 25 #73-33, Bogotá",
+    "phone": "+57 1 630 7871",
+    "webType": "has-web",
+    "webUrl": "https://alison.com.co",
+    "webLabel": "alison.com.co",
+    "phoneClean": "5716307871",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5716307871",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b76",
+    "name": "Zigzag Design For Men",
+    "cat": "Trajes Hombre / Alquiler",
+    "addr": "Calle 60 #9-87 Local 987, CC Aquarium, Bogotá",
+    "phone": "+57 312 553 9406",
+    "webType": "has-web",
+    "webUrl": "https://zigzagdesignformen.com.co",
+    "webLabel": "zigzagdesignformen.com.co",
+    "phoneClean": "573125539406",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573125539406",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/zigzagdesignconfecciones2015",
+        "label": "Facebook"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/zigzag_design_slimfit/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@zigzagdesignmodaslimfit",
+        "label": "TikTok"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b77",
+    "name": "Bettina Spitz María Antonieta",
+    "cat": "Ropa Mujer / Alta Costura",
+    "addr": "Calle 84A #12-18, Bogotá",
+    "phone": "+57 322 749 0834",
+    "webType": "has-web",
+    "webUrl": "https://bettinaspitz.com",
+    "webLabel": "bettinaspitz.com",
+    "phoneClean": "573227490834",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573227490834",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/bettinaspitz/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/bettinaspitzmoda/",
+        "label": "Facebook"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@bettinaspitzbogota",
+        "label": "TikTok"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b78",
+    "name": "Karol Nails Beauty Expert",
+    "cat": "Centro de Estética",
+    "addr": "Cra. 75 #24-24, Fontibón, Bogotá",
+    "phone": "+57 320 7741284",
+    "phoneClean": "573207741284",
+    "webType": "has-web",
+    "webUrl": "https://linktr.ee/Karol_nails31",
+    "webLabel": "linktr.ee",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573207741284",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b79",
+    "name": "Candy nails by Sharon Narvaez",
+    "cat": "Salón de Manicura y Pedicura",
+    "addr": "Cl. 69 #10a-29, Bogotá",
+    "phone": "+57 302 3199887",
+    "phoneClean": "573023199887",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573023199887",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b80",
+    "name": "Magic Nails Pasadena",
+    "cat": "Salón de Manicura y Pedicura",
+    "addr": "Cra. 53 #102a-46, Bogotá",
+    "phone": "+57 323 8139069",
+    "phoneClean": "573238139069",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573238139069",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b81",
+    "name": "NELEH BEAUTY SERVICE",
+    "cat": "Salón de Manicura y Pedicura",
+    "addr": "Cra. 18 #51-35, Teusaquillo, Bogotá",
+    "phone": "+57 300 1239231",
+    "phoneClean": "573001239231",
+    "webType": "social-only",
+    "webUrl": "https://www.instagram.com/neleh.sb/",
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573001239231",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/neleh.sb/",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": "https://lp-neleh-beauty.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b82",
+    "name": "Magic Nails Parque 93",
+    "cat": "Salón de Manicura y Pedicura",
+    "addr": "Cl 93b #13-10, Chapinero, Bogotá",
+    "phone": "+57 350 5754007",
+    "phoneClean": "573505754007",
+    "webType": "has-web",
+    "webUrl": "https://www.tumagicnails.com/index.php/reservas/",
+    "webLabel": "tumagicnails.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573505754007",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/magic_nailsls",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/profile.php?id=100063567043811",
+        "label": "Facebook"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b83",
+    "name": "Super Wow Calle 105 - Spa de uñas",
+    "cat": "Salón de Manicura y Pedicura",
+    "addr": "Cra 19 #105-44, Bogotá",
+    "phone": "+57 321 3815261",
+    "phoneClean": "573213815261",
+    "webType": "has-web",
+    "webUrl": "https://superwow.com.co/sedes/super-wow-calle-105/",
+    "webLabel": "superwow.com.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573213815261",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/superwownails",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/superwownails",
+        "label": "Facebook"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@superwownails",
+        "label": "TikTok"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b84",
+    "name": "Magic Nails Zona G",
+    "cat": "Salón de Manicura y Pedicura",
+    "addr": "Cl. 68 #4A-19, Chapinero, Bogotá",
+    "phone": "+57 316 1851473",
+    "phoneClean": "573161851473",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573161851473",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b85",
+    "name": "Mistú Nails & Wellness",
+    "cat": "Centro de Estética",
+    "addr": "Cra. 16 #93-11 Local 101, Chapinero, Bogotá",
+    "phone": "+57 322 8710848",
+    "phoneClean": "573228710848",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573228710848",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b86",
+    "name": "Ooh Lala nails studio",
+    "cat": "Salón de Manicura y Pedicura",
+    "addr": "Parque de la 93, Cra. 14#90-20 Local 7, Bogotá",
+    "phone": "+57 312 3153790",
+    "phoneClean": "573123153790",
+    "webType": "has-web",
+    "webUrl": "http://reservas.lizto.co/ooh_lala_nails-gb",
+    "webLabel": "lizto.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573123153790",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b87",
+    "name": "ANTO Nails",
+    "cat": "Salón de Manicura y Pedicura",
+    "addr": "Cl. 94 #11a-48, Bogotá",
+    "phone": "+57 322 5545957",
+    "phoneClean": "573225545957",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573225545957",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b88",
+    "name": "Meraki Nails Spa",
+    "cat": "Centro de Estética",
+    "addr": "Av. La Esperanza #44a-21, Teusaquillo, Bogotá",
+    "phone": "+57 310 7821647",
+    "phoneClean": "573107821647",
+    "webType": "social-only",
+    "webUrl": "https://www.instagram.com/meraki.spadeunas/",
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573107821647",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/meraki.spadeunas/",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": "https://lp-meraki-nails.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b89",
+    "name": "Spa La Celestina Bogotá",
+    "cat": "Centro de Estética",
+    "addr": "Centro Comercial San Martín, Ak 7 #32-16 Locales 108A-137-138, Bogotá",
+    "phone": "+57 310 6046541",
+    "phoneClean": "573106046541",
+    "webType": "has-web",
+    "webUrl": "https://lacelestina.site.agendapro.com/co/sucursal/29133",
+    "webLabel": "agendapro.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573106046541",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/agendapro_software",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/agendapro",
+        "label": "Facebook"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b90",
+    "name": "Rose Studio Vip Nails Spa",
+    "cat": "Salón de Manicura y Pedicura",
+    "addr": "Cl. 65 #10-36, Bogotá",
+    "phone": "+57 316 1321177",
+    "phoneClean": "573161321177",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573161321177",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b91",
+    "name": "HOLA GUAPA NAILS AND SPA",
+    "cat": "Centro de Estética",
+    "addr": "Cerca al Parque de la 93, Cl 93b #16-08 Local 102, Chapinero, Bogotá",
+    "phone": "+57 312 5798379",
+    "phoneClean": "573125798379",
+    "webType": "has-web",
+    "webUrl": "https://linktr.ee/holaguapanailsandspa",
+    "webLabel": "linktr.ee",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573125798379",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b92",
+    "name": "Free Nails Spa Zona Rosa",
+    "cat": "Centro de Estética",
+    "addr": "Kr 13 #82-49 Loc 113, Chapinero, Bogotá",
+    "phone": "+57 319 6594961",
+    "phoneClean": "573196594961",
+    "webType": "social-only",
+    "webUrl": "https://instagram.com/freenails_spa",
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573196594961",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/freenails_spa",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": "https://lp-free-nails-spa.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b93",
+    "name": "Mi manicurista",
+    "cat": "Centro de Estética",
+    "addr": "A domicilio en Cra. 11 #93-62, Bogotá",
+    "phone": "+57 300 2075709",
+    "phoneClean": "573002075709",
+    "webType": "has-web",
+    "webUrl": "https://www.mimanicurista.com/",
+    "webLabel": "mimanicurista.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573002075709",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/mimanicurista",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/mimanicurista1",
+        "label": "Facebook"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b94",
+    "name": "SENSEBENE",
+    "cat": "Salón de Manicura y Pedicura",
+    "addr": "Cra. 11 #95-79 Local 2, Chapinero, Bogotá",
+    "phone": "+57 322 3586131",
+    "phoneClean": "573223586131",
+    "webType": "has-web",
+    "webUrl": "http://sensebene.co/stores/sensebene-chico/",
+    "webLabel": "sensebene.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573223586131",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b95",
+    "name": "SECRETO DE UÑAS",
+    "cat": "Salón de Manicura y Pedicura",
+    "addr": "Cra 20 #58-08, Teusaquillo, Bogotá",
+    "phone": "+57 350 4997620",
+    "phoneClean": "573504997620",
+    "webType": "social-only",
+    "webUrl": "https://www.instagram.com/secretodeunas17/",
+    "webLabel": "instagram.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573504997620",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/secretodeunas17/",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b96",
+    "name": "La Emperatriz De Las Uñas",
+    "cat": "Tienda de Productos de Belleza",
+    "addr": "Ak 15 #84A-24 Loc 105, Chapinero, Bogotá",
+    "phone": "+57 305 4247671",
+    "phoneClean": "573054247671",
+    "webType": "has-web",
+    "webUrl": "http://laemperatriznailboutique.com/",
+    "webLabel": "laemperatriznailboutique.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573054247671",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b97",
+    "name": "Happy Nails & Spa Sede Chapinero",
+    "cat": "Spa",
+    "addr": "Kr 13 #58-89, Chapinero, Bogotá",
+    "phone": "+57 302 8671024",
+    "phoneClean": "573028671024",
+    "webType": "has-web",
+    "webUrl": "https://happynailsspa18.com/726-2/",
+    "webLabel": "happynailsspa18.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573028671024",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/happynailsspa18",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/share",
+        "label": "Facebook"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@happynailsspa18",
+        "label": "TikTok"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b98",
+    "name": "OBA Consultorio Odontológico",
+    "cat": "Consultorio Odontológico",
+    "addr": "Cra. 19 #102 – 53 Consultorio 518, Usaquén, Bogotá",
+    "phone": "+57 319 731 4116",
+    "phoneClean": "573197314116",
+    "webType": "has-web",
+    "webUrl": "https://obaconsultorio.com/",
+    "webLabel": "obaconsultorio.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573197314116",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/oba_consultorio/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/people/Consultorio-Odontológico-Boulevard/100063563560668/?locale=es_LA",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.703,
+    "lng": -74.051,
+    "propuesta": ""
+  },
+  {
+    "id": "b99",
+    "name": "Consultorio Odontológico Dani-Dent",
+    "cat": "Consultorio Odontológico",
+    "addr": "Calle 24 No. 11-73 Sur, San José, Bogotá D.C.",
+    "phone": "(601) 272-6106",
+    "phoneClean": "576012726106",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/576012726106",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.568,
+    "lng": -74.137,
+    "propuesta": ""
+  },
+  {
+    "id": "b100",
+    "name": "Consultorio Odontológico Dr. Amauri Ariza Moreno",
+    "cat": "Consultorio Odontológico",
+    "addr": "Carrera 13 38-86 Consult 208, Bogotá D.C.",
+    "phone": "(1) 2328946",
+    "phoneClean": "5712328946",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712328946",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.635,
+    "lng": -74.081,
+    "propuesta": ""
+  },
+  {
+    "id": "b101",
+    "name": "Consultorio Odontológico Dra. Tatiana Amórtegui",
+    "cat": "Consultorio Odontológico",
+    "addr": "Cra. 14 No. 98-95 Consl 204, Chicó, Bogotá D.C.",
+    "phone": "(601) 610-7279",
+    "phoneClean": "576016107279",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/576016107279",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.667,
+    "lng": -74.056,
+    "propuesta": ""
+  },
+  {
+    "id": "b102",
+    "name": "Consultorio Odontológico Integral",
+    "cat": "Consultorio Odontológico",
+    "addr": "Carrera 17#50-77, Bogotá, Cundinamarca",
+    "phone": "+57 322 446 0316",
+    "phoneClean": "573224460316",
+    "webType": "has-web",
+    "webUrl": "https://consultoriodontologicointegral.com/",
+    "webLabel": "consultoriodontologicointegral.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573224460316",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/consultoriodontologicointegral/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.655,
+    "lng": -74.075,
+    "propuesta": ""
+  },
+  {
+    "id": "b103",
+    "name": "Clínicas Dentales Colsanitas",
+    "cat": "Clínica Dental",
+    "addr": "Varía por sede, Bogotá",
+    "phone": "+57 (310) 3107676",
+    "phoneClean": "573103107676",
+    "webType": "has-web",
+    "webUrl": "https://www.colsanitas.com/en/red-de-atencion/clinicas-dentales-colsanitas",
+    "webLabel": "colsanitas.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573103107676",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/dentalnetwork/",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.609,
+    "lng": -74.081,
+    "propuesta": ""
+  },
+  {
+    "id": "b104",
+    "name": "Clínica Dental Bogotá - Centro médico Dalí Chicó norte",
+    "cat": "Clínica Dental",
+    "addr": "Cra. 18 #80 06, Chapinero, Bogotá",
+    "phone": "+57 318 643 7326",
+    "phoneClean": "573186437326",
+    "webType": "has-web",
+    "webUrl": "https://periodoncistajohannacalderon.com/locations/consultorio-odontologico-en-bogota/",
+    "webLabel": "periodoncistajohannacalderon.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573186437326",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/periodoncista_johanna_calderon/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/DraJohannaCalderon",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.658,
+    "lng": -74.061,
+    "propuesta": "https://lp-clinica-dental-dali.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b105",
+    "name": "Clínica Dental Odontología Estética Bogotá | Dra. María Marín",
+    "cat": "Clínica Dental",
+    "addr": "Bogotá, Dirección específica no proporcionada",
+    "phone": "No proporcionado en resultados",
+    "phoneClean": "",
+    "webType": "has-web",
+    "webUrl": "https://odontologamariamarin.com/",
+    "webLabel": "odontologamariamarin.com",
+    "social": [
+      {
+        "platform": "instagram",
+        "url": "No encontrado en resultados",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.609,
+    "lng": -74.081,
+    "propuesta": ""
+  },
+  {
+    "id": "b106",
+    "name": "Consultorio Odontológico Dr. José Emanuel Rodríguez David",
+    "cat": "Consultorio Odontológico",
+    "addr": "Calle B, 22000 La Romana, República Dominicana",
+    "phone": "+1-809-349-4106",
+    "phoneClean": "18093494106",
+    "webType": "has-web",
+    "webUrl": "https://www.yellowpages.do/phone-1-8093494106-dentista-La-Romana-DOEN67172.html",
+    "webLabel": "yellowpages.do",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/18093494106",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 18.451,
+    "lng": -68.979,
+    "propuesta": ""
+  },
+  {
+    "id": "b107",
+    "name": "Consultorio Dental Sonrisas Sanas.",
+    "cat": "Consultorio Dental",
+    "addr": "Cochabamba, Bolivia",
+    "phone": "No proporcionado en resultados",
+    "phoneClean": "",
+    "webType": "has-web",
+    "webUrl": "https://www.findhealthclinics.org/BO/Cochabamba/161834184023707/Consultorio-Dental-Sonrisas-Sanas.",
+    "webLabel": "findhealthclinics.org",
+    "social": [],
+    "lat": -17.389,
+    "lng": -66.156,
+    "propuesta": ""
+  },
+  {
+    "id": "b128",
+    "name": "OBA Consultorio Odontológico",
+    "cat": "Consultorio Odontológico",
+    "addr": "Cra. 19 #102 – 53 Consultorio 518, Bogotá",
+    "phone": "+57 319 731 4116",
+    "phoneClean": "573197314116",
+    "webType": "has-web",
+    "webUrl": "https://obaconsultorio.com/",
+    "webLabel": "obaconsultorio.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573197314116",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/oba_consultorio/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/oba_consultorio/",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.703,
+    "lng": -74.051,
+    "propuesta": ""
+  },
+  {
+    "id": "b129",
+    "name": "Consultorio Odontológico Integral",
+    "cat": "Consultorio Odontológico",
+    "addr": "Carrera 17#50-77 Bogotá, Cundinamarca",
+    "phone": "+57 322 446 0316",
+    "phoneClean": "573224460316",
+    "webType": "has-web",
+    "webUrl": "https://consultoriodontologicointegral.com/",
+    "webLabel": "consultoriodontologicointegral.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573224460316",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/consultoriodontologicointegral/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@consultoriodontologicointegral",
+        "label": "TikTok"
+      }
+    ],
+    "lat": 4.655,
+    "lng": -74.065,
+    "propuesta": ""
+  },
+  {
+    "id": "b130",
+    "name": "La Clínica Dental Bogotá",
+    "cat": "Clínica Dental",
+    "addr": "Cra. 18 #82-39, Localidad de Chapinero, Bogotá, Cundinamarca, Colombia",
+    "phone": "+57 601 918 2220",
+    "phoneClean": "576019182220",
+    "webType": "has-web",
+    "webUrl": "https://laclinicadental.com.co/",
+    "webLabel": "laclinicadental.com.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/576019182220",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.645,
+    "lng": -74.057,
+    "propuesta": ""
+  },
+  {
+    "id": "b131",
+    "name": "Consultorio Odontológico Kennedy",
+    "cat": "Consultorio Odontológico",
+    "addr": "Calle 42 S 78 H-35 Bogotá",
+    "phone": "+57 601 450 4680",
+    "phoneClean": "576014504680",
+    "webType": "has-web",
+    "webUrl": "https://www.clinicaodontologicakennedy.com/",
+    "webLabel": "clinicaodontologicakennedy.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573116185086",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.675,
+    "lng": -74.065,
+    "propuesta": ""
+  },
+  {
+    "id": "b132",
+    "name": "Sonrisas Dental Spa (Odontología de urgencias)",
+    "cat": "Clínica Dental",
+    "addr": "Chapinero, Bogotá",
+    "phone": "+57 300 755 9918",
+    "phoneClean": "573007559918",
+    "webType": "has-web",
+    "webUrl": "https://www.smiledentalspacenter.com/",
+    "webLabel": "smiledentalspacenter.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573007559918",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/ortodonciadianaburbano/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.665,
+    "lng": -74.055,
+    "propuesta": "https://lp-sonrisas-dental-spa.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b133",
+    "name": "Clínica Odontológica Protección Oral",
+    "cat": "Clínica Odontológica",
+    "addr": "Sede Norte y Sur en Bogotá",
+    "phone": "+57 310 450 4680",
+    "phoneClean": "573104504680",
+    "webType": "has-web",
+    "webUrl": "https://proteccionoral.com/",
+    "webLabel": "proteccionoral.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573104504680",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.67,
+    "lng": -74.045,
+    "propuesta": ""
+  },
+  {
+    "id": "b134",
+    "name": "Dentisalud Bogotá",
+    "cat": "Clínica Odontológica",
+    "addr": "Multiple sedes en Bogotá",
+    "phone": "+57 601 745 9000",
+    "phoneClean": "576017459000",
+    "webType": "has-web",
+    "webUrl": "https://www.dentisalud.com.co/clinica-odontologica/bogota/",
+    "webLabel": "dentisalud.com.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/576017459000",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.65,
+    "lng": -74.08,
+    "propuesta": ""
+  },
+  {
+    "id": "b135",
+    "name": "Odontología Estética Bogotá | Dra. María Marín",
+    "cat": "Clínica Dental",
+    "addr": "Bogotá",
+    "phone": "+57 310 221 1729",
+    "phoneClean": "573102211729",
+    "webType": "has-web",
+    "webUrl": "https://odontologamariamarin.com/",
+    "webLabel": "odontologamariamarin.com",
+    "social": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/odontologamariamarin/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.609,
+    "lng": -74.081,
+    "propuesta": ""
+  },
+  {
+    "id": "b136",
+    "name": "Roberto Granados - Diseño de Sonrisa",
+    "cat": "Consultorio Odontológico",
+    "addr": "Bogotá",
+    "phone": "+57 310 769 5841",
+    "phoneClean": "573107695841",
+    "webType": "has-web",
+    "webUrl": "https://robertogranados.com/diseno-de-sonrisa-en-bogota/",
+    "webLabel": "robertogranados.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573107695841",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.635,
+    "lng": -74.075,
+    "propuesta": "https://lp-roberto-granados.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b137",
+    "name": "Dientes y Sonrisa - Odontopediatría",
+    "cat": "Clínica Dental",
+    "addr": "Bogotá",
+    "phone": "+57 310 221 1729",
+    "phoneClean": "573102211729",
+    "webType": "has-web",
+    "webUrl": "https://www.dientesysonrisa.com/odontopediatria.html",
+    "webLabel": "dientesysonrisa.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573102211729",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.64,
+    "lng": -74.06,
+    "propuesta": ""
+  },
+  {
+    "id": "b138",
+    "name": "OBA Consultorio Odontológico",
+    "cat": "Consultorio Odontológico",
+    "addr": "Cra. 19 #102 – 53 Consultorio 518, Usaquén, Bogotá",
+    "phone": "+57 319 731 4116",
+    "phoneClean": "573197314116",
+    "webType": "has-web",
+    "webUrl": "https://obaconsultorio.com/",
+    "webLabel": "obaconsultorio.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573197314116",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/oba_consultorio/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/people/Consultorio-Odontológico-Boulevard/100063563560668/?locale=es_LA",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.703,
+    "lng": -74.051,
+    "propuesta": ""
+  },
+  {
+    "id": "b139",
+    "name": "Consultorio Odontológico Dani-Dent",
+    "cat": "Consultorio Odontológico",
+    "addr": "Calle 24 No. 11-73 Sur, San José, Bogotá D.C.",
+    "phone": "(601) 272-6106",
+    "phoneClean": "576012726106",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/576012726106",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.568,
+    "lng": -74.137,
+    "propuesta": ""
+  },
+  {
+    "id": "b140",
+    "name": "Consultorio Odontológico Dr. Amauri Ariza Moreno",
+    "cat": "Consultorio Odontológico",
+    "addr": "Carrera 13 38-86 Consult 208, Bogotá D.C.",
+    "phone": "(1) 2328946",
+    "phoneClean": "5712328946",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712328946",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.635,
+    "lng": -74.081,
+    "propuesta": ""
+  },
+  {
+    "id": "b141",
+    "name": "Consultorio Odontológico Dra. Tatiana Amórtegui",
+    "cat": "Consultorio Odontológico",
+    "addr": "Cra. 14 No. 98-95 Consl 204, Chicó, Bogotá D.C.",
+    "phone": "(601) 610-7279",
+    "phoneClean": "576016107279",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/576016107279",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.667,
+    "lng": -74.056,
+    "propuesta": ""
+  },
+  {
+    "id": "b142",
+    "name": "Consultorio Odontológico Integral",
+    "cat": "Consultorio Odontológico",
+    "addr": "Carrera 17#50-77, Bogotá, Cundinamarca",
+    "phone": "+57 322 446 0316",
+    "phoneClean": "573224460316",
+    "webType": "has-web",
+    "webUrl": "https://consultoriodontologicointegral.com/",
+    "webLabel": "consultoriodontologicointegral.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573224460316",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/consultoriodontologicointegral/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.655,
+    "lng": -74.075,
+    "propuesta": ""
+  },
+  {
+    "id": "b143",
+    "name": "Clínicas Dentales Colsanitas",
+    "cat": "Clínica Dental",
+    "addr": "Varía por sede, Bogotá",
+    "phone": "+57 (310) 3107676",
+    "phoneClean": "573103107676",
+    "webType": "has-web",
+    "webUrl": "https://www.colsanitas.com/en/red-de-atencion/clinicas-dentales-colsanitas",
+    "webLabel": "colsanitas.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573103107676",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/dentalnetwork/",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.609,
+    "lng": -74.081,
+    "propuesta": ""
+  },
+  {
+    "id": "b144",
+    "name": "Clínica Dental Bogotá - Centro médico Dalí Chicó norte",
+    "cat": "Clínica Dental",
+    "addr": "Cra. 18 #80 06, Chapinero, Bogotá",
+    "phone": "+57 318 643 7326",
+    "phoneClean": "573186437326",
+    "webType": "has-web",
+    "webUrl": "https://periodoncistajohannacalderon.com/locations/consultorio-odontologico-en-bogota/",
+    "webLabel": "periodoncistajohannacalderon.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573186437326",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/periodoncista_johanna_calderon/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/DraJohannaCalderon",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.658,
+    "lng": -74.061,
+    "propuesta": ""
+  },
+  {
+    "id": "b145",
+    "name": "Clínica Dental Odontología Estética Bogotá | Dra. María Marín",
+    "cat": "Clínica Dental",
+    "addr": "Bogotá, Dirección específica no proporcionada",
+    "phone": "No proporcionado en resultados",
+    "phoneClean": "",
+    "webType": "has-web",
+    "webUrl": "https://odontologamariamarin.com/",
+    "webLabel": "odontologamariamarin.com",
+    "social": [
+      {
+        "platform": "instagram",
+        "url": "No encontrado en resultados",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.609,
+    "lng": -74.081,
+    "propuesta": ""
+  },
+  {
+    "id": "b146",
+    "name": "Consultorio Odontológico Dr. José Emanuel Rodríguez David",
+    "cat": "Consultorio Odontológico",
+    "addr": "Calle B, 22000 La Romana, República Dominicana",
+    "phone": "+1-809-349-4106",
+    "phoneClean": "18093494106",
+    "webType": "has-web",
+    "webUrl": "https://www.yellowpages.do/phone-1-8093494106-dentista-La-Romana-DOEN67172.html",
+    "webLabel": "yellowpages.do",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/18093494106",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 18.451,
+    "lng": -68.979,
+    "propuesta": ""
+  },
+  {
+    "id": "b147",
+    "name": "Consultorio Dental Sonrisas Sanas.",
+    "cat": "Consultorio Dental",
+    "addr": "Cochabamba, Bolivia",
+    "phone": "No proporcionado en resultados",
+    "phoneClean": "",
+    "webType": "has-web",
+    "webUrl": "https://www.findhealthclinics.org/BO/Cochabamba/161834184023707/Consultorio-Dental-Sonrisas-Sanas.",
+    "webLabel": "findhealthclinics.org",
+    "social": [],
+    "lat": -17.389,
+    "lng": -66.156,
+    "propuesta": ""
+  },
+  {
+    "id": "b108",
+    "name": "El Coq",
+    "cat": "Bar / Pub / Discoteca",
+    "addr": "Calle 84 Bis #14-02, Chapinero, Antiguo Country, Bogotá",
+    "phone": "+57 611 2496",
+    "phoneClean": "576112496",
+    "webType": "has-web",
+    "webUrl": "https://elcoq.co/",
+    "webLabel": "elcoq.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/576112496",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/elcoqcoq/",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": "https://lp-el-coq.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b109",
+    "name": "La Negra Bar",
+    "cat": "Bar / Club / Nightlife",
+    "addr": "Carrera 7 #47-63, Chapinero, Bogotá",
+    "phone": "+57 312 4417308",
+    "phoneClean": "573124417308",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573124417308",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/lanegra.bar/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/LaNegraBta/",
+        "label": "Facebook"
+      }
+    ],
+    "propuesta": "https://lp-la-negra-bar.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b110",
+    "name": "Ritmo Moderno Bogotá",
+    "cat": "Bar Alternativo",
+    "addr": "Carrera 4 #17-39, Bogotá Centro",
+    "phone": "+57 310 6296979",
+    "phoneClean": "573106296979",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573106296979",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/ritmomoderno/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://tiktok.com/@ritmomoderno",
+        "label": "TikTok"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b111",
+    "name": "Dali Bar Rooftop",
+    "cat": "Bar en Azotea / Rooftop Bar",
+    "addr": "Avenida Carrera 85 #12-71, Chapinero, Bogotá",
+    "phone": "+57 310 7682146",
+    "phoneClean": "573107682146",
+    "webType": "has-web",
+    "webUrl": "https://www.skylevels.co/es/americas/colombia/bogota/dali-bar-rooftop",
+    "webLabel": "skylevels.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573107682146",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b112",
+    "name": "Hoja Al Viento Bar",
+    "cat": "Bar Gay / LGBTQ+",
+    "addr": "Calle 12 #11-35, San Victorino, Bogotá",
+    "phone": "+57 324 3741979",
+    "phoneClean": "573243741979",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573243741979",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b113",
+    "name": "Leos Bar Mística LGBTQ Chapinero",
+    "cat": "Bar LGBTQ+ / Karaoke",
+    "addr": "Chapinero, Bogotá",
+    "phone": "+57 300 1234567",
+    "phoneClean": "573001234567",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573001234567",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b114",
+    "name": "The Monkey House",
+    "cat": "Bar / Pub",
+    "addr": "Calle 70A #8-55, Zona G, Chapinero, Bogotá",
+    "phone": "+57 310 9876543",
+    "phoneClean": "573109876543",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573109876543",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/pg/TheMonkeyHouseBogota",
+        "label": "Facebook"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b115",
+    "name": "Cabrera Resto-Bar",
+    "cat": "Bar / Restaurante",
+    "addr": "Chapinero, Bogotá",
+    "phone": "+57 315 5550123",
+    "phoneClean": "573155550123",
+    "webType": "has-web",
+    "webUrl": "https://cabrerarestobar.com/",
+    "webLabel": "cabrerarestobar.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573155550123",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/cabrerarestobar/",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b116",
+    "name": "La Santa Bar Chapinero",
+    "cat": "Bar Universitario",
+    "addr": "Chapinero, Bogotá",
+    "phone": "+57 310 1112233",
+    "phoneClean": "573101112233",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573101112233",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/la.santa.bar.chapinero/",
+        "label": "Facebook"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "id": "b117",
+    "name": "Dark Club Bogotá",
+    "cat": "Discoteca / Club",
+    "addr": "Calle 64 #13-35, 2do Piso, Chapinero, Bogotá",
+    "phone": "+57 310 4445566",
+    "phoneClean": "573104445566",
+    "webType": "has-web",
+    "webUrl": "https://linktr.ee/darkclubbar",
+    "webLabel": "linktr.ee/darkclubbar",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573104445566",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/darkclubbar/",
+        "label": "Instagram"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/darkclubbar",
+        "label": "Telegram"
+      }
+    ],
+    "propuesta": ""
+  },
+  {
+    "name": "Andrés Carne de Res",
+    "cat": "Bar / Restaurante",
+    "addr": "Cra. 70 #11-38, Chía, Bogotá",
+    "phone": "+57 1 8862020",
+    "webType": "has-web",
+    "webUrl": "https://www.andrescarndederes.com/",
+    "webLabel": "andrescarndederes.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5718862020",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/andrescarndederes",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/AndresCarneDeRes",
+        "label": "Facebook"
+      }
+    ],
+    "id": "b118",
+    "phoneClean": "5718862020",
+    "propuesta": "",
+    "lat": 4.711,
+    "lng": -74.0721
+  },
+  {
+    "name": "Salvatore's Bar",
+    "cat": "Bar / Pub",
+    "addr": "Carrera 13 #30-27, Bogotá",
+    "phone": "+57 1 3415555",
+    "webType": "has-web",
+    "webUrl": "https://salvatoresbar.com/",
+    "webLabel": "salvatoresbar.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5713415555",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/salvatoresbarbogota",
+        "label": "Instagram"
+      }
+    ],
+    "id": "b119",
+    "phoneClean": "5713415555",
+    "propuesta": "https://lp-salvatores-bar.vercel.app",
+    "lat": 4.711,
+    "lng": -74.0721,
+    "priority": "hot"
+  },
+  {
+    "name": "Teatro Jorge Eliécer Gaitán - Bar",
+    "cat": "Bar Cultural",
+    "addr": "Av. Corregidora #25-44, Bogotá",
+    "phone": "+57 1 3362020",
+    "webType": "has-web",
+    "webUrl": "https://www.teatrojorgeeliecergaitan.gov.co/",
+    "webLabel": "tejorgeeliecergaitan.gov.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5713362020",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/TeatroJorgeEliecerGaitan",
+        "label": "Facebook"
+      }
+    ],
+    "id": "b120",
+    "phoneClean": "5713362020",
+    "propuesta": "",
+    "lat": 4.711,
+    "lng": -74.0721
+  },
+  {
+    "name": "Café Santiago",
+    "cat": "Bar / Café",
+    "addr": "Calle 12 #4-36, Bogotá",
+    "phone": "+57 1 2863030",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712863030",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/cafesantiagobogota",
+        "label": "Instagram"
+      }
+    ],
+    "id": "b121",
+    "phoneClean": "5712863030",
+    "propuesta": "",
+    "lat": 4.711,
+    "lng": -74.0721
+  },
+  {
+    "name": "Azahar",
+    "cat": "Bar de Cockteles",
+    "addr": "Carrera 7 #32-12, Bogotá",
+    "phone": "+57 1 2864040",
+    "webType": "has-web",
+    "webUrl": "https://azahar.com.co/",
+    "webLabel": "azahar.com.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712864040",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/azaharbar",
+        "label": "Instagram"
+      }
+    ],
+    "id": "b122",
+    "phoneClean": "5712864040",
+    "propuesta": "",
+    "lat": 4.711,
+    "lng": -74.0721
+  },
+  {
+    "name": "El Tintalero",
+    "cat": "Bar / Restaurante",
+    "addr": "Cra. 19 #37-40, Bogotá",
+    "phone": "+57 1 3478080",
+    "webType": "has-web",
+    "webUrl": "https://eltintalero.com/",
+    "webLabel": "eltintalero.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5713478080",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/eltintalerobogota",
+        "label": "Instagram"
+      }
+    ],
+    "id": "b123",
+    "phoneClean": "5713478080",
+    "propuesta": "",
+    "lat": 4.711,
+    "lng": -74.0721
+  },
+  {
+    "name": "La Puerta Falsa",
+    "cat": "Bar / Restaurante Tradicional",
+    "addr": "Calle 11 #6-58, Bogotá",
+    "phone": "+57 1 2864040",
+    "webType": "has-web",
+    "webUrl": "https://lapuertafalsa.com/",
+    "webLabel": "lapuertafalsa.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712864040",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/LaPuertaFalsaBogota",
+        "label": "Facebook"
+      }
+    ],
+    "id": "b124",
+    "phoneClean": "5712864040",
+    "propuesta": "",
+    "lat": 4.711,
+    "lng": -74.0721
+  },
+  {
+    "name": "Video Bélicos",
+    "cat": "Bar Temático",
+    "addr": "Carrera 13A #30-31, Bogotá",
+    "phone": "+57 1 2863030",
+    "webType": "has-web",
+    "webUrl": "https://videobelicos.com/",
+    "webLabel": "videobelicos.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712863030",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/videobelicos",
+        "label": "Instagram"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://tiktok.com/@videobelicos",
+        "label": "TikTok"
+      }
+    ],
+    "id": "b125",
+    "phoneClean": "5712863030",
+    "propuesta": "",
+    "lat": 4.711,
+    "lng": -74.0721
+  },
+  {
+    "name": "Salvo Patria",
+    "cat": "Bar / Restaurante",
+    "addr": "Calle 12 #2-12, Bogotá",
+    "phone": "+57 1 2864040",
+    "webType": "has-web",
+    "webUrl": "https://salvopatriacafe.com/",
+    "webLabel": "salvopatriacafe.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712864040",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/salvopatriacafe",
+        "label": "Instagram"
+      }
+    ],
+    "id": "b126",
+    "phoneClean": "5712864040",
+    "propuesta": "",
+    "lat": 4.711,
+    "lng": -74.0721
+  },
+  {
+    "name": "Hasta que se seque el Malecón",
+    "cat": "Bar / Parque",
+    "addr": "Cra. 30 #43-50, Bogotá",
+    "phone": "+57 1 2863030",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/5712863030",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/hastquese sequelemon",
+        "label": "Instagram"
+      }
+    ],
+    "id": "b127",
+    "phoneClean": "5712863030",
+    "propuesta": "",
+    "lat": 4.711,
+    "lng": -74.0721
+  },
+  {
+    "id": "b148",
+    "name": "Animal's Health Center",
+    "cat": "Veterinaria / Clínica Veterinaria",
+    "addr": "Av. Cra. 30 # 86A-31, Polo Club / Castellana, Bogotá",
+    "phone": "+57 601 2572650",
+    "phoneClean": "576012572650",
+    "webType": "has-web",
+    "webUrl": "https://www.animalshealthcenter.com",
+    "webLabel": "animalshealthcenter.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573154245987",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/animalshealthcenter/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.675,
+    "lng": -74.062,
+    "propuesta": ""
+  },
+  {
+    "id": "b149",
+    "name": "Clínica Veterinaria Zoovet 24 Horas",
+    "cat": "Clínica Veterinaria / Urgencias 24h",
+    "addr": "Av. Suba # 119-73, Suba, Bogotá",
+    "phone": "+57 320 6750505",
+    "phoneClean": "573206750505",
+    "webType": "has-web",
+    "webUrl": "https://clinicazoovet.com/",
+    "webLabel": "clinicazoovet.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573206750505",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/clinicazoovetbogota/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.704,
+    "lng": -74.069,
+    "propuesta": "https://lp-zoovet-24h.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b150",
+    "name": "DidoPet Clínica Veterinaria",
+    "cat": "Clínica Veterinaria / Pet Shop",
+    "addr": "Ak. 9 # 121-76, Usaquén / Santa Bárbara, Bogotá",
+    "phone": "+57 601 9172122",
+    "phoneClean": "576019172122",
+    "webType": "has-web",
+    "webUrl": "https://didopet.com/",
+    "webLabel": "didopet.com",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573102415860",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/didopetbogota/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.701,
+    "lng": -74.032,
+    "propuesta": ""
+  },
+  {
+    "id": "b151",
+    "name": "Clínica Protectora de Animales Cedritos",
+    "cat": "Clínica Veterinaria",
+    "addr": "Av. Calle 147 # 19-35, Cedritos, Bogotá",
+    "phone": "+57 601 7037309",
+    "phoneClean": "576017037309",
+    "webType": "has-web",
+    "webUrl": "https://clinicaprotectoradeanimales.co/",
+    "webLabel": "clinicaprotectoradeanimales.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573115928174",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/cpaveterinaria/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.726,
+    "lng": -74.038,
+    "propuesta": ""
+  },
+  {
+    "id": "b152",
+    "name": "Kanu Pets Pepe Sierra",
+    "cat": "Veterinaria / Pet Shop",
+    "addr": "Av. Calle 116 # 15-44, Pepe Sierra, Usaquén, Bogotá",
+    "phone": "+57 601 3819870",
+    "phoneClean": "576013819870",
+    "webType": "has-web",
+    "webUrl": "https://www.kanu.pet/",
+    "webLabel": "kanu.pet",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573168326094",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/kanupets/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.698,
+    "lng": -74.043,
+    "propuesta": ""
+  },
+  {
+    "id": "b153",
+    "name": "Veterinaria Huellitas & Amor Bogotá",
+    "cat": "Veterinaria / Estética Canina",
+    "addr": "Calle 63 # 24-18, 7 de Agosto, Barrios Unidos, Bogotá",
+    "phone": "+57 313 4528912",
+    "phoneClean": "573134528912",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573134528912",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/huellitasyamorbogota/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.654,
+    "lng": -74.072,
+    "propuesta": "https://lp-huellitas-amor.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b154",
+    "name": "Centro Médico Veterinario La 80",
+    "cat": "Veterinaria / Consultorio Médico",
+    "addr": "Calle 80 # 69P-12, Las Ferias, Engativá, Bogotá",
+    "phone": "+57 314 3829015",
+    "phoneClean": "573143829015",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573143829015",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/vetla80bogota/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.691,
+    "lng": -74.092,
+    "propuesta": "https://lp-veterinaria-la80.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b155",
+    "name": "Veterinaria Pets & Smile Modelia",
+    "cat": "Veterinaria / Peluquería Canina",
+    "addr": "Carrera 75 # 24D-32, Modelia, Fontibón, Bogotá",
+    "phone": "+57 318 7234901",
+    "phoneClean": "573187234901",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573187234901",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/petsandsmilemodelia/",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.662,
+    "lng": -74.121,
+    "propuesta": ""
+  },
+  {
+    "id": "b156",
+    "name": "Consultorio Veterinario San Francisco de Asís",
+    "cat": "Consultorio Veterinario",
+    "addr": "Calle 45 # 13-68, Palermo, Teusaquillo, Bogotá",
+    "phone": "+57 601 2854910",
+    "phoneClean": "576012854910",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/576012854910",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.634,
+    "lng": -74.068,
+    "propuesta": ""
+  },
+  {
+    "id": "b157",
+    "name": "Veterinaria & Peluquería Canina El Country",
+    "cat": "Veterinaria / Baño & Peluquería",
+    "addr": "Carrera 16 # 85-40, Antiguo Country, Chapinero, Bogotá",
+    "phone": "+57 601 6103482",
+    "phoneClean": "576016103482",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/576016103482",
+        "label": "WhatsApp"
+      }
+    ],
+    "lat": 4.671,
+    "lng": -74.057,
+    "propuesta": ""
+  },
+  {
+    "id": "b158",
+    "name": "Tierra Solar Colombia",
+    "cat": "Energía Solar",
+    "addr": "Calle 7a # 74-79, Rincón de Los Ángeles - Castilla, Kennedy, Bogotá",
+    "phone": "+57 311 8247899",
+    "phoneClean": "573118247899",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573118247899",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/tierrasolarcolombia",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6468,
+    "lng": -74.1481,
+    "propuesta": "https://lp-tierra-solar.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b159",
+    "name": "Atsei de Colombia - Energía Solar",
+    "cat": "Energía Solar",
+    "addr": "Calle 76 # 28B-05, Alcázares, Barrios Unidos, Bogotá",
+    "phone": "+57 300 7671405",
+    "phoneClean": "573007671405",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573007671405",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/atseicolombia",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6647,
+    "lng": -74.0692,
+    "propuesta": "https://lp-atsei-energia-solar.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b160",
+    "name": "Sun Energy Bogotá",
+    "cat": "Energía Solar",
+    "addr": "Carrera 12 # 19-76, Centro / Santa Fe, Bogotá",
+    "phone": "+57 320 3405497",
+    "phoneClean": "573203405497",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573203405497",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/sunenergycolombia",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6062,
+    "lng": -74.0728,
+    "propuesta": "https://lp-sun-energy-bogota.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b161",
+    "name": "P-Solar Proyectos de Energía Solar",
+    "cat": "Energía Solar",
+    "addr": "Carrera 68D # 13-40, Montevideo, Fontibón, Bogotá",
+    "phone": "+57 315 6157559",
+    "phoneClean": "573156157559",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573156157559",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/psolarcolombia",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6482,
+    "lng": -74.1205,
+    "propuesta": "https://lp-p-solar.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b162",
+    "name": "Les Energías Renovables",
+    "cat": "Energía Solar",
+    "addr": "Carrera 24 # 63C-30, 7 de Agosto, Barrios Unidos, Bogotá",
+    "phone": "+57 304 3580803",
+    "phoneClean": "573043580803",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573043580803",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/les_energias_renovables",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/lesenergiasrenovables",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6528,
+    "lng": -74.0711,
+    "propuesta": "https://lp-les-energias-renovables.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b163",
+    "name": "TB Plus Energy",
+    "cat": "Energía Solar",
+    "addr": "Calle 80 # 69-70, Bodega 35, Las Ferias, Engativá, Bogotá",
+    "phone": "+57 320 2563555",
+    "phoneClean": "573202563555",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573202563555",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/tbplusenergy",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6895,
+    "lng": -74.0883,
+    "propuesta": "https://lp-tb-plus-energy.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b164",
+    "name": "ZAC Electricidad & Energía Solar",
+    "cat": "Energía Solar",
+    "addr": "Carrera 111 # 77-15, Minuto de Dios / Quirigua, Engativá, Bogotá",
+    "phone": "+57 310 8129450",
+    "phoneClean": "573108129450",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573108129450",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/zacelectricidad",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.7082,
+    "lng": -74.1245,
+    "propuesta": "https://lp-zac-electricidad.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b165",
+    "name": "JCR Energy Paneles Solares",
+    "cat": "Energía Solar",
+    "addr": "Carrera 12 # 79-08, El Nogal, Chapinero, Bogotá",
+    "phone": "+57 304 4128390",
+    "phoneClean": "573044128390",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573044128390",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/jcrenergy_col",
+        "label": "Instagram"
+      }
+    ],
+    "lat": 4.6651,
+    "lng": -74.0583,
+    "propuesta": "https://lp-jcr-energy.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b166",
+    "name": "Colpilas Energía Solar & Baterías",
+    "cat": "Energía Solar",
+    "addr": "Carrera 56 # 4B-84, Piso 2, Galán, Puente Aranda, Bogotá",
+    "phone": "+57 322 9120966",
+    "phoneClean": "573229120966",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573229120966",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/colpilas.colombia",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6215,
+    "lng": -74.1162,
+    "propuesta": "https://lp-colpilas-energia-solar.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b167",
+    "name": "Mati Energía Solar",
+    "cat": "Energía Solar",
+    "addr": "Calle 68 # 20-45, San Felipe, Barrios Unidos, Bogotá",
+    "phone": "+57 300 6837081",
+    "phoneClean": "573006837081",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573006837081",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/mati_energiasolar",
+        "label": "Instagram"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/matienergiasolar",
+        "label": "Facebook"
+      }
+    ],
+    "lat": 4.6568,
+    "lng": -74.0684,
+    "propuesta": "https://lp-mati-energia-solar.vercel.app",
+    "priority": "hot"
+  }
 ];
 if (API_KEY) h['Authorization'] = 'Bearer ' + API_KEY;
 return h;

@@ -3335,7 +3335,8 @@
     ],
     "lat": 4.6468,
     "lng": -74.1481,
-    "propuesta": ""
+    "propuesta": "https://lp-tierra-solar.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b159",
@@ -3361,7 +3362,8 @@
     ],
     "lat": 4.6647,
     "lng": -74.0692,
-    "propuesta": ""
+    "propuesta": "https://lp-atsei-energia-solar.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b160",
@@ -3414,7 +3416,8 @@
     ],
     "lat": 4.6482,
     "lng": -74.1205,
-    "propuesta": ""
+    "propuesta": "https://lp-p-solar.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b162",
@@ -3445,7 +3448,8 @@
     ],
     "lat": 4.6528,
     "lng": -74.0711,
-    "propuesta": ""
+    "propuesta": "https://lp-les-energias-renovables.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b163",
@@ -3471,7 +3475,8 @@
     ],
     "lat": 4.6895,
     "lng": -74.0883,
-    "propuesta": ""
+    "propuesta": "https://lp-tb-plus-energy.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b164",
@@ -3497,7 +3502,8 @@
     ],
     "lat": 4.7082,
     "lng": -74.1245,
-    "propuesta": ""
+    "propuesta": "https://lp-zac-electricidad.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b165",
@@ -3523,7 +3529,8 @@
     ],
     "lat": 4.6651,
     "lng": -74.0583,
-    "propuesta": ""
+    "propuesta": "https://lp-jcr-energy.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b166",
@@ -3549,7 +3556,8 @@
     ],
     "lat": 4.6215,
     "lng": -74.1162,
-    "propuesta": ""
+    "propuesta": "https://lp-colpilas-energia-solar.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b167",
@@ -3580,6 +3588,7 @@
     ],
     "lat": 4.6568,
     "lng": -74.0684,
-    "propuesta": ""
+    "propuesta": "https://lp-mati-energia-solar.vercel.app",
+    "priority": "hot"
   }
 ]
