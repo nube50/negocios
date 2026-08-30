@@ -277,6 +277,12 @@ Si alguna falla, **no desplegar** hasta corregir.
 - No imponer plantillas ni esquemas forzados: cada LP se construirá siguiendo estrictamente los requerimientos, preferencias y estilo que el usuario indique en su solicitud.
 - Se mantiene el estándar técnico: HTML auto-contenido, responsive nativo, carga rápida y WhatsApp directo al número del negocio.
 
+### 📚 Catálogo de Sistemas de Diseño Reutilizables Guardados
+1. **`Solar Premium Cinético v1.0`** (Documentado en [`design-systems/solar-premium-cinetico-v1.md`](file:///media/th/DATOS/PROYECTOS/agency/design-systems/solar-premium-cinetico-v1.md)):
+   - **Nicho:** Energía Solar, Energías Renovables, Tecnología Limpia y Sostenibilidad Luxury.
+   - **Filosofía:** *"Energía que se siente, no que se ve."*
+   - **Elementos Clave:** Motor Three.js 3D WebGL con panel solar monocristalino Half-Cut de 550W (144 celdas, 12BB), rayos de sol volumétricos (*God Rays*), narrativa de 5 Actos por scroll, vista explosionada (*Exploded View*), tipografía con barrido metálico (*Satoshi* / *Syne* + *JetBrains Mono*), navbar flotante inteligente con icono de panel solar y menú fullscreen con stagger 3D, inspección táctil (*Touch Drag*) y tableta de telemetría interactiva con medidores en tiempo real hacia WhatsApp.
+
 ---
 
 ## Metodología Landing Pages
