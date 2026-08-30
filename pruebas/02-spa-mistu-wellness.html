@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mistú Nails & Wellness | Santuario de Calma y Bienestar en Bogotá</title>
+  <meta name="description" content="Experiencia de spa, relajación profunda y cuidado estético en Chapinero / Chicó. Encuentra tu pausa en Mistú Wellness.">
+
+  <!-- Google Fonts: Fraunces & Jost -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- GSAP 3.12 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    :root {
+      --bg-sand: #F5F0E8;
+      --bg-cream: #EDE4D3;
+      --accent-earth: #5C4033;
+      --accent-sage: #2D3B36;
+      --gold-aged: #B5985A;
+      --text-dark: #2B2622;
+      --text-soft: #6E665E;
+      --border-fine: rgba(92, 64, 51, 0.12);
+      --font-display: "Fraunces", serif;
+      --font-body: "Jost", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-sand);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+    }
+
+    /* Subtle SVG Noise Overlay */
+    body::before {
+      content: "";
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.03"/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9990;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 300; line-height: 1.2; color: var(--text-dark); }
+    h1 { font-size: clamp(2.6rem, 5.5vw, 4.4rem); letter-spacing: -0.02em; }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+    h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--accent-earth); }
+
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* Site Header */
+    .site-nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(245, 240, 232, 0.85); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-fine); padding: 22px 0;
+    }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+    .brand-title {
+      font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.08em;
+      text-decoration: none; color: var(--text-dark); text-transform: uppercase;
+    }
+
+    /* Magnetic Button */
+    .btn-magnetic {
+      display: inline-flex; align-items: center; justify-content: center;
+      background-color: var(--accent-earth); color: #FFF;
+      padding: 16px 36px; border-radius: 100px; text-decoration: none;
+      font-family: var(--font-body); font-size: 0.95rem; letter-spacing: 0.08em;
+      text-transform: uppercase; border: none; cursor: pointer;
+      box-shadow: 0 10px 25px rgba(92, 64, 51, 0.18);
+      transition: background-color 0.3s ease;
+    }
+    .btn-magnetic:hover { background-color: var(--accent-sage); }
+
+    .section-block { padding: 110px 0; }
+
+    /* Hero Crossfade Slider */
+    .hero-container {
+      padding: 180px 0 110px;
+      position: relative;
+    }
+    .hero-crossfade-bg {
+      position: absolute; inset: 0; z-index: -1; overflow: hidden;
+      border-radius: 0 0 40px 40px;
+    }
+    .crossfade-slide {
+      position: absolute; inset: 0; background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 2s ease-in-out;
+    }
+    .crossfade-slide.active { opacity: 0.35; }
+
+    /* Editorial Accordion Menu */
+    .service-accordion {
+      border-top: 1px solid var(--border-fine);
+      margin-top: 40px;
+    }
+    .service-item {
+      border-bottom: 1px solid var(--border-fine);
+      padding: 24px 0;
+      cursor: pointer;
+    }
+    .service-header {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .service-title {
+      font-family: var(--font-display); font-size: 1.6rem; font-weight: 300;
+    }
+    .service-price {
+      font-family: var(--font-body); font-size: 1.1rem; color: var(--gold-aged); font-weight: 500;
+    }
+    .service-details {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .service-item.is-open .service-details { grid-template-rows: 1fr; }
+    .service-details > div { overflow: hidden; }
+
+    /* Asymmetric Mosaic Gallery */
+    .mosaic-grid {
+      display: grid; grid-template-columns: 1.2fr 0.8fr 1fr; gap: 24px;
+      margin-top: 48px;
+    }
+    .mosaic-item {
+      border-radius: 20px; overflow: hidden; position: relative; height: 360px;
+    }
+    .mosaic-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mosaic-item:hover img { transform: scale(1.05); }
+
+    /* Exit-Intent Modal */
+    .exit-modal-overlay {
+      position: fixed; inset: 0; background: rgba(43, 38, 34, 0.65); backdrop-filter: blur(8px);
+      z-index: 5000; display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+    }
+    .exit-modal-overlay.show { opacity: 1; pointer-events: auto; }
+    .exit-modal-card {
+      background: var(--bg-sand); border-radius: 28px; padding: 48px; max-width: 520px;
+      text-align: center; border: 1px solid var(--gold-aged); box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    }
+
+    @media (max-width: 768px) {
+      .mosaic-grid { grid-template-columns: 1fr; }
+      .section-block { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand-title">Mistú <span>Wellness</span></a>
+      <a href="#reservas" class="btn-magnetic" style="padding: 12px 26px; font-size: 0.82rem;">Reservar Cita</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="hero-container">
+    <div class="hero-crossfade-bg">
+      <div class="crossfade-slide active" style="background-image: url(https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1400&q=80);"></div>
+      <div class="crossfade-slide" style="background-image: url(https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1400&q=80);"></div>
+      <div class="crossfade-slide" style="background-image: url(https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1400&q=80);"></div>
+    </div>
+
+    <div class="container" style="max-width: 860px; text-align: center;">
+      <p class="reveal" style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; color: var(--gold-aged); margin-bottom: 18px;">
+        Chapinero • Chicó Norte • Bogotá
+      </p>
+      <h1 class="reveal" style="margin-bottom: 28px;">
+        Encuentra tu <em>calma</em> en medio del ritmo de la ciudad.
+      </h1>
+      <p class="reveal" style="color: var(--text-soft); font-size: 1.25rem; font-weight: 300; margin-bottom: 40px; line-height: 1.8;">
+        Un santuario sensorial dedicado al cuidado de tus manos, cuerpo y mente. Rituales de relajación botánica y estética consciente en un entorno de serenidad absoluta.
+      </p>
+      <div class="reveal">
+        <a href="#servicios" class="btn-magnetic" id="heroMagneticBtn">Explorar Rituales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES ACCORDION -->
+  <section id="servicios" class="section-block" style="background: var(--bg-cream);">
+    <div class="container" style="max-width: 920px;">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold-aged);">Carta de Servicios</span>
+        <h2 style="margin-top: 10px;">Rituales de <em>Bienestar</em></h2>
+      </div>
+
+      <div class="service-accordion reveal">
+        <div class="service-item is-open" onclick="toggleService(this)">
+          <div class="service-header">
+            <div class="service-title">01. Spa Manos & Pies Botánico</div>
+            <div class="service-price">$110.000 COP</div>
+          </div>
+          <div class="service-details">
+            <div>
+              <p style="padding-top: 14px; color: var(--text-soft); font-size: 0.95rem;">Exfoliación con sales marinas del Caribe, mascarilla de arcilla volcánica y masaje de reflexología con aceites esenciales orgánicos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item" onclick="toggleService(this)">
+          <div class="service-header">
+            <div class="service-title">02. Masaje Relajante de Tejido Profundo</div>
+            <div class="service-price">$160.000 COP</div>
+          </div>
+          <div class="service-details">
+            <div>
+              <p style="padding-top: 14px; color: var(--text-soft); font-size: 0.95rem;">60 minutos de desconexión corporal completa con aromaterapia de lavanda francesa y piedras volcánicas tibias para aliviar tensión acumulada.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item" onclick="toggleService(this)">
+          <div class="service-header">
+            <div class="service-title">03. Facial Hidratante de Rosas & Cuarzo</div>
+            <div class="service-price">$145.000 COP</div>
+          </div>
+          <div class="service-details">
+            <div>
+              <p style="padding-top: 14px; color: var(--text-soft); font-size: 0.95rem;">Limpieza profunda no invasiva, hidratación con sueros de ácido hialurónico botánico y drenaje linfático con rodillos de cuarzo rosa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOSAIC GALLERY -->
+  <section class="section-block">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 30px;">
+        <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold-aged);">Ambiente & Esencia</span>
+        <h2>Espacios para la <em>Desconexión</em></h2>
+      </div>
+
+      <div class="mosaic-grid reveal">
+        <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Masaje relajante"></div>
+        <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1512290900672-1f02e6a094bb?auto=format&fit=crop&w=800&q=80" alt="Aromaterapia"></div>
+        <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Cuidado facial"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVATION FORM -->
+  <section id="reservas" class="section-block" style="background: var(--bg-cream);">
+    <div class="container" style="max-width: 640px; text-align: center;">
+      <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold-aged);">Agenda tu Pausa</span>
+      <h2 style="margin: 10px 0 30px;">Reserva tu <em>Experiencia</em></h2>
+
+      <form onsubmit="handleSpaSubmit(event)" style="display: flex; flex-direction: column; gap: 18px; text-align: left;">
+        <div>
+          <label style="font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Nombre Completo</label>
+          <input type="text" id="spaName" required placeholder="Tu nombre" style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid var(--border-fine); background: #FFF; margin-top: 6px; font-family: var(--font-body);">
+        </div>
+
+        <div>
+          <label style="font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">WhatsApp / Teléfono</label>
+          <input type="tel" id="spaPhone" required placeholder="Ej. 322 871 0848" style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid var(--border-fine); background: #FFF; margin-top: 6px; font-family: var(--font-body);">
+        </div>
+
+        <div>
+          <label style="font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Ritual Seleccionado</label>
+          <select id="spaService" style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid var(--border-fine); background: #FFF; margin-top: 6px; font-family: var(--font-body);">
+            <option value="Spa Manos & Pies Botánico">Spa Manos & Pies Botánico ($110.000)</option>
+            <option value="Masaje Relajante de Tejido Profundo">Masaje Relajante Tejido Profundo ($160.000)</option>
+            <option value="Facial Hidratante Rosas">Facial Hidratante Rosas & Cuarzo ($145.000)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-magnetic" style="width: 100%; margin-top: 14px; padding: 18px;">
+          Confirmar Reserva por WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- EXIT INTENT MODAL -->
+  <div class="exit-modal-overlay" id="exitModal">
+    <div class="exit-modal-card">
+      <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold-aged);">Cortesía de Bienvenida</span>
+      <h3 style="font-size: 1.8rem; margin: 12px 0 16px;">Regálate tu <em>primera pausa</em></h3>
+      <p style="color: var(--text-soft); font-size: 0.95rem; margin-bottom: 24px;">Agenda hoy tu primera visita y recibe una exfoliación botánica de cortesía con tu ritual de spa.</p>
+      <a href="https://wa.me/573228710848?text=Hola%20Mist%C3%BA%20Wellness,%20deseo%20aprovechar%20el%20beneficio%20de%20primera%20visita." target="_blank" class="btn-magnetic" style="width: 100%;">Reclamar Beneficio</a>
+      <div style="margin-top: 16px;"><button onclick="closeExitModal()" style="background: none; border: none; font-size: 0.85rem; color: var(--text-soft); text-decoration: underline; cursor: pointer;">Cerrar</button></div>
+    </div>
+  </div>
+
+  <footer style="background: var(--text-dark); color: var(--bg-sand); padding: 50px 0 25px; text-align: center;">
+    <div class="container">
+      <div style="font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">MISTÚ NAILS & WELLNESS</div>
+      <p style="opacity: 0.7; font-size: 0.9rem;">Cra. 16 #93-11 Local 101, Chapinero / Chicó, Bogotá • Tel: +57 322 8710848</p>
+      <div style="margin-top: 24px; font-size: 0.8rem; opacity: 0.4;">© 2026 Mistú Wellness. Santuario de Calma.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal on scroll
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(r => observer.observe(r));
+
+    // Crossfade Background Loop
+    const slides = document.querySelectorAll(".crossfade-slide");
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }, 6000);
+
+    // Accordion Toggle
+    function toggleService(el) {
+      document.querySelectorAll(".service-item").forEach(item => {
+        if (item !== el) item.classList.remove("is-open");
+      });
+      el.classList.toggle("is-open");
+    }
+
+    // Magnetic Button Effect
+    const magneticBtn = document.getElementById("heroMagneticBtn");
+    if (magneticBtn) {
+      magneticBtn.addEventListener("mousemove", (e) => {
+        const r = magneticBtn.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width / 2) * 0.3;
+        const y = (e.clientY - r.top - r.height / 2) * 0.3;
+        gsap.to(magneticBtn, { x, y, duration: 0.4, ease: "power2.out" });
+      });
+      magneticBtn.addEventListener("mouseleave", () => {
+        gsap.to(magneticBtn, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.4)" });
+      });
+    }
+
+    // Exit Intent Detection
+    let exitShown = false;
+    document.addEventListener("mouseleave", (e) => {
+      if (e.clientY < 15 && !exitShown) {
+        exitShown = true;
+        document.getElementById("exitModal").classList.add("show");
+      }
+    });
+
+    function closeExitModal() {
+      document.getElementById("exitModal").classList.remove("show");
+    }
+
+    function handleSpaSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("spaName").value;
+      const phone = document.getElementById("spaPhone").value;
+      const service = document.getElementById("spaService").value;
+
+      const msg = "*SOLICITUD DE RESERVA - MISTÚ WELLNESS*%0A" +
+        "👤 *Cliente:* " + encodeURIComponent(name) + "%0A" +
+        "📱 *Teléfono:* " + encodeURIComponent(phone) + "%0A" +
+        "🌿 *Ritual:* " + encodeURIComponent(service) + "%0A%0A" +
+        "_Deseo agendar mi cita y confirmar disponibilidad de horario._";
+
+      window.open("https://wa.me/573228710848?text=" + msg, "_blank");
+    }
+  </script>
+</body>
+</html>

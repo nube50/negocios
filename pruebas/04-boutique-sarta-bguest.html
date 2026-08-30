@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Sarta & Bguest | Alquiler de Vestidos de Gala & Alta Costura en Bogotá</title>
+  <meta name="description" content="Colección editorial de vestidos de diseñador para eventos, bodas y galas en Chicó / Parque de la 93, Bogotá.">
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- GSAP 3.12 + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    :root {
+      --bg-warm-white: #FAFAF8;
+      --editorial-black: #111111;
+      --gold-accent: #C9A876;
+      --gray-editorial: #E8E6E1;
+      --gray-text: #706E6A;
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-warm-white);
+      color: var(--editorial-black);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+    /* Custom View Cursor */
+    .custom-cursor {
+      position: fixed; width: 68px; height: 68px; border-radius: 50%;
+      background: rgba(17, 17, 17, 0.92); color: #fff; font-size: 0.65rem;
+      letter-spacing: 0.14em; display: flex; align-items: center; justify-content: center;
+      pointer-events: none; opacity: 0; transform: translate(-50%, -50%) scale(0.6);
+      transition: opacity 0.25s, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 9999; text-transform: uppercase; font-weight: 700;
+    }
+    .custom-cursor.is-active { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* Site Header */
+    .site-nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(250, 250, 248, 0.88); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--gray-editorial); padding: 22px 0;
+    }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+    .brand-title {
+      font-family: var(--font-display); font-size: 1.45rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: var(--editorial-black);
+    }
+
+    .btn-editorial {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--editorial-black); color: #FFF; padding: 16px 36px;
+      font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.14em;
+      text-decoration: none; font-weight: 700; border-radius: 0;
+      border: 1px solid var(--editorial-black); cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-editorial:hover {
+      background: transparent; color: var(--editorial-black);
+    }
+
+    /* Lookbook Product Card with Second Photo Crossfade */
+    .product-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;
+      margin-top: 48px;
+    }
+    .product-card {
+      position: relative; cursor: pointer;
+    }
+    .product-image-box {
+      position: relative; width: 100%; height: 460px; overflow: hidden;
+      background: #EFEFEA; margin-bottom: 16px;
+    }
+    .product-img-primary, .product-img-secondary {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .product-img-secondary { opacity: 0; }
+    .product-card:hover .product-img-primary { opacity: 0; transform: scale(1.03); }
+    .product-card:hover .product-img-secondary { opacity: 1; transform: scale(1.03); }
+
+    .product-label {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gray-text); margin-bottom: 4px;
+    }
+    .product-title {
+      font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; margin-bottom: 4px;
+    }
+    .product-price {
+      font-size: 0.95rem; font-weight: 600; color: var(--gold-accent);
+    }
+
+    .section-block { padding: 110px 0; }
+
+    @media (max-width: 768px) {
+      .section-block { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Circular Cursor -->
+  <div class="custom-cursor" id="customCursor">VER</div>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand-title">SARTA &amp; BGUEST</a>
+      <a href="#showroom" class="btn-editorial" style="padding: 10px 22px;">Agendar Showroom</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" style="padding: 180px 0 100px;">
+    <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;">
+      <div>
+        <span class="reveal" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-accent); font-weight: 700; display: block; margin-bottom: 20px;">
+          Edición Especial • Bogotá
+        </span>
+        <h1 class="reveal" style="font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 4.8rem); line-height: 1.08; font-weight: 900; margin-bottom: 24px; letter-spacing: -0.02em;">
+          La elegancia no se compra, se estrena cada noche.
+        </h1>
+        <p class="reveal" style="color: var(--gray-text); font-size: 1.15rem; line-height: 1.8; margin-bottom: 36px; max-width: 480px;">
+          Alquiler de vestidos de gala, fiesta y alta costura para los eventos más exclusivos de Bogotá. Asesoría de imagen personalizada en nuestro showroom de Chicó.
+        </p>
+        <div class="reveal">
+          <a href="#coleccion" class="btn-editorial">Explorar Colección</a>
+        </div>
+      </div>
+
+      <div class="reveal" style="position: relative;">
+        <div style="position: relative; width: 100%; height: 540px; overflow: hidden; background: #EEE;">
+          <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1200&q=80" alt="Vestido de gala Sarta Bguest" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="position: absolute; bottom: -20px; left: -20px; background: #FFF; padding: 20px 28px; border: 1px solid var(--gray-editorial); box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold-accent);">Ubicación Showroom</div>
+          <div style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;">Cra. 11A #95-15, Chicó</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL COMPOSITION (01 / 06) -->
+  <section id="coleccion" class="section-block" style="background: #FFF; border-block: 1px solid var(--gray-editorial);">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+        <div>
+          <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-accent);">Catálogo de Gala</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; margin-top: 8px;">Piezas Seleccionadas</h2>
+        </div>
+        <div style="font-family: var(--font-display); font-size: 1.3rem; color: var(--gray-text); font-style: italic;">
+          01 / 06
+        </div>
+      </div>
+
+      <div class="product-grid reveal">
+        <!-- Card 1 -->
+        <div class="product-card" onmouseenter="activateCursor()" onmouseleave="deactivateCursor()">
+          <div class="product-image-box">
+            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80" alt="Vestido Silk Emerald" class="product-img-primary">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Detalle Vestido Silk Emerald" class="product-img-secondary">
+          </div>
+          <div class="product-label">ALTA COSTURA // SEDA NATURAL</div>
+          <div class="product-title">Vestido Imperial Emerald</div>
+          <div class="product-price">Alquiler: $320.000 COP</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card" onmouseenter="activateCursor()" onmouseleave="deactivateCursor()">
+          <div class="product-image-box">
+            <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80" alt="Vestido Midnight Gold" class="product-img-primary">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Detalle Midnight Gold" class="product-img-secondary">
+          </div>
+          <div class="product-label">COLECCIÓN NOCHE // PEDRERÍA</div>
+          <div class="product-title">Gala Midnight Sequins</div>
+          <div class="product-price">Alquiler: $380.000 COP</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card" onmouseenter="activateCursor()" onmouseleave="deactivateCursor()">
+          <div class="product-image-box">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Vestido Rouge Satin" class="product-img-primary">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Detalle Rouge Satin" class="product-img-secondary">
+          </div>
+          <div class="product-label">ALTA GALA // SATÍN FRANCÉS</div>
+          <div class="product-title">Vestido Scarlet Siren</div>
+          <div class="product-price">Alquiler: $350.000 COP</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWROOM APPOINTMENT FORM -->
+  <section id="showroom" class="section-block">
+    <div class="container" style="max-width: 640px; text-align: center;">
+      <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-accent); font-weight: 700;">Experiencia Privada</span>
+      <h2 style="font-family: var(--font-display); font-size: 2.5rem; margin: 12px 0 30px;">Agenda tu Cita en el Showroom</h2>
+
+      <form onsubmit="handleBoutiqueSubmit(event)" style="display: flex; flex-direction: column; gap: 20px; text-align: left;" class="reveal">
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Nombre y Apellido</label>
+          <input type="text" id="boutiqueName" required placeholder="Tu nombre completo" style="width: 100%; padding: 16px; border: 1px solid var(--gray-editorial); background: #FFF; margin-top: 6px; font-family: var(--font-body); font-size: 0.95rem;">
+        </div>
+
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">WhatsApp / Teléfono</label>
+          <input type="tel" id="boutiquePhone" required placeholder="Ej. 313 870 7291" style="width: 100%; padding: 16px; border: 1px solid var(--gray-editorial); background: #FFF; margin-top: 6px; font-family: var(--font-body); font-size: 0.95rem;">
+        </div>
+
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Tipo de Evento</label>
+          <select id="boutiqueEvent" style="width: 100%; padding: 16px; border: 1px solid var(--gray-editorial); background: #FFF; margin-top: 6px; font-family: var(--font-body); font-size: 0.95rem;">
+            <option value="Boda de Noche / Invitada">Boda de Noche / Invitada de Honor</option>
+            <option value="Grado / Gala Universitaria">Grado / Gala Universitaria</option>
+            <option value="Cena Corporativa / Premiación">Cena Corporativa / Premiación</option>
+            <option value="Quinceañera / Madrina">Quinceañera / Madrina</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-editorial" style="width: 100%; margin-top: 14px; padding: 18px; font-size: 0.85rem;">
+          Agendar Prueba por WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer style="background: var(--editorial-black); color: #FFF; padding: 60px 0 30px; text-align: center;">
+    <div class="container">
+      <div style="font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;">SARTA &amp; BGUEST</div>
+      <p style="opacity: 0.7; font-size: 0.92rem;">Cra. 11A #95-15, Chicó / Parque de la 93, Bogotá • WhatsApp: +57 313 870 7291</p>
+      <div style="margin-top: 30px; font-size: 0.75rem; opacity: 0.4; letter-spacing: 0.1em;">© 2026 Sarta &amp; Bguest. Alta Costura &amp; Alquiler de Gala.</div>
+    </div>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('customCursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    function activateCursor() {
+      cursor.classList.add('is-active');
+    }
+
+    function deactivateCursor() {
+      cursor.classList.remove('is-active');
+    }
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(r => observer.observe(r));
+
+    function handleBoutiqueSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('boutiqueName').value;
+      const phone = document.getElementById('boutiquePhone').value;
+      const eventType = document.getElementById('boutiqueEvent').value;
+
+      const msg = '*CITA EN SHOWROOM - SARTA & BGUEST*%0A' +
+        '👤 *Cliente:* ' + encodeURIComponent(name) + '%0A' +
+        '📱 *WhatsApp:* ' + encodeURIComponent(phone) + '%0A' +
+        '✨ *Evento:* ' + encodeURIComponent(eventType) + '%0A%0A' +
+        '_Deseo agendar una prueba de vestido en el showroom de Chicó._';
+
+      window.open('https://wa.me/573138707291?text=' + msg, '_blank');
+    }
+  </script>
+</body>
+</html>

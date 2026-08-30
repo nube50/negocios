@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Tierra Solar Colombia | Ingeniería Fotovoltaica de Precisión</title>
+  <meta name="description" content="Autogeneración solar para hogares y empresas en Bogotá. Ahorra hasta el 80% en tu factura con Tierra Solar. Certificación UPME y Ley 1715.">
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- GSAP 3.12 + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    :root {
+      --primary-forest: #0B3D2E;
+      --primary-sky: #1B4B6B;
+      --accent-amber: #F5A623;
+      --accent-rgb: 245, 166, 35;
+      --bg-warm: #F7F8F5;
+      --bg-white: #FFFFFF;
+      --text-dark: #12181A;
+      --text-muted: #5C6660;
+      --success: #10B981;
+      --border-subtle: rgba(18, 24, 26, 0.08);
+      --font-display: "Space Grotesk", sans-serif;
+      --font-body: "Inter", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-warm);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      line-height: 1.6;
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+    }
+
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+      background: linear-gradient(90deg, var(--primary-forest), var(--accent-amber));
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+    }
+
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); color: var(--text-dark); line-height: 1.15; }
+    h1 { font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 800; letter-spacing: -0.03em; }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.02em; }
+    h3 { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 700; }
+
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    .site-nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(247, 248, 245, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 18px 0;
+    }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+    .brand-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--font-display); font-size: 1.35rem; font-weight: 800;
+      text-decoration: none; color: var(--primary-forest);
+    }
+    .brand-logo i { color: var(--accent-amber); font-size: 1.4rem; }
+
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
+    .badge-seal-wrapper {
+      position: relative; width: 50px; height: 50px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .badge-seal-svg { animation: spin-slow 20s linear infinite; width: 100%; height: 100%; }
+    .badge-seal-icon { position: absolute; font-size: 1rem; color: var(--accent-amber); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background-color: var(--primary-forest); color: #fff;
+      padding: 16px 36px; border-radius: 100px; text-decoration: none;
+      font-weight: 700; font-family: var(--font-display); font-size: 1.05rem;
+      border: 1px solid transparent;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(11, 61, 46, 0.25);
+      background-color: #082d22;
+    }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; color: var(--primary-forest);
+      padding: 16px 32px; border-radius: 100px; text-decoration: none;
+      font-weight: 700; font-family: var(--font-display);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.25s ease; cursor: pointer;
+    }
+    .btn-secondary:hover {
+      border-color: var(--primary-forest); transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .sticky-cta {
+      position: fixed; bottom: 28px; right: 28px; z-index: 1000;
+      background: var(--primary-forest); color: #fff;
+      padding: 16px 28px; border-radius: 100px; text-decoration: none;
+      font-family: var(--font-display); font-weight: 700;
+      display: flex; align-items: center; gap: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: background-color 0.4s, transform 0.4s, box-shadow 0.4s;
+    }
+    .cta-urgent {
+      background-color: var(--accent-amber) !important;
+      color: var(--text-dark) !important;
+      animation: cta-pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes cta-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0.5); }
+      50% { box-shadow: 0 0 0 14px rgba(var(--accent-rgb), 0); }
+    }
+
+    .section-block { padding: 96px 0; }
+    .hero-wrapper { padding: 160px 0 100px; position: relative; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+
+    .hero-image-card {
+      position: relative; border-radius: 32px; overflow: hidden;
+      box-shadow: 0 25px 60px -15px rgba(11, 61, 46, 0.2);
+    }
+    .hero-image-card img { width: 100%; height: 480px; object-fit: cover; display: block; }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(11, 61, 46, 0.2) 0%, rgba(18, 24, 26, 0.6) 100%);
+    }
+
+    .calc-card {
+      background: #fff; border-radius: 28px; padding: 44px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.04);
+    }
+    .slider-control {
+      width: 100%; height: 8px; border-radius: 5px; background: #e2e8f0;
+      outline: none; -webkit-appearance: none; margin: 24px 0;
+    }
+    .slider-control::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%;
+      background: var(--accent-amber); cursor: pointer;
+      box-shadow: 0 0 12px rgba(245, 166, 35, 0.5);
+    }
+
+    .savings-number {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 4.8rem); font-weight: 800;
+      letter-spacing: -0.03em; color: var(--primary-forest);
+      font-variant-numeric: tabular-nums; line-height: 1;
+    }
+
+    .bill-comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; }
+    .bill-card {
+      padding: 32px; border-radius: 24px; background: #fff;
+      border: 1px solid var(--border-subtle);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+    }
+    .bill-heavy {
+      border-color: rgba(239, 68, 68, 0.3); background: #FFF5F5;
+      transform: rotate(2deg) translateY(8px); box-shadow: 0 25px 40px rgba(239, 68, 68, 0.12);
+    }
+    .bill-light {
+      border-color: rgba(16, 185, 129, 0.3); background: #F0FDF4;
+      transform: rotate(-1.5deg) translateY(-8px); box-shadow: 0 20px 45px rgba(16, 185, 129, 0.15);
+    }
+
+    .chart-container {
+      background: #fff; border-radius: 24px; padding: 36px;
+      border: 1px solid var(--border-subtle); margin-top: 32px;
+    }
+    .chart-line { stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 2.5s ease-out; }
+    .chart-line.animated { stroke-dashoffset: 0; }
+
+    .form-field { position: relative; margin-bottom: 20px; }
+    .form-field input, .form-field select {
+      width: 100%; padding: 16px 20px; border-radius: 14px;
+      border: 1px solid #cbd5e1; background: #fff; font-size: 1rem; outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .form-field input:focus, .form-field select:focus {
+      border-color: var(--primary-forest); box-shadow: 0 0 0 4px rgba(11, 61, 46, 0.1);
+    }
+    .form-field.is-valid input { border-color: var(--success); }
+    .form-field.is-valid::after {
+      content: "✓"; position: absolute; right: 18px; top: 16px;
+      color: var(--success); font-weight: 800; font-size: 1.2rem;
+      animation: check-pop 0.3s ease-out forwards;
+    }
+    @keyframes check-pop { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
+
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .bill-comparison-grid { grid-template-columns: 1fr; }
+      .section-block { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand-logo">
+        <i class="fa-solid fa-sun"></i>
+        <span>TIERRA SOLAR</span>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <div class="badge-seal-wrapper">
+          <svg class="badge-seal-svg" viewBox="0 0 100 100">
+            <path id="sealPathNav" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+            <text font-size="9" fill="#0B3D2E" font-weight="700" letter-spacing="2">
+              <textPath href="#sealPathNav">CERTIFICADO UPME • LEY 1715 •</textPath>
+            </text>
+          </svg>
+          <i class="fa-solid fa-shield-halved badge-seal-icon"></i>
+        </div>
+        <a href="#cotizador" class="btn-primary" style="padding: 10px 22px; font-size: 0.92rem;">
+          Cotizar Proyecto
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <a href="#cotizador" class="sticky-cta" id="journeyCTA">
+    <i class="fa-solid fa-bolt"></i>
+    <span id="journeyCTAText">Conoce tu ahorro</span>
+  </a>
+
+  <!-- HERO -->
+  <section id="hero" class="hero-wrapper">
+    <div class="container hero-grid">
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; color: var(--primary-forest); background: rgba(11, 61, 46, 0.08); padding: 6px 16px; border-radius: 100px; margin-bottom: 20px;" class="reveal">
+          <i class="fa-solid fa-bolt"></i> ENERGÍA SOLAR DE ALTO RENDIMIENTO EN BOGOTÁ
+        </div>
+
+        <h1 class="reveal" style="margin-bottom: 24px;">
+          Tu propia central solar con <span style="color: var(--primary-forest);">80% de ahorro garantizado.</span>
+        </h1>
+
+        <p class="reveal" style="color: var(--text-muted); font-size: 1.2rem; margin-bottom: 36px; max-width: 580px;">
+          Ingeniería fotovoltaica de precisión para hogares y empresas en Kennedy, Castilla y la Sabana. Certificación UPME, deducción del 50% de renta y retorno garantizado en 3.5 años.
+        </p>
+
+        <div class="reveal" style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 40px;">
+          <a href="#calculadora" class="btn-primary">
+            <i class="fa-solid fa-calculator"></i> Calcular mi Ahorro
+          </a>
+          <a href="https://wa.me/573118247899?text=Hola%20Tierra%20Solar,%20deseo%20solicitar%20un%20estudio%20fotovoltaico." target="_blank" class="btn-secondary">
+            <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp (+57 311 824 7899)
+          </a>
+        </div>
+
+        <div class="reveal" style="display: flex; align-items: center; gap: 32px; border-top: 1px solid var(--border-subtle); padding-top: 24px;">
+          <div>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--primary-forest);">+2.15 MWp</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Instalados en Bogotá</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--accent-amber);">25 Años</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Garantía de Potencia</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--primary-sky);">0% IVA</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Ley 1715 de Beneficio</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-card reveal">
+        <img src="https://images.unsplash.com/photo-1508873696983-2df5293cb395?auto=format&fit=crop&w=1200&q=80" alt="Instalación de Paneles Solares Tierra Solar">
+        <div class="hero-overlay"></div>
+        <div style="position: absolute; bottom: 28px; left: 28px; right: 28px; color: #fff;">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; margin-bottom: 4px;">Sede Central Castilla / Kennedy</div>
+          <div style="font-size: 0.9rem; opacity: 0.9;">Calle 7a # 74-79, Bogotá, Colombia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section id="calculadora" class="section-block" style="background: #FFFFFF;">
+    <div class="container">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto 48px;">
+        <h2 class="reveal" style="margin-bottom: 16px;">Calculadora de Retorno Solar</h2>
+        <p class="reveal" style="color: var(--text-muted);">Desliza tu consumo mensual actual y descubre cuánto capital dejas de transferirle al operador de red.</p>
+      </div>
+
+      <div class="calc-card reveal" style="max-width: 880px; margin: 0 auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: 700; font-family: var(--font-display); font-size: 1.1rem;">Tu Factura Mensual Actual:</span>
+          <span id="sliderValueLabel" style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--primary-sky);">$850.000 COP</span>
+        </div>
+
+        <input type="range" min="300000" max="5000000" step="50000" value="850000" class="slider-control" id="billSlider" oninput="updateCalculator(this.value)">
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; padding-top: 24px; border-top: 1px solid var(--border-subtle); align-items: center;">
+          <div>
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 6px;">Ahorro Mensual Estimado:</div>
+            <div class="savings-number" id="monthlySavingsDisplay">$680.000</div>
+          </div>
+          <div>
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 6px;">Ahorro Anual Acumulado:</div>
+            <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--accent-amber);" id="yearlySavingsDisplay">$8.160.000</div>
+          </div>
+          <div>
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 6px;">Retorno Estimado (ROI):</div>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: var(--primary-sky);">3.2 Años</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bill-comparison-grid reveal" style="max-width: 880px; margin: 40px auto 0;">
+        <div class="bill-card bill-heavy">
+          <div style="color: #EF4444; font-weight: 700; font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 8px;">
+            <i class="fa-solid fa-arrow-trend-up"></i> Sin Tierra Solar (Red Pública)
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 800; color: #DC2626; margin-bottom: 8px;">-$10.200.000 / año</div>
+          <p style="font-size: 0.92rem; color: var(--text-muted);">Gasto perpetuo sin amortización, tarifas en aumento continuo y cero respaldo en apagones.</p>
+        </div>
+
+        <div class="bill-card bill-light">
+          <div style="color: #10B981; font-weight: 700; font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 8px;">
+            <i class="fa-solid fa-leaf"></i> Con Tierra Solar (Autogeneración)
+          </div>
+          <div style="font-size: 1.8rem; font-weight: 800; color: #059669; margin-bottom: 8px;">+$8.160.000 / año en tu bolsillo</div>
+          <p style="font-size: 0.92rem; color: var(--text-muted);">Incentivo tributario Ley 1715 (descuento del 50% de renta), valorización de tu inmueble y energía limpia.</p>
+        </div>
+      </div>
+
+      <div class="chart-container reveal" style="max-width: 880px; margin: 40px auto 0;">
+        <h3 style="font-size: 1.3rem; margin-bottom: 12px;">Simulador de Ahorro Acumulado a 25 Años</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">Proyección de capital protegido frente a la inflación energética en Bogotá:</p>
+        
+        <svg viewBox="0 0 700 200" style="width: 100%; height: auto; overflow: visible;">
+          <line x1="40" y1="170" x2="680" y2="170" stroke="#cbd5e1" stroke-width="1" />
+          <line x1="40" y1="20" x2="40" y2="170" stroke="#cbd5e1" stroke-width="1" />
+          <path class="chart-line" id="chartPath" d="M 40 170 Q 200 140, 360 80 T 680 30" fill="none" stroke="#0B3D2E" stroke-width="4" stroke-linecap="round" />
+          <circle cx="680" cy="30" r="7" fill="#F5A623" />
+          <text x="60" y="190" font-size="12" fill="#5C6660">Año 1</text>
+          <text x="350" y="190" font-size="12" fill="#5C6660">Año 12</text>
+          <text x="640" y="190" font-size="12" fill="#5C6660">Año 25 (+$204M COP)</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section id="cotizador" class="section-block">
+    <div class="container" style="max-width: 780px;">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; color: var(--accent-amber); background: rgba(245, 166, 35, 0.12); padding: 6px 16px; border-radius: 100px; margin-bottom: 16px;">
+          <i class="fa-solid fa-file-signature"></i> ESTUDIO TÉCNICO SIN COSTO
+        </div>
+        <h2>Solicita tu Estudio Fotovoltaico</h2>
+        <p style="color: var(--text-muted); margin-top: 10px;">Ingenieros certificados NABCEP realizarán el modelado de sombras y propuesta económica personalizada.</p>
+      </div>
+
+      <div class="calc-card reveal">
+        <form onsubmit="handleSolarSubmit(event)">
+          <div class="form-field" id="field-name">
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px;">Nombre Completo *</label>
+            <input type="text" id="custName" required placeholder="Ej. Carlos Mendoza" oninput="validateInput(this)">
+          </div>
+
+          <div class="form-field" id="field-phone">
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px;">WhatsApp / Teléfono *</label>
+            <input type="tel" id="custPhone" required placeholder="Ej. 311 824 7899" oninput="validateInput(this)">
+          </div>
+
+          <div class="form-field" id="field-location">
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px;">Dirección o Barrio en Bogotá *</label>
+            <input type="text" id="custLocation" required placeholder="Ej. Castilla, Kennedy / Modelia" oninput="validateInput(this)">
+          </div>
+
+          <div class="form-field">
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px;">Tipo de Inmueble</label>
+            <select id="custProperty">
+              <option value="Casa Residencial">Casa Residencial (Estrato 4-6)</option>
+              <option value="Comercial / Local">Comercial / Local / Consultorio</option>
+              <option value="Bodega / Industrial">Bodega / Nave Industrial</option>
+              <option value="Finca Sabana">Finca / Casa Campestre Sabana</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 18px; font-size: 1.1rem; margin-top: 10px;">
+            <i class="fa-solid fa-paper-plane"></i> Enviar y Recibir Estudio por WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: var(--primary-forest); color: #fff; padding: 60px 0 30px;">
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px;">
+      <div>
+        <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 10px;">TIERRA SOLAR COLOMBIA</div>
+        <p style="opacity: 0.8; font-size: 0.95rem; max-width: 380px;">Sede Central: Calle 7a # 74-79, Rincón de Los Ángeles - Castilla, Kennedy, Bogotá.</p>
+      </div>
+      <div>
+        <div style="font-weight: 700; margin-bottom: 10px;">Contacto Directo</div>
+        <p style="opacity: 0.8; font-size: 0.95rem;">Teléfono: +57 311 824 7899<br>Atención: Lunes a Sábado 8:00 AM - 6:00 PM</p>
+      </div>
+    </div>
+    <div class="container" style="padding-top: 24px; text-align: center; font-size: 0.85rem; opacity: 0.6;">
+      © 2026 Tierra Solar Colombia. Todos los derechos reservados. Certificado UPME & RETIE.
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("scroll-progress").style.width = scrolled + "%";
+    });
+
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(r => observer.observe(r));
+
+    let viewedSections = new Set();
+    document.querySelectorAll("section").forEach(sec => {
+      new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          viewedSections.add(sec.id);
+          if (viewedSections.size >= 2) {
+            const cta = document.getElementById("journeyCTA");
+            const ctaText = document.getElementById("journeyCTAText");
+            cta.classList.add("cta-urgent");
+            ctaText.innerText = "¡Reserva tu cupo ahora!";
+          }
+        }
+      }, { threshold: 0.4 }).observe(sec);
+    });
+
+    const chartPath = document.getElementById("chartPath");
+    new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) chartPath.classList.add("animated");
+    }, { threshold: 0.5 }).observe(chartPath);
+
+    function updateCalculator(val) {
+      const num = parseInt(val);
+      document.getElementById("sliderValueLabel").innerText = "$" + num.toLocaleString("es-CO") + " COP";
+      const monthly = Math.round(num * 0.80);
+      const yearly = monthly * 12;
+      document.getElementById("monthlySavingsDisplay").innerText = "$" + monthly.toLocaleString("es-CO");
+      document.getElementById("yearlySavingsDisplay").innerText = "$" + yearly.toLocaleString("es-CO");
+    }
+
+    function validateInput(input) {
+      const parent = input.closest(".form-field");
+      if (input.value.trim().length >= 3) parent.classList.add("is-valid");
+      else parent.classList.remove("is-valid");
+    }
+
+    function handleSolarSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("custName").value;
+      const phone = document.getElementById("custPhone").value;
+      const loc = document.getElementById("custLocation").value;
+      const prop = document.getElementById("custProperty").value;
+      const bill = document.getElementById("sliderValueLabel").innerText;
+
+      const msg = "*SOLICITUD ESTUDIO TÉCNICO - TIERRA SOLAR*%0A" +
+        "👤 *Cliente:* " + encodeURIComponent(name) + "%0A" +
+        "📱 *Teléfono:* " + encodeURIComponent(phone) + "%0A" +
+        "📍 *Ubicación:* " + encodeURIComponent(loc) + "%0A" +
+        "🏠 *Tipo de Inmueble:* " + encodeURIComponent(prop) + "%0A" +
+        "⚡ *Factura Actual:* " + encodeURIComponent(bill) + "%0A%0A" +
+        "_Deseo agendar la visita técnica y validación del proyecto fotovoltaico._";
+
+      window.open("https://wa.me/573118247899?text=" + msg, "_blank");
+    }
+  </script>
+</body>
+</html>
