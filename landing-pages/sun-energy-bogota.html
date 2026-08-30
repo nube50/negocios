@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Sun Energy Bogotá | Soluciones de Energía Solar Fotovoltaica de Alta Eficiencia</title>
+  <meta name="description" content="Ahorra entre 60% y 80% en tu factura de energía en Bogotá con tecnología solar monocristalina de punta. Instalación certificada para hogares, empresas e industrias.">
+  <meta name="theme-color" content="#060d1a">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Sun Energy Bogotá | El Futuro de la Energía es Hoy">
+  <meta property="og:description" content="Ingeniería solar de precisión en Bogotá. Reduce tu factura eléctrica hasta un 80% con garantías de hasta 25 años.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="sun-energy-images/isometric-house.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    :root {
+      --bg-primary: #060d1a;
+      --bg-secondary: #0a172a;
+      --bg-card: rgba(14, 28, 50, 0.7);
+      --bg-card-hover: rgba(20, 39, 70, 0.85);
+      --solar-gold: #f59e0b;
+      --solar-amber: #fbbf24;
+      --solar-glow: rgba(245, 158, 11, 0.35);
+      --eco-green: #10b981;
+      --eco-glow: rgba(16, 185, 129, 0.25);
+      --electric-cyan: #06b6d4;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-sub: #cbd5e1;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-active: rgba(245, 158, 11, 0.4);
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+
+    /* Ambient Lighting Background */
+    #ambient-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-active);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -15px var(--solar-glow);
+    }
+
+    .solar-btn-primary {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #050b14;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.45);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: none;
+    }
+
+    .solar-btn-primary:hover {
+      transform: scale(1.04);
+      box-shadow: 0 16px 35px -5px rgba(245, 158, 11, 0.65);
+      color: #000;
+    }
+
+    .solar-btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 16px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      transition: all 0.35s ease;
+    }
+
+    .solar-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--solar-amber);
+      color: var(--solar-amber);
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #ffffff 30%, #fbbf24 80%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cyan-gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--solar-amber);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    /* Hero Video Styles */
+    .hero-container {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 120px 24px 80px;
+    }
+
+    .hero-video-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0.38;
+      filter: brightness(0.9) contrast(1.1);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(6, 13, 26, 0.4) 0%, rgba(6, 13, 26, 0.92) 80%),
+                  linear-gradient(to bottom, rgba(6, 13, 26, 0.6) 0%, rgba(6, 13, 26, 0.95) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Container Utility */
+    .site-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Header Nav */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 20px 0;
+    }
+
+    .site-header.scrolled {
+      background: rgba(6, 13, 26, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #050b14;
+      font-size: 1.3rem;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-name span {
+      color: var(--solar-amber);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-sub);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--solar-amber);
+    }
+
+    /* Comparison Slider / Problem Box */
+    .problem-stat-badge {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      color: #f87171;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .solution-stat-badge {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* FAQ Accordion */
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item.active {
+      border-color: var(--solar-amber);
+      background: var(--bg-card-hover);
+    }
+
+    .faq-header {
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: var(--text-main);
+      user-select: none;
+    }
+
+    .faq-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, background 0.3s ease;
+      color: var(--solar-amber);
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      background: var(--solar-amber);
+      color: #060d1a;
+    }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+      padding: 0 24px;
+      color: var(--text-sub);
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-body {
+      max-height: 400px;
+      padding: 0 24px 24px;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 62px;
+      height: 62px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 32px;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.45);
+      z-index: 9999;
+      text-decoration: none;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.12) rotate(8deg);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.65);
+    }
+
+    .whatsapp-float::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #25D366;
+      opacity: 0.6;
+      animation: pulse-ring 2s infinite;
+      z-index: -1;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.35); opacity: 0; }
+      100% { transform: scale(0.95); opacity: 0; }
+    }
+
+    /* Sticky Mobile Contact Bar */
+    .mobile-sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(6, 13, 26, 0.95);
+      backdrop-filter: blur(15px);
+      border-top: 1px solid var(--border-subtle);
+      padding: 12px 16px;
+      z-index: 9990;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .mobile-sticky-bar { display: flex; }
+      .whatsapp-float { bottom: 84px; right: 20px; width: 56px; height: 56px; font-size: 28px; }
+      .hero-container { padding-top: 100px; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title { font-size: 2.2rem !important; }
+      .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glow Canvas -->
+  <div id="ambient-canvas"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="navbar">
+    <div class="site-container">
+      <div class="nav-inner">
+        <a href="#hero" class="brand-logo">
+          <div class="brand-icon">
+            <i class="fa-solid fa-sun"></i>
+          </div>
+          <div class="brand-name">SUN <span>ENERGY</span> BOGOTÁ</div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#problema-solucion">Ahorro Garantizado</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#tecnologia">Tecnología 3D</a></li>
+          <li><a href="#proceso">Cómo Funciona</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#faq">Preguntas</a></li>
+        </ul>
+
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <a href="tel:+573203405497" class="solar-btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+            <i class="fa-solid fa-phone"></i> (320) 340-5497
+          </a>
+          <a href="#cotizador" class="solar-btn-primary" style="padding: 10px 24px; font-size: 0.9rem;">
+            <i class="fa-solid fa-bolt"></i> Cotizar
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-container">
+    <!-- Video Background Direct CDN -->
+    <video autoplay muted loop playsinline preload="auto" class="hero-video-bg">
+      <source src="https://assets.mixkit.co/videos/23304/23304-720.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="section-tag" style="margin-bottom: 20px;">
+        <i class="fa-solid fa-certificate"></i> Ingeniería Solar Certificada en Bogotá & Sabana
+      </div>
+
+      <h1 class="hero-title" style="font-family: var(--font-display); font-size: 3.8rem; font-weight: 900; line-height: 1.12; margin-bottom: 24px; letter-spacing: -1px;">
+        Sun Energy Bogotá:<br>
+        <span class="gold-gradient-text">El Futuro de la Energía es Hoy</span>
+      </h1>
+
+      <p style="font-size: 1.28rem; color: var(--text-sub); max-width: 820px; margin: 0 auto 36px; line-height: 1.6;">
+        Transforma tu hogar o empresa con la mejor tecnología fotovoltaica en Bogotá. 
+        <strong style="color: #fff;">Ahorra entre un 60% y 80% en tu factura</strong> desde el primer mes con paneles monocristalinos de alta eficiencia y monitoreo inteligente.
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 56px;">
+        <a href="#cotizador" class="solar-btn-primary" style="font-size: 1.15rem; padding: 18px 40px;">
+          <i class="fa-solid fa-calculator"></i> Cotiza tu Proyecto Solar Gratis
+        </a>
+        <a href="https://wa.me/573203405497?text=Hola%20Sun%20Energy%20Bogot%C3%A1,%20quiero%20solicitar%20un%20estudio%20solar%20gratuito%20para%20mi%20inmueble." target="_blank" class="solar-btn-secondary" style="font-size: 1.15rem; padding: 18px 36px;">
+          <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> Asesoría WhatsApp
+        </a>
+      </div>
+
+      <!-- Trust Bar Counters -->
+      <div class="stats-grid glass-card" style="display: grid; grid-template-columns: repeat(4, 1fr); padding: 28px 24px; gap: 20px; text-align: center; border-color: rgba(245, 158, 11, 0.2);">
+        <div>
+          <div class="counter-num gold-gradient-text" style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800;" data-target="4850">0</div>
+          <div style="font-size: 0.9rem; color: var(--text-sub); font-weight: 600;">kWp Instalados</div>
+        </div>
+        <div>
+          <div class="counter-num gold-gradient-text" style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800;" data-target="320">0</div>
+          <div style="font-size: 0.9rem; color: var(--text-sub); font-weight: 600;">Proyectos Exitosos</div>
+        </div>
+        <div>
+          <div class="counter-num cyan-gradient-text" style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800;" data-target="1950">0</div>
+          <div style="font-size: 0.9rem; color: var(--text-sub); font-weight: 600;">Ton CO₂ Evitadas</div>
+        </div>
+        <div>
+          <div class="counter-num gold-gradient-text" style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800;" data-target="25">0</div>
+          <div style="font-size: 0.9rem; color: var(--text-sub); font-weight: 600;">Años de Garantía</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: EL PROBLEMA VS LA SOLUCIÓN (Storytelling Visual) -->
+  <section id="problema-solucion" style="padding: 100px 0; background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
+    <div class="site-container">
+      <div style="text-align: center; max-width: 780px; margin: 0 auto 60px;">
+        <div class="section-tag"><i class="fa-solid fa-arrow-trend-down"></i> Storytelling Financiero</div>
+        <h2 style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px;">
+          ¿Cansado de los continuos incrementos en la factura eléctrica de Bogotá?
+        </h2>
+        <p style="color: var(--text-sub); font-size: 1.1rem;">
+          Las tarifas energéticas en Bogotá han subido más de un 35% en los últimos años. Continuar dependiendo al 100% de la red tradicional es pagar un arriendo infinito que no genera patrimonio.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; align-items: center;">
+        
+        <!-- Columna Izquierda: El Problema (Factura Exorbitante) -->
+        <div class="glass-card" style="padding: 32px; border-color: rgba(239, 68, 68, 0.3); background: rgba(30, 15, 25, 0.65);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div class="problem-stat-badge">
+              <i class="fa-solid fa-triangle-exclamation"></i> Crisis Tarifaria Bogotá
+            </div>
+            <span style="font-size: 0.85rem; color: #f87171; font-weight: 600;">Sin Energía Solar</span>
+          </div>
+
+          <div style="position: relative; border-radius: 14px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+            <img src="sun-energy-images/problem-bill.webp" alt="Factura de energía costosa en Bogotá" style="width: 100%; height: auto; display: block; filter: contrast(1.05);">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); padding: 16px;">
+              <span style="font-size: 0.85rem; color: #fca5a5;"><i class="fa-solid fa-circle-exclamation"></i> Enel Codensa / Tarifas CREG en alza continua</span>
+            </div>
+          </div>
+
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--text-sub); font-size: 0.95rem;">
+            <li style="display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fa-solid fa-xmark" style="color: #ef4444; margin-top: 4px;"></i>
+              <span><strong>Alzas mensuales impredecibles:</strong> Pagas por kilovatio a tarifas que crecen por encima de la inflación.</span>
+            </li>
+            <li style="display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fa-solid fa-xmark" style="color: #ef4444; margin-top: 4px;"></i>
+              <span><strong>Cero retorno de capital:</strong> Millones de pesos mensuales sin ninguna valorización para tu propiedad.</span>
+            </li>
+            <li style="display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fa-solid fa-xmark" style="color: #ef4444; margin-top: 4px;"></i>
+              <span><strong>Vulnerabilidad a cortes de red:</strong> Pérdida de productividad en negocios y desconexión en hogares.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Columna Derecha: La Solución (Sun Energy Bogotá) -->
+        <div class="glass-card" style="padding: 32px; border-color: rgba(16, 185, 129, 0.4); background: rgba(10, 30, 35, 0.75); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: rgba(16, 185, 129, 0.15); border-radius: 50%; filter: blur(40px);"></div>
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div class="solution-stat-badge">
+              <i class="fa-solid fa-circle-check"></i> Solución Sun Energy
+            </div>
+            <span style="font-size: 0.85rem; color: #34d399; font-weight: 700;">80% de Ahorro Real</span>
+          </div>
+
+          <!-- Interactive Savings Comparison Box -->
+          <div style="background: rgba(6, 13, 26, 0.8); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px; padding: 24px; margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+              <span style="color: var(--text-muted); font-size: 0.9rem;">Factura Típica Estrato 5/6:</span>
+              <span style="color: #f87171; text-decoration: line-through; font-weight: 600;">$980.000 COP/mes</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px;">
+              <span style="color: #fff; font-weight: 700; font-size: 1.05rem;">Con Sistema Sun Energy:</span>
+              <span style="color: #34d399; font-family: var(--font-display); font-size: 1.8rem; font-weight: 900;">$145.000 COP/mes</span>
+            </div>
+
+            <!-- Savings Bar Graph Visualization -->
+            <div style="height: 14px; background: rgba(255,255,255,0.08); border-radius: 10px; overflow: hidden; position: relative;">
+              <div style="width: 85%; height: 100%; background: linear-gradient(90deg, #10b981, #f59e0b); border-radius: 10px;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.8rem; color: var(--text-muted);">
+              <span>Ahorro Neto: <strong>$835.000 / mes</strong></span>
+              <span style="color: var(--solar-amber); font-weight: 700;">$10.020.000 COP / año</span>
+            </div>
+          </div>
+
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; color: var(--text-sub); font-size: 0.95rem; margin-bottom: 28px;">
+            <li style="display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fa-solid fa-check" style="color: #10b981; margin-top: 4px;"></i>
+              <span><strong>Beneficios Tributarios Ley 1715:</strong> Deducción de hasta el 50% de la inversión en tu impuesto de renta + 0% IVA.</span>
+            </li>
+            <li style="display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fa-solid fa-check" style="color: #10b981; margin-top: 4px;"></i>
+              <span><strong>Inyección de Excedentes a la Red:</strong> Vende tus kilovatios sobrantes al operador bajo normatividad CREG 030.</span>
+            </li>
+            <li style="display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fa-solid fa-check" style="color: #10b981; margin-top: 4px;"></i>
+              <span><strong>Plusvalía Inmediata:</strong> Tu propiedad aumenta su valor comercial hasta en un 12% con certificación ecológica.</span>
+            </li>
+          </ul>
+
+          <a href="#cotizador" class="solar-btn-primary" style="width: 100%; text-align: center;">
+            <i class="fa-solid fa-bolt"></i> Simular Mi Ahorro Personalizado
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: 3 PILARES DE BENEFICIOS -->
+  <section id="beneficios" style="padding: 100px 0;">
+    <div class="site-container">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 60px;">
+        <div class="section-tag"><i class="fa-solid fa-gem"></i> Propuesta de Valor</div>
+        <h2 style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px;">
+          Tres Pilares de Nuestra <span class="gold-gradient-text">Ingeniería Solar</span>
+        </h2>
+        <p style="color: var(--text-sub); font-size: 1.1rem;">
+          Diseñamos soluciones fotovoltaicas que combinan rentabilidad financiera inmediata, autonomía total y sostenibilidad certificada.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;">
+        
+        <!-- Pilar 1 -->
+        <div class="glass-card" style="padding: 36px 28px; position: relative;">
+          <div style="width: 60px; height: 60px; border-radius: 16px; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--solar-amber); margin-bottom: 24px;">
+            <i class="fa-solid fa-piggy-bank"></i>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 800; margin-bottom: 14px; color: #fff;">
+            Ahorro Inteligente
+          </h3>
+          <p style="color: var(--text-sub); font-size: 0.98rem; line-height: 1.7; margin-bottom: 20px;">
+            Reduce tu factura eléctrica hasta en un 80% con nuestra tecnología monocristalina de máxima eficiencia. Recupera tu inversión en un periodo de 3 a 4 años y disfruta de más de 20 años de energía 100% gratuita.
+          </p>
+          <div style="font-size: 0.88rem; color: var(--solar-amber); font-weight: 700; display: flex; align-items: center; gap: 8px;">
+            <span>Retorno de Inversión Acelerado</span> <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <!-- Pilar 2 -->
+        <div class="glass-card" style="padding: 36px 28px; position: relative;">
+          <div style="width: 60px; height: 60px; border-radius: 16px; background: rgba(6, 182, 212, 0.12); border: 1px solid rgba(6, 182, 212, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--electric-cyan); margin-bottom: 24px;">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 800; margin-bottom: 14px; color: #fff;">
+            Energía sin Límites
+          </h3>
+          <p style="color: var(--text-sub); font-size: 0.98rem; line-height: 1.7; margin-bottom: 20px;">
+            Genera tu propia energía y protégete de apagones, fluctuaciones o racionamientos de la red pública. Sistemas híbridos con almacenamiento en baterías de litio para respaldo ininterrumpido 24/7.
+          </p>
+          <div style="font-size: 0.88rem; color: var(--electric-cyan); font-weight: 700; display: flex; align-items: center; gap: 8px;">
+            <span>Respaldo Continuo en Todo Momento</span> <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div class="glass-card" style="padding: 36px 28px; position: relative;">
+          <div style="width: 60px; height: 60px; border-radius: 16px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--eco-green); margin-bottom: 24px;">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 800; margin-bottom: 14px; color: #fff;">
+            Compromiso Verde & LEED
+          </h3>
+          <p style="color: var(--text-sub); font-size: 0.98rem; line-height: 1.7; margin-bottom: 20px;">
+            Cada panel instalado es un paso decisivo hacia una Bogotá descarbonizada y moderna. Certificaciones ambientales oficiales, reducción medible de huella de carbono y cumplimiento de estándares LEED y EDGE.
+          </p>
+          <div style="font-size: 0.88rem; color: var(--eco-green); font-weight: 700; display: flex; align-items: center; gap: 8px;">
+            <span>Certificados Oficiales de Sostenibilidad</span> <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: ARQUITECTURA 3D E ISOMÉTRICO SOLAR -->
+  <section id="tecnologia" style="padding: 100px 0; background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);">
+    <div class="site-container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center;">
+        
+        <!-- Render 3D Isométrico -->
+        <div style="position: relative;">
+          <div style="position: absolute; inset: -10px; background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%); filter: blur(30px); z-index: 1;"></div>
+          
+          <div class="glass-card" style="position: relative; z-index: 2; overflow: hidden; padding: 12px; border-color: rgba(245, 158, 11, 0.35);">
+            <img src="sun-energy-images/isometric-house.webp" alt="Arquitectura solar 3D en Bogotá Sun Energy" style="width: 100%; height: auto; border-radius: 14px; display: block; filter: brightness(1.02);">
+            
+            <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; background: rgba(6, 13, 26, 0.9); border-radius: 10px; margin-top: 10px;">
+              <span style="font-size: 0.88rem; color: var(--solar-amber); font-weight: 700;">
+                <i class="fa-solid fa-microchip"></i> Telemetría IoT en Tiempo Real
+              </span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Bogotá, D.C.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detalles Técnicos y Flujo Energético -->
+        <div>
+          <div class="section-tag"><i class="fa-solid fa-cubes"></i> Ecosistema Tecnológico</div>
+          <h2 style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 24px;">
+            Flujo Energético de <span class="cyan-gradient-text">Máxima Eficiencia</span>
+          </h2>
+          <p style="color: var(--text-sub); font-size: 1.08rem; line-height: 1.7; margin-bottom: 28px;">
+            Nuestros sistemas fotovoltaicos integran componentes Tier-1 de marcas líderes globales (Growatt, Huawei, Fronius, JA Solar y Canadian Solar) para garantizar generación ininterrumpida aun bajo el clima nublado de Bogotá.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+              <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); display: flex; align-items: center; justify-content: center; color: var(--solar-amber); font-size: 1.2rem; flex-shrink: 0;">
+                <i class="fa-solid fa-solar-panel"></i>
+              </div>
+              <div>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px;">Paneles Monocristalinos N-Type</h4>
+                <p style="font-size: 0.92rem; color: var(--text-sub); line-height: 1.5;">Eficiencia de conversión de hasta 22.8%, excelente respuesta a radiación difusa y degradación ultrabaja (&lt;0.4% anual).</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+              <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.3); display: flex; align-items: center; justify-content: center; color: var(--electric-cyan); font-size: 1.2rem; flex-shrink: 0;">
+                <i class="fa-solid fa-bolt-lightning"></i>
+              </div>
+              <div>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px;">Inversores Inteligentes con App Móvil</h4>
+                <p style="font-size: 0.92rem; color: var(--text-sub); line-height: 1.5;">Monitorea tu producción diaria, ahorro acumulado e inyección a la red directamente desde tu smartphone en tiempo real.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+              <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); display: flex; align-items: center; justify-content: center; color: var(--eco-green); font-size: 1.2rem; flex-shrink: 0;">
+                <i class="fa-solid fa-car-battery"></i>
+              </div>
+              <div>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px;">Almacenamiento en Baterías LiFePO4</h4>
+                <p style="font-size: 0.92rem; color: var(--text-sub); line-height: 1.5;">Más de 6,000 ciclos de vida útil con respaldo instantáneo ante cualquier corte de energía en la red de Bogotá.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: CÓMO FUNCIONA (Proceso en 3 Pasos) -->
+  <section id="proceso" style="padding: 100px 0;">
+    <div class="site-container">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 60px;">
+        <div class="section-tag"><i class="fa-solid fa-stairs"></i> Paso a Paso</div>
+        <h2 style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px;">
+          Tu Transición a la Energía Solar en <span class="gold-gradient-text">3 Pasos Simples</span>
+        </h2>
+        <p style="color: var(--text-sub); font-size: 1.1rem;">
+          Nos encargamos del 100% de la ingeniería, trámites ante Enel y legalización RETIE. Cero estrés para ti.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; position: relative;">
+        
+        <!-- Paso 1 -->
+        <div class="glass-card" style="padding: 36px 28px; position: relative;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #d97706); color: #050b14; font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);">
+              01
+            </div>
+            <span style="font-size: 0.85rem; color: var(--solar-amber); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Visita & Estudio</span>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; margin-bottom: 12px; color: #fff;">
+            Estudio y Simulación Gratis
+          </h3>
+          <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.6;">
+            Realizamos una visita técnica presencial en tu tejado en Bogotá o Sabana, analizamos tu historial de consumo y proyectamos tu retorno de inversión financiero exacto.
+          </p>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="glass-card" style="padding: 36px 28px; position: relative;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #06b6d4, #0284c7); color: #fff; font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);">
+              02
+            </div>
+            <span style="font-size: 0.85rem; color: var(--electric-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Instalación 1-3 Días</span>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; margin-bottom: 12px; color: #fff;">
+            Montaje e Ingeniería Limpia
+          </h3>
+          <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.6;">
+            Ingenieros electricistas certificados instalan los módulos y cableado bajo norma RETIE. Proceso ágil, estético, seguro y sin interrumpir tu rutina diaria.
+          </p>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="glass-card" style="padding: 36px 28px; position: relative;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #059669); color: #fff; font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);">
+              03
+            </div>
+            <span style="font-size: 0.85rem; color: var(--eco-green); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Legalización & App</span>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; margin-bottom: 12px; color: #fff;">
+            Activación y Monitoreo 24/7
+          </h3>
+          <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.6;">
+            Legalizamos tu medidor bidireccional ante el operador y configuramos la aplicación móvil en tu teléfono para que disfrutes de tu energía limpia y ahorros al instante.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: TESTIMONIOS REALES BOGOTÁ -->
+  <section id="testimonios" style="padding: 100px 0; background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
+    <div class="site-container">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 60px;">
+        <div class="section-tag"><i class="fa-solid fa-comments"></i> Prueba Social</div>
+        <h2 style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px;">
+          Historias de Éxito en <span class="gold-gradient-text">Bogotá y la Sabana</span>
+        </h2>
+        <p style="color: var(--text-sub); font-size: 1.1rem;">
+          Más de 320 hogares y empresas ya generan su propia energía con Sun Energy Bogotá.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;">
+        
+        <!-- Testimonio 1 -->
+        <div class="glass-card" style="padding: 32px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; gap: 4px; color: var(--solar-amber); margin-bottom: 16px;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p style="color: var(--text-main); font-size: 1.02rem; font-style: italic; line-height: 1.7; margin-bottom: 24px;">
+              "Nuestra factura en la casa en Chicó pasó de <strong>$850.000 a escasos $120.000 COP</strong> mensuales. La instalación fue en solo 2 días y el monitoreo en el celular es fascinante."
+            </p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--border-subtle); padding-top: 18px;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #3b82f6); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff;">
+              CM
+            </div>
+            <div>
+              <div style="font-weight: 700; color: #fff;">Carlos Mario Mendoza</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Casa Residencial • Chicó Norte, Bogotá</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonio 2 -->
+        <div class="glass-card" style="padding: 32px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; gap: 4px; color: var(--solar-amber); margin-bottom: 16px;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p style="color: var(--text-main); font-size: 1.02rem; font-style: italic; line-height: 1.7; margin-bottom: 24px;">
+              "Implementamos el sistema en nuestra clínica odontológica en Santa Bárbara. Redujimos el 78% del costo operativo y aplicamos el beneficio tributario de renta por Ley 1715 sin complicaciones."
+            </p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--border-subtle); padding-top: 18px;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #06b6d4); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff;">
+              PR
+            </div>
+            <div>
+              <div style="font-weight: 700; color: #fff;">Dra. Patricia Restrepo</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Clínica Dental • Santa Bárbara, Bogotá</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonio 3 -->
+        <div class="glass-card" style="padding: 32px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; gap: 4px; color: var(--solar-amber); margin-bottom: 16px;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p style="color: var(--text-main); font-size: 1.02rem; font-style: italic; line-height: 1.7; margin-bottom: 24px;">
+              "Instalamos 45 kWp en la cubierta de nuestra bodega en Montevideo. La estabilidad de la energía y el ahorro de más de 4.5 millones mensuales nos dio una ventaja competitiva enorme."
+            </p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--border-subtle); padding-top: 18px;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #f59e0b); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff;">
+              RV
+            </div>
+            <div>
+              <div style="font-weight: 700; color: #fff;">Ing. Roberto Valenzuela</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Planta Logística • Montevideo, Fontibón</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: PREGUNTAS FRECUENTES (Acordeón) -->
+  <section id="faq" style="padding: 100px 0;">
+    <div class="site-container">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 60px;">
+        <div class="section-tag"><i class="fa-solid fa-circle-question"></i> Dudas Resueltas</div>
+        <h2 style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px;">
+          Preguntas Frecuentes sobre <span class="gold-gradient-text">Energía Solar</span>
+        </h2>
+        <p style="color: var(--text-sub); font-size: 1.1rem;">
+          Todo lo que necesitas saber antes de instalar paneles solares en tu hogar o empresa en Bogotá.
+        </p>
+      </div>
+
+      <div style="max-width: 860px; margin: 0 auto;">
+        
+        <!-- Pregunta 1 -->
+        <div class="faq-item active">
+          <div class="faq-header">
+            <span>¿Cuánto cuesta un proyecto solar y en cuánto tiempo se recupera la inversión?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            El costo varía según el consumo mensual de kilovatios-hora (kWh) y el área disponible en tu tejado. Para residencias en estratos 4, 5 y 6, el retorno de inversión (ROI) promedio se ubica entre <strong>3 y 4 años</strong>, gracias a los ahorros en la factura y los incentivos tributarios de la Ley 1715. Dado que los paneles tienen una vida útil superior a 25 años, disfrutarás de más de dos décadas de energía prácticamente gratis.
+          </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>¿Los paneles funcionan en Bogotá si el día está nublado o lluvioso?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            ¡Sí, totalmente! Los paneles solares monocristalinos de última generación captan tanto la radiación directa como la <strong>radiación difusa</strong> que atraviesa las nubes. Aunque la producción en días nublados puede reducirse en torno al 30-50% respecto a un día soleado, la radiación solar anual acumulada en la Sabana de Bogotá es más que suficiente para garantizar el 80% de ahorro proyectado.
+          </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>¿Qué trámites y permisos se requieren ante Enel y la CREG?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            En Sun Energy Bogotá nos encargamos de todo el proceso llave en mano: desde el diseño con memoria de cálculo firmada por ingenieros matriculados, hasta la solicitud de conexión de Autogeneración a Pequeña Escala (AGPE) bajo resolución <strong>CREG 030</strong>, la instalación del medidor bidireccional y la certificación RETIE oficial.
+          </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>¿Cuáles son los beneficios tributarios de la Ley 1715 de 2014 en Colombia?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            La legislación colombiana ofrece 4 incentivos excepcionales para la energía solar:
+            <br>1. <strong>Deducción del 50% de la inversión</strong> en el impuesto de renta durante un periodo de hasta 15 años.
+            <br>2. <strong>Exención total del IVA (0%)</strong> en la compra de paneles, inversores y componentes solares.
+            <br>3. <strong>Depreciación acelerada</strong> de activos en un máximo de 3 años.
+            <br>4. <strong>Exención de aranceles</strong> de importación.
+          </div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>¿Qué garantía tienen los equipos y la instalación?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            Ofrecemos garantía de potencia lineal de hasta <strong>25 años</strong> en paneles solares (garantizando más del 80% de generación al año 25), 5 a 10 años en inversores inteligentes y 2 años de garantía total de mano de obra e impermeabilización sobre la estructura del tejado.
+          </div>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>¿Tienen opciones de financiación o crédito verde?</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            Sí. Contamos con convenios directos de <strong>Crédito Verde</strong> con entidades bancarias líderes en Colombia con tasas preferenciales. Las cuotas mensuales del crédito se pagan directamente con el mismo dinero que ahorras en tu factura de luz, logrando que el proyecto sea autosostenible desde el primer mes.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN FINAL: FORMULARIO DE COTIZACIÓN & MAPA -->
+  <section id="cotizador" style="padding: 100px 0; background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);">
+    <div class="site-container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: flex-start;">
+        
+        <!-- Formulario Interactivo -->
+        <div class="glass-card" style="padding: 40px 32px; border-color: var(--border-active); box-shadow: 0 20px 50px -10px rgba(0,0,0,0.6);">
+          <div class="section-tag"><i class="fa-solid fa-calculator"></i> Cotizador Solar Bogotá</div>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; margin-bottom: 12px;">
+            Solicita tu <span class="gold-gradient-text">Estudio Gratuito</span>
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 28px;">
+            Completa los datos y un ingeniero especialista diseñará la propuesta técnica y financiera exacta para tu inmueble en menos de 24 horas.
+          </p>
+
+          <form id="solarQuoteForm" onsubmit="handleQuoteSubmit(event)" style="display: flex; flex-direction: column; gap: 18px;">
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-sub); margin-bottom: 6px;">Nombre Completo *</label>
+              <input type="text" id="quoteName" required placeholder="Ej. Juan Carlos Pérez" style="width: 100%; padding: 14px 16px; border-radius: 12px; background: rgba(6, 13, 26, 0.7); border: 1px solid var(--border-subtle); color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--solar-amber)'" onblur="this.style.borderColor='var(--border-subtle)'">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div>
+                <label style="display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-sub); margin-bottom: 6px;">Teléfono / WhatsApp *</label>
+                <input type="tel" id="quotePhone" required placeholder="Ej. 320 340 5497" style="width: 100%; padding: 14px 16px; border-radius: 12px; background: rgba(6, 13, 26, 0.7); border: 1px solid var(--border-subtle); color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--solar-amber)'" onblur="this.style.borderColor='var(--border-subtle)'">
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-sub); margin-bottom: 6px;">Correo Electrónico</label>
+                <input type="email" id="quoteEmail" placeholder="correo@ejemplo.com" style="width: 100%; padding: 14px 16px; border-radius: 12px; background: rgba(6, 13, 26, 0.7); border: 1px solid var(--border-subtle); color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--solar-amber)'" onblur="this.style.borderColor='var(--border-subtle)'">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div>
+                <label style="display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-sub); margin-bottom: 6px;">Tipo de Inmueble</label>
+                <select id="quoteType" style="width: 100%; padding: 14px 16px; border-radius: 12px; background: #071324; border: 1px solid var(--border-subtle); color: #fff; font-size: 0.95rem; outline: none;">
+                  <option value="Casa Residencial (Estrato 4-6)">Casa Residencial (Estrato 4-6)</option>
+                  <option value="Empresa / Local Comercial">Empresa / Local Comercial</option>
+                  <option value="Bodega / Industria">Bodega / Industria</option>
+                  <option value="Finca / Casa Campestre (Sabana)">Finca / Casa Campestre</option>
+                  <option value="Edificio / Propiedad Horizontal">Edificio / PH</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-sub); margin-bottom: 6px;">Factura Eléctrica Aprox.</label>
+                <select id="quoteBill" style="width: 100%; padding: 14px 16px; border-radius: 12px; background: #071324; border: 1px solid var(--border-subtle); color: #fff; font-size: 0.95rem; outline: none;">
+                  <option value="$300.000 a $600.000 COP">$300.000 a $600.000 COP</option>
+                  <option value="$600.000 a $1.200.000 COP" selected>$600.000 a $1.200.000 COP</option>
+                  <option value="$1.200.000 a $2.500.000 COP">$1.200.000 a $2.500.000 COP</option>
+                  <option value="Más de $2.500.000 COP">Más de $2.500.000 COP</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-sub); margin-bottom: 6px;">Ubicación o Barrio en Bogotá</label>
+              <input type="text" id="quoteAddress" placeholder="Ej. Santa Bárbara, Cedritos, Chia, Montevideo" style="width: 100%; padding: 14px 16px; border-radius: 12px; background: rgba(6, 13, 26, 0.7); border: 1px solid var(--border-subtle); color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--solar-amber)'" onblur="this.style.borderColor='var(--border-subtle)'">
+            </div>
+
+            <button type="submit" class="solar-btn-primary" style="width: 100%; padding: 18px; font-size: 1.1rem; margin-top: 8px;">
+              <i class="fa-solid fa-paper-plane"></i> Solicitar Simulación por WhatsApp
+            </button>
+            <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">
+              <i class="fa-solid fa-lock"></i> Datos protegidos. Respuesta en menos de 2 horas en horario hábil.
+            </div>
+          </form>
+        </div>
+
+        <!-- Información de Contacto & Mapa Bogotá -->
+        <div>
+          <div class="glass-card" style="padding: 36px; margin-bottom: 28px;">
+            <h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; color: #fff;">
+              Atención Presencial & Cobertura
+            </h3>
+
+            <div style="display: flex; flex-direction: column; gap: 18px; font-size: 0.98rem; color: var(--text-sub);">
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(245, 158, 11, 0.12); color: var(--solar-amber); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 700; color: #fff;">Dirección Principal</div>
+                  <div>Carrera 12 # 19-76, Centro / Santa Fe, Bogotá, Colombia</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(37, 211, 102, 0.12); color: #25D366; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 700; color: #fff;">Líneas Directas de Atención</div>
+                  <div>+57 320 340 5497 / +57 312 442 8016</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(6, 182, 212, 0.12); color: var(--electric-cyan); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+                  <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 700; color: #fff;">Zona de Cobertura</div>
+                  <div>Toda Bogotá (Norte, Centro, Occidente, Sur) y municipios de la Sabana (Chía, Cajicá, Cota, Sopó, La Calera, Mosquera, Funza).</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(16, 185, 129, 0.12); color: var(--eco-green); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 700; color: #fff;">Horarios de Atención</div>
+                  <div>Lunes a Viernes: 8:00 AM - 6:00 PM | Sábados: 9:00 AM - 2:00 PM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mapa Embed de Bogotá -->
+          <div class="glass-card" style="overflow: hidden; padding: 6px; height: 260px;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.960814983637!2d-74.07503742416172!3d4.601053442526315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a0f027ef93%3A0x6b4458fef3a31c51!2sCra.%2012%20%2319-76%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1711750000000!5m2!1ses!2sco" 
+              width="100%" 
+              height="100%" 
+              style="border:0; border-radius: 14px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding: 50px 0 110px; border-top: 1px solid var(--border-subtle); background: #040811; color: var(--text-muted); font-size: 0.9rem;">
+    <div class="site-container">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 30px;">
+        <div class="brand-logo">
+          <div class="brand-icon" style="width: 36px; height: 36px; font-size: 1rem;">
+            <i class="fa-solid fa-sun"></i>
+          </div>
+          <div class="brand-name" style="font-size: 1.25rem;">SUN <span>ENERGY</span> BOGOTÁ</div>
+        </div>
+
+        <div style="display: flex; gap: 18px; font-size: 1.2rem;">
+          <a href="https://facebook.com/sunenergycolombia" target="_blank" style="color: var(--text-muted); transition: color 0.2s;" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://wa.me/573203405497" target="_blank" style="color: var(--text-muted); transition: color 0.2s;" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="tel:+573203405497" style="color: var(--text-muted); transition: color 0.2s;" aria-label="Teléfono"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; font-size: 0.82rem;">
+        <div>© 2026 Sun Energy Bogotá S.A.S. Todos los derechos reservados. Soluciones de Energía Solar Fotovoltaica.</div>
+        <div>Cumplimiento RETIE / CREG 030 / Ley 1715 de 2014.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/573203405497?text=Hola%20Sun%20Energy%20Bogot%C3%A1,%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto%20solar%20para%20mi%20inmueble." target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Mobile Sticky Bottom Bar -->
+  <div class="mobile-sticky-bar">
+    <a href="tel:+573203405497" class="solar-btn-secondary" style="flex: 1; padding: 12px; font-size: 0.88rem;">
+      <i class="fa-solid fa-phone"></i> Llamar
+    </a>
+    <a href="https://wa.me/573203405497?text=Hola%20Sun%20Energy%20Bogot%C3%A1,%20quiero%20cotizar%20paneles%20solares." target="_blank" class="solar-btn-primary" style="flex: 1.4; padding: 12px; font-size: 0.88rem;">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
+
+  <!-- JavaScript Animations & Form Logic -->
+  <script>
+    // Header Scroll Effect
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Accordion FAQ Interaction
+    document.querySelectorAll('.faq-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+        
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Form submission to WhatsApp
+    function handleQuoteSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('quoteName').value;
+      const phone = document.getElementById('quotePhone').value;
+      const email = document.getElementById('quoteEmail').value;
+      const type = document.getElementById('quoteType').value;
+      const bill = document.getElementById('quoteBill').value;
+      const address = document.getElementById('quoteAddress').value;
+
+      const message = `*SOLICITUD DE COTIZACIÓN SOLAR - SUN ENERGY BOGOTÁ*%0A` +
+        `👤 *Nombre:* ${encodeURIComponent(name)}%0A` +
+        `📱 *Teléfono:* ${encodeURIComponent(phone)}%0A` +
+        `📧 *Email:* ${encodeURIComponent(email || 'No especificado')}%0A` +
+        `🏠 *Tipo Inmueble:* ${encodeURIComponent(type)}%0A` +
+        `⚡ *Factura Actual:* ${encodeURIComponent(bill)}%0A` +
+        `📍 *Ubicación:* ${encodeURIComponent(address || 'Bogotá')}%0A%0A` +
+        `_Deseo recibir el estudio técnico y financiero gratuito para mi proyecto solar._`;
+
+      window.open(`https://wa.me/573203405497?text=${message}`, '_blank');
+    }
+
+    // GSAP Scroll Animations & Animated Counters
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter-num');
+        counters.forEach(counter => {
+          const target = parseInt(counter.getAttribute('data-target'));
+          ScrollTrigger.create({
+            trigger: counter,
+            start: 'top 85%',
+            once: true,
+            onEnter: () => {
+              gsap.to(counter, {
+                innerText: target,
+                duration: 2.2,
+                snap: { innerText: 1 },
+                ease: 'power2.out',
+                onUpdate: function() {
+                  if (target >= 1000) {
+                    counter.innerText = '+' + parseInt(counter.innerText).toLocaleString();
+                  } else if (target === 25) {
+                    counter.innerText = parseInt(counter.innerText) + ' Años';
+                  } else {
+                    counter.innerText = '+' + parseInt(counter.innerText);
+                  }
+                }
+              });
+            }
+          });
+        });
+
+        // Reveal Cards on Scroll
+        gsap.utils.toArray('.glass-card').forEach((card, index) => {
+          gsap.from(card, {
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              toggleActions: 'play none none none'
+            },
+            opacity: 0,
+            y: 35,
+            duration: 0.8,
+            ease: 'power3.out'
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

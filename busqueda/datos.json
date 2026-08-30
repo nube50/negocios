@@ -3387,7 +3387,8 @@
     ],
     "lat": 4.6062,
     "lng": -74.0728,
-    "propuesta": ""
+    "propuesta": "https://lp-sun-energy-bogota.vercel.app",
+    "priority": "hot"
   },
   {
     "id": "b161",

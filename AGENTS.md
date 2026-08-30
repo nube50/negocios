@@ -69,6 +69,7 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
 - `busqueda/index.html` — herramienta principal de prospección
 - `busqueda/datos.json` — respaldo JSON de los datos
 - `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
+  - `sun-energy-bogota.html` — Sun Energy Bogotá (Energía Solar Fotovoltaica)
   - `sarta-bguest.html` — Sarta & Bguest
   - `paola-dimaya.html` — Paola Dimaya Alta Costura
   - `stacia-store.html` — Stacia Store (Luxury Brand, Armenia)
@@ -688,20 +689,11 @@ git push origin main
   - Se realizó el redespliegue completo a producción en **Vercel** de los 22 proyectos desde el servidor `cultura`.
   - Se sincronizaron todos los cambios en el repositorio de GitHub (`fc474f9`).
 
-### Sesión 24 (2026-08-30) — 10 Nuevos Negocios de Energía Solar sin Sitio Web
-- Se investigaron y agregaron 10 negocios del sector de energía solar, kits fotovoltaicos y paneles solares en Bogotá (IDs `b158` a `b167`).
-- Todos bajo una única categoría unificada: **`Energía Solar`**.
-- Todos clasificados como `social-only` (sin sitio web propio, canales activos en WhatsApp, Facebook e Instagram):
-  - `b158`: Tierra Solar Colombia (Kennedy / Castilla)
-  - `b159`: Atsei de Colombia - Energía Solar (Barrios Unidos / Alcázares)
-  - `b160`: Sun Energy Bogotá (Centro / Santa Fe)
-  - `b161`: P-Solar Proyectos de Energía Solar (Fontibón / Montevideo)
-  - `b162`: Les Energías Renovables (Barrios Unidos / 7 de Agosto)
-  - `b163`: TB Plus Energy (Engativá / Las Ferias)
-  - `b164`: ZAC Electricidad & Energía Solar (Engativá / Minuto de Dios)
-  - `b165`: JCR Energy Paneles Solares (Chapinero / El Nogal)
-  - `b166`: Colpilas Energía Solar & Baterías (Puente Aranda / Galán)
-  - `b167`: Mati Energía Solar (Barrios Unidos / San Felipe)
+### Sesión 24 (2026-08-30) — 10 Nuevos Negocios de Energía Solar & Landing Page Premium Sun Energy Bogotá
+- Se investigaron y agregaron 10 negocios del sector de energía solar, kits fotovoltaicos y paneles solares en Bogotá (IDs `b158` a `b167`) bajo la categoría unificada **`Energía Solar`**.
+- Se diseñó, desarrolló y desplegó una **Landing Page de Ultra Alta Conversión** para **Sun Energy Bogotá** (`b160`) en `https://lp-sun-energy-bogota.vercel.app`.
+  - Stack: GSAP 3.12 + ScrollTrigger, Video Hero HD Mixkit MP4 directo (`23304`), Render 3D Isométrico de Arquitectura Solar, Storytelling Problema vs Solución con comparativa tarifaria, 3 Pilares de Beneficios, Diagrama de Flujo Energético, Casos de Estudio en Bogotá, Acordeón FAQ y Cotizador dinámico a WhatsApp.
+  - Negocio marcado con **🔥 Caliente (`priority: "hot"`)** y propuesta enlazada.
 - Se actualizaron `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
 - Sincronización exitosa con servidor backend SQLite en Oracle Cloud ARM (`cultura`), alcanzando **154 negocios** totales.
 - Verificación de sintaxis con `node --check` superada con 0 errores.
