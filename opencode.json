@@ -23,7 +23,6 @@
   },
   "instructions": [
     "README.md",
-    "AGENTS.md",
-    ".opencode/skills/landing-page-designer/SKILL.md"
+    "AGENTS.md"
   ]
 }

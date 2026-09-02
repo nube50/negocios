@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta Comercial Exclusiva | Armonía para el Alma (Maestra Flerida Parra)</title>
+  
+  <!-- Google Fonts: Cinzel (Mística Sagrada), Cormorant Garamond, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            mystic: ['Cinzel', 'serif'],
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            astral: {
+              950: '#090611',
+              900: '#0E0A1A',
+              850: '#140E24',
+              800: '#1C1433',
+              gold: '#E5C479',
+              goldLight: '#F7E7B4',
+              goldDark: '#B39145',
+              violet: '#A855F7',
+              violetGlow: '#C084FC'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-page: #090611;
+      --bg-surface: #0E0A1A;
+      --bg-elevated: rgba(20, 14, 36, 0.75);
+      --border-mystic: rgba(229, 196, 121, 0.2);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --gold: #E5C479;
+      --gold-hover: #F7E7B4;
+      --violet: #A855F7;
+      --radius-mystic: 16px;
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: #F1F5F9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-mystic-title {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.04em;
+    }
+
+    .font-cormorant {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .card-astral {
+      background: var(--bg-elevated);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-mystic);
+      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(229, 196, 121, 0.12);
+      transition: var(--transition-smooth);
+    }
+
+    .card-astral:hover {
+      border-color: var(--border-mystic);
+      box-shadow: 0 20px 50px -10px rgba(168, 85, 247, 0.2), inset 0 1px 2px rgba(229, 196, 121, 0.25);
+      transform: translateY(-3px);
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF6DA 0%, #E5C479 50%, #C49C40 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .violet-gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 0%, #E9D5FF 40%, #A855F7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #E5C479 0%, #C49C40 100%);
+      color: #090611;
+      font-weight: 700;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(229, 196, 121, 0.35);
+      transition: var(--transition-smooth);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #F7E7B4 0%, #D4AF37 100%);
+      box-shadow: 0 0 35px rgba(229, 196, 121, 0.55);
+      transform: translateY(-2px);
+    }
+
+    .btn-gold:active {
+      transform: scale(0.98);
+    }
+
+    /* Veo Flow Cosmic Aura */
+    .veo-flow-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+    }
+
+    .veo-flow-aurora {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.18) 0%, rgba(229, 196, 121, 0.08) 35%, transparent 65%);
+      animation: astralRotate 18s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes astralRotate {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.15); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    /* Stitch Slider Interactivo */
+    .stitch-slider-wrapper {
+      position: relative;
+      user-select: none;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .stitch-slider-after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .stitch-slider-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #E5C479;
+      box-shadow: 0 0 15px rgba(229, 196, 121, 0.8);
+      cursor: ew-resize;
+      z-index: 20;
+    }
+
+    .stitch-handle-knob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0E0A1A;
+      border: 2px solid #E5C479;
+      color: #E5C479;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      box-shadow: 0 0 20px rgba(229, 196, 121, 0.5);
+    }
+  
+    .tarot-scene { perspective: 1000px; }
+    .tarot-card { width: 100%; height: 230px; position: relative; transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer; }
+    .tarot-card.flipped { transform: rotateY(180deg); }
+    .tarot-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; border: 1px solid rgba(229, 196, 121, 0.3); }
+    .tarot-front { background: linear-gradient(145deg, #160F2C, #0B0715); box-shadow: inset 0 0 20px rgba(229, 196, 121, 0.1); }
+    .tarot-back { background: linear-gradient(145deg, #241445, #110B24); transform: rotateY(180deg); border-color: #E5C479; box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3); }
+
+  </style>
+</head>
+
+<body class="antialiased min-h-screen">
+
+  <!-- ==============================================================
+       HEADER / NAVBAR DE LA PROPUESTA (MÍSTICA Y CONFIDENCIAL)
+       ============================================================== -->
+  <header class="w-full border-b sticky top-0 z-40 backdrop-blur-xl transition-colors duration-300 border-white/10 bg-[#090611]/85">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-astral-950 font-bold text-lg bg-gradient-to-tr from-amber-300 via-amber-200 to-yellow-500 shadow-[0_0_20px_rgba(229,196,121,0.4)]">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <div>
+          <span class="text-[10px] uppercase tracking-widest font-mono font-bold text-astral-gold flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            PROPUESTA EXCLUSIVA 2026 &middot; SERVICIOS ESPIRITUALES
+          </span>
+          <h1 class="text-sm font-bold tracking-tight text-white">Centro Holístico Armonía para el Alma (Maestra Flerida Parra)</h1>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="#hero" class="hover:text-astral-gold transition-colors">Visión</a>
+        <a href="#auditoria" class="hover:text-astral-gold transition-colors">Diagnóstico Forense</a>
+        <a href="#propuesta" class="hover:text-astral-gold transition-colors">Prototipo Stitch</a>
+        <a href="#agenda" class="hover:text-astral-gold transition-colors">Agendar Sesión</a>
+      </nav>
+
+      <div>
+        <a href="#agenda" class="btn-gold px-5 py-2.5 text-xs md:text-sm">
+          <span>Reclamar Auditoría</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==============================================================
+       SECCIÓN 1: HERO IMPACTANTE (> 64px de respiro vertical)
+       ============================================================== -->
+  <section id="hero" class="relative py-24 md:py-32 px-6 overflow-hidden">
+    <!-- Luces estelares de fondo -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full blur-[150px] pointer-events-none opacity-20 bg-gradient-to-r from-purple-600 via-indigo-600 to-amber-500"></div>
+
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+      
+      <!-- Tag de Nicho -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest uppercase mb-8 border border-astral-gold/30 bg-astral-gold/10 text-astral-gold">
+        <i class="fa-solid fa-moon text-xs"></i>
+        <span>ALTA MÍSTICA, TAROT & SANACIÓN HOLÍSTICA BOGOTÁ</span>
+      </div>
+
+      <!-- Título de la Propuesta -->
+      <h1 class="font-mystic-title text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.12] mb-8 text-white">
+        Cómo ayudaremos a <span class="gold-gradient-text">Armonía para el Alma</span> a multiplicar sus consultas privadas de Tarot y Sanación
+      </h1>
+
+      <!-- Subtítulo de Impacto Cuantificable -->
+      <p class="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-12 text-slate-300">
+        Reemplazamos tu web lenta de WordPress saturada de plugins por un <strong>Santuario Digital de Alta Conversión</strong>, calibrado para transmitir paz, autoridad espiritual y canalizar citas confidenciales directas al WhatsApp de la Maestra Flerida Parra en 1 clic.
+      </p>
+
+      <!-- Botones de Acción -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#propuesta" class="btn-gold px-8 py-4 text-base font-semibold w-full sm:w-auto shadow-2xl">
+          <i class="fa-solid fa-sparkles text-sm"></i>
+          <span>Explorar el Santuario Stitch</span>
+        </a>
+        <a href="#auditoria" class="px-8 py-4 rounded-xl font-semibold text-base border border-white/10 bg-white/5 text-slate-200 hover:border-astral-gold/40 hover:bg-white/10 transition-all w-full sm:w-auto flex items-center justify-center gap-2">
+          <i class="fa-solid fa-magnifying-glass-chart text-sm text-astral-gold"></i>
+          <span>Ver Hallazgos en flerida-armoniaparaelalma.com</span>
+        </a>
+      </div>
+
+      <!-- Métricas de Proyección Clave -->
+      <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-12 border-t border-white/10">
+        <div class="card-astral p-6 text-center">
+          <div class="text-3xl md:text-4xl font-extrabold font-mono gold-gradient-text tracking-tight">+310%</div>
+          <div class="text-xs font-medium mt-1 text-slate-400 uppercase tracking-wider">Citas por WhatsApp</div>
+        </div>
+        <div class="card-astral p-6 text-center">
+          <div class="text-3xl md:text-4xl font-extrabold font-mono gold-gradient-text tracking-tight">&lt; 0.38s</div>
+          <div class="text-xs font-medium mt-1 text-slate-400 uppercase tracking-wider">Velocidad de Carga</div>
+        </div>
+        <div class="card-astral p-6 text-center">
+          <div class="text-3xl md:text-4xl font-extrabold font-mono gold-gradient-text tracking-tight">100%</div>
+          <div class="text-xs font-medium mt-1 text-slate-400 uppercase tracking-wider">Confidencial & Móvil</div>
+        </div>
+        <div class="card-astral p-6 text-center">
+          <div class="text-3xl md:text-4xl font-extrabold font-mono gold-gradient-text tracking-tight">2.4x</div>
+          <div class="text-xs font-medium mt-1 text-slate-400 uppercase tracking-wider">Valor Percibido Ticket</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================================================
+       SECCIÓN 2: EL PROBLEMA ACTUAL (DIAGNÓSTICO REAL DEL SCRAPER)
+       Padding amplio: py-24 md:py-32
+       ============================================================== -->
+  <section id="auditoria" class="py-24 md:py-32 px-6 bg-[#0E0A1A]">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-xs font-mono font-bold tracking-widest uppercase text-astral-gold">AUDITORÍA FORENSE SCRAPER BOGOTÁ</span>
+          <h2 class="font-mystic-title text-3xl sm:text-4xl md:text-5xl font-bold mt-2 tracking-tight text-white">
+            El Problema Actual: Por qué tu web actual pierde consultantes
+          </h2>
+        </div>
+        <div class="flex items-center gap-3 bg-red-500/10 border border-red-500/20 px-4 py-2.5 rounded-xl text-red-400 text-xs font-mono font-semibold">
+          <i class="fa-solid fa-triangle-exclamation text-sm"></i>
+          <span>Objetivo: flerida-armoniaparaelalma.com</span>
+        </div>
+      </div>
+
+      <!-- Grilla de Fallos Detectados por el Scraper -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        
+        <!-- Fallo 1: Sobrecarga masiva de plugins -->
+        <div class="card-astral p-6 relative flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-red-500/10 text-red-400 text-lg border border-red-500/20">
+              <i class="fa-solid fa-weight-hanging"></i>
+            </div>
+            <div class="text-xs font-mono text-red-400 font-bold uppercase tracking-wider mb-1">Score: 29 / 100</div>
+            <h3 class="font-bold text-lg mb-2 text-white">+18 Plugins de Elementor Lentos</h3>
+            <p class="text-sm leading-relaxed text-slate-400">
+              Detectamos <em>FluentForm, LatePoint, EmbedPress, WooCommerce</em> y múltiples extensiones pesadas compitiendo por memoria. Carga en más de <strong>4.8 segundos</strong> en conexiones 4G.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-xs text-slate-400">
+            Impacto: <strong class="text-red-400 font-semibold">61% de abandono móvil</strong>
+          </div>
+        </div>
+
+        <!-- Fallo 2: Título SEO Roto y Genérico -->
+        <div class="card-astral p-6 relative flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-amber-500/10 text-amber-400 text-lg border border-amber-500/20">
+              <i class="fa-solid fa-tag"></i>
+            </div>
+            <div class="text-xs font-mono text-amber-400 font-bold uppercase tracking-wider mb-1">Invisibilidad en Google</div>
+            <h3 class="font-bold text-lg mb-2 text-white">Metadatos Descuidados</h3>
+            <p class="text-sm leading-relaxed text-slate-400">
+              Tu etiqueta de título actual es literalmente <code class="text-xs text-amber-300">"Armonia alma HOME OFICIAL •"</code>. No posiciona para <em>"Lectura de Tarot en Bogotá"</em> ni <em>"Limpieza energética Mandalay"</em>.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-xs text-slate-400">
+            Impacto: <strong class="text-amber-400 font-semibold">Pérdida de tráfico orgánico</strong>
+          </div>
+        </div>
+
+        <!-- Fallo 3: Fricción en la Toma de Citas -->
+        <div class="card-astral p-6 relative flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-purple-500/10 text-purple-400 text-lg border border-purple-500/20">
+              <i class="fa-solid fa-shield-cat"></i>
+            </div>
+            <div class="text-xs font-mono text-purple-400 font-bold uppercase tracking-wider mb-1">Falta de Confianza</div>
+            <h3 class="font-bold text-lg mb-2 text-white">Formularios Fríos sin Alma</h3>
+            <p class="text-sm leading-relaxed text-slate-400">
+              Los consultantes de servicios espirituales buscan empatía, anonimato y conexión humana inmediata, no un software rígido de calendario con pasos técnicos confusos.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-xs text-slate-400">
+            Impacto: <strong class="text-purple-400 font-semibold">Fuga de personas afligidas</strong>
+          </div>
+        </div>
+
+        <!-- Fallo 4: Imagen Visual que Devalúa el Don -->
+        <div class="card-astral p-6 relative flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-blue-500/10 text-blue-400 text-lg border border-blue-500/20">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <div class="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider mb-1">Percepción Visual</div>
+            <h3 class="font-bold text-lg mb-2 text-white">Estética de Blog Antiguo</h3>
+            <p class="text-sm leading-relaxed text-slate-400">
+              La maestra Flerida Parra tiene más de 300 personas atendidas y 50+ reseñas positivas en Google, pero la web actual no luce como la de una guía espiritual de renombre internacional.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-xs text-slate-400">
+            Impacto: <strong class="text-blue-400 font-semibold">Dificultad para cobrar más</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Radar Comparativo de Salud Digital -->
+      <div class="card-astral p-8 md:p-10 border border-white/15">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">PROYECCIÓN DE TRANSFORMACIÓN DIGITAL</span>
+            <h3 class="font-mystic-title text-2xl md:text-3xl font-bold mt-1 mb-4 text-white">
+              De una página pesada a un portal de magnetismo espiritual
+            </h3>
+            <p class="text-sm leading-relaxed mb-6 text-slate-300">
+              Al retirar el código basura de Elementor y sustituirlo por nuestra arquitectura ligera con tipografía sagrada y canalización confidencial, transformamos a los visitantes curiosos en citas confirmadas vía WhatsApp.
+            </p>
+
+            <div class="space-y-4 text-sm font-medium">
+              <div>
+                <div class="flex justify-between mb-1.5 text-xs">
+                  <span class="text-slate-300">Tiempo de Carga en Móvil</span>
+                  <span class="font-mono text-red-400">4.8s (WordPress) → <strong class="text-emerald-400 font-bold">0.38s (Stitch)</strong></span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden flex">
+                  <div class="h-full bg-red-400" style="width: 25%;"></div>
+                  <div class="h-full bg-emerald-400" style="width: 75%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1.5 text-xs">
+                  <span class="text-slate-300">Conversión a Chat Confidencial</span>
+                  <span class="font-mono text-red-400">1.2% Actual → <strong class="text-emerald-400 font-bold">6.8% Proyectado</strong></span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden flex">
+                  <div class="h-full bg-red-400" style="width: 18%;"></div>
+                  <div class="h-full bg-emerald-400" style="width: 82%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1.5 text-xs">
+                  <span class="text-slate-300">Retención Emocional en Página</span>
+                  <span class="font-mono text-red-400">35 segundos → <strong class="text-emerald-400 font-bold">3 min 20 seg</strong></span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden flex">
+                  <div class="h-full bg-red-400" style="width: 22%;"></div>
+                  <div class="h-full bg-emerald-400" style="width: 78%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border border-astral-gold/30 rounded-2xl p-6 bg-[#090611] relative overflow-hidden shadow-[0_0_30px_rgba(229,196,121,0.06)]">
+            <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+              <span class="text-xs font-mono font-bold tracking-wider text-astral-gold">FICHA TÉCNICA SCRAPER AGENCIA</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-400/10 text-amber-300">AUDITORÍA VERIFICADA</span>
+            </div>
+            <div class="space-y-3 font-mono text-xs">
+              <div class="flex items-center justify-between p-2.5 rounded-lg bg-white/5">
+                <span class="text-slate-400">Dominio:</span>
+                <span class="font-bold text-white">flerida-armoniaparaelalma.com</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-lg bg-white/5">
+                <span class="text-slate-400">Guía Espiritual:</span>
+                <span class="text-astral-gold font-bold">Maestra Flerida Parra</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-lg bg-white/5">
+                <span class="text-slate-400">Ubicación física:</span>
+                <span class="text-slate-200">Mandalay, Bogotá (Plaza de las Américas)</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-lg bg-white/5">
+                <span class="text-slate-400">WhatsApp Oficial:</span>
+                <span class="text-emerald-400 font-bold">+57 317 465 9319</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================================================
+       SECCIÓN 3: NUESTRA PROPUESTA INTERACTIVA (MOCKUP STITCH SANTUARIO)
+       Padding amplio: py-24 md:py-32
+       ============================================================== -->
+  
+  <!-- ==============================================================
+       SECCIÓN: CALCULADORA INTERACTIVA DE DINERO PERDIDO AL MES
+       ============================================================== -->
+  <section id="calculadora" class="py-20 px-6 bg-[#080510] border-y border-white/10">
+    <div class="max-w-4xl mx-auto card-astral p-8 md:p-12 relative overflow-hidden border border-astral-gold/30">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-astral-gold">HERRAMIENTA DE PROYECCIÓN FINANCIERA</span>
+        <h3 class="font-mystic-title text-2xl sm:text-3xl md:text-4xl font-bold mt-2 text-white">
+          ¿Cuánto dinero está perdiendo Armonía para el Alma cada mes?
+        </h3>
+        <p class="text-sm text-slate-400 mt-3">
+          Mueve los controles según las visitas a tus redes o web actual para calcular la fuga silenciosa de ingresos provocada por la lentitud de 4.8s y formularios fríos:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-6">
+        <div class="space-y-6">
+          <div>
+            <div class="flex justify-between text-xs font-mono mb-2">
+              <label for="sliderVisitas" class="text-slate-300">Visitas mensuales estimadas:</label>
+              <span id="labelVisitas" class="text-astral-gold font-bold text-sm">800 visitas</span>
+            </div>
+            <input type="range" id="sliderVisitas" min="200" max="3000" step="100" value="800" oninput="calcularPerdidas()" class="w-full accent-amber-400 cursor-pointer">
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs font-mono mb-2">
+              <label for="sliderPrecio" class="text-slate-300">Valor promedio por consulta / terapia:</label>
+              <span id="labelPrecio" class="text-astral-gold font-bold text-sm">20,000 COP</span>
+            </div>
+            <input type="range" id="sliderPrecio" min="60000" max="300000" step="10000" value="120000" oninput="calcularPerdidas()" class="w-full accent-amber-400 cursor-pointer">
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-black/60 border border-red-500/30 text-center space-y-3">
+          <span class="text-xs font-mono uppercase text-red-400 font-bold tracking-wider">Fuga Mensual de Dinero Estimada</span>
+          <div class="text-3xl sm:text-4xl font-black font-mono text-red-400 tracking-tight" id="dineroPerdido">
+            ,896,000 COP
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Representa aproximadamente <strong class="text-white" id="clientesPerdidos">41 consultantes perdidos</strong> cada mes por lentitud y no tener un botón directo a WhatsApp.
+          </p>
+          <div class="pt-3 border-t border-white/10 text-[11px] text-astral-gold font-mono">
+            Con el Santuario Stitch recuperas esta inversión en menos de 14 días.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="propuesta" class="py-24 md:py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full text-xs font-mono font-bold mb-4 border border-astral-gold/30 bg-astral-gold/10 text-astral-gold">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>PROTOTIPO INTERACTIVO STITCH 2026</span>
+        </div>
+        <h2 class="font-mystic-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+          Nuestra Propuesta Interactiva
+        </h2>
+        <p class="text-base sm:text-lg mt-4 leading-relaxed text-slate-300">
+          Arrastra el cursor central para comparar la web actual de la maestra Flerida frente al santuario digital interactivo que hemos preparado.
+        </p>
+      </div>
+
+      <!-- Selector de Servicio Místico para Probar en el Mockup -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+        <button onclick="cambiarServicioMockup('tarot')" id="btnSrvTarot" class="px-4 py-2 rounded-xl text-xs font-medium border border-astral-gold bg-astral-gold/15 text-astral-gold flex items-center gap-2 transition-all">
+          <i class="fa-solid fa-eye"></i>
+          <span>Lectura de Tarot Angelical</span>
+        </button>
+        <button onclick="cambiarServicioMockup('limpieza')" id="btnSrvLimpieza" class="px-4 py-2 rounded-xl text-xs font-medium border border-white/10 bg-white/5 text-slate-400 flex items-center gap-2 transition-all">
+          <i class="fa-solid fa-sparkles"></i>
+          <span>Limpieza Áurica y Chakras</span>
+        </button>
+        <button onclick="cambiarServicioMockup('hipnosis')" id="btnSrvHipnosis" class="px-4 py-2 rounded-xl text-xs font-medium border border-white/10 bg-white/5 text-slate-400 flex items-center gap-2 transition-all">
+          <i class="fa-solid fa-infinity"></i>
+          <span>Hipnosis y Terapia Emocional</span>
+        </button>
+      </div>
+
+      <!-- Contenedor del Mockup con Slider Antes vs Después -->
+      <div class="max-w-5xl mx-auto card-astral overflow-hidden border-2 border-white/15">
+        
+        <!-- Barra de Ventana del Navegador -->
+        <div class="px-5 py-3.5 border-b border-white/10 flex items-center justify-between bg-[#0B0814]">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+          </div>
+          
+          <div class="bg-white/5 px-6 py-1.5 rounded-full text-xs font-mono flex items-center gap-2 text-slate-400 border border-white/10">
+            <i class="fa-solid fa-lock text-[10px] text-emerald-400"></i>
+            <span>https://armoniaparaelalma.com/consulta-privada</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-xs text-astral-gold font-mono">
+            <i class="fa-solid fa-shield-halved text-xs"></i>
+            <span class="hidden sm:inline">100% Confidencial</span>
+          </div>
+        </div>
+
+        <!-- SLIDER INTERACTIVO STITCH -->
+        <div class="stitch-slider-wrapper h-[480px] sm:h-[540px] md:h-[600px]" id="sliderWrapper">
+          
+          <!-- CAPA INFERIOR: EL ANTES (Web Actual Saturada) -->
+          <div class="w-full h-full p-8 md:p-12 flex flex-col justify-between bg-slate-900 text-slate-200 select-none">
+            <div>
+              <div class="inline-block px-3 py-1 bg-red-500/20 text-red-400 rounded-lg text-xs font-bold font-mono uppercase mb-4 border border-red-500/30">
+                ❌ ESTADO ACTUAL (ELEMENTOR SATURADO)
+              </div>
+              <div class="text-xs font-mono text-slate-400 mb-2">WordPress • 4.8s Carga • Título SEO: "Armonia alma HOME OFICIAL"</div>
+              <h3 class="text-2xl sm:text-3xl font-serif text-slate-300 mb-4 font-bold">
+                Maestra Flerida Parra Centro Holístico Armonía para el Alma Bogotá
+              </h3>
+              <p class="text-slate-400 max-w-xl text-sm leading-relaxed mb-6">
+                Texto apiñado sin jerarquía, imágenes pesadas que bloquean la navegación y formularios técnicos de LatePoint que obligan al consultante a pasar por 5 pasos antes de hablar.
+              </p>
+              <div class="inline-block bg-slate-700 text-slate-400 px-5 py-2.5 rounded-lg text-xs cursor-not-allowed">
+                Cargando plugins de formulario...
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-3 pt-6 border-t border-slate-700 text-center text-xs text-slate-400">
+              <div class="p-3 bg-slate-800/80 rounded-lg border border-slate-700">
+                <div class="font-bold text-red-400">Lento en 4G</div>
+                <div>Abandono del 61%</div>
+              </div>
+              <div class="p-3 bg-slate-800/80 rounded-lg border border-slate-700">
+                <div class="font-bold text-red-400">Sin Filtro Privado</div>
+                <div>Spam y curiosos</div>
+              </div>
+              <div class="p-3 bg-slate-800/80 rounded-lg border border-slate-700">
+                <div class="font-bold text-red-400">SEO Incompleto</div>
+                <div>No indexado en Maps</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CAPA SUPERIOR: EL DESPUÉS (SANTUARIO STITCH 2026) -->
+          <div class="stitch-slider-after" id="sliderAfter" style="width: 50%;">
+            <div class="w-full h-full p-8 md:p-12 flex flex-col justify-between select-none relative bg-gradient-to-br from-[#120D22] via-[#0A0714] to-[#180E2E]">
+              
+              <!-- Fondo de estrellas y velos sutiles -->
+              <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
+
+              <div class="relative z-10">
+                <div class="flex items-center justify-between mb-6">
+                  <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold font-mono tracking-wider border border-astral-gold/40 bg-astral-gold/15 text-astral-gold">
+                    <i class="fa-solid fa-moon"></i>
+                    <span>REDISEÑO SANTUARIO STITCH 2026</span>
+                  </div>
+                  <span class="text-xs font-mono text-emerald-400 font-bold flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    0.38s Carga Instantánea
+                  </span>
+                </div>
+
+                <h3 class="font-mystic-title text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4 text-white" id="mockupHeading">
+                  Descubre las respuestas que tu alma necesita con la Maestra Flerida
+                </h3>
+
+                <p class="text-sm sm:text-base max-w-xl leading-relaxed mb-8 text-slate-300 font-cormorant text-lg italic" id="mockupSubhead">
+                  «Una sesión personalizada y estrictamente confidencial de Tarot Angelical para despejar tu camino en el amor, finanzas y salud emocional».
+                </p>
+
+                <div class="flex flex-wrap gap-4 items-center">
+                  <div class="btn-gold px-6 py-3.5 text-sm font-semibold shadow-xl flex items-center gap-2.5 cursor-pointer">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span id="mockupCtaText">Consultar por WhatsApp con Flerida</span>
+                  </div>
+                  <div class="px-4 py-3.5 rounded-xl text-xs border border-white/10 bg-white/5 font-medium flex items-center gap-2 text-slate-300">
+                    <i class="fa-solid fa-shield-halved text-astral-gold"></i>
+                    <span>Privacidad 100% Protegida</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 relative z-10">
+                <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 text-center">
+                  <div class="font-bold text-sm text-astral-gold font-mono">+50 Reseñas</div>
+                  <div class="text-[11px] text-slate-400 mt-0.5">5 Estrellas Google</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 text-center">
+                  <div class="font-bold text-sm text-astral-gold font-mono">+300 Almas</div>
+                  <div class="text-[11px] text-slate-400 mt-0.5">Guiadas en Bogotá</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 text-center">
+                  <div class="font-bold text-sm text-astral-gold font-mono">1 Clic</div>
+                  <div class="text-[11px] text-slate-400 mt-0.5">Reserva Directa</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- MANIVELA DEL SLIDER -->
+          <div class="stitch-slider-handle" id="sliderHandle" style="left: 50%;">
+            <div class="stitch-handle-knob">
+              <i class="fa-solid fa-arrows-left-right"></i>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Barra Inferior de Instrucciones -->
+        <div class="px-6 py-3.5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 bg-[#0A0714]">
+          <div class="flex items-center gap-2 mb-2 sm:mb-0">
+            <i class="fa-solid fa-hand-pointer text-astral-gold animate-pulse"></i>
+            <span>Arrastra el divisor central para comprobar la pureza del nuevo diseño</span>
+          </div>
+          <div class="font-mono text-[11px] text-astral-gold">
+            Motor: <strong>Stitch Mystic UI v4.2</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bento Grid de Módulos del Santuario (Para romper la monotonía visual) -->
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-astral p-8">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-astral-gold/15 text-astral-gold text-lg border border-astral-gold/30">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <h4 class="font-mystic-title font-bold text-lg mb-2 text-white">Tarot Angelical en Vivo</h4>
+          <p class="text-sm leading-relaxed text-slate-400">
+            Selector interactivo de preguntas frecuentes antes de abrir el chat, filtrando a los consultantes más interesados y listos para agendar.
+          </p>
+        </div>
+
+        <div class="card-astral p-8">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-purple-500/15 text-purple-400 text-lg border border-purple-500/30">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
+          <h4 class="font-mystic-title font-bold text-lg mb-2 text-white">Limpiezas Energéticas y Chakras</h4>
+          <p class="text-sm leading-relaxed text-slate-400">
+            Módulo explicativo con testimonios en audio y texto que despejan dudas sobre cómo se realiza la armonización presencial en Mandalay o a distancia.
+          </p>
+        </div>
+
+        <div class="card-astral p-8">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-emerald-500/15 text-emerald-400 text-lg border border-emerald-500/30">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <h4 class="font-mystic-title font-bold text-lg mb-2 text-white">Canalización WhatsApp 1-Clic</h4>
+          <p class="text-sm leading-relaxed text-slate-400">
+            Mensaje pre-formateado con el servicio elegido y la disponibilidad del consultante para que la Maestra Flerida solo tenga que confirmar el horario.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================================================
+       SECCIÓN 4: BOTÓN DE ACCIÓN (CTA) CON VEO FLOW & PROGRAMADOR
+       Padding amplio: py-24 md:py-32
+       ============================================================== -->
+  <section id="agenda" class="py-24 md:py-32 px-6 relative bg-[#090611]">
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- Contenedor con Efecto Veo Flow Astral -->
+      <div class="veo-flow-container card-astral p-8 sm:p-12 md:p-16 border-2 border-astral-gold/30 relative">
+        
+        <!-- Aurora giratoria de Veo Flow -->
+        <div class="veo-flow-aurora"></div>
+
+        <div class="relative z-10">
+          
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold uppercase mb-4 border border-astral-gold/40 bg-astral-gold/10 text-astral-gold">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span>PASO FINAL: SESIÓN DE DESPLIEGUE</span>
+            </div>
+            <h2 class="font-mystic-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
+              Agendemos una Sesión de 20 Minutos con la Maestra Flerida
+            </h2>
+            <p class="text-sm sm:text-base leading-relaxed text-slate-300 font-cormorant text-lg">
+              Revisaremos juntos el nuevo Santuario Digital, te mostraremos cómo recibirás las consultas en tu WhatsApp sin pagar intermediarios y activaremos el nuevo portal sin interrumpir tu servicio actual.
+            </p>
+          </div>
+
+          <!-- Selector de Día y Hora -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            
+            <!-- Selector de Fecha -->
+            <div class="p-6 rounded-2xl bg-black/40 border border-white/10">
+              <label class="block text-xs font-mono font-bold uppercase tracking-wider mb-3 text-astral-gold">
+                <i class="fa-regular fa-calendar-days mr-1.5"></i>
+                1. Selecciona el Día
+              </label>
+              <div class="grid grid-cols-3 gap-2.5">
+                <button type="button" onclick="selectDate(this, 'Jueves, 5 Sep')" class="date-btn p-3 rounded-xl text-center text-xs font-medium border border-astral-gold bg-astral-gold/15 text-astral-gold font-bold transition-all">
+                  <div class="text-slate-400 text-[10px]">MAÑANA</div>
+                  <div class="text-sm font-bold mt-0.5">Jue 5</div>
+                </button>
+                <button type="button" onclick="selectDate(this, 'Viernes, 6 Sep')" class="date-btn p-3 rounded-xl text-center text-xs font-medium border border-white/10 bg-white/5 text-slate-300 hover:border-astral-gold transition-all">
+                  <div class="text-slate-400 text-[10px]">VIERNES</div>
+                  <div class="text-sm font-bold mt-0.5">Vie 6</div>
+                </button>
+                <button type="button" onclick="selectDate(this, 'Lunes, 9 Sep')" class="date-btn p-3 rounded-xl text-center text-xs font-medium border border-white/10 bg-white/5 text-slate-300 hover:border-astral-gold transition-all">
+                  <div class="text-slate-400 text-[10px]">PRÓXIMO</div>
+                  <div class="text-sm font-bold mt-0.5">Lun 9</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Selector de Hora -->
+            <div class="p-6 rounded-2xl bg-black/40 border border-white/10">
+              <label class="block text-xs font-mono font-bold uppercase tracking-wider mb-3 text-astral-gold">
+                <i class="fa-regular fa-clock mr-1.5"></i>
+                2. Selecciona la Hora (Bogotá GMT-5)
+              </label>
+              <div class="grid grid-cols-3 gap-2.5">
+                <button type="button" onclick="selectTime(this, '10:00 AM')" class="time-btn p-2.5 rounded-xl text-center text-xs font-medium border border-astral-gold bg-astral-gold/15 text-astral-gold font-bold transition-all">
+                  10:00 AM
+                </button>
+                <button type="button" onclick="selectTime(this, '03:00 PM')" class="time-btn p-2.5 rounded-xl text-center text-xs font-medium border border-white/10 bg-white/5 text-slate-300 hover:border-astral-gold transition-all">
+                  03:00 PM
+                </button>
+                <button type="button" onclick="selectTime(this, '05:30 PM')" class="time-btn p-2.5 rounded-xl text-center text-xs font-medium border border-white/10 bg-white/5 text-slate-300 hover:border-astral-gold transition-all">
+                  05:30 PM
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Botón de Confirmación con Animación Fluida Veo Flow -->
+          <div class="text-center">
+            <button onclick="confirmarAgendamiento()" class="btn-gold w-full sm:w-auto px-10 py-5 text-base sm:text-lg font-bold shadow-2xl relative overflow-hidden group">
+              <span class="relative z-10 flex items-center justify-center gap-3">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                <span>Confirmar Sesión y Activar Santuario Digital</span>
+              </span>
+            </button>
+            <p class="text-xs mt-4 flex items-center justify-center gap-2 text-slate-400">
+              <i class="fa-solid fa-lock text-xs text-emerald-400"></i>
+              <span>Garantía de confidencialidad absoluta. Sin costes ocultos ni compromiso.</span>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================================================
+       FOOTER
+       ============================================================== -->
+  <footer class="py-12 px-6 border-t border-white/10 text-center text-xs text-slate-500 bg-[#090611]">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2 font-mono">
+        <span class="w-2 h-2 rounded-full bg-astral-gold"></span>
+        <span>ANTIGRAVITY & STITCH • PROPUESTA COMERCIAL ESTRATÉGICA</span>
+      </div>
+      <div>
+        <span>Preparada para Centro Holístico Armonía para el Alma &middot; Bogotá 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==============================================================
+       LOGICA JAVASCRIPT: SLIDER Y MOCKUP INTERACTIVO
+       ============================================================== -->
+  <script>
+    let selectedDate = 'Jueves, 5 Sep';
+    let selectedTime = '10:00 AM';
+    let currentService = 'tarot';
+
+    const SERVICIOS = {
+      tarot: {
+        heading: "Descubre las respuestas que tu alma necesita con la Maestra Flerida",
+        subhead: "«Una sesión personalizada y estrictamente confidencial de Tarot Angelical para despejar tu camino en el amor, finanzas y salud emocional».",
+        cta: "Consultar Tarot por WhatsApp"
+      },
+      limpieza: {
+        heading: "Libera bloqueos energéticos y renueva la luz de tus Chakras",
+        subhead: "«Limpieza áurica profunda para eliminar energías pesadas, cortar lazos tóxicos y abrir las puertas a la prosperidad en tu hogar o negocio».",
+        cta: "Pedir Limpieza Áurica"
+      },
+      hipnosis: {
+        heading: "Sana heridas del pasado y reconecta con tu paz interior",
+        subhead: "«Terapia emocional e hipnosis clínica guiada para superar la ansiedad, el insomnio y patrones repetitivos que frenan tu evolución espiritual».",
+        cta: "Agendar Terapia Emocional"
+      }
+    };
+
+    
+    function calcularPerdidas() {
+      const visitas = parseInt(document.getElementById('sliderVisitas').value);
+      const precio = parseInt(document.getElementById('sliderPrecio').value);
+
+      document.getElementById('labelVisitas').innerText = visitas.toLocaleString('es-CO') + ' visitas';
+      document.getElementById('labelPrecio').innerText = '$' + precio.toLocaleString('es-CO') + ' COP';
+
+      const clientesPerdidos = Math.round(visitas * 0.051);
+      const dineroPerdido = clientesPerdidos * precio;
+
+      document.getElementById('clientesPerdidos').innerText = clientesPerdidos + ' consultantes perdidos';
+      document.getElementById('dineroPerdido').innerText = '$' + dineroPerdido.toLocaleString('es-CO') + ' COP';
+    }
+
+    function flipCard(cardEl, title, desc) {
+      document.querySelectorAll('.tarot-card').forEach(c => c.classList.remove('flipped'));
+      cardEl.classList.add('flipped');
+
+      const revealBox = document.getElementById('tarotRevealBox');
+      document.getElementById('tarotCardTitle').innerText = title;
+      document.getElementById('tarotCardDesc').innerText = desc;
+      revealBox.style.borderColor = '#E5C479';
+      revealBox.style.boxShadow = '0 0 30px rgba(229, 196, 121, 0.25)';
+    }
+
+    function cambiarServicioMockup(srvKey) {
+      currentService = srvKey;
+      const data = SERVICIOS[srvKey];
+      document.getElementById('mockupHeading').innerText = data.heading;
+      document.getElementById('mockupSubhead').innerText = data.subhead;
+      document.getElementById('mockupCtaText').innerText = data.cta;
+
+      // Resaltar botón activo
+      ['tarot', 'limpieza', 'hipnosis'].forEach(k => {
+        const btn = document.getElementById('btnSrv' + k.charAt(0).toUpperCase() + k.slice(1));
+        if (k === srvKey) {
+          btn.className = "px-4 py-2 rounded-xl text-xs font-medium border border-astral-gold bg-astral-gold/15 text-astral-gold flex items-center gap-2 transition-all";
+        } else {
+          btn.className = "px-4 py-2 rounded-xl text-xs font-medium border border-white/10 bg-white/5 text-slate-400 flex items-center gap-2 transition-all";
+        }
+      });
+    }
+
+    function selectDate(btn, fecha) {
+      selectedDate = fecha;
+      document.querySelectorAll('.date-btn').forEach(b => {
+        b.className = "date-btn p-3 rounded-xl text-center text-xs font-medium border border-white/10 bg-white/5 text-slate-300 hover:border-astral-gold transition-all";
+      });
+      btn.className = "date-btn p-3 rounded-xl text-center text-xs font-medium border border-astral-gold bg-astral-gold/15 text-astral-gold font-bold transition-all";
+    }
+
+    function selectTime(btn, hora) {
+      selectedTime = hora;
+      document.querySelectorAll('.time-btn').forEach(b => {
+        b.className = "time-btn p-2.5 rounded-xl text-center text-xs font-medium border border-white/10 bg-white/5 text-slate-300 hover:border-astral-gold transition-all";
+      });
+      btn.className = "time-btn p-2.5 rounded-xl text-center text-xs font-medium border border-astral-gold bg-astral-gold/15 text-astral-gold font-bold transition-all";
+    }
+
+    // Stitch Split Slider Logic
+    const sliderWrapper = document.getElementById('sliderWrapper');
+    const sliderAfter = document.getElementById('sliderAfter');
+    const sliderHandle = document.getElementById('sliderHandle');
+    let isDragging = false;
+
+    function updateSlider(xPos) {
+      const rect = sliderWrapper.getBoundingClientRect();
+      let offsetX = xPos - rect.left;
+      if (offsetX < 0) offsetX = 0;
+      if (offsetX > rect.width) offsetX = rect.width;
+      
+      const percent = (offsetX / rect.width) * 100;
+      sliderAfter.style.width = percent + '%';
+      sliderHandle.style.left = percent + '%';
+    }
+
+    sliderWrapper.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      updateSlider(e.clientX);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      updateSlider(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    sliderWrapper.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      if (e.touches[0]) updateSlider(e.touches[0].clientX);
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      if (e.touches[0]) updateSlider(e.touches[0].clientX);
+    });
+
+    window.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    // Enlace de WhatsApp hacia la Maestra Flerida Parra (+57 317 465 9319)
+    function confirmarAgendamiento() {
+      const texto = "¡Hola Maestra Flerida! He revisado la auditoría y propuesta de rediseño de *Armonía para el Alma*.
+
+" +
+        "📅 Día propuesto para reunión: " + selectedDate + "
+" +
+        "⏰ Hora: " + selectedTime + "
+" +
+        "🔮 Servicio a potenciar: " + SERVICIOS[currentService].heading + "
+
+" +
+        "Deseo ver cómo podemos activar el nuevo portal Stitch sin plugins pesados.";
+
+      const mensaje = encodeURIComponent(texto);
+      window.open('https://wa.me/573174659319?text=' + mensaje, '_blank');
+    }
+  </script>
+</body>
+</html>

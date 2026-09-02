@@ -83,8 +83,6 @@ Construir herramientas de prospección para ofrecer servicios de desarrollo web 
   - `paola-dimaya.html` — Paola Dimaya Alta Costura
   - `stacia-store.html` — Stacia Store (Luxury Brand, Armenia)
   - `benefit-ropa-tallas-grandes.html` — BeneFit Ropa Tallas Grandes
-- `design-systems/` — regencias y sistemas de diseño guardados
-  - `solar-premium-cinetico-v1.md` — Regencia Visual Solar Premium Cinético v1.0
 - `recursos/` — assets/imágenes (vacío, usamos CDN)
 - `opencode.json` — config MCP de Apify
 - `AGENTS.md` — este archivo
@@ -281,65 +279,18 @@ Si alguna falla, **no desplegar** hasta corregir.
 | Imágenes HTTP del sitio del negocio no cargan en HTTPS (mixed content) | Siempre usar imágenes HTTPS del sitio original. Verificar con `curl` antes de ponerlas en la LP |
 | Diseño "básico/mediocre" rechazado por el usuario | LP debe competir VISUALMENTE con el sitio original del negocio, no ser una plantilla genérica. Hero editorial split-screen, GSAP, paleta de marca |
 
-## 🎨 Reglas de Diseño de Landing Pages (Directiva del Usuario)
+## 🎨 Reglas de Diseño de Landing Pages (Reseteo Total y Directiva del Usuario)
 
-- **El sistema de diseño rígido queda reseteado por completo.**
-- **De ahora en adelante, el usuario dará las instrucciones de diseño directamente para cada Landing Page** (estructura, estética, paleta de colores, tipografía, componentes y animaciones).
-- No imponer plantillas ni esquemas forzados: cada LP se construirá siguiendo estrictamente los requerimientos, preferencias y estilo que el usuario indique en su solicitud.
-- Se mantiene el estándar técnico: HTML auto-contenido, responsive nativo, carga rápida y WhatsApp directo al número del negocio.
+- **El sistema de diseño, plantillas y catálogo previo quedan reseteados por completo.**
+- **No existen plantillas rígidas, ni esquemas forzados, ni librerías obligatorias impuestas de antemano.**
+- **El usuario dará las instrucciones de diseño directamente para cada Landing Page** (estructura, secciones, paleta de colores, tipografía, componentes, tono visual y animaciones).
+- Cada Landing Page se construye de forma libre y personalizada según los requerimientos específicos indicados por el usuario.
+- **Estándar técnico y funcional garantizado**:
+  - Código limpio en un único archivo `.html` auto-contenido en `landing-pages/` (sin build step, librerías si se usan se cargan vía CDN).
+  - Experiencia responsive Mobile-First (`overflow-x: hidden`, sin scroll horizontal en viewports de 320px a 480px, touch-targets ≥ 44px).
+  - Información real del negocio (dirección, teléfono, horarios, servicios/menú).
+  - WhatsApp directo al número del negocio formateado en los CTAs y botón flotante.
 
-### 📚 Catálogo de Sistemas de Diseño Reutilizables Guardados
-1. **`Solar Premium Cinético v1.0`** (Documentado en [`design-systems/solar-premium-cinetico-v1.md`](file:///media/th/DATOS/PROYECTOS/agency/design-systems/solar-premium-cinetico-v1.md)):
-   - **Nicho:** Energía Solar, Energías Renovables, Tecnología Limpia y Sostenibilidad Luxury.
-   - **Filosofía:** *"Energía que se siente, no que se ve."*
-   - **Elementos Clave:** Motor Three.js 3D WebGL con panel solar monocristalino Half-Cut de 550W (144 celdas, 12BB), rayos de sol volumétricos (*God Rays*), narrativa de 5 Actos por scroll, vista explosionada (*Exploded View*), tipografía con barrido metálico (*Satoshi* / *Syne* + *JetBrains Mono*), navbar flotante inteligente con icono de panel solar y menú fullscreen con stagger 3D, inspección táctil (*Touch Drag*) y tableta de telemetría interactiva con medidores en tiempo real hacia WhatsApp.
-
----
-
-## Metodología Landing Pages
-
-### Stack estándar (para TODAS las LPs)
-| Herramienta | Uso |
-|---|---|
-| **GSAP + ScrollTrigger** | Animaciones avanzadas: split text, parallax, stagger, magnetic hover, counter animation, timelines |
-| **Font Awesome 6 CDN** | Iconos profesionales vectoriales por CDN |
-| **Google Fonts** | Playfair Display (serif elegante) + Inter (sans limpio) |
-| **Unsplash** | Imágenes de alta calidad CDN (gratis) |
-| **HTML auto-contenido** | Un solo archivo, sin build steps, sin dependencias |
-
-### Secciones tipo por nicho
-- **Moda/Lujo/Alta Costura**: Hero editorial oscuro, galería con lightbox, testimonios, cobertura, contacto
-- **Restaurantes/Comida**: Hero cálido, menú, galería de platos, horarios, ubicación, reservas WhatsApp
-- **Tiendas/Ropa**: Hero moderno, catálogo productos, tallas, envíos, redes sociales, WhatsApp
-
-### Lo que NO debe tener una LP
-- Imágenes irrelevantes al negocio (cada foto debe ser del rubro del negocio)
-- "Agendar cita" si el negocio no requiere agenda (usar "Escríbenos" / "Visítanos" / WhatsApp directo)
-- Información genérica sin personalizar
-- **Sección de Precios** (esta LP es una propuesta, no un ecommerce — los precios se negocian directo con el cliente)
-
-### Lo que DEBE tener cada LP
-- Información real del negocio (dirección exacta, teléfono, horarios)
-- Testimonios reales (de Google Maps, website del negocio, redes sociales)
-- WhatsApp directo al número del negocio en cada CTA
-- Diseño acorde al tipo de negocio (colores, tipografía, tono visual)
-- Imágenes relevantes: del nicho, preferiblemente del rubro (ej: vestidos de novia para una boutique nupcial)
-- Mapa de Google Maps con la ubicación exacta
-- **Experiencia responsive garantizada**: probar en viewport ≤375px ANTES de desplegar. Sin scroll horizontal, sin elementos cortados, sin botones fuera de lugar
-- Imagen real de la dueña/diseñadora en el "Sobre Mí" si es posible; si no, foto de una diseñadora/dueña de negocio (NO una modelo/novia/cliente genérica)
-
-### Patrón LP para Bares / Pubs / Discotecas / Gastrobares
-Este es el estándar obligatorio para diseñar landing pages en el nicho de entretenimiento nocturno:
-
-| Elemento | Requisito / Implementación |
-|---|---|
-| **Video Hero (OBLIGATORIO)** | **URLs directas MP4 de Mixkit CDN** (`https://assets.mixkit.co/videos/{id}/{id}-720.mp4`). <br>⚠️ **REGLAS DE VIDEO**: <br>1. **Jamás usar Coverr ni URLs con redirección**: `cdn.coverr.co/...` devuelve HTTP 301 a páginas HTML que rompen el reproductor.<br>2. **Verificar el tema real antes de publicar**: Comprobar el nombre en `Content-Disposition` vía `curl -I` para evitar errores (ej: no usar videos de gimnasio en bares).<br>3. **Brillo y Transparencia**: Opacidad del video en `opacity: 0.9` y overlay gradiente suave (`rgba(0,0,0,0.15)` a `0.5`) para que el video sea brillante y visible.<br>4. **Autoplay fluido**: Usar `<video autoplay muted loop playsinline class="hero-video-bg" preload="auto">` (`muted` es indispensable para autoplay en navegadores). |
-| **Paleta Visual** | **Pub / Lounge**: Fondo noche oscura (`#080709`), acentos ámbar y dorado cálido (`#e5a93c`, `#d4af37`), bordes sutiles.<br>**Bar Afro / Tropical / Disco**: Fondo negro nocturno (`#070608`), acentos neón/coral (`#f4a261`, `#ff4b5c`) y dorado tropical. |
-| **Tipografía** | Sans-serif moderna y bold para títulos (`Inter` 800/900 o `Syne`) + cuerpo legible y limpio. |
-| **Stats Bar** | 4 ítems: % Ambiente / Variedad Coctelería o Cervezas / Ritmos Musicales / Estrellas de Atención. |
-| **Secciones Clave** | 1. **Hero**: Video brillante + Título impactante + CTAs a WhatsApp y Ubicación.<br>2. **Concepto**: Historia del bar, experiencia de consumo, filosofía de coctelería o gastronomía.<br>3. **Ritmos / Música**: Estilos musicales principales (Salsa, Champeta, Rock, DJ Sets, Live Shows).<br>4. **Carta Insignia**: Grid 4 cards con fotos HD de tragos de autor, cervezas de tiro o tapas.<br>5. **Galería**: Grid 6 fotos con modal Lightbox interactivo.<br>6. **Testimonios**: Reseñas de clientes de Google Reviews / redes.<br>7. **Ubicación & Horarios**: Dirección exacta, horarios por día, mapa embed y botón flotante de WhatsApp. |
-
-**Para replicar esta LP**: Buscar en `datos.json` un negocio del nicho "Bar / Discoteca / Pub / Gastrobar", extraer sus datos reales, y aplicar la estructura de video en directo, colores y animaciones GSAP.
 
 ### Workflow de despliegue Vercel
 ```
