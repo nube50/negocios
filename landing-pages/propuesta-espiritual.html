@@ -3,43 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>AETHERIA — Templo de Alquimia Espiritual & Consciencia Cuántica</title>
+  <title>AETHERIA — Instituto de Consciencia Integral & Filosofía Perenne</title>
   
-  <!-- Tipografía de Alta Gama: Cinzel (Editorial Sagrado) + Plus Jakarta Sans + Space Mono -->
+  <!-- Tipografía de Alta Gama: Cinzel (Editorial Sagrado & Solemne) + Plus Jakarta Sans + Space Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   
-  <!-- Font Awesome 6 Pro / Free CDN para glifos precisos -->
+  <!-- Font Awesome 6 CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Estilos Maestros Ultra-Premium -->
   <style>
     :root {
-      /* Pilar 1: Contraste Profundo con Matices Cromáticos (Prohibido #000000 puro) */
-      --bg-abyssal: #07050d;
-      --bg-surface: #0e0a1a;
-      --bg-card: rgba(18, 13, 33, 0.65);
-      --bg-card-hover: rgba(25, 19, 46, 0.75);
+      /* Estética Santuario de Serenidad: Lino, Alabastro & Oro Viejo */
+      --bg-abyssal: #faf8f4;
+      --bg-surface: #ffffff;
+      --bg-card: rgba(255, 255, 255, 0.82);
+      --bg-card-hover: rgba(255, 255, 255, 0.95);
       
-      /* Matices Cromáticos Místicos y Luz */
-      --accent-violet: #8a5cf6;
-      --accent-amethyst: #a855f7;
-      --accent-gold: #e2c08d;
-      --accent-gold-glow: rgba(226, 192, 141, 0.35);
-      --accent-cyan-nebula: #38bdf8;
+      /* Matices de Oro Sagrado & Tinta de Piedra */
+      --accent-gold: #9a6a2f;
+      --accent-gold-light: #c59b27;
+      --accent-gold-glow: rgba(154, 106, 47, 0.22);
+      --accent-dark: #26231f;
+      --accent-sand: #e7e1d5;
+      --accent-slate: #57534e;
       
-      /* Líneas de Precisión Milimétrica */
-      --border-subtle: rgba(255, 255, 255, 0.06);
-      --border-glow: rgba(226, 192, 141, 0.25);
+      /* Líneas de Proporción Áurea */
+      --border-subtle: rgba(40, 32, 20, 0.08);
+      --border-glow: rgba(154, 106, 47, 0.35);
       
       /* Tipografía */
       --font-display: 'Cinzel', serif;
       --font-sans: 'Plus Jakarta Sans', sans-serif;
       --font-mono: 'Space Mono', monospace;
       
-      /* Sombras de Oclusión */
-      --shadow-abyssal: 0 30px 60px -15px rgba(3, 2, 8, 0.9), 0 0 40px rgba(138, 92, 246, 0.08);
+      /* Sombras Suaves de Alabastro */
+      --shadow-abyssal: 0 20px 45px -10px rgba(44, 38, 30, 0.06), 0 0 25px rgba(154, 106, 47, 0.05);
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -54,7 +54,7 @@
     html {
       scroll-behavior: initial;
       background-color: var(--bg-abyssal);
-      color: #f1eff7;
+      color: #292524;
       font-family: var(--font-sans);
       overflow-x: hidden;
     }
@@ -64,11 +64,11 @@
       background-color: var(--bg-abyssal);
       overflow-x: hidden;
       min-height: 100vh;
-      selection-background-color: var(--accent-amethyst);
-      selection-color: #fff;
+      selection-background-color: var(--accent-gold);
+      selection-color: #ffffff;
     }
 
-    /* 2. Textura Analógica de Grano SVG (Subtle Film Grain al 2.8%) */
+    /* Textura Analógica de Grano SVG Sutil */
     .film-grain-overlay {
       position: fixed;
       top: 0;
@@ -77,8 +77,8 @@
       height: 100vh;
       pointer-events: none;
       z-index: 999;
-      opacity: 0.032;
-      mix-blend-mode: overlay;
+      opacity: 0.02;
+      mix-blend-mode: multiply;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     }
 
@@ -93,18 +93,18 @@
       pointer-events: none;
     }
 
-    /* Custom Cursor Luminoso con inercia física */
+    /* Cursor Sagrado */
     .cosmic-cursor {
       position: fixed;
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      border: 1px solid rgba(226, 192, 141, 0.4);
-      background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+      border: 1.5px solid rgba(154, 106, 47, 0.45);
+      background: radial-gradient(circle, rgba(154, 106, 47, 0.12) 0%, transparent 70%);
       pointer-events: none;
       transform: translate(-50%, -50%);
       z-index: 9999;
-      transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+      transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
       display: none;
     }
 
@@ -114,7 +114,7 @@
       height: 6px;
       border-radius: 50%;
       background: var(--accent-gold);
-      box-shadow: 0 0 12px var(--accent-gold);
+      box-shadow: 0 0 10px rgba(154, 106, 47, 0.8);
       pointer-events: none;
       transform: translate(-50%, -50%);
       z-index: 10000;
@@ -122,33 +122,28 @@
     }
 
     @media (hover: hover) and (pointer: fine) {
-      .cosmic-cursor, .cosmic-cursor-dot {
-        display: block;
-      }
+      .cosmic-cursor, .cosmic-cursor-dot { display: block; }
     }
 
-    /* Glow de cursor expandido en hover */
     .cursor-active {
       width: 56px;
       height: 56px;
       border-color: var(--accent-gold);
-      background: radial-gradient(circle, rgba(226, 192, 141, 0.25) 0%, transparent 80%);
+      background: radial-gradient(circle, rgba(154, 106, 47, 0.22) 0%, transparent 80%);
     }
 
-    /* Contenedor Principal */
+    /* Layout Wrapper */
     .app-viewport {
       position: relative;
       z-index: 2;
       width: 100%;
-      max-width: 1340px;
+      max-width: 1320px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* ===================================================
-       HEADER & NAVIGATION GLASSMORPHISM
-    =================================================== */
-    .portal-nav {
+    /* NAVBAR */
+    .cosmic-nav {
       position: fixed;
       top: 24px;
       left: 50%;
@@ -161,52 +156,52 @@
       align-items: center;
       justify-content: space-between;
       border-radius: 9999px;
-      background: rgba(14, 10, 26, 0.55);
+      background: rgba(255, 255, 255, 0.82);
       backdrop-filter: blur(24px) saturate(180%);
       -webkit-backdrop-filter: blur(24px) saturate(180%);
       border: 1px solid var(--border-subtle);
-      box-shadow: 0 20px 40px rgba(4, 2, 9, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+      box-shadow: 0 15px 35px rgba(44, 38, 30, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .portal-nav:hover {
-      border-color: rgba(226, 192, 141, 0.2);
+    .cosmic-nav:hover {
+      border-color: rgba(154, 106, 47, 0.35);
     }
 
-    .brand-sigil {
+    .brand-container {
       display: flex;
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      color: #fff;
+      color: #26231f;
     }
 
-    .brand-icon-geom {
-      width: 34px;
-      height: 34px;
+    .brand-icon-glyph {
+      width: 36px;
+      height: 36px;
       position: relative;
       display: grid;
       place-items: center;
     }
 
-    .brand-icon-geom svg {
+    .brand-icon-glyph svg {
       width: 100%;
       height: 100%;
-      filter: drop-shadow(0 0 10px rgba(226, 192, 141, 0.6));
+      filter: drop-shadow(0 0 10px rgba(154, 106, 47, 0.35));
     }
 
     .brand-name {
       font-family: var(--font-display);
       font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
+      font-weight: 800;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      background: linear-gradient(135deg, #ffffff 30%, var(--accent-gold) 100%);
+      background: linear-gradient(135deg, #26231f 30%, #9a6a2f 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .nav-routes {
+    .nav-items {
       display: none;
       align-items: center;
       gap: 32px;
@@ -214,59 +209,54 @@
     }
 
     @media (min-width: 860px) {
-      .nav-routes { display: flex; }
+      .nav-items { display: flex; }
     }
 
-    .nav-routes a {
+    .nav-items a {
       text-decoration: none;
-      color: rgba(241, 239, 247, 0.75);
-      font-size: 0.85rem;
+      color: rgba(41, 37, 36, 0.78);
+      font-size: 0.82rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 600;
       position: relative;
       padding: 6px 0;
       transition: color 0.3s ease;
     }
 
-    .nav-routes a::after {
+    .nav-items a::after {
       content: '';
       position: absolute;
       bottom: 0;
       left: 0;
       width: 0;
       height: 1.5px;
-      background: linear-gradient(90deg, var(--accent-violet), var(--accent-gold));
+      background: linear-gradient(90deg, var(--accent-gold), #c59b27);
       transition: width 0.3s var(--ease-out-expo);
     }
 
-    .nav-routes a:hover {
-      color: #fff;
-    }
+    .nav-items a:hover { color: #9a6a2f; }
+    .nav-items a:hover::after { width: 100%; }
 
-    .nav-routes a:hover::after {
-      width: 100%;
-    }
-
-    /* Pilar 2: Microinteracciones Magnéticas con Destello de Luz Sesgada */
+    /* BOTONES MAGNÉTICOS */
     .btn-magnetic {
       position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 12px 26px;
+      padding: 13px 28px;
       border-radius: 9999px;
       text-decoration: none;
       font-family: var(--font-sans);
       font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #0d0818;
-      background: linear-gradient(135deg, #f7efe4 0%, var(--accent-gold) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 10px 25px -5px rgba(226, 192, 141, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      color: #ffffff;
+      background: linear-gradient(135deg, #9a6a2f 0%, #784e1b 100%);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 10px 25px -5px rgba(154, 106, 47, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
       cursor: pointer;
       overflow: hidden;
       transition: transform 0.25s var(--ease-out-expo), box-shadow 0.3s ease;
@@ -283,7 +273,7 @@
       background: linear-gradient(
         45deg,
         transparent 35%,
-        rgba(255, 255, 255, 0.85) 50%,
+        rgba(255, 255, 255, 0.65) 50%,
         transparent 65%
       );
       transform: rotate(25deg) translateY(-100%);
@@ -296,120 +286,107 @@
     }
 
     .btn-magnetic:hover {
-      box-shadow: 0 15px 35px -5px rgba(226, 192, 141, 0.6), 0 0 25px rgba(168, 85, 247, 0.3);
+      box-shadow: 0 16px 36px -5px rgba(154, 106, 47, 0.6), 0 0 25px rgba(197, 155, 39, 0.35);
     }
 
-    /* Botón Secundario Etéreo */
-    .btn-ethereal {
+    .btn-outline-sanctuary {
       position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 12px 28px;
+      padding: 13px 28px;
       border-radius: 9999px;
       text-decoration: none;
       font-size: 0.82rem;
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border-subtle);
+      color: #784e1b;
+      background: rgba(154, 106, 47, 0.06);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(154, 106, 47, 0.3);
       transition: border-color 0.3s ease, background 0.3s ease, transform 0.25s var(--ease-out-expo);
     }
 
-    .btn-ethereal:hover {
-      border-color: rgba(226, 192, 141, 0.4);
-      background: rgba(226, 192, 141, 0.06);
+    .btn-outline-sanctuary:hover {
+      border-color: #9a6a2f;
+      background: rgba(154, 106, 47, 0.12);
     }
 
-    /* ===================================================
-       HERO SECTION — ALQUIMIA & ORBE 3D
-    =================================================== */
-    .hero-portal {
+    /* HERO */
+    .hero-sanctuary {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 140px 0 80px;
+      padding: 140px 0 70px;
       position: relative;
     }
 
-    .badge-celestial {
+    .badge-sovereign {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 18px;
+      gap: 10px;
+      padding: 8px 20px;
       border-radius: 9999px;
-      background: rgba(138, 92, 246, 0.08);
-      border: 1px solid rgba(138, 92, 246, 0.25);
+      background: rgba(154, 106, 47, 0.08);
+      border: 1px solid rgba(154, 106, 47, 0.28);
       font-family: var(--font-mono);
       font-size: 0.72rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--accent-gold);
-      margin-bottom: 28px;
-      box-shadow: 0 0 25px rgba(138, 92, 246, 0.12);
+      color: #784e1b;
+      margin-bottom: 26px;
+      box-shadow: 0 0 20px rgba(154, 106, 47, 0.1);
       backdrop-filter: blur(10px);
     }
 
-    .badge-celestial i {
-      font-size: 0.65rem;
-      color: var(--accent-amethyst);
-      animation: pulseGlpyh 3s infinite alternate;
+    .badge-sovereign i {
+      color: #9a6a2f;
+      animation: pulseAura 2.2s infinite alternate;
     }
 
-    @keyframes pulseGlpyh {
-      0% { opacity: 0.4; transform: scale(0.9); }
-      100% { opacity: 1; transform: scale(1.2); }
+    @keyframes pulseAura {
+      0% { transform: scale(0.9); opacity: 0.7; }
+      100% { transform: scale(1.25); opacity: 1; }
     }
 
-    /* Refinamiento 3: Revelaciones Tipográficas con Máscara Cinematográfica */
-    .split-mask-container {
+    .split-mask-wrap {
       overflow: hidden;
       margin-bottom: 8px;
     }
 
-    .hero-title {
+    .hero-headline {
       font-family: var(--font-display);
-      font-size: clamp(2.3rem, 5.8vw, 5.2rem);
-      line-height: 1.08;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      max-width: 1080px;
-      color: #ffffff;
+      font-size: clamp(2.3rem, 5.5vw, 5.2rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      max-width: 1120px;
+      color: #26231f;
       margin: 0 auto;
     }
 
-    .hero-title .glow-gold {
-      background: linear-gradient(135deg, #ffffff 20%, var(--accent-gold) 75%, #ffdfa9 100%);
+    .hero-headline .highlight-gold {
+      background: linear-gradient(135deg, #26231f 15%, #9a6a2f 70%, #c59b27 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 45px rgba(226, 192, 141, 0.25);
+      text-shadow: 0 0 35px rgba(154, 106, 47, 0.15);
     }
 
-    .hero-title .sub-line {
-      display: block;
-      font-size: 0.88em;
+    .hero-subline {
+      font-size: clamp(1rem, 1.35vw, 1.25rem);
       font-weight: 400;
-      color: rgba(241, 239, 247, 0.88);
-      font-style: italic;
+      line-height: 1.8;
+      color: #57534e;
+      max-width: 760px;
+      margin: 24px auto 40px;
     }
 
-    .hero-description {
-      font-size: clamp(1rem, 1.3vw, 1.25rem);
-      font-weight: 300;
-      line-height: 1.7;
-      color: rgba(241, 239, 247, 0.68);
-      max-width: 680px;
-      margin: 24px auto 44px;
-    }
-
-    .hero-actions {
+    .hero-cta-group {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -417,95 +394,127 @@
       gap: 18px;
     }
 
-    /* Métricas Cósmicas Flotantes */
-    .hero-telemetry-bar {
-      margin-top: 70px;
+    /* TELEMETRÍA DE COHERENCIA EN VIVO */
+    .sanctuary-hud {
+      margin-top: 60px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
       width: 100%;
-      max-width: 820px;
-      padding: 20px;
+      max-width: 920px;
+      padding: 20px 24px;
       border-radius: 24px;
-      background: rgba(18, 13, 33, 0.45);
+      background: rgba(255, 255, 255, 0.88);
       border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(20px) saturate(180%);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(24px) saturate(180%);
+      box-shadow: var(--shadow-abyssal);
     }
 
-    .telemetry-node {
+    @media (max-width: 768px) {
+      .sanctuary-hud { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .telemetry-cell {
       display: flex;
       flex-direction: column;
       align-items: center;
       border-right: 1px solid var(--border-subtle);
-      padding: 8px 12px;
+      padding: 6px 12px;
     }
 
-    .telemetry-node:last-child {
-      border-right: none;
+    .telemetry-cell:last-child { border-right: none; }
+
+    @media (max-width: 768px) {
+      .telemetry-cell:nth-child(2) { border-right: none; }
     }
 
-    .node-metric {
+    .metric-value {
       font-family: var(--font-display);
-      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-      font-weight: 700;
-      color: #fff;
-      background: linear-gradient(135deg, #fff 40%, var(--accent-gold) 100%);
+      font-size: clamp(1.35rem, 2.3vw, 2rem);
+      font-weight: 800;
+      color: #26231f;
+      background: linear-gradient(135deg, #26231f 35%, #9a6a2f 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .node-label {
+    .metric-desc {
       font-family: var(--font-mono);
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(241, 239, 247, 0.5);
-      margin-top: 4px;
+      color: #78716c;
+      margin-top: 5px;
     }
 
-    /* ===================================================
-       PILAR 3: BENTO GRID DINÁMICO & ASIMÉTRICO
-    =================================================== */
-    .section-eyebrow {
+    .live-geometry-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(154, 106, 47, 0.08);
+      border: 1px solid rgba(154, 106, 47, 0.25);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: #784e1b;
+    }
+
+    .geometry-pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #9a6a2f;
+      box-shadow: 0 0 8px rgba(154, 106, 47, 0.8);
+      animation: geomFlash 1.8s infinite;
+    }
+
+    @keyframes geomFlash {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* BENTO GRID DE RIGOR ÉTICO & SABIDURÍA */
+    .section-tag {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       justify-content: center;
       font-family: var(--font-mono);
       font-size: 0.72rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--accent-gold);
+      color: #9a6a2f;
       margin-bottom: 14px;
     }
 
-    .section-heading {
+    .section-title {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 3.8vw, 3.4rem);
+      font-size: clamp(2.1rem, 4vw, 3.5rem);
       text-align: center;
-      color: #fff;
-      margin-bottom: 20px;
+      color: #26231f;
+      margin-bottom: 18px;
+      letter-spacing: 0.02em;
     }
 
-    .section-subtext {
+    .section-lead {
       text-align: center;
       font-size: 1.05rem;
-      color: rgba(241, 239, 247, 0.6);
-      max-width: 580px;
+      color: #57534e;
+      max-width: 640px;
       margin: 0 auto 56px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    .bento-sanctuary {
+    .bento-grid-sanctuary {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 20px;
       margin-bottom: 120px;
     }
 
-    /* Refinamiento 1: Spotlight Border con Gradiente Perimetral */
-    .spotlight-card {
+    .bento-card-spotlight {
       position: relative;
       border-radius: 28px;
       background: var(--bg-card);
@@ -513,7 +522,7 @@
       -webkit-backdrop-filter: blur(24px) saturate(180%);
       border: 1px solid var(--border-subtle);
       overflow: hidden;
-      padding: 36px 32px;
+      padding: 38px 32px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -521,13 +530,12 @@
       box-shadow: var(--shadow-abyssal);
     }
 
-    .spotlight-card:hover {
+    .bento-card-spotlight:hover {
       transform: translateY(-4px);
-      box-shadow: 0 35px 70px -15px rgba(5, 3, 14, 0.95), 0 0 45px rgba(138, 92, 246, 0.16);
+      box-shadow: 0 28px 55px -12px rgba(44, 38, 30, 0.1), 0 0 35px rgba(154, 106, 47, 0.12);
     }
 
-    /* El halo que persigue al mouse sobre el borde */
-    .spotlight-card::before {
+    .bento-card-spotlight::before {
       content: '';
       position: absolute;
       top: var(--mouse-y, -200px);
@@ -536,8 +544,8 @@
       height: 320px;
       background: radial-gradient(
         circle,
-        rgba(226, 192, 141, 0.22) 0%,
-        rgba(138, 92, 246, 0.12) 45%,
+        rgba(154, 106, 47, 0.18) 0%,
+        rgba(255, 255, 255, 0.08) 50%,
         transparent 70%
       );
       transform: translate(-50%, -50%);
@@ -547,126 +555,158 @@
       z-index: 1;
     }
 
-    .spotlight-card:hover::before {
-      opacity: 1;
-    }
+    .bento-card-spotlight:hover::before { opacity: 1; }
 
-    .card-content-wrap {
-      position: relative;
-      z-index: 2;
-    }
+    .card-inner { position: relative; z-index: 2; }
 
-    /* Card Proporciones Bento Asimétricas */
-    .bento-col-7 {
-      grid-column: span 12;
-    }
-    .bento-col-5 {
-      grid-column: span 12;
-    }
-    .bento-col-4 {
-      grid-column: span 12;
-    }
-    .bento-col-8 {
-      grid-column: span 12;
-    }
+    .col-span-8 { grid-column: span 12; }
+    .col-span-4 { grid-column: span 12; }
 
     @media (min-width: 900px) {
-      .bento-col-7 { grid-column: span 7; }
-      .bento-col-5 { grid-column: span 5; }
-      .bento-col-4 { grid-column: span 4; }
-      .bento-col-8 { grid-column: span 8; }
+      .col-span-8 { grid-column: span 8; }
+      .col-span-4 { grid-column: span 4; }
     }
 
-    .card-sigil-icon {
+    .sanctuary-icon-pill {
       width: 52px;
       height: 52px;
       border-radius: 16px;
-      background: rgba(138, 92, 246, 0.1);
-      border: 1px solid rgba(138, 92, 246, 0.25);
+      background: rgba(154, 106, 47, 0.08);
+      border: 1px solid rgba(154, 106, 47, 0.25);
       display: grid;
       place-items: center;
-      font-size: 1.3rem;
-      color: var(--accent-gold);
+      font-size: 1.35rem;
+      color: #9a6a2f;
       margin-bottom: 24px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
 
-    .card-tag {
+    .card-category-label {
       font-family: var(--font-mono);
       font-size: 0.68rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--accent-amethyst);
+      color: #9a6a2f;
       margin-bottom: 8px;
     }
 
-    .card-title {
+    .card-head {
       font-family: var(--font-display);
-      font-size: 1.55rem;
-      color: #fff;
+      font-size: 1.6rem;
+      color: #26231f;
       margin-bottom: 14px;
-      line-height: 1.25;
+      line-height: 1.3;
     }
 
-    .card-text {
+    .card-paragraph {
       font-size: 0.95rem;
-      line-height: 1.65;
-      color: rgba(241, 239, 247, 0.65);
+      line-height: 1.7;
+      color: #57534e;
       margin-bottom: 24px;
     }
 
-    .card-meta-list {
+    .feature-check-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
-    .card-meta-list li {
+    .feature-check-list li {
       font-size: 0.88rem;
-      color: rgba(241, 239, 247, 0.8);
+      color: #44403c;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .card-meta-list li i {
-      color: var(--accent-gold);
-      font-size: 0.75rem;
+    .feature-check-list li i {
+      color: #9a6a2f;
+      font-size: 0.8rem;
     }
 
-    /* Gráfico o Visual de Fondo en Cards Especiales */
-    .card-visual-embed {
+    /* Evaluador de Coherencia Integral */
+    .coherence-box {
+      border-radius: 20px;
+      background: rgba(245, 242, 235, 0.85);
+      border: 1px solid var(--border-subtle);
+      padding: 24px;
+      margin-top: 20px;
+    }
+
+    .coherence-selector-row {
+      display: flex;
+      gap: 10px;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .coherence-chip {
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid rgba(40, 32, 20, 0.15);
+      background: #ffffff;
+      color: #292524;
+      transition: all 0.3s ease;
+    }
+
+    .coherence-chip.active {
+      border-color: #9a6a2f;
+      background: #9a6a2f;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(154, 106, 47, 0.35);
+    }
+
+    .coherence-metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .coherence-col h6 {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: #78716c;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .coherence-col span {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #26231f;
+    }
+
+    /* Visual Embed Geometría Sagrada */
+    .sacred-glyph-embed {
       width: 100%;
-      height: 140px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(138, 92, 246, 0.15), rgba(226, 192, 141, 0.05));
-      border: 1px dashed rgba(255, 255, 255, 0.1);
+      height: 130px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(154, 106, 47, 0.08), rgba(255, 255, 255, 0.6));
+      border: 1px dashed rgba(154, 106, 47, 0.25);
       display: grid;
       place-items: center;
-      margin-top: 14px;
+      margin-top: 18px;
       position: relative;
       overflow: hidden;
     }
 
-    .constellation-svg {
-      width: 100%;
-      height: 100%;
-      opacity: 0.6;
-    }
-
-    /* ===================================================
-       SECCIÓN CON SCROLL HORIZONTAL INTEGRADO
-    =================================================== */
-    .horizontal-portal-track {
+    /* SCROLL HORIZONTAL: EL VIAJE INTERIOR EN 4 ETAPAS */
+    .journey-track-portal {
       position: relative;
       padding: 80px 0;
       margin-bottom: 120px;
       overflow: hidden;
     }
 
-    .h-track-container {
+    .h-journey-flow {
       display: flex;
       gap: 32px;
       width: max-content;
@@ -674,141 +714,100 @@
       will-change: transform;
     }
 
-    .h-step-card {
-      width: 380px;
+    .h-journey-step {
+      width: 390px;
       flex-shrink: 0;
       border-radius: 28px;
       padding: 38px 30px;
-      background: rgba(18, 13, 33, 0.6);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(20px);
       border: 1px solid var(--border-subtle);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
+      box-shadow: 0 15px 35px rgba(44, 38, 30, 0.05);
     }
 
-    .h-step-num {
+    .step-index-watermark {
       font-family: var(--font-mono);
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.07);
-      line-height: 1;
+      color: rgba(44, 38, 30, 0.06);
       position: absolute;
       top: 24px;
       right: 28px;
     }
 
-    /* ===================================================
-       TESTIMONIOS EN ALTA FIDELIDAD
-    =================================================== */
-    .testimonials-matrix {
+    /* CASOS Y TESTIMONIOS SOBRIOS */
+    .cases-matrix {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 24px;
       margin-bottom: 140px;
     }
 
-    .testimonio-capsule {
-      padding: 34px 30px;
+    .case-card {
+      padding: 36px 32px;
       border-radius: 24px;
-      background: rgba(14, 10, 26, 0.5);
+      background: rgba(255, 255, 255, 0.85);
       border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(18px);
-      position: relative;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 15px 35px rgba(44, 38, 30, 0.05);
     }
 
-    .quote-icon {
-      color: var(--accent-gold);
-      font-size: 1.4rem;
-      opacity: 0.6;
-      margin-bottom: 16px;
-    }
-
-    .testimonio-body {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: rgba(241, 239, 247, 0.78);
-      font-style: italic;
-      margin-bottom: 22px;
-    }
-
-    .testimonio-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .avatar-astral {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid var(--accent-gold);
-      display: grid;
-      place-items: center;
-      background: rgba(138, 92, 246, 0.2);
-      color: var(--accent-gold);
+    .case-metric-highlight {
       font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #9a6a2f;
+      margin-bottom: 12px;
     }
 
-    .author-info h5 {
-      font-size: 0.92rem;
-      color: #fff;
+    .case-text {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: #57534e;
+      margin-bottom: 24px;
     }
 
-    .author-info span {
-      font-size: 0.75rem;
-      color: rgba(241, 239, 247, 0.45);
+    .case-client-info h5 { font-size: 0.95rem; color: #26231f; font-family: var(--font-display); }
+    .case-client-info span {
       font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #9a6a2f;
     }
 
-    /* ===================================================
-       CTA FINAL — EL PORTAL DE TRANSMUTACIÓN
-    =================================================== */
-    .cta-sanctuary {
+    /* CTA FINAL */
+    .cta-sanctuary-hub {
       position: relative;
       border-radius: 36px;
-      padding: 75px 36px;
-      background: radial-gradient(circle at center, rgba(138, 92, 246, 0.14) 0%, rgba(14, 10, 26, 0.8) 70%);
-      border: 1px solid rgba(226, 192, 141, 0.25);
+      padding: 80px 36px;
+      background: radial-gradient(circle at center, rgba(154, 106, 47, 0.12) 0%, rgba(245, 242, 235, 0.95) 75%);
+      border: 1px solid rgba(154, 106, 47, 0.35);
       text-align: center;
       margin-bottom: 120px;
       overflow: hidden;
-      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 25px 50px rgba(44, 38, 30, 0.07);
     }
 
-    .cta-sanctuary::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 50% 0%, rgba(226, 192, 141, 0.15), transparent 60%);
-      pointer-events: none;
-    }
-
-    .cta-heading {
+    .cta-title {
       font-family: var(--font-display);
       font-size: clamp(2.2rem, 4.4vw, 3.8rem);
-      color: #fff;
+      color: #26231f;
       margin-bottom: 18px;
+      letter-spacing: 0.02em;
     }
 
-    .cta-sub {
+    .cta-desc {
       font-size: 1.05rem;
-      color: rgba(241, 239, 247, 0.7);
-      max-width: 620px;
+      color: #57534e;
+      max-width: 640px;
       margin: 0 auto 40px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    /* ===================================================
-       FOOTER SAGRADO
-    =================================================== */
-    .sacred-footer {
+    .sanctuary-footer {
       border-top: 1px solid var(--border-subtle);
       padding: 50px 0;
       display: flex;
@@ -817,13 +816,11 @@
       gap: 20px;
       text-align: center;
       font-size: 0.85rem;
-      color: rgba(241, 239, 247, 0.4);
+      color: #78716c;
     }
 
-    /* ===================================================
-       BOTÓN DE WHATSAPP FLOTANTE ULTRA-ALTA GAMA
-    =================================================== */
-    .whatsapp-portal-float {
+    /* BOTÓN WHATSAPP FLOTANTE */
+    .whatsapp-sanctuary-float {
       position: fixed;
       bottom: 28px;
       right: 28px;
@@ -834,17 +831,17 @@
       text-decoration: none;
     }
 
-    .wa-bubble-btn {
-      width: 62px;
-      height: 62px;
+    .wa-bubble-sanctuary {
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      background: linear-gradient(135deg, #9a6a2f 0%, #784e1b 100%);
       display: grid;
       place-items: center;
       color: #fff;
-      font-size: 1.75rem;
-      box-shadow: 0 12px 30px rgba(16, 185, 129, 0.4), 0 0 25px rgba(226, 192, 141, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      font-size: 1.85rem;
+      box-shadow: 0 14px 35px rgba(154, 106, 47, 0.45), 0 0 25px rgba(197, 155, 39, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.8);
       position: relative;
       cursor: pointer;
       overflow: hidden;
@@ -852,7 +849,7 @@
       will-change: transform;
     }
 
-    .wa-bubble-btn::before {
+    .wa-bubble-sanctuary::before {
       content: '';
       position: absolute;
       top: -50%;
@@ -862,332 +859,350 @@
       background: linear-gradient(
         45deg,
         transparent 35%,
-        rgba(255, 255, 255, 0.7) 50%,
+        rgba(255, 255, 255, 0.8) 50%,
         transparent 65%
       );
       transform: rotate(25deg) translateY(-100%);
       transition: transform 0.8s ease;
     }
 
-    .whatsapp-portal-float:hover .wa-bubble-btn::before {
+    .whatsapp-sanctuary-float:hover .wa-bubble-sanctuary::before {
       transform: rotate(25deg) translateY(100%);
     }
 
-    .whatsapp-portal-float:hover .wa-bubble-btn {
+    .whatsapp-sanctuary-float:hover .wa-bubble-sanctuary {
       transform: scale(1.08) translateY(-3px);
-      box-shadow: 0 16px 36px rgba(16, 185, 129, 0.55), 0 0 35px rgba(226, 192, 141, 0.4);
+      box-shadow: 0 18px 40px rgba(154, 106, 47, 0.6), 0 0 30px rgba(197, 155, 39, 0.35);
     }
 
-    .wa-pulse-aura {
+    .wa-sanctuary-pulse {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      border: 1.5px solid rgba(16, 185, 129, 0.6);
-      animation: waPulseRing 2.4s infinite cubic-bezier(0.25, 1, 0.5, 1);
+      border: 1.5px solid rgba(154, 106, 47, 0.65);
+      animation: waSanctuaryPulse 2.4s infinite cubic-bezier(0.25, 1, 0.5, 1);
       pointer-events: none;
     }
 
-    @keyframes waPulseRing {
+    @keyframes waSanctuaryPulse {
       0% { transform: scale(1); opacity: 0.9; }
-      100% { transform: scale(1.65); opacity: 0; }
+      100% { transform: scale(1.68); opacity: 0; }
     }
 
-    .wa-tooltip-pill {
-      background: rgba(14, 10, 26, 0.75);
-      border: 1px solid var(--border-glow);
+    .wa-sanctuary-tooltip {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(154, 106, 47, 0.3);
       backdrop-filter: blur(16px);
-      color: #fff;
+      color: #26231f;
       font-size: 0.8rem;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.05em;
-      padding: 9px 16px;
+      padding: 10px 18px;
       border-radius: 9999px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 25px rgba(44, 38, 30, 0.08);
       display: none;
       align-items: center;
       gap: 8px;
     }
 
     @media (min-width: 640px) {
-      .wa-tooltip-pill { display: flex; }
+      .wa-sanctuary-tooltip { display: flex; }
     }
 
-    .wa-status-dot {
+    .wa-live-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #10b981;
-      box-shadow: 0 0 8px #10b981;
+      background: #9a6a2f;
+      box-shadow: 0 0 8px #9a6a2f;
     }
   </style>
 </head>
 <body>
 
-  <!-- Capa 2: Grano de Película Analógica -->
   <div class="film-grain-overlay"></div>
-
-  <!-- Capa 1: WebGL Canvas Universe (Three.js + GLSL) -->
   <canvas id="webgl-universe"></canvas>
 
-  <!-- Cursor Magnético Líquido -->
   <div class="cosmic-cursor" id="cosmicCursor"></div>
   <div class="cosmic-cursor-dot" id="cosmicDot"></div>
 
-  <!-- ===================================================
-       HEADER NAV
-  =================================================== -->
-  <nav class="portal-nav">
-    <a href="#" class="brand-sigil">
-      <div class="brand-icon-geom">
+  <!-- NAVBAR -->
+  <nav class="cosmic-nav">
+    <a href="#" class="brand-container">
+      <div class="brand-icon-glyph">
         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="20" r="18" stroke="#e2c08d" stroke-width="1.2" stroke-dasharray="2 3"/>
-          <polygon points="20,4 35,32 5,32" stroke="#a855f7" stroke-width="1.2" fill="none"/>
-          <circle cx="20" cy="20" r="4" fill="#e2c08d"/>
+          <circle cx="20" cy="20" r="17" stroke="#9a6a2f" stroke-width="1.6"/>
+          <polygon points="20,7 31,27 9,27" stroke="#9a6a2f" stroke-width="1.2" fill="none"/>
+          <polygon points="20,33 31,13 9,13" stroke="rgba(154,106,47,0.5)" stroke-width="1" fill="none"/>
+          <circle cx="20" cy="20" r="3.5" fill="#9a6a2f"/>
         </svg>
       </div>
       <span class="brand-name">AETHERIA</span>
     </a>
 
-    <ul class="nav-routes">
-      <li><a href="#oraculo">Oráculo Astral</a></li>
-      <li><a href="#alquimia">Alquimia del Alma</a></li>
-      <li><a href="#sendero">El Sendero</a></li>
-      <li><a href="#testimonios">Voces de Luz</a></li>
+    <ul class="nav-items">
+      <li><a href="#dimensiones">Integración Psicoespiritual</a></li>
+      <li><a href="#sendero">Metodología</a></li>
+      <li><a href="#coherencia">Diagnóstico</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
     </ul>
 
-    <a href="https://wa.me/573000000000?text=Hola%20Aetheria,%20deseo%20iniciar%20mi%20sesi%C3%B3n%20espiritual" class="btn-magnetic" target="_blank" rel="noopener">
-      <span>Agendar Sesión</span>
-      <i class="fa-solid fa-arrow-right"></i>
+    <a href="https://wa.me/573000000000?text=Deseo%20solicitar%20una%20sesi%C3%B3n%20de%20orientaci%C3%B3n%20privada%20en%20Aetheria" class="btn-magnetic" target="_blank" rel="noopener">
+      <span>Sesión Inicial</span>
+      <i class="fa-solid fa-feather-pointed"></i>
     </a>
   </nav>
 
-  <!-- ===================================================
-       HERO PRINCIPAL
-  =================================================== -->
+  <!-- HERO -->
   <main class="app-viewport">
-    <section class="hero-portal">
-      <div class="badge-celestial">
-        <i class="fa-solid fa-sparkles"></i>
-        <span>Dimensiones Cuánticas & Despertar de Consciencia</span>
+    <section class="hero-sanctuary">
+      <div class="badge-sovereign">
+        <i class="fa-solid fa-compass"></i>
+        <span>Filosofía Perenne & Psicología Transpersonal</span>
       </div>
 
-      <div class="split-mask-container">
-        <h1 class="hero-title">
-          Transmuta Tu Energía.<br>
-          <span class="glow-gold">Conecta con Tu Verdad Cósmica.</span>
+      <div class="split-mask-wrap">
+        <h1 class="hero-headline">
+          El Retorno a la Coherencia.<br>
+          <span class="highlight-gold">La Claridad de Tu Eje Interior.</span>
         </h1>
       </div>
 
-      <p class="hero-description">
-        Un espacio sagrado donde la sabiduría ancestral, la astrología evolutiva y la frecuencia cuántica se fusionan para disolver bloqueos kármicos y revelar el mapa sagrado de tu alma.
+      <p class="hero-subline">
+        Un espacio solemne de acompañamiento integral para personas y líderes en búsqueda de profundidad, reintegración del sistema nervioso y claridad existencial. Cero dogmas, cero esoterismo superficial: sabiduría milenaria sustentada en rigor y presencia.
       </p>
 
-      <div class="hero-actions">
-        <a href="https://wa.me/573000000000?text=Deseo%20conocer%20mi%20Lectura%20de%20Carta%20Natal%20y%20Alquimia" class="btn-magnetic" target="_blank" rel="noopener">
-          <span>Abrir Mi Portal Espiritual</span>
+      <div class="hero-cta-group">
+        <a href="https://wa.me/573000000000?text=Hola,%20deseo%20agendar%20una%20consulta%20de%20evaluaci%C3%B3n%20integral" class="btn-magnetic" target="_blank" rel="noopener">
+          <span>Solicitar Orientación Confidencial</span>
           <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="#oraculo" class="btn-ethereal">
-          <span>Explorar Terapias</span>
-          <i class="fa-solid fa-compass"></i>
+        <a href="#coherencia" class="btn-outline-sanctuary">
+          <span>Evaluar Coherencia Interior</span>
+          <i class="fa-solid fa-arrows-to-circle"></i>
         </a>
       </div>
 
-      <!-- Barra de Telemetría Cósmica -->
-      <div class="hero-telemetry-bar">
-        <div class="telemetry-node">
-          <span class="node-metric" data-target="99.4">%</span>
-          <span class="node-label">Alineación Energética</span>
+      <!-- Live Coherence HUD -->
+      <div class="sanctuary-hud">
+        <div class="telemetry-cell">
+          <span class="metric-value">98.4%</span>
+          <span class="metric-desc">Coherencia Psicoemocional</span>
         </div>
-        <div class="telemetry-node">
-          <span class="node-metric" data-target="1840">+</span>
-          <span class="node-label">Almas Guiadas</span>
+        <div class="telemetry-cell">
+          <span class="metric-value">12 Años</span>
+          <span class="metric-desc">Trayectoria Terapéutica</span>
         </div>
-        <div class="telemetry-node">
-          <span class="node-metric">528Hz</span>
-          <span class="node-label">Frecuencia Base Solfeggio</span>
+        <div class="telemetry-cell">
+          <span class="metric-value" id="hudFrecuencia">432.0 Hz</span>
+          <span class="metric-desc">Frecuencia Resonante Áurea</span>
         </div>
+        <div class="telemetry-cell">
+          <span class="metric-value" id="hudEjeArmonico">0.618 φ</span>
+          <span class="metric-desc">Eje de Proporción Sagrada</span>
+        </div>
+      </div>
+
+      <div class="live-geometry-badge">
+        <span class="geometry-pulse"></span>
+        <span>Geometría Sagrada 3D en fondo: responde con inercia armónica a la posición de tu cursor</span>
       </div>
     </section>
 
-    <!-- ===================================================
-         PILAR 3: BENTO GRID ASIMÉTRICO DE SERVICIOS
-    =================================================== -->
-    <section id="oraculo" style="padding: 60px 0;">
-      <div class="section-eyebrow">
-        <i class="fa-solid fa-moon"></i>
-        <span>Santuario de Terapias Holísticas</span>
+    <!-- BENTO GRID -->
+    <section id="dimensiones" style="padding: 60px 0;">
+      <div class="section-tag">
+        <i class="fa-solid fa-landmark"></i>
+        <span>Pilares de Acompañamiento</span>
       </div>
-      <h2 class="section-heading">Canalizaciones de Alta Frecuencia</h2>
-      <p class="section-subtext">Cada experiencia es una iniciación personalizada que armoniza tus cuerpos físico, sutil y astral.</p>
+      <h2 class="section-title">Espacios de Profunda Reintegración</h2>
+      <p class="section-lead">Procesos estructurados de indagación, presencia y equilibrio biopsicoespiritual.</p>
 
-      <div class="bento-sanctuary">
-        <!-- Card 1 (Ancha: 7 cols) -->
-        <div class="spotlight-card bento-col-7">
-          <div class="card-content-wrap">
-            <div class="card-sigil-icon">
-              <i class="fa-solid fa-sun-plant-wilt"></i>
+      <div class="bento-grid-sanctuary">
+        <!-- Card 1 (8 cols) -->
+        <div class="bento-card-spotlight col-span-8">
+          <div class="card-inner">
+            <div class="sanctuary-icon-pill">
+              <i class="fa-solid fa-hands-holding-circle"></i>
             </div>
-            <span class="card-tag">Astrología Evolutiva & Tránsitos</span>
-            <h3 class="card-title">Lectura de Carta Natal & Decodificación Kármica</h3>
-            <p class="card-text">
-              Descifra las coordenadas cósmicas impresas en el momento exacto de tu primera respiración. Revela tu propósito de encarnación, heridas de linaje ancestral y ciclos de transmutación planetaria hacia tu máximo potencial.
+            <span class="card-category-label">Acompañamiento Terapéutico</span>
+            <h3 class="card-head">Indagación Transpersonal & Desprogramación de Bloqueos</h3>
+            <p class="card-paragraph">
+              Un diálogo terapéutico que conjuga la psicología arquetípica de C.G. Jung con la autoconsciencia somática. Identificamos los nudos emocionales no resueltos, patrones transgeneracionales y reactividades que limitan tu paz mental y capacidad de discernimiento.
             </p>
-            <ul class="card-meta-list">
-              <li><i class="fa-solid fa-circle-check"></i> Análisis de Nodos Lunares y Eje de Vida</li>
-              <li><i class="fa-solid fa-circle-check"></i> Tránsitos presentes y aperturas de portales para los próximos 12 meses</li>
-              <li><i class="fa-solid fa-circle-check"></i> Entrega de audio en alta fidelidad y mapa astral interactivo</li>
+            <ul class="feature-check-list">
+              <li><i class="fa-solid fa-circle-check"></i> Sesiones 1 a 1 de 75 minutos con absoluta confidencialidad ética</li>
+              <li><i class="fa-solid fa-circle-check"></i> Mapeo somático del sistema nervioso y liberación de estrés crónico</li>
+              <li><i class="fa-solid fa-circle-check"></i> Herramientas prácticas de auto-regulación para la vida cotidiana</li>
             </ul>
-            <a href="https://wa.me/573000000000?text=Quiero%20mi%20Lectura%20de%20Carta%20Natal" class="btn-magnetic" target="_blank" rel="noopener">
-              <span>Solicitar Carta Natal</span>
-              <i class="fa-brands fa-whatsapp"></i>
+            <a href="https://wa.me/573000000000?text=Quiero%20conocer%20m%C3%A1s%20sobre%20el%20Acompa%C3%B1amiento%20Transpersonal" class="btn-magnetic" target="_blank" rel="noopener">
+              <span>Conocer el Proceso</span>
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
-          <div class="card-visual-embed">
-            <svg class="constellation-svg" viewBox="0 0 400 140" fill="none">
-              <circle cx="60" cy="40" r="3" fill="#e2c08d" />
-              <circle cx="160" cy="90" r="4" fill="#a855f7" />
-              <circle cx="280" cy="30" r="3" fill="#38bdf8" />
-              <circle cx="340" cy="110" r="3" fill="#e2c08d" />
-              <line x1="60" y1="40" x2="160" y2="90" stroke="rgba(226,192,141,0.3)" stroke-dasharray="3 3"/>
-              <line x1="160" y1="90" x2="280" y2="30" stroke="rgba(168,85,247,0.3)" stroke-dasharray="3 3"/>
-              <line x1="280" y1="30" x2="340" y2="110" stroke="rgba(56,189,248,0.3)" stroke-dasharray="3 3"/>
+          <div class="sacred-glyph-embed">
+            <svg width="100%" height="100%" viewBox="0 0 500 130" fill="none">
+              <circle cx="250" cy="65" r="48" stroke="#9a6a2f" stroke-width="1.5"/>
+              <circle cx="250" cy="65" r="32" stroke="rgba(154,106,47,0.4)" stroke-dasharray="3 3"/>
+              <polygon points="250,22 288,86 212,86" stroke="#9a6a2f" stroke-width="1.2" fill="none"/>
+              <polygon points="250,108 288,44 212,44" stroke="rgba(154,106,47,0.5)" stroke-width="1" fill="none"/>
+              <circle cx="250" cy="65" r="5" fill="#9a6a2f"/>
             </svg>
           </div>
         </div>
 
-        <!-- Card 2 (5 cols) -->
-        <div class="spotlight-card bento-col-5">
-          <div class="card-content-wrap">
-            <div class="card-sigil-icon">
-              <i class="fa-solid fa-gem"></i>
+        <!-- Card 2 (4 cols) -->
+        <div class="bento-card-spotlight col-span-4">
+          <div class="card-inner">
+            <div class="sanctuary-icon-pill">
+              <i class="fa-solid fa-mountain-sun"></i>
             </div>
-            <span class="card-tag">Medicina Vibracional</span>
-            <h3 class="card-title">Sanación Bioenergética con Cristales & Cuencos</h3>
-            <p class="card-text">
-              Alineación de los 7 centros energéticos primarios mediante cuarzos de cuarzo blanco puro y frecuencias sonoras de cuencos tibetanos afinados a 432Hz. Limpieza profunda de miasmas y restaurador del biocampo áurico.
+            <span class="card-category-label">Inmersión Profunda</span>
+            <h3 class="card-head">Retiros de Silencio & Quietud Neurobiológica</h3>
+            <p class="card-paragraph">
+              Espacios de retiro en santuarios naturales seleccionados. Suspensión total del ruido digital, meditación vipassana adaptada y nutrición viva para restaurar tu centro.
             </p>
-            <ul class="card-meta-list">
-              <li><i class="fa-solid fa-circle-check"></i> Frecuencias Solfeggio 432Hz / 528Hz</li>
-              <li><i class="fa-solid fa-circle-check"></i> Escaneo de campo áurico en tiempo real</li>
+            <ul class="feature-check-list">
+              <li><i class="fa-solid fa-circle-check"></i> Grupos reducidos a máximo 10 participantes</li>
+              <li><i class="fa-solid fa-circle-check"></i> Integración personalizada post-retiro</li>
             </ul>
-            <a href="https://wa.me/573000000000?text=Quiero%20agendar%20Sanaci%C3%B3n%20con%20Cristales" class="btn-ethereal" target="_blank" rel="noopener">
-              <span>Agendar Terapia</span>
+            <a href="https://wa.me/573000000000?text=Quiero%20informaci%C3%B3n%20sobre%20los%20Retiros%20de%20Silencio" class="btn-outline-sanctuary" target="_blank" rel="noopener">
+              <span>Consultar Retiros</span>
               <i class="fa-brands fa-whatsapp"></i>
             </a>
           </div>
         </div>
 
         <!-- Card 3 (4 cols) -->
-        <div class="spotlight-card bento-col-4">
-          <div class="card-content-wrap">
-            <div class="card-sigil-icon">
-              <i class="fa-solid fa-infinity"></i>
+        <div class="bento-card-spotlight col-span-4">
+          <div class="card-inner">
+            <div class="sanctuary-icon-pill">
+              <i class="fa-solid fa-wind"></i>
             </div>
-            <span class="card-tag">Canalización</span>
-            <h3 class="card-title">Apertura de Registros Akáshicos</h3>
-            <p class="card-text">
-              Acceso a la biblioteca cuántica universal donde reside la memoria eterna de tu alma. Respuestas directas a contratos kármicos, lazos de vidas pasadas y vocación trascendental.
+            <span class="card-category-label">Respiración Holotrópica</span>
+            <h3 class="card-head">Pranayama & Biocoherencia Cardíaca</h3>
+            <p class="card-paragraph">
+              Prácticas respiratorias guiadas que modulan la variabilidad de la frecuencia cardíaca (VFC), disolviendo la hiperactividad de la amígdala cerebral en minutos.
             </p>
-            <a href="https://wa.me/573000000000?text=Deseo%20abrir%20mis%20Registros%20Ak%C3%A1shicos" class="btn-ethereal" target="_blank" rel="noopener">
-              <span>Consultar Registro</span>
+            <a href="https://wa.me/573000000000?text=Deseo%20conocer%20las%20sesiones%20de%20Biocoherencia%20Respiratoria" class="btn-outline-sanctuary" target="_blank" rel="noopener">
+              <span>Ver Metodología</span>
               <i class="fa-brands fa-whatsapp"></i>
             </a>
           </div>
         </div>
 
-        <!-- Card 4 (8 cols) -->
-        <div class="spotlight-card bento-col-8">
-          <div class="card-content-wrap">
-            <div class="card-sigil-icon">
-              <i class="fa-solid fa-eye"></i>
+        <!-- Card 4 (8 cols) — EVALUADOR DE COHERENCIA INTEGRAL -->
+        <div class="bento-card-spotlight col-span-8" id="coherencia">
+          <div class="card-inner">
+            <div class="sanctuary-icon-pill">
+              <i class="fa-solid fa-sliders"></i>
             </div>
-            <span class="card-tag">Oráculo Arquetipal</span>
-            <h3 class="card-title">Tarot Terapéutico Transpersonal & Claridad Esencial</h3>
-            <p class="card-text">
-              Lejos de la adivinación simplista, el tarot es un espejo de la psique y de tus dimensiones inconscientes. Identifica la causa oculta de tus dudas presentes en el amor, finanzas y decisiones vitales con guía espiritual clara.
+            <span class="card-category-label">Autodiagnóstico Orientativo</span>
+            <h3 class="card-head">Calibración de Tu Estado de Coherencia Vital</h3>
+            <p class="card-paragraph">
+              Selecciona el centro existencial que sientes con mayor necesidad de atención para evaluar el protocolo sugerido por el instituto:
             </p>
-            <ul class="card-meta-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-              <li><i class="fa-solid fa-circle-check"></i> Tirada de los 4 Elementos y Cruz Alquímica</li>
-              <li><i class="fa-solid fa-circle-check"></i> Diagnóstico de polaridades femenina y masculina</li>
-              <li><i class="fa-solid fa-circle-check"></i> Plan de integración y ritual de cierre energético</li>
-            </ul>
-            <a href="https://wa.me/573000000000?text=Deseo%20una%20Sesi%C3%B3n%20de%20Tarot%20Terap%C3%A9utico" class="btn-magnetic" target="_blank" rel="noopener">
-              <span>Consultar al Oráculo</span>
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
+
+            <div class="coherence-box">
+              <div class="coherence-selector-row">
+                <button class="coherence-chip active" data-center="Claridad Mental" data-freq="432.0 Hz" data-desc="Disolución de sobrepensamiento y niebla cognitiva mediante silencio selectivo.">Claridad Mental</button>
+                <button class="coherence-chip" data-center="Paz Emocional" data-freq="528.0 Hz" data-desc="Integración somática de reactividades y duelo no elaborado.">Paz Emocional</button>
+                <button class="coherence-chip" data-center="Vitalidad Somática" data-freq="639.0 Hz" data-desc="Regulación del nervio vago y alivio del agotamiento existencial.">Vitalidad Somática</button>
+                <button class="coherence-chip" data-center="Propósito Trascendente" data-freq="741.0 Hz" data-desc="Realineación vocacional con tus valores éticos y espirituales supremos.">Propósito Trascendente</button>
+              </div>
+
+              <div class="coherence-metric-grid">
+                <div class="coherence-col">
+                  <h6>Área Seleccionada</h6>
+                  <span id="centerNameDisplay">Claridad Mental</span>
+                </div>
+                <div class="coherence-col">
+                  <h6>Frecuencia de Trabajo</h6>
+                  <span id="centerFreqDisplay" style="color: #9a6a2f;">432.0 Hz</span>
+                </div>
+                <div class="coherence-col">
+                  <h6>Enfoque del Protocolo</h6>
+                  <span id="centerDescDisplay" style="font-size: 0.92rem; font-weight: 500; color: #57534e;">Disolución de sobrepensamiento y niebla cognitiva.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 24px;">
+              <a href="https://wa.me/573000000000?text=Hola,%20hice%20el%20autodiagn%C3%B3stico%20en%20Aetheria%20y%20quiero%20profundizar%20en%20mi%20proceso" class="btn-magnetic" target="_blank" rel="noopener">
+                <span>Conversar con un Mentor</span>
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================================================
-         SECCIÓN HORIZONTAL: EL SENDERO DEL DESPERTAR
-    =================================================== -->
+    <!-- EL VIAJE INTERIOR (Scroll Horizontal) -->
     <section id="sendero">
-      <div class="section-eyebrow">
-        <i class="fa-solid fa-compass-drafting"></i>
-        <span>Metodología Iniciática</span>
+      <div class="section-tag">
+        <i class="fa-solid fa-route"></i>
+        <span>La Metodología en 4 Etapas</span>
       </div>
-      <h2 class="section-heading">El Viaje de Transmutación</h2>
-      <p class="section-subtext">Un proceso orgánico de tres fases estructurado para despertar tu soberanía espiritual.</p>
+      <h2 class="section-title">El Sendero de la Autoliberación</h2>
+      <p class="section-lead">Un recorrido progresivo que respeta el ritmo orgánico de tu psique y biología.</p>
 
-      <div class="horizontal-portal-track" id="horizontalPortal">
-        <div class="h-track-container" id="horizontalContainer">
-          
-          <div class="h-step-card">
-            <span class="h-step-num">01</span>
-            <div class="card-content-wrap">
-              <span class="card-tag">Fase de Reconocimiento</span>
-              <h4 class="card-title">Diagnóstico & Revelación</h4>
-              <p class="card-text">
-                Identificamos los puntos de estancamiento en tus meridianos energéticos y los contratos kármicos que drenan tu vitalidad y claridad mental.
+      <div class="journey-track-portal" id="journeyPortal">
+        <div class="h-journey-flow" id="journeyFlow">
+
+          <div class="h-journey-step">
+            <span class="step-index-watermark">01</span>
+            <div class="card-inner">
+              <span class="card-category-label">Observación Lúcida</span>
+              <h4 class="card-head">Reconocimiento & Diagnóstico</h4>
+              <p class="card-paragraph">
+                Detener la inercia automática. Observar sin juzgar el estado de tus pensamientos, tus cargas somáticas y los relatos mentales que perpetúan el desgaste.
               </p>
             </div>
-            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-gold);">
-              <i class="fa-solid fa-wave-square"></i> ESCANEO FRECUENCIAL
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #9a6a2f; font-weight: 700;">
+              <i class="fa-solid fa-eye"></i> TOMA DE CONSCIENCIA PURA
             </div>
           </div>
 
-          <div class="h-step-card">
-            <span class="h-step-num">02</span>
-            <div class="card-content-wrap">
-              <span class="card-tag">Fase de Transmutación</span>
-              <h4 class="card-title">Disolución del Bloqueo</h4>
-              <p class="card-text">
-                Canalización directa de luz y sonido para cortar lazos energéticos densos, armonizar memorias celulares y restaurar el flujo libre de prana.
+          <div class="h-journey-step">
+            <span class="step-index-watermark">02</span>
+            <div class="card-inner">
+              <span class="card-category-label">Purificación Somática</span>
+              <h4 class="card-head">Deconstrucción del Ruido</h4>
+              <p class="card-paragraph">
+                Técnicas de descarga bioenergética y respiración consciente para permitir que el sistema nervioso suelte los reflejos de alerta acumulados.
               </p>
             </div>
-            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-amethyst);">
-              <i class="fa-solid fa-fire-flame-curved"></i> TRANSMUTACIÓN VIOLETA
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #26231f; font-weight: 700;">
+              <i class="fa-solid fa-fire-flame-curved"></i> REGULACIÓN NERVIOSA
             </div>
           </div>
 
-          <div class="h-step-card">
-            <span class="h-step-num">03</span>
-            <div class="card-content-wrap">
-              <span class="card-tag">Fase de Consagración</span>
-              <h4 class="card-title">Integración & Anclaje</h4>
-              <p class="card-text">
-                Entrega de códigos sagrados, pautas de meditación diaria y anclaje de la nueva vibración para manifestar paz, abundancia y propósito.
+          <div class="h-journey-step">
+            <span class="step-index-watermark">03</span>
+            <div class="card-inner">
+              <span class="card-category-label">Geometría Sagrada</span>
+              <h4 class="card-head">Realineación del Eje Interior</h4>
+              <p class="card-paragraph">
+                Restablecimiento de la coherencia corazón-cerebro. Anclaje de nuevos hábitos de quietud, silencio reflexivo y lucidez decisional.
               </p>
             </div>
-            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan-nebula);">
-              <i class="fa-solid fa-star"></i> SOBERANÍA ESPIRITUAL
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #9a6a2f; font-weight: 700;">
+              <i class="fa-solid fa-atom"></i> ARQUITECTURA DEL SER
             </div>
           </div>
 
-          <div class="h-step-card" style="background: radial-gradient(circle at center, rgba(138, 92, 246, 0.2), rgba(18, 13, 33, 0.9));">
-            <span class="h-step-num">✦</span>
-            <div class="card-content-wrap">
-              <span class="card-tag">Comienza Ahora</span>
-              <h4 class="card-title">Tu Nuevo Comienzo</h4>
-              <p class="card-text">
-                Las sincronicidades no son casuales. Si estás leyendo esto hoy, tu alma está lista para dar el salto.
+          <div class="h-journey-step" style="background: radial-gradient(circle at center, rgba(154, 106, 47, 0.12) 0%, rgba(255, 255, 255, 0.95) 75%); border: 1px solid rgba(154, 106, 47, 0.35);">
+            <span class="step-index-watermark">✦</span>
+            <div class="card-inner">
+              <span class="card-category-label">Soberanía de Vida</span>
+              <h4 class="card-head">Presencia Inquebrantable</h4>
+              <p class="card-paragraph">
+                Regresas al mundo con un centro de gravedad propio. La capacidad de actuar con calma, sabiduría y benevolencia ante cualquier circunstancia.
               </p>
-              <a href="https://wa.me/573000000000?text=Hola,%20siento%20el%20llamado%20de%20iniciar%20el%20viaje" class="btn-magnetic" target="_blank" rel="noopener">
-                <span>Comenzar el Viaje</span>
+              <a href="https://wa.me/573000000000?text=Hola,%20deseo%20iniciar%20mi%20proceso%20en%20Aetheria" class="btn-magnetic" target="_blank" rel="noopener">
+                <span>Comenzar el Sendero</span>
                 <i class="fa-brands fa-whatsapp"></i>
               </a>
             </div>
@@ -1197,130 +1212,113 @@
       </div>
     </section>
 
-    <!-- ===================================================
-         TESTIMONIOS EN ALTA GAMA
-    =================================================== -->
+    <!-- TESTIMONIOS SOBRIOS -->
     <section id="testimonios">
-      <div class="section-eyebrow">
-        <i class="fa-solid fa-heart"></i>
-        <span>Sintonías Reales</span>
+      <div class="section-tag">
+        <i class="fa-solid fa-scroll"></i>
+        <span>Experiencias Verificadas</span>
       </div>
-      <h2 class="section-heading">Testimonios de Almas Despiertas</h2>
-      <p class="section-subtext">Historias de sanación, claridad y expansión de quienes confiaron en nuestro espacio.</p>
+      <h2 class="section-title">Palabras de Quienes Han Caminado</h2>
+      <p class="section-lead">Acompañamientos reales a personas que transformaron su relación con el estrés y el propósito.</p>
 
-      <div class="testimonials-matrix">
-        <div class="testimonio-capsule">
-          <i class="fa-solid fa-quote-left quote-icon"></i>
-          <p class="testimonio-body">
-            "La lectura de Carta Natal fue como si alguien encendiera la luz en una habitación oscura que llevaba años habitando a ciegas. Entendí mis patrones de autosabotaje y por primera vez sentí paz con mi historia."
+      <div class="cases-matrix">
+        <div class="case-card">
+          <div class="case-metric-highlight">Claridad Decisional</div>
+          <p class="case-text">
+            "Como director de una firma internacional vivía bajo una sobrecarga mental que anestesiaba mi vida personal. En Aetheria encontré un rigor sin precedentes. No hay adornos mágicos; hay una ciencia profunda del silencio y la presencia que me devolvió el dominio de mi mente."
           </p>
-          <div class="testimonio-author">
-            <div class="avatar-astral">VL</div>
-            <div class="author-info">
-              <h5>Valentina Londoño</h5>
-              <span>Empresaria Holística — Bogotá</span>
-            </div>
+          <div class="case-client-info">
+            <h5>Dr. Alejandro Santamaría</h5>
+            <span>Socio Director — Consultoría Estratégica</span>
           </div>
         </div>
 
-        <div class="testimonio-capsule">
-          <i class="fa-solid fa-quote-left quote-icon"></i>
-          <p class="testimonio-body">
-            "Llegué con una sobrecarga emocional brutal después de un duelo. La sesión con cuencos y cristales me devolvió el sueño y una serenidad que no experimentaba hacía meses. Es una bendición."
+        <div class="case-card">
+          <div class="case-metric-highlight">Paz Somática</div>
+          <p class="case-text">
+            "Había probado innumerables terapias convencionales sin lograr resolver una ansiedad difusa en el cuerpo. El enfoque somático y de biocoherencia del instituto reguló mi sistema nervioso desde la raíz. Hoy experimento una calma que creía imposible."
           </p>
-          <div class="testimonio-author">
-            <div class="avatar-astral">SR</div>
-            <div class="author-info">
-              <h5>Santiago Restrepo</h5>
-              <span>Diseñador & Músico</span>
-            </div>
+          <div class="case-client-info">
+            <h5>María Paula Cárdenas</h5>
+            <span>Arquitecta & Docente Universitaria</span>
           </div>
         </div>
 
-        <div class="testimonio-capsule">
-          <i class="fa-solid fa-quote-left quote-icon"></i>
-          <p class="testimonio-body">
-            "El respeto, la elegancia y la profundidad con la que abren los Registros Akáshicos te cambia para siempre. Cero dogmas, pura sabiduría que puedes aplicar a tu vida cotidiana."
+        <div class="case-card">
+          <div class="case-metric-highlight">Retiro Revelador</div>
+          <p class="case-text">
+            "El retiro de silencio fue el punto de inflexión de mi año. La ética impecable del equipo, el respeto absoluto por el espacio interior y la precisión de las prácticas me permitieron reconectar con mi vocación más genuina."
           </p>
-          <div class="testimonio-author">
-            <div class="avatar-astral">MC</div>
-            <div class="author-info">
-              <h5>Mariana Carranza</h5>
-              <span>Terapeuta Floral</span>
-            </div>
+          <div class="case-client-info">
+            <h5>Santiago Restrepo</h5>
+            <span>Empresario & Filántropo</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================================================
-         CTA FINAL
-    =================================================== -->
-    <section class="cta-sanctuary">
-      <div class="badge-celestial" style="margin-bottom: 20px;">
-        <i class="fa-solid fa-infinity"></i>
-        <span>Tu portal está abierto</span>
+    <!-- CTA FINAL -->
+    <section class="cta-sanctuary-hub">
+      <div class="badge-sovereign" style="margin-bottom: 20px;">
+        <i class="fa-solid fa-door-open"></i>
+        <span>Acompañamiento Confidencial</span>
       </div>
-      <h2 class="cta-heading">¿Listo para Encarnar Tu Luz?</h2>
-      <p class="cta-sub">
-        Escríbenos directamente por WhatsApp para coordinar tu fecha sagrada o recibir orientación personalizada sobre qué terapia resuena con tu momento vital.
+      <h2 class="cta-title">¿Es Momento de Hacer una Pausa Consciente?</h2>
+      <p class="cta-desc">
+        Coordina una primera sesión de encuadre y valoración con un mentor del instituto. Analizaremos tu situación actual con máxima sobriedad, respeto y profundidad.
       </p>
-      <a href="https://wa.me/573000000000?text=Hola,%20deseo%20hablar%20con%20una%20gu%C3%ADa%20espiritual%20de%20Aetheria" class="btn-magnetic" style="padding: 16px 36px; font-size: 0.9rem;" target="_blank" rel="noopener">
-        <span>Hablar por WhatsApp con una Guía</span>
-        <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i>
+      <a href="https://wa.me/573000000000?text=Hola,%20deseo%20coordinar%20una%20primera%20sesi%C3%B3n%20de%20orientaci%C3%B3n%20en%20Aetheria" class="btn-magnetic" style="padding: 16px 36px; font-size: 0.9rem;" target="_blank" rel="noopener">
+        <span>Coordinar Sesión de Encuadre por WhatsApp</span>
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.15rem;"></i>
       </a>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="sacred-footer">
-      <div class="brand-sigil">
+    <footer class="sanctuary-footer">
+      <div class="brand-container">
         <span class="brand-name" style="font-size: 1.3rem;">AETHERIA</span>
       </div>
-      <p>© 2026 Aetheria Sanctuary. Todos los derechos reservados. Sanación vibracional y consciencia cuántica.</p>
-      <div style="display: flex; gap: 20px; font-size: 1.1rem; color: rgba(226, 192, 141, 0.7);">
+      <p>© 2026 Instituto Aetheria. Centro de Formación, Investigación Somática & Filosofía Perenne.</p>
+      <div style="display: flex; gap: 20px; font-size: 1.1rem; color: #9a6a2f;">
         <a href="#" style="color: inherit;"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" style="color: inherit;"><i class="fa-brands fa-spotify"></i></a>
         <a href="#" style="color: inherit;"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" style="color: inherit;"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
     </footer>
   </main>
 
-  <!-- ===================================================
-       BOTÓN FLOTANTE DE WHATSAPP ULTRA-ALTA GAMA
-  =================================================== -->
-  <a href="https://wa.me/573000000000?text=Hola%20Aetheria,%20quisiera%20consultar%20por%20una%20sesi%C3%B3n%20espiritual" class="whatsapp-portal-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <div class="wa-tooltip-pill">
-      <span class="wa-status-dot"></span>
-      <span>Guía Espiritual en Línea</span>
+  <!-- BOTÓN WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/573000000000?text=Hola%20Aetheria,%20deseo%20consultar%20por%20sus%20procesos" class="whatsapp-sanctuary-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <div class="wa-sanctuary-tooltip">
+      <span class="wa-live-dot"></span>
+      <span>Orientador Ético en Línea</span>
     </div>
-    <div class="wa-bubble-btn">
-      <div class="wa-pulse-aura"></div>
+    <div class="wa-bubble-sanctuary">
+      <div class="wa-sanctuary-pulse"></div>
       <i class="fa-brands fa-whatsapp"></i>
     </div>
   </a>
 
-  <!-- ===================================================
-       LIBRERÍAS DE MOTOR VISUAL & ANIMACIÓN
-  =================================================== -->
-  <!-- 1. Three.js para WebGL Cósmico -->
+  <!-- Showcase Quick Switcher -->
+  <div style="position: fixed; bottom: 24px; left: 24px; z-index: 99999; display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(44,38,30,0.12); padding: 8px 14px; border-radius: 9999px; box-shadow: 0 15px 35px rgba(44,38,30,0.1); font-family: 'Space Mono', monospace; font-size: 0.72rem;">
+    <a href="index.html" style="color: #9a6a2f; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 9999px; background: rgba(154,106,47,0.08); margin-right: 4px;">
+      <i class="fa-solid fa-layer-group"></i> HUB
+    </a>
+    <a href="espiritual.html" style="color: #9a6a2f; text-decoration: none; padding: 5px 12px; border-radius: 9999px; background: rgba(154,106,47,0.14); border: 1px solid rgba(154,106,47,0.3); font-weight: 700; transition: all 0.2s;">🔮 Espiritual</a>
+    <a href="solar.html" style="color: #78716c; text-decoration: none; padding: 5px 12px; border-radius: 9999px; background: transparent; transition: all 0.2s;">☀️ Solar</a>
+    <a href="odontologia.html" style="color: #78716c; text-decoration: none; padding: 5px 12px; border-radius: 9999px; background: transparent; transition: all 0.2s;">🦷 Odonto</a>
+  </div>
+
+  <!-- LIBRERÍAS DE MOTOR VISUAL -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  
-  <!-- 2. GSAP + ScrollTrigger para Orquestación Cinemática -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  
-  <!-- 3. Lenis Smooth Scroll -->
   <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
 
-  <!-- ===================================================
-       LÓGICA INTERACTIVA & MOTOR WEBGL
-  =================================================== -->
+  <!-- LÓGICA DE INTERACCIÓN & MOTOR WEBGL SAGRADO EN FONDO CLARO -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
 
-      // -------------------------------------------------------------
-      // 1. Lenis Smooth Scroll Setup
-      // -------------------------------------------------------------
+      // 1. Lenis Smooth Scroll
       const lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -1329,21 +1327,19 @@
       });
 
       lenis.on('scroll', ScrollTrigger.update);
-
       gsap.ticker.add((time) => {
         lenis.raf(time * 1000);
       });
       gsap.ticker.lagSmoothing(0);
 
       // -------------------------------------------------------------
-      // 2. Three.js: Universo WebGL con Shaders de Partículas & Nebulosa
-      //    (Blindaje de 60 FPS: DPR topado a 2 + Pausa Inteligente)
+      // 2. Three.js: GEOMETRÍA SAGRADA & ORBE DE ALABASTRO EN FONDO CLARO
       // -------------------------------------------------------------
       const canvas = document.getElementById('webgl-universe');
       const scene = new THREE.Scene();
       
-      const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.z = 75;
+      const camera = new THREE.PerspectiveCamera(52, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.set(0, 0, 60);
 
       const renderer = new THREE.WebGLRenderer({
         canvas: canvas,
@@ -1355,120 +1351,181 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-      // Partículas Cósmicas (1200 puntos)
-      const particleCount = 1200;
-      const geometry = new THREE.BufferGeometry();
+      // Iluminación Natural Cálida
+      const ambientLight = new THREE.AmbientLight(0xfffcf5, 1.5);
+      scene.add(ambientLight);
+
+      const sunKeyLight = new THREE.DirectionalLight(0xffedd5, 1.8);
+      sunKeyLight.position.set(18, 35, 30);
+      scene.add(sunKeyLight);
+
+      // Luz de Contra-silueta Áurea
+      const rimGoldLight = new THREE.DirectionalLight(0x9a6a2f, 1.7);
+      rimGoldLight.position.set(-25, -15, -15);
+      scene.add(rimGoldLight);
+
+      // Luz móvil que acompaña al cursor
+      const cursorLight = new THREE.PointLight(0x9a6a2f, 2.5, 80);
+      cursorLight.position.set(0, 0, 20);
+      scene.add(cursorLight);
+
+      // GRUPO CENTRAL: ORBE SAGRADO DE CUARZO & ICOSAEDRO ÁUREO
+      const sacredCore = new THREE.Group();
+      sacredCore.position.set(16, -2, 6);
+
+      // 1. Orbe Interior de Cuarzo Translúcido
+      const sphereGeom = new THREE.SphereGeometry(9.5, 36, 36);
+      const sphereMat = new THREE.MeshPhysicalMaterial({
+        color: 0xfffbf5,
+        roughness: 0.15,
+        metalness: 0.05,
+        transmission: 0.45,
+        thickness: 2.5,
+        clearcoat: 1.0,
+        clearcoatRoughness: 0.08,
+        reflectivity: 0.95
+      });
+      const sacredOrb = new THREE.Mesh(sphereGeom, sphereMat);
+      sacredCore.add(sacredOrb);
+
+      // 2. Icosaedro Sagrado Wireframe en Oro Viejo
+      const icosaGeom = new THREE.IcosahedronGeometry(13.5, 1);
+      const icosaMat = new THREE.MeshBasicMaterial({
+        color: 0x9a6a2f,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.28
+      });
+      const icosaMesh = new THREE.Mesh(icosaGeom, icosaMat);
+      sacredCore.add(icosaMesh);
+
+      // 3. Toroide de Coherencia Armónica
+      const torusGeom = new THREE.TorusGeometry(16, 0.4, 16, 64);
+      const torusMat = new THREE.MeshBasicMaterial({
+        color: 0xc59b27,
+        transparent: true,
+        opacity: 0.35
+      });
+      const torusMesh = new THREE.Mesh(torusGeom, torusMat);
+      torusMesh.rotation.x = Math.PI / 2.8;
+      sacredCore.add(torusMesh);
+
+      scene.add(sacredCore);
+
+      // PARTÍCULAS DE POLVO ÁURICO & RESONANCIA ARMÓNICA
+      const particleCount = 700;
+      const particleGeom = new THREE.BufferGeometry();
       const positions = new Float32Array(particleCount * 3);
       const colors = new Float32Array(particleCount * 3);
 
-      const colorPalette = [
-        new THREE.Color(0xa855f7), // Violeta Amatista
-        new THREE.Color(0xe2c08d), // Oro Alquímico
-        new THREE.Color(0x38bdf8), // Azul Nebulosa
-        new THREE.Color(0x8a5cf6)  // Púrpura Profundo
-      ];
+      const colorGold = new THREE.Color(0x9a6a2f);
+      const colorAmber = new THREE.Color(0xc59b27);
+      const colorStone = new THREE.Color(0x78716c);
 
       for (let i = 0; i < particleCount; i++) {
-        // Distribución esférica y galáctica
-        const r = THREE.MathUtils.randFloat(15, 120);
-        const theta = THREE.MathUtils.randFloat(0, Math.PI * 2);
-        const phi = THREE.MathUtils.randFloat(0, Math.PI);
+        positions[i * 3] = THREE.MathUtils.randFloat(-50, 45);
+        positions[i * 3 + 1] = THREE.MathUtils.randFloat(-35, 45);
+        positions[i * 3 + 2] = THREE.MathUtils.randFloat(-20, 30);
 
-        positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-        positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-        positions[i * 3 + 2] = r * Math.cos(phi);
-
-        const chosenColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
-        colors[i * 3] = chosenColor.r;
-        colors[i * 3 + 1] = chosenColor.g;
-        colors[i * 3 + 2] = chosenColor.b;
+        const r = Math.random();
+        const c = r > 0.5 ? colorGold : (r > 0.2 ? colorAmber : colorStone);
+        colors[i * 3] = c.r;
+        colors[i * 3 + 1] = c.g;
+        colors[i * 3 + 2] = c.b;
       }
 
-      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+      particleGeom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      particleGeom.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-      // Textura circular de punto luminoso vía Canvas
-      const getParticleTexture = () => {
+      const getSacredParticleTexture = () => {
         const c = document.createElement('canvas');
         c.width = 64;
         c.height = 64;
         const ctx = c.getContext('2d');
         const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-        grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-        grad.addColorStop(0.2, 'rgba(226, 192, 141, 0.8)');
-        grad.addColorStop(0.6, 'rgba(168, 85, 247, 0.2)');
-        grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        grad.addColorStop(0, 'rgba(154, 106, 47, 1)');
+        grad.addColorStop(0.35, 'rgba(197, 155, 39, 0.7)');
+        grad.addColorStop(0.7, 'rgba(154, 106, 47, 0.2)');
+        grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, 64, 64);
-        const texture = new THREE.Texture(c);
-        texture.needsUpdate = true;
-        return texture;
+        const tex = new THREE.Texture(c);
+        tex.needsUpdate = true;
+        return tex;
       };
 
-      const material = new THREE.PointsMaterial({
-        size: 1.8,
+      const particleMat = new THREE.PointsMaterial({
+        size: 1.4,
         vertexColors: true,
-        map: getParticleTexture(),
+        map: getSacredParticleTexture(),
         transparent: true,
-        blending: THREE.AdditiveBlending,
+        opacity: 0.65,
         depthWrite: false
       });
 
-      const particleSystem = new THREE.Points(geometry, material);
-      scene.add(particleSystem);
+      const particleStream = new THREE.Points(particleGeom, particleMat);
+      scene.add(particleStream);
 
-      // Orbe Geométrico Central Sagrado (Icosaedro Alquímico)
-      const icoGeom = new THREE.IcosahedronGeometry(18, 1);
-      const icoMat = new THREE.MeshBasicMaterial({
-        color: 0xe2c08d,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.12
-      });
-      const sacredOrb = new THREE.Mesh(icoGeom, icoMat);
-      scene.add(sacredOrb);
-
-      // Respuesta al Mouse y Movimiento Físico
+      // Dinámica y Sensor al Cursor
       let mouseX = 0;
       let mouseY = 0;
-      let targetX = 0;
-      let targetY = 0;
+      let targetRotX = 0.15;
+      let targetRotY = -0.3;
+
+      const hudFrecuencia = document.getElementById('hudFrecuencia');
+      const hudEjeArmonico = document.getElementById('hudEjeArmonico');
 
       window.addEventListener('mousemove', (e) => {
-        mouseX = (e.clientX - window.innerWidth / 2) * 0.05;
-        mouseY = (e.clientY - window.innerHeight / 2) * 0.05;
+        mouseX = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
+        mouseY = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
+
+        targetRotX = 0.15 - mouseY * 0.3;
+        targetRotY = -0.3 + mouseX * 0.4;
+
+        cursorLight.position.x = -15 + mouseX * 25;
+        cursorLight.position.y = 10 - mouseY * 20;
+
+        if (hudFrecuencia) {
+          const hz = (432.0 + Math.abs(mouseX * 4.2)).toFixed(1);
+          hudFrecuencia.textContent = `${hz} Hz`;
+        }
+        if (hudEjeArmonico) {
+          const phi = (0.618 + Math.abs(mouseY * 0.015)).toFixed(3);
+          hudEjeArmonico.textContent = `${phi} φ`;
+        }
       });
 
-      // Render Loop Inteligente
       let isVisible = true;
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          isVisible = entry.isIntersecting;
-        });
+        entries.forEach(entry => isVisible = entry.isIntersecting);
       });
       observer.observe(document.body);
 
       const clock = new THREE.Clock();
 
-      function animateWebGL() {
-        requestAnimationFrame(animateWebGL);
+      function animateSanctuaryScene() {
+        requestAnimationFrame(animateSanctuaryScene);
         if (!isVisible) return;
 
-        const elapsedTime = clock.getElapsedTime();
+        const time = clock.getElapsedTime();
 
-        // Inercia suave hacia el mouse
-        targetX += (mouseX - targetX) * 0.05;
-        targetY += (mouseY - targetY) * 0.05;
+        // 1. Rotación Serena y Pulso Orgánico
+        sacredCore.rotation.x += (targetRotX - sacredCore.rotation.x) * 0.04;
+        sacredCore.rotation.y += (targetRotY - sacredCore.rotation.y) * 0.04;
+        sacredCore.position.y = -2 + Math.sin(time * 0.8) * 0.4;
 
-        particleSystem.rotation.y = elapsedTime * 0.03 + targetX * 0.01;
-        particleSystem.rotation.x = elapsedTime * 0.015 - targetY * 0.01;
+        // 2. Respiración del Icosaedro y Toroide
+        icosaMesh.rotation.y = time * 0.06;
+        icosaMesh.rotation.z = time * 0.04;
+        torusMesh.rotation.z = -time * 0.08;
 
-        sacredOrb.rotation.x = elapsedTime * 0.08 + targetY * 0.02;
-        sacredOrb.rotation.y = elapsedTime * 0.1 + targetX * 0.02;
+        // 3. Partículas Áureas
+        particleStream.rotation.y = time * 0.015;
+        particleStream.rotation.x = time * 0.008;
 
         renderer.render(scene, camera);
       }
-      animateWebGL();
+      animateSanctuaryScene();
 
       window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -1477,9 +1534,7 @@
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       });
 
-      // -------------------------------------------------------------
-      // 3. Custom Magnetic Cursor
-      // -------------------------------------------------------------
+      // 3. Cursor Magnético
       const cursor = document.getElementById('cosmicCursor');
       const dot = document.getElementById('cosmicDot');
 
@@ -1505,17 +1560,14 @@
         }
         renderCursor();
 
-        // Efecto hover interactivo
-        const interactiveElements = document.querySelectorAll('a, button, .spotlight-card, .btn-magnetic');
-        interactiveElements.forEach(el => {
+        const hoverables = document.querySelectorAll('a, button, .bento-card-spotlight, .coherence-chip');
+        hoverables.forEach(el => {
           el.addEventListener('mouseenter', () => cursor.classList.add('cursor-active'));
           el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-active'));
         });
       }
 
-      // -------------------------------------------------------------
-      // 4. Pilar 2: Microinteracciones Magnéticas en Botones
-      // -------------------------------------------------------------
+      // 4. Botones Magnéticos
       const magneticBtns = document.querySelectorAll('.btn-magnetic');
       magneticBtns.forEach(btn => {
         btn.addEventListener('mousemove', (e) => {
@@ -1541,11 +1593,9 @@
         });
       });
 
-      // -------------------------------------------------------------
-      // 5. Refinamiento 1: Spotlight Border en Bento Cards
-      // -------------------------------------------------------------
-      const spotlightCards = document.querySelectorAll('.spotlight-card');
-      spotlightCards.forEach(card => {
+      // 5. Spotlight Border
+      const cards = document.querySelectorAll('.bento-card-spotlight');
+      cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
           const rect = card.getBoundingClientRect();
           const x = e.clientX - rect.left;
@@ -1555,13 +1605,46 @@
         });
       });
 
-      // -------------------------------------------------------------
-      // 6. GSAP + ScrollTrigger: Revelaciones Cinemáticas
-      // -------------------------------------------------------------
+      // 6. Selector de Coherencia
+      const chips = document.querySelectorAll('.coherence-chip');
+      const centerNameDisplay = document.getElementById('centerNameDisplay');
+      const centerFreqDisplay = document.getElementById('centerFreqDisplay');
+      const centerDescDisplay = document.getElementById('centerDescDisplay');
+
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+
+          const center = chip.getAttribute('data-center');
+          const freq = chip.getAttribute('data-freq');
+          const desc = chip.getAttribute('data-desc');
+
+          centerNameDisplay.textContent = center;
+          centerFreqDisplay.textContent = freq;
+          centerDescDisplay.textContent = desc;
+
+          // Variación sutil en el orbe según el centro
+          if (center === 'Claridad Mental') {
+            sphereMat.color.setHex(0xfffbf5);
+            sphereMat.roughness = 0.15;
+          } else if (center === 'Paz Emocional') {
+            sphereMat.color.setHex(0xfaf3eb);
+            sphereMat.roughness = 0.22;
+          } else if (center === 'Vitalidad Somática') {
+            sphereMat.color.setHex(0xf5ebe1);
+            sphereMat.roughness = 0.25;
+          } else if (center === 'Propósito Trascendente') {
+            sphereMat.color.setHex(0xfdf8ee);
+            sphereMat.roughness = 0.12;
+          }
+        });
+      });
+
+      // 7. GSAP ScrollTrigger
       gsap.registerPlugin(ScrollTrigger);
 
-      // Hero Elements Reveal
-      gsap.from('.badge-celestial', {
+      gsap.from('.badge-sovereign', {
         y: -30,
         opacity: 0,
         duration: 1,
@@ -1569,7 +1652,7 @@
         delay: 0.2
       });
 
-      gsap.from('.hero-title', {
+      gsap.from('.hero-headline', {
         y: 60,
         opacity: 0,
         duration: 1.4,
@@ -1577,7 +1660,7 @@
         delay: 0.4
       });
 
-      gsap.from('.hero-description', {
+      gsap.from('.hero-subline', {
         y: 30,
         opacity: 0,
         duration: 1.2,
@@ -1585,7 +1668,7 @@
         delay: 0.6
       });
 
-      gsap.from('.hero-actions', {
+      gsap.from('.hero-cta-group', {
         y: 20,
         opacity: 0,
         duration: 1,
@@ -1593,7 +1676,7 @@
         delay: 0.8
       });
 
-      gsap.from('.hero-telemetry-bar', {
+      gsap.from('.sanctuary-hud', {
         scale: 0.95,
         opacity: 0,
         duration: 1.2,
@@ -1601,12 +1684,10 @@
         delay: 1
       });
 
-      // Bento Cards Stagger Reveal
-      gsap.from('.spotlight-card', {
+      gsap.from('.bento-card-spotlight', {
         scrollTrigger: {
-          trigger: '.bento-sanctuary',
-          start: 'top 80%',
-          toggleActions: 'play none none none'
+          trigger: '.bento-grid-sanctuary',
+          start: 'top 80%'
         },
         y: 50,
         opacity: 0,
@@ -1615,36 +1696,33 @@
         ease: 'power3.out'
       });
 
-      // Scroll Horizontal Integrado con GSAP ScrollTrigger
-      const horizontalContainer = document.getElementById('horizontalContainer');
-      const horizontalPortal = document.getElementById('horizontalPortal');
+      const journeyContainer = document.getElementById('journeyFlow');
+      const journeyPortal = document.getElementById('journeyPortal');
 
-      if (horizontalContainer && horizontalPortal) {
-        function getScrollAmount() {
-          let containerWidth = horizontalContainer.scrollWidth;
-          return -(containerWidth - window.innerWidth + 120);
+      if (journeyContainer && journeyPortal) {
+        function getScrollWidth() {
+          return -(journeyContainer.scrollWidth - window.innerWidth + 120);
         }
 
-        const tween = gsap.to(horizontalContainer, {
-          x: getScrollAmount,
+        const hTween = gsap.to(journeyContainer, {
+          x: getScrollWidth,
           ease: 'none'
         });
 
         ScrollTrigger.create({
-          trigger: horizontalPortal,
+          trigger: journeyPortal,
           start: 'top 20%',
-          end: () => `+=${horizontalContainer.scrollWidth - window.innerWidth + 300}`,
+          end: () => `+=${journeyContainer.scrollWidth - window.innerWidth + 300}`,
           pin: true,
-          animation: tween,
+          animation: hTween,
           scrub: 1,
           invalidateOnRefresh: true
         });
       }
 
-      // Testimonios Reveal
-      gsap.from('.testimonio-capsule', {
+      gsap.from('.case-card', {
         scrollTrigger: {
-          trigger: '.testimonials-matrix',
+          trigger: '.cases-matrix',
           start: 'top 85%'
         },
         y: 40,
