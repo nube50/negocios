@@ -279,17 +279,28 @@ Si alguna falla, **no desplegar** hasta corregir.
 | Imágenes HTTP del sitio del negocio no cargan en HTTPS (mixed content) | Siempre usar imágenes HTTPS del sitio original. Verificar con `curl` antes de ponerlas en la LP |
 | Diseño "básico/mediocre" rechazado por el usuario | LP debe competir VISUALMENTE con el sitio original del negocio, no ser una plantilla genérica. Hero editorial split-screen, GSAP, paleta de marca |
 
-## 🎨 Reglas de Diseño de Landing Pages (Reseteo Total y Directiva del Usuario)
+## 🎨 Catálogo Modular de Sistemas de Diseño (`sistemas-diseño/`)
 
-- **El sistema de diseño, plantillas y catálogo previo quedan reseteados por completo.**
-- **No existen plantillas rígidas, ni esquemas forzados, ni librerías obligatorias impuestas de antemano.**
-- **El usuario dará las instrucciones de diseño directamente para cada Landing Page** (estructura, secciones, paleta de colores, tipografía, componentes, tono visual y animaciones).
-- Cada Landing Page se construye de forma libre y personalizada según los requerimientos específicos indicados por el usuario.
-- **Estándar técnico y funcional garantizado**:
-  - Código limpio en un único archivo `.html` auto-contenido en `landing-pages/` (sin build step, librerías si se usan se cargan vía CDN).
-  - Experiencia responsive Mobile-First (`overflow-x: hidden`, sin scroll horizontal en viewports de 320px a 480px, touch-targets ≥ 44px).
-  - Información real del negocio (dirección, teléfono, horarios, servicios/menú).
-  - WhatsApp directo al número del negocio formateado en los CTAs y botón flotante.
+El proyecto cuenta con un catálogo modular de sistemas de diseño probados y aprobados formalmente por el usuario en `sistemas-diseño/`.
+
+### Mecánica de Invocación
+- Cuando el usuario ordene: **"Hazme una LP / web utilizando el sistema de diseño S1"** (o S2, S3, etc.), el agente debe consultar y aplicar obligatoria y estrictamente el archivo correspondiente (`sistemas-diseño/s1.md`).
+- **Nuevos Sistemas de Diseño**: Se prueban primero en un entorno de pruebas (`pruebas/` o showcase). Solo cuando el usuario los prueba, los valida y da luz verde explícita, se guardan como `sistemas-diseño/s2.md`, `sistemas-diseño/s3.md`, etc., quedando disponibles para su uso futuro.
+- **Libertad cuando no se especifique sistema**: Si el usuario no menciona un sistema de diseño específico, el diseño se construye libre y personalizado según las instrucciones directas que el usuario proporcione para esa Landing Page.
+
+### Sistemas de Diseño Aprobados
+- **`sistemas-diseño/s1.md` — Sistema S1 (Inmersión Cinemática 3D Contextual & Ultra-Lujo)**:
+  - Motor WebGL (Three.js) con modelos 3D y partículas temáticas estrictamente acordes a la industria del negocio (prohibidas las geometrías abstractas genéricas).
+  - GSAP + ScrollTrigger con coreografías de scroll horizontal pineado.
+  - Los Tres Pilares: Contraste profundo cromático (o blanco cerámico clínico si el rubro lo amerita), microinteracciones magnéticas elásticas con destello sesgado (*specular sweep*) y Bento Grids dinámicos de 12 columnas.
+  - Refinamientos de ultra-lujo: *Spotlight borders*, grano analógico SVG, revelados tipográficos con máscara cinemática y blindaje de rendimiento a 60 FPS con `IntersectionObserver`.
+
+### Estándar Técnico y Funcional Intacto (Inviolable)
+- Código limpio en un único archivo `.html` auto-contenido en `landing-pages/` (sin build step, CDN para librerías).
+- Experiencia responsive Mobile-First (`overflow-x: hidden`, sin scroll horizontal de 320px a 480px, touch-targets ≥ 44px).
+- **Información 100% real del negocio**: Nombre, dirección exacta, teléfonos verificados, horarios, menú/servicios reales.
+- **WhatsApp directo**: Formateado al número del negocio en CTAs y botón flotante interactivo.
+- **Metodología operativa idéntica**: Flujo de Apify, servidor SQLite en `cultura`, sincronización dual-mode y despliegue en Vercel.
 
 
 ### Workflow de despliegue Vercel
