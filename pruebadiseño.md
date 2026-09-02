@@ -1,0 +1,99 @@
+# Instrucciones y Arsenal de Diseño para Pruebas — Alta Gama
+
+Documento de referencia técnica y estética para la creación de propuestas de diseño de alta gama. Si las propuestas cumplen el estándar exigido y el usuario da luz verde, estas directivas y herramientas se integrarán formalmente al proyecto.
+
+---
+
+## 1. Arsenal Tecnológico de Alta Gama
+
+### A. Movimiento y Animación Cinematográfica
+- **GSAP (GreenSock Animation Platform) + ScrollTrigger**: Motor avanzado para orquestar líneas de tiempo de animación complejas, transiciones de escenas y coreografías visuales gobernadas por el desplazamiento del usuario.
+- **Framer Motion**: Librería optimizada para microinteracciones líquidas, animaciones orgánicas de estados de componentes, efectos de arrastre (*drag*) y físicas de resortes naturales (*spring physics*).
+- **Lenis Scroll**: Sistema de desplazamiento suave (*smooth scrolling*) que elimina los saltos secos del navegador y unifica la cadencia de navegación con una inercia fluida.
+
+### B. Entornos 3D e Inmersión Visual
+- **Three.js**: Biblioteca base para el renderizado de gráficos 3D acelerados por hardware (WebGL) directamente en el lienzo del navegador.
+- **React Three Fiber (R3F)**: Renderizador declarativo de Three.js que permite estructurar geometrías, luces y cámaras 3D como componentes reactivos, modulares y escalables.
+- **Drei**: Colección de asistentes y modificadores premium para R3F que simplifica efectos de refracción de cristal real (`MeshTransmissionMaterial`), entornos HDRi, luces dinámicas y controles de cámara interactivos.
+- **Shaders de GLSL**: Código matemático ejecutado directamente en la GPU (Vertex y Fragment Shaders) para producir fondos de fluidos interactivos, auroras boreales, distorsiones ópticas de luz y texturas líquidas.
+
+### C. Repositorios de Código y Componentes de Alta Gama
+- **Aceternity UI**: Catálogo de componentes con efectos de iluminación de bordes reactivos al cursor (*tracing beam*, *spotlight borders*), cuadrículas 3D interactivas y contenedores con paralaje avanzado.
+- **Magic UI**: Biblioteca especializada en tipografía con revelado cinético (*word/character pull-up*), rejillas asimétricas animadas (*bento grids* dinámicos) y superficies con destellos y partículas interactivas.
+
+---
+
+## 2. La Regla de los Tres Pilares del Diseño de Alta Gama
+
+Reglas estrictas para erradicar cualquier rastro de diseño genérico o predecible:
+
+### Pilar 1: Jerarquía de Contraste Profundo
+- **Prohibido** el uso de fondos negros planos (`#000000`) o escalas de grises neutras.
+- Implementación de oscuros profundos con matices cromáticos de identidad (azul noche, violeta abisal, esmeralda obsidiana).
+- Delimitación mediante líneas divisorias ultra-finas (`border-white/[0.06]`) para construir planos visuales superpuestos y profundidad espacial sin saturar la vista.
+
+### Pilar 2: Microinteracciones Magnéticas
+- Los botones y llamadas a la acción principales **no son estáticos ni hacen cambios de color simples**.
+- Se atraen magnéticamente hacia el cursor del usuario siguiendo una curva física elástica.
+- Incorporan un destello interno de luz sesgada (*specular sweep*) que sigue la trayectoria y velocidad del movimiento.
+
+### Pilar 3: Layout Asimétrico No-Lineal
+- Superación de los esquemas tradicionales de cajas rígidas y columnas uniformes.
+- Maquetación con **Bento Grids dinámicos** de proporciones variables.
+- Secciones con scroll horizontal integrado y elementos flotantes interconectados visualmente mediante líneas conductoras animadas.
+
+---
+
+## 3. Refinamientos de Ultra-Lujo y Rendimiento
+
+Estándares técnicos para alcanzar el nivel estético de estudios internacionales galardonados (Awwwards / Apple / Stripe):
+
+### 1. Borde con Reflejo de Cursor (*Spotlight Border*)
+- Perímetros sutiles (`rgba(255,255,255,0.05)`) que cobran vida cuando el puntero se aproxima, proyectando un resplandor radial concentrado que simula cristal biselado o bordes de titanio pulido.
+
+### 2. Capa de Textura Analógica (*Subtle Film Grain / Noise*)
+- Capa SVG de ruido imperceptible (2.5% a 3.5% de opacidad) con mezcla `overlay`. Otorga calidez y masa física al espacio digital, evitando el aspecto plano o sintético.
+
+### 3. Revelaciones Tipográficas con Máscara Cinematográfica (*Split-Mask Text Reveal*)
+- Títulos principales enmascarados con `overflow: hidden`. Cada bloque de texto asciende desde abajo (`y: 110%` a `0%`) sincronizado con ScrollTrigger mediante curvas `cubic-bezier(0.16, 1, 0.3, 1)`.
+
+### 4. Vidrio Especular de Doble Capa (*High-Fidelity Glassmorphism*)
+- Cristal de alta definición: `backdrop-filter: blur(20px) saturate(180%)`.
+- Gradiente especular interno diagonal y sistema dual de sombras (oclusión ambiental oscura + halo exterior con tinte cromático tenue).
+
+### 5. Blindaje de Rendimiento a 60 FPS
+- Pausa estricta de render loops (WebGL / R3F / Canvas) mediante `IntersectionObserver` cuando el elemento queda fuera de la pantalla.
+- Límite de `devicePixelRatio` topado en `2` para garantizar máxima suavidad sin sobrecalentar dispositivos móviles ni pantallas 4K.
+
+---
+
+## 4. 🎯 Principio Inviolable: Inmersión Contextual Temática por Categoría de Negocio
+
+El sistema inmersivo (modelos 3D, partículas, shaders y dinámicas WebGL) **JAMÁS debe ser genérico ni abstracto**. Debe corresponder de forma directa, visual y conceptual al nicho específico del negocio al que pertenece la Landing Page:
+
+- **Prohibido**: Partículas flotantes o figuras geométricas abstractas repetitivas (como esferas o mallas genéricas) que no tengan un significado tangible en la industria del cliente.
+- **Obligatorio**: Todo elemento 3D, flujo de partículas o shader debe recrear la física, el producto o el fenómeno real de la categoría:
+  1. **Energía Solar & Renovables**:
+     - *Escena 3D*: Paneles solares fotovoltaicos con silicio monocristalino, marco de aluminio y busbars conductores. Sol volumétrico con corona en el cénit.
+     - *Partículas*: Haces de fotones con vector descendente simulando la radiación e irradiancia (W/m²).
+     - *Interacción*: El panel actúa como un *Solar Tracker* físico que se orienta hacia el cursor y actualiza en tiempo real el ángulo de inclinación azimutal y la captación en el monitor HUD.
+  2. **Servicios Espirituales & Consciencia**:
+     - *Escena 3D*: Icosaedros y geometrías sagradas alquímicas, orbes etéreos y constelaciones interconectadas.
+     - *Partículas*: Polvo estelar áurico y nebulosas con gradientes cromáticos místicos (amatista, oro, cian).
+     - *Interacción*: El cursor expande y sintoniza el campo energético áurico.
+  3. **Bares, Pubs & Coctelería de Autor**:
+     - *Escena 3D*: Cristalería de corte fino, cubos de hielo transparentes con refracción real (`MeshTransmissionMaterial`) y destellos de neón nocturno.
+     - *Partículas*: Burbujas ascendentes de efervescencia y cáusticas de luz líquida a través del vidrio.
+     - *Interacción*: El cursor produce ondas de agitación o mezcla fluida sobre la superficie de la coctelería.
+  4. **Moda, Alta Costura & Boutiques**:
+     - *Escena 3D*: Telas de seda en suspensión y ondulación (*cloth simulation*), hilos dorados de costura y pedestales de pasarela.
+     - *Partículas*: Fibras microscópicas de brillo textil y destellos de alta costura.
+     - *Interacción*: El movimiento del ratón genera pliegues y brisa táctil sobre los textiles.
+  5. **Odontología & Clínicas Dentales**:
+     - *Escena 3D*: Cristales de zirconio cerámico con translucidez real, mallas de alineación de diseño de sonrisa y lámparas clínicas de fotocurado.
+     - *Partículas*: Haces de luz ultravioleta desinfectante y micras de pulido esmaltado.
+     - *Interacción*: El cursor enfoca y proyecta el haz de precisión clínica sobre la pieza anatómica.
+  6. **Gastronomía Gourmet & Eventos**:
+     - *Escena 3D*: Parrillas de acero templado, tablas de madera curada y copas de cata.
+     - *Partículas*: Brasas microscópicas incandescentes y volutas de vapor aromático.
+     - *Interacción*: El cursor modula el calor visual o la trayectoria de las brasas.

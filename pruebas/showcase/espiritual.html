@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="es" class="lenis lenis-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>AETHERIA — Templo de Alquimia Espiritual & Consciencia Cuántica</title>
+  
+  <!-- Tipografía de Alta Gama: Cinzel (Editorial Sagrado) + Plus Jakarta Sans + Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Pro / Free CDN para glifos precisos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Estilos Maestros Ultra-Premium -->
+  <style>
+    :root {
+      /* Pilar 1: Contraste Profundo con Matices Cromáticos (Prohibido #000000 puro) */
+      --bg-abyssal: #07050d;
+      --bg-surface: #0e0a1a;
+      --bg-card: rgba(18, 13, 33, 0.65);
+      --bg-card-hover: rgba(25, 19, 46, 0.75);
+      
+      /* Matices Cromáticos Místicos y Luz */
+      --accent-violet: #8a5cf6;
+      --accent-amethyst: #a855f7;
+      --accent-gold: #e2c08d;
+      --accent-gold-glow: rgba(226, 192, 141, 0.35);
+      --accent-cyan-nebula: #38bdf8;
+      
+      /* Líneas de Precisión Milimétrica */
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --border-glow: rgba(226, 192, 141, 0.25);
+      
+      /* Tipografía */
+      --font-display: 'Cinzel', serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      
+      /* Sombras de Oclusión */
+      --shadow-abyssal: 0 30px 60px -15px rgba(3, 2, 8, 0.9), 0 0 40px rgba(138, 92, 246, 0.08);
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html {
+      scroll-behavior: initial;
+      background-color: var(--bg-abyssal);
+      color: #f1eff7;
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+    }
+
+    body {
+      position: relative;
+      background-color: var(--bg-abyssal);
+      overflow-x: hidden;
+      min-height: 100vh;
+      selection-background-color: var(--accent-amethyst);
+      selection-color: #fff;
+    }
+
+    /* 2. Textura Analógica de Grano SVG (Subtle Film Grain al 2.8%) */
+    .film-grain-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.032;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* WebGL Canvas Background */
+    #webgl-universe {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Custom Cursor Luminoso con inercia física */
+    .cosmic-cursor {
+      position: fixed;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(226, 192, 141, 0.4);
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+      display: none;
+    }
+
+    .cosmic-cursor-dot {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      box-shadow: 0 0 12px var(--accent-gold);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 10000;
+      display: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .cosmic-cursor, .cosmic-cursor-dot {
+        display: block;
+      }
+    }
+
+    /* Glow de cursor expandido en hover */
+    .cursor-active {
+      width: 56px;
+      height: 56px;
+      border-color: var(--accent-gold);
+      background: radial-gradient(circle, rgba(226, 192, 141, 0.25) 0%, transparent 80%);
+    }
+
+    /* Contenedor Principal */
+    .app-viewport {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1340px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===================================================
+       HEADER & NAVIGATION GLASSMORPHISM
+    =================================================== */
+    .portal-nav {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 1180px;
+      z-index: 100;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 9999px;
+      background: rgba(14, 10, 26, 0.55);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 20px 40px rgba(4, 2, 9, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    }
+
+    .portal-nav:hover {
+      border-color: rgba(226, 192, 141, 0.2);
+    }
+
+    .brand-sigil {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .brand-icon-geom {
+      width: 34px;
+      height: 34px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .brand-icon-geom svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 10px rgba(226, 192, 141, 0.6));
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-routes {
+      display: none;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    @media (min-width: 860px) {
+      .nav-routes { display: flex; }
+    }
+
+    .nav-routes a {
+      text-decoration: none;
+      color: rgba(241, 239, 247, 0.75);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.3s ease;
+    }
+
+    .nav-routes a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--accent-violet), var(--accent-gold));
+      transition: width 0.3s var(--ease-out-expo);
+    }
+
+    .nav-routes a:hover {
+      color: #fff;
+    }
+
+    .nav-routes a:hover::after {
+      width: 100%;
+    }
+
+    /* Pilar 2: Microinteracciones Magnéticas con Destello de Luz Sesgada */
+    .btn-magnetic {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 26px;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #0d0818;
+      background: linear-gradient(135deg, #f7efe4 0%, var(--accent-gold) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 10px 25px -5px rgba(226, 192, 141, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.25s var(--ease-out-expo), box-shadow 0.3s ease;
+      will-change: transform;
+    }
+
+    .btn-magnetic::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.85) 50%,
+        transparent 65%
+      );
+      transform: rotate(25deg) translateY(-100%);
+      transition: transform 0.75s var(--ease-out-expo);
+      pointer-events: none;
+    }
+
+    .btn-magnetic:hover::before {
+      transform: rotate(25deg) translateY(100%);
+    }
+
+    .btn-magnetic:hover {
+      box-shadow: 0 15px 35px -5px rgba(226, 192, 141, 0.6), 0 0 25px rgba(168, 85, 247, 0.3);
+    }
+
+    /* Botón Secundario Etéreo */
+    .btn-ethereal {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      transition: border-color 0.3s ease, background 0.3s ease, transform 0.25s var(--ease-out-expo);
+    }
+
+    .btn-ethereal:hover {
+      border-color: rgba(226, 192, 141, 0.4);
+      background: rgba(226, 192, 141, 0.06);
+    }
+
+    /* ===================================================
+       HERO SECTION — ALQUIMIA & ORBE 3D
+    =================================================== */
+    .hero-portal {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 140px 0 80px;
+      position: relative;
+    }
+
+    .badge-celestial {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      background: rgba(138, 92, 246, 0.08);
+      border: 1px solid rgba(138, 92, 246, 0.25);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 28px;
+      box-shadow: 0 0 25px rgba(138, 92, 246, 0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .badge-celestial i {
+      font-size: 0.65rem;
+      color: var(--accent-amethyst);
+      animation: pulseGlpyh 3s infinite alternate;
+    }
+
+    @keyframes pulseGlpyh {
+      0% { opacity: 0.4; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* Refinamiento 3: Revelaciones Tipográficas con Máscara Cinematográfica */
+    .split-mask-container {
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.3rem, 5.8vw, 5.2rem);
+      line-height: 1.08;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      max-width: 1080px;
+      color: #ffffff;
+      margin: 0 auto;
+    }
+
+    .hero-title .glow-gold {
+      background: linear-gradient(135deg, #ffffff 20%, var(--accent-gold) 75%, #ffdfa9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 45px rgba(226, 192, 141, 0.25);
+    }
+
+    .hero-title .sub-line {
+      display: block;
+      font-size: 0.88em;
+      font-weight: 400;
+      color: rgba(241, 239, 247, 0.88);
+      font-style: italic;
+    }
+
+    .hero-description {
+      font-size: clamp(1rem, 1.3vw, 1.25rem);
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(241, 239, 247, 0.68);
+      max-width: 680px;
+      margin: 24px auto 44px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    /* Métricas Cósmicas Flotantes */
+    .hero-telemetry-bar {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      width: 100%;
+      max-width: 820px;
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(18, 13, 33, 0.45);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(20px) saturate(180%);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .telemetry-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid var(--border-subtle);
+      padding: 8px 12px;
+    }
+
+    .telemetry-node:last-child {
+      border-right: none;
+    }
+
+    .node-metric {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, #fff 40%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .node-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(241, 239, 247, 0.5);
+      margin-top: 4px;
+    }
+
+    /* ===================================================
+       PILAR 3: BENTO GRID DINÁMICO & ASIMÉTRICO
+    =================================================== */
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 14px;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.8vw, 3.4rem);
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .section-subtext {
+      text-align: center;
+      font-size: 1.05rem;
+      color: rgba(241, 239, 247, 0.6);
+      max-width: 580px;
+      margin: 0 auto 56px;
+      line-height: 1.6;
+    }
+
+    .bento-sanctuary {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      margin-bottom: 120px;
+    }
+
+    /* Refinamiento 1: Spotlight Border con Gradiente Perimetral */
+    .spotlight-card {
+      position: relative;
+      border-radius: 28px;
+      background: var(--bg-card);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
+      box-shadow: var(--shadow-abyssal);
+    }
+
+    .spotlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 35px 70px -15px rgba(5, 3, 14, 0.95), 0 0 45px rgba(138, 92, 246, 0.16);
+    }
+
+    /* El halo que persigue al mouse sobre el borde */
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      top: var(--mouse-y, -200px);
+      left: var(--mouse-x, -200px);
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(
+        circle,
+        rgba(226, 192, 141, 0.22) 0%,
+        rgba(138, 92, 246, 0.12) 45%,
+        transparent 70%
+      );
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-content-wrap {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Card Proporciones Bento Asimétricas */
+    .bento-col-7 {
+      grid-column: span 12;
+    }
+    .bento-col-5 {
+      grid-column: span 12;
+    }
+    .bento-col-4 {
+      grid-column: span 12;
+    }
+    .bento-col-8 {
+      grid-column: span 12;
+    }
+
+    @media (min-width: 900px) {
+      .bento-col-7 { grid-column: span 7; }
+      .bento-col-5 { grid-column: span 5; }
+      .bento-col-4 { grid-column: span 4; }
+      .bento-col-8 { grid-column: span 8; }
+    }
+
+    .card-sigil-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: rgba(138, 92, 246, 0.1);
+      border: 1px solid rgba(138, 92, 246, 0.25);
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      color: var(--accent-gold);
+      margin-bottom: 24px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-amethyst);
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      color: #fff;
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: rgba(241, 239, 247, 0.65);
+      margin-bottom: 24px;
+    }
+
+    .card-meta-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .card-meta-list li {
+      font-size: 0.88rem;
+      color: rgba(241, 239, 247, 0.8);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-meta-list li i {
+      color: var(--accent-gold);
+      font-size: 0.75rem;
+    }
+
+    /* Gráfico o Visual de Fondo en Cards Especiales */
+    .card-visual-embed {
+      width: 100%;
+      height: 140px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(138, 92, 246, 0.15), rgba(226, 192, 141, 0.05));
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      display: grid;
+      place-items: center;
+      margin-top: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .constellation-svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+    }
+
+    /* ===================================================
+       SECCIÓN CON SCROLL HORIZONTAL INTEGRADO
+    =================================================== */
+    .horizontal-portal-track {
+      position: relative;
+      padding: 80px 0;
+      margin-bottom: 120px;
+      overflow: hidden;
+    }
+
+    .h-track-container {
+      display: flex;
+      gap: 32px;
+      width: max-content;
+      padding: 20px 40px;
+      will-change: transform;
+    }
+
+    .h-step-card {
+      width: 380px;
+      flex-shrink: 0;
+      border-radius: 28px;
+      padding: 38px 30px;
+      background: rgba(18, 13, 33, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .h-step-num {
+      font-family: var(--font-mono);
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.07);
+      line-height: 1;
+      position: absolute;
+      top: 24px;
+      right: 28px;
+    }
+
+    /* ===================================================
+       TESTIMONIOS EN ALTA FIDELIDAD
+    =================================================== */
+    .testimonials-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 140px;
+    }
+
+    .testimonio-capsule {
+      padding: 34px 30px;
+      border-radius: 24px;
+      background: rgba(14, 10, 26, 0.5);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(18px);
+      position: relative;
+    }
+
+    .quote-icon {
+      color: var(--accent-gold);
+      font-size: 1.4rem;
+      opacity: 0.6;
+      margin-bottom: 16px;
+    }
+
+    .testimonio-body {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(241, 239, 247, 0.78);
+      font-style: italic;
+      margin-bottom: 22px;
+    }
+
+    .testimonio-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .avatar-astral {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-gold);
+      display: grid;
+      place-items: center;
+      background: rgba(138, 92, 246, 0.2);
+      color: var(--accent-gold);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .author-info h5 {
+      font-size: 0.92rem;
+      color: #fff;
+    }
+
+    .author-info span {
+      font-size: 0.75rem;
+      color: rgba(241, 239, 247, 0.45);
+      font-family: var(--font-mono);
+    }
+
+    /* ===================================================
+       CTA FINAL — EL PORTAL DE TRANSMUTACIÓN
+    =================================================== */
+    .cta-sanctuary {
+      position: relative;
+      border-radius: 36px;
+      padding: 75px 36px;
+      background: radial-gradient(circle at center, rgba(138, 92, 246, 0.14) 0%, rgba(14, 10, 26, 0.8) 70%);
+      border: 1px solid rgba(226, 192, 141, 0.25);
+      text-align: center;
+      margin-bottom: 120px;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
+    }
+
+    .cta-sanctuary::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 0%, rgba(226, 192, 141, 0.15), transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.4vw, 3.8rem);
+      color: #fff;
+      margin-bottom: 18px;
+    }
+
+    .cta-sub {
+      font-size: 1.05rem;
+      color: rgba(241, 239, 247, 0.7);
+      max-width: 620px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    /* ===================================================
+       FOOTER SAGRADO
+    =================================================== */
+    .sacred-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 50px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(241, 239, 247, 0.4);
+    }
+
+    /* ===================================================
+       BOTÓN DE WHATSAPP FLOTANTE ULTRA-ALTA GAMA
+    =================================================== */
+    .whatsapp-portal-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 990;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .wa-bubble-btn {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 1.75rem;
+      box-shadow: 0 12px 30px rgba(16, 185, 129, 0.4), 0 0 25px rgba(226, 192, 141, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+      will-change: transform;
+    }
+
+    .wa-bubble-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.7) 50%,
+        transparent 65%
+      );
+      transform: rotate(25deg) translateY(-100%);
+      transition: transform 0.8s ease;
+    }
+
+    .whatsapp-portal-float:hover .wa-bubble-btn::before {
+      transform: rotate(25deg) translateY(100%);
+    }
+
+    .whatsapp-portal-float:hover .wa-bubble-btn {
+      transform: scale(1.08) translateY(-3px);
+      box-shadow: 0 16px 36px rgba(16, 185, 129, 0.55), 0 0 35px rgba(226, 192, 141, 0.4);
+    }
+
+    .wa-pulse-aura {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1.5px solid rgba(16, 185, 129, 0.6);
+      animation: waPulseRing 2.4s infinite cubic-bezier(0.25, 1, 0.5, 1);
+      pointer-events: none;
+    }
+
+    @keyframes waPulseRing {
+      0% { transform: scale(1); opacity: 0.9; }
+      100% { transform: scale(1.65); opacity: 0; }
+    }
+
+    .wa-tooltip-pill {
+      background: rgba(14, 10, 26, 0.75);
+      border: 1px solid var(--border-glow);
+      backdrop-filter: blur(16px);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 9px 16px;
+      border-radius: 9999px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      gap: 8px;
+    }
+
+    @media (min-width: 640px) {
+      .wa-tooltip-pill { display: flex; }
+    }
+
+    .wa-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Capa 2: Grano de Película Analógica -->
+  <div class="film-grain-overlay"></div>
+
+  <!-- Capa 1: WebGL Canvas Universe (Three.js + GLSL) -->
+  <canvas id="webgl-universe"></canvas>
+
+  <!-- Cursor Magnético Líquido -->
+  <div class="cosmic-cursor" id="cosmicCursor"></div>
+  <div class="cosmic-cursor-dot" id="cosmicDot"></div>
+
+  <!-- ===================================================
+       HEADER NAV
+  =================================================== -->
+  <nav class="portal-nav">
+    <a href="#" class="brand-sigil">
+      <div class="brand-icon-geom">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="#e2c08d" stroke-width="1.2" stroke-dasharray="2 3"/>
+          <polygon points="20,4 35,32 5,32" stroke="#a855f7" stroke-width="1.2" fill="none"/>
+          <circle cx="20" cy="20" r="4" fill="#e2c08d"/>
+        </svg>
+      </div>
+      <span class="brand-name">AETHERIA</span>
+    </a>
+
+    <ul class="nav-routes">
+      <li><a href="#oraculo">Oráculo Astral</a></li>
+      <li><a href="#alquimia">Alquimia del Alma</a></li>
+      <li><a href="#sendero">El Sendero</a></li>
+      <li><a href="#testimonios">Voces de Luz</a></li>
+    </ul>
+
+    <a href="https://wa.me/573000000000?text=Hola%20Aetheria,%20deseo%20iniciar%20mi%20sesi%C3%B3n%20espiritual" class="btn-magnetic" target="_blank" rel="noopener">
+      <span>Agendar Sesión</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </nav>
+
+  <!-- ===================================================
+       HERO PRINCIPAL
+  =================================================== -->
+  <main class="app-viewport">
+    <section class="hero-portal">
+      <div class="badge-celestial">
+        <i class="fa-solid fa-sparkles"></i>
+        <span>Dimensiones Cuánticas & Despertar de Consciencia</span>
+      </div>
+
+      <div class="split-mask-container">
+        <h1 class="hero-title">
+          Transmuta Tu Energía.<br>
+          <span class="glow-gold">Conecta con Tu Verdad Cósmica.</span>
+        </h1>
+      </div>
+
+      <p class="hero-description">
+        Un espacio sagrado donde la sabiduría ancestral, la astrología evolutiva y la frecuencia cuántica se fusionan para disolver bloqueos kármicos y revelar el mapa sagrado de tu alma.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/573000000000?text=Deseo%20conocer%20mi%20Lectura%20de%20Carta%20Natal%20y%20Alquimia" class="btn-magnetic" target="_blank" rel="noopener">
+          <span>Abrir Mi Portal Espiritual</span>
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="#oraculo" class="btn-ethereal">
+          <span>Explorar Terapias</span>
+          <i class="fa-solid fa-compass"></i>
+        </a>
+      </div>
+
+      <!-- Barra de Telemetría Cósmica -->
+      <div class="hero-telemetry-bar">
+        <div class="telemetry-node">
+          <span class="node-metric" data-target="99.4">%</span>
+          <span class="node-label">Alineación Energética</span>
+        </div>
+        <div class="telemetry-node">
+          <span class="node-metric" data-target="1840">+</span>
+          <span class="node-label">Almas Guiadas</span>
+        </div>
+        <div class="telemetry-node">
+          <span class="node-metric">528Hz</span>
+          <span class="node-label">Frecuencia Base Solfeggio</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         PILAR 3: BENTO GRID ASIMÉTRICO DE SERVICIOS
+    =================================================== -->
+    <section id="oraculo" style="padding: 60px 0;">
+      <div class="section-eyebrow">
+        <i class="fa-solid fa-moon"></i>
+        <span>Santuario de Terapias Holísticas</span>
+      </div>
+      <h2 class="section-heading">Canalizaciones de Alta Frecuencia</h2>
+      <p class="section-subtext">Cada experiencia es una iniciación personalizada que armoniza tus cuerpos físico, sutil y astral.</p>
+
+      <div class="bento-sanctuary">
+        <!-- Card 1 (Ancha: 7 cols) -->
+        <div class="spotlight-card bento-col-7">
+          <div class="card-content-wrap">
+            <div class="card-sigil-icon">
+              <i class="fa-solid fa-sun-plant-wilt"></i>
+            </div>
+            <span class="card-tag">Astrología Evolutiva & Tránsitos</span>
+            <h3 class="card-title">Lectura de Carta Natal & Decodificación Kármica</h3>
+            <p class="card-text">
+              Descifra las coordenadas cósmicas impresas en el momento exacto de tu primera respiración. Revela tu propósito de encarnación, heridas de linaje ancestral y ciclos de transmutación planetaria hacia tu máximo potencial.
+            </p>
+            <ul class="card-meta-list">
+              <li><i class="fa-solid fa-circle-check"></i> Análisis de Nodos Lunares y Eje de Vida</li>
+              <li><i class="fa-solid fa-circle-check"></i> Tránsitos presentes y aperturas de portales para los próximos 12 meses</li>
+              <li><i class="fa-solid fa-circle-check"></i> Entrega de audio en alta fidelidad y mapa astral interactivo</li>
+            </ul>
+            <a href="https://wa.me/573000000000?text=Quiero%20mi%20Lectura%20de%20Carta%20Natal" class="btn-magnetic" target="_blank" rel="noopener">
+              <span>Solicitar Carta Natal</span>
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+          <div class="card-visual-embed">
+            <svg class="constellation-svg" viewBox="0 0 400 140" fill="none">
+              <circle cx="60" cy="40" r="3" fill="#e2c08d" />
+              <circle cx="160" cy="90" r="4" fill="#a855f7" />
+              <circle cx="280" cy="30" r="3" fill="#38bdf8" />
+              <circle cx="340" cy="110" r="3" fill="#e2c08d" />
+              <line x1="60" y1="40" x2="160" y2="90" stroke="rgba(226,192,141,0.3)" stroke-dasharray="3 3"/>
+              <line x1="160" y1="90" x2="280" y2="30" stroke="rgba(168,85,247,0.3)" stroke-dasharray="3 3"/>
+              <line x1="280" y1="30" x2="340" y2="110" stroke="rgba(56,189,248,0.3)" stroke-dasharray="3 3"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 2 (5 cols) -->
+        <div class="spotlight-card bento-col-5">
+          <div class="card-content-wrap">
+            <div class="card-sigil-icon">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <span class="card-tag">Medicina Vibracional</span>
+            <h3 class="card-title">Sanación Bioenergética con Cristales & Cuencos</h3>
+            <p class="card-text">
+              Alineación de los 7 centros energéticos primarios mediante cuarzos de cuarzo blanco puro y frecuencias sonoras de cuencos tibetanos afinados a 432Hz. Limpieza profunda de miasmas y restaurador del biocampo áurico.
+            </p>
+            <ul class="card-meta-list">
+              <li><i class="fa-solid fa-circle-check"></i> Frecuencias Solfeggio 432Hz / 528Hz</li>
+              <li><i class="fa-solid fa-circle-check"></i> Escaneo de campo áurico en tiempo real</li>
+            </ul>
+            <a href="https://wa.me/573000000000?text=Quiero%20agendar%20Sanaci%C3%B3n%20con%20Cristales" class="btn-ethereal" target="_blank" rel="noopener">
+              <span>Agendar Terapia</span>
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 (4 cols) -->
+        <div class="spotlight-card bento-col-4">
+          <div class="card-content-wrap">
+            <div class="card-sigil-icon">
+              <i class="fa-solid fa-infinity"></i>
+            </div>
+            <span class="card-tag">Canalización</span>
+            <h3 class="card-title">Apertura de Registros Akáshicos</h3>
+            <p class="card-text">
+              Acceso a la biblioteca cuántica universal donde reside la memoria eterna de tu alma. Respuestas directas a contratos kármicos, lazos de vidas pasadas y vocación trascendental.
+            </p>
+            <a href="https://wa.me/573000000000?text=Deseo%20abrir%20mis%20Registros%20Ak%C3%A1shicos" class="btn-ethereal" target="_blank" rel="noopener">
+              <span>Consultar Registro</span>
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4 (8 cols) -->
+        <div class="spotlight-card bento-col-8">
+          <div class="card-content-wrap">
+            <div class="card-sigil-icon">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <span class="card-tag">Oráculo Arquetipal</span>
+            <h3 class="card-title">Tarot Terapéutico Transpersonal & Claridad Esencial</h3>
+            <p class="card-text">
+              Lejos de la adivinación simplista, el tarot es un espejo de la psique y de tus dimensiones inconscientes. Identifica la causa oculta de tus dudas presentes en el amor, finanzas y decisiones vitales con guía espiritual clara.
+            </p>
+            <ul class="card-meta-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+              <li><i class="fa-solid fa-circle-check"></i> Tirada de los 4 Elementos y Cruz Alquímica</li>
+              <li><i class="fa-solid fa-circle-check"></i> Diagnóstico de polaridades femenina y masculina</li>
+              <li><i class="fa-solid fa-circle-check"></i> Plan de integración y ritual de cierre energético</li>
+            </ul>
+            <a href="https://wa.me/573000000000?text=Deseo%20una%20Sesi%C3%B3n%20de%20Tarot%20Terap%C3%A9utico" class="btn-magnetic" target="_blank" rel="noopener">
+              <span>Consultar al Oráculo</span>
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         SECCIÓN HORIZONTAL: EL SENDERO DEL DESPERTAR
+    =================================================== -->
+    <section id="sendero">
+      <div class="section-eyebrow">
+        <i class="fa-solid fa-compass-drafting"></i>
+        <span>Metodología Iniciática</span>
+      </div>
+      <h2 class="section-heading">El Viaje de Transmutación</h2>
+      <p class="section-subtext">Un proceso orgánico de tres fases estructurado para despertar tu soberanía espiritual.</p>
+
+      <div class="horizontal-portal-track" id="horizontalPortal">
+        <div class="h-track-container" id="horizontalContainer">
+          
+          <div class="h-step-card">
+            <span class="h-step-num">01</span>
+            <div class="card-content-wrap">
+              <span class="card-tag">Fase de Reconocimiento</span>
+              <h4 class="card-title">Diagnóstico & Revelación</h4>
+              <p class="card-text">
+                Identificamos los puntos de estancamiento en tus meridianos energéticos y los contratos kármicos que drenan tu vitalidad y claridad mental.
+              </p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-gold);">
+              <i class="fa-solid fa-wave-square"></i> ESCANEO FRECUENCIAL
+            </div>
+          </div>
+
+          <div class="h-step-card">
+            <span class="h-step-num">02</span>
+            <div class="card-content-wrap">
+              <span class="card-tag">Fase de Transmutación</span>
+              <h4 class="card-title">Disolución del Bloqueo</h4>
+              <p class="card-text">
+                Canalización directa de luz y sonido para cortar lazos energéticos densos, armonizar memorias celulares y restaurar el flujo libre de prana.
+              </p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-amethyst);">
+              <i class="fa-solid fa-fire-flame-curved"></i> TRANSMUTACIÓN VIOLETA
+            </div>
+          </div>
+
+          <div class="h-step-card">
+            <span class="h-step-num">03</span>
+            <div class="card-content-wrap">
+              <span class="card-tag">Fase de Consagración</span>
+              <h4 class="card-title">Integración & Anclaje</h4>
+              <p class="card-text">
+                Entrega de códigos sagrados, pautas de meditación diaria y anclaje de la nueva vibración para manifestar paz, abundancia y propósito.
+              </p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan-nebula);">
+              <i class="fa-solid fa-star"></i> SOBERANÍA ESPIRITUAL
+            </div>
+          </div>
+
+          <div class="h-step-card" style="background: radial-gradient(circle at center, rgba(138, 92, 246, 0.2), rgba(18, 13, 33, 0.9));">
+            <span class="h-step-num">✦</span>
+            <div class="card-content-wrap">
+              <span class="card-tag">Comienza Ahora</span>
+              <h4 class="card-title">Tu Nuevo Comienzo</h4>
+              <p class="card-text">
+                Las sincronicidades no son casuales. Si estás leyendo esto hoy, tu alma está lista para dar el salto.
+              </p>
+              <a href="https://wa.me/573000000000?text=Hola,%20siento%20el%20llamado%20de%20iniciar%20el%20viaje" class="btn-magnetic" target="_blank" rel="noopener">
+                <span>Comenzar el Viaje</span>
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         TESTIMONIOS EN ALTA GAMA
+    =================================================== -->
+    <section id="testimonios">
+      <div class="section-eyebrow">
+        <i class="fa-solid fa-heart"></i>
+        <span>Sintonías Reales</span>
+      </div>
+      <h2 class="section-heading">Testimonios de Almas Despiertas</h2>
+      <p class="section-subtext">Historias de sanación, claridad y expansión de quienes confiaron en nuestro espacio.</p>
+
+      <div class="testimonials-matrix">
+        <div class="testimonio-capsule">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="testimonio-body">
+            "La lectura de Carta Natal fue como si alguien encendiera la luz en una habitación oscura que llevaba años habitando a ciegas. Entendí mis patrones de autosabotaje y por primera vez sentí paz con mi historia."
+          </p>
+          <div class="testimonio-author">
+            <div class="avatar-astral">VL</div>
+            <div class="author-info">
+              <h5>Valentina Londoño</h5>
+              <span>Empresaria Holística — Bogotá</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonio-capsule">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="testimonio-body">
+            "Llegué con una sobrecarga emocional brutal después de un duelo. La sesión con cuencos y cristales me devolvió el sueño y una serenidad que no experimentaba hacía meses. Es una bendición."
+          </p>
+          <div class="testimonio-author">
+            <div class="avatar-astral">SR</div>
+            <div class="author-info">
+              <h5>Santiago Restrepo</h5>
+              <span>Diseñador & Músico</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonio-capsule">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="testimonio-body">
+            "El respeto, la elegancia y la profundidad con la que abren los Registros Akáshicos te cambia para siempre. Cero dogmas, pura sabiduría que puedes aplicar a tu vida cotidiana."
+          </p>
+          <div class="testimonio-author">
+            <div class="avatar-astral">MC</div>
+            <div class="author-info">
+              <h5>Mariana Carranza</h5>
+              <span>Terapeuta Floral</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         CTA FINAL
+    =================================================== -->
+    <section class="cta-sanctuary">
+      <div class="badge-celestial" style="margin-bottom: 20px;">
+        <i class="fa-solid fa-infinity"></i>
+        <span>Tu portal está abierto</span>
+      </div>
+      <h2 class="cta-heading">¿Listo para Encarnar Tu Luz?</h2>
+      <p class="cta-sub">
+        Escríbenos directamente por WhatsApp para coordinar tu fecha sagrada o recibir orientación personalizada sobre qué terapia resuena con tu momento vital.
+      </p>
+      <a href="https://wa.me/573000000000?text=Hola,%20deseo%20hablar%20con%20una%20gu%C3%ADa%20espiritual%20de%20Aetheria" class="btn-magnetic" style="padding: 16px 36px; font-size: 0.9rem;" target="_blank" rel="noopener">
+        <span>Hablar por WhatsApp con una Guía</span>
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="sacred-footer">
+      <div class="brand-sigil">
+        <span class="brand-name" style="font-size: 1.3rem;">AETHERIA</span>
+      </div>
+      <p>© 2026 Aetheria Sanctuary. Todos los derechos reservados. Sanación vibracional y consciencia cuántica.</p>
+      <div style="display: flex; gap: 20px; font-size: 1.1rem; color: rgba(226, 192, 141, 0.7);">
+        <a href="#" style="color: inherit;"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" style="color: inherit;"><i class="fa-brands fa-spotify"></i></a>
+        <a href="#" style="color: inherit;"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ===================================================
+       BOTÓN FLOTANTE DE WHATSAPP ULTRA-ALTA GAMA
+  =================================================== -->
+  <a href="https://wa.me/573000000000?text=Hola%20Aetheria,%20quisiera%20consultar%20por%20una%20sesi%C3%B3n%20espiritual" class="whatsapp-portal-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <div class="wa-tooltip-pill">
+      <span class="wa-status-dot"></span>
+      <span>Guía Espiritual en Línea</span>
+    </div>
+    <div class="wa-bubble-btn">
+      <div class="wa-pulse-aura"></div>
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+  </a>
+
+  <!-- ===================================================
+       LIBRERÍAS DE MOTOR VISUAL & ANIMACIÓN
+  =================================================== -->
+  <!-- 1. Three.js para WebGL Cósmico -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <!-- 2. GSAP + ScrollTrigger para Orquestación Cinemática -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <!-- 3. Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- ===================================================
+       LÓGICA INTERACTIVA & MOTOR WEBGL
+  =================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // -------------------------------------------------------------
+      // 1. Lenis Smooth Scroll Setup
+      // -------------------------------------------------------------
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        smoothTouch: false
+      });
+
+      lenis.on('scroll', ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+
+      // -------------------------------------------------------------
+      // 2. Three.js: Universo WebGL con Shaders de Partículas & Nebulosa
+      //    (Blindaje de 60 FPS: DPR topado a 2 + Pausa Inteligente)
+      // -------------------------------------------------------------
+      const canvas = document.getElementById('webgl-universe');
+      const scene = new THREE.Scene();
+      
+      const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 75;
+
+      const renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+        alpha: true,
+        antialias: true,
+        powerPreference: 'high-performance'
+      });
+      
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // Partículas Cósmicas (1200 puntos)
+      const particleCount = 1200;
+      const geometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(particleCount * 3);
+      const colors = new Float32Array(particleCount * 3);
+
+      const colorPalette = [
+        new THREE.Color(0xa855f7), // Violeta Amatista
+        new THREE.Color(0xe2c08d), // Oro Alquímico
+        new THREE.Color(0x38bdf8), // Azul Nebulosa
+        new THREE.Color(0x8a5cf6)  // Púrpura Profundo
+      ];
+
+      for (let i = 0; i < particleCount; i++) {
+        // Distribución esférica y galáctica
+        const r = THREE.MathUtils.randFloat(15, 120);
+        const theta = THREE.MathUtils.randFloat(0, Math.PI * 2);
+        const phi = THREE.MathUtils.randFloat(0, Math.PI);
+
+        positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+        positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+        positions[i * 3 + 2] = r * Math.cos(phi);
+
+        const chosenColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+        colors[i * 3] = chosenColor.r;
+        colors[i * 3 + 1] = chosenColor.g;
+        colors[i * 3 + 2] = chosenColor.b;
+      }
+
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+      // Textura circular de punto luminoso vía Canvas
+      const getParticleTexture = () => {
+        const c = document.createElement('canvas');
+        c.width = 64;
+        c.height = 64;
+        const ctx = c.getContext('2d');
+        const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+        grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+        grad.addColorStop(0.2, 'rgba(226, 192, 141, 0.8)');
+        grad.addColorStop(0.6, 'rgba(168, 85, 247, 0.2)');
+        grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 64, 64);
+        const texture = new THREE.Texture(c);
+        texture.needsUpdate = true;
+        return texture;
+      };
+
+      const material = new THREE.PointsMaterial({
+        size: 1.8,
+        vertexColors: true,
+        map: getParticleTexture(),
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+      });
+
+      const particleSystem = new THREE.Points(geometry, material);
+      scene.add(particleSystem);
+
+      // Orbe Geométrico Central Sagrado (Icosaedro Alquímico)
+      const icoGeom = new THREE.IcosahedronGeometry(18, 1);
+      const icoMat = new THREE.MeshBasicMaterial({
+        color: 0xe2c08d,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.12
+      });
+      const sacredOrb = new THREE.Mesh(icoGeom, icoMat);
+      scene.add(sacredOrb);
+
+      // Respuesta al Mouse y Movimiento Físico
+      let mouseX = 0;
+      let mouseY = 0;
+      let targetX = 0;
+      let targetY = 0;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX - window.innerWidth / 2) * 0.05;
+        mouseY = (e.clientY - window.innerHeight / 2) * 0.05;
+      });
+
+      // Render Loop Inteligente
+      let isVisible = true;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isVisible = entry.isIntersecting;
+        });
+      });
+      observer.observe(document.body);
+
+      const clock = new THREE.Clock();
+
+      function animateWebGL() {
+        requestAnimationFrame(animateWebGL);
+        if (!isVisible) return;
+
+        const elapsedTime = clock.getElapsedTime();
+
+        // Inercia suave hacia el mouse
+        targetX += (mouseX - targetX) * 0.05;
+        targetY += (mouseY - targetY) * 0.05;
+
+        particleSystem.rotation.y = elapsedTime * 0.03 + targetX * 0.01;
+        particleSystem.rotation.x = elapsedTime * 0.015 - targetY * 0.01;
+
+        sacredOrb.rotation.x = elapsedTime * 0.08 + targetY * 0.02;
+        sacredOrb.rotation.y = elapsedTime * 0.1 + targetX * 0.02;
+
+        renderer.render(scene, camera);
+      }
+      animateWebGL();
+
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      });
+
+      // -------------------------------------------------------------
+      // 3. Custom Magnetic Cursor
+      // -------------------------------------------------------------
+      const cursor = document.getElementById('cosmicCursor');
+      const dot = document.getElementById('cosmicDot');
+
+      if (cursor && dot) {
+        let curX = window.innerWidth / 2;
+        let curY = window.innerHeight / 2;
+        let aimX = curX;
+        let aimY = curY;
+
+        window.addEventListener('mousemove', (e) => {
+          aimX = e.clientX;
+          aimY = e.clientY;
+          dot.style.left = `${aimX}px`;
+          dot.style.top = `${aimY}px`;
+        });
+
+        function renderCursor() {
+          curX += (aimX - curX) * 0.15;
+          curY += (aimY - curY) * 0.15;
+          cursor.style.left = `${curX}px`;
+          cursor.style.top = `${curY}px`;
+          requestAnimationFrame(renderCursor);
+        }
+        renderCursor();
+
+        // Efecto hover interactivo
+        const interactiveElements = document.querySelectorAll('a, button, .spotlight-card, .btn-magnetic');
+        interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', () => cursor.classList.add('cursor-active'));
+          el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-active'));
+        });
+      }
+
+      // -------------------------------------------------------------
+      // 4. Pilar 2: Microinteracciones Magnéticas en Botones
+      // -------------------------------------------------------------
+      const magneticBtns = document.querySelectorAll('.btn-magnetic');
+      magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          
+          gsap.to(btn, {
+            x: x * 0.35,
+            y: y * 0.35,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+
+        btn.addEventListener('mouseleave', () => {
+          gsap.to(btn, {
+            x: 0,
+            y: 0,
+            duration: 0.6,
+            ease: 'elastic.out(1, 0.4)'
+          });
+        });
+      });
+
+      // -------------------------------------------------------------
+      // 5. Refinamiento 1: Spotlight Border en Bento Cards
+      // -------------------------------------------------------------
+      const spotlightCards = document.querySelectorAll('.spotlight-card');
+      spotlightCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+
+      // -------------------------------------------------------------
+      // 6. GSAP + ScrollTrigger: Revelaciones Cinemáticas
+      // -------------------------------------------------------------
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero Elements Reveal
+      gsap.from('.badge-celestial', {
+        y: -30,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        delay: 0.2
+      });
+
+      gsap.from('.hero-title', {
+        y: 60,
+        opacity: 0,
+        duration: 1.4,
+        ease: 'power4.out',
+        delay: 0.4
+      });
+
+      gsap.from('.hero-description', {
+        y: 30,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        delay: 0.6
+      });
+
+      gsap.from('.hero-actions', {
+        y: 20,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        delay: 0.8
+      });
+
+      gsap.from('.hero-telemetry-bar', {
+        scale: 0.95,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        delay: 1
+      });
+
+      // Bento Cards Stagger Reveal
+      gsap.from('.spotlight-card', {
+        scrollTrigger: {
+          trigger: '.bento-sanctuary',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: 'power3.out'
+      });
+
+      // Scroll Horizontal Integrado con GSAP ScrollTrigger
+      const horizontalContainer = document.getElementById('horizontalContainer');
+      const horizontalPortal = document.getElementById('horizontalPortal');
+
+      if (horizontalContainer && horizontalPortal) {
+        function getScrollAmount() {
+          let containerWidth = horizontalContainer.scrollWidth;
+          return -(containerWidth - window.innerWidth + 120);
+        }
+
+        const tween = gsap.to(horizontalContainer, {
+          x: getScrollAmount,
+          ease: 'none'
+        });
+
+        ScrollTrigger.create({
+          trigger: horizontalPortal,
+          start: 'top 20%',
+          end: () => `+=${horizontalContainer.scrollWidth - window.innerWidth + 300}`,
+          pin: true,
+          animation: tween,
+          scrub: 1,
+          invalidateOnRefresh: true
+        });
+      }
+
+      // Testimonios Reveal
+      gsap.from('.testimonio-capsule', {
+        scrollTrigger: {
+          trigger: '.testimonials-matrix',
+          start: 'top 85%'
+        },
+        y: 40,
+        opacity: 0,
+        stagger: 0.18,
+        duration: 1,
+        ease: 'power3.out'
+      });
+
+    });
+  </script>
+
+  <!-- Showcase Quick Switcher -->
+  <div style="position: fixed; bottom: 24px; left: 24px; z-index: 99999; display: flex; align-items: center; gap: 8px; background: rgba(5, 10, 15, 0.85); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(255,255,255,0.14); padding: 8px 14px; border-radius: 9999px; box-shadow: 0 20px 40px rgba(0,0,0,0.85); font-family: 'Space Mono', monospace; font-size: 0.72rem;">
+    <a href="index.html" style="color: #f59e0b; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 9999px; background: rgba(245,158,11,0.12); margin-right: 4px;">
+      <i class="fa-solid fa-layer-group"></i> HUB
+    </a>
+    <a href="espiritual.html" style="color: #fff; text-decoration: none; padding: 5px 12px; border-radius: 9999px; background: rgba(168,85,247,0.35); border: 1px solid rgba(168,85,247,0.6); transition: all 0.2s;">🔮 Espiritual</a>
+    <a href="solar.html" style="color: rgba(255,255,255,0.6); text-decoration: none; padding: 5px 12px; border-radius: 9999px; background: transparent; border: 1px solid transparent; transition: all 0.2s;">☀️ Solar</a>
+    <a href="odontologia.html" style="color: rgba(255,255,255,0.6); text-decoration: none; padding: 5px 12px; border-radius: 9999px; background: transparent; border: 1px solid transparent; transition: all 0.2s;">🦷 Odonto</a>
+  </div>
+
+</body>
+</html>
