@@ -2,16 +2,100 @@
 
 - Siempre hablar en español.
 
-# Proyecto: Agency — Prospección Local Bogotá
+# Proyecto: Agency — Suite Comercial & Prospección Web Colombia
 
-## Objetivo
-Construir herramientas de prospección para ofrecer servicios de desarrollo web a negocios locales en Bogotá. Identificar negocios sin página web (o con presencia web deficiente), contactarlos y ofrecerles landing pages o sitios completos.
+## Arquitectura Dual: Los Dos Subsistemas Coexistentes
 
-## Flujo de trabajo
-1. **Buscar datos** → scraper `compass/google-maps-extractor` de Apify (Google Maps) con categorías como "restaurante", "tienda", "taller", etc.
-2. **Procesar** → filtrar solo negocios con teléfono, categorizar por tipo de presencia web
-3. **Prospectar** → desde la herramienta HTML, contactar vía WhatsApp/teléfono, registrar estado, prioridad y notas
-4. **Cerrar** → cuando un lead acepta, ofrecer landing page o desarrollo web completo
+El proyecto opera bajo dos subsistemas complementarios que coexisten armónicamente según la necesidad comercial y técnica:
+
+```
+                                  ┌─────────────────────────────────────────────────────────────┐
+                                  │           AGENCY - SUITE COMERCIAL COLOMBIA                 │
+                                  └──────────────────────────────┬──────────────────────────────┘
+                                                                 │
+                                 ┌───────────────────────────────┴───────────────────────────────┐
+                                 ▼                                                               ▼
+  ┌─────────────────────────────────────────────────────────────┐ ┌─────────────────────────────────────────────────────────────┐
+  │   SUBSISTEMA 1: LOCAL & EDGE (TÉCNICO / ARTESANAL)          │ │   SUBSISTEMA 2: GOOGLE WORKSPACE & GEMINI SPARK (AUTÓNOMO)  │
+  ├─────────────────────────────────────────────────────────────┤ ├─────────────────────────────────────────────────────────────┤
+  │ • Dashboard Local / PWA: busqueda/index.html                │ │ • CRM Central: Google Sheets "CRM Prospección Colombia"     │
+  │ • Backend: Node.js + SQLite en Oracle Cloud ARM (cultura)   │ │ • Web App Móvil: Google Apps Script (Código.gs + Index.html)│
+  │ • Scraper: Apify (Google Maps Extractor)                    │ │ • IA Comercial 24/7: Gemini Spark (Briefing, Auditor, Docs) │
+  │ • Landing Pages a Medida: landing-pages/*.html (22+ LPs)    │ │ • 7 Demos Maestras Vercel Dinámicas (?nombre=&ciudad=&tel=) │
+  │ • Stack Visual: Three.js, GSAP, Sistema S1 de Ultra Lujo    │ │ • Colaboración en Equipo: luisaalda92@gmail.com             │
+  └─────────────────────────────────────────────────────────────┘ └─────────────────────────────────────────────────────────────┘
+                                 │                                                               │
+                                 └───────────────────────────────┬───────────────────────────────┘
+                                                                 ▼
+                                  ┌─────────────────────────────────────────────────────────────┐
+                                  │ FLUJO HÍBRIDO: Contacto rápido con Demos Dinámicas (Sub. 2) │
+                                  │ ──► Cierre y Entrega con Landing Page a Medida / S1 (Sub. 1)│
+                                  └─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🏛️ Subsistema 1: Local & Edge (Técnico / Artesanal / SQLite)
+
+### Objetivo
+Prospección local profunda, almacenamiento centralizado en SQLite en servidor privado, extracción con Apify y creación de **Landing Pages individuales hiper-personalizadas y artesanales** (GSAP, Three.js, Sistema de Diseño S1 de Ultra Lujo).
+
+### Componentes y Flujo
+1. **Buscar datos**: Scraper Apify (`compass/google-maps-extractor`) enfocado en Bogotá y ciudades principales.
+2. **Procesar y Servir**: Base de datos SQLite (`better-sqlite3`) en Oracle Cloud ARM (`cultura` / `agy.culturavpn.pro/api`) con `server.js` gestionado por PM2.
+3. **Herramienta `busqueda/index.html`**:
+   - Funciona en modo dual: 100% offline (localStorage) o conectado a la API de SQLite.
+   - PWA instalable en móvil y escritorio.
+   - Historial de notas, filtros por presencia web, estado, prioridad y exportación JSON/CSV.
+4. **Landing Pages a Medida (`landing-pages/`)**:
+   - 22+ páginas individuales desarrolladas en un solo archivo `.html` auto-contenido.
+   - Despliegues dedicados e independientes en Vercel (`lp-[nombre-negocio].vercel.app`).
+   - Aplicación de sistemas avanzados como **Sistema S1** (Three.js 3D contextual, GSAP ScrollTrigger pineado, Bento Grids y microinteracciones de lujo).
+
+---
+
+## ☁️ Subsistema 2: Google Workspace & Gemini Spark (Autónomo / Colaborativo)
+
+### Objetivo
+Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Medellín, Cali, Barranquilla, Cartagena), habilitando trabajo colaborativo en equipo en tiempo real (Usuario + `luisaalda92@gmail.com`), automatización de tareas y prospección instantánea con **7 Demos Maestras Dinámicas**.
+
+### Componentes y Flujo
+1. **CRM Central en la Nube (Google Sheets)**:
+   - Archivo: **`CRM Prospección Colombia - Agency`** (ID: `1lDj5jCwgbOAOaSNN8reMuguI17Algfw-dQdW_Gjw3nU`, Hoja: `Leads`).
+   - Columnas estructuradas: `ID`, `Nombre`, `Ciudad`, `Categoria`, `Direccion`, `Telefono`, `WhatsApp_Clean`, `Tipo_Web`, `Redes_Sociales`, `URL_Web`, `Propuesta_LP`, `Pitch_WhatsApp`, `Estado`, `Prioridad`, `Historial_Notas`.
+2. **Dashboard Web App (Google Apps Script)**:
+   - Archivos: `Código.gs` + `Index.html`.
+   - UI Mobile-First (cero desborde horizontal, touch targets $\ge 44$px).
+   - Sincronización en tiempo real con confirmación visual verde (`SpreadsheetApp.flush()`).
+   - Botón directo **`✨ Ver Demo LP Propuesta`** y disparador de WhatsApp con pitch precargado.
+3. **Catálogo Maestro de las 7 Demos Dinámicas en Vercel**:
+   - Las 7 plantillas se personalizan en vivo mediante parámetros de URL `?nombre=[Nombre]&ciudad=[Ciudad]&tel=[WhatsApp_Clean]`:
+     1. **👗 Moda / Novias / Boutiques**: `https://demo-novias.vercel.app/`
+     2. **💆‍♀️ Spas / Estética / Uñas**: `https://demo-spa-woad.vercel.app/` (con cotizador de paquetes)
+     3. **☀️ Energía Solar / Renovables**: `https://demo-solar-wheat.vercel.app/` (con simulador de ahorro)
+     4. **🦷 Odontología / Sonrisas**: `https://demo-odontologia-sigma.vercel.app/` (con comparador antes/después)
+     5. **🍽️ Restaurantes / Gastronomía**: `https://demo-restaurante-green.vercel.app/` (con menú y reservas)
+     6. **🐾 Veterinarias / Pet Shops**: `https://demo-veterinaria-zeta.vercel.app/`
+     7. **⛵ Turismo / Yates / Hoteles**: `https://demo-turismo-silk.vercel.app/`
+4. **Director Comercial Autónomo (Gemini Spark)**:
+   - **Daily Briefing Matutino (8:30 AM)**: Envía por Gmail 7 leads calientes (1 por cada categoría) listos para contactar.
+   - **Auditor Web Instantáneo (`auditor-web-prospector`)**: Audita webs existentes y genera pitches de reemplazo.
+   - **Gestor de Agendamiento**: Crea eventos en Google Calendar y actualiza el estado del CRM.
+   - **Generador de Propuestas Formales**: Crea propuestas en Google Docs con 3 tiers de precio ($450k, $850k, $1.45M COP).
+
+---
+
+## 🔄 Sinergia y Coexistencia entre Ambos Subsistemas
+
+| Aspecto | Subsistema 1 (Local / SQLite / LPs a Medida) | Subsistema 2 (Google Workspace / Gemini Spark) |
+|---|---|---|
+| **Velocidad de Prospección** | Manual, negocio por negocio con LP dedicada | Instantánea con 7 Demos Dinámicas parametrizadas |
+| **Colaboración** | Local / Servidor Oracle privado | Multi-usuario en tiempo real (Google Sheets + Web App) |
+| **Automatización** | Scripts de NodeJS / Scrapers Apify | Tareas programadas en Gemini Spark, Gmail y Calendar |
+| **Landing Pages** | Desarrollos únicos, Three.js, GSAP a medida | Plantillas dinámicas de alta conversión en Vercel |
+| **Cuándo Usarlo** | Cierre de clientes premium que exigen diseño 100% único | Prospección diaria masiva, seguimiento y agendamiento |
+
+---
 
 ## Herramienta construida: `busqueda/index.html`
 
@@ -294,6 +378,12 @@ El proyecto cuenta con un catálogo modular de sistemas de diseño probados y ap
   - GSAP + ScrollTrigger con coreografías de scroll horizontal pineado.
   - Los Tres Pilares: Contraste profundo cromático (o blanco cerámico clínico si el rubro lo amerita), microinteracciones magnéticas elásticas con destello sesgado (*specular sweep*) y Bento Grids dinámicos de 12 columnas.
   - Refinamientos de ultra-lujo: *Spotlight borders*, grano analógico SVG, revelados tipográficos con máscara cinemática y blindaje de rendimiento a 60 FPS con `IntersectionObserver`.
+
+- **`sistemas-diseño/s2.md` — Sistema S2 (Componentes de Vanguardia & 21st.dev MCP / Affordable Luxury)**:
+  - Integración directa con el catálogo de componentes de **21st.dev MCP** (Floating Glass Navbars, Glowy Waves Hero, 3D Perspective Fleet/Product Cards, Animated Sliding Tabs, Spotlight Inclusions Grid, Testimonials Marquee).
+  - **Cotizadores / Calculadoras Interactivas en 1 Clic**: Formularios dinámicos de selección que generan cotizaciones y abren WhatsApp con el mensaje estructurado de reserva.
+  - **Flexibilidad de Datos**: Acepta instrucciones y datos suministrados directamente por el usuario en el prompt (Modo A) o bien utiliza los datos reales del negocio existentes en la base de datos del proyecto (Modo B).
+  - Estética náutica, corporativa o de servicios con paletas ricas (*Deep Ocean, Slate, Champagne*), microinteracciones líquidas y tipografía contemporánea (`Outfit` + `Plus Jakarta Sans` + `Space Mono`).
 
 ### Estándar Técnico y Funcional Intacto (Inviolable)
 - Código limpio en un único archivo `.html` auto-contenido en `landing-pages/` (sin build step, CDN para librerías).
@@ -613,6 +703,20 @@ git push origin main
 - Sincronización exitosa con servidor backend SQLite en Oracle Cloud ARM (`cultura`), alcanzando **154 negocios** totales.
 - Verificación de sintaxis con `node --check` superada con 0 errores.
 
+### Sesión 25 (2026-09-05) — Integración de Arquitectura Dual: Suite Autónoma Gemini Spark & 7 Demos Vercel
+- **Formalización de la Arquitectura Dual**: Se documentó formalmente la coexistencia sinérgica entre el **Subsistema 1 (Local / SQLite / LPs a Medida en Oracle Cloud)** y el **Subsistema 2 (Cloud / Google Workspace / Gemini Spark / 7 Demos Dinámicas)**.
+- **CRM en la Nube y Web App Móvil**:
+  - Se configuró el Google Sheet `CRM Prospección Colombia - Agency` (`1lDj5jCwgbOAOaSNN8reMuguI17Algfw-dQdW_Gjw3nU`).
+  - Se desarrolló y optimizó la Web App en Google Apps Script (`Código.gs` + `Index.html`) con diseño 100% responsive (`overflow-x: hidden`, touch targets $\ge 44$px), sincronización forzada en tiempo real con `SpreadsheetApp.flush()`, selector de prioridad y feedback visual verde al guardar.
+  - Se habilitó acceso colaborativo para `luisaalda92@gmail.com`.
+- **Catálogo Maestro de 7 Demos Dinámicas en Vercel**:
+  - Se mapearon y desplegaron las 7 plantillas parametrizadas (`?nombre=...&ciudad=...&tel=...`) abarcando Novias/Moda, Spas/Estética, Energía Solar, Odontología, Restaurantes, Veterinarias y Turismo.
+  - El botón `✨ Ver Demo LP Propuesta` en cada tarjeta enlaza directamente a la versión pública interactiva sin solicitar permisos ni cuentas de Google.
+- **Automatizaciones Autónomas en Gemini Spark**:
+  - `Daily Briefing Matutino (8:30 AM)`: Configurado para entregar exactamente 1 lead caliente por cada una de las 7 categorías (7 prospectos diversificados al día).
+  - `auditor-web-prospector`: Habilidad de auditoría técnica instantánea de páginas web obsoletas con generación de pitches demoledores de modernización para WhatsApp.
+  - Regla de prioridad: Todos los leads pendientes arrancan estrictamente en **`💤 Tibio`** y solo se promueven a **`🔥 Caliente`** tras recibir respuesta positiva del cliente.
+
 ---
 
 ## 🎯 Enfoque de Diseño para Landing Pages
@@ -627,4 +731,5 @@ git push origin main
 ---
 
 **NOTA CRÍTICA:** El servidor usa `syncSeed()` que solo hace `INSERT OR IGNORE` — **NUNCA borra datos de usuario**. Solo inserta IDs nuevos. NO borrar la BD.
+
 
