@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title data-dyn="title">Sanctuary Spa & Wellness de Ultra-Lujo</title>
+  
+  <!-- Google Fonts: Cormorant Garamond (Editorial Luxury) + Plus Jakarta Sans (Clean Tech/Modern) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <style>
+    :root {
+      --gold-1: #e2c071;
+      --gold-2: #c69f45;
+      --gold-3: #8a6c25;
+      --emerald-accent: #10b981;
+      --bg-dark: #07090e;
+      --bg-card: rgba(15, 20, 32, 0.75);
+    }
+    
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body {
+      background-color: var(--bg-dark);
+      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-serif { font-family: 'Cormorant Garamond', serif; }
+    
+    /* Textos Gradiente Oro */
+    .gold-text {
+      background: linear-gradient(135deg, #fff7d6 0%, #e2c071 45%, #c69f45 75%, #8a6c25 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .emerald-text {
+      background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #059669 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Bento Glass Cards */
+    .glass-bento {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(226, 192, 113, 0.15);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-bento:hover {
+      border-color: rgba(226, 192, 113, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 25px rgba(226, 192, 113, 0.1);
+    }
+
+    /* Glow Button con Sheen Animado */
+    .btn-luxury {
+      position: relative;
+      background: linear-gradient(135deg, #e2c071 0%, #c69f45 100%);
+      color: #07090e;
+      font-weight: 800;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(198, 159, 69, 0.35);
+    }
+    .btn-luxury:hover {
+      box-shadow: 0 6px 30px rgba(226, 192, 113, 0.6);
+      transform: scale(1.02);
+    }
+    .btn-luxury::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transform: rotate(25deg);
+      animation: sheen 4s infinite linear;
+    }
+    @keyframes sheen {
+      0% { transform: translateX(-100%) rotate(25deg); }
+      20%, 100% { transform: translateX(100%) rotate(25deg); }
+    }
+
+    /* Barra VIP de Propuesta */
+    .vip-badge-bar {
+      background: linear-gradient(90deg, #090d16 0%, #171d2d 50%, #090d16 100%);
+      border-bottom: 1px solid rgba(226, 192, 113, 0.3);
+    }
+  </style>
+</head>
+<body class="relative selection:bg-amber-500/30 selection:text-amber-200">
+
+  <!-- BARRA VIP PARA EL PROSPECTO -->
+  <div class="vip-badge-bar sticky top-0 z-50 px-4 py-2.5 text-center text-xs text-slate-300 flex items-center justify-between gap-3 shadow-xl">
+    <div class="flex items-center gap-2 mx-auto">
+      <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span>Propuesta digital interactiva de ultra-lujo preparada para <strong data-dyn="name" class="text-amber-300 font-bold">Eclat Provenza SPA</strong></span>
+    </div>
+    <a data-dyn-href="wa-agency" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black rounded-full text-[11px] transition shadow">
+      <i class="fa-solid fa-sparkles"></i> Activar esta Web Oficial
+    </a>
+  </div>
+
+  <!-- NAVEGACIÓN PRINCIPAL -->
+  <nav class="max-w-7xl mx-auto px-4 md:px-8 py-5 flex items-center justify-between relative z-40">
+    <div class="flex items-center gap-3.5">
+      <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400/20 to-emerald-400/10 border border-amber-400/40 flex items-center justify-center text-amber-300 font-serif text-xl font-bold shadow-lg shadow-black/40">
+        <span data-dyn="initials">EP</span>
+      </div>
+      <div>
+        <span data-dyn="name" class="font-serif text-xl md:text-2xl font-bold tracking-wide text-white block leading-tight">Eclat Provenza</span>
+        <span class="text-[10px] uppercase tracking-widest text-amber-300/90 font-semibold block flex items-center gap-1">
+          <i class="fa-solid fa-spa text-emerald-400"></i> Sanctuary Spa & Wellness • <span data-dyn="city">Medellín</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Menú Desktop & Botón VIP -->
+    <div class="flex items-center gap-4">
+      <div class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-widest text-slate-300 font-semibold">
+        <a href="#rituales" class="hover:text-amber-300 transition">Rituales</a>
+        <a href="#experiencia" class="hover:text-amber-300 transition">Experiencia</a>
+        <a href="#cotizador" class="hover:text-amber-300 transition">Cotizador VIP</a>
+        <a href="#contacto" class="hover:text-amber-300 transition">Ubicación</a>
+      </div>
+      <a data-dyn-href="wa" target="_blank" class="btn-luxury px-5 py-2.5 rounded-full text-xs tracking-wider uppercase flex items-center gap-2">
+        <i class="fa-brands fa-whatsapp text-sm"></i>
+        <span>Reservar Cita VIP</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION CINEMÁTICO -->
+  <header class="relative min-h-[92vh] flex items-center justify-center px-4 py-16 overflow-hidden">
+    <!-- Video / Imagen de fondo de Alto Impacto -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1920&auto=format&fit=crop" 
+           alt="Spa Luxury Relaxation" class="w-full h-full object-cover object-center opacity-25 scale-105 transition-transform duration-1000">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#07090e] via-[#07090e]/60 to-[#07090e]/80"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto text-center space-y-7 pt-4">
+      
+      <!-- Pill Badge -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-bold uppercase tracking-widest shadow-inner">
+        <i class="fa-solid fa-leaf text-emerald-400"></i>
+        <span>El Refugio de Bienestar Más Exclusivo de <span data-dyn="city">Medellín</span></span>
+      </div>
+
+      <!-- Titular Principal -->
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.08]">
+        Desconéctate del Mundo. <br>
+        <span class="gold-text italic font-normal">Reconéctate Contigo.</span>
+      </h1>
+
+      <!-- Subtítulo -->
+      <p class="max-w-2xl mx-auto text-slate-300 text-sm sm:text-base md:text-lg font-light leading-relaxed">
+        Masajes holísticos, hidroterapia revitalizante, faciales con oro 24K y rituales en pareja diseñados para renovar cuerpo y mente en <span data-dyn="name" class="text-white font-semibold">Eclat Provenza</span>.
+      </p>
+
+      <!-- CTAs de Conversión -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+        <a data-dyn-href="wa" target="_blank" class="btn-luxury w-full sm:w-auto px-9 py-4 rounded-full text-sm tracking-wider uppercase flex items-center justify-center gap-3">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Agendar Masaje o Ritual a WhatsApp</span>
+        </a>
+        <a href="#cotizador" class="w-full sm:w-auto px-8 py-4 glass-bento hover:bg-slate-800/80 text-slate-200 text-sm tracking-wider uppercase rounded-full transition flex items-center justify-center gap-2 border border-slate-700">
+          <i class="fa-solid fa-calculator text-amber-400"></i>
+          <span>Cotizar Paquete Personalizado</span>
+        </a>
+      </div>
+
+      <!-- Bento Stats Rápidas -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-12 max-w-4xl mx-auto">
+        <div class="glass-bento p-4 rounded-2xl text-center">
+          <div class="font-serif text-2xl md:text-3xl font-bold text-amber-300">4.98 ★</div>
+          <div class="text-[11px] text-slate-400 uppercase font-semibold mt-0.5">380+ Reseñas Verificadas</div>
+        </div>
+        <div class="glass-bento p-4 rounded-2xl text-center">
+          <div class="font-serif text-2xl md:text-3xl font-bold text-emerald-400">100%</div>
+          <div class="text-[11px] text-slate-400 uppercase font-semibold mt-0.5">Aceites Orgánicos Puros</div>
+        </div>
+        <div class="glass-bento p-4 rounded-2xl text-center">
+          <div class="font-serif text-2xl md:text-3xl font-bold text-amber-300">+12</div>
+          <div class="text-[11px] text-slate-400 uppercase font-semibold mt-0.5">Terapeutas Certificadas</div>
+        </div>
+        <div class="glass-bento p-4 rounded-2xl text-center">
+          <div class="font-serif text-2xl md:text-3xl font-bold text-emerald-400">VIP</div>
+          <div class="text-[11px] text-slate-400 uppercase font-semibold mt-0.5">Cabinas Privadas & Jacuzzi</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- SECCIÓN RITUALES Y SERVICIOS SIGNATURE (BENTO GRID INTERACTIVO) -->
+  <section id="rituales" class="max-w-7xl mx-auto px-4 md:px-8 py-24 border-t border-slate-800/80">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <span class="text-xs uppercase tracking-widest text-amber-400 font-bold block">Nuestra Carta Exclusiva</span>
+      <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Rituales Diseñados para Trascender</h2>
+      <p class="text-slate-400 text-sm">Cada experiencia combina técnicas milenarias orientales con aromaterapia de grado terapéutico.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Card 1: Masaje Signature -->
+      <div class="glass-bento rounded-3xl overflow-hidden group flex flex-col justify-between">
+        <div>
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&auto=format&fit=crop" 
+                 alt="Masaje Relajante" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f1420] via-transparent to-transparent"></div>
+            <span class="absolute top-4 right-4 bg-amber-500 text-slate-950 text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow">Más Solicitado</span>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-2xl font-bold text-white">Ritual Serenidad Total</h3>
+              <span class="text-amber-300 font-bold text-sm">$180.000 COP</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Masaje descontracturante con piedras volcánicas calientes, aceites esenciales de lavanda francesa y reflexología podal profunda (75 min).
+            </p>
+            <ul class="space-y-1.5 text-[11px] text-slate-400">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Aromaterapia personalizada</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Piedras volcánicas calientes</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Copa de té herbal relajante</li>
+            </ul>
+          </div>
+        </div>
+        <div class="p-6 pt-0">
+          <a data-dyn-href="wa-serenidad" target="_blank" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-400/30 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition">
+            <i class="fa-brands fa-whatsapp"></i> Reservar Este Ritual
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Facial Oro 24K -->
+      <div class="glass-bento rounded-3xl overflow-hidden group flex flex-col justify-between">
+        <div>
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop" 
+                 alt="Facial Oro" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f1420] via-transparent to-transparent"></div>
+            <span class="absolute top-4 right-4 bg-emerald-500 text-slate-950 text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow">Glow Inmediato</span>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-2xl font-bold text-white">Facial Iluminador Oro 24K</h3>
+              <span class="text-amber-300 font-bold text-sm">$220.000 COP</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Limpieza facial ultrasónica, microdermoabrasión suave con punta de diamante, velo de colágeno y mascarilla rejuvenecedora de oro 24K.
+            </p>
+            <ul class="space-y-1.5 text-[11px] text-slate-400">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Hidratación celular profunda</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Efecto tensor y lifting inmediato</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Drenaje linfático facial con cuarzo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="p-6 pt-0">
+          <a data-dyn-href="wa-facial" target="_blank" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-400/30 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition">
+            <i class="fa-brands fa-whatsapp"></i> Reservar Este Facial
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: Ritual Pareja Jacuzzi -->
+      <div class="glass-bento rounded-3xl overflow-hidden group flex flex-col justify-between">
+        <div>
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop" 
+                 alt="Spa Parejas" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f1420] via-transparent to-transparent"></div>
+            <span class="absolute top-4 right-4 bg-rose-500 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow">Parejas & Romance</span>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-2xl font-bold text-white">Ritual Romance en Jacuzzi</h3>
+              <span class="text-amber-300 font-bold text-sm">$360.000 COP</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Cabina VIP privada para dos, masaje en sincronía con aceites aromáticos tibios, circuito de hidroterapia en jacuzzi con pétalos y champaña.
+            </p>
+            <ul class="space-y-1.5 text-[11px] text-slate-400">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> 2 Horas de privacidad absoluta</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Botella de vino espumoso & fresas</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> Exfoliación corporal con chocolate</li>
+            </ul>
+          </div>
+        </div>
+        <div class="p-6 pt-0">
+          <a data-dyn-href="wa-pareja" target="_blank" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-400/30 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition">
+            <i class="fa-brands fa-whatsapp"></i> Reservar Paquete Parejas
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COTIZADOR & CALCULADORA INTERACTIVA DE BIENESTAR -->
+  <section id="cotizador" class="max-w-4xl mx-auto px-4 py-20">
+    <div class="glass-bento p-6 sm:p-12 rounded-3xl border border-amber-400/30 relative overflow-hidden shadow-2xl">
+      <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
+        <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold block"><i class="fa-solid fa-sliders"></i> Personaliza Tu Experiencia</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Calculadora de Cita VIP</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">Selecciona los servicios que deseas para calcular tu cotización en 1 segundo y enviarla a WhatsApp.</p>
+      </div>
+
+      <!-- Opciones Interactivas (Checkboxes estilizados) -->
+      <div class="space-y-3 mb-8">
+        
+        <label class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-400/40 cursor-pointer transition">
+          <div class="flex items-center gap-3">
+            <input type="checkbox" id="srv-1" value="180000" data-name="Masaje Serenidad Total (75 min)" onchange="calcTotal()" class="w-4 h-4 rounded text-amber-500 focus:ring-amber-400" checked>
+            <div>
+              <span class="text-xs sm:text-sm font-bold text-white block">Masaje Piedras Volcánicas & Serenidad (75 min)</span>
+              <span class="text-[10px] text-slate-400">Alivio de tensiones musculares y estrés</span>
+            </div>
+          </div>
+          <span class="text-xs sm:text-sm font-bold text-amber-300">$180.000</span>
+        </label>
+
+        <label class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-400/40 cursor-pointer transition">
+          <div class="flex items-center gap-3">
+            <input type="checkbox" id="srv-2" value="220000" data-name="Facial Iluminador Oro 24K" onchange="calcTotal()" class="w-4 h-4 rounded text-amber-500 focus:ring-amber-400">
+            <div>
+              <span class="text-xs sm:text-sm font-bold text-white block">Facial Iluminador & Lifting Oro 24K</span>
+              <span class="text-[10px] text-slate-400">Microdermoabrasión + Colágeno puro</span>
+            </div>
+          </div>
+          <span class="text-xs sm:text-sm font-bold text-amber-300">$220.000</span>
+        </label>
+
+        <label class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-400/40 cursor-pointer transition">
+          <div class="flex items-center gap-3">
+            <input type="checkbox" id="srv-3" value="120000" data-name="Circuito Jacuzzi & Hidromasaje" onchange="calcTotal()" class="w-4 h-4 rounded text-amber-500 focus:ring-amber-400">
+            <div>
+              <span class="text-xs sm:text-sm font-bold text-white block">Circuito Privado de Jacuzzi & Hidroterapia</span>
+              <span class="text-[10px] text-slate-400">45 minutos de relajación con sales de Epsom</span>
+            </div>
+          </div>
+          <span class="text-xs sm:text-sm font-bold text-amber-300">$120.000</span>
+        </label>
+
+        <label class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-400/40 cursor-pointer transition">
+          <div class="flex items-center gap-3">
+            <input type="checkbox" id="srv-4" value="95000" data-name="Exfoliación Corporal Bambú" onchange="calcTotal()" class="w-4 h-4 rounded text-amber-500 focus:ring-amber-400">
+            <div>
+              <span class="text-xs sm:text-sm font-bold text-white block">Exfoliación Corporal de Bambú & Café Colombiano</span>
+              <span class="text-[10px] text-slate-400">Elimina células muertas y suaviza la piel</span>
+            </div>
+          </div>
+          <span class="text-xs sm:text-sm font-bold text-amber-300">$95.000</span>
+        </label>
+
+      </div>
+
+      <!-- Resumen de Cotización -->
+      <div class="p-5 rounded-2xl bg-slate-950/90 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span class="text-[11px] text-slate-400 uppercase tracking-wider font-bold block">Inversión Estimada en tu Bienestar:</span>
+          <div id="calc-total-display" class="font-serif text-3xl sm:text-4xl font-black text-amber-300">$180.000 COP</div>
+        </div>
+        <a id="calc-wa-btn" href="#" target="_blank" class="btn-luxury w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>Confirmar Paquete por WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- UBICACIÓN & CONTACTO -->
+  <footer id="contacto" class="max-w-7xl mx-auto px-4 md:px-8 py-16 border-t border-slate-800/80">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <div>
+        <h4 class="font-serif text-xl font-bold text-white mb-3" data-dyn="name">Eclat Provenza SPA</h4>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+          Un santuario privado de calma en el corazón de <span data-dyn="city">Medellín</span>. Atención exclusiva con cita previa para garantizar tu privacidad.
+        </p>
+        <span class="text-xs text-amber-300 font-semibold flex items-center gap-1.5">
+          <i class="fa-solid fa-clock"></i> Lun - Sáb: 8:00 AM - 8:00 PM | Dom: 9:00 AM - 5:00 PM
+        </span>
+      </div>
+
+      <div>
+        <h4 class="font-serif text-lg font-bold text-white mb-3">Ubicación Exclusiva</h4>
+        <p class="text-xs text-slate-400 flex items-start gap-2 mb-3">
+          <i class="fa-solid fa-location-dot text-rose-400 mt-0.5"></i>
+          <span data-dyn="address">Cra 35 #7-45, El Poblado, Medellín</span>
+        </p>
+        <a id="maps-link" href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-teal-400 hover:underline font-semibold">
+          <i class="fa-solid fa-map-location-dot"></i> Abrir en Google Maps
+        </a>
+      </div>
+
+      <div>
+        <h4 class="font-serif text-lg font-bold text-white mb-3">Contacto Directo</h4>
+        <p class="text-xs text-slate-400 mb-3">
+          Habla directamente con nuestra conserjería de spa para resolver dudas o armar tu ritual personalizado.
+        </p>
+        <div class="flex items-center gap-3">
+          <a data-dyn-href="wa" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold flex items-center gap-1.5">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo
+          </a>
+          <a data-dyn-href="tel" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs font-bold flex items-center gap-1.5 border border-slate-700">
+            <i class="fa-solid fa-phone"></i> Llamar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <div>© <span data-dyn="year">2026</span> <span data-dyn="name">Eclat Provenza SPA</span>. Todos los derechos reservados.</div>
+      <div>Desarrollado con altos estándares de conversión y diseño de ultra-lujo.</div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a data-dyn-href="wa" target="_blank" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center text-2xl shadow-2xl shadow-emerald-950/80 transition transform hover:scale-110 active:scale-95" title="Reservar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- SCRIPT DE AUTO-PERSONALIZACIÓN Y CALCULADORA DINÁMICA -->
+  <script>
+    var currentPhone = '573223767374';
+    var currentName = 'Eclat Provenza SPA';
+    var currentCity = 'Medellín';
+
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      
+      currentName = params.get('nombre') || params.get('name') || 'Eclat Provenza SPA';
+      currentCity = params.get('ciudad') || params.get('city') || 'Medellín';
+      var phone = params.get('tel') || params.get('phone') || '573223767374';
+      var address = params.get('dir') || params.get('addr') || 'El Poblado, Medellín';
+      
+      currentPhone = phone.replace(/\D/g, '');
+      if (!currentPhone.startsWith('57') && currentPhone.length === 10) {
+        currentPhone = '57' + currentPhone;
+      }
+
+      var words = currentName.split(' ').filter(Boolean);
+      var initials = words.length >= 2 ? (words[0][0] + words[1][0]).toUpperCase() : currentName.substring(0, 2).toUpperCase();
+
+      document.querySelectorAll('[data-dyn="name"]').forEach(function(el) { el.innerText = currentName; });
+      document.querySelectorAll('[data-dyn="city"]').forEach(function(el) { el.innerText = currentCity; });
+      document.querySelectorAll('[data-dyn="address"]').forEach(function(el) { el.innerText = address; });
+      document.querySelectorAll('[data-dyn="initials"]').forEach(function(el) { el.innerText = initials; });
+      document.querySelectorAll('[data-dyn="year"]').forEach(function(el) { el.innerText = new Date().getFullYear(); });
+      document.title = currentName + ' — Sanctuary Spa & Wellness en ' + currentCity;
+
+      var defaultWaMsg = '¡Hola ' + currentName + '! Estuve viendo su carta de spa en línea y me gustaría reservar una cita en ' + currentCity + '.';
+      var waUrl = 'https://wa.me/' + currentPhone + '?text=' + encodeURIComponent(defaultWaMsg);
+
+      document.querySelectorAll('[data-dyn-href="wa"]').forEach(function(el) { el.href = waUrl; });
+      document.querySelectorAll('[data-dyn-href="tel"]').forEach(function(el) { el.href = 'tel:+' + currentPhone; });
+
+      // Links específicos
+      var elSerenidad = document.querySelector('[data-dyn-href="wa-serenidad"]');
+      if (elSerenidad) elSerenidad.href = 'https://wa.me/' + currentPhone + '?text=' + encodeURIComponent('¡Hola ' + currentName + '! Me gustaría agendar el *Ritual Serenidad Total ($180.000)* de su carta digital.');
+
+      var elFacial = document.querySelector('[data-dyn-href="wa-facial"]');
+      if (elFacial) elFacial.href = 'https://wa.me/' + currentPhone + '?text=' + encodeURIComponent('¡Hola ' + currentName + '! Me interesa reservar el *Facial Iluminador Oro 24K ($220.000)*.');
+
+      var elPareja = document.querySelector('[data-dyn-href="wa-pareja"]');
+      if (elPareja) elPareja.href = 'https://wa.me/' + currentPhone + '?text=' + encodeURIComponent('¡Hola ' + currentName + '! Deseo cotizar el *Ritual Romance en Jacuzzi para Parejas ($360.000)*.');
+
+      var mapsLink = document.getElementById('maps-link');
+      if (mapsLink) mapsLink.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(currentName + ' ' + address);
+
+      calcTotal();
+    })();
+
+    function calcTotal() {
+      var checkboxes = document.querySelectorAll('#cotizador input[type="checkbox"]');
+      var total = 0;
+      var selectedNames = [];
+
+      checkboxes.forEach(function(cb) {
+        if (cb.checked) {
+          total += parseInt(cb.value, 10);
+          selectedNames.push(cb.getAttribute('data-name'));
+        }
+      });
+
+      var totalFormatted = '$' + total.toLocaleString('es-CO') + ' COP';
+      var display = document.getElementById('calc-total-display');
+      if (display) display.innerText = totalFormatted;
+
+      var waBtn = document.getElementById('calc-wa-btn');
+      if (waBtn) {
+        var msg = '¡Hola ' + currentName + '! Armé mi paquete personalizado en su página web:\n\n' +
+                  selectedNames.map(function(s) { return '• ' + s; }).join('\n') +
+                  '\n\n*Total Estimado: ' + totalFormatted + '*\n\n¿Tienen disponibilidad para esta semana en ' + currentCity + '?';
+        waBtn.href = 'https://wa.me/' + currentPhone + '?text=' + encodeURIComponent(msg);
+      }
+    }
+  </script>
+</body>
+</html>

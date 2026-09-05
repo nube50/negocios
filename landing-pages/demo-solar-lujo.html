@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title data-dyn="title">Ingeniería Solar Fotovoltaica de Alta Eficiencia</title>
+  
+  <!-- Google Fonts: Space Grotesk (High-Tech) + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <style>
+    :root {
+      --solar-cyan: #06b6d4;
+      --solar-green: #10b981;
+      --solar-amber: #f59e0b;
+      --bg-dark: #060911;
+      --bg-card: rgba(13, 18, 30, 0.85);
+    }
+    
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body {
+      background-color: var(--bg-dark);
+      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-tech { font-family: 'Space Grotesk', sans-serif; }
+    
+    /* Gradientes High Tech */
+    .cyan-green-text {
+      background: linear-gradient(135deg, #a5f3fc 0%, #06b6d4 50%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .amber-gradient-text {
+      background: linear-gradient(135deg, #fef3c7 0%, #f59e0b 50%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass-solar {
+      background: var(--bg-card);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(6, 182, 212, 0.15);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-solar:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(6, 182, 212, 0.12);
+    }
+
+    .btn-solar {
+      background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+      color: #060911;
+      font-weight: 800;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.35);
+    }
+    .btn-solar:hover {
+      box-shadow: 0 6px 30px rgba(16, 185, 129, 0.5);
+      transform: scale(1.02);
+    }
+
+    /* Slider de Rango Personalizado */
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 8px;
+      background: #1e293b;
+      border-radius: 6px;
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #06b6d4;
+      cursor: pointer;
+      border: 3px solid #060911;
+      box-shadow: 0 0 12px #06b6d4;
+      transition: all 0.2s;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .grid-bg {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="relative grid-bg selection:bg-cyan-500/30 selection:text-cyan-200">
+
+  <!-- BARRA VIP PARA EL PROSPECTO -->
+  <div class="sticky top-0 z-50 px-4 py-2.5 text-center text-xs bg-slate-950/90 backdrop-blur-md border-b border-cyan-500/30 flex items-center justify-between gap-3 shadow-xl">
+    <div class="flex items-center gap-2 mx-auto">
+      <span class="inline-block w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+      <span>Propuesta digital interactiva de ingeniería solar para <strong data-dyn="name" class="text-cyan-300 font-bold">Sun Energy Colombia</strong></span>
+    </div>
+    <a data-dyn-href="wa-agency" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-950 font-black rounded-full text-[11px] transition shadow">
+      <i class="fa-solid fa-sparkles"></i> Activar esta Web Oficial
+    </a>
+  </div>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="max-w-7xl mx-auto px-4 md:px-8 py-5 flex items-center justify-between relative z-40">
+    <div class="flex items-center gap-3.5">
+      <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/10 border border-cyan-400/40 flex items-center justify-center text-cyan-300 font-tech text-xl font-bold shadow-lg shadow-black/40">
+        <span data-dyn="initials">SE</span>
+      </div>
+      <div>
+        <span data-dyn="name" class="font-tech text-xl md:text-2xl font-bold tracking-wide text-white block leading-tight">Sun Energy</span>
+        <span class="text-[10px] uppercase tracking-widest text-emerald-400 font-semibold block flex items-center gap-1">
+          <i class="fa-solid fa-sun text-amber-400"></i> Energía Solar & Almacenamiento • <span data-dyn="city">Bogotá</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Menú & Botón -->
+    <div class="flex items-center gap-4">
+      <div class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-widest text-slate-300 font-semibold">
+        <a href="#simulador" class="hover:text-cyan-300 transition">Simulador de Ahorro</a>
+        <a href="#soluciones" class="hover:text-cyan-300 transition">Soluciones</a>
+        <a href="#beneficios" class="hover:text-cyan-300 transition">Ley 1715</a>
+        <a href="#contacto" class="hover:text-cyan-300 transition">Contacto</a>
+      </div>
+      <a data-dyn-href="wa" target="_blank" class="btn-solar px-5 py-2.5 rounded-full text-xs tracking-wider uppercase flex items-center gap-2">
+        <i class="fa-brands fa-whatsapp text-sm"></i>
+        <span>Solicitar Estudio Solar</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION HIGH-TECH -->
+  <header class="relative min-h-[90vh] flex items-center justify-center px-4 py-16 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?q=80&w=1920&auto=format&fit=crop" 
+           alt="Paneles Solares Fotovoltaicos" class="w-full h-full object-cover object-center opacity-25 scale-105">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#060911] via-[#060911]/70 to-[#060911]/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto text-center space-y-7 pt-4">
+      
+      <!-- Pill Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-bold uppercase tracking-widest">
+        <i class="fa-solid fa-bolt text-amber-400"></i>
+        <span>Genera Tu Propia Energía Limpia en <span data-dyn="city">Bogotá</span></span>
+      </div>
+
+      <!-- Titular Principal -->
+      <h1 class="font-tech text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.05]">
+        Reduce Hasta un <span class="cyan-green-text">85% en Tu Factura de Luz</span>
+      </h1>
+
+      <!-- Subtítulo -->
+      <p class="max-w-2xl mx-auto text-slate-300 text-sm sm:text-base md:text-lg font-light leading-relaxed">
+        Sistemas fotovoltaicos conectados a red e híbridos con baterías de litio para residencias, industrias y comercio. Certificación RETIE y asesoría en beneficios tributarios de la Ley 1715.
+      </p>
+
+      <!-- CTAs de Conversión -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+        <a data-dyn-href="wa" target="_blank" class="btn-solar w-full sm:w-auto px-9 py-4 rounded-full text-sm tracking-wider uppercase flex items-center justify-center gap-3">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Cotizar Sistema Solar a WhatsApp</span>
+        </a>
+        <a href="#simulador" class="w-full sm:w-auto px-8 py-4 glass-solar hover:bg-slate-800/80 text-slate-200 text-sm tracking-wider uppercase rounded-full transition flex items-center justify-center gap-2 border border-slate-700">
+          <i class="fa-solid fa-calculator text-cyan-400"></i>
+          <span>Calcular Mi Ahorro Mensual</span>
+        </a>
+      </div>
+
+      <!-- Stats Técnicos -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-12 max-w-4xl mx-auto">
+        <div class="glass-solar p-4 rounded-2xl text-center">
+          <div class="font-tech text-2xl md:text-3xl font-bold text-cyan-300">25 Años</div>
+          <div class="text-[11px] text-slate-400 uppercase font-semibold mt-0.5">Garantía de Generación</div>
+        </div>
+        <div class="glass-solar p-4 rounded-2xl text-center">
+          <div class="font-tech text-2xl md:text-3xl font-bold text-emerald-400">50% Dto</div>
+          <div class="text-[11px] text-slate-400 uppercase font-semibold mt-0.5">Deducción Renta (Ley 1715)</div>
+        </div>
+        <div class="glass-solar p-4 rounded-2xl text-center">
+          <div class="font-tech text-2xl md:text-3xl font-bold text-amber-300">RETIE</div>
+          <div class="text-[11px] text-slate-400 uppercase font-semibold mt-0.5">Normativa CREG 174 / 030</div>
+        </div>
+        <div class="glass-solar p-4 rounded-2xl text-center">
+          <div class="font-tech text-2xl md:text-3xl font-bold text-cyan-300">3 - 4 Años</div>
+          <div class="text-[11px] text-slate-400 uppercase font-semibold mt-0.5">Retorno de Inversión (ROI)</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- SIMULADOR INTERACTIVO DE AHORRO SOLAR (CALCULADORA EN COLOMBIA) -->
+  <section id="simulador" class="max-w-5xl mx-auto px-4 md:px-8 py-24">
+    <div class="glass-solar p-6 sm:p-12 rounded-3xl border border-cyan-400/30 relative overflow-hidden shadow-2xl">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold block"><i class="fa-solid fa-bolt"></i> Simulador Solar Interactivo</span>
+        <h2 class="font-tech text-3xl sm:text-4xl font-bold text-white">¿Cuánto Pagas Hoy en Tu Factura de Luz?</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">Desliza la barra para estimar tu ahorro anual en pesos colombianos y el tamaño aproximado de tu sistema.</p>
+      </div>
+
+      <!-- Slider Interactivo -->
+      <div class="space-y-4 mb-8">
+        <div class="flex justify-between items-center">
+          <span class="text-xs text-slate-400 font-semibold uppercase">Valor Mensual de Factura:</span>
+          <span id="slider-val-display" class="font-tech text-2xl sm:text-3xl font-black text-amber-400">$1.200.000 COP</span>
+        </div>
+        <input type="range" id="bill-range" min="300000" max="15000000" step="100000" value="1200000" oninput="updateSolarCalc()">
+        <div class="flex justify-between text-[11px] text-slate-500 font-mono">
+          <span>$300.000 COP</span>
+          <span>$5.000.000 COP</span>
+          <span>$15.000.000+ COP</span>
+        </div>
+      </div>
+
+      <!-- Resultados de la Simulación en Bento Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+          <span class="text-[11px] text-slate-400 uppercase font-bold block mb-1">Ahorro Anual Estimado:</span>
+          <div id="annual-savings-display" class="font-tech text-2xl sm:text-3xl font-black text-emerald-400">$12.240.000 COP</div>
+          <span class="text-[10px] text-slate-500 mt-1 block">85% de reducción promedio</span>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+          <span class="text-[11px] text-slate-400 uppercase font-bold block mb-1">Paneles Sugeridos:</span>
+          <div id="panels-count-display" class="font-tech text-2xl sm:text-3xl font-black text-cyan-400">8 - 10 Paneles</div>
+          <span class="text-[10px] text-slate-500 mt-1 block">Módulos Tier-1 de 585W</span>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+          <span class="text-[11px] text-slate-400 uppercase font-bold block mb-1">CO₂ Evitado Anualmente:</span>
+          <div id="co2-display" class="font-tech text-2xl sm:text-3xl font-black text-amber-400">4.8 Toneladas</div>
+          <span class="text-[10px] text-slate-500 mt-1 block">Equivalente a plantar 120 árboles</span>
+        </div>
+      </div>
+
+      <!-- Botón de Acción Directo -->
+      <div class="p-5 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span class="text-[11px] text-slate-400 uppercase font-bold block">Solicita tu Diseño de Ingeniería Gratuito:</span>
+          <p class="text-xs text-slate-300">Incluye visita técnica preliminar, cálculo de sombras y cotización formal.</p>
+        </div>
+        <a id="solar-wa-btn" href="#" target="_blank" class="btn-solar w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>Enviar Estudio a WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOLUCIONES Y APLICACIONES -->
+  <section id="soluciones" class="max-w-7xl mx-auto px-4 md:px-8 py-20 border-t border-slate-800/80">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <span class="text-xs uppercase tracking-widest text-cyan-400 font-bold block">Nuestras Soluciones</span>
+      <h2 class="font-tech text-3xl sm:text-5xl font-bold text-white">Ingeniería para Cada Necesidad</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Solución 1 -->
+      <div class="glass-solar rounded-3xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xl flex items-center justify-center mb-4">
+            <i class="fa-solid fa-house-chimney"></i>
+          </div>
+          <h3 class="font-tech text-xl font-bold text-white mb-2">Solar Residencial</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Sistemas fotovoltaicos para casas en condominios y áreas urbanas de <span data-dyn="city">Bogotá</span>. Protege tu economía familiar de los incrementos en la tarifa eléctrica.
+          </p>
+          <ul class="space-y-1.5 text-[11px] text-slate-400">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Microinversores inteligentes</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Monitoreo en app móvil 24/7</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Trámite de legalización CREG</li>
+          </ul>
+        </div>
+        <a data-dyn-href="wa" target="_blank" class="mt-6 w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 rounded-xl text-xs font-bold text-center block transition">
+          Cotizar Residencial
+        </a>
+      </div>
+
+      <!-- Solución 2 -->
+      <div class="glass-solar rounded-3xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xl flex items-center justify-center mb-4">
+            <i class="fa-solid fa-industry"></i>
+          </div>
+          <h3 class="font-tech text-xl font-bold text-white mb-2">Comercial & Industrial</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Proyectos a gran escala sobre cubiertas industriales, bodegas y edificios comerciales. Máxima rentabilidad y reducción de costos operativos (OPEX).
+          </p>
+          <ul class="space-y-1.5 text-[11px] text-slate-400">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Venta de excedentes a la red</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Depreciación acelerada de activos</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Certificados de Energía Limpia</li>
+          </ul>
+        </div>
+        <a data-dyn-href="wa" target="_blank" class="mt-6 w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 rounded-xl text-xs font-bold text-center block transition">
+          Cotizar Industrial
+        </a>
+      </div>
+
+      <!-- Solución 3 -->
+      <div class="glass-solar rounded-3xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xl flex items-center justify-center mb-4">
+            <i class="fa-solid fa-car-battery"></i>
+          </div>
+          <h3 class="font-tech text-xl font-bold text-white mb-2">Almacenamiento LFP (Baterías)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Sistemas híbridos y aislados con baterías de Litio Ferro-Fosfato (LiFePO4). Energía ininterrumpida ante apagones y cortes en el fluido eléctrico.
+          </p>
+          <ul class="space-y-1.5 text-[11px] text-slate-400">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Respaldo instantáneo (UPS)</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Más de 6.000 ciclos de vida útil</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Cero ruido y cero emisiones</li>
+          </ul>
+        </div>
+        <a data-dyn-href="wa" target="_blank" class="mt-6 w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 rounded-xl text-xs font-bold text-center block transition">
+          Cotizar Baterías
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER Y CONTACTO -->
+  <footer id="contacto" class="max-w-7xl mx-auto px-4 md:px-8 py-16 border-t border-slate-800/80">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <div>
+        <h4 class="font-tech text-xl font-bold text-white mb-3" data-dyn="name">Sun Energy Colombia</h4>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+          Ingeniería solar fotovoltaica con certificación RETIE en <span data-dyn="city">Bogotá</span> y toda Colombia.
+        </p>
+        <span class="text-xs text-cyan-300 font-semibold flex items-center gap-1.5">
+          <i class="fa-solid fa-shield-halved"></i> Garantía extendida de 25 años en paneles
+        </span>
+      </div>
+
+      <div>
+        <h4 class="font-tech text-lg font-bold text-white mb-3">Sede Principal</h4>
+        <p class="text-xs text-slate-400 flex items-start gap-2 mb-3">
+          <i class="fa-solid fa-location-dot text-rose-400 mt-0.5"></i>
+          <span data-dyn="address">Cra 15 #120-40, Usaquén, Bogotá</span>
+        </p>
+        <a id="maps-link" href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-cyan-400 hover:underline font-semibold">
+          <i class="fa-solid fa-map-location-dot"></i> Abrir en Google Maps
+        </a>
+      </div>
+
+      <div>
+        <h4 class="font-tech text-lg font-bold text-white mb-3">Asesoría de Ingeniería</h4>
+        <p class="text-xs text-slate-400 mb-3">
+          Envía tu recibo de energía en PDF o foto y recibe tu estudio de dimensionamiento en 24 horas.
+        </p>
+        <div class="flex items-center gap-3">
+          <a data-dyn-href="wa" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold flex items-center gap-1.5">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo
+          </a>
+          <a data-dyn-href="tel" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs font-bold flex items-center gap-1.5 border border-slate-700">
+            <i class="fa-solid fa-phone"></i> Llamar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <div>© <span data-dyn="year">2026</span> <span data-dyn="name">Sun Energy Colombia</span>. Todos los derechos reservados.</div>
+      <div>Estructura de alta conversión optimizada para clientes residenciales y comerciales.</div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a data-dyn-href="wa" target="_blank" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center text-2xl shadow-2xl shadow-emerald-950/80 transition transform hover:scale-110 active:scale-95" title="Cotizar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- SCRIPT DE AUTO-PERSONALIZACIÓN Y SIMULADOR SOLAR -->
+  <script>
+    var currentPhone = '573103077085';
+    var currentName = 'Sun Energy Colombia';
+    var currentCity = 'Bogotá';
+
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      
+      currentName = params.get('nombre') || params.get('name') || 'Sun Energy Colombia';
+      currentCity = params.get('ciudad') || params.get('city') || 'Bogotá';
+      var phone = params.get('tel') || params.get('phone') || '573103077085';
+      var address = params.get('dir') || params.get('addr') || 'Usaquén, Bogotá';
+      
+      currentPhone = phone.replace(/\D/g, '');
+      if (!currentPhone.startsWith('57') && currentPhone.length === 10) {
+        currentPhone = '57' + currentPhone;
+      }
+
+      var words = currentName.split(' ').filter(Boolean);
+      var initials = words.length >= 2 ? (words[0][0] + words[1][0]).toUpperCase() : currentName.substring(0, 2).toUpperCase();
+
+      document.querySelectorAll('[data-dyn="name"]').forEach(function(el) { el.innerText = currentName; });
+      document.querySelectorAll('[data-dyn="city"]').forEach(function(el) { el.innerText = currentCity; });
+      document.querySelectorAll('[data-dyn="address"]').forEach(function(el) { el.innerText = address; });
+      document.querySelectorAll('[data-dyn="initials"]').forEach(function(el) { el.innerText = initials; });
+      document.querySelectorAll('[data-dyn="year"]').forEach(function(el) { el.innerText = new Date().getFullYear(); });
+      document.title = currentName + ' — Ingeniería Solar en ' + currentCity;
+
+      var defaultWaMsg = '¡Hola ' + currentName + '! Estuve revisando su propuesta de energía solar en ' + currentCity + ' y me gustaría cotizar un sistema fotovoltaico para mi predio.';
+      var waUrl = 'https://wa.me/' + currentPhone + '?text=' + encodeURIComponent(defaultWaMsg);
+
+      document.querySelectorAll('[data-dyn-href="wa"]').forEach(function(el) { el.href = waUrl; });
+      document.querySelectorAll('[data-dyn-href="tel"]').forEach(function(el) { el.href = 'tel:+' + currentPhone; });
+
+      var mapsLink = document.getElementById('maps-link');
+      if (mapsLink) mapsLink.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(currentName + ' ' + address);
+
+      updateSolarCalc();
+    })();
+
+    function updateSolarCalc() {
+      var billInput = document.getElementById('bill-range');
+      if (!billInput) return;
+      var bill = parseInt(billInput.value, 10);
+
+      // Formato COP
+      var billFormatted = '$' + bill.toLocaleString('es-CO') + ' COP';
+      document.getElementById('slider-val-display').innerText = billFormatted;
+
+      // Cálculos Solares
+      var annualBill = bill * 12;
+      var annualSavings = Math.round(annualBill * 0.85); // 85% ahorro
+      var annualSavingsFormatted = '$' + annualSavings.toLocaleString('es-CO') + ' COP';
+      document.getElementById('annual-savings-display').innerText = annualSavingsFormatted;
+
+      // Estimación de paneles (aprox 1 panel de 585W por cada $130.000 de factura en Colombia)
+      var panelCount = Math.max(4, Math.round(bill / 135000));
+      var panelRange = (panelCount - 1) + ' - ' + (panelCount + 2) + ' Paneles';
+      document.getElementById('panels-count-display').innerText = panelRange;
+
+      // Estimación de CO2 (aprox 4.2 kg CO2 por cada panel al año)
+      var co2Tons = ((panelCount * 450) / 1000).toFixed(1);
+      document.getElementById('co2-display').innerText = co2Tons + ' Toneladas';
+
+      // Actualizar botón de WhatsApp
+      var waBtn = document.getElementById('solar-wa-btn');
+      if (waBtn) {
+        var msg = '¡Hola ' + currentName + '! Realicé la simulación solar en su página web:\n\n' +
+                  '• *Factura Actual Mensual:* ' + billFormatted + '\n' +
+                  '• *Ahorro Anual Estimado:* ' + annualSavingsFormatted + '\n' +
+                  '• *Sistema Recomendado:* ' + panelRange + '\n\n' +
+                  'Me gustaría agendar una visita técnica para verificar mi cubierta en ' + currentCity + '.';
+        waBtn.href = 'https://wa.me/' + currentPhone + '?text=' + encodeURIComponent(msg);
+      }
+    }
+  </script>
+</body>
+</html>

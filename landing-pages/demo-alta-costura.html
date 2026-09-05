@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title data-dyn="title">Atelier de Alta Costura Nupcial</title>
+  
+  <!-- Google Fonts: Playfair Display + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <style>
+    :root {
+      --gold-primary: #d4af37;
+      --gold-light: #f3e5ab;
+      --gold-dark: #aa820a;
+      --bg-dark: #090b10;
+      --bg-card: #111520;
+    }
+    
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body {
+      background-color: var(--bg-dark);
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .font-serif { font-family: 'Playfair Display', serif; }
+    
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fff7d6 0%, #d4af37 50%, #aa820a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-border { border-color: rgba(212, 175, 55, 0.25); }
+    .gold-border:hover { border-color: rgba(212, 175, 55, 0.6); }
+
+    .card-glass {
+      background: rgba(17, 21, 32, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.4s ease;
+    }
+    .card-glass:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .demo-banner {
+      background: linear-gradient(90deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- BARRA SUPERIOR EXCLUSIVA PARA EL PROSPECTO -->
+  <div class="demo-banner sticky top-0 z-50 px-4 py-2 text-center text-xs text-slate-300 flex items-center justify-between gap-2">
+    <div class="flex items-center gap-2 mx-auto">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span>Propuesta interactiva diseñada para <strong data-dyn="name" class="text-amber-300">Diana Quintero Novias</strong></span>
+    </div>
+    <a id="cta-agency" href="#" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-full text-[11px] transition">
+      <i class="fa-solid fa-sparkles"></i> Obtener esta Web
+    </a>
+  </div>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full border border-amber-400/40 flex items-center justify-center text-amber-300 font-serif text-lg font-bold">
+        <span data-dyn="initials">DQ</span>
+      </div>
+      <div>
+        <span data-dyn="name" class="font-serif text-lg md:text-xl font-bold tracking-wide text-white block leading-tight">Diana Quintero</span>
+        <span class="text-[10px] uppercase tracking-widest text-amber-400/90 font-medium block">Haute Couture • <span data-dyn="city">Bogotá</span></span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a data-dyn-href="wa" target="_blank" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-amber-400/40 text-amber-300 hover:bg-amber-400/10 text-xs font-semibold tracking-wider uppercase transition">
+        <i class="fa-brands fa-whatsapp text-sm"></i> Agendar Cita
+      </a>
+      <a data-dyn-href="wa" target="_blank" class="md:hidden w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white text-lg shadow-lg">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="relative min-h-[85vh] flex items-center justify-center px-4 py-16 overflow-hidden">
+    <!-- Imagen de fondo con overlay elegante -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=1920&auto=format&fit=crop" 
+           alt="Novia Alta Costura" class="w-full h-full object-cover object-center opacity-30 scale-105 transition-transform duration-1000">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#090b10] via-[#090b10]/70 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold uppercase tracking-widest">
+        <i class="fa-solid fa-crown text-[10px]"></i> Colección Nupcial & Gala <span data-dyn="year">2026</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-tight">
+        El Vestido de Tus Sueños, <br>
+        <span class="gold-gradient-text italic font-normal">Hecho a tu Medida</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-slate-300 text-sm sm:text-base md:text-lg font-light leading-relaxed">
+        Confección artesanal de alta costura, sedas italianas, encajes franceses y bordados exclusivos para novias que buscan sofisticación inigualable en <span data-dyn="city" class="text-amber-200 font-medium">Bogotá</span>.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <a data-dyn-href="wa" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm tracking-wider uppercase rounded-full shadow-2xl shadow-amber-500/20 transition transform active:scale-95 flex items-center justify-center gap-3">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Agendar Asesoría Personalizada</span>
+        </a>
+        <a href="#coleccion" class="w-full sm:w-auto px-8 py-4 bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 text-sm tracking-wider uppercase rounded-full transition flex items-center justify-center gap-2">
+          <span>Explorar Diseños</span>
+          <i class="fa-solid fa-arrow-down text-xs text-amber-400"></i>
+        </a>
+      </div>
+
+      <!-- Stats rápidos -->
+      <div class="grid grid-cols-3 gap-4 pt-10 border-t border-slate-800/80 max-w-xl mx-auto text-center">
+        <div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-amber-300">+10 Años</div>
+          <div class="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Creando Magia</div>
+        </div>
+        <div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-amber-300">100%</div>
+          <div class="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">A Medida</div>
+        </div>
+        <div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-amber-300">4.9 ★</div>
+          <div class="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Novias Felices</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECCIÓN CATÁLOGO / SILUETAS -->
+  <section id="coleccion" class="max-w-7xl mx-auto px-4 py-20">
+    <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+      <span class="text-xs uppercase tracking-widest text-amber-400 font-semibold block">Siluetas Exclusivas</span>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white">Diseños que Cautivan Miradas</h2>
+      <p class="text-slate-400 text-sm">Cada pieza es una obra de arte concebida para realzar tu belleza y personalidad.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Vestido 1 -->
+      <div class="card-glass rounded-2xl overflow-hidden group">
+        <div class="relative h-96 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop" 
+               alt="Vestido Corte Princesa" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[10px] uppercase tracking-widest text-amber-300 font-bold bg-slate-900/90 px-2.5 py-1 rounded">Corte Princesa</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-1">Silueta Étoile Royale</h3>
+            <p class="text-xs text-slate-300 mt-1">Tul ilusión, pedrería bordada a mano y escote corazón.</p>
+          </div>
+        </div>
+        <div class="p-5 flex items-center justify-between border-t border-slate-800">
+          <span class="text-xs text-slate-400">Confección a medida</span>
+          <a data-dyn-href="wa-item-1" target="_blank" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+            Cotizar Diseño <i class="fa-solid fa-angle-right text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Vestido 2 -->
+      <div class="card-glass rounded-2xl overflow-hidden group">
+        <div class="relative h-96 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1546804784-896d0d517245?q=80&w=800&auto=format&fit=crop" 
+               alt="Vestido Sirena" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[10px] uppercase tracking-widest text-amber-300 font-bold bg-slate-900/90 px-2.5 py-1 rounded">Silueta Sirena</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-1">Sirena Encaje Francés</h3>
+            <p class="text-xs text-slate-300 mt-1">Espalda descubierta, cola catedral y encaje Chantilly.</p>
+          </div>
+        </div>
+        <div class="p-5 flex items-center justify-between border-t border-slate-800">
+          <span class="text-xs text-slate-400">Confección a medida</span>
+          <a data-dyn-href="wa-item-2" target="_blank" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+            Cotizar Diseño <i class="fa-solid fa-angle-right text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Vestido 3 -->
+      <div class="card-glass rounded-2xl overflow-hidden group">
+        <div class="relative h-96 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800&auto=format&fit=crop" 
+               alt="Vestido Minimalista Seda" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[10px] uppercase tracking-widest text-amber-300 font-bold bg-slate-900/90 px-2.5 py-1 rounded">Minimalista de Lujo</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-1">Seda Pura & Drapeado</h3>
+            <p class="text-xs text-slate-300 mt-1">Crepé de seda natural, líneas arquitectónicas y pureza visual.</p>
+          </div>
+        </div>
+        <div class="p-5 flex items-center justify-between border-t border-slate-800">
+          <span class="text-xs text-slate-400">Confección a medida</span>
+          <a data-dyn-href="wa-item-3" target="_blank" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+            Cotizar Diseño <i class="fa-solid fa-angle-right text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EL PROCESO DE ALTA COSTURA -->
+  <section class="max-w-7xl mx-auto px-4 py-20 border-t border-slate-800/80">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <span class="text-xs uppercase tracking-widest text-amber-400 font-semibold block">Experiencia Personalizada</span>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">¿Cómo Creamos Tu Vestido?</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="card-glass p-8 rounded-2xl relative">
+        <div class="w-14 h-14 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 font-serif text-xl font-bold flex items-center justify-center mx-auto mb-5">
+          1
+        </div>
+        <h3 class="font-serif text-xl font-bold text-white mb-2">Asesoría & Boceto</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Nos reunimos en nuestro atelier en <span data-dyn="city">Bogotá</span> para entender tu estilo, tipo de ceremonia y crear el boceto que exprese tu esencia.
+        </p>
+      </div>
+
+      <div class="card-glass p-8 rounded-2xl relative">
+        <div class="w-14 h-14 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 font-serif text-xl font-bold flex items-center justify-center mx-auto mb-5">
+          2
+        </div>
+        <h3 class="font-serif text-xl font-bold text-white mb-2">Telas & Pruebas</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Seleccionamos sedas, tules y encajes importados. Realizamos las pruebas de calce para que la prenda se adapte como un guante a tu figura.
+        </p>
+      </div>
+
+      <div class="card-glass p-8 rounded-2xl relative">
+        <div class="w-14 h-14 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 font-serif text-xl font-bold flex items-center justify-center mx-auto mb-5">
+          3
+        </div>
+        <h3 class="font-serif text-xl font-bold text-white mb-2">Entrega Soñada</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Afinamos los últimos detalles de bordado y planchado para entregarte un vestido impecable, listo para brillar en tu gran día.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="max-w-5xl mx-auto px-4 py-20 text-center">
+    <div class="card-glass p-8 sm:p-14 rounded-3xl border border-amber-500/30 relative overflow-hidden">
+      <div class="relative z-10 space-y-6">
+        <span class="text-xs uppercase tracking-widest text-amber-400 font-semibold block">Agenda tu Cita Privada</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">
+          Vive la Experiencia <span data-dyn="name">Diana Quintero</span>
+        </h2>
+        <p class="text-slate-300 text-sm max-w-xl mx-auto">
+          Permítenos acompañarte en cada paso hacia el día más inolvidable de tu vida. Atención personalizada con cita previa.
+        </p>
+        <div class="pt-4">
+          <a data-dyn-href="wa" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm tracking-wider uppercase rounded-full shadow-2xl shadow-emerald-900/50 transition transform active:scale-95">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Hablar por WhatsApp con una Asesora</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="max-w-7xl mx-auto px-4 py-12 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+    <div>
+      © <span data-dyn="year">2026</span> <span data-dyn="name">Diana Quintero Novias</span>. Todos los derechos reservados.
+    </div>
+    <div class="flex items-center gap-4">
+      <span data-dyn="city">Bogotá, Colombia</span>
+      <span>•</span>
+      <span data-dyn="phone">+57 315 8937720</span>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a data-dyn-href="wa" target="_blank" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center text-2xl shadow-2xl shadow-emerald-950/80 transition transform hover:scale-110 active:scale-95" title="WhatsApp Directo">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- SCRIPT DE AUTO-PERSONALIZACIÓN POR URL -->
+  <script>
+    (function() {
+      // 1. Leer parámetros de la URL (?nombre=...&ciudad=...&tel=...&dir=...)
+      var params = new URLSearchParams(window.location.search);
+      
+      var name = params.get('nombre') || params.get('name') || 'Diana Quintero Novias';
+      var city = params.get('ciudad') || params.get('city') || 'Bogotá';
+      var phone = params.get('tel') || params.get('phone') || '573158937720';
+      var address = params.get('dir') || params.get('addr') || 'Usaquén, Bogotá';
+      
+      // Limpiar teléfono
+      var phoneClean = phone.replace(/\D/g, '');
+      if (!phoneClean.startsWith('57') && phoneClean.length === 10) {
+        phoneClean = '57' + phoneClean;
+      }
+
+      // Obtener iniciales para el logo
+      var words = name.split(' ').filter(Boolean);
+      var initials = words.length >= 2 ? (words[0][0] + words[1][0]).toUpperCase() : name.substring(0, 2).toUpperCase();
+
+      // 2. Reemplazar textos en la página
+      document.querySelectorAll('[data-dyn="name"]').forEach(function(el) { el.innerText = name; });
+      document.querySelectorAll('[data-dyn="city"]').forEach(function(el) { el.innerText = city; });
+      document.querySelectorAll('[data-dyn="phone"]').forEach(function(el) { el.innerText = '+' + phoneClean; });
+      document.querySelectorAll('[data-dyn="initials"]').forEach(function(el) { el.innerText = initials; });
+      document.querySelectorAll('[data-dyn="year"]').forEach(function(el) { el.innerText = new Date().getFullYear(); });
+      document.title = name + ' — Alta Costura Nupcial en ' + city;
+
+      // 3. Configurar enlaces de WhatsApp
+      var defaultWaMsg = '¡Hola ' + name + '! Estuve viendo su catálogo en línea y me gustaría agendar una cita de asesoría para mi vestido de novia en ' + city + '.';
+      var waUrl = 'https://wa.me/' + phoneClean + '?text=' + encodeURIComponent(defaultWaMsg);
+
+      document.querySelectorAll('[data-dyn-href="wa"]').forEach(function(el) { el.href = waUrl; });
+
+      // Enlaces para vestidos específicos
+      var item1Msg = '¡Hola ' + name + '! Me encantó el vestido *Corte Princesa Silueta Étoile Royale* de su catálogo en línea. ¿Tienen disponibilidad para prueba de vestido?';
+      var item2Msg = '¡Hola ' + name + '! Me interesó el vestido *Sirena con Encaje Francés* de su catálogo en línea. ¿Me podrían brindar más información?';
+      var item3Msg = '¡Hola ' + name + '! Me gustaría consultar sobre el vestido *Minimalista de Seda Pura*. ¿Cuál es el proceso para confeccionarlo a mi medida?';
+
+      var elItem1 = document.querySelector('[data-dyn-href="wa-item-1"]');
+      if (elItem1) elItem1.href = 'https://wa.me/' + phoneClean + '?text=' + encodeURIComponent(item1Msg);
+
+      var elItem2 = document.querySelector('[data-dyn-href="wa-item-2"]');
+      if (elItem2) elItem2.href = 'https://wa.me/' + phoneClean + '?text=' + encodeURIComponent(item2Msg);
+
+      var elItem3 = document.querySelector('[data-dyn-href="wa-item-3"]');
+      if (elItem3) elItem3.href = 'https://wa.me/' + phoneClean + '?text=' + encodeURIComponent(item3Msg);
+
+      // Enlace para el botón de la agencia
+      var ctaAgency = document.getElementById('cta-agency');
+      if (ctaAgency) {
+        ctaAgency.href = 'https://wa.me/573100000000?text=' + encodeURIComponent('Hola, vi la demo interactiva preparada para ' + name + ' y me gustaría activar esta web para mi negocio.');
+      }
+    })();
+  </script>
+</body>
+</html>

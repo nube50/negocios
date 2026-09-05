@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title data-dyn="title">Hospital Veterinario 24 Horas & Especialidades</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root { --vet-teal: #14b8a6; --vet-amber: #f59e0b; --bg-dark: #080d16; }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body { background-color: var(--bg-dark); color: #f1f5f9; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+    .font-tech { font-family: 'Space Grotesk', sans-serif; }
+    .glass-vet {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(20, 184, 166, 0.18);
+      transition: all 0.35s ease;
+    }
+    .glass-vet:hover {
+      border-color: rgba(20, 184, 166, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7);
+    }
+    .btn-vet {
+      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      color: #042f2c;
+      font-weight: 800;
+      box-shadow: 0 4px 20px rgba(20, 184, 166, 0.35);
+    }
+    .btn-vet:hover { transform: scale(1.02); }
+  </style>
+</head>
+<body class="relative">
+
+  <div class="sticky top-0 z-50 px-4 py-2 text-center text-xs bg-slate-950/90 backdrop-blur-md border-b border-teal-500/30 flex items-center justify-between gap-3 shadow-xl">
+    <div class="flex items-center gap-2 mx-auto">
+      <span class="inline-block w-2.5 h-2.5 rounded-full bg-teal-400 animate-pulse"></span>
+      <span>Propuesta digital interactiva de hospital veterinario para <strong data-dyn="name" class="text-teal-300 font-bold">Zoovet 24 Horas</strong></span>
+    </div>
+    <a data-dyn-href="wa-agency" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 font-black rounded-full text-[11px] transition shadow">
+      <i class="fa-solid fa-sparkles"></i> Activar esta Web Oficial
+    </a>
+  </div>
+
+  <nav class="max-w-7xl mx-auto px-4 md:px-8 py-5 flex items-center justify-between relative z-40">
+    <div class="flex items-center gap-3.5">
+      <div class="w-11 h-11 rounded-2xl bg-teal-500/20 border border-teal-400/40 flex items-center justify-center text-teal-300 font-tech text-xl font-bold">
+        <span data-dyn="initials">ZV</span>
+      </div>
+      <div>
+        <span data-dyn="name" class="font-tech text-xl font-bold text-white block leading-tight">Zoovet 24H</span>
+        <span class="text-[10px] uppercase tracking-widest text-teal-400 font-semibold block flex items-center gap-1">
+          <i class="fa-solid fa-paw text-amber-400"></i> Clínica Veterinaria & Urgencias 24/7 • <span data-dyn="city">Bogotá</span>
+        </span>
+      </div>
+    </div>
+    <a data-dyn-href="wa" target="_blank" class="btn-vet px-5 py-2.5 rounded-full text-xs tracking-wider uppercase flex items-center gap-2">
+      <i class="fa-brands fa-whatsapp text-sm"></i>
+      <span>Urgencias / Citas WhatsApp</span>
+    </a>
+  </nav>
+
+  <header class="relative min-h-[85vh] flex items-center justify-center px-4 py-16 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?q=80&w=1920&auto=format&fit=crop" 
+           alt="Veterinaria Moderna" class="w-full h-full object-cover object-center opacity-20 scale-105">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#080d16] via-[#080d16]/70 to-[#080d16]/85"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6 pt-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold uppercase tracking-widest">
+        <i class="fa-solid fa-truck-medical"></i> Servicio de Urgencias Médicas Veterinarias 24 Horas
+      </div>
+
+      <h1 class="font-tech text-4xl sm:text-6xl md:text-7xl font-black text-white leading-tight">
+        La Salud de Tu Mascota, <br>
+        <span class="text-teal-400">En Manos Expertas</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-slate-300 text-sm sm:text-base leading-relaxed">
+        Hospitalización monitoreada, cirugía de tejidos blandos, laboratorio clínico propio, ecografía y estética canina/felina de lujo en <span data-dyn="name" class="text-white font-bold">Zoovet 24H</span>.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+        <a data-dyn-href="wa" target="_blank" class="btn-vet w-full sm:w-auto px-8 py-4 rounded-full text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-3">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Contactar Médico Veterinario por WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-10 max-w-3xl mx-auto">
+        <div class="glass-vet p-3.5 rounded-xl text-center">
+          <div class="font-tech text-2xl font-bold text-teal-300">24 / 7</div>
+          <div class="text-[10px] text-slate-400 uppercase font-semibold mt-0.5">Urgencias sin Esperas</div>
+        </div>
+        <div class="glass-vet p-3.5 rounded-xl text-center">
+          <div class="font-tech text-2xl font-bold text-amber-300">4.9 ★</div>
+          <div class="text-[10px] text-slate-400 uppercase font-semibold mt-0.5">400+ Pacientes Felices</div>
+        </div>
+        <div class="glass-vet p-3.5 rounded-xl text-center">
+          <div class="font-tech text-2xl font-bold text-teal-300">100%</div>
+          <div class="text-[10px] text-slate-400 uppercase font-semibold mt-0.5">Especialistas Titulados</div>
+        </div>
+        <div class="glass-vet p-3.5 rounded-xl text-center">
+          <div class="font-tech text-2xl font-bold text-rose-400">UCI</div>
+          <div class="text-[10px] text-slate-400 uppercase font-semibold mt-0.5">Unidad de Cuidados Intensivos</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICIOS -->
+  <section class="max-w-7xl mx-auto px-4 md:px-8 py-20 border-t border-slate-800">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="glass-vet rounded-2xl p-6">
+        <i class="fa-solid fa-stethoscope text-2xl text-teal-400 mb-3 block"></i>
+        <h3 class="font-tech text-lg font-bold text-white mb-2">Consulta Médica & Vacunación</h3>
+        <p class="text-xs text-slate-300 mb-4">Chequeos preventivos, esquemas de vacunación y desparasitación con microchip internacional.</p>
+        <a data-dyn-href="wa" target="_blank" class="text-xs font-bold text-teal-400">Agendar Cita →</a>
+      </div>
+      <div class="glass-vet rounded-2xl p-6">
+        <i class="fa-solid fa-bed-pulse text-2xl text-amber-400 mb-3 block"></i>
+        <h3 class="font-tech text-lg font-bold text-white mb-2">Cirugía & Quirófano Digital</h3>
+        <p class="text-xs text-slate-300 mb-4">Anestesia inhalatoria monitoreada y recuperación térmica para máxima seguridad de tu peludo.</p>
+        <a data-dyn-href="wa" target="_blank" class="text-xs font-bold text-amber-400">Consultar Cirugía →</a>
+      </div>
+      <div class="glass-vet rounded-2xl p-6">
+        <i class="fa-solid fa-shower text-2xl text-rose-400 mb-3 block"></i>
+        <h3 class="font-tech text-lg font-bold text-white mb-2">Spa & Peluquería Canina/Felina</h3>
+        <p class="text-xs text-slate-300 mb-4">Baño medicado, corte de raza, hidratación de manto y aromaterapia relajante libre de estrés.</p>
+        <a data-dyn-href="wa" target="_blank" class="text-xs font-bold text-rose-400">Reservar Spa →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto" class="max-w-7xl mx-auto px-4 md:px-8 py-12 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+    <div>© <span data-dyn="year">2026</span> <span data-dyn="name">Zoovet 24 Horas</span> • <span data-dyn="city">Bogotá</span></div>
+    <div class="flex items-center gap-3">
+      <span data-dyn="address">Cl. 80 #68-20, Bogotá</span>
+      <span>•</span>
+      <span data-dyn="phone">+57 311 0000000</span>
+    </div>
+  </footer>
+
+  <a data-dyn-href="wa" target="_blank" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-2xl">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var name = params.get('nombre') || params.get('name') || 'Zoovet 24 Horas';
+      var city = params.get('ciudad') || params.get('city') || 'Bogotá';
+      var phone = (params.get('tel') || params.get('phone') || '573110000000').replace(/\D/g, '');
+      var address = params.get('dir') || params.get('addr') || 'Cl. 80 #68-20, Bogotá';
+      if (!phone.startsWith('57') && phone.length === 10) phone = '57' + phone;
+
+      var initials = name.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase() || 'VT';
+
+      document.querySelectorAll('[data-dyn="name"]').forEach(el => el.innerText = name);
+      document.querySelectorAll('[data-dyn="city"]').forEach(el => el.innerText = city);
+      document.querySelectorAll('[data-dyn="address"]').forEach(el => el.innerText = address);
+      document.querySelectorAll('[data-dyn="initials"]').forEach(el => el.innerText = initials);
+      document.querySelectorAll('[data-dyn="phone"]').forEach(el => el.innerText = '+' + phone);
+      document.querySelectorAll('[data-dyn="year"]').forEach(el => el.innerText = new Date().getFullYear());
+      document.title = name + ' — Hospital Veterinario 24H en ' + city;
+
+      var waUrl = 'https://wa.me/' + phone + '?text=' + encodeURIComponent('¡Hola ' + name + '! Me gustaría consultar sobre un servicio veterinario para mi mascota en ' + city + '.');
+      document.querySelectorAll('[data-dyn-href="wa"]').forEach(el => el.href = waUrl);
+    })();
+  </script>
+</body>
+</html>

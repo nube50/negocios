@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html lang="es" class="lenis lenis-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Arrecife Boats Cartagena — Alquiler de Botes Privados & Yates en el Caribe</title>
+  
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="Alquiler de botes privados y yates en Cartagena. Pasadías exclusivos a Islas del Rosario, Cholón y Barú con capitán, combustible y sonido premium incluido.">
+  
+  <!-- Tipografía High-End: Outfit (Display Náutico) + Plus Jakarta Sans + Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Pro / Free CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    :root {
+      /* Paleta Náutica Deep Ocean & Caribbean Cyan (Inspiración 21st.dev) */
+      --bg-abyssal: #060e1a;
+      --bg-surface: #0a1728;
+      --bg-card: rgba(10, 23, 40, 0.75);
+      --bg-card-hover: rgba(14, 32, 56, 0.9);
+      
+      /* Acentos Marinos & Champagne */
+      --accent-cyan: #06b6d4;
+      --accent-cyan-light: #38bdf8;
+      --accent-cyan-glow: rgba(6, 182, 212, 0.35);
+      --accent-gold: #f59e0b;
+      --accent-gold-light: #fbbf24;
+      --accent-gold-glow: rgba(245, 158, 11, 0.25);
+      --accent-white: #f8fafc;
+      --accent-slate: #94a3b8;
+      
+      /* Bordes de Precisión 21st.dev */
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-cyan: rgba(6, 182, 212, 0.3);
+      --border-glow: rgba(6, 182, 212, 0.5);
+      
+      /* Tipografía */
+      --font-display: 'Outfit', sans-serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      
+      /* Sombras de Oclusión Marina */
+      --shadow-marine: 0 25px 50px -12px rgba(2, 6, 23, 0.85), 0 0 30px rgba(6, 182, 212, 0.12);
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html {
+      scroll-behavior: initial;
+      background-color: var(--bg-abyssal);
+      color: var(--accent-white);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+    }
+
+    body {
+      position: relative;
+      background-color: var(--bg-abyssal);
+      overflow-x: hidden;
+      min-height: 100vh;
+      selection-background-color: var(--accent-cyan);
+      selection-color: #040810;
+    }
+
+    /* Grano Analógico Sutil */
+    .film-grain-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.025;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Fondo de Ondas & Partículas 21st.dev Glowy Waves */
+    #marineCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Contenedor Principal */
+    .app-wrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* NAVBAR FLOTANTE ESTILO GLASS 21ST.DEV */
+    .nautical-nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 1180px;
+      z-index: 1000;
+      padding: 12px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 9999px;
+      background: rgba(6, 14, 26, 0.75);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nautical-nav:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(6, 182, 212, 0.15);
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .brand-emblem {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #06b6d4 0%, #0369a1 100%);
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #ffffff 40%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    @media (min-width: 920px) {
+      .nav-links { display: flex; }
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(248, 250, 252, 0.8);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: color 0.3s ease;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold));
+      transition: width 0.3s var(--ease-out-expo);
+    }
+
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-badge-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-cyan-light);
+      margin-left: 10px;
+    }
+
+    /* BOTONES MAGNÉTICOS & SHIMMER (21ST.DEV STYLE) */
+    .btn-nautical-shimmer {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 26px;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #030a16;
+      background: linear-gradient(135deg, #06b6d4 0%, #38bdf8 50%, #0ea5e9 100%);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.25s var(--ease-out-expo), box-shadow 0.3s ease;
+      will-change: transform;
+    }
+
+    .btn-nautical-shimmer::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.7) 50%,
+        transparent 65%
+      );
+      transform: rotate(25deg) translateY(-100%);
+      transition: transform 0.75s var(--ease-out-expo);
+      pointer-events: none;
+    }
+
+    .btn-nautical-shimmer:hover::before {
+      transform: rotate(25deg) translateY(100%);
+    }
+
+    .btn-nautical-shimmer:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px -5px rgba(6, 182, 212, 0.7), 0 0 25px rgba(56, 189, 248, 0.4);
+    }
+
+    .btn-nautical-outline {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 26px;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+
+    .btn-nautical-outline:hover {
+      background: rgba(6, 182, 212, 0.15);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan-light);
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 140px 0 70px;
+      position: relative;
+    }
+
+    .badge-experience {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 20px;
+      border-radius: 9999px;
+      background: rgba(6, 182, 212, 0.08);
+      border: 1px solid rgba(6, 182, 212, 0.28);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-cyan-light);
+      margin-bottom: 24px;
+      box-shadow: 0 0 25px rgba(6, 182, 212, 0.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .badge-experience i {
+      color: var(--accent-gold);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5.8vw, 5.4rem);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-title .glow-text-cyan {
+      background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 35px rgba(6, 182, 212, 0.3);
+    }
+
+    .hero-description {
+      font-size: clamp(1rem, 1.35vw, 1.25rem);
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--accent-slate);
+      max-width: 780px;
+      margin: 24px auto 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    /* HUD DE TELEMETRÍA NÁUTICA (21st.dev style) */
+    .nautical-hud {
+      margin-top: 54px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      width: 100%;
+      max-width: 940px;
+      padding: 18px 24px;
+      border-radius: 24px;
+      background: rgba(10, 23, 40, 0.85);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(24px) saturate(180%);
+      box-shadow: var(--shadow-marine);
+    }
+
+    @media (max-width: 768px) {
+      .nautical-hud { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .hud-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid var(--border-subtle);
+      padding: 6px 12px;
+    }
+
+    .hud-cell:last-child { border-right: none; }
+
+    @media (max-width: 768px) {
+      .hud-cell:nth-child(2) { border-right: none; }
+    }
+
+    .hud-val {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 2.2vw, 1.95rem);
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(135deg, #ffffff 40%, var(--accent-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hud-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-slate);
+      margin-top: 4px;
+    }
+
+    /* SECCIONES: TÍTULOS Y TAGS */
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-tag-marine {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      margin-bottom: 12px;
+    }
+
+    .section-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+
+    .section-subtext {
+      font-size: 1.05rem;
+      color: var(--accent-slate);
+      max-width: 620px;
+      margin: 12px auto 0;
+      line-height: 1.7;
+    }
+
+    /* FLOTA PROPIA (3D PERSPECTIVE CARDS 21ST.DEV) */
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-bottom: 120px;
+    }
+
+    .fleet-card-3d {
+      position: relative;
+      border-radius: 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-marine);
+      transition: transform 0.4s var(--ease-out-expo), border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .fleet-card-3d:hover {
+      transform: translateY(-8px);
+      border-color: rgba(6, 182, 212, 0.4);
+      box-shadow: 0 30px 60px -15px rgba(2, 6, 23, 0.95), 0 0 35px rgba(6, 182, 212, 0.2);
+    }
+
+    .fleet-card-media {
+      position: relative;
+      height: 230px;
+      width: 100%;
+      overflow: hidden;
+      background: #0d1e33;
+    }
+
+    .fleet-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s var(--ease-out-expo);
+    }
+
+    .fleet-card-3d:hover .fleet-card-media img {
+      transform: scale(1.08);
+    }
+
+    .fleet-media-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(6, 14, 26, 0.95) 100%);
+    }
+
+    .fleet-tag-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(6, 14, 26, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-cyan-light);
+    }
+
+    .fleet-content {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .fleet-title {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .fleet-desc {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--accent-slate);
+      margin-bottom: 20px;
+    }
+
+    .fleet-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 22px;
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: #e2e8f0;
+    }
+
+    .spec-item i {
+      color: var(--accent-cyan);
+      font-size: 0.88rem;
+    }
+
+    /* DESTINATIONS (ANIMATED SLIDING TABS 21ST.DEV) */
+    .destinations-wrapper {
+      margin-bottom: 120px;
+    }
+
+    .dest-tabs-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+
+    .dest-tab-btn {
+      padding: 12px 24px;
+      border-radius: 9999px;
+      background: rgba(10, 23, 40, 0.8);
+      border: 1px solid var(--border-subtle);
+      color: var(--accent-slate);
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dest-tab-btn.active {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(14, 165, 233, 0.3) 100%);
+      border-color: var(--accent-cyan);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+    }
+
+    .dest-showcase-panel {
+      border-radius: 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-marine);
+    }
+
+    @media (max-width: 900px) {
+      .dest-showcase-panel {
+        grid-template-columns: 1fr;
+        padding: 28px;
+      }
+    }
+
+    .dest-info-side h3 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .dest-info-side p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--accent-slate);
+      margin-bottom: 24px;
+    }
+
+    .dest-features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .dest-features-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #f1f5f9;
+    }
+
+    .dest-features-list li i {
+      color: var(--accent-cyan);
+    }
+
+    .dest-media-side {
+      position: relative;
+      height: 380px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .dest-media-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .dest-media-tag {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      background: rgba(6, 14, 26, 0.85);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #fff;
+    }
+
+    /* INCLUSIONES (FEATURE GRID SPOTLIGHT GLOW 21ST.DEV) */
+    .inclusions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 120px;
+    }
+
+    .spotlight-inc-card {
+      position: relative;
+      border-radius: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 32px 26px;
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-marine);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      overflow: hidden;
+    }
+
+    .spotlight-inc-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(6, 182, 212, 0.4);
+    }
+
+    .spotlight-inc-card::before {
+      content: '';
+      position: absolute;
+      top: var(--mouse-y, -200px);
+      left: var(--mouse-x, -200px);
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .spotlight-inc-card:hover::before { opacity: 1; }
+
+    .inc-icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      color: var(--accent-cyan);
+      margin-bottom: 20px;
+    }
+
+    .inc-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .inc-desc {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--accent-slate);
+    }
+
+    /* COTIZADOR INTERACTIVO 1-CLIC HACIA WHATSAPP */
+    .calculator-section {
+      margin-bottom: 120px;
+    }
+
+    .calc-container-card {
+      border-radius: 36px;
+      background: radial-gradient(circle at top left, rgba(6, 182, 212, 0.12) 0%, rgba(10, 23, 40, 0.95) 60%);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      padding: 48px;
+      backdrop-filter: blur(24px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(6, 182, 212, 0.15);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 44px;
+    }
+
+    @media (max-width: 960px) {
+      .calc-container-card {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+      }
+    }
+
+    .calc-form-side h3 {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .calc-form-side p {
+      color: var(--accent-slate);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 30px;
+    }
+
+    .calc-field-group {
+      margin-bottom: 22px;
+    }
+
+    .calc-field-group label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      margin-bottom: 8px;
+    }
+
+    .calc-select, .calc-input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: rgba(6, 14, 26, 0.8);
+      border: 1px solid var(--border-subtle);
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .calc-select:focus, .calc-input:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+    }
+
+    .calc-summary-side {
+      border-radius: 24px;
+      background: rgba(6, 14, 26, 0.7);
+      border: 1px solid var(--border-subtle);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .summary-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+
+    .summary-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .summary-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--accent-slate);
+    }
+
+    .summary-row strong {
+      color: #fff;
+      font-family: var(--font-mono);
+    }
+
+    /* TESTIMONIOS MARQUEE (21ST.DEV STYLE) */
+    .marquee-section {
+      margin-bottom: 120px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      animation: marqueeSlide 35s linear infinite;
+      padding: 10px 0;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeSlide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .testimonial-card-21st {
+      width: 360px;
+      flex-shrink: 0;
+      border-radius: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 28px;
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow-marine);
+    }
+
+    .test-stars {
+      color: var(--accent-gold);
+      font-size: 0.88rem;
+      margin-bottom: 14px;
+      display: flex;
+      gap: 4px;
+    }
+
+    .test-body {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: #cbd5e1;
+      margin-bottom: 18px;
+    }
+
+    .test-author-info h5 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    .test-author-info span {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-cyan);
+    }
+
+    /* FOOTER */
+    .nautical-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 0 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      text-align: center;
+      color: var(--accent-slate);
+      font-size: 0.88rem;
+    }
+
+    .footer-dock-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+    }
+
+    /* BOTÓN WHATSAPP FLOTANTE MOBILE-FIRST */
+    .whatsapp-float-nautical {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .wa-bubble-btn {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 1.85rem;
+      box-shadow: 0 14px 35px rgba(34, 197, 94, 0.4), 0 0 25px rgba(34, 197, 94, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+      will-change: transform;
+    }
+
+    .wa-bubble-btn:hover {
+      transform: scale(1.08) translateY(-3px);
+      box-shadow: 0 18px 40px rgba(34, 197, 94, 0.6), 0 0 30px rgba(34, 197, 94, 0.4);
+    }
+
+    .wa-pulse-wave {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid rgba(34, 197, 94, 0.7);
+      animation: waMarinePulse 2.4s infinite cubic-bezier(0.25, 1, 0.5, 1);
+      pointer-events: none;
+    }
+
+    @keyframes waMarinePulse {
+      0% { transform: scale(1); opacity: 0.9; }
+      100% { transform: scale(1.65); opacity: 0; }
+    }
+
+    .wa-tooltip-box {
+      background: rgba(6, 14, 26, 0.9);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      backdrop-filter: blur(16px);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 10px 18px;
+      border-radius: 9999px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      gap: 8px;
+    }
+
+    @media (min-width: 640px) {
+      .wa-tooltip-box { display: flex; }
+    }
+
+    .wa-active-beacon {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="film-grain-overlay"></div>
+  <canvas id="marineCanvas"></canvas>
+
+  <!-- NAVBAR FLOTANTE -->
+  <nav class="nautical-nav">
+    <a href="#" class="brand-logo">
+      <div class="brand-emblem">
+        <i class="fa-solid fa-anchor"></i>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">Arrecife Boats</span>
+        <span class="brand-subtitle">Cartagena de Indias</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#flota">Nuestra Flota</a></li>
+      <li><a href="#destinos">Destinos</a></li>
+      <li><a href="#inclusiones">Inclusiones</a></li>
+      <li><a href="#cotizador">Cotizador</a></li>
+      <li><a href="#resenas">Reseñas</a></li>
+    </ul>
+
+    <div style="display: flex; align-items: center;">
+      <span class="nav-badge-location">
+        <i class="fa-solid fa-location-dot"></i> Club Náutico Manga
+      </span>
+      <a href="https://wa.me/573112599426?text=Hola%20Arrecife%20Boats,%20deseo%20cotizar%20un%20pasad%C3%ADa%20privado%20en%20bote" class="btn-nautical-shimmer" style="margin-left: 14px; padding: 10px 20px; font-size: 0.78rem;" target="_blank" rel="noopener">
+        <span>Cotizar Hoy</span>
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="app-wrapper">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="badge-experience">
+        <i class="fa-solid fa-star"></i>
+        <span>Más de 8 Años de Experiencia | Cartagena & Valencia</span>
+      </div>
+
+      <h1 class="hero-title">
+        Navega el Caribe a Tu Ritmo.<br>
+        <span class="glow-text-cyan">Botes Privados & Yates de Lujo.</span>
+      </h1>
+
+      <p class="hero-description">
+        Descubre las Islas del Rosario, Cholón y Barú en embarcaciones propias de máximo confort y velocidad. Salidas exclusivas desde el Club Náutico de Manga con tripulación certificada, combustible y sonido Bluetooth de alta potencia.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#cotizador" class="btn-nautical-shimmer">
+          <span>Cotizar Pasadía en 1 Clic</span>
+          <i class="fa-solid fa-calculator"></i>
+        </a>
+        <a href="#flota" class="btn-nautical-outline">
+          <span>Explorar la Flota</span>
+          <i class="fa-solid fa-ship"></i>
+        </a>
+      </div>
+
+      <!-- TELEMETRÍA NÁUTICA HUD -->
+      <div class="nautical-hud">
+        <div class="hud-cell">
+          <span class="hud-val">9:00 - 5:00</span>
+          <span class="hud-label">Horario de Pasadía</span>
+        </div>
+        <div class="hud-cell">
+          <span class="hud-val">35 Min</span>
+          <span class="hud-label">Navegación a Barú</span>
+        </div>
+        <div class="hud-cell">
+          <span class="hud-val">100%</span>
+          <span class="hud-label">Combustible Incluido</span>
+        </div>
+        <div class="hud-cell">
+          <span class="hud-val">4.7 ★</span>
+          <span class="hud-label">Calificación de Turistas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOTA PROPIA -->
+    <section id="flota" style="padding-top: 40px;">
+      <div class="section-header">
+        <span class="section-tag-marine">
+          <i class="fa-solid fa-compass"></i>
+          <span>Embarcaciones Propias</span>
+        </span>
+        <h2 class="section-headline">Conoce Nuestra Flota</h2>
+        <p class="section-subtext">
+          Botes deportivos equipados con solarium, cojinería de alta gama y motores fuera de borda de última generación.
+        </p>
+      </div>
+
+      <div class="fleet-grid">
+        <!-- Bote Seahub -->
+        <div class="fleet-card-3d">
+          <div class="fleet-card-media">
+            <span class="fleet-tag-badge">Deportivo & Veloz</span>
+            <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80" alt="Bote Seahub Arrecife Boats">
+            <div class="fleet-media-overlay"></div>
+          </div>
+          <div class="fleet-content">
+            <div>
+              <h3 class="fleet-title">Bote Seahub</h3>
+              <p class="fleet-desc">
+                Lancha deportiva de alta velocidad y agilidad. Diseñada para grupos dinámicos que buscan llegar rápido a las mejores playas y disfrutar del Caribe.
+              </p>
+              <div class="fleet-specs-grid">
+                <div class="spec-item"><i class="fa-solid fa-users"></i> Capacidad: 10 - 12 Pax</div>
+                <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> Motores: 2x 200HP</div>
+                <div class="spec-item"><i class="fa-solid fa-music"></i> Sonido JL Marine BT</div>
+                <div class="spec-item"><i class="fa-solid fa-sun"></i> Solarium Proa</div>
+              </div>
+            </div>
+            <button class="btn-nautical-shimmer select-boat-btn" data-boat="Bote Seahub" style="width: 100%;">
+              <span>Elegir Bote Seahub</span>
+              <i class="fa-solid fa-check"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bote Sofía -->
+        <div class="fleet-card-3d">
+          <div class="fleet-card-media">
+            <span class="fleet-tag-badge" style="color: var(--accent-gold); border-color: rgba(245, 158, 11, 0.4);">Favorito Familiar & Parejas</span>
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Bote Sofía Arrecife Boats">
+            <div class="fleet-media-overlay"></div>
+          </div>
+          <div class="fleet-content">
+            <div>
+              <h3 class="fleet-title">Bote Sofía</h3>
+              <p class="fleet-desc">
+                Embarcación amplia, sumamente elegante y estable. Perfecta para celebraciones privadas, cumpleaños, familias y momentos románticos con el atardecer.
+              </p>
+              <div class="fleet-specs-grid">
+                <div class="spec-item"><i class="fa-solid fa-users"></i> Capacidad: 12 - 14 Pax</div>
+                <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> Motores: 2x 250HP</div>
+                <div class="spec-item"><i class="fa-solid fa-restroom"></i> Baño Marino</div>
+                <div class="spec-item"><i class="fa-solid fa-umbrella-beach"></i> Techo Rígido T-Top</div>
+              </div>
+            </div>
+            <button class="btn-nautical-shimmer select-boat-btn" data-boat="Bote Sofía" style="width: 100%;">
+              <span>Elegir Bote Sofía</span>
+              <i class="fa-solid fa-check"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bote Crimson -->
+        <div class="fleet-card-3d">
+          <div class="fleet-card-media">
+            <span class="fleet-tag-badge">Potencia & Espacio</span>
+            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80" alt="Bote Crimson Arrecife Boats">
+            <div class="fleet-media-overlay"></div>
+          </div>
+          <div class="fleet-content">
+            <div>
+              <h3 class="fleet-title">Bote Crimson</h3>
+              <p class="fleet-desc">
+                Embarcación moderna de gran potencia y excelente distribución interior. Suave navegación sobre el oleaje y espacio ideal para pasar el día en Cholón.
+              </p>
+              <div class="fleet-specs-grid">
+                <div class="spec-item"><i class="fa-solid fa-users"></i> Capacidad: 14 - 16 Pax</div>
+                <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> Motores: 2x 300HP</div>
+                <div class="spec-item"><i class="fa-solid fa-snowflake"></i> Nevera XL Marina</div>
+                <div class="spec-item"><i class="fa-solid fa-water"></i> Ducha de Agua Dulce</div>
+              </div>
+            </div>
+            <button class="btn-nautical-shimmer select-boat-btn" data-boat="Bote Crimson" style="width: 100%;">
+              <span>Elegir Bote Crimson</span>
+              <i class="fa-solid fa-check"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINOS (TABS INTERACTIVOS) -->
+    <section id="destinos" class="destinations-wrapper">
+      <div class="section-header">
+        <span class="section-tag-marine">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>Rutas del Caribe</span>
+        </span>
+        <h2 class="section-headline">Destinos Inolvidables</h2>
+        <p class="section-subtext">Selecciona tu ruta favorita para conocer los atractivos que descubrirás en tu recorrido.</p>
+      </div>
+
+      <div class="dest-tabs-nav">
+        <button class="dest-tab-btn active" data-target="rosario">
+          <i class="fa-solid fa-water"></i> Islas del Rosario
+        </button>
+        <button class="dest-tab-btn" data-target="cholon">
+          <i class="fa-solid fa-champagne-glasses"></i> Cholón (Barú)
+        </button>
+        <button class="dest-tab-btn" data-target="baru">
+          <i class="fa-solid fa-umbrella-beach"></i> Barú & Playa Blanca
+        </button>
+      </div>
+
+      <!-- Panel Rosario -->
+      <div class="dest-showcase-panel dest-panel" id="panel-rosario">
+        <div class="dest-info-side">
+          <h3>Parque Natural Corales del Rosario</h3>
+          <p>
+            Un archipiélago de 120.000 hectáreas de arrecifes de coral protegidos. Aguas cristalinas en tonos turquesa ideales para snorkel, avistamiento de fauna marina y relajación total en islas privadas.
+          </p>
+          <ul class="dest-features-list">
+            <li><i class="fa-solid fa-circle-check"></i> Arrecifes de coral vivos y bancos de peces tropicales</li>
+            <li><i class="fa-solid fa-circle-check"></i> Parada en Isla Grande, Isla del Pirata o Agua Azul</li>
+            <li><i class="fa-solid fa-circle-check"></i> Acceso a restaurantes de mariscos y clubes de playa exclusivos</li>
+          </ul>
+          <a href="#cotizador" class="btn-nautical-shimmer set-dest-btn" data-dest="Islas del Rosario">
+            <span>Cotizar Ruta Rosario</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="dest-media-side">
+          <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=900&q=80" alt="Islas del Rosario Cartagena">
+          <span class="dest-media-tag"><i class="fa-solid fa-compass"></i> 45 min desde Cartagena</span>
+        </div>
+      </div>
+
+      <!-- Panel Cholon -->
+      <div class="dest-showcase-panel dest-panel" id="panel-cholon" style="display: none;">
+        <div class="dest-info-side">
+          <h3>Cholón: La Fiesta Náutica del Caribe</h3>
+          <p>
+            La ensenada más vibrante de Cartagena. El punto de encuentro de yates y botes donde disfrutarás de música, gastronomía servida en el mar y el mejor ambiente festivo del Caribe colombiano.
+          </p>
+          <ul class="dest-features-list">
+            <li><i class="fa-solid fa-circle-check"></i> Ambiente musical en vivo con otros botes y yates</li>
+            <li><i class="fa-solid fa-circle-check"></i> Kioskos en el agua con almuerzos típicos y cócteles</li>
+            <li><i class="fa-solid fa-circle-check"></i> Sede oficial de la Regatta Cholón de fin de año</li>
+          </ul>
+          <a href="#cotizador" class="btn-nautical-shimmer set-dest-btn" data-dest="Cholón (Barú)">
+            <span>Cotizar Ruta Cholón</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="dest-media-side">
+          <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80" alt="Cholón Barú Cartagena">
+          <span class="dest-media-tag"><i class="fa-solid fa-fire"></i> Epicentro de Fiesta Náutica</span>
+        </div>
+      </div>
+
+      <!-- Panel Baru -->
+      <div class="dest-showcase-panel dest-panel" id="panel-baru" style="display: none;">
+        <div class="dest-info-side">
+          <h3>Barú & Playas de Arena Blanca</h3>
+          <p>
+            Kilómetros de arenas blancas y aguas calmas a solo 35 minutos de navegación. Perfecto para desconectar, caminar por la orilla y disfrutar de atardeceres inolvidables antes del regreso.
+          </p>
+          <ul class="dest-features-list">
+            <li><i class="fa-solid fa-circle-check"></i> Aguas mansas ideales para nadar y relajarse</li>
+            <li><i class="fa-solid fa-circle-check"></i> Parada en Playa Tranquila o Ensenada de Portonaito</li>
+            <li><i class="fa-solid fa-circle-check"></i> Tiempo de navegación ágil y cómodo para toda la familia</li>
+          </ul>
+          <a href="#cotizador" class="btn-nautical-shimmer set-dest-btn" data-dest="Barú / Playa Blanca">
+            <span>Cotizar Ruta Barú</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="dest-media-side">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Barú Playa Blanca">
+          <span class="dest-media-tag"><i class="fa-solid fa-clock"></i> 35 min navegación</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INCLUSIONES ESTÁNDAR -->
+    <section id="inclusiones">
+      <div class="section-header">
+        <span class="section-tag-marine">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Experiencia Todo Incluido</span>
+        </span>
+        <h2 class="section-headline">¿Qué Incluye Tu Pasadía?</h2>
+        <p class="section-subtext">Transparencia absoluta. Todo lo necesario para que solo te preocupes por disfrutar.</p>
+      </div>
+
+      <div class="inclusions-grid">
+        <div class="spotlight-inc-card">
+          <div class="inc-icon-box"><i class="fa-solid fa-user-tie"></i></div>
+          <h4 class="inc-title">Capitán Certificado</h4>
+          <p class="inc-desc">Patrón de costa con licencia oficial DIMAR y años de navegación en las corrientes del Caribe.</p>
+        </div>
+
+        <div class="spotlight-inc-card">
+          <div class="inc-icon-box"><i class="fa-solid fa-life-ring"></i></div>
+          <h4 class="inc-title">Marinero a Bordo</h4>
+          <p class="inc-desc">Ayudante de cubierta atento a tus necesidades, servicio de bebidas y asistencia de atraque.</p>
+        </div>
+
+        <div class="spotlight-inc-card">
+          <div class="inc-icon-box"><i class="fa-solid fa-gas-pump"></i></div>
+          <h4 class="inc-title">Combustible Completo</h4>
+          <p class="inc-desc">Gasolina incluida para todo el itinerario acordado. Cero costos sorpresa al finalizar el viaje.</p>
+        </div>
+
+        <div class="spotlight-inc-card">
+          <div class="inc-icon-box"><i class="fa-solid fa-music"></i></div>
+          <h4 class="inc-title">Sonido Bluetooth Marino</h4>
+          <p class="inc-desc">Conecta tu teléfono y sé el DJ de tu propio barco con parlantes náuticos de alta potencia.</p>
+        </div>
+
+        <div class="spotlight-inc-card">
+          <div class="inc-icon-box"><i class="fa-solid fa-snowflake"></i></div>
+          <h4 class="inc-title">Nevera con Hielo</h4>
+          <p class="inc-desc">Nevera marina con abundante hielo para mantener tus bebidas y snacks a temperatura perfecta.</p>
+        </div>
+
+        <div class="spotlight-inc-card">
+          <div class="inc-icon-box"><i class="fa-solid fa-vest"></i></div>
+          <h4 class="inc-title">Seguridad & Chalecos</h4>
+          <p class="inc-desc">Chalecos salvavidas para adultos y niños, botiquín y póliza de seguro marítimo al día.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COTIZADOR INTERACTIVO (1-CLIC HACIA WHATSAPP) -->
+    <section id="cotizador" class="calculator-section">
+      <div class="calc-container-card">
+        <div class="calc-form-side">
+          <span class="section-tag-marine">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Cotizador Dinámico</span>
+          </span>
+          <h3>Arma Tu Pasadía Privado</h3>
+          <p>Selecciona tu embarcación y destino para generar una cotización instantánea lista para confirmar en WhatsApp.</p>
+
+          <form id="boatQuoteForm" onsubmit="event.preventDefault();">
+            <div class="calc-field-group">
+              <label for="selectBoat"><i class="fa-solid fa-ship"></i> 1. Elige Tu Embarcación</label>
+              <select id="selectBoat" class="calc-select">
+                <option value="Bote Seahub (10-12 Pax)">Bote Seahub (10-12 Personas - Ágil & Deportivo)</option>
+                <option value="Bote Sofía (12-14 Pax)" selected>Bote Sofía (12-14 Personas - Confort & Elegancia)</option>
+                <option value="Bote Crimson (14-16 Pax)">Bote Crimson (14-16 Personas - Máxima Potencia)</option>
+              </select>
+            </div>
+
+            <div class="calc-field-group">
+              <label for="selectDest"><i class="fa-solid fa-map-pin"></i> 2. Destino Principal</label>
+              <select id="selectDest" class="calc-select">
+                <option value="Islas del Rosario + Cholón + Barú (Tour Completo)">Tour Completo: Islas del Rosario + Cholón + Barú</option>
+                <option value="Islas del Rosario (Relax & Snorkel)">Islas del Rosario (Snorkel & Playas Tranquilas)</option>
+                <option value="Cholón (Fiesta Náutica)">Cholón (Fiesta Náutica & Gastronomía)</option>
+                <option value="Barú / Playa Blanca">Barú / Playa Blanca</option>
+              </select>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="calc-field-group">
+                <label for="inputPeople"><i class="fa-solid fa-users"></i> 3. Personas</label>
+                <input type="number" id="inputPeople" class="calc-input" min="1" max="16" value="8">
+              </div>
+              <div class="calc-field-group">
+                <label for="inputDate"><i class="fa-solid fa-calendar"></i> 4. Fecha Tentativa</label>
+                <input type="date" id="inputDate" class="calc-input">
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="calc-summary-side">
+          <div>
+            <div class="summary-header">
+              <span class="summary-title">Resumen de Pasadía</span>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan);">9:00 AM - 5:00 PM</span>
+            </div>
+
+            <ul class="summary-list">
+              <li class="summary-row">
+                <span>Embarcación:</span>
+                <strong id="sumBoat">Bote Sofía</strong>
+              </li>
+              <li class="summary-row">
+                <span>Destino:</span>
+                <strong id="sumDest" style="max-width: 180px; text-align: right; font-size: 0.82rem;">Tour Completo</strong>
+              </li>
+              <li class="summary-row">
+                <span>Pasajeros:</span>
+                <strong id="sumPeople">8 Personas</strong>
+              </li>
+              <li class="summary-row">
+                <span>Salida:</span>
+                <strong>Club Náutico Manga</strong>
+              </li>
+              <li class="summary-row">
+                <span>Inclusiones:</span>
+                <strong style="color: var(--accent-cyan-light);">Capitán + Combustible + Hielo</strong>
+              </li>
+            </ul>
+          </div>
+
+          <button id="btnSendQuoteWhatsapp" class="btn-nautical-shimmer" style="width: 100%; padding: 16px 20px; font-size: 0.9rem;">
+            <span>Reservar Pasadía por WhatsApp</span>
+            <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEÑAS / SOCIAL PROOF (MARQUEE 21ST.DEV) -->
+    <section id="resenas" class="marquee-section">
+      <div class="section-header">
+        <span class="section-tag-marine">
+          <i class="fa-solid fa-comments"></i>
+          <span>Opiniones Reales</span>
+        </span>
+        <h2 class="section-headline">La Experiencia Arrecife</h2>
+        <p class="section-subtext">Calificación 4.7★ por turistas nacionales e internacionales.</p>
+      </div>
+
+      <div class="marquee-track">
+        <!-- Review 1 -->
+        <div class="testimonial-card-21st">
+          <div class="test-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="test-body">
+            "Alquilamos el Bote Sofía para el cumpleaños de mi esposa. El capitán fue súper puntual y nos llevó a los mejores rincones de Islas del Rosario. El sonido y la nevera con hielo estaban al 100%."
+          </p>
+          <div class="test-author-info">
+            <h5>Carlos Mendoza</h5>
+            <span>Medellín, Colombia</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="testimonial-card-21st">
+          <div class="test-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="test-body">
+            "We rented the Seahub boat for a day trip to Cholon and Rosario Islands. Incredible service from the crew, very safe and easy booking via WhatsApp. Best day in Cartagena!"
+          </p>
+          <div class="test-author-info">
+            <h5>Sarah Jenkins</h5>
+            <span>Miami, USA</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="testimonial-card-21st">
+          <div class="test-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="test-body">
+            "Excelente relación calidad-precio. Nada de intermediarios ni cobros raros. El bote Crimson es muy cómodo y potente. 100% recomendados para paseos en familia."
+          </p>
+          <div class="test-author-info">
+            <h5>Felipe Arango</h5>
+            <span>Bogotá, Colombia</span>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="testimonial-card-21st">
+          <div class="test-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="test-body">
+            "Desde la salida en el Club Náutico de Manga todo fue impecable. Muy amables el capitán y el marinero. Definitivamente volveremos a reservar con Arrecife Boats."
+          </p>
+          <div class="test-author-info">
+            <h5>Valentina Ruiz</h5>
+            <span>Cali, Colombia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="nautical-footer">
+      <div class="brand-logo">
+        <div class="brand-emblem"><i class="fa-solid fa-anchor"></i></div>
+        <span class="brand-title" style="font-size: 1.35rem;">Arrecife Boats</span>
+      </div>
+
+      <div class="footer-dock-info">
+        <i class="fa-solid fa-location-dot"></i> Punto de Embarque: Club Náutico, Barrio Manga, Cartagena de Indias, Colombia
+      </div>
+
+      <p>© 2026 Arrecife Boats Rentals. Cartagena de Indias & Valencia (España). Todos los derechos reservados.</p>
+    </footer>
+
+  </main>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP MOBILE-FIRST -->
+  <a href="https://wa.me/573112599426?text=Hola%20Arrecife%20Boats,%20deseo%20informaci%C3%B3n%20sobre%20el%20alquiler%20de%20botes" class="whatsapp-float-nautical" target="_blank" rel="noopener" aria-label="WhatsApp Arrecife Boats">
+    <div class="wa-tooltip-box">
+      <span class="wa-active-beacon"></span>
+      <span>Capitán en Línea</span>
+    </div>
+    <div class="wa-bubble-btn">
+      <div class="wa-pulse-wave"></div>
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+  </a>
+
+  <!-- Showcase Quick Switcher (para pruebas locales) -->
+  <div style="position: fixed; bottom: 24px; left: 24px; z-index: 99999; display: flex; align-items: center; gap: 8px; background: rgba(6, 14, 26, 0.88); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(6, 182, 212, 0.3); padding: 8px 14px; border-radius: 9999px; box-shadow: 0 15px 35px rgba(0,0,0,0.5); font-family: 'Space Mono', monospace; font-size: 0.72rem;">
+    <a href="index.html" style="color: var(--accent-cyan); font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 9999px; background: rgba(6,182,212,0.1); margin-right: 4px;">
+      <i class="fa-solid fa-layer-group"></i> HUB
+    </a>
+    <a href="arrecife-boats.html" style="color: var(--accent-cyan); text-decoration: none; padding: 5px 12px; border-radius: 9999px; background: rgba(6,182,212,0.2); border: 1px solid rgba(6,182,212,0.4); font-weight: 700;">⛵ Arrecife</a>
+    <a href="odontologia.html" style="color: #94a3b8; text-decoration: none; padding: 5px 12px; border-radius: 9999px; background: transparent;">🦷 Odonto</a>
+    <a href="solar.html" style="color: #94a3b8; text-decoration: none; padding: 5px 12px; border-radius: 9999px; background: transparent;">☀️ Solar</a>
+  </div>
+
+  <!-- LIBRERÍAS DE ANIMACIÓN GSAP + LENIS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- LÓGICA DE INTERACCIÓN & MOTOR MARINO -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // 1. Lenis Smooth Scroll
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        smoothTouch: false
+      });
+
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+
+      // 2. Canvas de Ondas Marinas y Brillo (Inspiración Glowy Waves 21st.dev)
+      const canvas = document.getElementById('marineCanvas');
+      const ctx = canvas.getContext('2d');
+
+      let w = canvas.width = window.innerWidth;
+      let h = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', () => {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      });
+
+      let mouse = { x: w / 2, y: h / 2 };
+      window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      const particles = [];
+      const particleCount = 65;
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          radius: Math.random() * 2 + 1,
+          speedX: (Math.random() - 0.5) * 0.4,
+          speedY: (Math.random() - 0.5) * 0.4,
+          alpha: Math.random() * 0.6 + 0.2
+        });
+      }
+
+      let waveStep = 0;
+
+      function renderMarineCanvas() {
+        ctx.clearRect(0, 0, w, h);
+
+        // Gradiente de Océano Abisal
+        const bgGrad = ctx.createRadialGradient(
+          mouse.x, mouse.y, 50,
+          w / 2, h / 2, Math.max(w, h) * 0.8
+        );
+        bgGrad.addColorStop(0, 'rgba(6, 182, 212, 0.08)');
+        bgGrad.addColorStop(0.5, 'rgba(10, 23, 40, 0.4)');
+        bgGrad.addColorStop(1, 'rgba(6, 14, 26, 0.95)');
+
+        ctx.fillStyle = bgGrad;
+        ctx.fillRect(0, 0, w, h);
+
+        // Ondas fluidas superiores e inferiores
+        waveStep += 0.015;
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(6, 182, 212, 0.08)';
+        ctx.lineWidth = 1.5;
+
+        for (let x = 0; x < w; x += 15) {
+          const y = h * 0.35 + Math.sin(x * 0.003 + waveStep) * 25 + Math.cos(x * 0.002 + waveStep * 0.8) * 15;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        // Partículas planctónicas marinas
+        for (let p of particles) {
+          p.x += p.speedX;
+          p.y += p.speedY;
+
+          if (p.x < 0) p.x = w;
+          if (p.x > w) p.x = 0;
+          if (p.y < 0) p.y = h;
+          if (p.y > h) p.y = 0;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(56, 189, 248, ${p.alpha})`;
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = '#06b6d4';
+          ctx.fill();
+        }
+
+        requestAnimationFrame(renderMarineCanvas);
+      }
+      renderMarineCanvas();
+
+      // 3. Spotlight Border para Tarjetas Inclusiones (21st.dev style)
+      const spotlightCards = document.querySelectorAll('.spotlight-inc-card');
+      spotlightCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+
+      // 4. Tabs de Destinos
+      const tabBtns = document.querySelectorAll('.dest-tab-btn');
+      const destPanels = document.querySelectorAll('.dest-panel');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const target = btn.getAttribute('data-target');
+          destPanels.forEach(p => p.style.display = 'none');
+          
+          const activePanel = document.getElementById(`panel-${target}`);
+          if (activePanel) {
+            activePanel.style.display = 'grid';
+            gsap.fromTo(activePanel, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' });
+          }
+        });
+      });
+
+      // 5. Botones "Elegir Bote" y "Cotizar Ruta" sincronizados con el Cotizador
+      const selectBoat = document.getElementById('selectBoat');
+      const selectDest = document.getElementById('selectDest');
+      const inputPeople = document.getElementById('inputPeople');
+      const inputDate = document.getElementById('inputDate');
+
+      const sumBoat = document.getElementById('sumBoat');
+      const sumDest = document.getElementById('sumDest');
+      const sumPeople = document.getElementById('sumPeople');
+
+      // Fecha mínima: Hoy
+      const today = new Date().toISOString().split('T')[0];
+      if (inputDate) inputDate.min = today;
+
+      function updateSummary() {
+        if (sumBoat && selectBoat) sumBoat.textContent = selectBoat.value.split(' (')[0];
+        if (sumDest && selectDest) sumDest.textContent = selectDest.value.split(' (')[0];
+        if (sumPeople && inputPeople) sumPeople.textContent = `${inputPeople.value} Personas`;
+      }
+
+      if (selectBoat) selectBoat.addEventListener('change', updateSummary);
+      if (selectDest) selectDest.addEventListener('change', updateSummary);
+      if (inputPeople) inputPeople.addEventListener('input', updateSummary);
+
+      document.querySelectorAll('.select-boat-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const boatName = btn.getAttribute('data-boat');
+          for (let opt of selectBoat.options) {
+            if (opt.value.includes(boatName)) {
+              selectBoat.value = opt.value;
+              break;
+            }
+          }
+          updateSummary();
+          document.getElementById('cotizador').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      document.querySelectorAll('.set-dest-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const destName = btn.getAttribute('data-dest');
+          for (let opt of selectDest.options) {
+            if (opt.value.includes(destName)) {
+              selectDest.value = opt.value;
+              break;
+            }
+          }
+          updateSummary();
+          document.getElementById('cotizador').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // 6. Generador de Enlace WhatsApp con Cotización
+      const btnSendQuoteWhatsapp = document.getElementById('btnSendQuoteWhatsapp');
+      if (btnSendQuoteWhatsapp) {
+        btnSendQuoteWhatsapp.addEventListener('click', () => {
+          const boat = selectBoat ? selectBoat.value : 'Bote Sofía';
+          const dest = selectDest ? selectDest.value : 'Islas del Rosario + Cholón';
+          const people = inputPeople ? inputPeople.value : '8';
+          const date = inputDate && inputDate.value ? inputDate.value : 'Próximo fin de semana';
+
+          const msg = `¡Hola Arrecife Boats Cartagena! 🌊⚓ Deseo cotizar y reservar un pasadía privado:\n\n🚤 Embarcación: ${boat}\n📍 Destino: ${dest}\n👥 Número de personas: ${people}\n📅 Fecha tentativa: ${date}\n\n¿Tienen disponibilidad para esta fecha? ¡Gracias!`;
+          
+          const waUrl = `https://wa.me/573112599426?text=${encodeURIComponent(msg)}`;
+          window.open(waUrl, '_blank');
+        });
+      }
+
+      // 7. Animaciones de Entrada GSAP ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from('.badge-experience', { y: -20, opacity: 0, duration: 0.8, delay: 0.2, ease: 'power3.out' });
+      gsap.from('.hero-title', { y: 40, opacity: 0, duration: 1.2, delay: 0.4, ease: 'power4.out' });
+      gsap.from('.hero-description', { y: 25, opacity: 0, duration: 1, delay: 0.6, ease: 'power3.out' });
+      gsap.from('.hero-actions', { y: 20, opacity: 0, duration: 0.8, delay: 0.8, ease: 'power3.out' });
+      gsap.from('.nautical-hud', { scale: 0.95, opacity: 0, duration: 1, delay: 1, ease: 'power3.out' });
+
+      gsap.from('.fleet-card-3d', {
+        scrollTrigger: { trigger: '.fleet-grid', start: 'top 80%' },
+        y: 50,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 1,
+        ease: 'power3.out'
+      });
+
+      gsap.from('.spotlight-inc-card', {
+        scrollTrigger: { trigger: '.inclusions-grid', start: 'top 85%' },
+        y: 40,
+        opacity: 0,
+        stagger: 0.12,
+        duration: 0.8,
+        ease: 'power3.out'
+      });
+
+    });
+  </script>
+</body>
+</html>
