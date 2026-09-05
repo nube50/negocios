@@ -1121,373 +1121,6 @@
       background: #22c55e;
       box-shadow: 0 0 8px #22c55e;
     }
-
-    /* ==========================================================================
-       CARRUSEL DE FOTOS ORIGINALES DE WIX (SISTEMA S2)
-       ========================================================================== */
-    .carrusel-original-section {
-      padding: 60px 0 30px;
-      position: relative;
-    }
-
-    .carrusel-controls-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-
-    .carrusel-tabs {
-      display: flex;
-      gap: 8px;
-      background: rgba(13, 30, 51, 0.7);
-      padding: 6px;
-      border-radius: 9999px;
-      border: 1px solid var(--border-subtle);
-    }
-
-    .carrusel-tab-btn {
-      padding: 8px 18px;
-      border-radius: 9999px;
-      border: none;
-      background: transparent;
-      color: var(--accent-slate);
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .carrusel-tab-btn.active {
-      background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
-      color: #030a16;
-      box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
-    }
-
-    .carrusel-tab-btn:hover:not(.active) {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .carrusel-nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .carrusel-counter {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--accent-cyan-light);
-      background: rgba(6, 182, 212, 0.1);
-      border: 1px solid rgba(6, 182, 212, 0.3);
-      padding: 6px 14px;
-      border-radius: 9999px;
-    }
-
-    .carrusel-arrow-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(13, 30, 51, 0.9);
-      border: 1px solid var(--border-subtle);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: all 0.25s ease;
-    }
-
-    .carrusel-arrow-btn:hover {
-      background: var(--accent-cyan);
-      color: #030a16;
-      border-color: var(--accent-cyan);
-      transform: scale(1.08);
-      box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
-    }
-
-    .carrusel-viewport {
-      position: relative;
-      overflow: hidden;
-      border-radius: 28px;
-      border: 1px solid var(--border-subtle);
-      background: rgba(6, 14, 26, 0.9);
-      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8);
-      touch-action: pan-y;
-      user-select: none;
-    }
-
-    .carrusel-track {
-      display: flex;
-      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform;
-    }
-
-    .carrusel-slide {
-      min-width: 100%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-
-    @media (min-width: 768px) {
-      .carrusel-slide {
-        min-width: 50%;
-      }
-    }
-
-    @media (min-width: 1100px) {
-      .carrusel-slide {
-        min-width: 33.333%;
-      }
-    }
-
-    .carrusel-card-inner {
-      margin: 10px;
-      border-radius: 22px;
-      background: #0d1e33;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: calc(100% - 20px);
-      transition: border-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .carrusel-card-inner:hover {
-      border-color: rgba(6, 182, 212, 0.4);
-      transform: translateY(-4px);
-    }
-
-    .carrusel-img-box {
-      position: relative;
-      width: 100%;
-      height: 250px;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .carrusel-img-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s var(--ease-out-expo);
-    }
-
-    .carrusel-card-inner:hover .carrusel-img-box img {
-      transform: scale(1.08);
-    }
-
-    .carrusel-badge-city {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      padding: 5px 12px;
-      border-radius: 9999px;
-      background: rgba(3, 10, 22, 0.85);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(6, 182, 212, 0.4);
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: var(--accent-cyan-light);
-      z-index: 2;
-    }
-
-    .carrusel-badge-num {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      padding: 5px 10px;
-      border-radius: 9999px;
-      background: rgba(3, 10, 22, 0.85);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: #fff;
-      z-index: 2;
-    }
-
-    .carrusel-zoom-hint {
-      position: absolute;
-      bottom: 12px;
-      right: 12px;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: rgba(3, 10, 22, 0.8);
-      backdrop-filter: blur(8px);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-size: 0.82rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      opacity: 0.85;
-      transition: all 0.3s ease;
-      z-index: 2;
-    }
-
-    .carrusel-card-inner:hover .carrusel-zoom-hint {
-      opacity: 1;
-      background: var(--accent-cyan);
-      color: #030a16;
-      transform: scale(1.1);
-    }
-
-    .carrusel-card-body {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex-grow: 1;
-    }
-
-    .carrusel-title {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-
-    .carrusel-desc {
-      font-size: 0.85rem;
-      line-height: 1.55;
-      color: var(--accent-slate);
-      margin-bottom: 16px;
-    }
-
-    .carrusel-actions-row {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    /* LIGHTBOX MODAL DE ULTRA ALTA DEFINICIÓN */
-    .lightbox-modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(2, 6, 23, 0.94);
-      backdrop-filter: blur(20px);
-      z-index: 99999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .lightbox-modal.active {
-      display: flex;
-      opacity: 1;
-    }
-
-    .lightbox-content-box {
-      position: relative;
-      max-width: 1100px;
-      width: 100%;
-      max-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .lightbox-img-wrap {
-      width: 100%;
-      max-height: 75vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(6, 182, 212, 0.3);
-      box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
-      background: #061224;
-    }
-
-    .lightbox-img-wrap img {
-      max-width: 100%;
-      max-height: 75vh;
-      object-fit: contain;
-      display: block;
-    }
-
-    .lightbox-caption {
-      margin-top: 14px;
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      color: var(--accent-cyan-light);
-      text-align: center;
-      letter-spacing: 0.05em;
-    }
-
-    .lightbox-close-btn {
-      position: absolute;
-      top: -15px;
-      right: -10px;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: #0f172a;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: #fff;
-      font-size: 1.1rem;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      z-index: 10;
-    }
-
-    .lightbox-close-btn:hover {
-      background: #ef4444;
-      transform: scale(1.1);
-    }
-
-    .lightbox-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(6, 182, 212, 0.4);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      z-index: 10;
-    }
-
-    .lightbox-arrow:hover {
-      background: var(--accent-cyan);
-      color: #030a16;
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .lightbox-prev { left: -20px; }
-    .lightbox-next { right: -20px; }
-
-    @media (max-width: 640px) {
-      .lightbox-prev { left: 5px; }
-      .lightbox-next { right: 5px; }
-      .lightbox-close-btn { top: -10px; right: 5px; }
-    }
   </style>
 </head>
 <body>
@@ -1508,7 +1141,6 @@
     </a>
 
     <ul class="nav-links">
-      <li><a href="#galeria-original">Fotos Reales</a></li>
       <li><a href="#flota">Nuestra Flota</a></li>
       <li><a href="#destinos">Destinos</a></li>
       <li><a href="#inclusiones">Inclusiones</a></li>
@@ -1591,215 +1223,6 @@
       </div>
     </section>
 
-    <!-- ==========================================================================
-         CARRUSEL INTERACTIVO DE FOTOS ORIGINALES (WIX ASSETS)
-         ========================================================================== -->
-    <section id="galeria-original" class="carrusel-original-section">
-      <div class="section-header">
-        <span class="section-tag-marine">
-          <i class="fa-solid fa-camera-retro"></i>
-          <span>Fotografías Auténticas de la Flota</span>
-        </span>
-        <h2 class="section-headline">Carrusel de Fotos Reales Arrecife</h2>
-        <p class="section-subtext">
-          Conoce nuestras embarcaciones propias navegando en Cartagena de Indias y Valencia, España. Haz clic en cualquier foto para verla en alta definición.
-        </p>
-      </div>
-
-      <!-- Barra de controles y filtros -->
-      <div class="carrusel-controls-bar">
-        <div class="carrusel-tabs">
-          <button class="carrusel-tab-btn active" data-filter="all">
-            <i class="fa-solid fa-layer-group"></i> Toda la Flota (7)
-          </button>
-          <button class="carrusel-tab-btn" data-filter="cartagena">
-            <i class="fa-solid fa-ship"></i> Cartagena 🇨🇴 (4)
-          </button>
-          <button class="carrusel-tab-btn" data-filter="valencia">
-            <i class="fa-solid fa-anchor"></i> Valencia 🇪🇸 (3)
-          </button>
-        </div>
-
-        <div class="carrusel-nav-actions">
-          <span class="carrusel-counter" id="carruselCounter">Slide 1 / 7</span>
-          <button class="carrusel-arrow-btn" id="carruselPrevBtn" aria-label="Foto anterior">
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button class="carrusel-arrow-btn" id="carruselNextBtn" aria-label="Foto siguiente">
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Viewport y Slider -->
-      <div class="carrusel-viewport" id="carruselViewport">
-        <div class="carrusel-track" id="carruselTrack">
-
-          <!-- Slide 1: Bote Seahub -->
-          <div class="carrusel-slide" data-city="cartagena" data-index="0">
-            <div class="carrusel-card-inner">
-              <div class="carrusel-img-box open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_e9a9727777d04ddf9ab7d905683d2499~mv2.jpg" data-caption="Bote Seahub — Lancha deportiva de lujo en Cartagena">
-                <span class="carrusel-badge-city"><i class="fa-solid fa-location-dot"></i> Cartagena 🇨🇴</span>
-                <span class="carrusel-badge-num">1 / 7</span>
-                <img src="https://static.wixstatic.com/media/be812a_e9a9727777d04ddf9ab7d905683d2499~mv2.jpg" alt="Bote Seahub Arrecife Boats Cartagena" loading="lazy">
-                <div class="carrusel-zoom-hint"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
-              </div>
-              <div class="carrusel-card-body">
-                <div>
-                  <h3 class="carrusel-title">Bote Seahub</h3>
-                  <p class="carrusel-desc">Embarcación deportiva de alta velocidad con amplio solárium en proa y sonido marino Bluetooth.</p>
-                </div>
-                <div class="carrusel-actions-row">
-                  <button class="btn-nautical-shimmer select-boat-btn" data-boat="Bote Seahub" style="flex: 1; padding: 10px 16px; font-size: 0.76rem;">
-                    <span>Cotizar Seahub</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 2: Bote Sofia -->
-          <div class="carrusel-slide" data-city="cartagena" data-index="1">
-            <div class="carrusel-card-inner">
-              <div class="carrusel-img-box open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_30b5b63d3d034086913e74e2e73f1886~mv2.jpg" data-caption="Bote Sofía — Confort premium para familias y parejas">
-                <span class="carrusel-badge-city"><i class="fa-solid fa-location-dot"></i> Cartagena 🇨🇴</span>
-                <span class="carrusel-badge-num">2 / 7</span>
-                <img src="https://static.wixstatic.com/media/be812a_30b5b63d3d034086913e74e2e73f1886~mv2.jpg" alt="Bote Sofía Arrecife Boats Cartagena" loading="lazy">
-                <div class="carrusel-zoom-hint"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
-              </div>
-              <div class="carrusel-card-body">
-                <div>
-                  <h3 class="carrusel-title">Bote Sofía</h3>
-                  <p class="carrusel-desc">Bote de navegación suave con toldo T-Top, baño marino y espacio ideal para pasadías en Islas del Rosario.</p>
-                </div>
-                <div class="carrusel-actions-row">
-                  <button class="btn-nautical-shimmer select-boat-btn" data-boat="Bote Sofía" style="flex: 1; padding: 10px 16px; font-size: 0.76rem;">
-                    <span>Cotizar Sofía</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3: Alquiler de Botes en Cartagena -->
-          <div class="carrusel-slide" data-city="cartagena" data-index="2">
-            <div class="carrusel-card-inner">
-              <div class="carrusel-img-box open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_08d860d04d444a30a38f1277e4cc237c~mv2_d_3426_3024_s_4_2.jpg" data-caption="Alquiler de botes en Cartagena — Vista panorámica en la bahía">
-                <span class="carrusel-badge-city"><i class="fa-solid fa-location-dot"></i> Cartagena 🇨🇴</span>
-                <span class="carrusel-badge-num">3 / 7</span>
-                <img src="https://static.wixstatic.com/media/be812a_08d860d04d444a30a38f1277e4cc237c~mv2_d_3426_3024_s_4_2.jpg" alt="Alquiler de botes en Cartagena Arrecife" loading="lazy">
-                <div class="carrusel-zoom-hint"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
-              </div>
-              <div class="carrusel-card-body">
-                <div>
-                  <h3 class="carrusel-title">Bahía & Islas del Rosario</h3>
-                  <p class="carrusel-desc">Recorrido por aguas turquesas y arrecifes de coral protegidos con tripulación certificada.</p>
-                </div>
-                <div class="carrusel-actions-row">
-                  <a href="#destinos" class="btn-nautical-outline" style="flex: 1; padding: 10px 16px; font-size: 0.76rem; text-align: center;">
-                    <span>Ver Destinos</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 4: Atardecer & Marina Cartagena -->
-          <div class="carrusel-slide" data-city="cartagena" data-index="3">
-            <div class="carrusel-card-inner">
-              <div class="carrusel-img-box open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_53506620e2e240df9353de2b4e0dbf11~mv2.jpg" data-caption="Atardecer y salidas desde Club Náutico Manga">
-                <span class="carrusel-badge-city"><i class="fa-solid fa-location-dot"></i> Cartagena 🇨🇴</span>
-                <span class="carrusel-badge-num">4 / 7</span>
-                <img src="https://static.wixstatic.com/media/be812a_53506620e2e240df9353de2b4e0dbf11~mv2.jpg" alt="Paseos al Atardecer Cartagena Arrecife" loading="lazy">
-                <div class="carrusel-zoom-hint"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
-              </div>
-              <div class="carrusel-card-body">
-                <div>
-                  <h3 class="carrusel-title">Atardeceres & Fondeo</h3>
-                  <p class="carrusel-desc">Salidas exclusivas para ver la puesta de sol sobre el mar con bebidas frías y música.</p>
-                </div>
-                <div class="carrusel-actions-row">
-                  <a href="#cotizador" class="btn-nautical-outline" style="flex: 1; padding: 10px 16px; font-size: 0.76rem; text-align: center;">
-                    <span>Plan Atardecer</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 5: Barcos Sin Licencia Valencia -->
-          <div class="carrusel-slide" data-city="valencia" data-index="4">
-            <div class="carrusel-card-inner">
-              <div class="carrusel-img-box open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_80ad7a7eae284f9baa458e91aacf3724~mv2.jpg" data-caption="Barcos 5 metros sin licencia — Marina Sur de Valencia">
-                <span class="carrusel-badge-city" style="border-color: rgba(245, 158, 11, 0.5);"><i class="fa-solid fa-location-dot"></i> Valencia 🇪🇸</span>
-                <span class="carrusel-badge-num">5 / 7</span>
-                <img src="https://static.wixstatic.com/media/be812a_80ad7a7eae284f9baa458e91aacf3724~mv2.jpg" alt="Barcos sin licencia Valencia Arrecife" loading="lazy">
-                <div class="carrusel-zoom-hint"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
-              </div>
-              <div class="carrusel-card-body">
-                <div>
-                  <h3 class="carrusel-title">Barcos 5m (Sin Licencia)</h3>
-                  <p class="carrusel-desc">Sé capitán por un día en Valencia. Embarcaciones a estrenar de 5 metros con motor 15 CV y toldo bimini.</p>
-                </div>
-                <div class="carrusel-actions-row">
-                  <a href="https://wa.me/34662277884?text=Hola%20Arrecife%20Boats%20Valencia,%20deseo%20alquilar%20un%20barco%20sin%20licencia" target="_blank" rel="noopener" class="btn-nautical-shimmer" style="flex: 1; padding: 10px 16px; font-size: 0.76rem;">
-                    <span>Reservar en Valencia</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 6: Solarium y Confort Valencia -->
-          <div class="carrusel-slide" data-city="valencia" data-index="5">
-            <div class="carrusel-card-inner">
-              <div class="carrusel-img-box open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_2165a7e4726044bd85db889b1094f156~mv2.jpg" data-caption="Solárium, mesa y colchonetas acolchadas">
-                <span class="carrusel-badge-city" style="border-color: rgba(245, 158, 11, 0.5);"><i class="fa-solid fa-location-dot"></i> Valencia 🇪🇸</span>
-                <span class="carrusel-badge-num">6 / 7</span>
-                <img src="https://static.wixstatic.com/media/be812a_2165a7e4726044bd85db889b1094f156~mv2.jpg" alt="Solárium y confort barcos Valencia" loading="lazy">
-                <div class="carrusel-zoom-hint"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
-              </div>
-              <div class="carrusel-card-body">
-                <div>
-                  <h3 class="carrusel-title">Solárium & Confort</h3>
-                  <p class="carrusel-desc">Área de proa con colchonetas para tomar el sol, escalera de baño, mesa y nevera para bebidas frías.</p>
-                </div>
-                <div class="carrusel-actions-row">
-                  <a href="https://wa.me/34662277884?text=Hola%20Arrecife%20Boats%20Valencia,%20consulto%20por%20tarifas%20de%20alquiler" target="_blank" rel="noopener" class="btn-nautical-outline" style="flex: 1; padding: 10px 16px; font-size: 0.76rem; text-align: center;">
-                    <span>Tarifas desde 139€</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 7: Navegacion en el Mediterraneo -->
-          <div class="carrusel-slide" data-city="valencia" data-index="6">
-            <div class="carrusel-card-inner">
-              <div class="carrusel-img-box open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_f62e153f9563403bbf8f90db8d939858~mv2.jpg" data-caption="Navegación y snorkel en el Mediterráneo valenciano">
-                <span class="carrusel-badge-city" style="border-color: rgba(245, 158, 11, 0.5);"><i class="fa-solid fa-location-dot"></i> Valencia 🇪🇸</span>
-                <span class="carrusel-badge-num">7 / 7</span>
-                <img src="https://static.wixstatic.com/media/be812a_f62e153f9563403bbf8f90db8d939858~mv2.jpg" alt="Navegación y snorkel en Valencia" loading="lazy">
-                <div class="carrusel-zoom-hint"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
-              </div>
-              <div class="carrusel-card-body">
-                <div>
-                  <h3 class="carrusel-title">Mar Mediterráneo</h3>
-                  <p class="carrusel-desc">Disfruta de snorkel, paddle surf y paseos por la hermosa costa y la Marina de Valencia.</p>
-                </div>
-                <div class="carrusel-actions-row">
-                  <a href="https://wa.me/34662277884?text=Hola%20Arrecife%20Boats%20Valencia,%20deseo%20reservar%20experiencia%20mediterraneo" target="_blank" rel="noopener" class="btn-nautical-shimmer" style="flex: 1; padding: 10px 16px; font-size: 0.76rem;">
-                    <span>Consultar Valencia</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
     <!-- FLOTA PROPIA -->
     <section id="flota" style="padding-top: 40px;">
       <div class="section-header">
@@ -1816,9 +1239,9 @@
       <div class="fleet-grid">
         <!-- Bote Seahub -->
         <div class="fleet-card-3d">
-          <div class="fleet-card-media open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_e9a9727777d04ddf9ab7d905683d2499~mv2.jpg" data-caption="Bote Seahub — Arrecife Boats Cartagena" style="cursor: pointer;">
+          <div class="fleet-card-media">
             <span class="fleet-tag-badge">Deportivo & Veloz</span>
-            <img src="https://static.wixstatic.com/media/be812a_e9a9727777d04ddf9ab7d905683d2499~mv2.jpg" alt="Bote Seahub Arrecife Boats">
+            <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80" alt="Bote Seahub Arrecife Boats">
             <div class="fleet-media-overlay"></div>
           </div>
           <div class="fleet-content">
@@ -1843,9 +1266,9 @@
 
         <!-- Bote Sofía -->
         <div class="fleet-card-3d">
-          <div class="fleet-card-media open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_30b5b63d3d034086913e74e2e73f1886~mv2.jpg" data-caption="Bote Sofía — Arrecife Boats Cartagena" style="cursor: pointer;">
+          <div class="fleet-card-media">
             <span class="fleet-tag-badge" style="color: var(--accent-gold); border-color: rgba(245, 158, 11, 0.4);">Favorito Familiar & Parejas</span>
-            <img src="https://static.wixstatic.com/media/be812a_30b5b63d3d034086913e74e2e73f1886~mv2.jpg" alt="Bote Sofía Arrecife Boats">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Bote Sofía Arrecife Boats">
             <div class="fleet-media-overlay"></div>
           </div>
           <div class="fleet-content">
@@ -1868,30 +1291,30 @@
           </div>
         </div>
 
-        <!-- Barcos 5m Valencia -->
+        <!-- Bote Crimson -->
         <div class="fleet-card-3d">
-          <div class="fleet-card-media open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_80ad7a7eae284f9baa458e91aacf3724~mv2.jpg" data-caption="Barcos 5m Sin Licencia — Valencia, España" style="cursor: pointer;">
-            <span class="fleet-tag-badge" style="color: var(--accent-gold); border-color: rgba(245, 158, 11, 0.4);">Valencia Sin Licencia 🇪🇸</span>
-            <img src="https://static.wixstatic.com/media/be812a_80ad7a7eae284f9baa458e91aacf3724~mv2.jpg" alt="Barcos Sin Licencia Valencia Arrecife Boats">
+          <div class="fleet-card-media">
+            <span class="fleet-tag-badge">Potencia & Espacio</span>
+            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80" alt="Bote Crimson Arrecife Boats">
             <div class="fleet-media-overlay"></div>
           </div>
           <div class="fleet-content">
             <div>
-              <h3 class="fleet-title">Barcos 5m (Valencia)</h3>
+              <h3 class="fleet-title">Bote Crimson</h3>
               <p class="fleet-desc">
-                Barcos de 5 metros a estrenar en Marina Sur de Valencia. Conviértete en capitán por un día sin necesidad de licencia ni experiencia previa.
+                Embarcación moderna de gran potencia y excelente distribución interior. Suave navegación sobre el oleaje y espacio ideal para pasar el día en Cholón.
               </p>
               <div class="fleet-specs-grid">
-                <div class="spec-item"><i class="fa-solid fa-users"></i> Capacidad: 5 Pax</div>
-                <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> Motor: 15 CV</div>
-                <div class="spec-item"><i class="fa-solid fa-sun"></i> Solárium & Mesa</div>
-                <div class="spec-item"><i class="fa-solid fa-gas-pump"></i> Combustible Incluido</div>
+                <div class="spec-item"><i class="fa-solid fa-users"></i> Capacidad: 14 - 16 Pax</div>
+                <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> Motores: 2x 300HP</div>
+                <div class="spec-item"><i class="fa-solid fa-snowflake"></i> Nevera XL Marina</div>
+                <div class="spec-item"><i class="fa-solid fa-water"></i> Ducha de Agua Dulce</div>
               </div>
             </div>
-            <a href="https://wa.me/34662277884?text=Hola%20Arrecife%20Boats%20Valencia,%20deseo%20reservar%20un%20barco%20sin%20licencia" target="_blank" rel="noopener" class="btn-nautical-shimmer" style="width: 100%; text-align: center;">
-              <span>Alquilar en Valencia</span>
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
+            <button class="btn-nautical-shimmer select-boat-btn" data-boat="Bote Crimson" style="width: 100%;">
+              <span>Elegir Bote Crimson</span>
+              <i class="fa-solid fa-check"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -1937,8 +1360,8 @@
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
-        <div class="dest-media-side open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_08d860d04d444a30a38f1277e4cc237c~mv2_d_3426_3024_s_4_2.jpg" data-caption="Islas del Rosario — Navegación en Bote Arrecife" style="cursor: pointer;">
-          <img src="https://static.wixstatic.com/media/be812a_08d860d04d444a30a38f1277e4cc237c~mv2_d_3426_3024_s_4_2.jpg" alt="Islas del Rosario Cartagena Arrecife">
+        <div class="dest-media-side">
+          <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=900&q=80" alt="Islas del Rosario Cartagena">
           <span class="dest-media-tag"><i class="fa-solid fa-compass"></i> 45 min desde Cartagena</span>
         </div>
       </div>
@@ -1960,8 +1383,8 @@
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
-        <div class="dest-media-side open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_53506620e2e240df9353de2b4e0dbf11~mv2.jpg" data-caption="Cholón y Atardeceres en Barú — Arrecife Boats" style="cursor: pointer;">
-          <img src="https://static.wixstatic.com/media/be812a_53506620e2e240df9353de2b4e0dbf11~mv2.jpg" alt="Cholón Barú Cartagena Arrecife">
+        <div class="dest-media-side">
+          <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80" alt="Cholón Barú Cartagena">
           <span class="dest-media-tag"><i class="fa-solid fa-fire"></i> Epicentro de Fiesta Náutica</span>
         </div>
       </div>
@@ -1983,8 +1406,8 @@
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
-        <div class="dest-media-side open-lightbox-trigger" data-img="https://static.wixstatic.com/media/be812a_f62e153f9563403bbf8f90db8d939858~mv2.jpg" data-caption="Playa y aguas cristalinas — Arrecife Boats" style="cursor: pointer;">
-          <img src="https://static.wixstatic.com/media/be812a_f62e153f9563403bbf8f90db8d939858~mv2.jpg" alt="Barú Playa Blanca Arrecife">
+        <div class="dest-media-side">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Barú Playa Blanca">
           <span class="dest-media-tag"><i class="fa-solid fa-clock"></i> 35 min navegación</span>
         </div>
       </div>
@@ -2218,19 +1641,6 @@
     </footer>
 
   </main>
-
-  <!-- MODAL LIGHTBOX HD PARA FOTOS ORIGINALES -->
-  <div id="lightboxModal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Visor de Fotografías de la Flota">
-    <div class="lightbox-content-box">
-      <button id="lightboxCloseBtn" class="lightbox-close-btn" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
-      <button id="lightboxPrevBtn" class="lightbox-arrow lightbox-prev" aria-label="Foto anterior"><i class="fa-solid fa-chevron-left"></i></button>
-      <button id="lightboxNextBtn" class="lightbox-arrow lightbox-next" aria-label="Foto siguiente"><i class="fa-solid fa-chevron-right"></i></button>
-      <div class="lightbox-img-wrap">
-        <img id="lightboxImage" src="" alt="Fotografía ampliada de Arrecife Boats">
-      </div>
-      <div id="lightboxCaption" class="lightbox-caption"></div>
-    </div>
-  </div>
 
   <!-- BOTÓN FLOTANTE DE WHATSAPP MOBILE-FIRST -->
   <a href="https://wa.me/573112599426?text=Hola%20Arrecife%20Boats,%20deseo%20informaci%C3%B3n%20sobre%20el%20alquiler%20de%20botes" class="whatsapp-float-nautical" target="_blank" rel="noopener" aria-label="WhatsApp Arrecife Boats">
@@ -2498,166 +1908,6 @@
         stagger: 0.12,
         duration: 0.8,
         ease: 'power3.out'
-      });
-
-      // 8. CARRUSEL DE FOTOS ORIGINALES & LIGHTBOX HD
-      const carruselTrack = document.getElementById('carruselTrack');
-      const carruselViewport = document.getElementById('carruselViewport');
-      const carruselCounter = document.getElementById('carruselCounter');
-      const prevBtn = document.getElementById('carruselPrevBtn');
-      const nextBtn = document.getElementById('carruselNextBtn');
-      const filterBtns = document.querySelectorAll('.carrusel-tab-btn');
-      
-      let allSlides = Array.from(document.querySelectorAll('.carrusel-slide'));
-      let visibleSlides = [...allSlides];
-      let currentIndex = 0;
-
-      function getVisibleSlidesCount() {
-        if (window.innerWidth >= 1100) return 3;
-        if (window.innerWidth >= 768) return 2;
-        return 1;
-      }
-
-      function updateCarrusel() {
-        if (!carruselTrack || visibleSlides.length === 0) return;
-        const visibleCount = getVisibleSlidesCount();
-        const maxIndex = Math.max(0, visibleSlides.length - visibleCount);
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
-        if (currentIndex < 0) currentIndex = 0;
-
-        const slideWidthPercent = 100 / visibleCount;
-        carruselTrack.style.transform = `translateX(-${currentIndex * slideWidthPercent}%)`;
-
-        if (carruselCounter) {
-          const displayIdx = Math.min(currentIndex + 1, visibleSlides.length);
-          carruselCounter.textContent = `Slide ${displayIdx} / ${visibleSlides.length}`;
-        }
-      }
-
-      if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-          currentIndex = Math.max(0, currentIndex - 1);
-          updateCarrusel();
-        });
-      }
-
-      if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-          const visibleCount = getVisibleSlidesCount();
-          const maxIndex = Math.max(0, visibleSlides.length - visibleCount);
-          currentIndex = Math.min(maxIndex, currentIndex + 1);
-          updateCarrusel();
-        });
-      }
-
-      // Filtros del Carrusel
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          const filter = btn.getAttribute('data-filter');
-
-          allSlides.forEach(slide => {
-            const city = slide.getAttribute('data-city');
-            if (filter === 'all' || city === filter) {
-              slide.style.display = 'flex';
-            } else {
-              slide.style.display = 'none';
-            }
-          });
-
-          visibleSlides = allSlides.filter(s => s.style.display !== 'none');
-          currentIndex = 0;
-          updateCarrusel();
-        });
-      });
-
-      // Touch / Swipe para Móvil
-      let startX = 0;
-      let isDragging = false;
-
-      if (carruselViewport) {
-        carruselViewport.addEventListener('touchstart', (e) => {
-          startX = e.touches[0].clientX;
-          isDragging = true;
-        }, { passive: true });
-
-        carruselViewport.addEventListener('touchend', (e) => {
-          if (!isDragging) return;
-          const endX = e.changedTouches[0].clientX;
-          const diff = startX - endX;
-          if (Math.abs(diff) > 40) {
-            if (diff > 0) {
-              const visibleCount = getVisibleSlidesCount();
-              const maxIndex = Math.max(0, visibleSlides.length - visibleCount);
-              currentIndex = Math.min(maxIndex, currentIndex + 1);
-            } else {
-              currentIndex = Math.max(0, currentIndex - 1);
-            }
-            updateCarrusel();
-          }
-          isDragging = false;
-        });
-      }
-
-      window.addEventListener('resize', updateCarrusel);
-
-      // LIGHTBOX HD
-      const lightboxModal = document.getElementById('lightboxModal');
-      const lightboxImage = document.getElementById('lightboxImage');
-      const lightboxCaption = document.getElementById('lightboxCaption');
-      const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
-      const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
-      const lightboxNextBtn = document.getElementById('lightboxNextBtn');
-
-      const lightboxTriggers = Array.from(document.querySelectorAll('.open-lightbox-trigger'));
-      let activeLightboxIndex = 0;
-
-      function showLightbox(index) {
-        if (index < 0) index = lightboxTriggers.length - 1;
-        if (index >= lightboxTriggers.length) index = 0;
-        activeLightboxIndex = index;
-
-        const trigger = lightboxTriggers[index];
-        const src = trigger.getAttribute('data-img');
-        const caption = trigger.getAttribute('data-caption') || '';
-
-        if (lightboxImage) lightboxImage.src = src;
-        if (lightboxCaption) lightboxCaption.textContent = caption;
-        if (lightboxModal) lightboxModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeLightbox() {
-        if (lightboxModal) lightboxModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-
-      lightboxTriggers.forEach((trigger, idx) => {
-        trigger.addEventListener('click', (e) => {
-          e.stopPropagation();
-          showLightbox(idx);
-        });
-      });
-
-      if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
-      if (lightboxPrevBtn) lightboxPrevBtn.addEventListener('click', () => showLightbox(activeLightboxIndex - 1));
-      if (lightboxNextBtn) lightboxNextBtn.addEventListener('click', () => showLightbox(activeLightboxIndex + 1));
-
-      if (lightboxModal) {
-        lightboxModal.addEventListener('click', (e) => {
-          if (e.target === lightboxModal || e.target.classList.contains('lightbox-content-box')) {
-            closeLightbox();
-          }
-        });
-      }
-
-      window.addEventListener('keydown', (e) => {
-        if (lightboxModal && lightboxModal.classList.contains('active')) {
-          if (e.key === 'Escape') closeLightbox();
-          if (e.key === 'ArrowLeft') showLightbox(activeLightboxIndex - 1);
-          if (e.key === 'ArrowRight') showLightbox(activeLightboxIndex + 1);
-        }
       });
 
     });
