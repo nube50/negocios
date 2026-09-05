@@ -145,15 +145,22 @@
     }
 
     .brand-emblem {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #06b6d4 0%, #0369a1 100%);
+      border: 1.5px solid var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.45);
+      overflow: hidden;
       display: grid;
       place-items: center;
-      font-size: 1.15rem;
-      color: #fff;
-      box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+      background: #061224;
+      flex-shrink: 0;
+    }
+
+    .brand-emblem img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .brand-text {
@@ -229,6 +236,38 @@
       font-size: 0.72rem;
       color: var(--accent-cyan-light);
       margin-left: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .nautical-nav {
+        top: 12px;
+        width: calc(100% - 20px);
+        padding: 8px 14px;
+      }
+      .nav-badge-location {
+        display: none !important;
+      }
+      .brand-title {
+        font-size: 1.05rem;
+      }
+      .brand-subtitle {
+        font-size: 0.58rem;
+      }
+      .nav-cta-btn {
+        padding: 8px 14px !important;
+        font-size: 0.72rem !important;
+        margin-left: 8px !important;
+        gap: 6px !important;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .brand-title {
+        font-size: 0.95rem;
+      }
+      .brand-subtitle {
+        display: none;
+      }
     }
 
     /* BOTONES MAGNÉTICOS & SHIMMER (21ST.DEV STYLE) */
@@ -1056,7 +1095,7 @@
   <nav class="nautical-nav">
     <a href="#" class="brand-logo">
       <div class="brand-emblem">
-        <i class="fa-solid fa-anchor"></i>
+        <img src="https://static.wixstatic.com/media/be812a_62a4328434d446f7b0872f5b1087e3d6~mv2.jpg/v1/fill/w_250,h_229,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5838.jpg" alt="Logo Arrecife Boats Cartagena">
       </div>
       <div class="brand-text">
         <span class="brand-title">Arrecife Boats</span>
@@ -1072,11 +1111,11 @@
       <li><a href="#resenas">Reseñas</a></li>
     </ul>
 
-    <div style="display: flex; align-items: center;">
+    <div style="display: flex; align-items: center; flex-shrink: 0;">
       <span class="nav-badge-location">
         <i class="fa-solid fa-location-dot"></i> Club Náutico Manga
       </span>
-      <a href="https://wa.me/573112599426?text=Hola%20Arrecife%20Boats,%20deseo%20cotizar%20un%20pasad%C3%ADa%20privado%20en%20bote" class="btn-nautical-shimmer" style="margin-left: 14px; padding: 10px 20px; font-size: 0.78rem;" target="_blank" rel="noopener">
+      <a href="https://wa.me/573112599426?text=Hola%20Arrecife%20Boats,%20deseo%20cotizar%20un%20pasad%C3%ADa%20privado%20en%20bote" class="btn-nautical-shimmer nav-cta-btn" style="margin-left: 14px; padding: 10px 20px; font-size: 0.78rem;" target="_blank" rel="noopener">
         <span>Cotizar Hoy</span>
         <i class="fa-brands fa-whatsapp"></i>
       </a>
@@ -1088,8 +1127,10 @@
 
     <!-- HERO SECTION -->
     <section class="hero-section">
-      <div class="badge-experience">
-        <i class="fa-solid fa-star"></i>
+      <div class="badge-experience" style="gap: 10px; padding: 6px 18px 6px 8px;">
+        <div style="width: 26px; height: 26px; border-radius: 50%; overflow: hidden; border: 1px solid var(--accent-cyan); display: grid; place-items: center; background: #061224; flex-shrink: 0;">
+          <img src="https://static.wixstatic.com/media/be812a_62a4328434d446f7b0872f5b1087e3d6~mv2.jpg/v1/fill/w_250,h_229,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5838.jpg" alt="Logo Arrecife" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
         <span>Más de 8 Años de Experiencia | Cartagena & Valencia</span>
       </div>
 
@@ -1421,7 +1462,12 @@
         <div class="calc-summary-side">
           <div>
             <div class="summary-header">
-              <span class="summary-title">Resumen de Pasadía</span>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: 1.5px solid var(--accent-cyan); display: grid; place-items: center; background: #061224; flex-shrink: 0;">
+                  <img src="https://static.wixstatic.com/media/be812a_62a4328434d446f7b0872f5b1087e3d6~mv2.jpg/v1/fill/w_250,h_229,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5838.jpg" alt="Logo Arrecife" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <span class="summary-title">Resumen de Pasadía</span>
+              </div>
               <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan);">9:00 AM - 5:00 PM</span>
             </div>
 
@@ -1529,9 +1575,14 @@
 
     <!-- FOOTER -->
     <footer class="nautical-footer">
-      <div class="brand-logo">
-        <div class="brand-emblem"><i class="fa-solid fa-anchor"></i></div>
-        <span class="brand-title" style="font-size: 1.35rem;">Arrecife Boats</span>
+      <div class="brand-logo" style="justify-content: center; gap: 14px;">
+        <div class="brand-emblem" style="width: 48px; height: 48px; border-width: 2px;">
+          <img src="https://static.wixstatic.com/media/be812a_62a4328434d446f7b0872f5b1087e3d6~mv2.jpg/v1/fill/w_250,h_229,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5838.jpg" alt="Logo Arrecife Boats">
+        </div>
+        <div class="brand-text" style="text-align: left;">
+          <span class="brand-title" style="font-size: 1.4rem;">Arrecife Boats</span>
+          <span class="brand-subtitle" style="letter-spacing: 0.18em;">Cartagena de Indias</span>
+        </div>
       </div>
 
       <div class="footer-dock-info">
