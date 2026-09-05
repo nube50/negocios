@@ -1165,9 +1165,10 @@
     <!-- HERO SECTION CON VIDEO BACKGROUND -->
     <section class="hero-section">
       <div class="hero-video-wrap">
-        <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1600&q=80">
-          <source src="https://assets.mixkit.co/videos/4398/4398-720.mp4" type="video/mp4">
-          <source src="https://assets.mixkit.co/videos/1493/1493-720.mp4" type="video/mp4">
+        <video id="heroBgVideo" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1600&q=80">
+          <source src="hero-boat.mp4" type="video/mp4">
+          <source src="https://assets.mixkit.co/videos/5368/5368-720.mp4" type="video/mp4">
+          <source src="https://assets.mixkit.co/videos/5363/5363-720.mp4" type="video/mp4">
         </video>
         <div class="hero-video-overlay"></div>
       </div>
@@ -1675,6 +1676,27 @@
         lenis.raf(time * 1000);
       });
       gsap.ticker.lagSmoothing(0);
+
+      // Reproducción garantizada del Video Hero Náutico
+      const heroVid = document.getElementById('heroBgVideo');
+      if (heroVid) {
+        heroVid.muted = true;
+        heroVid.defaultMuted = true;
+        const playPromise = heroVid.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            const startVid = () => {
+              heroVid.play();
+              window.removeEventListener('touchstart', startVid);
+              window.removeEventListener('scroll', startVid);
+              window.removeEventListener('click', startVid);
+            };
+            window.addEventListener('touchstart', startVid, { passive: true });
+            window.addEventListener('scroll', startVid, { passive: true });
+            window.addEventListener('click', startVid, { passive: true });
+          });
+        }
+      }
 
       // 2. Canvas de Ondas Marinas y Brillo (Inspiración Glowy Waves 21st.dev)
       const canvas = document.getElementById('marineCanvas');
