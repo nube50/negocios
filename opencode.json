@@ -19,6 +19,14 @@
         "OD_SIDECAR_IPC_PATH": "\\\\.\\pipe\\open-design-release-stable-win-daemon"
       },
       "enabled": true
+    },
+    "21st": {
+      "type": "remote",
+      "url": "https://21st.dev/api/mcp",
+      "headers": {
+        "x-api-key": "21st_sk_ac0b5e0e7d4cd2b4126f7b216b0b687d36fa0c0b075a5d5f5fa6d49ab4e44dd0"
+      },
+      "enabled": true
     }
   },
   "instructions": [
