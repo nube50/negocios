@@ -380,9 +380,12 @@ El proyecto cuenta con un catálogo modular de sistemas de diseño probados y ap
   - Refinamientos de ultra-lujo: *Spotlight borders*, grano analógico SVG, revelados tipográficos con máscara cinemática y blindaje de rendimiento a 60 FPS con `IntersectionObserver`.
 
 - **`sistemas-diseño/s2.md` — Sistema S2 (Componentes de Vanguardia & 21st.dev MCP / Affordable Luxury)**:
-  - Integración directa con el catálogo de componentes de **21st.dev MCP** (Floating Glass Navbars, Glowy Waves Hero, 3D Perspective Fleet/Product Cards, Animated Sliding Tabs, Spotlight Inclusions Grid, Testimonials Marquee).
+  - Integración directa con el catálogo de componentes de **21st.dev MCP** (Floating Glass Navbars adaptables, Glowy Waves Hero, 3D Perspective Fleet/Product Cards, Animated Sliding Tabs, Spotlight Inclusions Grid, Testimonials Marquee).
+  - **Metodología de Navbar Adaptable Mobile-First**: Ocultamiento automático de badges de ubicación en $\le 768$px, escala compacta de botones CTA con `flex-shrink: 0`, protección anti-colapso y ajuste a `top: 12px` en dispositivos móviles.
+  - **Integración Estratégica del Logo Real**: Medallón iluminado de marca en Navbar, insignia de autenticidad en Hero, sello en Cotizador y bloque de cierre en Footer.
   - **Cotizadores / Calculadoras Interactivas en 1 Clic**: Formularios dinámicos de selección que generan cotizaciones y abren WhatsApp con el mensaje estructurado de reserva.
   - **Flexibilidad de Datos**: Acepta instrucciones y datos suministrados directamente por el usuario en el prompt (Modo A) o bien utiliza los datos reales del negocio existentes en la base de datos del proyecto (Modo B).
+  - **Protocolo de Reversibilidad**: Creación de respaldos locales `.backup.html` y registro de hashes Git antes de refactorizaciones visuales.
   - Estética náutica, corporativa o de servicios con paletas ricas (*Deep Ocean, Slate, Champagne*), microinteracciones líquidas y tipografía contemporánea (`Outfit` + `Plus Jakarta Sans` + `Space Mono`).
 
 ### Estándar Técnico y Funcional Intacto (Inviolable)
