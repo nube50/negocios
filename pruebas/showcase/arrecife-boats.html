@@ -349,7 +349,7 @@
       box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
     }
 
-    /* HERO SECTION */
+    /* HERO SECTION CON VIDEO BACKGROUND */
     .hero-section {
       min-height: 100vh;
       display: flex;
@@ -359,6 +359,43 @@
       text-align: center;
       padding: 140px 0 70px;
       position: relative;
+    }
+
+    .hero-video-wrap {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      opacity: 0.48;
+      filter: saturate(1.25) contrast(1.05);
+    }
+
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(6, 14, 26, 0.4) 0%, rgba(6, 14, 26, 0.8) 70%, var(--bg-abyssal) 100%),
+                  linear-gradient(180deg, rgba(6, 14, 26, 0.75) 0%, transparent 35%, rgba(6, 14, 26, 0.95) 100%);
+    }
+
+    .hero-content-layer {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .badge-experience {
@@ -1125,52 +1162,62 @@
   <!-- CONTENIDO PRINCIPAL -->
   <main class="app-wrapper">
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION CON VIDEO BACKGROUND -->
     <section class="hero-section">
-      <div class="badge-experience" style="gap: 10px; padding: 6px 18px 6px 8px;">
-        <div style="width: 26px; height: 26px; border-radius: 50%; overflow: hidden; border: 1px solid var(--accent-cyan); display: grid; place-items: center; background: #061224; flex-shrink: 0;">
-          <img src="https://static.wixstatic.com/media/be812a_62a4328434d446f7b0872f5b1087e3d6~mv2.jpg/v1/fill/w_250,h_229,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5838.jpg" alt="Logo Arrecife" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <span>Más de 8 Años de Experiencia | Cartagena & Valencia</span>
+      <div class="hero-video-wrap">
+        <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1600&q=80">
+          <source src="https://assets.mixkit.co/videos/4398/4398-720.mp4" type="video/mp4">
+          <source src="https://assets.mixkit.co/videos/1493/1493-720.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
       </div>
 
-      <h1 class="hero-title">
-        Navega el Caribe a Tu Ritmo.<br>
-        <span class="glow-text-cyan">Botes Privados & Yates de Lujo.</span>
-      </h1>
-
-      <p class="hero-description">
-        Descubre las Islas del Rosario, Cholón y Barú en embarcaciones propias de máximo confort y velocidad. Salidas exclusivas desde el Club Náutico de Manga con tripulación certificada, combustible y sonido Bluetooth de alta potencia.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#cotizador" class="btn-nautical-shimmer">
-          <span>Cotizar Pasadía en 1 Clic</span>
-          <i class="fa-solid fa-calculator"></i>
-        </a>
-        <a href="#flota" class="btn-nautical-outline">
-          <span>Explorar la Flota</span>
-          <i class="fa-solid fa-ship"></i>
-        </a>
-      </div>
-
-      <!-- TELEMETRÍA NÁUTICA HUD -->
-      <div class="nautical-hud">
-        <div class="hud-cell">
-          <span class="hud-val">9:00 - 5:00</span>
-          <span class="hud-label">Horario de Pasadía</span>
+      <div class="hero-content-layer">
+        <div class="badge-experience" style="gap: 10px; padding: 6px 18px 6px 8px;">
+          <div style="width: 26px; height: 26px; border-radius: 50%; overflow: hidden; border: 1px solid var(--accent-cyan); display: grid; place-items: center; background: #061224; flex-shrink: 0;">
+            <img src="https://static.wixstatic.com/media/be812a_62a4328434d446f7b0872f5b1087e3d6~mv2.jpg/v1/fill/w_250,h_229,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5838.jpg" alt="Logo Arrecife" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <span>Más de 8 Años de Experiencia | Cartagena & Valencia</span>
         </div>
-        <div class="hud-cell">
-          <span class="hud-val">35 Min</span>
-          <span class="hud-label">Navegación a Barú</span>
+
+        <h1 class="hero-title">
+          Navega el Caribe a Tu Ritmo.<br>
+          <span class="glow-text-cyan">Botes Privados & Yates de Lujo.</span>
+        </h1>
+
+        <p class="hero-description">
+          Descubre las Islas del Rosario, Cholón y Barú en embarcaciones propias de máximo confort y velocidad. Salidas exclusivas desde el Club Náutico de Manga con tripulación certificada, combustible y sonido Bluetooth de alta potencia.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#cotizador" class="btn-nautical-shimmer">
+            <span>Cotizar Pasadía en 1 Clic</span>
+            <i class="fa-solid fa-calculator"></i>
+          </a>
+          <a href="#flota" class="btn-nautical-outline">
+            <span>Explorar la Flota</span>
+            <i class="fa-solid fa-ship"></i>
+          </a>
         </div>
-        <div class="hud-cell">
-          <span class="hud-val">100%</span>
-          <span class="hud-label">Combustible Incluido</span>
-        </div>
-        <div class="hud-cell">
-          <span class="hud-val">4.7 ★</span>
-          <span class="hud-label">Calificación de Turistas</span>
+
+        <!-- TELEMETRÍA NÁUTICA HUD -->
+        <div class="nautical-hud">
+          <div class="hud-cell">
+            <span class="hud-val">9:00 - 5:00</span>
+            <span class="hud-label">Horario de Pasadía</span>
+          </div>
+          <div class="hud-cell">
+            <span class="hud-val">35 Min</span>
+            <span class="hud-label">Navegación a Barú</span>
+          </div>
+          <div class="hud-cell">
+            <span class="hud-val">100%</span>
+            <span class="hud-label">Combustible Incluido</span>
+          </div>
+          <div class="hud-cell">
+            <span class="hud-val">4.7 ★</span>
+            <span class="hud-label">Calificación de Turistas</span>
+          </div>
         </div>
       </div>
     </section>
