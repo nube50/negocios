@@ -140,21 +140,22 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 | Bares / Pubs / Discotecas | 0 | 0 | 17 | 17 |
 | Veterinarias / Pet Shops | 7 | 0 | 3 | 10 |
 | **Energía Solar / Paneles Solares** | **0** | **10** | **0** | **10** |
-| **Turismo / Renta de Yates, Catamaranes y Lanchas** | **3** | **4** | **0** | **7** |
+| **Turismo / Renta de Yates, Catamaranes y Lanchas** | **4** | **4** | **0** | **8** |
 | Otros (paellas, lechona, café, etc.) | 0 | 0 | 4 | 4 |
-| **Total** | **36** | **43** | **82** | **161** |
+| **Total** | **37** | **43** | **82** | **162** |
 
-- IDs activos: b1-b25, b30-b34, b36-b41, b50-b174
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b175
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
 - **Nuevos negocios de Energía Solar agregados en sesión 24 (b158-b167): 10 negocios sin sitio web con redes sociales y WhatsApp verificados**
-- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28, 29, 30, 31, 32 y 33: Cartagena Náutica (b168), Botes y Yates Cartagena (b169), Cartagena VIP Boats (b170), Coast Tours Cartagena (b171), Catamarán San Juan (b172), Lanchas Cholón (b173) y Alquiler de Lanchas y Yates Torices (b174) con LPs desplegadas en Vercel**
+- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28, 29, 30, 31, 32, 33 y 34: Cartagena Náutica (b168), Botes y Yates Cartagena (b169), Cartagena VIP Boats (b170), Coast Tours Cartagena (b171), Catamarán San Juan (b172), Lanchas Cholón (b173), Alquiler de Lanchas y Yates Torices (b174) y Alquiler de Lanchas Hawaii (b175) con LPs desplegadas en Vercel**
 
 ## Archivos del proyecto
 
 - `busqueda/index.html` — herramienta principal de prospección
 - `busqueda/datos.json` — respaldo JSON de los datos
 - `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
+  - `alquiler-lanchas-hawaii-cartagena.html` — Alquiler de Lanchas en Cartagena Hawaii (Pasadías Exclusivos & Decoración)
   - `alquiler-lanchas-cartagena-torices.html` — Alquiler de Lanchas y Yates en Cartagena (5.0★ Google Reviews, Torices & Castillogrande)
   - `lanchas-cholon.html` — Lanchas Cholón (Alquiler Privado de Lanchas de Fiesta en Cholón)
   - `catamaran-san-juan.html` — Atardecer Bahía Catamarán San Juan (Sunset Tour en Catamarán)
@@ -865,6 +866,26 @@ git push origin main
 - **Sincronización del Ecosistema de Prospección**:
   - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
   - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **161 negocios** registrados.
+
+### Sesión 34 (2026-09-08) — Landing Page de Ultra Lujo & Prospección: Alquiler de Lanchas en Cartagena Hawaii (b175)
+- **Nuevo Lead Integrado**: **Alquiler de Lanchas en Cartagena Hawaii** (`b175`) — Pasadías a Islas del Rosario, Celebraciones de Cumpleaños & Fiestas en Cholón.
+  - Ubicación: Muelle de Los Pegasos / Bocagrande, Cartagena de Indias.
+  - WhatsApp Verificado: `+57 301 1742351` (`573011742351`).
+  - Presencia original: Ficha en Google Maps con 4.8★ sin sitio web (`no-web`).
+- **Desarrollo de la Landing Page (`landing-pages/alquiler-lanchas-hawaii-cartagena.html`)**:
+  - **Estándar Náutico Hawaii S2 Aplicado**:
+    - Video Hero 100% nítido (`hero-boat.mp4` / Pixabay 1996) con `opacity: 1 !important; filter: none !important; object-position: center 35%;`.
+    - Titular con frase destacada en cian brillante oficial: `"Recorre las Islas del Rosario en Lanchas Exclusivas — Hawaii Cartagena"`.
+    - Grano analógico cinematográfico SVG (`.film-grain-overlay`) + `marineCanvas` interactivo con partículas bioluminiscentes cian/turquesa y oleaje abisal.
+    - Botón flotante de WhatsApp oficial Font Awesome (`fa-brands fa-whatsapp`) en verde `#25D366` con efecto pulse beacon.
+    - **Package Selector Interactivo**: Tarjetas para Plan Celebración con Decoración (globos/cumpleaños/champaña), Plan Relax Islas (snorkel) y Plan Amigos Cholón Party.
+    - **Fleet Showcase**: Lancha Deportiva 29ft (10-12 pax) y Lancha 34ft Comfort XL con baño marino (14-16 pax).
+    - **All-Inclusive Náutico**: Combustible de ruta, capitán DIMAR, marinero, hielera con hielo y sonido Bluetooth Pro.
+    - **Interactive Booking Form**: Cotizador express en 1 clic conectado a WhatsApp (+57 301 1742351).
+- **Despliegue en Producción Vercel**: **`https://lp-lanchas-hawaii-cartagena.vercel.app`** (verificado HTTP 200 OK).
+- **Sincronización del Ecosistema de Prospección**:
+  - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
+  - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **162 negocios** registrados.
 
 ---
 

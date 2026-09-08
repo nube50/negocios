@@ -3755,5 +3755,25 @@
     ],
     "propuesta": "https://lp-lanchas-yates-torices.vercel.app",
     "priority": "hot"
+  },
+  {
+    "id": "b175",
+    "name": "Alquiler de Lanchas en Cartagena Hawaii",
+    "cat": "Turismo / Renta de Yates y Lanchas",
+    "addr": "Muelle de Los Pegasos / Bocagrande, Cartagena",
+    "phone": "+57 301 1742351",
+    "phoneClean": "573011742351",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573011742351",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-lanchas-hawaii-cartagena.vercel.app",
+    "priority": "hot"
   }
 ]

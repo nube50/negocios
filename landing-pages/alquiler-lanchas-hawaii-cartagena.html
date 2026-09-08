@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Alquiler de Lanchas en Cartagena Hawaii — Recorre las Islas del Rosario en Lanchas Exclusivas</title>
+  <meta name="description" content="Alquiler privado de lanchas deportivas en Cartagena con salida desde el Muelle de Los Pegasos. Pasadías a Islas del Rosario, Cholón y Barú con planes especiales de cumpleaños, decoración temática y catering a bordo.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alquiler de Lanchas en Cartagena Hawaii — Experiencias Exclusivas en Islas">
+  <meta property="og:description" content="Zarpe privado a Islas del Rosario, Cholón y Barú. Flota 29ft a 34ft con capitán certificado DIMAR, sonido Bluetooth Pro, hielera con hielo y planes de celebración con decoración.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌺</text></svg>">
+
+  <!-- Font Awesome 6.5.1 Oficial (WhatsApp & Redes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, Inter, Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            hawaii: {
+              cyan: '#00D2FF',
+              blue: '#0A84FF',
+              pink: '#FF2E93',
+              amber: '#FF9E00',
+              emerald: '#10B981',
+              abyssal: '#040914',
+              navyDeep: '#081426',
+              navy: '#0F233D',
+              card: 'rgba(8, 20, 38, 0.85)',
+              borderDark: 'rgba(0, 210, 255, 0.2)'
+            }
+          },
+          fontFamily: {
+            display: ['"Outfit"', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+            mono: ['"Space Mono"', '"JetBrains Mono"', 'monospace']
+          },
+          animation: {
+            'wave-pulse': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float-slow': 'floatBoat 5s ease-in-out infinite'
+          },
+          keyframes: {
+            floatBoat: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-6px) rotate(0.3deg)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* Estilos Náuticos Hawaii S2 */
+    :root {
+      --color-abyssal: #040914;
+      --color-navy: #081426;
+      --color-cyan: #00D2FF;
+      --color-blue: #0A84FF;
+      --color-pink: #FF2E93;
+      --color-amber: #FF9E00;
+    }
+
+    body {
+      background-color: var(--color-abyssal);
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .font-mono {
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* Glass Cards Náuticas (21st.dev inspired) */
+    .glass-hawaii {
+      background: rgba(8, 20, 38, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(0, 210, 255, 0.2);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .glass-hawaii-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-hawaii-hover:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 210, 255, 0.55);
+      box-shadow: 0 25px 60px rgba(0, 210, 255, 0.22), 0 0 30px rgba(255, 46, 147, 0.15);
+    }
+
+    .glass-nav {
+      background: rgba(4, 9, 20, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 210, 255, 0.18);
+    }
+
+    /* Glowing Text & Gradients de Máxima Legibilidad */
+    .gradient-text-cyan {
+      background: linear-gradient(135deg, #FFFFFF 15%, #00D2FF 60%, #0A84FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-tropical {
+      background: linear-gradient(135deg, #FFF1E6 10%, #FF9E00 50%, #FF2E93 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-glow-cyan {
+      text-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+    }
+
+    .text-glow-tropical {
+      text-shadow: 0 0 25px rgba(255, 158, 0, 0.55);
+    }
+
+    /* Botón Primario Tropical */
+    .btn-hawaii-primary {
+      background: linear-gradient(135deg, #FF9E00 0%, #FF2E93 100%);
+      color: #FFFFFF;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(255, 46, 147, 0.4);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-hawaii-primary:hover {
+      box-shadow: 0 8px 30px rgba(255, 46, 147, 0.65);
+      transform: scale(1.02);
+    }
+
+    /* Botón Secundario Cian */
+    .btn-hawaii-cyan {
+      background: linear-gradient(135deg, #00D2FF 0%, #0A84FF 100%);
+      color: #040914;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0, 210, 255, 0.35);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-hawaii-cyan:hover {
+      box-shadow: 0 8px 30px rgba(0, 210, 255, 0.6);
+      transform: scale(1.02);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #040914;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #0F233D;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 210, 255, 0.25);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00D2FF;
+    }
+  
+    /* Grano Analógico Sutil */
+    .film-grain-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.025;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    #marineCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Hero Video Wrap sin reducción de opacidad (100% nítido) */
+    .hero-video-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      opacity: 1 !important;
+      filter: none !important;
+    }
+
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(4, 9, 20, 0.2) 0%, transparent 35%, rgba(4, 9, 20, 0.5) 70%, #040914 100%);
+      pointer-events: none;
+    }
+
+    .hero-title-shadow {
+      text-shadow: 0 4px 35px rgba(0, 0, 0, 0.98), 0 2px 12px rgba(0, 0, 0, 0.9);
+    }
+  </style>
+</head>
+
+<body class="bg-hawaii-abyssal text-slate-100 antialiased selection:bg-hawaii-cyan selection:text-hawaii-abyssal">
+
+  <!-- Grano Analógico Sutil & Marine Canvas -->
+  <div class="film-grain-overlay"></div>
+  <canvas id="marineCanvas"></canvas>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-hawaii-amber via-hawaii-pink to-hawaii-cyan flex items-center justify-center text-white shadow-lg shadow-hawaii-pink/20 group-hover:scale-105 transition-transform border border-white/20">
+          <i data-lucide="palmtree" class="w-5 h-5 font-bold"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg md:text-xl font-extrabold font-display tracking-tight text-white group-hover:text-hawaii-cyan transition-colors">
+            LANCHAS <span class="gradient-text-tropical">HAWAII</span>
+          </span>
+          <span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">Muelle Los Pegasos • Bocagrande • Cartagena</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#paquetes" class="hover:text-hawaii-cyan transition-colors flex items-center gap-1.5">
+          <span class="text-hawaii-pink font-mono text-xs">✨</span> Paquetes & Celebraciones
+        </a>
+        <a href="#flota" class="hover:text-hawaii-cyan transition-colors flex items-center gap-1.5">
+          <span>Flota (29ft a 34ft)</span>
+        </a>
+        <a href="#destinos" class="hover:text-hawaii-cyan transition-colors flex items-center gap-1.5">
+          <span>Destinos en Islas</span>
+        </a>
+        <a href="#incluye" class="hover:text-hawaii-cyan transition-colors flex items-center gap-1.5">
+          <span>All-Inclusive</span>
+        </a>
+        <a href="#cotizador" class="hover:text-hawaii-amber transition-colors flex items-center gap-1.5">
+          <span class="text-hawaii-amber font-mono text-xs">⚡</span> Cotizador Online
+        </a>
+      </nav>
+
+      <!-- Right Action & WhatsApp Button -->
+      <div class="flex items-center gap-4">
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full border border-hawaii-cyan/30 bg-hawaii-navyDeep/80 text-xs font-mono text-hawaii-cyan">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>4.8★ Muelle Los Pegasos</span>
+        </div>
+
+        <a href="https://wa.me/573011742351?text=Hola%20Lanchas%20Hawaii%20Cartagena,%20deseo%20cotizar%20un%20pasad%C3%ADa%20privado%20a%20las%20Islas%20del%20Rosario" target="_blank" class="btn-hawaii-primary px-5 py-2.5 rounded-xl text-xs md:text-sm flex items-center gap-2 font-display tracking-wide uppercase">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>Cotizar en 1 Clic</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION (VIDEO 100% NÍTIDO + ESTILO S2) ==================== -->
+  <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    
+    <!-- Video de Fondo Nítido -->
+    <div class="hero-video-wrap">
+      <video id="heroBgVideo" autoplay muted loop playsinline preload="auto" poster="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_tiny.jpg">
+        <source src="hero-boat.mp4" type="video/mp4">
+        <source src="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_large.mp4" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/5368/5368-720.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <!-- Contenido Principal del Hero -->
+    <div class="relative z-10 max-w-5xl mx-auto text-center mt-8">
+      
+      <!-- Badge de Reputación 4.8★ & Zarpe Los Pegasos -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-hawaii-cyan/40 bg-slate-950/80 backdrop-blur-md mb-6 shadow-xl shadow-cyan-500/10">
+        <div class="flex text-amber-400 text-xs">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <span class="text-xs md:text-sm font-semibold text-slate-200">
+          <span class="text-hawaii-cyan font-bold">4.8 ★</span> en Google Maps • Zarpe directo en <span class="text-amber-300 font-mono">Muelle Los Pegasos</span>
+        </span>
+      </div>
+
+      <!-- Título de Ultra Impacto S2 -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black font-display tracking-tight text-white hero-title-shadow leading-[1.08] mb-6">
+        Recorre las Islas del Rosario en Lanchas Exclusivas — <span class="gradient-text-cyan text-glow-cyan">Hawaii Cartagena</span>
+      </h1>
+
+      <!-- Subtítulo Explicativo -->
+      <p class="text-base sm:text-xl text-slate-200 max-w-3xl mx-auto font-light leading-relaxed mb-10 drop-shadow-md">
+        Alquiler privado de lanchas deportivas (29ft a 34ft) para pasadías a Cholón, Barú y las Islas. Personaliza tu experiencia con <span class="text-white font-medium">decoración temática de cumpleaños/aniversario, almuerzos típicos y música a bordo</span>.
+      </p>
+
+      <!-- Botones de Acción Inmediata -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+        <a href="#paquetes" class="w-full sm:w-auto btn-hawaii-primary px-8 py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-3 uppercase tracking-wider shadow-2xl">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <span>Ver Paquetes de Fiesta & Relax</span>
+        </a>
+        <a href="https://wa.me/573011742351?text=Hola%20Lanchas%20Hawaii,%20deseo%20consultar%20disponibilidad%20para%20un%20zarpe%20privado" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-semibold bg-slate-900/85 hover:bg-slate-800 text-slate-200 border border-slate-700 backdrop-blur-md flex items-center justify-center gap-3 transition-all hover:border-hawaii-cyan">
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+          <span>WhatsApp Directo</span>
+        </a>
+      </div>
+
+      <!-- Métricas de Confianza (Stats) -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14 max-w-4xl mx-auto pt-8 border-t border-white/10">
+        <div class="text-center p-3 rounded-xl bg-slate-950/40 backdrop-blur-sm border border-white/5">
+          <div class="text-2xl sm:text-3xl font-black font-display text-hawaii-cyan">29 - 34 ft</div>
+          <div class="text-xs text-slate-400 font-medium mt-1">Flota Deportiva</div>
+        </div>
+        <div class="text-center p-3 rounded-xl bg-slate-950/40 backdrop-blur-sm border border-white/5">
+          <div class="text-2xl sm:text-3xl font-black font-display text-hawaii-pink">🎂 Decoración</div>
+          <div class="text-xs text-slate-400 font-medium mt-1">Planes Cumpleaños</div>
+        </div>
+        <div class="text-center p-3 rounded-xl bg-slate-950/40 backdrop-blur-sm border border-white/5">
+          <div class="text-2xl sm:text-3xl font-black font-display text-emerald-400">100%</div>
+          <div class="text-xs text-slate-400 font-medium mt-1">Capitán Certificado DIMAR</div>
+        </div>
+        <div class="text-center p-3 rounded-xl bg-slate-950/40 backdrop-blur-sm border border-white/5">
+          <div class="text-2xl sm:text-3xl font-black font-display text-amber-300">4.8 ★</div>
+          <div class="text-xs text-slate-400 font-medium mt-1">Calificación Google Maps</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Indicador de Scroll -->
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
+      <span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">Explorar Paquetes</span>
+      <i data-lucide="chevron-down" class="w-4 h-4 text-hawaii-cyan animate-bounce"></i>
+    </div>
+  </section>
+
+  <!-- ==================== PACKAGE SELECTOR INTERACTIVO ==================== -->
+  <section id="paquetes" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 border-y border-white/5 bg-slate-950/60">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-hawaii-pink/30 bg-hawaii-pink/10 text-hawaii-pink text-xs font-mono mb-3">
+          <i data-lucide="gift" class="w-3.5 h-3.5"></i>
+          <span>EXPERIENCIAS TEMÁTICAS A MEDIDA</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Elige Tu Plan <span class="gradient-text-tropical">Personalizado</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Personaliza tu navegación con servicios especiales: decoración temática con globos, catering típico de mar y música para hacer tu día memorable.
+        </p>
+      </div>
+
+      <!-- Grid de Paquetes -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Paquete 1: Plan Relax Islas -->
+        <div class="glass-hawaii rounded-3xl overflow-hidden glass-hawaii-hover flex flex-col border border-white/10">
+          <div class="relative h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Plan Relax Islas del Rosario" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-cyan-400/40 text-xs font-mono text-hawaii-cyan">
+              🌿 Desconexión & Naturaleza
+            </div>
+            <div class="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-blue-500/90 text-white text-xs font-bold font-mono">
+              Islas del Rosario • Snorkel
+            </div>
+          </div>
+          
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold font-display text-white mb-2">Plan Relax Islas del Rosario</h3>
+              <p class="text-slate-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                Ideal para familias y parejas que buscan tranquilidad, aguas cristalinas para careteo/snorkel en arrecifes y fondear en playas tranquilas.
+              </p>
+              
+              <ul class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Snorkel en Arrecifes & La Piscinita</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Parada en Agua Azul o Isla Grande</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Hielera con hielo + Sonido Bluetooth</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Capitán y ayudante certificado</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/573011742351?text=Hola%20Lanchas%20Hawaii,%20deseo%20cotizar%20el%20Plan%20Relax%20Islas%20del%20Rosario" target="_blank" class="w-full btn-hawaii-cyan py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 uppercase tracking-wider">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Cotizar Plan Relax</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Paquete 2: Plan Celebración con Decoración (Destacado) -->
+        <div class="glass-hawaii rounded-3xl overflow-hidden glass-hawaii-hover flex flex-col border-2 border-hawaii-pink/60 relative shadow-2xl shadow-pink-500/10">
+          <div class="absolute top-0 right-0 bg-gradient-to-l from-hawaii-pink to-hawaii-amber text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-bl-xl z-10 shadow">
+            🎂 Especial Cumpleaños & Despedidas
+          </div>
+
+          <div class="relative h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80" alt="Plan Cumpleaños y Celebraciones Lancha" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-pink-400/40 text-xs font-mono text-hawaii-pink">
+              🎈 Decoración Temática Incluida
+            </div>
+            <div class="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-hawaii-pink text-white text-xs font-bold font-mono">
+              Fotos & Brindis a Bordo
+            </div>
+          </div>
+          
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold font-display text-white mb-2">Plan Celebración con Decoración</h3>
+              <p class="text-slate-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                ¡El favorito para cumpleaños, despedidas de soltera y aniversarios! Preparamos el bote con arreglo de globos temáticos, letreros y champaña.
+              </p>
+              
+              <ul class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-hawaii-pink"></i>
+                  <span>Decoración con arco de globos y letrero</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-hawaii-pink"></i>
+                  <span>Botella de champaña o cóctel de bienvenida</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-hawaii-pink"></i>
+                  <span>Ruta completa: Islas + Cholón + Sunset</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-hawaii-pink"></i>
+                  <span>Opción de almuerzo típico y música en vivo</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/573011742351?text=Hola%20Lanchas%20Hawaii,%20deseo%20cotizar%20el%20Plan%20Celebraci%C3%B3n%20con%20Decoraci%C3%B3n" target="_blank" class="w-full btn-hawaii-primary py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 uppercase tracking-wider">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Cotizar Plan Celebración</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Paquete 3: Plan Amigos Cholón -->
+        <div class="glass-hawaii rounded-3xl overflow-hidden glass-hawaii-hover flex flex-col border border-white/10">
+          <div class="relative h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Plan Amigos Cholón Fiesta" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-amber-400/40 text-xs font-mono text-hawaii-amber">
+              🔥 Full Fiesta Náutica
+            </div>
+            <div class="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-amber-500/90 text-slate-950 text-xs font-bold font-mono">
+              Cholón • Cabañas en el Agua
+            </div>
+          </div>
+          
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold font-display text-white mb-2">Plan Amigos Cholón Party</h3>
+              <p class="text-slate-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                Diseñado para grupos de amigos que quieren vivir la emblemática fiesta de Cholón con sonido potente, bebidas bien frías y comida de mar.
+              </p>
+              
+              <ul class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Sonido Bluetooth marino de alta potencia</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Fondeo en cabañas de agua en Cholón</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Hielera marina de gran capacidad</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Zarpe y regreso puntual con total seguridad</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/573011742351?text=Hola%20Lanchas%20Hawaii,%20deseo%20cotizar%20el%20Plan%20Amigos%20Chol%C3%B3n%20Party" target="_blank" class="w-full btn-hawaii-cyan py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 uppercase tracking-wider">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Cotizar Plan Cholón</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FLOTA REAL DISPONIBLE ==================== -->
+  <section id="flota" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-hawaii-cyan/30 bg-hawaii-cyan/10 text-hawaii-cyan text-xs font-mono mb-3">
+          <i data-lucide="ship" class="w-3.5 h-3.5"></i>
+          <span>EMBARCACIONES DE 29 A 34 PIES</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Nuestra Flota <span class="gradient-text-cyan">Deportiva</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Lanchas rápidas y seguras con tapicería marina de lujo, asoleadoras en proa, techos corredizos y motores fuera de borda de alto rendimiento.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Embarcación 1: 29ft Sport -->
+        <div class="glass-hawaii rounded-3xl p-6 border border-white/10 flex flex-col md:flex-row gap-6 items-center">
+          <div class="w-full md:w-1/2 h-56 rounded-2xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80" alt="Lancha Deportiva 29ft Hawaii" class="w-full h-full object-cover">
+            <div class="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-slate-950/80 text-[11px] font-mono text-hawaii-cyan">
+              29ft • 10 a 12 Pax
+            </div>
+          </div>
+          <div class="w-full md:w-1/2">
+            <h3 class="text-xl font-bold font-display text-white mb-2">Lancha Deportiva 29ft Hawaii</h3>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+              Ágil, rápida y económica. Perfecta para grupos de hasta 12 pasajeros con asoleadora en proa y excelente sistema de sonido.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-300 font-mono mb-6">
+              <li>✓ 2 Motores Yamaha 150HP</li>
+              <li>✓ Sonido Bluetooth Marino</li>
+              <li>✓ Nevera con hielo incluida</li>
+            </ul>
+            <a href="https://wa.me/573011742351?text=Hola,%20deseo%20cotizar%20la%20Lancha%20Deportiva%2029ft" target="_blank" class="w-full btn-hawaii-cyan py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 uppercase">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Consultar 29ft</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Embarcación 2: 34ft Comfort XL con Baño -->
+        <div class="glass-hawaii rounded-3xl p-6 border-2 border-hawaii-cyan/40 flex flex-col md:flex-row gap-6 items-center shadow-xl shadow-cyan-500/10">
+          <div class="w-full md:w-1/2 h-56 rounded-2xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Lancha 34ft Comfort XL con Baño" class="w-full h-full object-cover">
+            <div class="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-slate-950/80 text-[11px] font-mono text-amber-300">
+              34ft • 14 a 16 Pax • Baño
+            </div>
+          </div>
+          <div class="w-full md:w-1/2">
+            <h3 class="text-xl font-bold font-display text-white mb-2">Lancha 34ft Comfort XL</h3>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+              Máximo espacio y confort para pasadías completos. Cuenta con baño cerrado de agua dulce y potente equipo de sonido envolvente.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-300 font-mono mb-6">
+              <li>✓ 2 Motores 250HP High Power</li>
+              <li>✓ Baño marino privado</li>
+              <li>✓ Ducha de agua dulce & escalera</li>
+            </ul>
+            <a href="https://wa.me/573011742351?text=Hola,%20deseo%20cotizar%20la%20Lancha%2034ft%20Comfort%20XL" target="_blank" class="w-full btn-hawaii-primary py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 uppercase">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Consultar 34ft con Baño</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ALL-INCLUSIVE INCLUIDO ==================== -->
+  <section id="incluye" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-white/5 bg-slate-950/50">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-400/30 bg-emerald-400/10 text-emerald-300 text-xs font-mono mb-3">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          <span>SERVICIO TRANSPARENTE SIN COSTOS OCULTOS</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Todo Incluido en <span class="gradient-text-cyan">Tu Zarpe</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Nos encargamos de todos los detalles técnicos y de confort para que tú y tus invitados solo se dediquen a disfrutar.
+        </p>
+      </div>
+
+      <!-- Bento Grid de Beneficios -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="glass-hawaii p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-amber-400/20 text-amber-400 flex items-center justify-center shrink-0">
+            <i data-lucide="fuel" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Combustible Completo</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Gasolina necesaria para todo el circuito pactado sin recargos en el muelle.</p>
+          </div>
+        </div>
+
+        <div class="glass-hawaii p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-blue-400/20 text-hawaii-cyan flex items-center justify-center shrink-0">
+            <i data-lucide="user-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Capitán Certificado DIMAR</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Tripulación profesional cartagenera con amplia experiencia y marinero de apoyo.</p>
+          </div>
+        </div>
+
+        <div class="glass-hawaii p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0">
+            <i data-lucide="box" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Hielera con Hielo</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Nevera marina de alta capacidad con hielo suficiente para tus bebidas y snacks.</p>
+          </div>
+        </div>
+
+        <div class="glass-hawaii p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-purple-400/20 text-purple-400 flex items-center justify-center shrink-0">
+            <i data-lucide="music" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Sonido Bluetooth Pro</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Conecta tu música directamente desde tu celular con audio nítido y potente.</p>
+          </div>
+        </div>
+
+        <div class="glass-hawaii p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-pink-400/20 text-hawaii-pink flex items-center justify-center shrink-0">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Opciones de Decoración</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Personaliza tu lancha con arreglo de globos y letreros para cumpleaños o aniversarios.</p>
+          </div>
+        </div>
+
+        <div class="glass-hawaii p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-400/20 text-emerald-400 flex items-center justify-center shrink-0">
+            <i data-lucide="anchor" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Zarpe en Los Pegasos</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Embarque cómodo y céntrico frente a la Torre del Reloj y Centro Histórico.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== COTIZADOR DINÁMICO 1-CLIC ==================== -->
+  <section id="cotizador" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-b from-transparent via-hawaii-navyDeep/50 to-hawaii-abyssal">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="glass-hawaii p-8 sm:p-12 rounded-3xl border-2 border-hawaii-cyan/40 shadow-2xl relative">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-hawaii-cyan/30 bg-hawaii-cyan/10 text-hawaii-cyan text-xs font-mono mb-3">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            <span>COTIZADOR DIRECTO EN 1 CLIC</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black font-display text-white">
+            Cotiza Tu Lancha en <span class="gradient-text-cyan">Hawaii Cartagena</span>
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2">
+            Elige tu plan y envía los detalles directo a nuestro canal oficial de WhatsApp (<span class="text-white font-mono">+57 301 1742351</span>).
+          </p>
+        </div>
+
+        <form id="quoteForm" class="space-y-6" onsubmit="event.preventDefault(); sendQuoteWhatsApp();">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Plan de Experiencia -->
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
+                1. Plan de Experiencia
+              </label>
+              <select id="planSelect" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-hawaii-cyan">
+                <option value="Plan Celebración con Decoración (Cumpleaños / Despedida)">Plan Celebración con Decoración (Cumpleaños / Despedida) 🎂</option>
+                <option value="Plan Amigos Cholón Party (Fiesta Náutica)">Plan Amigos Cholón Party (Fiesta Náutica) 🔥</option>
+                <option value="Plan Relax Islas del Rosario (Snorkel & Playas)">Plan Relax Islas del Rosario (Snorkel & Playas) 🌿</option>
+                <option value="Sunset Tour Bahía de Cartagena (Atardecer)">Sunset Tour Bahía de Cartagena (Atardecer) 🌅</option>
+              </select>
+            </div>
+
+            <!-- Tipo de Lancha -->
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
+                2. Tamaño de Embarcación
+              </label>
+              <select id="boatSelect" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-hawaii-cyan">
+                <option value="Lancha 34ft Comfort XL (14 a 16 Pax con Baño)">Lancha 34ft Comfort XL (14 a 16 Pax con Baño) ⭐</option>
+                <option value="Lancha Deportiva 29ft (10 a 12 Pax)">Lancha Deportiva 29ft (10 a 12 Pax)</option>
+                <option value="Lancha a Medida para Grupo Grande">Lancha a Medida para Grupo Grande</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <!-- Pasajeros -->
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
+                3. Número de Pasajeros
+              </label>
+              <input type="number" id="paxInput" min="1" max="25" value="8" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-hawaii-cyan">
+            </div>
+
+            <!-- Fecha Estimada -->
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
+                4. Fecha Estimada
+              </label>
+              <input type="date" id="dateInput" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-hawaii-cyan">
+            </div>
+
+            <!-- Nombre -->
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
+                5. Tu Nombre
+              </label>
+              <input type="text" id="nameInput" placeholder="Ej: Carolina Gómez" required class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-hawaii-cyan">
+            </div>
+          </div>
+
+          <!-- Botón de Envío Instantáneo -->
+          <button type="submit" class="w-full btn-hawaii-primary py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-3 uppercase tracking-wider shadow-2xl">
+            <i class="fa-brands fa-whatsapp text-lg text-white"></i>
+            <span>Solicitar Cotización y Disponibilidad por WhatsApp</span>
+          </button>
+
+          <p class="text-center text-[11px] text-slate-400 font-mono">
+            ⚡ Respuesta rápida en menos de 5 minutos • Atención 24/7
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== UBICACIÓN & ZARPE ==================== -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-hawaii-cyan/30 bg-hawaii-cyan/10 text-hawaii-cyan text-xs font-mono mb-4">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+            <span>ZARPE PRIVADO EN CARTAGENA</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white mb-6">
+            Muelle de Los Pegasos & <br>
+            <span class="gradient-text-cyan">Zarpe Céntrico en la Bahía</span>
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            Nuestros zarpes operan desde el <span class="text-white font-semibold">Muelle de Los Pegasos</span> y puntos de abordaje autorizados en Bocagrande, permitiéndote un acceso rápido, seguro y sin contratiempos.
+          </p>
+
+          <div class="space-y-4 text-xs sm:text-sm font-mono text-slate-300 mb-8">
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <i data-lucide="anchor" class="w-5 h-5 text-hawaii-cyan shrink-0"></i>
+              <span>Punto de Salida: Muelle de Los Pegasos / Bocagrande, Cartagena</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <i data-lucide="clock" class="w-5 h-5 text-emerald-400 shrink-0"></i>
+              <span>Horario de Salida: 8:30 AM — 9:30 AM • Retorno: 4:30 PM — 5:00 PM</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <i data-lucide="phone" class="w-5 h-5 text-amber-400 shrink-0"></i>
+              <span>Línea Directa / WhatsApp: +57 301 1742351</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-hawaii p-4 rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
+          <div class="relative h-80 rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1583200424564-9a844da047b4?auto=format&fit=crop&w=1000&q=80" alt="Muelle Los Pegasos y Bahía de Cartagena" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/10">
+              <div class="text-xs font-mono text-hawaii-cyan">LANCHAS HAWAII CARTAGENA</div>
+              <div class="text-sm font-bold text-white mt-0.5">Muelle Los Pegasos • Islas del Rosario • Cholón</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-12 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-white/10 bg-slate-950">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      
+      <div>
+        <div class="text-lg font-bold font-display text-white">
+          ALQUILER DE LANCHAS EN CARTAGENA <span class="gradient-text-tropical">HAWAII</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-1 font-mono">
+          4.8★ Google Maps • Muelle de Los Pegasos / Bocagrande • Cartagena de Indias, Colombia
+        </p>
+      </div>
+
+      <div class="flex items-center gap-6 text-sm text-slate-400 font-mono">
+        <a href="#paquetes" class="hover:text-hawaii-cyan transition-colors">Paquetes</a>
+        <a href="#flota" class="hover:text-hawaii-cyan transition-colors">Flota</a>
+        <a href="#incluye" class="hover:text-hawaii-cyan transition-colors">All-Inclusive</a>
+        <a href="#cotizador" class="hover:text-hawaii-cyan transition-colors">Cotizador</a>
+      </div>
+
+      <div class="text-xs text-slate-500 font-mono">
+        © 2026 Alquiler de Lanchas en Cartagena Hawaii. Todos los derechos reservados.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING WHATSAPP BUTTON (FA-BRANDS & GREEN #25D366) ==================== -->
+  <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+    
+    <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/90 border border-emerald-400/40 text-xs font-mono text-slate-200 shadow-xl backdrop-blur-md animate-bounce">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+      <span>¡Planes Disponibles Hoy!</span>
+    </div>
+
+    <a href="https://wa.me/573011742351?text=Hola%20Lanchas%20Hawaii%20Cartagena,%20deseo%20cotizar%20un%20zarpe%20privado%20a%20las%20Islas" target="_blank" class="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-2xl shadow-emerald-500/40 hover:scale-110 transition-transform duration-300 border-2 border-white/30 relative" style="background-color: #25D366;" title="Hablar por WhatsApp">
+      <i class="fa-brands fa-whatsapp text-2xl text-white"></i>
+      <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-slate-950"></span>
+    </a>
+
+  </div>
+
+  <!-- ==================== SCRIPTS & INTERACTIVIDAD ==================== -->
+  <script>
+    // Inicializar Lucide Icons
+    lucide.createIcons();
+
+    // Fecha mínima para el cotizador (Hoy)
+    const today = new Date().toISOString().split('T')[0];
+    const dateInput = document.getElementById('dateInput');
+    if (dateInput) {
+      dateInput.min = today;
+      dateInput.value = today;
+    }
+
+    // Canvas Marino Interactivo (Brillo Abisal Radial, Ondas Oceánicas & Plancton Bioluminiscente)
+    const canvas = document.getElementById('marineCanvas');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    });
+
+    let mouse = { x: w / 2, y: h / 2 };
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    const particles = [];
+    const particleCount = 60;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        radius: Math.random() * 2 + 0.8,
+        speedX: (Math.random() - 0.5) * 0.4,
+        speedY: (Math.random() - 0.5) * 0.4,
+        alpha: Math.random() * 0.55 + 0.25
+      });
+    }
+
+    let waveStep = 0;
+
+    function renderMarineCanvas() {
+      ctx.clearRect(0, 0, w, h);
+
+      // Gradiente Radial Abisal Interactivo con el cursor
+      const bgGrad = ctx.createRadialGradient(
+        mouse.x, mouse.y, 40,
+        w / 2, h / 2, Math.max(w, h) * 0.85
+      );
+      bgGrad.addColorStop(0, 'rgba(0, 210, 255, 0.08)');
+      bgGrad.addColorStop(0.35, 'rgba(10, 35, 65, 0.45)');
+      bgGrad.addColorStop(0.7, 'rgba(8, 20, 38, 0.75)');
+      bgGrad.addColorStop(1, 'rgba(4, 9, 20, 0.98)');
+
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Onda Marina Abisal
+      waveStep += 0.015;
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(0, 210, 255, 0.12)';
+      ctx.lineWidth = 1.5;
+
+      for (let x = 0; x < w; x += 15) {
+        const y = h * 0.4 + Math.sin(x * 0.003 + waveStep) * 25 + Math.cos(x * 0.002 + waveStep * 0.8) * 15;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      // Partículas Bioluminiscentes Cian & Turquesa
+      for (let p of particles) {
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 210, 255, ${p.alpha})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#00D2FF';
+        ctx.fill();
+      }
+
+      requestAnimationFrame(renderMarineCanvas);
+    }
+    renderMarineCanvas();
+
+    // GSAP ScrollTrigger Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.glass-hawaii').forEach((card) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 35,
+        duration: 0.8,
+        ease: 'power2.out'
+      });
+    });
+
+    // Función de Envío de Cotizador a WhatsApp
+    function sendQuoteWhatsApp() {
+      const plan = document.getElementById('planSelect').value;
+      const boat = document.getElementById('boatSelect').value;
+      const pax = document.getElementById('paxInput').value;
+      const date = document.getElementById('dateInput').value;
+      const name = document.getElementById('nameInput').value;
+
+      const message = `Hola Alquiler de Lanchas en Cartagena Hawaii 🌺 (4.8★)%0A%0A*SOLICITUD DE COTIZACIÓN DE ZARPE:*%0A👤 *Nombre:* ${encodeURIComponent(name)}%0A✨ *Plan Solicitado:* ${encodeURIComponent(plan)}%0A🚤 *Embarcación:* ${encodeURIComponent(boat)}%0A👥 *Pasajeros:* ${encodeURIComponent(pax)} personas%0A📅 *Fecha:* ${encodeURIComponent(date)}%0A%0A¿Tienen disponibilidad para esta fecha y cuál sería el valor del servicio? ¡Gracias!`;
+
+      window.open(`https://wa.me/573011742351?text=${message}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
