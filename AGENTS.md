@@ -140,21 +140,22 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 | Bares / Pubs / Discotecas | 0 | 0 | 17 | 17 |
 | Veterinarias / Pet Shops | 7 | 0 | 3 | 10 |
 | **Energía Solar / Paneles Solares** | **0** | **10** | **0** | **10** |
-| **Turismo / Renta de Yates, Catamaranes y Lanchas** | **2** | **4** | **0** | **6** |
+| **Turismo / Renta de Yates, Catamaranes y Lanchas** | **3** | **4** | **0** | **7** |
 | Otros (paellas, lechona, café, etc.) | 0 | 0 | 4 | 4 |
-| **Total** | **35** | **43** | **82** | **160** |
+| **Total** | **36** | **43** | **82** | **161** |
 
-- IDs activos: b1-b25, b30-b34, b36-b41, b50-b173
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b174
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
 - **Nuevos negocios de Energía Solar agregados en sesión 24 (b158-b167): 10 negocios sin sitio web con redes sociales y WhatsApp verificados**
-- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28, 29, 30, 31 y 32: Cartagena Náutica (b168), Botes y Yates Cartagena (b169), Cartagena VIP Boats (b170), Coast Tours Cartagena (b171), Catamarán San Juan (b172) y Lanchas Cholón (b173) con LPs desplegadas en Vercel**
+- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28, 29, 30, 31, 32 y 33: Cartagena Náutica (b168), Botes y Yates Cartagena (b169), Cartagena VIP Boats (b170), Coast Tours Cartagena (b171), Catamarán San Juan (b172), Lanchas Cholón (b173) y Alquiler de Lanchas y Yates Torices (b174) con LPs desplegadas en Vercel**
 
 ## Archivos del proyecto
 
 - `busqueda/index.html` — herramienta principal de prospección
 - `busqueda/datos.json` — respaldo JSON de los datos
 - `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
+  - `alquiler-lanchas-cartagena-torices.html` — Alquiler de Lanchas y Yates en Cartagena (5.0★ Google Reviews, Torices & Castillogrande)
   - `lanchas-cholon.html` — Lanchas Cholón (Alquiler Privado de Lanchas de Fiesta en Cholón)
   - `catamaran-san-juan.html` — Atardecer Bahía Catamarán San Juan (Sunset Tour en Catamarán)
   - `coast-tours-cartagena.html` — Coast Tours Cartagena (Pasadías en Bote, Cholón & Tour Plancton Luminoso)
@@ -844,6 +845,26 @@ git push origin main
 - **Sincronización del Ecosistema de Prospección**:
   - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
   - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **160 negocios** registrados.
+
+### Sesión 33 (2026-09-08) — Landing Page de Ultra Lujo & Prospección: Alquiler de Lanchas y Yates Torices (b174)
+- **Nuevo Lead Integrado**: **Alquiler de Lanchas y Yates en Cartagena (Torices / Castillogrande)** (`b174`) — Experiencias Náuticas Privadas con Calificación Perfecta en Google Maps.
+  - Ubicación: Calle 42 #14-16, Torices / Muelles de abordaje en Castillogrande & Manga, Cartagena de Indias.
+  - WhatsApp Verificado: `+57 315 5399485` (`573155399485`).
+  - Presencia original: Ficha verificada en Google Maps con calificación perfecta de 5.0★ (+140 opiniones), sin portal web (`no-web`).
+- **Desarrollo de la Landing Page (`landing-pages/alquiler-lanchas-cartagena-torices.html`)**:
+  - **Estándar Náutico de Ultra Lujo Aplicado**:
+    - Video Hero 100% nítido (`hero-boat.mp4` / Pixabay 1996) sin opacidad (`opacity: 1 !important; filter: none !important; object-position: center 35%;`).
+    - Grano analógico cinematográfico SVG (`.film-grain-overlay`) + `marineCanvas` interactivo con partículas doradas y gradiente abisal.
+    - Botón flotante de WhatsApp oficial Font Awesome (`fa-brands fa-whatsapp`) en verde `#25D366` con efecto pulse beacon.
+    - **Social Proof Wall**: Sección destacada con reseñas reales de Google Maps (+140 opiniones y 5.0★).
+    - **Fleet Showcase**: Lancha Deportiva 29ft Classic (10-12 pax), Lancha 33ft Open Comfort XL (14-16 pax con baño) y 38ft Luxury Sport Cruiser (18-20 pax con camarote interior).
+    - **Destinos & Rutas**: Islas del Rosario, Cholón Fiesta, Playa Blanca/Agua Azul y Sunset Tour en la Bahía.
+    - **All-Inclusive Náutico**: Combustible de ruta, capitán DIMAR certificado, marinero de apoyo, hielera con hielo y sonido Bluetooth Pro.
+    - **Interactive Booking Form**: Cotizador express en 1 clic conectado a WhatsApp (+57 315 5399485).
+- **Despliegue en Producción Vercel**: **`https://lp-lanchas-yates-torices.vercel.app`** (verificado HTTP 200 OK).
+- **Sincronización del Ecosistema de Prospección**:
+  - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
+  - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **161 negocios** registrados.
 
 ---
 
