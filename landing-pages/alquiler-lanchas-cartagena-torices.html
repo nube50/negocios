@@ -127,11 +127,12 @@
       border-bottom: 1px solid rgba(229, 169, 60, 0.18);
     }
 
-    /* Glowing Text & Gradients */
+    /* Glowing Text & Gradients de Máxima Legibilidad */
     .gradient-text-gold {
-      background: linear-gradient(135deg, #FFFFFF 10%, #FDD871 50%, #E5A93C 100%);
+      background: linear-gradient(135deg, #FFFFFF 0%, #FFF5D0 30%, #F59E0B 75%, #D97706 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(245, 158, 11, 0.45));
     }
 
     .gradient-text-cyan {
@@ -238,12 +239,12 @@
     .hero-video-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(4, 9, 20, 0.25) 0%, transparent 40%, rgba(4, 9, 20, 0.6) 75%, #040914 100%);
+      background: linear-gradient(180deg, rgba(4, 9, 20, 0.2) 0%, transparent 35%, rgba(4, 9, 20, 0.5) 70%, #040914 100%);
       pointer-events: none;
     }
 
     .hero-title-shadow {
-      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.85);
+      text-shadow: 0 4px 35px rgba(0, 0, 0, 0.98), 0 2px 12px rgba(0, 0, 0, 0.9);
     }
   </style>
 </head>
@@ -336,15 +337,15 @@
         </span>
       </div>
 
-      <!-- Título de Ultra Impacto -->
+      <!-- Título de Ultra Impacto con Tipografía Armoniosa -->
       <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black font-display tracking-tight text-white hero-title-shadow leading-[1.08] mb-6">
-        Navega Cartagena con la Flota Náutica <br class="hidden sm:block">
-        <span class="gradient-text-gold">Mejor Calificada de la Bahía</span>
+        Alquiler Exclusivo de Lanchas & Yates en Cartagena <br class="hidden sm:block">
+        <span class="gradient-text-gold block mt-2">Experiencias Náuticas 5.0★ en la Bahía</span>
       </h1>
 
       <!-- Subtítulo Explicativo -->
       <p class="text-base sm:text-xl text-slate-200 max-w-3xl mx-auto font-light leading-relaxed mb-10 drop-shadow-md">
-        Alquiler privado y exclusivo de lanchas rápidas deportivas (29ft a 38ft) y yates de lujo. Zarpe directo desde <span class="text-white font-medium">Castillogrande y Manga</span> hacia las paradisíacas Islas del Rosario, la fiesta de Cholón y el atardecer en la Bahía.
+        Navega hacia las Islas del Rosario, Cholón y Barú a bordo de botes deportivos (29ft a 38ft) y yates de lujo. Zarpe directo desde <span class="text-white font-medium">Castillogrande y Manga</span> con tripulación DIMAR, combustible completo y sonido Bluetooth Pro.
       </p>
 
       <!-- Botones de Acción Inmediata -->
@@ -389,7 +390,7 @@
   </section>
 
   <!-- ==================== SOCIAL PROOF WALL: 5.0★ GOOGLE REVIEWS ==================== -->
-  <section id="reputacion" class="py-20 px-4 sm:px-6 lg:px-8 relative z-10 bg-nautic-navyDeep/60 border-y border-white/5">
+  <section id="reputacion" class="py-20 px-4 sm:px-6 lg:px-8 relative z-10 border-y border-white/5">
     <div class="max-w-7xl mx-auto">
       
       <div class="text-center max-w-3xl mx-auto mb-14">
@@ -501,7 +502,7 @@
       </div>
 
       <!-- Respaldo de Transparencia Google -->
-      <div class="mt-10 p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div class="mt-10 p-4 rounded-xl bg-slate-900/70 border border-slate-700/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-slate-900 shadow">
             <i class="fa-brands fa-google text-xl text-blue-600"></i>
@@ -688,7 +689,7 @@
   </section>
 
   <!-- ==================== DESTINOS Y CIRCUITOS EXCLUSIVOS ==================== -->
-  <section id="destinos" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 bg-slate-950/70 border-t border-white/5">
+  <section id="destinos" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-white/5">
     <div class="max-w-7xl mx-auto">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -862,7 +863,7 @@
   </section>
 
   <!-- ==================== COTIZADOR INTERACTIVO 1-CLIC ==================== -->
-  <section id="cotizador" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-b from-transparent via-nautic-navyDeep to-nautic-abyssal">
+  <section id="cotizador" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-b from-transparent via-nautic-navyDeep/50 to-nautic-abyssal">
     <div class="max-w-4xl mx-auto">
       
       <div class="glass-torices p-8 sm:p-12 rounded-3xl border-2 border-amber-400/40 shadow-2xl relative">
@@ -1064,57 +1065,106 @@
       dateInput.value = today;
     }
 
-    // Canvas Marino Interactivo (Bioluminiscencia & Partículas)
+    // Canvas Marino Interactivo (Brillo Abisal Radial, Ondas Oceánicas & Plancton Bioluminiscente)
     const canvas = document.getElementById('marineCanvas');
     const ctx = canvas.getContext('2d');
-    let width, height;
-    let particles = [];
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
 
-    function resizeCanvas() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+    window.addEventListener('resize', () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    });
+
+    let mouse = { x: w / 2, y: h / 2 };
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    const particles = [];
+    const particleCount = 60;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        radius: Math.random() * 2 + 0.8,
+        speedX: (Math.random() - 0.5) * 0.4,
+        speedY: (Math.random() - 0.5) * 0.4,
+        alpha: Math.random() * 0.55 + 0.25
+      });
     }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
 
-    class MarineParticle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.4;
-        this.speedY = (Math.random() - 0.5) * 0.4;
-        this.opacity = Math.random() * 0.4 + 0.1;
+    let waveStep = 0;
+
+    function renderMarineCanvas() {
+      ctx.clearRect(0, 0, w, h);
+
+      // Gradiente Radial Abisal Interactivo con el cursor
+      const bgGrad = ctx.createRadialGradient(
+        mouse.x, mouse.y, 40,
+        w / 2, h / 2, Math.max(w, h) * 0.85
+      );
+      bgGrad.addColorStop(0, 'rgba(229, 169, 60, 0.08)');
+      bgGrad.addColorStop(0.35, 'rgba(10, 35, 65, 0.45)');
+      bgGrad.addColorStop(0.7, 'rgba(8, 20, 38, 0.75)');
+      bgGrad.addColorStop(1, 'rgba(4, 9, 20, 0.98)');
+
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Onda Marina Abisal
+      waveStep += 0.015;
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(229, 169, 60, 0.12)';
+      ctx.lineWidth = 1.5;
+
+      for (let x = 0; x < w; x += 15) {
+        const y = h * 0.4 + Math.sin(x * 0.003 + waveStep) * 25 + Math.cos(x * 0.002 + waveStep * 0.8) * 15;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
       }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.x < 0) this.x = width;
-        if (this.x > width) this.x = 0;
-        if (this.y < 0) this.y = height;
-        if (this.y > height) this.y = 0;
-      }
-      draw() {
-        ctx.fillStyle = `rgba(229, 169, 60, ${this.opacity})`;
+      ctx.stroke();
+
+      // Partículas Bioluminiscentes Doradas & Cian
+      for (let p of particles) {
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(229, 169, 60, ${p.alpha})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#E5A93C';
         ctx.fill();
       }
-    }
 
-    for (let i = 0; i < 45; i++) {
-      particles.push(new MarineParticle());
+      requestAnimationFrame(renderMarineCanvas);
     }
+    renderMarineCanvas();
 
-    function animateCanvas() {
-      ctx.clearRect(0, 0, width, height);
-      particles.forEach(p => {
-        p.update();
-        p.draw();
+    // GSAP ScrollTrigger Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.glass-torices').forEach((card) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 35,
+        duration: 0.8,
+        ease: 'power2.out'
       });
-      requestAnimationFrame(animateCanvas);
-    }
-    animateCanvas();
+    });
 
     // Función de Envío de Cotizador a WhatsApp
     function sendQuoteWhatsApp() {
