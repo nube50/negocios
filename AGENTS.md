@@ -769,7 +769,11 @@ git push origin main
 
 ## 🎯 Enfoque de Diseño para Landing Pages
 
-- **Regla Náutica / Turismo**: En todas las LPs de la categoría Turismo / Renta de Yates se utilizará de forma obligatoria y estandarizada el video de fondo náutico caribeño de alta fidelidad (`hero-boat.mp4` / Pixabay 1996).
+- **⛵ Estándar Maestro para la Categoría Turismo & Renta de Yates**:
+  - **Hero Video 100% Nítido**: Usar obligatoriamente el video de fondo náutico en alta definición (`hero-boat.mp4` / Pixabay 1996 `https://cdn.pixabay.com/video/2016/01/29/1996-153555261_large.mp4` con poster de Pixabay 1996). El video debe configurarse con `opacity: 1 !important; filter: none !important; object-position: center 35%;` **sin opacidad oscura que lo opaque**.
+  - **Overlay Gradual**: Usar `.hero-video-overlay` con `linear-gradient(180deg, rgba(6, 14, 26, 0.15) 0%, transparent 40%, rgba(5, 13, 24, 0.4) 70%, #050D18 100%)`, dejando el video transparente y nítido, difuminándolo suavemente en la base para conectar con el contenido.
+  - **Fondo General del Sitio**: Incluir siempre el fondo de textura analógica (`.film-grain-overlay` con SVG fractal noise) + `marineCanvas` (gradiente abisal radial interactivo, ondas oceánicas y partículas de plancton bioluminiscente reactivas al mouse).
+  - **Tipografía con Sombra de Alto Contraste**: `.hero-title-shadow` (`text-shadow: 0 4px 30px rgba(0,0,0,0.95), 0 2px 10px rgba(0,0,0,0.85)`) en títulos y párrafos del hero para garantizar contraste impecable.
 - **100% Guiado por el Usuario**: El diseño, estilo, componentes y narrativa visual de cada LP se adaptan a las instrucciones específicas que el usuario entregue en cada solicitud.
 - **Estándar Técnico Mínimo**:
   - Código limpio en un único archivo HTML auto-contenido (CSS y JS embebidos, librerías por CDN).
