@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Cultura Agéntica — Arquitectura de Software, Ecosistemas de IA & Agentes Autónomos</title>
+  <meta name="description" content="Diseñamos e implementamos arquitecturas digitales de alto impacto, automatización operativa con IA y agentes autónomos para empresas e industrias en Colombia y Latinoamérica.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cultura Agéntica — Software & Agentes Autónomos de Alto Impacto">
+  <meta property="og:description" content="Sistemas comerciales inteligentes, automatización de flujos y plataformas web diseñadas para escalar empresas.">
+  <meta property="og:image" content="assets/prospector-dashboard.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo-emblem.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans, Poppins, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#1A3750',
+              navyDeep: '#0F2335',
+              navyDarkest: '#08141F',
+              cyan: '#00C7C7',
+              cyanDeep: '#00A8BA',
+              cyanGlow: 'rgba(0, 199, 199, 0.4)',
+              amber: '#FF9E00',
+              amberGlow: 'rgba(255, 158, 0, 0.35)',
+              canvas: '#F4F6F8',
+              canvasLight: '#FFFFFF',
+              borderDark: 'rgba(255, 255, 255, 0.08)',
+              cardDark: 'rgba(15, 35, 53, 0.65)'
+            }
+          },
+          fontFamily: {
+            heading: ['"Plus Jakarta Sans"', '"Poppins"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow-scan': 'scan 3s linear infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            scan: {
+              '0%': { top: '0%' },
+              '100%': { top: '100%' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* Estilos Globales & Sistema S2 */
+    :root {
+      --color-navy: #1A3750;
+      --color-navy-deep: #0F2335;
+      --color-navy-darkest: #08141F;
+      --color-cyan: #00C7C7;
+      --color-cyan-deep: #00A8BA;
+      --color-amber: #FF9E00;
+      --color-canvas: #F4F6F8;
+    }
+
+    body {
+      background-color: var(--color-navy-darkest);
+      color: #F4F6F8;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Glassmorphism Classes */
+    .glass-card {
+      background: rgba(15, 35, 53, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 199, 199, 0.15);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .glass-card-hover {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 199, 199, 0.45);
+      box-shadow: 0 25px 60px rgba(0, 199, 199, 0.12);
+    }
+
+    .glass-nav {
+      background: rgba(8, 20, 31, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Glowing Text & Accents */
+    .text-glow-cyan {
+      text-shadow: 0 0 20px rgba(0, 199, 199, 0.6);
+    }
+    .text-glow-amber {
+      text-shadow: 0 0 20px rgba(255, 158, 0, 0.5);
+    }
+    
+    .gradient-text-cyan {
+      background: linear-gradient(135deg, #FFFFFF 20%, #00C7C7 80%, #00A8BA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-amber {
+      background: linear-gradient(135deg, #FFFFFF 20%, #FF9E00 80%, #E68A00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Grid Line Matrix */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #08141F;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1A3750;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 199, 199, 0.2);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00A8BA;
+    }
+
+    /* Botón CTA Primario */
+    .btn-primary {
+      background: linear-gradient(135deg, #00C7C7 0%, #00A8BA 100%);
+      color: #08141F;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0, 199, 199, 0.35);
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 8px 30px rgba(0, 199, 199, 0.6);
+      transform: scale(1.02);
+    }
+
+    .btn-amber {
+      background: linear-gradient(135deg, #FF9E00 0%, #E68A00 100%);
+      color: #08141F;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(255, 158, 0, 0.35);
+      transition: all 0.3s ease;
+    }
+    .btn-amber:hover {
+      box-shadow: 0 8px 30px rgba(255, 158, 0, 0.6);
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+
+<body class="bg-brand-navyDarkest text-brand-canvas antialiased selection:bg-brand-cyan selection:text-brand-navyDarkest">
+
+  <!-- Background Neural Grid & Canvas Layer -->
+  <div class="fixed inset-0 pointer-events-none z-0 bg-grid-pattern opacity-60"></div>
+  <canvas id="neural-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="logo-horizontal-dark.png" alt="Cultura Agéntica Logo" class="h-9 md:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-300">
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#pilares" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5">
+          <span>Pilares</span>
+        </a>
+        <a href="#ecosistema-ia" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5">
+          <span class="text-brand-amber font-mono text-xs">[01]</span> IA & Agentes
+        </a>
+        <a href="#motor-prospeccion" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5">
+          <span class="text-brand-cyan font-mono text-xs">[02]</span> Motor Comercial
+        </a>
+        <a href="#comunidad" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5">
+          <span class="text-brand-amber font-mono text-xs">[03]</span> Comunidad Builder
+        </a>
+        <a href="#contacto" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5">
+          <span>Contacto</span>
+        </a>
+      </nav>
+
+      <!-- Right CTAs -->
+      <div class="flex items-center gap-4">
+        <a href="#motor-prospeccion" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-cyan/30 bg-brand-navy/60 text-xs font-mono text-brand-cyan">
+          <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
+          <span>Engine v2.4 Live</span>
+        </a>
+
+        <a href="https://wa.me/573133379207?text=Hola%20Cultura%20Ag%C3%A9ntica,%20quiero%20conocer%20c%C3%B3mo%20pueden%20integrar%20IA%20y%20agentes%20en%20mi%20empresa" target="_blank" class="btn-primary px-5 py-2.5 rounded-xl text-xs md:text-sm flex items-center gap-2 font-heading tracking-wide uppercase">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <span>Agendar Sesión</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle" class="md:hidden p-2 text-slate-300 hover:text-brand-cyan" aria-label="Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-brand-borderDark px-6 py-6 space-y-4">
+      <a href="#pilares" class="block text-slate-200 hover:text-brand-cyan text-base font-medium mobile-link">Nuestros Pilares</a>
+      <a href="#ecosistema-ia" class="block text-slate-200 hover:text-brand-cyan text-base font-medium mobile-link">Agentes Autónomos & IA</a>
+      <a href="#motor-prospeccion" class="block text-slate-200 hover:text-brand-cyan text-base font-medium mobile-link">Motor de Prospección Comercial</a>
+      <a href="#comunidad" class="block text-slate-200 hover:text-brand-cyan text-base font-medium mobile-link">Comunidad Builder & Tech</a>
+      <a href="#contacto" class="block text-slate-200 hover:text-brand-cyan text-base font-medium mobile-link">Iniciar Proyecto</a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden z-10">
+    
+    <!-- Hero Video Loop Background -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover opacity-25 scale-105">
+        <source src="hero-agentic.mp4" type="video/mp4">
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-navyDarkest via-brand-navyDarkest/80 to-brand-navyDarkest"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Left / Pitch -->
+        <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+          
+          <!-- Badge Telemetry -->
+          <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-card border-brand-cyan/30 text-xs md:text-sm font-mono text-brand-cyan">
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-cyan"></span>
+            </span>
+            <span class="text-slate-300">Agencia de Software, Automatización & IA</span>
+            <span class="text-brand-amber font-semibold">• Colombia & Latam</span>
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] font-heading">
+            Arquitectura de Software, Ecosistemas de IA & <span class="gradient-text-cyan text-glow-cyan">Agentes Autónomos</span>
+          </h1>
+
+          <!-- Subtitle / Value Prop -->
+          <p class="text-lg sm:text-xl text-slate-300 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Transformamos operaciones analógicas en máquinas digitales de alta velocidad. Desarrollamos plataformas web de ultra lujo, automatizamos flujos comerciales y desplegamos agentes de IA que prospeccionan, analizan y cierran ventas 24/7.
+          </p>
+
+          <!-- CTAs & Trust Badges -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#motor-prospeccion" class="w-full sm:w-auto btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-3 font-heading">
+              <span>Ver Motor Comercial</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+
+            <a href="#ecosistema-ia" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card border-slate-700 hover:border-brand-cyan text-slate-200 hover:text-brand-cyan text-base font-semibold flex items-center justify-center gap-3 transition-all">
+              <i data-lucide="cpu" class="w-5 h-5 text-brand-amber"></i>
+              <span>Explorar Pilares</span>
+            </a>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="pt-8 border-t border-brand-borderDark grid grid-cols-3 gap-6 max-w-lg mx-auto lg:mx-0 font-mono text-left">
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-brand-cyan font-heading">+150k</div>
+              <div class="text-xs text-slate-400 mt-0.5">Registros Procesados</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-brand-amber font-heading">99.8%</div>
+              <div class="text-xs text-slate-400 mt-0.5">Uptime de Agentes</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-white font-heading">5x</div>
+              <div class="text-xs text-slate-400 mt-0.5">Velocidad Comercial</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Right / Live HUD Card Preview -->
+        <div class="lg:col-span-5 relative">
+          
+          <!-- Decorative Glow Layer -->
+          <div class="absolute -inset-1 bg-gradient-to-r from-brand-cyan to-brand-amber rounded-3xl blur-2xl opacity-20"></div>
+
+          <!-- Master Glass HUD Card -->
+          <div class="relative glass-card rounded-2xl p-6 border border-brand-cyan/30 overflow-hidden shadow-2xl">
+            
+            <!-- Terminal Header -->
+            <div class="flex items-center justify-between pb-4 border-b border-white/10 text-xs font-mono text-slate-400">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                <span class="ml-2 text-slate-300 font-semibold">cultura-agentic-core.v2</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">ACTIVE AGENT</span>
+            </div>
+
+            <!-- Terminal Body / Simulated Real-Time Stream -->
+            <div class="py-5 space-y-4 font-mono text-xs text-slate-300">
+              
+              <div class="flex items-start gap-3 bg-brand-navyDarkest/70 p-3 rounded-lg border border-white/5">
+                <i data-lucide="radar" class="w-4 h-4 text-brand-cyan shrink-0 mt-0.5 animate-spin"></i>
+                <div>
+                  <div class="text-brand-cyan font-bold">PROSPECTION PIPELINE: COLOMBIA</div>
+                  <div class="text-slate-400 text-[11px]">Extracción continua: Bogotá, Medellín, Cali, B/quilla</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 bg-brand-navyDarkest/70 p-3 rounded-lg border border-white/5">
+                <i data-lucide="bot" class="w-4 h-4 text-brand-amber shrink-0 mt-0.5"></i>
+                <div>
+                  <div class="text-brand-amber font-bold">GEMINI SPARK CO-PILOT: 24/7</div>
+                  <div class="text-slate-400 text-[11px]">Generación de brief comercial & auditoría web instantánea</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 bg-brand-navyDarkest/70 p-3 rounded-lg border border-white/5">
+                <i data-lucide="layers" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <div>
+                  <div class="text-emerald-400 font-bold">DYNAMIC LP DEMO ENGINE</div>
+                  <div class="text-slate-400 text-[11px]">7 Demos Maestras Vercel inyectadas en tiempo real</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Interactive Mini Visualizer -->
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+              <span class="text-slate-400">STATUS: <span class="text-brand-cyan">DISPATCHING LEADS</span></span>
+              <span class="text-brand-amber animate-pulse">● LIVE TELEMETRY</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== LOGO / TRUST BAR ==================== -->
+  <section class="py-12 border-y border-brand-borderDark bg-brand-navyDeep/50 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-xs font-mono uppercase tracking-widest text-slate-400 mb-8">
+        Tecnologías de Vanguardia & Ecosistemas que Potenciamos
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center justify-center opacity-75 font-mono text-sm">
+        <div class="flex items-center justify-center gap-2 text-slate-300 hover:text-brand-cyan transition-colors">
+          <i data-lucide="cpu" class="w-5 h-5 text-brand-cyan"></i>
+          <span>Gemini & Claude</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-slate-300 hover:text-brand-cyan transition-colors">
+          <i data-lucide="database" class="w-5 h-5 text-brand-amber"></i>
+          <span>SQLite / Vector</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-slate-300 hover:text-brand-cyan transition-colors">
+          <i data-lucide="terminal" class="w-5 h-5 text-brand-cyan"></i>
+          <span>Python / Node</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-slate-300 hover:text-brand-cyan transition-colors">
+          <i data-lucide="cloud" class="w-5 h-5 text-brand-amber"></i>
+          <span>Oracle Cloud ARM</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-slate-300 hover:text-brand-cyan transition-colors">
+          <i data-lucide="zap" class="w-5 h-5 text-brand-cyan"></i>
+          <span>Vercel Edge</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-slate-300 hover:text-brand-cyan transition-colors">
+          <i data-lucide="workflow" class="w-5 h-5 text-brand-amber"></i>
+          <span>GSAP / Three.js</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5 PILARES DE CULTURA AGÉNTICA ==================== -->
+  <section id="pilares" class="py-28 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-navy border border-brand-cyan/30 text-xs font-mono text-brand-cyan">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          <span>Capacidades Integrales</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white">
+          Nuestros <span class="gradient-text-cyan text-glow-cyan">5 Pilares Tecnológicos</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg font-light">
+          Diseñamos soluciones holísticas: desde la arquitectura de software hasta agentes cognitivos que ejecutan procesos de negocio complejos.
+        </p>
+      </div>
+
+      <!-- Bento Grid 5 Pilares -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Pilar 1: Apps & Plataformas -->
+        <div class="glass-card glass-card-hover rounded-2xl p-8 border-brand-borderDark relative group overflow-hidden">
+          <div class="w-14 h-14 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="layout-grid" class="w-7 h-7"></i>
+          </div>
+          <div class="text-xs font-mono text-brand-cyan mb-2">PILAR 01</div>
+          <h3 class="text-2xl font-bold font-heading text-white mb-3">Desarrollo de Apps & Plataformas Web</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Plataformas web de alto rendimiento, PWAs instalables, portales corporativos y aplicaciones a medida con estándares internacionales de diseño y velocidad.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-400 border-t border-white/10 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-cyan"></i> Single Page & Multi-tenant Apps</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-cyan"></i> Experiencias 3D (Three.js / GSAP)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-cyan"></i> Mobile-First Ultra Optimizado</li>
+          </ul>
+        </div>
+
+        <!-- Pilar 2: Software a Medida & APIs -->
+        <div class="glass-card glass-card-hover rounded-2xl p-8 border-brand-borderDark relative group overflow-hidden">
+          <div class="w-14 h-14 rounded-xl bg-brand-amber/10 border border-brand-amber/30 flex items-center justify-center text-brand-amber mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="terminal" class="w-7 h-7"></i>
+          </div>
+          <div class="text-xs font-mono text-brand-amber mb-2">PILAR 02</div>
+          <h3 class="text-2xl font-bold font-heading text-white mb-3">Software a Medida, APIs & Microservicios</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Backends robustos, motores de sincronización y conectores de APIs privadas para unificar bases de datos, sistemas legados y servicios de nube.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-400 border-t border-white/10 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-amber"></i> Arquitecturas RESTful & WebSocket</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-amber"></i> SQLite & Bases Vectoriales Edge</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-amber"></i> Servidores dedicados Oracle Cloud ARM</li>
+          </ul>
+        </div>
+
+        <!-- Pilar 3: IA & Agentes Autónomos (Featured) -->
+        <div class="glass-card glass-card-hover rounded-2xl p-8 border-brand-cyan/40 relative group overflow-hidden md:col-span-2 lg:col-span-1 bg-gradient-to-b from-brand-navy/90 to-brand-navyDarkest">
+          <div class="absolute top-4 right-4">
+            <span class="px-2.5 py-1 rounded-full bg-brand-cyan/20 border border-brand-cyan/40 text-[10px] font-mono text-brand-cyan font-bold uppercase tracking-wider">Especialidad Core</span>
+          </div>
+          <div class="w-14 h-14 rounded-xl bg-brand-cyan/20 border border-brand-cyan/50 flex items-center justify-center text-brand-cyan mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="bot" class="w-7 h-7"></i>
+          </div>
+          <div class="text-xs font-mono text-brand-cyan mb-2">PILAR 03</div>
+          <h3 class="text-2xl font-bold font-heading text-white mb-3">Ecosistemas de IA & Agentes Autónomos</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Agentes con razonamiento multi-paso capaces de auditar prospectos, agendar citas, responder WhatsApps inteligentes y tomar decisiones de negocio 24/7.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-400 border-t border-white/10 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-cyan"></i> Modelos Gemini, Claude & GPT fine-tuned</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-cyan"></i> Integraciones WhatsApp Business & CRM</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-cyan"></i> Agentes de prospección y cierre comercial</li>
+          </ul>
+        </div>
+
+        <!-- Pilar 4: Automatización Operativa & CRM -->
+        <div class="glass-card glass-card-hover rounded-2xl p-8 border-brand-borderDark relative group overflow-hidden">
+          <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="workflow" class="w-7 h-7"></i>
+          </div>
+          <div class="text-xs font-mono text-emerald-400 mb-2">PILAR 04</div>
+          <h3 class="text-2xl font-bold font-heading text-white mb-3">Automatización Operativa & CRMs Inteligentes</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Eliminación total de trabajo manual redundante. Flujos automatizados entre Google Sheets, Google Apps Script, Webhooks y ERPs para operar con equipos esbeltos.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-400 border-t border-white/10 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Web Apps CRM Mobile-First</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Disparadores en tiempo real sin latencia</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Generación automática de contratos & briefs</li>
+          </ul>
+        </div>
+
+        <!-- Pilar 5: Comunidad Builder & Tech (Double width) -->
+        <div class="glass-card glass-card-hover rounded-2xl p-8 border-brand-borderDark relative group overflow-hidden md:col-span-2 lg:col-span-2 bg-gradient-to-r from-brand-navy/60 via-brand-navyDeep to-brand-navyDarkest">
+          <div class="flex flex-col sm:flex-row gap-6 items-start justify-between">
+            <div class="space-y-4 max-w-xl">
+              <div class="w-14 h-14 rounded-xl bg-brand-amber/10 border border-brand-amber/30 flex items-center justify-center text-brand-amber group-hover:scale-110 transition-transform">
+                <i data-lucide="users" class="w-7 h-7"></i>
+              </div>
+              <div class="text-xs font-mono text-brand-amber">PILAR 05</div>
+              <h3 class="text-2xl sm:text-3xl font-bold font-heading text-white">Comunidad Builder & Ecosistema Tecnológico</h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Fomentamos una comunidad activa de ingenieros, creadores y líderes de negocio en Colombia y Latam enfocados en IA aplicada, automatización agéntica y software moderno.
+              </p>
+              <div class="flex flex-wrap gap-4 pt-2 font-mono text-xs text-slate-300">
+                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 flex items-center gap-1.5">
+                  <i data-lucide="code-2" class="w-4 h-4 text-brand-cyan"></i> Workshops Prácticos
+                </span>
+                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 flex items-center gap-1.5">
+                  <i data-lucide="cpu" class="w-4 h-4 text-brand-amber"></i> Frameworks Open Source
+                </span>
+                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 flex items-center gap-1.5">
+                  <i data-lucide="rocket" class="w-4 h-4 text-emerald-400"></i> Hackathons & Demos
+                </span>
+              </div>
+            </div>
+            
+            <div class="w-full sm:w-auto shrink-0 pt-4 sm:pt-0">
+              <a href="#comunidad" class="btn-amber px-6 py-3.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 font-heading">
+                <span>Unirse a la Comunidad</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ECOISTEMA IA & AGENTES ==================== -->
+  <section id="ecosistema-ia" class="py-28 relative z-10 bg-brand-navyDarkest border-t border-brand-borderDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-amber/10 border border-brand-amber/30 text-xs font-mono text-brand-amber">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          <span>Autonomía Cognitiva</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white">
+          Arquitectura de <span class="gradient-text-amber text-glow-amber">Agentes de IA</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg font-light">
+          Cómo diseñamos sistemas agénticos que ejecutan flujos de trabajo autónomos sin fricción.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <div class="glass-card rounded-2xl p-8 border border-white/10 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
+            <i data-lucide="brain" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-white">1. Percepción & Datos</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Scraping multi-fuente, ingesta de documentos, conectores de bases de datos y monitoreo de eventos en tiempo real.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 border border-white/10 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-amber/10 border border-brand-amber/30 flex items-center justify-center text-brand-amber">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-white">2. Razonamiento & Herramientas</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Llamadas a funciones (Tool Calling), verificación de restricciones de negocio, prompts estructurados y memoria contextual.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 border border-white/10 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+            <i data-lucide="send" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-white">3. Acción & Ejecución</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Disparo de mensajes por WhatsApp, generación dinámica de landing pages, actualización de CRM y agendamiento en calendario.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SHOWCASE MOTOR DE PROSPECCIÓN ==================== -->
+  <section id="motor-prospeccion" class="py-28 relative z-10 bg-brand-navyDeep/30 border-y border-brand-borderDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Engine Breakdown -->
+        <div class="lg:col-span-6 space-y-8">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-xs font-mono text-brand-cyan">
+            <i data-lucide="flame" class="w-3.5 h-3.5 text-brand-amber"></i>
+            <span>Proprietary Tech</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white leading-tight">
+            El Motor Comercial de <span class="gradient-text-cyan text-glow-cyan">Cultura Agéntica</span>
+          </h2>
+
+          <p class="text-slate-300 text-base leading-relaxed">
+            Nuestra agencia opera sobre un sistema híbrido de prospección y conversión que combina scraping inteligente, bases de datos edge y 7 Demos Dinámicas de Ultra Lujo en Vercel.
+          </p>
+
+          <!-- Steps Accordion / Features -->
+          <div class="space-y-4 font-mono text-xs">
+            
+            <div class="p-4 rounded-xl glass-card border-brand-cyan/30 flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-brand-cyan/20 text-brand-cyan flex items-center justify-center font-bold shrink-0">01</div>
+              <div>
+                <h4 class="text-white font-bold text-sm font-heading mb-1">Extracción & Verificación Continua</h4>
+                <p class="text-slate-400 font-sans text-xs">Identificación de negocios sin presencia web o con plataformas obsoletas en Bogotá, Medellín, Cali, Barranquilla y Cartagena.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl glass-card border-brand-amber/30 flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-brand-amber/20 text-brand-amber flex items-center justify-center font-bold shrink-0">02</div>
+              <div>
+                <h4 class="text-white font-bold text-sm font-heading mb-1">Gemini Spark: Daily Briefing & Auditoría</h4>
+                <p class="text-slate-400 font-sans text-xs">La IA analiza el nicho, genera propuestas personalizadas de 3 tiers y redacta mensajes de WhatsApp con alto ratio de respuesta.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl glass-card border-emerald-500/30 flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold shrink-0">03</div>
+              <div>
+                <h4 class="text-white font-bold text-sm font-heading mb-1">7 Demos Maestras Dinámicas</h4>
+                <p class="text-slate-400 font-sans text-xs">Landing pages hiper-personalizadas al instante con parámetros de URL (<code class="text-brand-cyan">?nombre=&ciudad=&tel=</code>) listas para cerrar ventas.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-2">
+            <a href="https://wa.me/573133379207?text=Quiero%20implementar%20el%20Motor%20de%20Prospecci%C3%B3n%20Comercial%20en%20mi%20empresa" target="_blank" class="btn-primary px-8 py-4 rounded-xl text-sm font-bold inline-flex items-center gap-3 font-heading uppercase tracking-wide">
+              <i data-lucide="rocket" class="w-4 h-4"></i>
+              <span>Solicitar Demo de la Suite</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Dynamic Demo Tester -->
+        <div class="lg:col-span-6">
+          
+          <div class="glass-card rounded-2xl p-6 sm:p-8 border border-brand-cyan/40 shadow-2xl relative">
+            
+            <div class="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
+              <div>
+                <h3 class="text-lg font-bold text-white font-heading">Simulador de Demo Dinámica</h3>
+                <p class="text-xs text-slate-400 font-mono">Prueba cómo nuestro motor genera una propuesta en vivo</p>
+              </div>
+              <span class="px-3 py-1 rounded bg-brand-cyan/10 text-brand-cyan font-mono text-xs border border-brand-cyan/20">INTERACTIVO</span>
+            </div>
+
+            <!-- Simulator Form -->
+            <div class="space-y-4 text-xs font-mono">
+              <div>
+                <label class="block text-slate-300 mb-1.5">Nombre del Negocio Prospectado</label>
+                <input type="text" id="sim-nombre" value="Clínica Estética & Spa Aurora" class="w-full px-4 py-3 rounded-lg bg-brand-navyDarkest border border-white/15 text-white focus:outline-none focus:border-brand-cyan transition-colors">
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-slate-300 mb-1.5">Ciudad</label>
+                  <select id="sim-ciudad" class="w-full px-4 py-3 rounded-lg bg-brand-navyDarkest border border-white/15 text-white focus:outline-none focus:border-brand-cyan transition-colors">
+                    <option value="Bogotá">Bogotá</option>
+                    <option value="Medellín">Medellín</option>
+                    <option value="Cali">Cali</option>
+                    <option value="Barranquilla">Barranquilla</option>
+                    <option value="Cartagena">Cartagena</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-slate-300 mb-1.5">Categoría / Nicho</label>
+                  <select id="sim-nicho" class="w-full px-4 py-3 rounded-lg bg-brand-navyDarkest border border-white/15 text-white focus:outline-none focus:border-brand-cyan transition-colors">
+                    <option value="https://demo-spa-woad.vercel.app/">💆‍♀️ Spa & Estética</option>
+                    <option value="https://demo-solar-wheat.vercel.app/">☀️ Energía Solar</option>
+                    <option value="https://demo-novias.vercel.app/">👗 Moda & Novias</option>
+                    <option value="https://demo-odontologia-sigma.vercel.app/">🦷 Odontología</option>
+                    <option value="https://demo-restaurante-green.vercel.app/">🍽️ Gastronomía</option>
+                    <option value="https://demo-veterinaria-zeta.vercel.app/">🐾 Veterinaria</option>
+                    <option value="https://demo-turismo-silk.vercel.app/">⛵ Yates & Turismo</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-slate-300 mb-1.5">WhatsApp de Contacto (con indicativo)</label>
+                <input type="text" id="sim-tel" value="573133379207" class="w-full px-4 py-3 rounded-lg bg-brand-navyDarkest border border-white/15 text-white focus:outline-none focus:border-brand-cyan transition-colors">
+              </div>
+
+              <!-- Output Link Generator -->
+              <div class="pt-4">
+                <button id="btn-sim-test" class="w-full btn-amber py-3.5 rounded-xl font-bold font-heading text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                  <span>Generar & Abrir Demo En Vivo</span>
+                </button>
+              </div>
+
+              <div class="p-3 rounded-lg bg-black/40 border border-white/5 text-[11px] text-slate-400 break-all">
+                <span class="text-brand-cyan">URL Resultante:</span> <span id="sim-preview-url" class="text-slate-300">https://demo-spa-woad.vercel.app/?nombre=Cl%C3%ADnica%20Est%C3%A9tica%20%26%20Spa%20Aurora&ciudad=Bogot%C3%A1&tel=573133379207</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== COMUNIDAD BUILDER & TECH ==================== -->
+  <section id="comunidad" class="py-28 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-card rounded-3xl p-8 sm:p-14 border border-brand-amber/30 relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navyDeep to-brand-navyDarkest">
+        
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-amber/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid lg:grid-cols-12 gap-12 items-center relative z-10">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-amber/10 border border-brand-amber/30 text-xs font-mono text-brand-amber">
+              <i data-lucide="flame" class="w-3.5 h-3.5"></i>
+              <span>Cultura Builder Colombia</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white">
+              Únete a la Comunidad de <span class="gradient-text-amber text-glow-amber">Creadores & Builders</span>
+            </h2>
+
+            <p class="text-slate-300 text-base leading-relaxed">
+              No creemos en soluciones mágicas sin código de mala calidad. Promovemos la maestría técnica: arquitecturas limpias, agentes con verificación formal, diseño frontend de ultra lujo y automatización sin límites.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 pt-2 font-mono text-xs text-slate-300">
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                <i data-lucide="message-square" class="w-5 h-5 text-brand-amber"></i>
+                <span>Canal privado de creadores</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                <i data-lucide="github" class="w-5 h-5 text-brand-cyan"></i>
+                <span>Repositorios & Blueprints</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                <i data-lucide="video" class="w-5 h-5 text-emerald-400"></i>
+                <span>Masterclasses mensuales</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                <i data-lucide="briefcase" class="w-5 h-5 text-purple-400"></i>
+                <span>Bolsa de proyectos Tech</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 text-center lg:text-right space-y-6">
+            <div class="p-6 rounded-2xl bg-brand-navyDarkest/90 border border-white/10 text-left font-mono text-xs space-y-4">
+              <div class="text-brand-amber font-bold text-sm">¿Listo para construir el futuro agéntico?</div>
+              <p class="text-slate-400 font-sans text-xs">Conéctate directamente con nuestro equipo de ingeniería y sé parte de la revolución agéntica en Colombia.</p>
+              
+              <a href="https://wa.me/573133379207?text=Hola,%20quiero%20unirme%20a%20la%20comunidad%20builder%20de%20Cultura%20Ag%C3%A9ntica" target="_blank" class="w-full btn-amber py-3.5 rounded-xl font-bold font-heading text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Entrar al Grupo / Contactar</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CONTACTO & FOOTER ==================== -->
+  <footer id="contacto" class="pt-20 pb-12 border-t border-brand-borderDark bg-brand-navyDarkest relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-white/10">
+        
+        <!-- Columna Marca -->
+        <div class="lg:col-span-2 space-y-6">
+          <img src="logo-horizontal-dark.png" alt="Cultura Agéntica" class="h-10 w-auto object-contain">
+          <p class="text-slate-400 text-xs sm:text-sm font-light max-w-sm leading-relaxed">
+            Agencia líder en arquitectura de software, ecosistemas de inteligencia artificial y agentes autónomos comerciales en Colombia y Latinoamérica.
+          </p>
+          <div class="flex items-center gap-4 text-slate-400">
+            <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:text-brand-cyan hover:border-brand-cyan transition-colors"><i data-lucide="github" class="w-4 h-4"></i></a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:text-brand-cyan hover:border-brand-cyan transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:text-brand-cyan hover:border-brand-cyan transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+            <a href="https://wa.me/573133379207" target="_blank" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:text-brand-cyan hover:border-brand-cyan transition-colors"><i data-lucide="message-circle" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Links Pilares -->
+        <div class="space-y-4">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider">Servicios Core</div>
+          <ul class="space-y-2.5 text-xs text-slate-400 font-sans">
+            <li><a href="#pilares" class="hover:text-brand-cyan transition-colors">Desarrollo Web & PWAs</a></li>
+            <li><a href="#pilares" class="hover:text-brand-cyan transition-colors">APIs & Backends Edge</a></li>
+            <li><a href="#ecosistema-ia" class="hover:text-brand-cyan transition-colors">Agentes IA & Modelos LLM</a></li>
+            <li><a href="#pilares" class="hover:text-brand-cyan transition-colors">Automatización CRM & Flujos</a></li>
+            <li><a href="#motor-prospeccion" class="hover:text-brand-cyan transition-colors">Motor Comercial B2B</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Demos -->
+        <div class="space-y-4">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider">Demos Maestras</div>
+          <ul class="space-y-2.5 text-xs text-slate-400 font-sans">
+            <li><a href="https://demo-novias.vercel.app/" target="_blank" class="hover:text-brand-cyan transition-colors">Moda & Boutiques</a></li>
+            <li><a href="https://demo-spa-woad.vercel.app/" target="_blank" class="hover:text-brand-cyan transition-colors">Spas & Estética</a></li>
+            <li><a href="https://demo-solar-wheat.vercel.app/" target="_blank" class="hover:text-brand-cyan transition-colors">Energía Solar</a></li>
+            <li><a href="https://demo-odontologia-sigma.vercel.app/" target="_blank" class="hover:text-brand-cyan transition-colors">Odontología</a></li>
+            <li><a href="https://demo-restaurante-green.vercel.app/" target="_blank" class="hover:text-brand-cyan transition-colors">Gastronomía</a></li>
+            <li><a href="https://demo-turismo-silk.vercel.app/" target="_blank" class="hover:text-brand-cyan transition-colors">Yates & Turismo</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacto Directo -->
+        <div class="space-y-4">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider">Contacto Directo</div>
+          <div class="space-y-3 text-xs text-slate-400 font-mono">
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-cyan shrink-0"></i>
+              <span>Bogotá / Medellín, CO</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-brand-amber shrink-0"></i>
+              <a href="tel:+573133379207" class="hover:text-white">+57 313 337 9207</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <span>contacto@culturaagentica.com</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 font-mono gap-4">
+        <div>
+          &copy; 2026 <span class="text-slate-300 font-semibold">Cultura Agéntica</span>. Todos los derechos reservados.
+        </div>
+        <div class="flex items-center gap-6">
+          <span class="text-brand-cyan">Sistema de Diseño S2</span>
+          <span>Desplegado en Edge Vercel</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Beacon -->
+  <a href="https://wa.me/573133379207?text=Hola%20Cultura%20Ag%C3%A9ntica,%20quiero%20iniciar%20un%20proyecto%20de%20software/IA" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-110 active:scale-95 group" aria-label="WhatsApp">
+    <i data-lucide="message-circle" class="w-7 h-7 fill-white/20"></i>
+    <span class="absolute right-16 px-3 py-1.5 rounded-lg bg-brand-navyDarkest text-white text-xs font-mono font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-emerald-500/40 pointer-events-none shadow-xl">
+      Hablar con un Ingeniero
+    </span>
+  </a>
+
+  <!-- ==================== SCRIPTS: INTERACTIVIDAD & CANVAS ==================== -->
+  <script>
+    // Inicializar Lucide Icons
+    lucide.createIcons();
+
+    // Inicializar Lenis Smooth Scroll
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      smooth: true
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Simulador de URL Dinámica
+    const simNombre = document.getElementById('sim-nombre');
+    const simCiudad = document.getElementById('sim-ciudad');
+    const simNicho = document.getElementById('sim-nicho');
+    const simTel = document.getElementById('sim-tel');
+    const simPreviewUrl = document.getElementById('sim-preview-url');
+    const btnSimTest = document.getElementById('btn-sim-test');
+
+    function updateSimUrl() {
+      const baseUrl = simNicho.value;
+      const nombre = encodeURIComponent(simNombre.value.trim());
+      const ciudad = encodeURIComponent(simCiudad.value);
+      const tel = encodeURIComponent(simTel.value.trim().replace(/[^0-9]/g, ''));
+      const fullUrl = `${baseUrl}?nombre=${nombre}&ciudad=${ciudad}&tel=${tel}`;
+      simPreviewUrl.textContent = fullUrl;
+      return fullUrl;
+    }
+
+    simNombre.addEventListener('input', updateSimUrl);
+    simCiudad.addEventListener('change', updateSimUrl);
+    simNicho.addEventListener('change', updateSimUrl);
+    simTel.addEventListener('input', updateSimUrl);
+
+    btnSimTest.addEventListener('click', () => {
+      const url = updateSimUrl();
+      window.open(url, '_blank');
+    });
+
+    // Neural Canvas Background Simulation
+    const canvas = document.getElementById('neural-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.6;
+        this.vy = (Math.random() - 0.5) * 0.6;
+        this.radius = Math.random() * 2 + 1;
+        this.color = Math.random() > 0.4 ? 'rgba(0, 199, 199, ' : 'rgba(255, 158, 0, ';
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color + '0.6)';
+        ctx.fill();
+      }
+    }
+
+    const particleCount = Math.min(width > 768 ? 60 : 30, 70);
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateNeural() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 130) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(0, 199, 199, ${0.15 * (1 - dist / 130)})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateNeural);
+    }
+    animateNeural();
+
+    // GSAP Scroll Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.glass-card').forEach((card) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: 'power2.out'
+      });
+    });
+  </script>
+</body>
+</html>
