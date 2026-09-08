@@ -126,7 +126,7 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 - `datos.json` es espejo de DATA para respaldo manual
 - No requiere build steps, ni npm, ni servidor
 
-## Datos actuales: 158 negocios
+## Datos actuales: 159 negocios
 
 | Tipo | Sin web | Solo redes | Con web | Total |
 |------|---------|------------|---------|-------|
@@ -140,21 +140,22 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 | Bares / Pubs / Discotecas | 0 | 0 | 17 | 17 |
 | Veterinarias / Pet Shops | 7 | 0 | 3 | 10 |
 | **Energía Solar / Paneles Solares** | **0** | **10** | **0** | **10** |
-| **Turismo / Renta de Yates y Lanchas** | **1** | **3** | **0** | **4** |
+| **Turismo / Renta de Yates, Catamaranes y Lanchas** | **2** | **3** | **0** | **5** |
 | Otros (paellas, lechona, café, etc.) | 0 | 0 | 4 | 4 |
-| **Total** | **34** | **42** | **82** | **158** |
+| **Total** | **35** | **42** | **82** | **159** |
 
-- IDs activos: b1-b25, b30-b34, b36-b41, b50-b171
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b172
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
 - **Nuevos negocios de Energía Solar agregados en sesión 24 (b158-b167): 10 negocios sin sitio web con redes sociales y WhatsApp verificados**
-- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28, 29 y 30: Cartagena Náutica (b168), Botes y Yates Cartagena (b169), Cartagena VIP Boats (b170) y Coast Tours Cartagena (b171) con LPs desplegadas en Vercel**
+- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28, 29, 30 y 31: Cartagena Náutica (b168), Botes y Yates Cartagena (b169), Cartagena VIP Boats (b170), Coast Tours Cartagena (b171) y Catamarán San Juan (b172) con LPs desplegadas en Vercel**
 
 ## Archivos del proyecto
 
 - `busqueda/index.html` — herramienta principal de prospección
 - `busqueda/datos.json` — respaldo JSON de los datos
 - `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
+  - `catamaran-san-juan.html` — Atardecer Bahía Catamarán San Juan (Sunset Tour en Catamarán)
   - `coast-tours-cartagena.html` — Coast Tours Cartagena (Pasadías en Bote, Cholón & Tour Plancton Luminoso)
   - `cartagena-vip-boats.html` — Cartagena VIP Boats (Alquiler de Botes VIP y Lancha Firpol 42ft)
   - `botes-yates-cartagena.html` — Botes y Yates Cartagena (Alquiler de Botes y Yates)
@@ -809,10 +810,25 @@ git push origin main
     - **Experience Grid**: Destacando Tour Fiesta en Cholón, Snorkel Islas del Rosario + Bora Bora y el exclusivo **Tour Nocturno Plancton Luminoso**.
     - **Flota Deportiva**: Bote 29ft Sport (10 pax), Bote 31ft Open Cruiser (14 pax con baño) y Bote 33ft Party Max (16 pax con sonido Pro).
     - **Interactive Booking Form**: Cotizador express dinámico con salida automatizada al WhatsApp (+57 314 8166599).
-- **Despliegue en Producción Vercel**: **`https://lp-coast-tours-cartagena.vercel.app`** (verificado HTTP 200 OK).
+### Sesión 31 (2026-09-08) — Landing Page de Ultra Lujo & Prospección: Catamarán San Juan (b172)
+- **Nuevo Lead Integrado**: **Atardecer Bahía Catamarán San Juan Cartagena** (`b172`) — Sunset Tour en Catamarán de Dos Cascos.
+  - Ubicación: Muelle de La Bodeguita / Av. Blas de Lezo, Centro Histórico, Cartagena de Indias.
+  - WhatsApp Verificado: `+57 316 3826156` (`573163826156`).
+  - Presencia original: Cero Sitio Web (`no-web`), ficha en Google Maps en Muelle La Bodeguita sin portal de reservas.
+- **Desarrollo de la Landing Page (`landing-pages/catamaran-san-juan.html`)**:
+  - **Estándar Sunset Náutico Aplicado**:
+    - Video Hero 100% nítido (`hero-boat.mp4` / Pixabay 1996) con gradiente cálido de puesta de sol caribeña (`#FF8C42`, `#D4AF37`, `#080E18`).
+    - Grano analógico cinematográfico SVG (`.film-grain-overlay`) + `marineCanvas` interactivo con partículas doradas y ondas del atardecer.
+    - Botón flotante de WhatsApp oficial Font Awesome (`fa-brands fa-whatsapp`) en verde `#25D366` con efecto pulse beacon.
+    - **Countdown Badge & Próxima Salida**: Salida diaria garantizada a las 5:00 PM (Check-in 4:30 PM).
+    - **Experience Highlights**: Estabilidad total de doble casco (cero mareos), cubierta panorámica 360° con redes de proa, bar a bordo con cóctel de bienvenida y música lounge chillout.
+    - **Itinerario de 2 Horas**: Check-in 4:30 PM → Zarpe 5:00 PM → Puesta de Sol 5:45 PM → Skyline Iluminado 6:30 PM → Retorno 7:00 PM.
+    - **Tickets & Pricing**: Pase Individual ($95k), Plan Parejas Romántico ($190k) y Plan Grupo Amigos ($450k base).
+    - **Interactive Booking Form**: Cotizador express dinámico con salida automatizada al WhatsApp (+57 316 3826156).
+- **Despliegue en Producción Vercel**: **`https://lp-catamaran-san-juan.vercel.app`** (verificado HTTP 200 OK).
 - **Sincronización del Ecosistema de Prospección**:
   - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
-  - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **158 negocios** registrados.
+  - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **159 negocios** registrados.
 
 ---
 

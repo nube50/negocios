@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Catamarán San Juan — Atardecer Mágico en la Bahía de Cartagena | Sunset Tour</title>
+  <meta name="description" content="Vive el mejor atardecer de Cartagena a bordo del Catamarán San Juan. Salida diaria 5:00 PM desde el Muelle de La Bodeguita. Cóctel de bienvenida, música lounge y vistas 360°.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Catamarán San Juan — Atardecer en la Bahía de Cartagena">
+  <meta property="og:description" content="Salidas diarias a las 5:00 PM. Navegación en catamarán de dos cascos por la bahía interna, cóctel incluido y vistas al skyline iluminado.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=85">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌅</text></svg>">
+
+  <!-- Font Awesome 6.5.1 Oficial (WhatsApp & Redes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, Inter, Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            sunset: {
+              orange: '#FF8C42',
+              gold: '#D4AF37',
+              amber: '#FF9E00',
+              coral: '#FF6B6B',
+              rose: '#E85D75',
+              abyssal: '#080E18',
+              navyDeep: '#0A192F',
+              navy: '#102A45',
+              card: 'rgba(10, 25, 47, 0.85)',
+              borderDark: 'rgba(255, 140, 66, 0.2)'
+            }
+          },
+          fontFamily: {
+            display: ['"Outfit"', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+            mono: ['"Space Mono"', '"JetBrains Mono"', 'monospace']
+          },
+          animation: {
+            'wave-pulse': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float-slow': 'floatBoat 6s ease-in-out infinite',
+            'glow-sunset': 'glowSunset 4s ease-in-out infinite'
+          },
+          keyframes: {
+            floatBoat: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-6px) rotate(0.4deg)' }
+            },
+            glowSunset: {
+              '0%, 100%': { opacity: '0.6' },
+              '50%': { opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* Estilos Náuticos Sunset S2 */
+    :root {
+      --color-abyssal: #080E18;
+      --color-navy: #0A192F;
+      --color-orange: #FF8C42;
+      --color-gold: #D4AF37;
+      --color-coral: #FF6B6B;
+    }
+
+    body {
+      background-color: var(--color-abyssal);
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .font-mono {
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* Glass Cards Sunset (21st.dev inspired) */
+    .glass-sunset {
+      background: rgba(10, 25, 47, 0.84);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 140, 66, 0.22);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .glass-sunset-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-sunset-hover:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 140, 66, 0.55);
+      box-shadow: 0 25px 60px rgba(255, 140, 66, 0.2), 0 0 30px rgba(212, 175, 55, 0.15);
+    }
+
+    .glass-nav {
+      background: rgba(8, 14, 24, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 140, 66, 0.18);
+    }
+
+    /* Glowing Text & Gradients */
+    .gradient-text-sunset {
+      background: linear-gradient(135deg, #FFF1E6 10%, #FF8C42 50%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-gold {
+      background: linear-gradient(135deg, #FFFFFF 20%, #D4AF37 70%, #AA820A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-glow-sunset {
+      text-shadow: 0 0 25px rgba(255, 140, 66, 0.6);
+    }
+
+    .text-glow-gold {
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.55);
+    }
+
+    /* Botón Sunset Naranja/Dorado */
+    .btn-sunset-primary {
+      background: linear-gradient(135deg, #FF8C42 0%, #E85D75 100%);
+      color: #080E18;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(255, 140, 66, 0.4);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-sunset-primary:hover {
+      box-shadow: 0 8px 30px rgba(255, 140, 66, 0.65);
+      transform: scale(1.02);
+    }
+
+    /* Botón Secundario Dorado */
+    .btn-sunset-gold {
+      background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+      color: #080E18;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-sunset-gold:hover {
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+      transform: scale(1.02);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080E18;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #102A45;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 140, 66, 0.25);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FF8C42;
+    }
+  
+    /* Grano Analógico Sutil */
+    .film-grain-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.025;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    #marineCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Hero Video Wrap sin reducción de opacidad (100% nítido) */
+    .hero-video-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      opacity: 1 !important;
+      filter: none !important;
+    }
+
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8, 14, 24, 0.25) 0%, transparent 40%, rgba(8, 14, 24, 0.6) 75%, #080E18 100%);
+      pointer-events: none;
+    }
+
+    .hero-title-shadow {
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.85);
+    }
+  </style>
+</head>
+
+<body class="bg-sunset-abyssal text-slate-100 antialiased selection:bg-sunset-orange selection:text-sunset-abyssal">
+
+  <!-- Grano Analógico Sutil & Marine Canvas -->
+  <div class="film-grain-overlay"></div>
+  <canvas id="marineCanvas"></canvas>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sunset-orange to-sunset-rose flex items-center justify-center text-sunset-abyssal shadow-lg shadow-sunset-orange/20 group-hover:scale-105 transition-transform border border-sunset-orange/40">
+          <i data-lucide="sun" class="w-5 h-5 text-white"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg md:text-xl font-extrabold font-display tracking-tight text-white group-hover:text-sunset-orange transition-colors">
+            CATAMARÁN <span class="gradient-text-sunset">SAN JUAN</span>
+          </span>
+          <span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">Sunset Bahía Cartagena • Muelle Bodeguita</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#experiencia" class="hover:text-sunset-orange transition-colors flex items-center gap-1.5">
+          <span>El Catamarán</span>
+        </a>
+        <a href="#itinerario" class="hover:text-sunset-orange transition-colors flex items-center gap-1.5">
+          <span>Ruta & Horarios</span>
+        </a>
+        <a href="#tickets" class="hover:text-sunset-orange transition-colors flex items-center gap-1.5">
+          <span>Tickets & Planes</span>
+        </a>
+        <a href="#cotizador" class="hover:text-sunset-gold transition-colors flex items-center gap-1.5">
+          <span class="text-sunset-gold font-mono text-xs">⚡</span> Reserva Online
+        </a>
+        <a href="#zarpe" class="hover:text-sunset-orange transition-colors flex items-center gap-1.5">
+          <span>Muelle La Bodeguita</span>
+        </a>
+      </nav>
+
+      <!-- Right Action & WhatsApp Button -->
+      <div class="flex items-center gap-4">
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full border border-sunset-orange/30 bg-sunset-navyDeep/80 text-xs font-mono text-sunset-orange">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Salida Hoy: 5:00 PM</span>
+        </div>
+
+        <a href="https://wa.me/573163826156?text=Hola%20Catamar%C3%A1n%20San%20Juan,%20deseo%20reservar%20cupos%20para%20el%20Tour%20de%20Atardecer" target="_blank" class="btn-sunset-primary px-5 py-2.5 rounded-xl text-xs md:text-sm flex items-center gap-2 font-display tracking-wide uppercase">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>Apartar Cupos</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle" class="md:hidden p-2 text-slate-300 hover:text-sunset-orange" aria-label="Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden glass-sunset border-t border-sunset-borderDark px-6 py-6 space-y-4">
+      <a href="#experiencia" class="block text-slate-200 hover:text-sunset-orange text-base font-medium mobile-link">Experiencia en Catamarán</a>
+      <a href="#itinerario" class="block text-slate-200 hover:text-sunset-orange text-base font-medium mobile-link">Ruta Sunset & Horarios</a>
+      <a href="#tickets" class="block text-slate-200 hover:text-sunset-orange text-base font-medium mobile-link">Tickets: Individual, Parejas y Grupos</a>
+      <a href="#cotizador" class="block text-sunset-orange hover:text-amber-300 text-base font-medium mobile-link">Reserva Dinámica en 1 Clic</a>
+      <a href="#zarpe" class="block text-slate-200 hover:text-sunset-orange text-base font-medium mobile-link">Muelle La Bodeguita</a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION (SUNSET WARM ATMOSPHERE) ==================== -->
+  <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden z-10">
+    
+    <!-- Hero Video Loop Background (100% Nitidez & Estándar Náutico) -->
+    <div class="hero-video-wrap">
+      <video id="heroBgVideo" autoplay muted loop playsinline preload="auto" poster="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_tiny.jpg">
+        <source src="hero-boat.mp4" type="video/mp4">
+        <source src="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_large.mp4" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/5368/5368-720.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+      
+      <!-- Next Departure Countdown Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-sunset border-sunset-orange/40 text-xs md:text-sm font-mono text-sunset-orange mb-8 shadow-xl">
+        <span class="w-2.5 h-2.5 rounded-full bg-sunset-orange animate-ping"></span>
+        <span class="text-white font-bold">SALIDA DIARIA: 5:00 PM</span>
+        <span class="text-slate-300">• Check-in 4:30 PM Muelle La Bodeguita</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] font-display max-w-5xl mx-auto hero-title-shadow">
+        Atardecer Mágico en la Bahía de Cartagena a Bordo del <span class="gradient-text-sunset text-glow-sunset">Catamarán San Juan</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mt-6 text-lg sm:text-xl text-slate-100 font-normal leading-relaxed max-w-3xl mx-auto font-body hero-title-shadow">
+        Disfruta de <strong>2 horas de navegación panorámica</strong> en una embarcación de dos cascos con máxima estabilidad, cóctel de bienvenida, música lounge y las mejores vistas 360° del atardecer y la ciudad amurallada iluminada.
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#cotizador" class="w-full sm:w-auto btn-sunset-primary px-8 py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-3 font-display uppercase tracking-wider shadow-xl">
+          <i data-lucide="ticket" class="w-5 h-5"></i>
+          <span>Apartar Cupos para Hoy</span>
+        </a>
+
+        <a href="#tickets" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-sunset border-slate-700 hover:border-sunset-orange text-slate-200 hover:text-sunset-orange text-sm font-semibold flex items-center justify-center gap-3 transition-all font-display">
+          <i data-lucide="sparkles" class="w-5 h-5 text-sunset-orange"></i>
+          <span>Ver Planes & Tarifas</span>
+        </a>
+      </div>
+
+      <!-- Quick Telemetry Specs Bar -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto font-mono text-xs border-t border-sunset-borderDark pt-8">
+        <div class="p-3.5 rounded-xl bg-sunset-navyDeep/60 border border-sunset-orange/20 backdrop-blur-md">
+          <div class="text-sunset-orange font-bold text-base font-display">Doble Casco</div>
+          <div class="text-slate-300 text-[11px] mt-0.5">Máxima estabilidad, sin mareos</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-sunset-navyDeep/60 border border-sunset-orange/20 backdrop-blur-md">
+          <div class="text-amber-300 font-bold text-base font-display">Cóctel Incluido</div>
+          <div class="text-slate-300 text-[11px] mt-0.5">Bebida de bienvenida de autor</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-sunset-navyDeep/60 border border-sunset-orange/20 backdrop-blur-md">
+          <div class="text-sunset-rose font-bold text-base font-display">Música Lounge</div>
+          <div class="text-slate-300 text-[11px] mt-0.5">Sonido chillout envolvente</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-sunset-navyDeep/60 border border-sunset-orange/20 backdrop-blur-md">
+          <div class="text-emerald-400 font-bold text-base font-display">Vistas 360°</div>
+          <div class="text-slate-300 text-[11px] mt-0.5">Sunset + Ciudad Iluminada</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== HIGHLIGHTS DEL CATAMARÁN ==================== -->
+  <section id="experiencia" class="py-28 relative z-10 bg-sunset-navyDeep/40 border-y border-sunset-borderDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sunset-navy border border-sunset-orange/30 text-xs font-mono text-sunset-orange">
+          <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+          <span>La Experiencia San Juan</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Por Qué Elegir Nuestro <span class="gradient-text-sunset text-glow-sunset">Catamarán al Atardecer</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg font-light font-body">
+          La embarcación más espaciosa y cómoda de la bahía, diseñada especialmente para disfrutar de pie, brindar y contemplar los colores del crepúsculo.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Highlight 1: Doble Casco -->
+        <div class="glass-sunset glass-sunset-hover rounded-3xl p-8 flex flex-col justify-between space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-sunset-orange/20 border border-sunset-orange/40 flex items-center justify-center text-sunset-orange">
+            <i data-lucide="anchor" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold font-display text-white mb-2">Estabilidad Total de Doble Casco</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              A diferencia de las lanchas tradicionales, el catamarán se desliza suavemente sobre el agua. Puedes caminar, tomar fotos y bailar con total tranquilidad y cero balanceos bruscos.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-sunset-orange font-semibold">Ideal para todas las edades</div>
+        </div>
+
+        <!-- Highlight 2: Cubierta Panorámica 360° -->
+        <div class="glass-sunset glass-sunset-hover rounded-3xl p-8 flex flex-col justify-between space-y-6 border-sunset-orange/40 bg-gradient-to-b from-sunset-navy/80 to-sunset-abyssal">
+          <div class="w-12 h-12 rounded-2xl bg-sunset-gold/20 border border-sunset-gold/40 flex items-center justify-center text-sunset-gold">
+            <i data-lucide="camera" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold font-display text-white mb-2">Cubierta Abierta & Redes de Proa</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Espacio al aire libre con vista despejada hacia los cuatro puntos cardinales. El mejor ángulo fotográfico para capturar el sol ocultándose tras el Mar Caribe.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-sunset-gold font-semibold">El mejor photo-spot de la bahía</div>
+        </div>
+
+        <!-- Highlight 3: Bar & Música Lounge -->
+        <div class="glass-sunset glass-sunset-hover rounded-3xl p-8 flex flex-col justify-between space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-sunset-rose/20 border border-sunset-rose/40 flex items-center justify-center text-sunset-rose">
+            <i data-lucide="wine" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold font-display text-white mb-2">Bar a Bordo & Música Lounge</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Barra con cócteles tropicales, cervezas heladas y snacks. Ambientado con música chillout y tropical beats seleccionada para crear un ambiente inolvidable.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-sunset-rose font-semibold">Cóctel de cortesía incluido</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ITINERARIO SUNSET (CRONOGRAMA DE 2 HORAS) ==================== -->
+  <section id="itinerario" class="py-28 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sunset-orange/10 border border-sunset-orange/30 text-xs font-mono text-sunset-orange">
+          <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+          <span>Cronograma Diario</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Itinerario del <span class="gradient-text-sunset text-glow-sunset">Tour de Atardecer</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg font-light font-body">
+          Dos horas exactas de deleite visual y tranquilidad en las aguas calmas de la bahía interna de Cartagena.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+        
+        <div class="glass-sunset p-6 rounded-2xl border-sunset-borderDark text-center space-y-3">
+          <div class="w-10 h-10 rounded-full bg-sunset-orange/20 text-sunset-orange mx-auto flex items-center justify-center font-mono font-bold text-sm">1</div>
+          <div class="text-lg font-bold font-display text-white">4:30 PM</div>
+          <div class="text-xs font-bold text-sunset-orange uppercase tracking-wider">Check-in</div>
+          <p class="text-slate-300 text-xs leading-relaxed">Llegada al Muelle de La Bodeguita, control de abordaje y bienvenida de tripulación.</p>
+        </div>
+
+        <div class="glass-sunset p-6 rounded-2xl border-sunset-borderDark text-center space-y-3">
+          <div class="w-10 h-10 rounded-full bg-sunset-orange/20 text-sunset-orange mx-auto flex items-center justify-center font-mono font-bold text-sm">2</div>
+          <div class="text-lg font-bold font-display text-white">5:00 PM</div>
+          <div class="text-xs font-bold text-sunset-orange uppercase tracking-wider">Zarpe</div>
+          <p class="text-slate-300 text-xs leading-relaxed">Inicio de navegación hacia la bahía externa con entrega del cóctel de bienvenida.</p>
+        </div>
+
+        <div class="glass-sunset p-6 rounded-2xl border-sunset-orange/50 text-center space-y-3 bg-gradient-to-b from-sunset-orange/20 to-sunset-navyDeep">
+          <div class="w-10 h-10 rounded-full bg-sunset-orange text-sunset-abyssal mx-auto flex items-center justify-center font-mono font-bold text-sm">3</div>
+          <div class="text-lg font-bold font-display text-white">5:45 PM</div>
+          <div class="text-xs font-bold text-amber-300 uppercase tracking-wider">Puesta de Sol</div>
+          <p class="text-slate-200 text-xs leading-relaxed">Fondeo suave frente a Bocagrande para contemplar el sol cayendo sobre el horizonte.</p>
+        </div>
+
+        <div class="glass-sunset p-6 rounded-2xl border-sunset-borderDark text-center space-y-3">
+          <div class="w-10 h-10 rounded-full bg-sunset-orange/20 text-sunset-orange mx-auto flex items-center justify-center font-mono font-bold text-sm">4</div>
+          <div class="text-lg font-bold font-display text-white">6:30 PM</div>
+          <div class="text-xs font-bold text-sunset-rose uppercase tracking-wider">City Lights</div>
+          <p class="text-slate-300 text-xs leading-relaxed">Paseo panorámico nocturno frente a las murallas coloniales y rascacielos iluminados.</p>
+        </div>
+
+        <div class="glass-sunset p-6 rounded-2xl border-sunset-borderDark text-center space-y-3">
+          <div class="w-10 h-10 rounded-full bg-sunset-orange/20 text-sunset-orange mx-auto flex items-center justify-center font-mono font-bold text-sm">5</div>
+          <div class="text-lg font-bold font-display text-white">7:00 PM</div>
+          <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Retorno</div>
+          <p class="text-slate-300 text-xs leading-relaxed">Desembarque seguro en Muelle La Bodeguita, listos para cenar en el Centro Histórico.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== TICKETS & PLANES (PRICING CARDS) ==================== -->
+  <section id="tickets" class="py-28 relative z-10 bg-sunset-navyDeep/30 border-t border-sunset-borderDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sunset-gold/10 border border-sunset-gold/30 text-xs font-mono text-sunset-gold">
+          <i data-lucide="tag" class="w-3.5 h-3.5"></i>
+          <span>Planes Transparentes</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Tickets & Opciones de <span class="gradient-text-gold text-glow-gold">Reserva</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg font-light font-body">
+          Asegura tus cupos con anticipación. Los cupos diarios son limitados para mantener la comodidad a bordo.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Plan 1: Pase Individual -->
+        <div class="glass-sunset glass-sunset-hover rounded-3xl p-8 flex flex-col justify-between space-y-6 border-sunset-borderDark">
+          <div>
+            <div class="text-xs font-mono text-sunset-orange uppercase tracking-wider font-bold">Viajero / Amigos</div>
+            <h3 class="text-2xl font-bold font-display text-white my-2">Pase Sunset Individual</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-6">
+              Perfecto para turistas independientes, viajeros solitarios y grupos de amigos que desean comprar por cupos individuales.
+            </p>
+
+            <div class="text-3xl font-black font-display text-white mb-6">
+              $95.000 <span class="text-xs font-normal text-slate-400 font-mono">COP / Persona</span>
+            </div>
+
+            <div class="space-y-3 font-mono text-xs text-slate-300 border-t border-white/10 pt-4">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sunset-orange"></i> 1 Cupo en el Catamarán</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sunset-orange"></i> 1 Cóctel de bienvenida de autor</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sunset-orange"></i> 2h de navegación panorámica</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sunset-orange"></i> Música lounge a bordo</div>
+            </div>
+          </div>
+
+          <button onclick="selectTicket('individual')" class="w-full btn-sunset-primary py-3.5 rounded-xl text-xs font-bold font-display uppercase tracking-wider">
+            Reservar Cupos
+          </button>
+        </div>
+
+        <!-- Plan 2: Parejas Romántico (Featured) -->
+        <div class="glass-sunset glass-sunset-hover rounded-3xl p-8 flex flex-col justify-between space-y-6 border-sunset-orange/60 bg-gradient-to-b from-sunset-navy/90 to-sunset-abyssal relative ring-1 ring-sunset-orange/40">
+          <div class="absolute -top-3 right-8">
+            <span class="px-4 py-1 rounded-full bg-gradient-to-r from-sunset-orange to-sunset-rose text-sunset-abyssal text-xs font-extrabold uppercase font-display shadow-lg">
+              ★ MÁS SOLICITADO
+            </span>
+          </div>
+
+          <div>
+            <div class="text-xs font-mono text-sunset-rose uppercase tracking-wider font-bold">Romance Caribeño</div>
+            <h3 class="text-2xl font-bold font-display text-white my-2">Plan Parejas Sunset</h3>
+            <p class="text-slate-200 text-xs leading-relaxed mb-6">
+              La experiencia predilecta para aniversarios, pedidas de mano o simplemente una velada romántica inolvidable en Cartagena.
+            </p>
+
+            <div class="text-3xl font-black font-display gradient-text-sunset mb-6">
+              $190.000 <span class="text-xs font-normal text-slate-400 font-mono">COP (2 Personas)</span>
+            </div>
+
+            <div class="space-y-3 font-mono text-xs text-slate-200 border-t border-white/10 pt-4">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sunset-rose"></i> 2 Cupos en Catamarán San Juan</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sunset-rose"></i> 2 Cócteles de bienvenida o copas</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sunset-rose"></i> Tabla de snacks ligeros</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sunset-rose"></i> Asistencia para fotos en el sunset</div>
+            </div>
+          </div>
+
+          <button onclick="selectTicket('pareja')" class="w-full btn-sunset-primary py-3.5 rounded-xl text-xs font-bold font-display uppercase tracking-wider shadow-lg">
+            Reservar Plan Parejas
+          </button>
+        </div>
+
+        <!-- Plan 3: Grupo Amigos & Privado -->
+        <div class="glass-sunset glass-sunset-hover rounded-3xl p-8 flex flex-col justify-between space-y-6 border-sunset-borderDark">
+          <div>
+            <div class="text-xs font-mono text-sunset-gold uppercase tracking-wider font-bold">Grupos & Familias</div>
+            <h3 class="text-2xl font-bold font-display text-white my-2">Grupo Amigos (5 a 10 Pax)</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-6">
+              Ideal para cumpleaños, despedidas o vacaciones familiares con mesa lounge reservada y descuento por volumen.
+            </p>
+
+            <div class="text-3xl font-black font-display text-sunset-gold mb-6">
+              $450.000 <span class="text-xs font-normal text-slate-400 font-mono">COP (Base 5 Pax)</span>
+            </div>
+
+            <div class="space-y-3 font-mono text-xs text-slate-300 border-t border-white/10 pt-4">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sunset-gold"></i> Mesa lounge agrupada reservada</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sunset-gold"></i> Cóctel de bienvenida para cada uno</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sunset-gold"></i> Hielera con hielo para sus bebidas</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sunset-gold"></i> Tarifa especial por persona adicional</div>
+            </div>
+          </div>
+
+          <button onclick="selectTicket('grupo')" class="w-full btn-sunset-gold py-3.5 rounded-xl text-xs font-bold font-display uppercase tracking-wider">
+            Cotizar Grupo
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== COTIZADOR DINÁMICO EXPRESS (DIRECTO A WHATSAPP) ==================== -->
+  <section id="cotizador" class="py-28 relative z-10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-sunset rounded-3xl p-8 sm:p-14 border-sunset-orange/40 relative overflow-hidden shadow-2xl">
+        <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-sunset-orange/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-24 -top-24 w-96 h-96 bg-sunset-rose/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sunset-orange/20 border border-sunset-orange/40 text-xs font-mono text-sunset-orange">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            <span>Reserva Inmediata de Cupos</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+            Calcula tus Cupos para el <span class="gradient-text-sunset text-glow-sunset">Sunset Tour</span>
+          </h2>
+          <p class="text-slate-300 text-xs sm:text-sm font-light">
+            Selecciona tu plan, número de personas y fecha para recibir confirmación inmediata de abordaje por WhatsApp.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          
+          <!-- Controles del Formulario -->
+          <div class="space-y-5">
+            
+            <!-- Selector de Plan -->
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">1. Selecciona el Tipo de Plan</label>
+              <select id="calc-plan" class="w-full bg-sunset-navyDeep border border-sunset-orange/30 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-sunset-orange font-body">
+                <option value="individual" data-unit="95000" data-min="1" selected>🎟️ Pases Individuales Sunset ($95.000 COP c/u)</option>
+                <option value="pareja" data-unit="190000" data-min="2">❤️ Plan Parejas Romántico Sunset ($190.000 COP x pareja)</option>
+                <option value="grupo" data-unit="90000" data-min="5">🎉 Plan Grupo Amigos / Familia (Desde 5 Pax — $90.000 COP c/u)</option>
+                <option value="privado" data-unit="2800000" data-min="1">👑 Alquiler Privado Exclusivo del Catamarán</option>
+              </select>
+            </div>
+
+            <!-- Personas & Fecha -->
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">2. Personas / Cupos</label>
+                <input type="number" id="calc-pax" min="1" max="40" value="2" class="w-full bg-sunset-navyDeep border border-sunset-orange/30 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-sunset-orange font-mono">
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">3. Fecha del Sunset</label>
+                <input type="date" id="calc-date" class="w-full bg-sunset-navyDeep border border-sunset-orange/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sunset-orange font-mono">
+              </div>
+            </div>
+
+            <!-- Horario fijo -->
+            <div class="p-4 rounded-xl bg-sunset-navyDeep border border-sunset-orange/20 text-xs font-mono text-slate-300 flex items-center justify-between">
+              <div>
+                <div class="font-bold text-white">Horario de Salida Único:</div>
+                <div class="text-sunset-orange mt-0.5">5:00 PM a 7:00 PM (Zarpe puntual)</div>
+              </div>
+              <span class="px-2.5 py-1 rounded bg-sunset-orange/10 text-sunset-orange text-[10px] font-bold border border-sunset-orange/30">Muelle Bodeguita</span>
+            </div>
+
+          </div>
+
+          <!-- Resumen y Output Cotizador -->
+          <div class="bg-sunset-navyDeep/90 rounded-2xl p-6 sm:p-8 border border-sunset-orange/40 flex flex-col justify-between space-y-6 shadow-xl">
+            
+            <div class="space-y-4">
+              <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                <span class="text-xs font-mono text-slate-400 uppercase">Resumen de Reserva</span>
+                <span class="text-xs font-mono text-sunset-orange font-bold">Catamarán San Juan</span>
+              </div>
+
+              <div class="space-y-2 font-mono text-xs text-slate-300">
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Plan:</span>
+                  <span id="summary-plan" class="text-white font-bold">Plan Parejas Romántico</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Cupos:</span>
+                  <span id="summary-pax" class="text-emerald-400 font-bold">2 personas</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Fecha:</span>
+                  <span id="summary-date" class="text-white">Hoy / Mañana</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Incluye:</span>
+                  <span class="text-white">Cóctel + Música + 2h Tour</span>
+                </div>
+              </div>
+
+              <div class="border-t border-white/10 pt-4 text-center">
+                <div class="text-[11px] font-mono text-slate-400 uppercase">Valor Total Estimado</div>
+                <div id="summary-total" class="text-3xl sm:text-4xl font-black font-display gradient-text-sunset my-1">
+                  $190.000 <span class="text-sm font-normal text-slate-400 font-mono">COP</span>
+                </div>
+                <div id="summary-perpax" class="text-xs font-mono text-sunset-orange">
+                  Aprox. $95.000 COP por persona
+                </div>
+              </div>
+            </div>
+
+            <!-- Botón Disparador WhatsApp con Icono Oficial -->
+            <a id="btn-calc-whatsapp" href="#" target="_blank" class="w-full btn-sunset-primary py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2.5 font-display uppercase tracking-wider shadow-xl hover:scale-[1.02] transition-transform">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span>Confirmar Cupos por WhatsApp</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== MUELLE DE ZARPE & UBICACIÓN ==================== -->
+  <section id="zarpe" class="py-24 relative z-10 bg-sunset-navyDeep/40 border-t border-sunset-borderDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sunset-orange/10 border border-sunset-orange/30 text-xs font-mono text-sunset-orange">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+            <span>Punto de Abordaje Oficial</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+            Muelle de <span class="gradient-text-sunset text-glow-sunset">La Bodeguita</span>
+          </h2>
+
+          <p class="text-slate-300 text-sm leading-relaxed">
+            El Catamarán San Juan zarpa puntualmente a las 5:00 PM desde el Muelle de La Bodeguita (Puerta 3), ubicado estratégicamente en el Centro Histórico frente al Camellón de los Mártires y la Torre del Reloj.
+          </p>
+
+          <div class="space-y-3 font-mono text-xs text-slate-200">
+            <div class="p-4 rounded-xl bg-sunset-navyDeep border border-sunset-orange/20 flex items-start gap-3">
+              <i data-lucide="anchor" class="w-5 h-5 text-sunset-orange shrink-0 mt-0.5"></i>
+              <div>
+                <div class="font-bold text-white text-sm">Muelle de La Bodeguita (Puerta 3)</div>
+                <div class="text-slate-400 text-[11px] mt-0.5">Av. Blas de Lezo, frente a la estatua de Cervantes.</div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-sunset-navyDeep border border-sunset-orange/20 flex items-start gap-3">
+              <i data-lucide="clock" class="w-5 h-5 text-amber-300 shrink-0 mt-0.5"></i>
+              <div>
+                <div class="font-bold text-white text-sm">Hora de Presentación: 4:30 PM</div>
+                <div class="text-slate-400 text-[11px] mt-0.5">Recomendamos llegar con 30 minutos de anticipación para el registro.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="https://wa.me/573163826156?text=Hola%20Catamar%C3%A1n%20San%20Juan,%20deseo%20confirmar%20la%20puerta%20de%20embarque%20en%20La%20Bodeguita" target="_blank" class="text-sunset-orange hover:text-white font-mono text-xs flex items-center gap-2 underline underline-offset-4">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>Solicitar ubicación GPS en tiempo real por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="glass-sunset rounded-3xl p-4 border-sunset-orange/30 shadow-2xl relative overflow-hidden">
+            <div class="rounded-2xl overflow-hidden aspect-[16/10] relative">
+              <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=85" alt="Atardecer en la Bahía de Cartagena" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-sunset-abyssal via-transparent to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-sunset-abyssal/90 backdrop-blur-md border border-sunset-orange/40 flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-mono text-slate-400">Catamarán San Juan • Base de Zarpe</div>
+                  <div class="text-sm font-bold font-display text-white">Bahía de Cartagena, Colombia</div>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-sunset-orange/20 text-sunset-orange text-[10px] font-mono font-bold border border-sunset-orange/40">5:00 PM Diario</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-16 relative z-10 border-t border-sunset-borderDark bg-sunset-abyssal text-slate-400 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <div class="space-y-4 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-sunset-orange to-sunset-rose flex items-center justify-center text-white border border-sunset-orange/30">
+              <i data-lucide="sun" class="w-4 h-4"></i>
+            </div>
+            <span class="text-base font-bold font-display text-white tracking-tight">
+              CATAMARÁN <span class="gradient-text-sunset">SAN JUAN</span>
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs font-body max-w-md leading-relaxed">
+            La experiencia número uno de navegación al atardecer en la Bahía de Cartagena. Estabilidad de dos cascos, cóctel de autor y vistas panorámicas del Caribe.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-slate-300 pt-2">
+            <a href="https://wa.me/573163826156" target="_blank" class="w-9 h-9 rounded-xl bg-sunset-navyDeep flex items-center justify-center hover:text-emerald-400 hover:border-emerald-500/40 border border-white/10 transition-colors" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp text-base"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="text-xs font-bold text-white uppercase tracking-wider">Planes & Horarios</div>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="#tickets" class="hover:text-sunset-orange transition-colors">Pase Individual Sunset</a></li>
+            <li><a href="#tickets" class="hover:text-sunset-orange transition-colors">Plan Parejas Romántico</a></li>
+            <li><a href="#tickets" class="hover:text-sunset-orange transition-colors">Grupos & Eventos Privados</a></li>
+            <li><a href="#itinerario" class="hover:text-sunset-orange transition-colors">Itinerario 5:00 PM - 7:00 PM</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <div class="text-xs font-bold text-white uppercase tracking-wider">Contacto & Zarpe</div>
+          <div class="space-y-2 text-slate-300">
+            <div><strong>WhatsApp:</strong> +57 316 3826156</div>
+            <div><strong>Zarpe:</strong> Muelle La Bodeguita (Puerta 3)</div>
+            <div><strong>Ubicación:</strong> Av. Blas de Lezo, Centro Histórico</div>
+            <div><strong>Atención:</strong> Todos los días 8:00 AM - 8:00 PM</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <div>© 2026 Atardecer Bahía Catamarán San Juan. Todos los derechos reservados.</div>
+        <div class="flex items-center gap-4">
+          <span>Turismo Náutico Seguro DIMAR</span>
+          <span>•</span>
+          <span>Cartagena de Indias, Colombia</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING WHATSAPP BUTTON (OFICIAL #25D366 & BEACON) ==================== -->
+  <a href="https://wa.me/573163826156?text=Hola%20Catamar%C3%A1n%20San%20Juan,%20deseo%20reservar%20cupos%20para%20el%20Tour%20de%20Atardecer" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group shadow-[0_10px_30px_rgba(37,211,102,0.45)]" aria-label="WhatsApp">
+    <div class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25"></div>
+    <i class="fa-brands fa-whatsapp text-3xl relative z-10"></i>
+    <span class="absolute right-16 px-3.5 py-2 rounded-xl bg-sunset-abyssal text-white text-xs font-mono font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-emerald-500/40 pointer-events-none shadow-2xl flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-[#25D366] animate-pulse"></span>
+      Reservar Cupos por WhatsApp
+    </span>
+  </a>
+
+  <!-- ==================== LOGICA JAVASCRIPT ==================== -->
+  <script>
+    // Inicializar Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    }
+
+    // Helper Selectors desde las Cards
+    function selectTicket(planType) {
+      const selectPlan = document.getElementById('calc-plan');
+      const paxInput = document.getElementById('calc-pax');
+      if (selectPlan && paxInput) {
+        selectPlan.value = planType;
+        if (planType === 'individual') paxInput.value = 1;
+        else if (planType === 'pareja') paxInput.value = 2;
+        else if (planType === 'grupo') paxInput.value = 5;
+        updateCalculator();
+        const cotizadorSec = document.getElementById('cotizador');
+        if (cotizadorSec) cotizadorSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Lógica del Cotizador Dinámico
+    const calcPlan = document.getElementById('calc-plan');
+    const calcPax = document.getElementById('calc-pax');
+    const calcDate = document.getElementById('calc-date');
+
+    const summaryPlan = document.getElementById('summary-plan');
+    const summaryPax = document.getElementById('summary-pax');
+    const summaryDate = document.getElementById('summary-date');
+    const summaryTotal = document.getElementById('summary-total');
+    const summaryPerPax = document.getElementById('summary-perpax');
+    const btnCalcWhatsApp = document.getElementById('btn-calc-whatsapp');
+
+    // Fecha de hoy/mañana por defecto
+    const today = new Date();
+    calcDate.value = today.toISOString().split('T')[0];
+
+    function updateCalculator() {
+      const planOpt = calcPlan.options[calcPlan.selectedIndex];
+      const planVal = calcPlan.value;
+      const unitPrice = parseInt(planOpt.getAttribute('data-unit') || '95000', 10);
+      const minPax = parseInt(planOpt.getAttribute('data-min') || '1', 10);
+
+      let paxVal = parseInt(calcPax.value || '1', 10);
+      if (paxVal < minPax) {
+        paxVal = minPax;
+        calcPax.value = minPax;
+      }
+
+      let totalVal = 0;
+      let planLabel = '';
+
+      if (planVal === 'individual') {
+        totalVal = unitPrice * paxVal;
+        planLabel = `Pase Individual (${paxVal} cupos)`;
+      } else if (planVal === 'pareja') {
+        const couples = Math.ceil(paxVal / 2);
+        totalVal = couples * unitPrice;
+        planLabel = `Plan Parejas (${couples} pareja${couples > 1 ? 's' : ''})`;
+      } else if (planVal === 'grupo') {
+        totalVal = unitPrice * paxVal;
+        planLabel = `Plan Grupo Amigos (${paxVal} pax)`;
+      } else if (planVal === 'privado') {
+        totalVal = unitPrice;
+        planLabel = `Catamarán Privado Exclusivo`;
+      }
+
+      const dateVal = calcDate.value;
+      summaryPlan.textContent = planLabel;
+      summaryPax.textContent = `${paxVal} personas`;
+      summaryDate.textContent = dateVal;
+
+      const formattedTotal = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(totalVal);
+      const perPaxValue = Math.round(totalVal / paxVal);
+      const formattedPerPax = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(perPaxValue);
+
+      summaryTotal.innerHTML = `${formattedTotal} <span class="text-sm font-normal text-slate-400 font-mono">COP</span>`;
+      summaryPerPax.textContent = `Aprox. ${formattedPerPax} COP por persona`;
+
+      // Mensaje estructurado para WhatsApp de Catamarán San Juan
+      const msg = encodeURIComponent(`Hola Catamarán San Juan, deseo reservar cupos para el Sunset Tour:
+• Plan: ${planLabel}
+• Personas / Cupos: ${paxVal}
+• Fecha: ${dateVal}
+• Horario: 5:00 PM (Check-in 4:30 PM)
+• Valor Total Estimado: ${formattedTotal} COP
+Por favor confirmarme disponibilidad y enlace de pago / abordaje en Muelle La Bodeguita.`);
+      
+      btnCalcWhatsApp.href = `https://wa.me/573163826156?text=${msg}`;
+    }
+
+    calcPlan.addEventListener('change', updateCalculator);
+    calcPax.addEventListener('input', updateCalculator);
+    calcDate.addEventListener('change', updateCalculator);
+    updateCalculator();
+
+    // Marine Canvas Sunset con Partículas Doradas
+    const canvas = document.getElementById('marineCanvas');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    });
+
+    let mouse = { x: w / 2, y: h / 2 };
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    const particles = [];
+    const particleCount = 60;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        radius: Math.random() * 2.2 + 1,
+        speedX: (Math.random() - 0.5) * 0.35,
+        speedY: (Math.random() - 0.5) * 0.35,
+        alpha: Math.random() * 0.6 + 0.2
+      });
+    }
+
+    let waveStep = 0;
+
+    function renderMarineCanvas() {
+      ctx.clearRect(0, 0, w, h);
+
+      const bgGrad = ctx.createRadialGradient(
+        mouse.x, mouse.y, 50,
+        w / 2, h / 2, Math.max(w, h) * 0.8
+      );
+      bgGrad.addColorStop(0, 'rgba(255, 140, 66, 0.08)');
+      bgGrad.addColorStop(0.4, 'rgba(10, 25, 47, 0.5)');
+      bgGrad.addColorStop(1, 'rgba(8, 14, 24, 0.95)');
+
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      waveStep += 0.015;
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(255, 140, 66, 0.09)';
+      ctx.lineWidth = 1.5;
+
+      for (let x = 0; x < w; x += 15) {
+        const y = h * 0.35 + Math.sin(x * 0.003 + waveStep) * 22 + Math.cos(x * 0.002 + waveStep * 0.8) * 14;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      for (let p of particles) {
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 140, 66, ${p.alpha})`;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = '#FF8C42';
+        ctx.fill();
+      }
+
+      requestAnimationFrame(renderMarineCanvas);
+    }
+    renderMarineCanvas();
+
+    // GSAP ScrollTrigger Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.glass-sunset').forEach((card) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 35,
+        duration: 0.8,
+        ease: 'power2.out'
+      });
+    });
+  </script>
+</body>
+</html>
