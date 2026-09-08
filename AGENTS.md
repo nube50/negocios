@@ -754,7 +754,7 @@ git push origin main
 - **Desarrollo de la Landing Page (`landing-pages/cartagena-nautica.html`)**:
   - **Sistema de Diseño S2 Náutico**: Paleta Deep Navy (`#050D18` / `#0A1A2F`), Electric Cyan (`#00C7C7`), Kinetic Amber / Gold (`#FF9E00` / `#F59E0B`).
   - **Componentes 21st.dev**:
-    - **Hero Náutico**: Video loop de navegación caribeña (`hero-boat.mp4`) + canvas animado de ondas marinas + badge 5.0★ Google Reviews.
+    - **Hero Náutico (Video Estándar de la Categoría)**: Se implementó como estándar definitivo para todas las páginas de turismo/yates el video de fondo náutico en alta definición (`hero-boat.mp4` / Pixabay 1996 `https://cdn.pixabay.com/video/2016/01/29/1996-153555261_large.mp4` con fallback a Mixkit 5368 y poster oficial) con posición centrada (`center 35%`) y overlay sutil que destaca las aguas turquesas del Caribe + canvas animado de ondas marinas + badge 5.0★ Google Reviews.
     - **Fleet Grid (3D Cards)**: Lanchas deportivas de 30ft (Bravo Sport), 34ft (Sea Ray Luxury Open) y 38ft (Thunder Super Boat) con specs de motores gemelos, capacidad (10-20 pax), sonido JL Audio y baño.
     - **Destinations Interactive Tabs**: Pestañas interactivas para Islas del Rosario, Ensenada de Cholón, Barú / Agua Azul y Sunset Bahía de Cartagena.
     - **All-Inclusive Náutico Bento Grid**: Capitán DIMAR, marinero, combustible full, nevera con hielo, chalecos y sonido marino Bluetooth.
@@ -769,6 +769,7 @@ git push origin main
 
 ## 🎯 Enfoque de Diseño para Landing Pages
 
+- **Regla Náutica / Turismo**: En todas las LPs de la categoría Turismo / Renta de Yates se utilizará de forma obligatoria y estandarizada el video de fondo náutico caribeño de alta fidelidad (`hero-boat.mp4` / Pixabay 1996).
 - **100% Guiado por el Usuario**: El diseño, estilo, componentes y narrativa visual de cada LP se adaptan a las instrucciones específicas que el usuario entregue en cada solicitud.
 - **Estándar Técnico Mínimo**:
   - Código limpio en un único archivo HTML auto-contenido (CSS y JS embebidos, librerías por CDN).

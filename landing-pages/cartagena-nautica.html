@@ -262,13 +262,14 @@
   <!-- ==================== HERO SECTION ==================== -->
   <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden z-10">
     
-    <!-- Hero Video Loop Background -->
-    <div class="absolute inset-0 z-0 overflow-hidden">
-      <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover opacity-35 scale-105">
+    <!-- Hero Video Loop Background (Primary Nautical Video) -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <video autoplay loop muted playsinline preload="auto" poster="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_tiny.jpg" class="w-full h-full object-cover" style="object-position: center 35%;">
         <source src="hero-boat.mp4" type="video/mp4">
-        <source src="https://assets.mixkit.co/videos/1996/1996-720.mp4" type="video/mp4">
+        <source src="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_large.mp4" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/5368/5368-720.mp4" type="video/mp4">
       </video>
-      <div class="absolute inset-0 bg-gradient-to-b from-ocean-abyssal via-ocean-abyssal/75 to-ocean-abyssal"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-ocean-abyssal/30 via-ocean-abyssal/45 to-ocean-abyssal"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
