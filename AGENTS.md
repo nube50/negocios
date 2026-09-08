@@ -140,21 +140,22 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 | Bares / Pubs / Discotecas | 0 | 0 | 17 | 17 |
 | Veterinarias / Pet Shops | 7 | 0 | 3 | 10 |
 | **Energía Solar / Paneles Solares** | **0** | **10** | **0** | **10** |
-| **Turismo / Renta de Yates, Catamaranes y Lanchas** | **4** | **4** | **0** | **8** |
+| **Turismo / Renta de Yates, Catamaranes y Lanchas** | **4** | **4** | **1** | **9** |
 | Otros (paellas, lechona, café, etc.) | 0 | 0 | 4 | 4 |
-| **Total** | **37** | **43** | **82** | **162** |
+| **Total** | **37** | **43** | **83** | **163** |
 
-- IDs activos: b1-b25, b30-b34, b36-b41, b50-b175
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b176
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
 - **Nuevos negocios de Energía Solar agregados en sesión 24 (b158-b167): 10 negocios sin sitio web con redes sociales y WhatsApp verificados**
-- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28, 29, 30, 31, 32, 33 y 34: Cartagena Náutica (b168), Botes y Yates Cartagena (b169), Cartagena VIP Boats (b170), Coast Tours Cartagena (b171), Catamarán San Juan (b172), Lanchas Cholón (b173), Alquiler de Lanchas y Yates Torices (b174) y Alquiler de Lanchas Hawaii (b175) con LPs desplegadas en Vercel**
+- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28, 29, 30, 31, 32, 33, 34 y 35: Cartagena Náutica (b168), Botes y Yates Cartagena (b169), Cartagena VIP Boats (b170), Coast Tours Cartagena (b171), Catamarán San Juan (b172), Lanchas Cholón (b173), Alquiler de Lanchas y Yates Torices (b174), Alquiler de Lanchas Hawaii (b175) y Botes Quinta del Mar (b176) con LPs desplegadas en Vercel**
 
 ## Archivos del proyecto
 
 - `busqueda/index.html` — herramienta principal de prospección
 - `busqueda/datos.json` — respaldo JSON de los datos
 - `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
+  - `botes-quinta-del-mar.html` — Botes Quinta del Mar (Flota Propia de Lanchas & Botes Privados desde Bahía Santa Cruz)
   - `alquiler-lanchas-hawaii-cartagena.html` — Alquiler de Lanchas en Cartagena Hawaii (Pasadías Exclusivos & Decoración)
   - `alquiler-lanchas-cartagena-torices.html` — Alquiler de Lanchas y Yates en Cartagena (5.0★ Google Reviews, Torices & Castillogrande)
   - `lanchas-cholon.html` — Lanchas Cholón (Alquiler Privado de Lanchas de Fiesta en Cholón)
@@ -886,6 +887,25 @@ git push origin main
 - **Sincronización del Ecosistema de Prospección**:
   - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
   - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **162 negocios** registrados.
+
+### Sesión 35 (2026-09-08) — Landing page Botes Quinta del Mar (`b176`)
+- **Cliente**: **Botes Quinta del Mar (Operadora Hotelera QM S.A.S.)**
+  - Ubicación / Zarpe: Bahía Santa Cruz (Manga / La Matuna), Cartagena de Indias.
+  - WhatsApp: `+57 321 4043800` (`573214043800`).
+  - Tipo web anterior: `has-web` deficiente (subpágina oculta de su hotel).
+- **Diseño & Arquitectura S2 Náutica de Lujo**:
+  - **Hero Video 100% Nítido & Luminoso**: Video local HD (`hero-boat.mp4` / Pixabay 1996) con `opacity: 1 !important; filter: none !important; object-position: center 35%;`, overlay gradual suave y tipografía con sombra de alto contraste (`.hero-title-shadow`).
+  - **Fondo Náutico Vivo**: Canvas abisal interactivo con ondas marinas, micro-partículas de plancton bioluminiscente reactivas al cursor y textura analógica `.film-grain-overlay`.
+  - **Componentes Náuticos Clave**:
+    - **Header Glassmorphism**: Logo con badge "Flota Propia" + botón de llamada y WhatsApp directo.
+    - **Fleet Showcase**: Lancha Quinta del Mar (41ft, 20 pax, motores Suzuki 300HP, baño privado, sonido JBL Marine) y Bote Quinta VII (29ft, 12 pax, motores Yamaha 150HP, asoleadoras).
+    - **Destinos & Rutas VIP**: Isla Grande, Cholón Fiesta Náutica, Playa Blanca / Barú, Atardecer en Bahía Santa Cruz y Tour Plancton Luminoso.
+    - **Garantías Náuticas**: Flota Propia sin intermediarios, Tripulación Certificada DIMAR, Seguros y Pólizas al día.
+    - **Cotizador & Booking Interactivo**: Selector de embarcación y destino con botón de reserva directa a WhatsApp (+57 321 4043800).
+- **Despliegue en Producción Vercel**: **`https://lp-botes-quinta-del-mar.vercel.app`** (verificado HTTP 200 OK).
+- **Sincronización del Ecosistema de Prospección**:
+  - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
+  - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **163 negocios** registrados.
 
 ---
 

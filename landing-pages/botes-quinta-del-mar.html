@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Botes Quinta del Mar — Pasadías y Botes Privados en Cartagena | Flota Oficial</title>
+  <meta name="description" content="Alquiler privado de botes de lujo en Cartagena. Flota oficial Botes Quinta del Mar (Bote Quinta VII 29ft y Bote Quinta del Mar 41ft). Zarpes exclusivos desde Bahía Santa Cruz a Islas del Rosario, Cholón y Tintipán.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Botes Quinta del Mar — Flota Náutica Oficial en Cartagena">
+  <meta property="og:description" content="Pasadías privados y traslados exclusivos a Islas del Rosario, Cholón, Barú e Isla Tintipán a bordo de botes de 29ft a 41ft con baño, sonido Pro y tripulación DIMAR.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛥️</text></svg>">
+
+  <!-- Font Awesome 6.5.1 Oficial (WhatsApp & Redes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, Inter, Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            quinta: {
+              gold: '#D4AF37',
+              goldLight: '#F5E6AB',
+              cyan: '#00D2FF',
+              blue: '#0A84FF',
+              emerald: '#10B981',
+              abyssal: '#040914',
+              navyDeep: '#081426',
+              navy: '#0F233D',
+              card: 'rgba(8, 20, 38, 0.85)',
+              borderDark: 'rgba(0, 210, 255, 0.2)'
+            }
+          },
+          fontFamily: {
+            display: ['"Outfit"', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+            mono: ['"Space Mono"', '"JetBrains Mono"', 'monospace']
+          },
+          animation: {
+            'wave-pulse': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float-slow': 'floatBoat 5s ease-in-out infinite'
+          },
+          keyframes: {
+            floatBoat: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-6px) rotate(0.3deg)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* Estilos Náuticos Quinta del Mar S2 */
+    :root {
+      --color-abyssal: #040914;
+      --color-navy: #081426;
+      --color-gold: #D4AF37;
+      --color-gold-light: #F5E6AB;
+      --color-cyan: #00D2FF;
+      --color-blue: #0A84FF;
+    }
+
+    body {
+      background-color: var(--color-abyssal);
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .font-mono {
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* Glass Cards Náuticas de Lujo (21st.dev inspired) */
+    .glass-quinta {
+      background: rgba(8, 20, 38, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(0, 210, 255, 0.2);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .glass-quinta-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-quinta-hover:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 210, 255, 0.55);
+      box-shadow: 0 25px 60px rgba(0, 210, 255, 0.22), 0 0 30px rgba(212, 175, 55, 0.15);
+    }
+
+    .glass-nav {
+      background: rgba(4, 9, 20, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 210, 255, 0.18);
+    }
+
+    /* Glowing Text & Gradients de Máxima Legibilidad */
+    .gradient-text-cyan {
+      background: linear-gradient(135deg, #FFFFFF 15%, #00D2FF 60%, #0A84FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-gold {
+      background: linear-gradient(135deg, #FFFFFF 20%, #F5E6AB 60%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-glow-cyan {
+      text-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+    }
+
+    .text-glow-gold {
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.45);
+    }
+
+    /* Botón Primario Dorado de Lujo */
+    .btn-quinta-gold {
+      background: linear-gradient(135deg, #F5E6AB 0%, #D4AF37 100%);
+      color: #040914;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-quinta-gold:hover {
+      box-shadow: 0 8px 30px rgba(245, 230, 171, 0.6);
+      transform: scale(1.02);
+    }
+
+    /* Botón Secundario Cian */
+    .btn-quinta-cyan {
+      background: linear-gradient(135deg, #00D2FF 0%, #0A84FF 100%);
+      color: #040914;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0, 210, 255, 0.35);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-quinta-cyan:hover {
+      box-shadow: 0 8px 30px rgba(0, 210, 255, 0.6);
+      transform: scale(1.02);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #040914;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #0F233D;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 210, 255, 0.25);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00D2FF;
+    }
+  
+    /* Grano Analógico Sutil */
+    .film-grain-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.025;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    #marineCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Hero Video Wrap sin reducción de opacidad (100% nítido) */
+    .hero-video-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      opacity: 1 !important;
+      filter: none !important;
+    }
+
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(4, 9, 20, 0.2) 0%, transparent 35%, rgba(4, 9, 20, 0.5) 70%, #040914 100%);
+      pointer-events: none;
+    }
+
+    .hero-title-shadow {
+      text-shadow: 0 4px 35px rgba(0, 0, 0, 0.98), 0 2px 12px rgba(0, 0, 0, 0.9);
+    }
+  </style>
+</head>
+
+<body class="bg-quinta-abyssal text-slate-100 antialiased selection:bg-quinta-cyan selection:text-quinta-abyssal">
+
+  <!-- Grano Analógico Sutil & Marine Canvas -->
+  <div class="film-grain-overlay"></div>
+  <canvas id="marineCanvas"></canvas>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-quinta-gold to-amber-700 flex items-center justify-center text-slate-950 shadow-lg shadow-quinta-gold/20 group-hover:scale-105 transition-transform border border-amber-300/40 font-bold font-display text-base">
+          QM
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg md:text-xl font-extrabold font-display tracking-tight text-white group-hover:text-quinta-cyan transition-colors">
+            BOTES <span class="gradient-text-gold">QUINTA DEL MAR</span>
+          </span>
+          <span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">Flota Oficial • Bahía Santa Cruz • Tintipán</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#flota" class="hover:text-quinta-cyan transition-colors flex items-center gap-1.5">
+          <span>Flota Oficial (29ft a 41ft)</span>
+        </a>
+        <a href="#destinos" class="hover:text-quinta-cyan transition-colors flex items-center gap-1.5">
+          <span>Islas & Tintipán</span>
+        </a>
+        <a href="#incluye" class="hover:text-quinta-cyan transition-colors flex items-center gap-1.5">
+          <span>Experiencia All-Inclusive</span>
+        </a>
+        <a href="#cotizador" class="hover:text-quinta-gold transition-colors flex items-center gap-1.5">
+          <span class="text-quinta-gold font-mono text-xs">⚡</span> Cotizador Online
+        </a>
+        <a href="#zarpe" class="hover:text-quinta-cyan transition-colors flex items-center gap-1.5">
+          <span>Bahía Santa Cruz</span>
+        </a>
+      </nav>
+
+      <!-- Right Action & WhatsApp Button -->
+      <div class="flex items-center gap-4">
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full border border-quinta-gold/30 bg-quinta-navyDeep/80 text-xs font-mono text-quinta-gold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Flota Propia Garantizada</span>
+        </div>
+
+        <a href="https://wa.me/573214043800?text=Hola%20Botes%20Quinta%20del%20Mar,%20deseo%20cotizar%20un%20pasad%C3%ADa%20privado%20a%20las%20Islas" target="_blank" class="btn-quinta-gold px-5 py-2.5 rounded-xl text-xs md:text-sm flex items-center gap-2 font-display tracking-wide uppercase">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>Cotizar en 1 Clic</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION (VIDEO 100% NÍTIDO + TITULAR EXACTO) ==================== -->
+  <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    
+    <!-- Video de Fondo Nítido -->
+    <div class="hero-video-wrap">
+      <video id="heroBgVideo" autoplay muted loop playsinline preload="auto" poster="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_tiny.jpg">
+        <source src="hero-boat.mp4" type="video/mp4">
+        <source src="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_large.mp4" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/5368/5368-720.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <!-- Contenido Principal del Hero -->
+    <div class="relative z-10 max-w-5xl mx-auto text-center mt-8">
+      
+      <!-- Badge de División Náutica Oficial -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-quinta-cyan/40 bg-slate-950/80 backdrop-blur-md mb-6 shadow-xl shadow-cyan-500/10">
+        <div class="flex text-amber-400 text-xs">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <span class="text-xs md:text-sm font-semibold text-slate-200">
+          Operadora Hotelera QM S.A.S. • Zarpe exclusivo en <span class="text-quinta-cyan font-mono font-bold">Bahía Santa Cruz</span>
+        </span>
+      </div>
+
+      <!-- Título de Ultra Impacto con Titular Solicitado -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black font-display tracking-tight text-white hero-title-shadow leading-[1.08] mb-6">
+        Pasadías y Botes Privados en Cartagena — <span class="gradient-text-cyan text-glow-cyan">Quinta del Mar Flota Oficial</span>
+      </h1>
+
+      <!-- Subtítulo Explicativo -->
+      <p class="text-base sm:text-xl text-slate-200 max-w-3xl mx-auto font-light leading-relaxed mb-10 drop-shadow-md">
+        Navega hacia las Islas del Rosario, Cholón, Barú y el Archipiélago de San Bernardo (Isla Tintipán) a bordo de nuestra flota propia de alto rendimiento: <span class="text-white font-medium">Bote Quinta VII (29ft) y Bote Quinta del Mar (41ft con baño cerrado)</span>.
+      </p>
+
+      <!-- Botones de Acción Inmediata -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+        <a href="#flota" class="w-full sm:w-auto btn-quinta-gold px-8 py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-3 uppercase tracking-wider shadow-2xl">
+          <i data-lucide="ship" class="w-4 h-4"></i>
+          <span>Explorar Flota Oficial</span>
+        </a>
+        <a href="https://wa.me/573214043800?text=Hola%20Botes%20Quinta%20del%20Mar,%20deseo%20consultar%20disponibilidad%20para%20un%20zarpe%20privado" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-semibold bg-slate-900/85 hover:bg-slate-800 text-slate-200 border border-slate-700 backdrop-blur-md flex items-center justify-center gap-3 transition-all hover:border-quinta-cyan">
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+          <span>WhatsApp Directo</span>
+        </a>
+      </div>
+
+      <!-- Métricas de Confianza (Stats) -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14 max-w-4xl mx-auto pt-8 border-t border-white/10">
+        <div class="text-center p-3 rounded-xl bg-slate-950/40 backdrop-blur-sm border border-white/5">
+          <div class="text-2xl sm:text-3xl font-black font-display text-quinta-gold">29 - 41 ft</div>
+          <div class="text-xs text-slate-400 font-medium mt-1">Flota Propia de Lujo</div>
+        </div>
+        <div class="text-center p-3 rounded-xl bg-slate-950/40 backdrop-blur-sm border border-white/5">
+          <div class="text-2xl sm:text-3xl font-black font-display text-quinta-cyan">Hasta 20 Pax</div>
+          <div class="text-xs text-slate-400 font-medium mt-1">Capacidad Embarcaciones</div>
+        </div>
+        <div class="text-center p-3 rounded-xl bg-slate-950/40 backdrop-blur-sm border border-white/5">
+          <div class="text-2xl sm:text-3xl font-black font-display text-emerald-400">100%</div>
+          <div class="text-xs text-slate-400 font-medium mt-1">Tripulación DIMAR</div>
+        </div>
+        <div class="text-center p-3 rounded-xl bg-slate-950/40 backdrop-blur-sm border border-white/5">
+          <div class="text-2xl sm:text-3xl font-black font-display text-white">Tintipán</div>
+          <div class="text-xs text-slate-400 font-medium mt-1">Ruta San Bernardo</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Indicador de Scroll -->
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
+      <span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">Conocer Flota</span>
+      <i data-lucide="chevron-down" class="w-4 h-4 text-quinta-cyan animate-bounce"></i>
+    </div>
+  </section>
+
+  <!-- ==================== SHOWCASE DE FLOTA REAL OFICIAL ==================== -->
+  <section id="flota" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 border-y border-white/5 bg-slate-950/60">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-quinta-cyan/30 bg-quinta-cyan/10 text-quinta-cyan text-xs font-mono mb-3">
+          <i data-lucide="ship" class="w-3.5 h-3.5"></i>
+          <span>EMBARCACIONES PROPIAS DE ALTA GAMA</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Nuestra Flota <span class="gradient-text-cyan">Quinta del Mar</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Embarcaciones privadas diseñadas para brindar máximo confort, seguridad marítima certificada y equipamiento de lujo para cada navegación.
+        </p>
+      </div>
+
+      <!-- Grid de Embarcaciones -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Bote 1: Quinta VII (29ft) -->
+        <div class="glass-quinta rounded-3xl overflow-hidden glass-quinta-hover flex flex-col border border-white/10">
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80" alt="Bote Quinta VII 29ft Cartagena" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-quinta-cyan/40 text-xs font-mono text-quinta-cyan">
+              29 Pies • Sport Classic
+            </div>
+            <div class="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-amber-500/90 text-slate-950 text-xs font-bold font-mono">
+              Capacidad: 8 a 10 Pax
+            </div>
+          </div>
+          
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold font-display text-white mb-2">Bote Quinta VII (29ft)</h3>
+              <p class="text-slate-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                Nuestra embarcación deportiva insignia para grupos pequeños y familias. Destaca por su elegante cojinería de lujo, mesa central desmontable y asoleadoras de proa.
+              </p>
+              
+              <ul class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>2 Motores Yamaha High Performance</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Mesa central para aperitivos y bebidas</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Sonido Marino Bluetooth Pro</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Nevera marina con hielo y combustible</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/573214043800?text=Hola%20Botes%20Quinta%20del%20Mar,%20deseo%20cotizar%20el%20Bote%20Quinta%20VII%20(29ft)" target="_blank" class="w-full btn-quinta-cyan py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 uppercase tracking-wider">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Cotizar Quinta VII</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bote 2: Quinta del Mar (41ft con Baño) - Destacado -->
+        <div class="glass-quinta rounded-3xl overflow-hidden glass-quinta-hover flex flex-col border-2 border-quinta-gold/60 relative shadow-2xl shadow-amber-500/10">
+          <div class="absolute top-0 right-0 bg-gradient-to-l from-quinta-gold to-amber-500 text-slate-950 text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-bl-xl z-10 shadow">
+            ⭐ Embarcación Insignia
+          </div>
+
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Lancha Quinta del Mar 41ft con Baño" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-quinta-gold/40 text-xs font-mono text-quinta-gold">
+              41 Pies • Luxury Cruiser XL
+            </div>
+            <div class="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-quinta-gold text-slate-950 text-xs font-bold font-mono">
+              Capacidad: Hasta 20 Pax
+            </div>
+          </div>
+          
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold font-display text-white mb-2">Bote Quinta del Mar (41ft)</h3>
+              <p class="text-slate-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                Máximo estatus, espacio y estabilidad. Cuenta con consola central con baño marino cerrado, amplias asoleadoras en proa y popa y potente sonido envolvente Rockford Fosgate.
+              </p>
+              
+              <ul class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-quinta-gold"></i>
+                  <span>2 Motores Suzuki / Yamaha 300HP V6</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-quinta-gold"></i>
+                  <span>Baño higiénico marino cerrado de agua dulce</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-quinta-gold"></i>
+                  <span>Sonido Rockford Fosgate de 8 parlantes + Subwoofer</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-quinta-gold"></i>
+                  <span>Ducha de agua dulce, techo rígido y escaleras</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/573214043800?text=Hola%20Botes%20Quinta%20del%20Mar,%20deseo%20cotizar%20el%20Bote%20Quinta%20del%20Mar%20(41ft)" target="_blank" class="w-full btn-quinta-gold py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 uppercase tracking-wider">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Cotizar 41ft con Baño</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bote 3: Tintipán Express -->
+        <div class="glass-quinta rounded-3xl overflow-hidden glass-quinta-hover flex flex-col border border-white/10">
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Traslados Isla Tintipán Express" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-quinta-cyan/40 text-xs font-mono text-quinta-cyan">
+              Ruta San Bernardo • Tintipán
+            </div>
+            <div class="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-blue-500/90 text-white text-xs font-bold font-mono">
+              Charters & Traslados
+            </div>
+          </div>
+          
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold font-display text-white mb-2">Bote Tintipán Express</h3>
+              <p class="text-slate-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                Embarcación configurada para traslados de alta velocidad y charters privados hacia el Archipiélago de San Bernardo, Isla Tintipán y sedes hoteleras exclusivas.
+              </p>
+              
+              <ul class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Navegación oceánica segura de largo alcance</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Conexión directa Cartagena ↔ Isla Tintipán</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Espacio para equipaje y confort en mar abierto</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Tripulación altamente experimentada en la ruta</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/573214043800?text=Hola%20Botes%20Quinta%20del%20Mar,%20deseo%20cotizar%20un%20traslado%20o%20charter%20a%20Isla%20Tintip%C3%A1n" target="_blank" class="w-full btn-quinta-cyan py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 uppercase tracking-wider">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Cotizar Tintipán Express</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== DESTINOS Y CIRCUITOS ==================== -->
+  <section id="destinos" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-quinta-gold/30 bg-quinta-gold/10 text-quinta-gold text-xs font-mono mb-3">
+          <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+          <span>RUTAS NÁUTICAS DE ALTO NIVEL</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Destinos Exclusivos <span class="gradient-text-gold">en el Caribe</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Desde las aguas turquesas del Parque Nacional Corales del Rosario hasta los paraísos escondidos del Archipiélago de San Bernardo.
+        </p>
+      </div>
+
+      <!-- Bento Grid de Destinos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Destino 1: Islas del Rosario -->
+        <div class="glass-quinta p-6 rounded-2xl border border-white/10 hover:border-quinta-gold/50 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-quinta-cyan flex items-center justify-center mb-4 border border-blue-400/20">
+              <i data-lucide="waves" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold font-display text-white mb-2">Islas del Rosario</h3>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+              Arrecifes coralinos, aguas transparentes para snorkel, La Piscinita e Isla Grande con fondeo privado de máxima privacidad.
+            </p>
+          </div>
+          <div class="text-[11px] font-mono text-quinta-gold bg-amber-500/10 px-3 py-1.5 rounded-lg border border-amber-500/20">
+            Horario: 9:00 AM — 4:30 PM
+          </div>
+        </div>
+
+        <!-- Destino 2: Cholón Fiesta -->
+        <div class="glass-quinta p-6 rounded-2xl border border-white/10 hover:border-quinta-gold/50 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4 border border-amber-400/20">
+              <i data-lucide="flame" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold font-display text-white mb-2">Ensenada de Cholón</h3>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+              La meca de la fiesta náutica caribeña. Cabañas en el agua, gastronomía de mar fresca y ambiente vibrante entre lanchas.
+            </p>
+          </div>
+          <div class="text-[11px] font-mono text-amber-300 bg-amber-500/10 px-3 py-1.5 rounded-lg border border-amber-500/20">
+            Ambiente & Música a Bordo
+          </div>
+        </div>
+
+        <!-- Destino 3: Barú & Agua Azul -->
+        <div class="glass-quinta p-6 rounded-2xl border border-white/10 hover:border-quinta-gold/50 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4 border border-emerald-400/20">
+              <i data-lucide="palmtree" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold font-display text-white mb-2">Playa Blanca & Agua Azul</h3>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+              Playas de arena blanca y aguas calmas para fondear, nadar y almorzar en los mejores Beach Clubs de la península de Barú.
+            </p>
+          </div>
+          <div class="text-[11px] font-mono text-emerald-300 bg-emerald-500/10 px-3 py-1.5 rounded-lg border border-emerald-500/20">
+            Pasadías & Beach Clubs
+          </div>
+        </div>
+
+        <!-- Destino 4: Isla Tintipán (San Bernardo) -->
+        <div class="glass-quinta p-6 rounded-2xl border border-white/10 hover:border-quinta-cyan/50 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-quinta-cyan flex items-center justify-center mb-4 border border-cyan-400/20">
+              <i data-lucide="anchor" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold font-display text-white mb-2">Isla Tintipán (San Bernardo)</h3>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+              Archipiélago paradisíaco con manglares de agua turquesa, playas vírgenes y conexión con las sedes hoteleras Quinta del Mar.
+            </p>
+          </div>
+          <div class="text-[11px] font-mono text-quinta-cyan bg-cyan-500/10 px-3 py-1.5 rounded-lg border border-cyan-500/20">
+            Charters Exclusivos
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ALL-INCLUSIVE INCLUIDO ==================== -->
+  <section id="incluye" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 bg-slate-950/50 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-400/30 bg-emerald-400/10 text-emerald-300 text-xs font-mono mb-3">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          <span>TRANSPARENCIA Y SEGURIDAD CERTIFICADA</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Todo Incluido en <span class="gradient-text-gold">Cada Navegación</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Flota propia operada directamente por personal calificado con todos los permisos de la Dirección General Marítima (DIMAR).
+        </p>
+      </div>
+
+      <!-- Bento Grid de Beneficios -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="glass-quinta p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-amber-400/20 text-amber-400 flex items-center justify-center shrink-0">
+            <i data-lucide="fuel" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Combustible Completo</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Gasolina necesaria para todo el circuito pactado sin sorpresas ni recargos.</p>
+          </div>
+        </div>
+
+        <div class="glass-quinta p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-blue-400/20 text-quinta-cyan flex items-center justify-center shrink-0">
+            <i data-lucide="user-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Capitán Certificado DIMAR</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Capitán profesional con licencia marítima vigente y marinero de apoyo a bordo.</p>
+          </div>
+        </div>
+
+        <div class="glass-quinta p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0">
+            <i data-lucide="box" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Hielera Marina con Hielo</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Nevera marina de alta capacidad con hielo suficiente para mantener tus bebidas frías.</p>
+          </div>
+        </div>
+
+        <div class="glass-quinta p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-purple-400/20 text-purple-400 flex items-center justify-center shrink-0">
+            <i data-lucide="music" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Sonido Bluetooth Marino Pro</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Conexión inalámbrica de alta definición para que disfrutes tu propia selección musical.</p>
+          </div>
+        </div>
+
+        <div class="glass-quinta p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-400/20 text-emerald-400 flex items-center justify-center shrink-0">
+            <i data-lucide="life-buoy" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Seguridad & Póliza Marítima</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Chalecos salvavidas para adultos y niños, botiquín de primeros auxilios y seguro.</p>
+          </div>
+        </div>
+
+        <div class="glass-quinta p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-amber-400/20 text-quinta-gold flex items-center justify-center shrink-0">
+            <i data-lucide="map-pin" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Zarpe en Bahía Santa Cruz</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Embarque cómodo y privado en muelle seguro sin filas tumultuosas ni agobios.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== COTIZADOR INTERACTIVO 1-CLIC ==================== -->
+  <section id="cotizador" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 bg-gradient-to-b from-transparent via-quinta-navyDeep/50 to-quinta-abyssal">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="glass-quinta p-8 sm:p-12 rounded-3xl border-2 border-quinta-gold/40 shadow-2xl relative">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-quinta-gold/30 bg-quinta-gold/10 text-quinta-gold text-xs font-mono mb-3">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            <span>COTIZADOR DE RESERVAS EN 1 CLIC</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black font-display text-white">
+            Cotiza Tu Bote en <span class="gradient-text-gold">Quinta del Mar</span>
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2">
+            Selecciona tu embarcación y envía tu solicitud directamente a nuestra línea oficial de WhatsApp (<span class="text-white font-mono">+57 321 4043800</span>).
+          </p>
+        </div>
+
+        <form id="quoteForm" class="space-y-6" onsubmit="event.preventDefault(); sendQuoteWhatsApp();">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Embarcación -->
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
+                1. Embarcación
+              </label>
+              <select id="boatSelect" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-quinta-gold">
+                <option value="Bote Quinta del Mar 41ft con Baño (Hasta 20 Pax) - Insignia">Bote Quinta del Mar 41ft con Baño (Hasta 20 Pax) ⭐</option>
+                <option value="Bote Quinta VII 29ft Sport Classic (8 a 10 Pax)">Bote Quinta VII 29ft Sport Classic (8 a 10 Pax)</option>
+                <option value="Bote Tintipán Express (Traslados & Charters San Bernardo)">Bote Tintipán Express (Traslados & Charters San Bernardo)</option>
+              </select>
+            </div>
+
+            <!-- Destino Principal -->
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
+                2. Destino / Circuito
+              </label>
+              <select id="routeSelect" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-quinta-gold">
+                <option value="Islas del Rosario + Cholón + Barú (Circuito Completo)">Islas del Rosario + Cholón + Barú (Circuito Completo)</option>
+                <option value="Islas del Rosario + Snorkel Relax">Islas del Rosario + Snorkel Relax</option>
+                <option value="Cholón Fiesta Náutica (Full Day)">Cholón Fiesta Náutica (Full Day)</option>
+                <option value="Traslado / Charter a Isla Tintipán (San Bernardo)">Traslado / Charter a Isla Tintipán (San Bernardo)</option>
+                <option value="Sunset Tour Bahía de Cartagena (Atardecer)">Sunset Tour Bahía de Cartagena (Atardecer)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <!-- Pasajeros -->
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
+                3. Número de Pasajeros
+              </label>
+              <input type="number" id="paxInput" min="1" max="25" value="10" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-quinta-gold">
+            </div>
+
+            <!-- Fecha Estimada -->
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
+                4. Fecha Estimada
+              </label>
+              <input type="date" id="dateInput" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-quinta-gold">
+            </div>
+
+            <!-- Nombre -->
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
+                5. Tu Nombre
+              </label>
+              <input type="text" id="nameInput" placeholder="Ej: Andrés Restrepo" required class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-quinta-gold">
+            </div>
+          </div>
+
+          <!-- Botón de Envío Instantáneo -->
+          <button type="submit" class="w-full btn-quinta-gold py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-3 uppercase tracking-wider shadow-2xl">
+            <i class="fa-brands fa-whatsapp text-lg text-slate-950"></i>
+            <span>Consultar Disponibilidad y Tarifa por WhatsApp</span>
+          </button>
+
+          <p class="text-center text-[11px] text-slate-400 font-mono">
+            ⚡ Atención directa de la operadora • Respuesta inmediata
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== UBICACIÓN & MUELLE DE ZARPE ==================== -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-quinta-gold/30 bg-quinta-gold/10 text-quinta-gold text-xs font-mono mb-4">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+            <span>ZARPE PRIVADO EN CARTAGENA</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white mb-6">
+            Muelle Bahía Santa Cruz & <br>
+            <span class="gradient-text-gold">Abordaje Exclusivo en Manga</span>
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            Nuestros botes zarpan desde el <span class="text-white font-semibold">Muelle Bahía Santa Cruz</span> (Manga / La Matuna), brindándote un proceso de abordaje privado, seguro, con parqueadero vigilado y sin aglomeraciones de muelles públicos.
+          </p>
+
+          <div class="space-y-4 text-xs sm:text-sm font-mono text-slate-300 mb-8">
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <i data-lucide="anchor" class="w-5 h-5 text-quinta-cyan shrink-0"></i>
+              <span>Muelle de Zarpe: Bahía Santa Cruz, Manga / La Matuna, Cartagena</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <i data-lucide="clock" class="w-5 h-5 text-emerald-400 shrink-0"></i>
+              <span>Horarios de Zarpe: Pasadías 8:30 AM — 4:30 PM | Sunset 5:00 PM — 7:30 PM</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <i data-lucide="phone" class="w-5 h-5 text-quinta-gold shrink-0"></i>
+              <span>Atención Comercial: Operadora Hotelera QM S.A.S. • +57 321 4043800</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-quinta p-4 rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
+          <div class="relative h-80 rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1583200424564-9a844da047b4?auto=format&fit=crop&w=1000&q=80" alt="Muelle Bahía Santa Cruz y Bahía de Cartagena" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/10">
+              <div class="text-xs font-mono text-quinta-gold">BOTES QUINTA DEL MAR</div>
+              <div class="text-sm font-bold text-white mt-0.5">Bahía Santa Cruz • Islas del Rosario • Isla Tintipán</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-12 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-white/10 bg-slate-950">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      
+      <div>
+        <div class="text-lg font-bold font-display text-white">
+          BOTES QUINTA DEL MAR <span class="gradient-text-gold">CARTAGENA</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-1 font-mono">
+          Operadora Hotelera QM S.A.S. • Bahía Santa Cruz • Cartagena de Indias, Colombia
+        </p>
+      </div>
+
+      <div class="flex items-center gap-6 text-sm text-slate-400 font-mono">
+        <a href="#flota" class="hover:text-quinta-gold transition-colors">Flota Oficial</a>
+        <a href="#destinos" class="hover:text-quinta-gold transition-colors">Destinos</a>
+        <a href="#incluye" class="hover:text-quinta-gold transition-colors">All-Inclusive</a>
+        <a href="#cotizador" class="hover:text-quinta-gold transition-colors">Cotizador</a>
+      </div>
+
+      <div class="text-xs text-slate-500 font-mono">
+        © 2026 Botes Quinta del Mar. Todos los derechos reservados.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING WHATSAPP BUTTON (FA-BRANDS & GREEN #25D366) ==================== -->
+  <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+    
+    <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/90 border border-emerald-400/40 text-xs font-mono text-slate-200 shadow-xl backdrop-blur-md animate-bounce">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+      <span>¡Flota Disponible Hoy!</span>
+    </div>
+
+    <a href="https://wa.me/573214043800?text=Hola%20Botes%20Quinta%20del%20Mar,%20deseo%20cotizar%20un%20zarpe%20privado" target="_blank" class="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-2xl shadow-emerald-500/40 hover:scale-110 transition-transform duration-300 border-2 border-white/30 relative" style="background-color: #25D366;" title="Hablar por WhatsApp">
+      <i class="fa-brands fa-whatsapp text-2xl text-white"></i>
+      <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-slate-950"></span>
+    </a>
+
+  </div>
+
+  <!-- ==================== SCRIPTS & INTERACTIVIDAD ==================== -->
+  <script>
+    // Inicializar Lucide Icons
+    lucide.createIcons();
+
+    // Fecha mínima para el cotizador (Hoy)
+    const today = new Date().toISOString().split('T')[0];
+    const dateInput = document.getElementById('dateInput');
+    if (dateInput) {
+      dateInput.min = today;
+      dateInput.value = today;
+    }
+
+    // Canvas Marino Interactivo (Brillo Abisal Radial, Ondas Oceánicas & Plancton Bioluminiscente)
+    const canvas = document.getElementById('marineCanvas');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    });
+
+    let mouse = { x: w / 2, y: h / 2 };
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    const particles = [];
+    const particleCount = 60;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        radius: Math.random() * 2 + 0.8,
+        speedX: (Math.random() - 0.5) * 0.4,
+        speedY: (Math.random() - 0.5) * 0.4,
+        alpha: Math.random() * 0.55 + 0.25
+      });
+    }
+
+    let waveStep = 0;
+
+    function renderMarineCanvas() {
+      ctx.clearRect(0, 0, w, h);
+
+      // Gradiente Radial Abisal Interactivo con el cursor
+      const bgGrad = ctx.createRadialGradient(
+        mouse.x, mouse.y, 40,
+        w / 2, h / 2, Math.max(w, h) * 0.85
+      );
+      bgGrad.addColorStop(0, 'rgba(0, 210, 255, 0.08)');
+      bgGrad.addColorStop(0.35, 'rgba(10, 35, 65, 0.45)');
+      bgGrad.addColorStop(0.7, 'rgba(8, 20, 38, 0.75)');
+      bgGrad.addColorStop(1, 'rgba(4, 9, 20, 0.98)');
+
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Onda Marina Abisal
+      waveStep += 0.015;
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(0, 210, 255, 0.12)';
+      ctx.lineWidth = 1.5;
+
+      for (let x = 0; x < w; x += 15) {
+        const y = h * 0.4 + Math.sin(x * 0.003 + waveStep) * 25 + Math.cos(x * 0.002 + waveStep * 0.8) * 15;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      // Partículas Bioluminiscentes Cian & Turquesa
+      for (let p of particles) {
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 210, 255, ${p.alpha})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#00D2FF';
+        ctx.fill();
+      }
+
+      requestAnimationFrame(renderMarineCanvas);
+    }
+    renderMarineCanvas();
+
+    // GSAP ScrollTrigger Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.glass-quinta').forEach((card) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 35,
+        duration: 0.8,
+        ease: 'power2.out'
+      });
+    });
+
+    // Función de Envío de Cotizador a WhatsApp
+    function sendQuoteWhatsApp() {
+      const boat = document.getElementById('boatSelect').value;
+      const route = document.getElementById('routeSelect').value;
+      const pax = document.getElementById('paxInput').value;
+      const date = document.getElementById('dateInput').value;
+      const name = document.getElementById('nameInput').value;
+
+      const message = `Hola Botes Quinta del Mar 🛥️ (Operadora Hotelera QM)%0A%0A*SOLICITUD DE COTIZACIÓN DE BOTE PRIVADO:*%0A👤 *Nombre:* ${encodeURIComponent(name)}%0A🚤 *Embarcación:* ${encodeURIComponent(boat)}%0A📍 *Destino / Ruta:* ${encodeURIComponent(route)}%0A👥 *Pasajeros:* ${encodeURIComponent(pax)} personas%0A📅 *Fecha:* ${encodeURIComponent(date)}%0A%0A¿Tienen disponibilidad para esta fecha y cuál sería la tarifa oficial? ¡Gracias!`;
+
+      window.open(`https://wa.me/573214043800?text=${message}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
