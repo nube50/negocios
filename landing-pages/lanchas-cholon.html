@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Lanchas Cholón — La Mejor Fiesta en Cholón a Bordo de Lanchas Privadas</title>
+  <meta name="description" content="Alquiler de lanchas deportivas para la fiesta en Cholón e Islas del Rosario. Flota privada Emilita 29ft, 38ft y 42ft XL con sonido potente, baño, capitán y nevera con hielo.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lanchas Cholón — Alquiler Privado de Lanchas para Fiesta en Cholón">
+  <meta property="og:description" content="Zarpe privado a Cholón, Caño Ratón, Agua Azul e Islas del Rosario. Sonido Bluetooth Pro, combustible y atención VIP.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>">
+
+  <!-- Font Awesome 6.5.1 Oficial (WhatsApp & Redes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, Inter, Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cholon: {
+              cyan: '#00D2FF',
+              blue: '#0070F3',
+              amber: '#FF9E00',
+              pink: '#FF007A',
+              abyssal: '#050D18',
+              navyDeep: '#0A192F',
+              navy: '#102A45',
+              card: 'rgba(10, 25, 47, 0.82)',
+              borderDark: 'rgba(0, 210, 255, 0.18)'
+            }
+          },
+          fontFamily: {
+            display: ['"Outfit"', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+            mono: ['"Space Mono"', '"JetBrains Mono"', 'monospace']
+          },
+          animation: {
+            'wave-pulse': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float-slow': 'floatBoat 5s ease-in-out infinite'
+          },
+          keyframes: {
+            floatBoat: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-7px) rotate(0.4deg)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* Estilos Náuticos Cholón Party S2 */
+    :root {
+      --color-abyssal: #050D18;
+      --color-navy: #0A192F;
+      --color-cyan: #00D2FF;
+      --color-amber: #FF9E00;
+      --color-pink: #FF007A;
+    }
+
+    body {
+      background-color: var(--color-abyssal);
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .font-mono {
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* Glass Cards Party (21st.dev inspired) */
+    .glass-cholon {
+      background: rgba(10, 25, 47, 0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(0, 210, 255, 0.2);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .glass-cholon-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-cholon-hover:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 210, 255, 0.55);
+      box-shadow: 0 25px 60px rgba(0, 210, 255, 0.2), 0 0 30px rgba(255, 158, 0, 0.15);
+    }
+
+    .glass-nav {
+      background: rgba(5, 13, 24, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 210, 255, 0.15);
+    }
+
+    /* Glowing Text & Gradients */
+    .gradient-text-cholon {
+      background: linear-gradient(135deg, #FFFFFF 15%, #00D2FF 60%, #0070F3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-party {
+      background: linear-gradient(135deg, #FFF1E6 10%, #FF9E00 60%, #FF007A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-glow-cyan {
+      text-shadow: 0 0 20px rgba(0, 210, 255, 0.55);
+    }
+
+    .text-glow-party {
+      text-shadow: 0 0 25px rgba(255, 158, 0, 0.55);
+    }
+
+    /* Botón Cholón Party */
+    .btn-cholon-primary {
+      background: linear-gradient(135deg, #FF9E00 0%, #FF007A 100%);
+      color: #FFFFFF;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(255, 158, 0, 0.4);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-cholon-primary:hover {
+      box-shadow: 0 8px 30px rgba(255, 0, 122, 0.6);
+      transform: scale(1.02);
+    }
+
+    /* Botón Secundario Cian */
+    .btn-cholon-cyan {
+      background: linear-gradient(135deg, #00D2FF 0%, #0070F3 100%);
+      color: #050D18;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0, 210, 255, 0.35);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-cholon-cyan:hover {
+      box-shadow: 0 8px 30px rgba(0, 210, 255, 0.6);
+      transform: scale(1.02);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050D18;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #102A45;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 210, 255, 0.25);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00D2FF;
+    }
+  
+    /* Grano Analógico Sutil */
+    .film-grain-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.025;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    #marineCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Hero Video Wrap sin reducción de opacidad (100% nítido) */
+    .hero-video-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      opacity: 1 !important;
+      filter: none !important;
+    }
+
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5, 13, 24, 0.2) 0%, transparent 40%, rgba(5, 13, 24, 0.55) 75%, #050D18 100%);
+      pointer-events: none;
+    }
+
+    .hero-title-shadow {
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.85);
+    }
+  </style>
+</head>
+
+<body class="bg-cholon-abyssal text-slate-100 antialiased selection:bg-cholon-cyan selection:text-cholon-abyssal">
+
+  <!-- Grano Analógico Sutil & Marine Canvas -->
+  <div class="film-grain-overlay"></div>
+  <canvas id="marineCanvas"></canvas>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cholon-amber to-cholon-pink flex items-center justify-center text-white shadow-lg shadow-cholon-pink/20 group-hover:scale-105 transition-transform border border-white/20">
+          <i data-lucide="flame" class="w-5 h-5 text-white"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg md:text-xl font-extrabold font-display tracking-tight text-white group-hover:text-cholon-cyan transition-colors">
+            LANCHAS <span class="gradient-text-party">CHOLÓN</span>
+          </span>
+          <span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">Marina Todomar • Manga • Cartagena</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#flota" class="hover:text-cholon-cyan transition-colors flex items-center gap-1.5">
+          <span>Flota (Emilita 29ft a 42ft)</span>
+        </a>
+        <a href="#circuito" class="hover:text-cholon-cyan transition-colors flex items-center gap-1.5">
+          <span>Ruta & Fiesta Cholón</span>
+        </a>
+        <a href="#incluye" class="hover:text-cholon-cyan transition-colors flex items-center gap-1.5">
+          <span>Party All-Inclusive</span>
+        </a>
+        <a href="#cotizador" class="hover:text-cholon-amber transition-colors flex items-center gap-1.5">
+          <span class="text-cholon-amber font-mono text-xs">⚡</span> Cotizador Online
+        </a>
+        <a href="#zarpe" class="hover:text-cholon-cyan transition-colors flex items-center gap-1.5">
+          <span>Marina de Zarpe</span>
+        </a>
+      </nav>
+
+      <!-- Right Action & WhatsApp Button -->
+      <div class="flex items-center gap-4">
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full border border-cholon-cyan/30 bg-cholon-navyDeep/80 text-xs font-mono text-cholon-cyan">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Emilita Disponible Hoy</span>
+        </div>
+
+        <a href="https://wa.me/573002881608?text=Hola%20Lanchas%20Chol%C3%B3n,%20deseo%20cotizar%20una%20lancha%20privada%20para%20la%20fiesta%20en%20Chol%C3%B3n" target="_blank" class="btn-cholon-primary px-5 py-2.5 rounded-xl text-xs md:text-sm flex items-center gap-2 font-display tracking-wide uppercase">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>Cotizar en 1 Clic</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle" class="md:hidden p-2 text-slate-300 hover:text-cholon-cyan" aria-label="Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden glass-cholon border-t border-cholon-borderDark px-6 py-6 space-y-4">
+      <a href="#flota" class="block text-slate-200 hover:text-cholon-cyan text-base font-medium mobile-link">Flota Emilita (29ft, 38ft & 42ft)</a>
+      <a href="#circuito" class="block text-slate-200 hover:text-cholon-cyan text-base font-medium mobile-link">Ruta Cholón, Caño Ratón & Rosario</a>
+      <a href="#incluye" class="block text-slate-200 hover:text-cholon-cyan text-base font-medium mobile-link">Party Package Incluido</a>
+      <a href="#cotizador" class="block text-cholon-amber hover:text-yellow-300 text-base font-medium mobile-link">Cotizador Dinámico Express</a>
+      <a href="#zarpe" class="block text-slate-200 hover:text-cholon-cyan text-base font-medium mobile-link">Marina Todomar / Manga</a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION (CHOLÓN PARTY EDITION) ==================== -->
+  <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden z-10">
+    
+    <!-- Hero Video Loop Background (100% Nitidez & Estándar Náutico) -->
+    <div class="hero-video-wrap">
+      <video id="heroBgVideo" autoplay muted loop playsinline preload="auto" poster="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_tiny.jpg">
+        <source src="hero-boat.mp4" type="video/mp4">
+        <source src="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_large.mp4" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/5368/5368-720.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+      
+      <!-- Party Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-cholon border-cholon-cyan/40 text-xs md:text-sm font-mono text-cholon-cyan mb-8 shadow-xl">
+        <i data-lucide="flame" class="w-4 h-4 text-cholon-amber"></i>
+        <span class="text-white font-bold">@lanchascholon • Fiesta Privada & Despedidas</span>
+        <span class="text-slate-300">• Cartagena de Indias</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] font-display max-w-5xl mx-auto hero-title-shadow">
+        La Mejor Fiesta en Cholón a Bordo de <span class="gradient-text-party text-glow-party">Lanchas Privadas</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mt-6 text-lg sm:text-xl text-slate-100 font-normal leading-relaxed max-w-3xl mx-auto font-body hero-title-shadow">
+        Navega hacia la ensenada de <strong>Cholón, Islas del Rosario, Caño Ratón y Agua Azul</strong> con tu propio grupo. Botes deportivos con sonido marino de alta potencia Bluetooth, baño privado, nevera con hielo y tripulación servicial.
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#cotizador" class="w-full sm:w-auto btn-cholon-primary px-8 py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-3 font-display uppercase tracking-wider shadow-xl">
+          <i data-lucide="calculator" class="w-5 h-5"></i>
+          <span>Cotizar mi Lancha de Fiesta</span>
+        </a>
+
+        <a href="#flota" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-cholon border-slate-700 hover:border-cholon-cyan text-slate-200 hover:text-cholon-cyan text-sm font-semibold flex items-center justify-center gap-3 transition-all font-display">
+          <i data-lucide="ship" class="w-5 h-5 text-cholon-cyan"></i>
+          <span>Ver Lancha Emilita & Flota</span>
+        </a>
+      </div>
+
+      <!-- Quick Telemetry Specs Bar -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto font-mono text-xs border-t border-cholon-borderDark pt-8">
+        <div class="p-3.5 rounded-xl bg-cholon-navyDeep/60 border border-cholon-cyan/20 backdrop-blur-md">
+          <div class="text-cholon-cyan font-bold text-base font-display">Sonido Potente Pro</div>
+          <div class="text-slate-300 text-[11px] mt-0.5">JL Audio Bluetooth + Subwoofer</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-cholon-navyDeep/60 border border-cholon-cyan/20 backdrop-blur-md">
+          <div class="text-cholon-amber font-bold text-base font-display">Lancha Emilita 29ft</div>
+          <div class="text-slate-300 text-[11px] mt-0.5">Embarcación Insignia con Baño</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-cholon-navyDeep/60 border border-cholon-cyan/20 backdrop-blur-md">
+          <div class="text-emerald-400 font-bold text-base font-display">Combustible Full</div>
+          <div class="text-slate-300 text-[11px] mt-0.5">Ruta completa a Cholón e Islas</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-cholon-navyDeep/60 border border-cholon-cyan/20 backdrop-blur-md">
+          <div class="text-cholon-pink font-bold text-base font-display">Nevera con Hielo</div>
+          <div class="text-slate-300 text-[11px] mt-0.5">Ingresa tus bebidas y licores</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FLOTA GRID (CON LANCHA EMILITA) ==================== -->
+  <section id="flota" class="py-28 relative z-10 bg-cholon-navyDeep/40 border-y border-cholon-borderDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cholon-navy border border-cholon-cyan/30 text-xs font-mono text-cholon-cyan">
+          <i data-lucide="flame" class="w-3.5 h-3.5"></i>
+          <span>Lanchas Deportivas Propias</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Nuestra Flota <span class="gradient-text-party text-glow-party">para la Fiesta</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg font-light font-body">
+          Botes rápidos y seguros con motores gemelos, asoleadoras de lujo, baño en consola y sonido envolvente para tu grupo.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Barco 1: Lancha Emilita (Marlin 29ft) -->
+        <div class="glass-cholon glass-cholon-hover rounded-3xl overflow-hidden border-cholon-cyan/60 flex flex-col group relative bg-gradient-to-b from-cholon-navy/90 to-cholon-abyssal ring-1 ring-cholon-cyan/30">
+          <div class="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 z-20">
+            <span class="px-5 py-1.5 rounded-full bg-gradient-to-r from-cholon-cyan to-cholon-blue text-cholon-abyssal font-display text-xs font-black uppercase tracking-wider shadow-xl flex items-center gap-1.5">
+              ⭐ LANCHA INSIGNIA
+            </span>
+          </div>
+
+          <div class="relative h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=900&q=85" alt="Lancha Emilita 29ft" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cholon-abyssal via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3.5 py-1 rounded-full bg-cholon-abyssal/90 backdrop-blur-md border border-cholon-cyan/40 text-xs font-mono text-cholon-cyan font-bold">
+                29 PIES (MARLIN)
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3.5 py-1 rounded-full bg-emerald-500/30 backdrop-blur-md border border-emerald-500/50 text-xs font-mono text-emerald-300 font-bold">
+                10 - 12 PAX
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold font-display text-white">Lancha Deportiva Emilita</h3>
+                <span class="text-xs font-mono text-cholon-cyan font-bold px-2 py-0.5 rounded bg-cholon-cyan/10 border border-cholon-cyan/20">Marlin Sport</span>
+              </div>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                La lancha más solicitada de la marca. Rápida, cómoda, con baño privado en consola, asoleadora en proa y sonido Bluetooth potente.
+              </p>
+              
+              <div class="space-y-2.5 font-mono text-xs text-slate-200 border-t border-white/10 pt-4">
+                <div class="flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-cholon-cyan"></i> Motores: 2x 150HP Fuera de borda</div>
+                <div class="flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-cholon-cyan"></i> Capacidad: Hasta 12 Pasajeros</div>
+                <div class="flex items-center gap-2"><i data-lucide="bath" class="w-4 h-4 text-cholon-cyan"></i> Baño en consola central</div>
+                <div class="flex items-center gap-2"><i data-lucide="music" class="w-4 h-4 text-cholon-cyan"></i> Sonido JL Audio Bluetooth Pro</div>
+                <div class="flex items-center gap-2"><i data-lucide="sun" class="w-4 h-4 text-cholon-cyan"></i> Asoleadora acolchada en proa</div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-mono text-slate-400 uppercase">Tarifa Pasadía Cholón</div>
+                <div class="text-2xl font-black font-display gradient-text-cholon">Desde $1.500.000 <span class="text-xs font-normal text-slate-400">COP</span></div>
+              </div>
+              <button onclick="selectBoat('emilita')" class="btn-cholon-cyan px-4 py-2.5 rounded-xl text-xs font-bold font-display uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
+                <span>Elegir</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Barco 2: Lancha 38ft Fiesta Open -->
+        <div class="glass-cholon glass-cholon-hover rounded-3xl overflow-hidden border-cholon-borderDark flex flex-col group">
+          <div class="relative h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=900&q=85" alt="Lancha 38ft Fiesta Open" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cholon-abyssal via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-cholon-abyssal/80 backdrop-blur-md border border-cholon-amber/40 text-xs font-mono text-cholon-amber font-bold">
+                38 PIES
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-500/40 text-xs font-mono text-emerald-400 font-bold">
+                14 - 18 PAX
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold font-display text-white">Lancha 38ft Fiesta Open</h3>
+                <span class="text-xs font-mono text-cholon-amber font-bold px-2 py-0.5 rounded bg-cholon-amber/10 border border-cholon-amber/20">Grupos Grandes</span>
+              </div>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Excelente espacio para despedidas y cumpleaños. Doble asoleadora, amplia sala perimetral y sistema de sonido con doble subwoofer.
+              </p>
+              
+              <div class="space-y-2.5 font-mono text-xs text-slate-200 border-t border-white/10 pt-4">
+                <div class="flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-cholon-amber"></i> Motores: 2x 250HP Fuera de borda</div>
+                <div class="flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-cholon-amber"></i> Capacidad: Hasta 18 Pasajeros</div>
+                <div class="flex items-center gap-2"><i data-lucide="bath" class="w-4 h-4 text-cholon-amber"></i> Baño privado en consola central</div>
+                <div class="flex items-center gap-2"><i data-lucide="volume-2" class="w-4 h-4 text-cholon-amber"></i> Sonido Pro 8 parlantes + 2 Subwoofers</div>
+                <div class="flex items-center gap-2"><i data-lucide="shower-head" class="w-4 h-4 text-cholon-amber"></i> Ducha de agua dulce en popa</div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-mono text-slate-400 uppercase">Tarifa Pasadía</div>
+                <div class="text-xl font-extrabold font-display text-white">Desde $2.200.000 <span class="text-xs font-normal text-slate-400">COP</span></div>
+              </div>
+              <button onclick="selectBoat('38ft')" class="btn-cholon-primary px-4 py-2.5 rounded-xl text-xs font-bold font-display uppercase tracking-wider flex items-center gap-1.5">
+                <span>Elegir</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Barco 3: Lancha XL 42ft Party Cruiser -->
+        <div class="glass-cholon glass-cholon-hover rounded-3xl overflow-hidden border-cholon-borderDark flex flex-col group">
+          <div class="relative h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=900&q=85" alt="Lancha XL 42ft" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cholon-abyssal via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-cholon-abyssal/80 backdrop-blur-md border border-cholon-pink/40 text-xs font-mono text-cholon-pink font-bold">
+                42 PIES XL
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 rounded-full bg-purple-500/20 backdrop-blur-md border border-purple-500/40 text-xs font-mono text-purple-300 font-bold">
+                20 - 25 PAX
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold font-display text-white">Lancha XL 42ft Party Cruiser</h3>
+                <span class="text-xs font-mono text-cholon-pink font-bold px-2 py-0.5 rounded bg-cholon-pink/10 border border-cholon-pink/20">Máxima Capacidad</span>
+              </div>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                El buque insignia para eventos masivos y grupos grandes. Espacio monumental para bailar, dos salas lounge y asoleadoras tipo cama.
+              </p>
+              
+              <div class="space-y-2.5 font-mono text-xs text-slate-200 border-t border-white/10 pt-4">
+                <div class="flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-cholon-pink"></i> Motores: 2x 300HP Verado</div>
+                <div class="flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-cholon-pink"></i> Capacidad: Hasta 25 Pasajeros</div>
+                <div class="flex items-center gap-2"><i data-lucide="bath" class="w-4 h-4 text-cholon-pink"></i> Baño privado de lujo con lavamanos</div>
+                <div class="flex items-center gap-2"><i data-lucide="volume-2" class="w-4 h-4 text-cholon-pink"></i> Sonido Ultra Pro 10 parlantes</div>
+                <div class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-cholon-pink"></i> 2 Neveras marinas grandes</div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-mono text-slate-400 uppercase">Tarifa Pasadía</div>
+                <div class="text-xl font-extrabold font-display text-white">Desde $3.100.000 <span class="text-xs font-normal text-slate-400">COP</span></div>
+              </div>
+              <button onclick="selectBoat('42ft')" class="btn-cholon-primary px-4 py-2.5 rounded-xl text-xs font-bold font-display uppercase tracking-wider flex items-center gap-1.5">
+                <span>Elegir</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CIRCUITO CHOLÓN (PARADAS DE FIESTA) ==================== -->
+  <section id="circuito" class="py-28 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cholon-amber/10 border border-cholon-amber/30 text-xs font-mono text-cholon-amber">
+          <i data-lucide="map" class="w-3.5 h-3.5"></i>
+          <span>El Circuito Completo</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          La Ruta de la Fiesta: <span class="gradient-text-party text-glow-party">De 8:30 AM a 4:30 PM</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg font-light font-body">
+          Combinamos snorkel en aguas cristalinas con la mejor energía de fiesta en Cholón y paradas de relax.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <div class="glass-cholon p-6 rounded-2xl border-cholon-borderDark space-y-3">
+          <div class="w-10 h-10 rounded-full bg-cholon-cyan/20 text-cholon-cyan flex items-center justify-center font-mono font-bold text-sm">1</div>
+          <h3 class="text-lg font-bold font-display text-white">Snorkel en Arrecifes</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">Parada en las piscinas naturales de Islas del Rosario. Aguas transparentes para nadar y ver corales.</p>
+        </div>
+
+        <div class="glass-cholon p-6 rounded-2xl border-cholon-borderDark space-y-3">
+          <div class="w-10 h-10 rounded-full bg-cholon-cyan/20 text-cholon-cyan flex items-center justify-center font-mono font-bold text-sm">2</div>
+          <h3 class="text-lg font-bold font-display text-white">Caño Ratón & Manglares</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">Navegación por canales de agua verde esmeralda y fondos de arena blanca antes de la fiesta.</p>
+        </div>
+
+        <div class="glass-cholon p-6 rounded-2xl border-cholon-amber/50 space-y-3 bg-gradient-to-b from-cholon-amber/20 to-cholon-navyDeep">
+          <div class="w-10 h-10 rounded-full bg-cholon-amber text-cholon-abyssal flex items-center justify-center font-mono font-bold text-sm">3</div>
+          <h3 class="text-lg font-bold font-display text-white">Ensenada de Cholón (Party)</h3>
+          <p class="text-slate-200 text-xs leading-relaxed">Fondeo principal con música, cabañas de mar, mariscos frescos y el mejor ambiente caribeño.</p>
+        </div>
+
+        <div class="glass-cholon p-6 rounded-2xl border-cholon-borderDark space-y-3">
+          <div class="w-10 h-10 rounded-full bg-cholon-cyan/20 text-cholon-cyan flex items-center justify-center font-mono font-bold text-sm">4</div>
+          <h3 class="text-lg font-bold font-display text-white">Agua Azul / Playa Tranquila</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">Último baño de mar y atardecer suave antes de regresar a la marina en Cartagena.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PARTY PACKAGE INCLUSIONS (BENTO GRID) ==================== -->
+  <section id="incluye" class="py-28 relative z-10 bg-cholon-navyDeep/30 border-t border-cholon-borderDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cholon-cyan/10 border border-cholon-cyan/30 text-xs font-mono text-cholon-cyan">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          <span>Todo Incluido para tu Grupo</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Lo Que Incluye tu <span class="gradient-text-party text-glow-party">Pasadía con Lanchas Cholón</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg font-light font-body">
+          Cero sorpresas al abordar. Todo preparado para que tú y tus amigos solo piensen en celebrar.
+        </p>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        
+        <!-- Bento 1: Sonido Pro Bluetooth -->
+        <div class="glass-cholon p-8 rounded-3xl md:col-span-2 flex flex-col justify-between space-y-6 border-cholon-amber/40">
+          <div class="w-12 h-12 rounded-2xl bg-cholon-amber/20 border border-cholon-amber/40 flex items-center justify-center text-cholon-amber">
+            <i data-lucide="music" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold font-display text-white mb-2">Sonido Marino Profesional Bluetooth</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Equipos de sonido marino de alta potencia JL Audio / Rockford Fosgate con conexión inalámbrica. Tú y tu grupo tienen el control absoluto de la música y el volumen durante todo el recorrido.
+            </p>
+          </div>
+          <div class="flex items-center gap-3 text-xs font-mono text-cholon-amber">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>Conexión Bluetooth HD • Subwoofers marinos</span>
+          </div>
+        </div>
+
+        <!-- Bento 2: Combustible Full -->
+        <div class="glass-cholon p-8 rounded-3xl flex flex-col justify-between space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+            <i data-lucide="fuel" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Combustible de Ruta Completa</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Gasolina incluida para todo el circuito: marina, islas, Cholón, Agua Azul y regreso a Cartagena.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-emerald-400">Cero sobrecostos de motor</div>
+        </div>
+
+        <!-- Bento 3: Hielera & Hielo -->
+        <div class="glass-cholon p-8 rounded-3xl flex flex-col justify-between space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-cholon-cyan/20 border border-cholon-cyan/40 flex items-center justify-center text-cholon-cyan">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Hielera Marina & Hielo</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Nevera marina grande cargada con hielo en bolsa listo para enfriar tus cervezas, licores y bebidas.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-cholon-cyan">Ingreso libre de bebidas</div>
+        </div>
+
+        <!-- Bento 4: Baño a Bordo -->
+        <div class="glass-cholon p-8 rounded-3xl flex flex-col justify-between space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-purple-300">
+            <i data-lucide="bath" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Baño Interior Privado</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Inodoro marino privado en consola central, fundamental para la comodidad de mujeres y todo el grupo.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-purple-300">En lanchas Emilita, 38ft & 42ft</div>
+        </div>
+
+        <!-- Bento 5: Tripulación DIMAR (Col 2) -->
+        <div class="glass-cholon p-8 rounded-3xl md:col-span-2 flex flex-col justify-between space-y-6 border-cholon-cyan/30">
+          <div class="w-12 h-12 rounded-2xl bg-cholon-cyan/20 border border-cholon-cyan/40 flex items-center justify-center text-cholon-cyan">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold font-display text-white mb-2">Capitán Certificado & Ayudante Servicial</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Tripulación profesional con licencias DIMAR vigentes y amplia experiencia en navegación festiva. El marinero asiste en todo momento con el servicio de bebidas, fondeo seguro y atención.
+            </p>
+          </div>
+          <div class="flex items-center gap-3 text-xs font-mono text-cholon-cyan">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>Navegación 100% Segura y Pólizas al Día</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== COTIZADOR DINÁMICO EXPRESS (DIRECTO A WHATSAPP) ==================== -->
+  <section id="cotizador" class="py-28 relative z-10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-cholon rounded-3xl p-8 sm:p-14 border-cholon-cyan/40 relative overflow-hidden shadow-2xl">
+        <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-cholon-pink/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-24 -top-24 w-96 h-96 bg-cholon-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cholon-cyan/20 border border-cholon-cyan/40 text-xs font-mono text-cholon-cyan">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            <span>Cotizador Express Online</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+            Calcula tu <span class="gradient-text-party text-glow-party">Lancha de Fiesta</span> en Segundos
+          </h2>
+          <p class="text-slate-300 text-xs sm:text-sm font-light">
+            Olvídate de esperar respuestas manuales. Selecciona tu lancha y pasajeros para obtener el valor estimado y apartar por WhatsApp.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          
+          <!-- Controles del Formulario -->
+          <div class="space-y-5">
+            
+            <!-- Selector de Lancha -->
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">1. Selecciona la Lancha</label>
+              <select id="calc-boat" class="w-full bg-cholon-navyDeep border border-cholon-cyan/30 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-cholon-cyan font-body">
+                <option value="emilita" data-price="1500000" data-max="12" selected>⭐ Lancha Emilita 29ft Sport (Hasta 12 Pax) — $1.500.000 COP</option>
+                <option value="38ft" data-price="2200000" data-max="18">🔥 Lancha 38ft Fiesta Open (Hasta 18 Pax) — $2.200.000 COP</option>
+                <option value="42ft" data-price="3100000" data-max="25">👑 Lancha XL 42ft Party Cruiser (Hasta 25 Pax) — $3.100.000 COP</option>
+              </select>
+            </div>
+
+            <!-- Selector de Ruta -->
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">2. Circuito Deseado</label>
+              <select id="calc-route" class="w-full bg-cholon-navyDeep border border-cholon-cyan/30 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-cholon-cyan font-body">
+                <option value="Circuito Completo: Islas del Rosario + Caño Ratón + Cholón + Agua Azul" selected>🏝️ Circuito Completo: Rosario + Caño Ratón + Cholón + Agua Azul</option>
+                <option value="Fiesta Directa en Cholón (Barú)">🎉 Fiesta Directa en Cholón (Barú)</option>
+                <option value="Islas del Rosario & Snorkel en Piscinas Naturales">🐠 Islas del Rosario & Snorkel en Piscinas Naturales</option>
+              </select>
+            </div>
+
+            <!-- Pasajeros & Fecha -->
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">3. Pasajeros</label>
+                <input type="number" id="calc-pax" min="1" max="25" value="10" class="w-full bg-cholon-navyDeep border border-cholon-cyan/30 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-cholon-cyan font-mono">
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">4. Fecha del Pasadía</label>
+                <input type="date" id="calc-date" class="w-full bg-cholon-navyDeep border border-cholon-cyan/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cholon-cyan font-mono">
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Resumen y Output Cotizador -->
+          <div class="bg-cholon-navyDeep/90 rounded-2xl p-6 sm:p-8 border border-cholon-cyan/40 flex flex-col justify-between space-y-6 shadow-xl">
+            
+            <div class="space-y-4">
+              <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                <span class="text-xs font-mono text-slate-400 uppercase">Resumen Estimado</span>
+                <span class="text-xs font-mono text-cholon-amber font-bold">100% Privado</span>
+              </div>
+
+              <div class="space-y-2 font-mono text-xs text-slate-300">
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Lancha:</span>
+                  <span id="summary-boat" class="text-white font-bold">Lancha Emilita 29ft</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Ruta:</span>
+                  <span id="summary-route" class="text-white text-right max-w-[190px] truncate">Circuito Completo Cholón</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Grupo:</span>
+                  <span id="summary-pax" class="text-emerald-400 font-bold">10 personas</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Horario:</span>
+                  <span class="text-white">8:30 AM a 4:30 PM</span>
+                </div>
+              </div>
+
+              <div class="border-t border-white/10 pt-4 text-center">
+                <div class="text-[11px] font-mono text-slate-400 uppercase">Tarifa Total Estimada de la Lancha</div>
+                <div id="summary-total" class="text-3xl sm:text-4xl font-black font-display gradient-text-party my-1">
+                  $1.500.000 <span class="text-sm font-normal text-slate-400 font-mono">COP</span>
+                </div>
+                <div id="summary-perpax" class="text-xs font-mono text-cholon-cyan">
+                  Aprox. $150.000 COP por persona
+                </div>
+              </div>
+            </div>
+
+            <!-- Botón Disparador WhatsApp con Icono Oficial -->
+            <a id="btn-calc-whatsapp" href="#" target="_blank" class="w-full btn-cholon-primary py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2.5 font-display uppercase tracking-wider shadow-xl hover:scale-[1.02] transition-transform">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span>Apartar Lancha por WhatsApp</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== MARINAS DE ZARPE & UBICACIÓN ==================== -->
+  <section id="zarpe" class="py-24 relative z-10 bg-cholon-navyDeep/40 border-t border-cholon-borderDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cholon-cyan/10 border border-cholon-cyan/30 text-xs font-mono text-cholon-cyan">
+            <i data-lucide="anchor" class="w-3.5 h-3.5"></i>
+            <span>Puntos de Abordaje</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+            Puntos de Zarpe: <span class="gradient-text-party text-glow-party">Marina Todomar & Manga</span>
+          </h2>
+
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Zarpamos directamente desde las mejores marinas privadas de Cartagena. Instalaciones con parqueadero vigilado, baños limpios, muelle flotante seguro y fácil acceso desde Bocagrande o Manga.
+          </p>
+
+          <div class="space-y-3 font-mono text-xs text-slate-200">
+            <div class="p-4 rounded-xl bg-cholon-navyDeep border border-cholon-cyan/20 flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-5 h-5 text-cholon-cyan shrink-0 mt-0.5"></i>
+              <div>
+                <div class="font-bold text-white text-sm">Marina Todomar (Bocagrande)</div>
+                <div class="text-slate-400 text-[11px] mt-0.5">Av. San Martín con Cra. 1, muelle privado de alto confort.</div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-cholon-navyDeep border border-cholon-cyan/20 flex items-start gap-3">
+              <i data-lucide="navigation" class="w-5 h-5 text-cholon-amber shrink-0 mt-0.5"></i>
+              <div>
+                <div class="font-bold text-white text-sm">Marina Club Náutico / Calle 25 Manga</div>
+                <div class="text-slate-400 text-[11px] mt-0.5">Sector residencial Manga, bahía interna de Cartagena.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="https://wa.me/573002881608?text=Hola%20Lanchas%20Chol%C3%B3n,%20deseo%20confirmar%20la%20marina%20de%20embarque" target="_blank" class="text-cholon-cyan hover:text-white font-mono text-xs flex items-center gap-2 underline underline-offset-4">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>Solicitar ubicación GPS de la marina por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="glass-cholon rounded-3xl p-4 border-cholon-cyan/30 shadow-2xl relative overflow-hidden">
+            <div class="rounded-2xl overflow-hidden aspect-[16/10] relative">
+              <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=85" alt="Marinas de Cartagena y Fiesta en Bote" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-cholon-abyssal via-transparent to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-cholon-abyssal/90 backdrop-blur-md border border-cholon-cyan/40 flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-mono text-slate-400">Lanchas Cholon S.A.S. • Base de Operaciones</div>
+                  <div class="text-sm font-bold font-display text-white">Cartagena de Indias, Colombia</div>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold border border-emerald-500/40">Salidas Diarias</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-16 relative z-10 border-t border-cholon-borderDark bg-cholon-abyssal text-slate-400 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <div class="space-y-4 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cholon-amber to-cholon-pink flex items-center justify-center text-white border border-white/20">
+              <i data-lucide="flame" class="w-4 h-4"></i>
+            </div>
+            <span class="text-base font-bold font-display text-white tracking-tight">
+              LANCHAS <span class="gradient-text-party">CHOLÓN</span>
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs font-body max-w-md leading-relaxed">
+            Especialistas en alquiler de lanchas deportivas y botes privados para la fiesta en Cholón, paseos a Islas del Rosario, cumpleaños y despedidas en Cartagena.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-slate-300 pt-2">
+            <a href="https://instagram.com/lanchascholon" target="_blank" class="w-9 h-9 rounded-xl bg-cholon-navyDeep flex items-center justify-center hover:text-pink-400 hover:border-pink-500/40 border border-white/10 transition-colors" aria-label="Instagram">
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+            <a href="https://wa.me/573002881608" target="_blank" class="w-9 h-9 rounded-xl bg-cholon-navyDeep flex items-center justify-center hover:text-emerald-400 hover:border-emerald-500/40 border border-white/10 transition-colors" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp text-base"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="text-xs font-bold text-white uppercase tracking-wider">Flota & Experiencias</div>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="#flota" class="hover:text-cholon-cyan transition-colors">Lancha Emilita (29ft)</a></li>
+            <li><a href="#flota" class="hover:text-cholon-cyan transition-colors">Lancha 38ft Fiesta Open</a></li>
+            <li><a href="#flota" class="hover:text-cholon-cyan transition-colors">Lancha XL 42ft Cruiser</a></li>
+            <li><a href="#circuito" class="hover:text-cholon-cyan transition-colors">Fiesta en Cholón</a></li>
+            <li><a href="#circuito" class="hover:text-cholon-cyan transition-colors">Islas del Rosario & Caño Ratón</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <div class="text-xs font-bold text-white uppercase tracking-wider">Contacto Directo</div>
+          <div class="space-y-2 text-slate-300">
+            <div><strong>WhatsApp:</strong> +57 300 2881608</div>
+            <div><strong>Tel. Alterno:</strong> +57 301 2978700</div>
+            <div><strong>Zarpe:</strong> Marina Todomar / Manga</div>
+            <div><strong>Horarios:</strong> Todos los días 7:30 AM - 9:00 PM</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <div>© 2026 Lanchas Cholon S.A.S. Todos los derechos reservados.</div>
+        <div class="flex items-center gap-4">
+          <span>Turismo Náutico Seguro DIMAR</span>
+          <span>•</span>
+          <span>Cartagena de Indias, Colombia</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING WHATSAPP BUTTON (OFICIAL #25D366 & BEACON) ==================== -->
+  <a href="https://wa.me/573002881608?text=Hola%20Lanchas%20Chol%C3%B3n,%20deseo%20cotizar%20una%20lancha%20privada%20para%20la%20fiesta%20en%20Chol%C3%B3n" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group shadow-[0_10px_30px_rgba(37,211,102,0.45)]" aria-label="WhatsApp">
+    <div class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25"></div>
+    <i class="fa-brands fa-whatsapp text-3xl relative z-10"></i>
+    <span class="absolute right-16 px-3.5 py-2 rounded-xl bg-cholon-abyssal text-white text-xs font-mono font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-emerald-500/40 pointer-events-none shadow-2xl flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-[#25D366] animate-pulse"></span>
+      Cotizar Lancha por WhatsApp
+    </span>
+  </a>
+
+  <!-- ==================== LOGICA JAVASCRIPT ==================== -->
+  <script>
+    // Inicializar Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    }
+
+    // Helper Selector desde Cards de Flota
+    function selectBoat(boatType) {
+      const select = document.getElementById('calc-boat');
+      if (select) {
+        select.value = boatType;
+        updateCalculator();
+        const cotizadorSec = document.getElementById('cotizador');
+        if (cotizadorSec) cotizadorSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Lógica del Cotizador Dinámico
+    const calcBoat = document.getElementById('calc-boat');
+    const calcRoute = document.getElementById('calc-route');
+    const calcPax = document.getElementById('calc-pax');
+    const calcDate = document.getElementById('calc-date');
+
+    const summaryBoat = document.getElementById('summary-boat');
+    const summaryRoute = document.getElementById('summary-route');
+    const summaryPax = document.getElementById('summary-pax');
+    const summaryTotal = document.getElementById('summary-total');
+    const summaryPerPax = document.getElementById('summary-perpax');
+    const btnCalcWhatsApp = document.getElementById('btn-calc-whatsapp');
+
+    // Inicializar fecha para mañana
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    calcDate.value = tomorrow.toISOString().split('T')[0];
+
+    function updateCalculator() {
+      const opt = calcBoat.options[calcBoat.selectedIndex];
+      const boatType = calcBoat.value;
+      const basePrice = parseInt(opt.getAttribute('data-price') || '1500000', 10);
+      const maxPax = parseInt(opt.getAttribute('data-max') || '12', 10);
+      calcPax.max = maxPax;
+
+      let paxVal = parseInt(calcPax.value || '1', 10);
+      if (paxVal > maxPax) {
+        paxVal = maxPax;
+        calcPax.value = maxPax;
+      }
+      if (paxVal < 1) {
+        paxVal = 1;
+        calcPax.value = 1;
+      }
+
+      const routeVal = calcRoute.value;
+      const dateVal = calcDate.value;
+
+      summaryBoat.textContent = boatType === 'emilita' ? 'Lancha Emilita 29ft' : (boatType === '38ft' ? 'Lancha 38ft Fiesta Open' : 'Lancha XL 42ft Cruiser');
+      summaryRoute.textContent = routeVal.split('(')[0].trim();
+      summaryPax.textContent = `${paxVal} personas`;
+
+      const formattedTotal = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(basePrice);
+      const perPaxValue = Math.round(basePrice / paxVal);
+      const formattedPerPax = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(perPaxValue);
+
+      summaryTotal.innerHTML = `${formattedTotal} <span class="text-sm font-normal text-slate-400 font-mono">COP</span>`;
+      summaryPerPax.textContent = `Aprox. ${formattedPerPax} COP por persona`;
+
+      // Mensaje estructurado hacia WhatsApp de Lanchas Cholón
+      const msg = encodeURIComponent(`Hola Lanchas Cholón, deseo cotizar una lancha privada para Cholón:
+• Embarcación: ${summaryBoat.textContent}
+• Ruta: ${routeVal}
+• Pasajeros: ${paxVal} personas
+• Fecha: ${dateVal}
+• Tarifa Estimada: ${formattedTotal} COP
+Por favor confirmarme disponibilidad y muelle de zarpe en Marina Todomar / Manga.`);
+      
+      btnCalcWhatsApp.href = `https://wa.me/573002881608?text=${msg}`;
+    }
+
+    calcBoat.addEventListener('change', updateCalculator);
+    calcRoute.addEventListener('change', updateCalculator);
+    calcPax.addEventListener('input', updateCalculator);
+    calcDate.addEventListener('change', updateCalculator);
+    updateCalculator();
+
+    // Marine Canvas con Brillo Abisal & Partículas de Energía
+    const canvas = document.getElementById('marineCanvas');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    });
+
+    let mouse = { x: w / 2, y: h / 2 };
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    const particles = [];
+    const particleCount = 65;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        radius: Math.random() * 2 + 1,
+        speedX: (Math.random() - 0.5) * 0.4,
+        speedY: (Math.random() - 0.5) * 0.4,
+        alpha: Math.random() * 0.6 + 0.2
+      });
+    }
+
+    let waveStep = 0;
+
+    function renderMarineCanvas() {
+      ctx.clearRect(0, 0, w, h);
+
+      const bgGrad = ctx.createRadialGradient(
+        mouse.x, mouse.y, 50,
+        w / 2, h / 2, Math.max(w, h) * 0.8
+      );
+      bgGrad.addColorStop(0, 'rgba(0, 210, 255, 0.08)');
+      bgGrad.addColorStop(0.5, 'rgba(10, 25, 47, 0.45)');
+      bgGrad.addColorStop(1, 'rgba(5, 13, 24, 0.95)');
+
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      waveStep += 0.015;
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(0, 210, 255, 0.08)';
+      ctx.lineWidth = 1.5;
+
+      for (let x = 0; x < w; x += 15) {
+        const y = h * 0.35 + Math.sin(x * 0.003 + waveStep) * 25 + Math.cos(x * 0.002 + waveStep * 0.8) * 15;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      for (let p of particles) {
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 210, 255, ${p.alpha})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#00D2FF';
+        ctx.fill();
+      }
+
+      requestAnimationFrame(renderMarineCanvas);
+    }
+    renderMarineCanvas();
+
+    // GSAP ScrollTrigger Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.glass-cholon').forEach((card) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 35,
+        duration: 0.8,
+        ease: 'power2.out'
+      });
+    });
+  </script>
+</body>
+</html>

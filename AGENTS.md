@@ -126,7 +126,7 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 - `datos.json` es espejo de DATA para respaldo manual
 - No requiere build steps, ni npm, ni servidor
 
-## Datos actuales: 159 negocios
+## Datos actuales: 160 negocios
 
 | Tipo | Sin web | Solo redes | Con web | Total |
 |------|---------|------------|---------|-------|
@@ -140,21 +140,22 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 | Bares / Pubs / Discotecas | 0 | 0 | 17 | 17 |
 | Veterinarias / Pet Shops | 7 | 0 | 3 | 10 |
 | **Energía Solar / Paneles Solares** | **0** | **10** | **0** | **10** |
-| **Turismo / Renta de Yates, Catamaranes y Lanchas** | **2** | **3** | **0** | **5** |
+| **Turismo / Renta de Yates, Catamaranes y Lanchas** | **2** | **4** | **0** | **6** |
 | Otros (paellas, lechona, café, etc.) | 0 | 0 | 4 | 4 |
-| **Total** | **35** | **42** | **82** | **159** |
+| **Total** | **35** | **43** | **82** | **160** |
 
-- IDs activos: b1-b25, b30-b34, b36-b41, b50-b172
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b173
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
 - **Nuevos negocios de Energía Solar agregados en sesión 24 (b158-b167): 10 negocios sin sitio web con redes sociales y WhatsApp verificados**
-- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28, 29, 30 y 31: Cartagena Náutica (b168), Botes y Yates Cartagena (b169), Cartagena VIP Boats (b170), Coast Tours Cartagena (b171) y Catamarán San Juan (b172) con LPs desplegadas en Vercel**
+- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28, 29, 30, 31 y 32: Cartagena Náutica (b168), Botes y Yates Cartagena (b169), Cartagena VIP Boats (b170), Coast Tours Cartagena (b171), Catamarán San Juan (b172) y Lanchas Cholón (b173) con LPs desplegadas en Vercel**
 
 ## Archivos del proyecto
 
 - `busqueda/index.html` — herramienta principal de prospección
 - `busqueda/datos.json` — respaldo JSON de los datos
 - `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
+  - `lanchas-cholon.html` — Lanchas Cholón (Alquiler Privado de Lanchas de Fiesta en Cholón)
   - `catamaran-san-juan.html` — Atardecer Bahía Catamarán San Juan (Sunset Tour en Catamarán)
   - `coast-tours-cartagena.html` — Coast Tours Cartagena (Pasadías en Bote, Cholón & Tour Plancton Luminoso)
   - `cartagena-vip-boats.html` — Cartagena VIP Boats (Alquiler de Botes VIP y Lancha Firpol 42ft)
@@ -825,10 +826,24 @@ git push origin main
     - **Itinerario de 2 Horas**: Check-in 4:30 PM → Zarpe 5:00 PM → Puesta de Sol 5:45 PM → Skyline Iluminado 6:30 PM → Retorno 7:00 PM.
     - **Tickets & Pricing**: Pase Individual ($95k), Plan Parejas Romántico ($190k) y Plan Grupo Amigos ($450k base).
     - **Interactive Booking Form**: Cotizador express dinámico con salida automatizada al WhatsApp (+57 316 3826156).
-- **Despliegue en Producción Vercel**: **`https://lp-catamaran-san-juan.vercel.app`** (verificado HTTP 200 OK).
+### Sesión 32 (2026-09-08) — Landing Page de Ultra Lujo & Prospección: Lanchas Cholón (b173)
+- **Nuevo Lead Integrado**: **Lanchas Cholón (Lanchas Cholon S.A.S.)** (`b173`) — Alquiler Privado de Lanchas para Fiesta en Cholón & Paseos a Islas.
+  - Ubicación: Marina Todomar Bocagrande / Calle 25 Manga, Cartagena de Indias.
+  - WhatsApp Verificado: `+57 300 2881608` (`573002881608`) | Tel alterno: `+57 301 2978700`.
+  - Presencia original: Solo Redes / Linktree (`social-only`, `linktr.ee/lanchascholon` e Instagram `@lanchascholon`), sin página web propia.
+- **Desarrollo de la Landing Page (`landing-pages/lanchas-cholon.html`)**:
+  - **Estándar Náutico Cholón Party Aplicado**:
+    - Video Hero 100% nítido (`hero-boat.mp4` / Pixabay 1996) sin opacidad (`opacity: 1 !important; filter: none !important; object-position: center 35%;`).
+    - Grano analógico cinematográfico SVG (`.film-grain-overlay`) + `marineCanvas` interactivo con ondas de mar cian/abisal y partículas de fiesta reactivas al mouse.
+    - Botón flotante de WhatsApp oficial Font Awesome (`fa-brands fa-whatsapp`) en verde `#25D366` con efecto pulse beacon.
+    - **Fleet Showcase**: Destacando la **Lancha Deportiva Emilita 29ft** (Marlin Sport, 12 pax con baño), Lancha 38ft Fiesta Open (18 pax) y Lancha XL 42ft Party Cruiser (hasta 25 pax).
+    - **Circuito de la Fiesta**: Snorkel en arrecifes → Caño Ratón & manglares → Ensenada de Cholón (Party) → Agua Azul / Playa Tranquila.
+    - **Party Package All-Inclusive**: Sonido Bluetooth marino Pro de alta fidelidad, nevera grande con hielo, combustible de ruta completa y capitán + marinero DIMAR.
+    - **Interactive Booking Form**: Cotizador express dinámico con salida automatizada al WhatsApp (+57 300 2881608).
+- **Despliegue en Producción Vercel**: **`https://lp-lanchas-cholon.vercel.app`** (verificado HTTP 200 OK).
 - **Sincronización del Ecosistema de Prospección**:
   - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
-  - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **159 negocios** registrados.
+  - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **160 negocios** registrados.
 
 ---
 
