@@ -13,10 +13,10 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts & Font Awesome -->
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Tailwind CSS CDN -->
@@ -40,8 +40,9 @@
             oceanBorder: 'rgba(56, 189, 248, 0.15)',
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
           }
         }
       }
@@ -63,7 +64,12 @@
       background-color: var(--bg-ocean);
       color: #f1f5f9;
       overflow-x: hidden;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: -0.02em;
     }
 
     /* Fondo de Textura Analógica y Ruido Sutil */
@@ -195,7 +201,7 @@
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <span class="font-serif text-lg sm:text-xl font-bold tracking-tight text-white">FANTASTIC VIP</span>
+              <span class="font-display text-lg sm:text-xl font-extrabold tracking-wider text-white">FANTASTIC VIP</span>
               <span class="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">Sport Boats</span>
             </div>
             <p class="text-[11px] text-slate-400">Tours & Alquiler de Lanchas Deportivas 38ft</p>
@@ -249,9 +255,9 @@
         </div>
 
         <!-- Titular Principal con Sombra de Alto Contraste -->
-        <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.1] mb-6 hero-title-shadow">
+        <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-white tracking-tight leading-[1.08] mb-6 hero-title-shadow">
           Alquiler de Botes y Lanchas Deportivas en Cartagena
-          <span class="block mt-2 text-cyan-400 font-bold drop-shadow-[0_4px_25px_rgba(56,189,248,0.6)]">
+          <span class="block mt-2 text-cyan-400 font-extrabold drop-shadow-[0_4px_25px_rgba(56,189,248,0.6)]">
             Tours Fantastic VIP
           </span>
         </h1>
@@ -329,7 +335,7 @@
         <span class="text-xs uppercase font-bold tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1.5 rounded-full">
           Embarcación Insignia
         </span>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mt-4 mb-4">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white tracking-tight mt-4 mb-4">
           Lancha Deportiva 38ft Consola Central
         </h2>
         <p class="text-slate-300 text-sm sm:text-base">
@@ -445,7 +451,7 @@
         <span class="text-xs uppercase font-bold tracking-widest text-sky-400 bg-sky-500/10 border border-sky-500/20 px-3.5 py-1.5 rounded-full">
           Rutas Paradisiacas
         </span>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mt-4 mb-4">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white tracking-tight mt-4 mb-4">
           Destinos & Planes Exclusivos
         </h2>
         <p class="text-slate-300 text-sm sm:text-base">
@@ -561,7 +567,7 @@
             <span class="text-xs uppercase font-bold tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full">
               Todo Incluido en tu Alquiler
             </span>
-            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white">
+            <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">
               Navega con Cero Preocupaciones
             </h3>
             <p class="text-slate-300 text-sm leading-relaxed">
@@ -628,7 +634,7 @@
           <span class="text-xs uppercase font-bold tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1.5 rounded-full">
             Cotización Express en 1 Clic
           </span>
-          <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white mt-3 mb-2">
+          <h2 class="text-2xl sm:text-4xl font-display font-extrabold text-white tracking-tight mt-3 mb-2">
             Planifica tu Pasadía Privado
           </h2>
           <p class="text-slate-300 text-xs sm:text-sm">
@@ -705,7 +711,7 @@
             <i class="fa-solid fa-ship text-sm"></i>
           </div>
           <div>
-            <span class="font-serif font-bold text-white tracking-wide">TOURS CARTAGENA FANTASTIC VIP</span>
+            <span class="font-display font-extrabold text-white tracking-wider">TOURS CARTAGENA FANTASTIC VIP</span>
             <p class="text-xs text-slate-400">Muelle Los Pegasos • Bocagrande • Cartagena de Indias</p>
           </div>
         </div>
