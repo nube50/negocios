@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tours Cartagena Fantastic VIP | Alquiler de Botes y Lanchas Deportivas en Cartagena</title>
+  <meta name="description" content="Alquiler privado de lanchas deportivas de 38 pies en Cartagena de Indias. Pasadías exclusivos a Islas del Rosario, Fiesta en Cholón, Barú y Sunsets en la Bahía. Sonido pro, capitán DIMAR y atención VIP.">
+  <meta name="keywords" content="alquiler lanchas cartagena, tours cartagena fantastic vip, lancha 38 pies cholon, pasadias islas del rosario, bote deportivo cartagena, experiencia cartagena">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tours Cartagena Fantastic VIP | Lanchas Deportivas 38ft en Cartagena">
+  <meta property="og:description" content="Pasadías privados de lujo a Islas del Rosario y Cholón en lancha deportiva de 38ft con sonido pro con bajos y baño privado.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+            },
+            cyanGold: '#38bdf8',
+            oceanDark: '#040b14',
+            oceanCard: '#081524',
+            oceanBorder: 'rgba(56, 189, 248, 0.15)',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Estilos S2 Náutico de Ultra Lujo */
+    :root {
+      --bg-ocean: #040b14;
+      --bg-card: rgba(8, 21, 36, 0.75);
+      --border-glow: rgba(56, 189, 248, 0.25);
+      --cyan-bright: #38bdf8;
+      --gold-accent: #38bdf8;
+      --whatsapp-color: #25D366;
+    }
+
+    body {
+      background-color: var(--bg-ocean);
+      color: #f1f5f9;
+      overflow-x: hidden;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Fondo de Textura Analógica y Ruido Sutil */
+    .film-grain-overlay {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Canvas Dinámico Abisal */
+    #marineCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Video Hero S2: 100% Nítido y Luminoso */
+    .hero-video-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .hero-video-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      object-position: center 35%;
+      opacity: 1 !important;
+      filter: none !important;
+    }
+
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(4, 11, 20, 0.12) 0%, transparent 35%, rgba(4, 11, 20, 0.45) 70%, #040b14 100%);
+      pointer-events: none;
+    }
+
+    .hero-title-shadow {
+      text-shadow: 0 4px 25px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.85);
+    }
+
+    /* Glassmorphism Cards */
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glow);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.15);
+    }
+
+    /* Glow Elements */
+    .cyan-glow {
+      box-shadow: 0 0 35px -5px rgba(56, 189, 248, 0.4);
+    }
+
+    .pulse-beacon {
+      animation: pulseGlow 2.5s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #040b14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #0e304f;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #38bdf8;
+    }
+  </style>
+</head>
+<body class="relative min-h-screen text-slate-100 selection:bg-cyan-500 selection:text-black">
+
+  <!-- Grain Overlay y Canvas Abisal Reactivo -->
+  <div class="film-grain-overlay"></div>
+  <canvas id="marineCanvas"></canvas>
+
+  <!-- Contenedor Principal con Z-Index por encima del canvas -->
+  <div class="relative z-10 flex flex-col min-h-screen">
+
+    <!-- TOP BAR DE CONTACTO Y ESTADO DE FLOTA -->
+    <header class="w-full bg-[#040b14]/80 backdrop-blur-md border-b border-cyan-500/15 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        <!-- Logo / Marca -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-cyan-600 to-sky-400 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-300">
+            <div class="w-full h-full bg-[#040b14] rounded-[10px] flex items-center justify-center">
+              <i class="fa-solid fa-ship text-sky-400 text-lg"></i>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-serif text-lg sm:text-xl font-bold tracking-tight text-white">FANTASTIC VIP</span>
+              <span class="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">Sport Boats</span>
+            </div>
+            <p class="text-[11px] text-slate-400">Tours & Alquiler de Lanchas Deportivas 38ft</p>
+          </div>
+        </a>
+
+        <!-- Navegación y CTAs -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a href="#lancha" class="hover:text-cyan-400 transition-colors">Lancha 38ft VIP</a>
+          <a href="#destinos" class="hover:text-cyan-400 transition-colors">Destinos & Rutas</a>
+          <a href="#inclusiones" class="hover:text-cyan-400 transition-colors">Inclusiones</a>
+          <a href="#cotizador" class="hover:text-cyan-400 transition-colors">Cotizar en 1 Clic</a>
+        </nav>
+
+        <!-- Botón Directo WhatsApp Header -->
+        <div class="flex items-center gap-3">
+          <a href="tel:+573006780848" class="hidden sm:flex items-center gap-2 text-xs font-semibold text-slate-300 bg-slate-900/80 border border-slate-700/60 px-3.5 py-2 rounded-lg hover:border-cyan-400 hover:text-white transition-all">
+            <i class="fa-solid fa-phone text-cyan-400"></i>
+            <span>300 678 0848</span>
+          </a>
+          <a href="https://wa.me/573006780848?text=Hola%20Tours%20Cartagena%20Fantastic%20VIP,%20deseo%20consultar%20disponibilidad%20y%20precios%20de%20la%20lancha%20deportiva%20de%2038ft." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-2 rounded-lg text-xs font-bold shadow-lg shadow-emerald-500/20 transition-all transform hover:scale-105">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
+            <span>Zarpe Inmediato</span>
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- HERO SECTION CON VIDEO NÍTIDO S2 -->
+    <section class="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-24 overflow-hidden">
+      
+      <!-- Video Background 100% Nítido -->
+      <div class="hero-video-container">
+        <video autoplay muted loop playsinline preload="auto" class="hero-video-bg">
+          <source src="hero-boat.mp4" type="video/mp4">
+          <source src="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="relative z-10 max-w-5xl mx-auto text-center">
+        
+        <!-- Badges Superiores -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#040b14]/75 backdrop-blur-md border border-cyan-400/40 text-cyan-300 text-xs sm:text-sm font-semibold mb-6 shadow-xl">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Muelle Los Pegasos / Bocagrande • Cartagena de Indias</span>
+          <span class="text-slate-500">•</span>
+          <span class="text-amber-300 font-bold"><i class="fa-solid fa-star text-xs"></i> 4.9★ Calificación VIP</span>
+        </div>
+
+        <!-- Titular Principal con Sombra de Alto Contraste -->
+        <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.1] mb-6 hero-title-shadow">
+          Alquiler de Botes y Lanchas Deportivas en Cartagena
+          <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-cyan-400 to-sky-300">
+            Tours Fantastic VIP
+          </span>
+        </h1>
+
+        <!-- Subtítulo Enriquecido -->
+        <p class="max-w-3xl mx-auto text-base sm:text-xl text-slate-100 font-normal leading-relaxed mb-10 hero-title-shadow">
+          Vive la experiencia definitiva en el Caribe a bordo de nuestra <strong class="text-cyan-300 font-semibold">Lancha Deportiva 38ft</strong> con motores gemelos Mercury, sistema de sonido marino de alta potencia con bajos, asoleadoras de lujo y baño privado.
+        </p>
+
+        <!-- CTAs Principales -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 mb-14">
+          <a href="https://wa.me/573006780848?text=Hola%20Fantastic%20VIP!%20Quiero%20apartar%20la%20lancha%20deportiva%20de%2038ft%20para%20un%20pasad%C3%ADa%20VIP." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20ba59] text-white px-8 py-4 rounded-xl text-base font-bold shadow-xl shadow-emerald-500/25 transition-all transform hover:-translate-y-1">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+            <span>Apartar Fecha por WhatsApp</span>
+          </a>
+          <a href="#cotizador" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#081524]/85 hover:bg-[#0c223a] text-cyan-300 border border-cyan-400/40 px-8 py-4 rounded-xl text-base font-semibold backdrop-blur-md transition-all transform hover:-translate-y-1">
+            <i class="fa-solid fa-sliders text-cyan-400"></i>
+            <span>Cotizar Pasadía en Línea</span>
+          </a>
+        </div>
+
+        <!-- Metric Badges en Bento Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto text-left">
+          
+          <div class="glass-card p-3.5 sm:p-4 rounded-2xl flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-400 text-lg shrink-0">
+              <i class="fa-solid fa-water"></i>
+            </div>
+            <div>
+              <div class="text-sm sm:text-base font-bold text-white">38 Pies Eslora</div>
+              <div class="text-[11px] text-slate-400">Consola Central VIP</div>
+            </div>
+          </div>
+
+          <div class="glass-card p-3.5 sm:p-4 rounded-2xl flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-sky-400 text-lg shrink-0">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div>
+              <div class="text-sm sm:text-base font-bold text-white">16 - 18 Pax</div>
+              <div class="text-[11px] text-slate-400">Capacidad Confortable</div>
+            </div>
+          </div>
+
+          <div class="glass-card p-3.5 sm:p-4 rounded-2xl flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-lg shrink-0">
+              <i class="fa-solid fa-volume-high"></i>
+            </div>
+            <div>
+              <div class="text-sm sm:text-base font-bold text-white">Sonido Marino Pro</div>
+              <div class="text-[11px] text-slate-400">Bluetooth + Bajos JL</div>
+            </div>
+          </div>
+
+          <div class="glass-card p-3.5 sm:p-4 rounded-2xl flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-400/30 flex items-center justify-center text-amber-400 text-lg shrink-0">
+              <i class="fa-solid fa-anchor"></i>
+            </div>
+            <div>
+              <div class="text-sm sm:text-base font-bold text-white">Capitán DIMAR</div>
+              <div class="text-[11px] text-slate-400">Tripulación Completa</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECCIÓN: SHOWCASE DE LA LANCHA DEPORTIVA 38FT -->
+    <section id="lancha" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase font-bold tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1.5 rounded-full">
+          Embarcación Insignia
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mt-4 mb-4">
+          Lancha Deportiva 38ft Consola Central
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          Diseñada para maximizar el confort, la velocidad y la fiesta en alta mar. Espacios generosos, asoleadoras de cuero marino y acabados de lujo para un día inolvidable.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Galería Visual con Imagen Principal e Interacciones -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="relative rounded-3xl overflow-hidden glass-card border border-cyan-500/30 aspect-[16/10] group">
+            <img id="mainBoatImg" src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1200&q=85" alt="Lancha Deportiva 38ft Cartagena" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#040b14] via-transparent to-transparent opacity-80"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+              <div>
+                <span class="text-xs uppercase font-bold tracking-widest text-cyan-300">Sport Edition</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Fantastic 38ft Mercury Twin</h3>
+              </div>
+              <span class="px-3.5 py-1.5 rounded-xl bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 font-bold text-xs">
+                Premium Line
+              </span>
+            </div>
+          </div>
+
+          <!-- Thumbnails Interactivos -->
+          <div class="grid grid-cols-3 gap-3">
+            <button onclick="changeBoatImage('https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1200&q=85')" class="rounded-xl overflow-hidden border border-cyan-500/30 aspect-[4/3] focus:ring-2 focus:ring-cyan-400 group relative">
+              <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=400&q=80" alt="Lancha en navegacion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+              <span class="absolute inset-0 bg-black/40 flex items-center justify-center text-[11px] font-bold text-white">Navegación</span>
+            </button>
+            <button onclick="changeBoatImage('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85')" class="rounded-xl overflow-hidden border border-cyan-500/30 aspect-[4/3] focus:ring-2 focus:ring-cyan-400 group relative">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Asoleadoras de proa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+              <span class="absolute inset-0 bg-black/40 flex items-center justify-center text-[11px] font-bold text-white">Asoleadoras Proa</span>
+            </button>
+            <button onclick="changeBoatImage('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85')" class="rounded-xl overflow-hidden border border-cyan-500/30 aspect-[4/3] focus:ring-2 focus:ring-cyan-400 group relative">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Fondeo en Islas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+              <span class="absolute inset-0 bg-black/40 flex items-center justify-center text-[11px] font-bold text-white">Fondeo Islas</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Especificaciones y Ventajas Clave -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <div class="glass-card p-6 sm:p-8 rounded-3xl space-y-6">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2.5">
+              <i class="fa-solid fa-circle-check text-cyan-400"></i>
+              <span>Equipamiento de Alto Nivel</span>
+            </h3>
+
+            <div class="space-y-4 text-sm text-slate-300">
+              
+              <div class="flex items-start gap-3.5 pb-4 border-b border-slate-800">
+                <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0 mt-0.5">
+                  <i class="fa-solid fa-toilet"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-base">Baño Privado Marino</h4>
+                  <p class="text-xs text-slate-400">Cabina cerrada con inodoro eléctrico y lavamanos para total privacidad de damas y caballeros.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 pb-4 border-b border-slate-800">
+                <div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0 mt-0.5">
+                  <i class="fa-solid fa-couch"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-base">Asoleadoras en Proa & Popa</h4>
+                  <p class="text-xs text-slate-400">Cojinería ergonómica diamante de alta densidad para broncearse y descansar cómodamente.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 pb-4 border-b border-slate-800">
+                <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+                  <i class="fa-solid fa-sliders"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-base">Audio Bluetooth con Subwoofer</h4>
+                  <p class="text-xs text-slate-400">Controla la música de tu grupo desde tu celular con sonido claro y potentes bajos en toda la lancha.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
+                  <i class="fa-solid fa-gauge-high"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-base">Motores Gemelos Mercury</h4>
+                  <p class="text-xs text-slate-400">Potencia, navegación suave y tiempos de traslado rápidos hacia las islas.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <a href="https://wa.me/573006780848?text=Hola,%20quisiera%20ver%20m%C3%A1s%20fotos%20y%20conocer%20la%20tarifa%20de%20la%20Lancha%20Deportiva%2038ft." target="_blank" rel="noopener noreferrer" class="block text-center w-full bg-gradient-to-r from-cyan-600 to-sky-500 hover:from-cyan-500 hover:to-sky-400 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-cyan-500/20 transition-all">
+              Consultar Tarifas de la 38ft
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECCIÓN: DESTINOS Y CIRCUITOS VIP -->
+    <section id="destinos" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase font-bold tracking-widest text-sky-400 bg-sky-500/10 border border-sky-500/20 px-3.5 py-1.5 rounded-full">
+          Rutas Paradisiacas
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mt-4 mb-4">
+          Destinos & Planes Exclusivos
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          Tú eliges el itinerario. Desde el ambiente festivo de Cholón hasta la tranquilidad de los arrecifes de coral en Islas del Rosario.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Destino 1: Islas del Rosario -->
+        <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Islas del Rosario" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#081524] via-transparent to-transparent"></div>
+            <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-cyan-500/80 text-white">
+              Snorkel & Relax
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-white mb-2">Islas del Rosario</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Caño Ratón, Isla Grande y arrecifes de coral. Aguas cristalinas perfectas para nadar, caretear y disfrutar del sol.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-cyan-300">
+              <span>9:00 AM — 4:30 PM</span>
+              <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destino 2: Ensenada de Cholón -->
+        <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Fiesta en Cholon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#081524] via-transparent to-transparent"></div>
+            <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-500/80 text-white">
+              Party Náutico
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-white mb-2">Ensenada de Cholón</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                El epicentro de la fiesta náutica en Cartagena. Cabañas en el mar, gastronomía de mariscos, música y ambiente con otros botes.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-cyan-300">
+              <span>Ambiente & DJs</span>
+              <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destino 3: Agua Azul & Barú -->
+        <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80" alt="Agua Azul y Baru" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#081524] via-transparent to-transparent"></div>
+            <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-500/80 text-white">
+              Playa Blanca
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-white mb-2">Agua Azul & Barú</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Arenas blancas, mar turquesa calmo y gastronomía caribeña servida directamente en la lancha o en exclusivos clubes de playa.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-cyan-300">
+              <span>Almuerzo Típico</span>
+              <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destino 4: Sunset & Paseo Nocturno -->
+        <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=600&q=80" alt="Sunset Bahía Cartagena" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#081524] via-transparent to-transparent"></div>
+            <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-500/80 text-white">
+              Atardecer Romántico
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-white mb-2">Sunset & Noche en Bahía</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Navegación al atardecer frente al skyline iluminado de Bocagrande y el centro histórico con brindis y música lounge.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-cyan-300">
+              <span>5:00 PM — 8:00 PM</span>
+              <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECCIÓN: INCLUSIONES ESTÁNDAR FANTASTIC VIP -->
+    <section id="inclusiones" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      <div class="glass-card rounded-3xl p-8 sm:p-12 border border-cyan-500/30">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-5 space-y-4">
+            <span class="text-xs uppercase font-bold tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full">
+              Todo Incluido en tu Alquiler
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white">
+              Navega con Cero Preocupaciones
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              En <strong class="text-cyan-300">Tours Fantastic VIP</strong> no tienes costos ocultos. Todos nuestros alquileres privados incluyen la tripulación completa, el combustible y las comodidades para tu grupo.
+            </p>
+          </div>
+
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="bg-[#040b14]/60 p-4 rounded-2xl border border-slate-800 flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0">
+                <i class="fa-solid fa-gas-pump"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Combustible Completo</h4>
+                <p class="text-xs text-slate-400">Ruta completa hacia Islas y retorno.</p>
+              </div>
+            </div>
+
+            <div class="bg-[#040b14]/60 p-4 rounded-2xl border border-slate-800 flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
+                <i class="fa-solid fa-user-shield"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Capitán & Marinero</h4>
+                <p class="text-xs text-slate-400">Personal certificado DIMAR a bordo.</p>
+              </div>
+            </div>
+
+            <div class="bg-[#040b14]/60 p-4 rounded-2xl border border-slate-800 flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 shrink-0">
+                <i class="fa-solid fa-cube"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Hielera con Hielos</h4>
+                <p class="text-xs text-slate-400">Mantén tus bebidas 100% frías.</p>
+              </div>
+            </div>
+
+            <div class="bg-[#040b14]/60 p-4 rounded-2xl border border-slate-800 flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 shrink-0">
+                <i class="fa-solid fa-life-ring"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Seguridad y Chalecos</h4>
+                <p class="text-xs text-slate-400">Equipos reglamentarios para todos.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN: COTIZADOR Y PRECALIFICADOR INTERACTIVO -->
+    <section id="cotizador" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
+      
+      <div class="glass-card rounded-3xl p-8 sm:p-12 border border-cyan-400/40 relative overflow-hidden shadow-2xl">
+        <div class="absolute -top-24 -right-24 w-60 h-60 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs uppercase font-bold tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1.5 rounded-full">
+            Cotización Express en 1 Clic
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white mt-3 mb-2">
+            Planifica tu Pasadía Privado
+          </h2>
+          <p class="text-slate-300 text-xs sm:text-sm">
+            Selecciona tu destino y cantidad de personas para generar tu solicitud directa a WhatsApp sin intermediarios ni demoras.
+          </p>
+        </div>
+
+        <form id="bookingForm" onsubmit="handleBooking(event)" class="space-y-6">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            
+            <!-- Destino -->
+            <div class="space-y-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">Destino Principal</label>
+              <select id="quoteDest" class="w-full bg-[#040b14]/90 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                <option value="Islas del Rosario + Cholón + Barú">Islas del Rosario + Cholón + Barú (Completo)</option>
+                <option value="Fiesta Privada en Cholón">Fiesta Exclusiva en Cholón</option>
+                <option value="Tour Islas del Rosario (Snorkel & Relax)">Tour Islas del Rosario (Snorkel & Relax)</option>
+                <option value="Sunset / Atardecer en Bahía Cartagena">Sunset en Bahía de Cartagena</option>
+              </select>
+            </div>
+
+            <!-- Cantidad de Personas -->
+            <div class="space-y-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">Número de Personas</label>
+              <select id="quotePax" class="w-full bg-[#040b14]/90 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                <option value="2 a 6 personas">2 a 6 personas (Pareja / Familia)</option>
+                <option value="7 a 12 personas">7 a 12 personas (Grupo Mediano)</option>
+                <option value="13 a 18 personas">13 a 18 personas (Capacidad Máxima 38ft)</option>
+              </select>
+            </div>
+
+            <!-- Fecha Estimada -->
+            <div class="space-y-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">Fecha Estimada</label>
+              <input type="date" id="quoteDate" class="w-full bg-[#040b14]/90 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+            </div>
+
+            <!-- Tipo de Plan / Ocasión -->
+            <div class="space-y-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">Motivo del Viaje</label>
+              <select id="quotePlan" class="w-full bg-[#040b14]/90 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                <option value="Vacaciones / Relax entre amigos">Vacaciones / Relax entre amigos</option>
+                <option value="Cumpleaños / Celebración Especial">Cumpleaños / Celebración</option>
+                <option value="Despedida de Soltero(a)">Despedida de Soltero(a)</option>
+                <option value="Corporativo / VIP">Evento Corporativo</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Botón de Envío Directo WhatsApp -->
+          <button type="submit" class="w-full bg-[#25D366] hover:bg-[#20ba59] text-white py-4 rounded-xl font-bold text-base shadow-xl shadow-emerald-500/25 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-0.5">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+            <span>Enviar Cotización a Asesor VIP</span>
+          </button>
+
+          <p class="text-center text-[11px] text-slate-400">
+            🔒 Respuesta instantánea en menos de 5 minutos por WhatsApp oficial (+57 300 6780848).
+          </p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER NÁUTICO -->
+    <footer class="mt-auto border-t border-slate-800/80 bg-[#02060c] py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400">
+            <i class="fa-solid fa-ship text-sm"></i>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-white tracking-wide">TOURS CARTAGENA FANTASTIC VIP</span>
+            <p class="text-xs text-slate-400">Muelle Los Pegasos • Bocagrande • Cartagena de Indias</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6 text-xs text-slate-400">
+          <span>RNT & Certificación DIMAR</span>
+          <span>•</span>
+          <a href="https://wa.me/573006780848" class="text-cyan-400 hover:underline">WhatsApp: +57 300 678 0848</a>
+        </div>
+
+        <div class="text-xs text-slate-500">
+          © 2026 Tours Cartagena Fantastic VIP. Todos los derechos reservados.
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE OFICIAL WHATSAPP -->
+    <a href="https://wa.me/573006780848?text=Hola%20Fantastic%20VIP,%20deseo%20informaci%C3%B3n%20y%20precios%20de%20la%20lancha%20deportiva%20de%2038ft." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center text-2xl shadow-2xl pulse-beacon hover:scale-110 transition-transform" title="Contactar por WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+  </div>
+
+  <!-- SCRIPT: CANVAS ABISAL INTERACTIVO & COTIZADOR -->
+  <script>
+    // 1. Manejo del Cotizador hacia WhatsApp
+    function handleBooking(e) {
+      e.preventDefault();
+      const dest = document.getElementById('quoteDest').value;
+      const pax = document.getElementById('quotePax').value;
+      const date = document.getElementById('quoteDate').value || 'Por definir';
+      const plan = document.getElementById('quotePlan').value;
+
+      const msg = `¡Hola Tours Cartagena Fantastic VIP! 🚤\n\nQuisiera cotizar la Lancha Deportiva 38ft con los siguientes datos:\n• Destino: ${dest}\n• Grupo: ${pax}\n• Fecha: ${date}\n• Motivo: ${plan}\n\n¿Tienen disponibilidad y cuál sería el valor del pasadía?`;
+      
+      const url = `https://wa.me/573006780848?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    }
+
+    // 2. Galería Interactiva
+    function changeBoatImage(url) {
+      const img = document.getElementById('mainBoatImg');
+      if (img) {
+        img.style.opacity = '0.4';
+        setTimeout(() => {
+          img.src = url;
+          img.style.opacity = '1';
+        }, 200);
+      }
+    }
+
+    // 3. Canvas Abisal Reactivo con Ondas y Plancton Bioluminiscente
+    const canvas = document.getElementById('marineCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+    let mouse = { x: -1000, y: -1000, radius: 150 };
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    class MarineParticle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.4;
+        this.speedY = (Math.random() - 0.5) * 0.4;
+        this.alpha = Math.random() * 0.6 + 0.2;
+        this.pulse = Math.random() * 0.05;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        // Distorsión reactiva al mouse
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < mouse.radius) {
+          const force = (mouse.radius - dist) / mouse.radius;
+          this.x -= (dx / dist) * force * 3;
+          this.y -= (dy / dist) * force * 3;
+        }
+
+        if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(56, 189, 248, ${this.alpha})`;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = '#38bdf8';
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < 45; i++) {
+      particles.push(new MarineParticle());
+    }
+
+    let waveAngle = 0;
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Fondo abisal con gradiente sutil
+      const bgGradient = ctx.createRadialGradient(width/2, height/2, 100, width/2, height/2, Math.max(width, height));
+      bgGradient.addColorStop(0, '#061322');
+      bgGradient.addColorStop(1, '#02060c');
+      ctx.fillStyle = bgGradient;
+      ctx.fillRect(0, 0, width, height);
+
+      // Ondas marinas tenues
+      waveAngle += 0.01;
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.03)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      for (let x = 0; x < width; x += 15) {
+        const y = height * 0.75 + Math.sin(x * 0.005 + waveAngle) * 25 + Math.cos(x * 0.01 - waveAngle) * 15;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      // Partículas bioluminiscentes
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+
+</body>
+</html>

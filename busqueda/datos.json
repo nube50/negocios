@@ -3800,5 +3800,30 @@
     ],
     "propuesta": "https://lp-botes-quinta-del-mar.vercel.app",
     "priority": "hot"
+  },
+  {
+    "id": "b177",
+    "name": "Tours Cartagena Fantastic VIP (Experiencia Cartagena)",
+    "cat": "Turismo / Renta de Yates y Lanchas",
+    "addr": "Muelle de Los Pegasos / Bocagrande, Cartagena",
+    "phone": "+57 300 6780848",
+    "phoneClean": "573006780848",
+    "webType": "social-only",
+    "webUrl": "https://walink.co/3b475b",
+    "webLabel": "walink.co",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573006780848",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com",
+        "label": "Facebook"
+      }
+    ],
+    "propuesta": "https://lp-tours-cartagena-fantastic-vip.vercel.app",
+    "priority": "hot"
   }
 ]
