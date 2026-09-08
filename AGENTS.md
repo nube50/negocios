@@ -126,7 +126,7 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 - `datos.json` es espejo de DATA para respaldo manual
 - No requiere build steps, ni npm, ni servidor
 
-## Datos actuales: 154 negocios
+## Datos actuales: 157 negocios
 
 | Tipo | Sin web | Solo redes | Con web | Total |
 |------|---------|------------|---------|-------|
@@ -140,21 +140,23 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 | Bares / Pubs / Discotecas | 0 | 0 | 17 | 17 |
 | Veterinarias / Pet Shops | 7 | 0 | 3 | 10 |
 | **Energía Solar / Paneles Solares** | **0** | **10** | **0** | **10** |
-| **Turismo / Renta de Yates y Lanchas** | **1** | **0** | **0** | **1** |
+| **Turismo / Renta de Yates y Lanchas** | **1** | **2** | **0** | **3** |
 | Otros (paellas, lechona, café, etc.) | 0 | 0 | 4 | 4 |
-| **Total** | **34** | **39** | **82** | **155** |
+| **Total** | **34** | **41** | **82** | **157** |
 
-- IDs activos: b1-b25, b30-b34, b36-b41, b50-b168
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b170
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
 - **Nuevos negocios de Energía Solar agregados en sesión 24 (b158-b167): 10 negocios sin sitio web con redes sociales y WhatsApp verificados**
-- **Nuevo negocio de Turismo / Renta de Yates agregado en sesión 27: Cartagena Náutica (b168) con LP desplegada en Vercel**
+- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28 y 29: Cartagena Náutica (b168), Botes y Yates Cartagena (b169) y Cartagena VIP Boats (b170) con LPs desplegadas en Vercel**
 
 ## Archivos del proyecto
 
 - `busqueda/index.html` — herramienta principal de prospección
 - `busqueda/datos.json` — respaldo JSON de los datos
 - `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
+  - `cartagena-vip-boats.html` — Cartagena VIP Boats (Alquiler de Botes VIP y Lancha Firpol 42ft)
+  - `botes-yates-cartagena.html` — Botes y Yates Cartagena (Alquiler de Botes y Yates)
   - `cartagena-nautica.html` — Cartagena Náutica (Alquiler de Botes, Lanchas y Yates)
   - `sun-energy-bogota.html` — Sun Energy Bogotá (Energía Solar Fotovoltaica)
   - `tierra-solar.html` — Tierra Solar Colombia (Energía Solar Fotovoltaica)
@@ -764,6 +766,39 @@ git push origin main
 - **Sincronización del Ecosistema de Prospección**:
   - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
   - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **155 negocios** registrados.
+
+### Sesión 28 (2026-09-08) — Landing Page de Ultra Lujo & Prospección: Botes y Yates Cartagena (b169)
+- **Nuevo Lead Integrado**: **Botes y Yates Cartagena** (`b169`) — Alquiler Privado de Lanchas Deportivas y Yates.
+  - Ubicación: Muelle de Los Pegasos / Bahía de Cartagena, Centro Histórico.
+  - WhatsApp Verificado: `+57 317 0807710` (`573170807710`).
+  - Presencia original: Solo Redes Sociales (`social-only`, Instagram `@botesyates_cartagena`), sin sitio web propio.
+- **Desarrollo de la Landing Page (`landing-pages/botes-yates-cartagena.html`)**:
+  - **Estándar Maestro Náutico Aplicado**:
+    - Video Hero 100% nítido (`opacity: 1 !important; filter: none !important; object-position: center 35%;`) con overlay transparente gradual (`hero-boat.mp4` / Pixabay 1996).
+    - Fondo de grano analógico cinematográfico (`.film-grain-overlay`) + `marineCanvas` interactivo (ondas y plancton bioluminiscente).
+    - Isotipo oficial de marca de WhatsApp (`fa-brands fa-whatsapp`) en botón flotante con efecto pulso (`#25D366`), navbar, cotizador y footer.
+  - **Componentes 21st.dev**:
+    - **Fleet Showcase**: Lanchas deportivas de 28ft (Sport Edition), 32ft (Open Luxury) y 34ft (Premium Party) con motores gemelos, sonido Bluetooth y baño.
+    - **Destinations Interactive Tabs**: Islas del Rosario, Ensenada de Cholón, Barú / Agua Azul y Sunset Bahía de Cartagena.
+    - **Interactive Quote Calculator**: Cotizador express que calcula el estimado por grupo y por persona en COP y envía el brief estructurado a WhatsApp (+57 317 0807710).
+    - **Social Proof & Conexión Instagram**: Enlace y galería destacada hacia `@botesyates_cartagena`.
+### Sesión 29 (2026-09-08) — Landing Page de Ultra Lujo & Prospección: Cartagena VIP Boats (b170)
+- **Nuevo Lead Integrado**: **Cartagena VIP Boats** (`b170`) — Alquiler de Botes VIP, Lanchas Deportivas y Yate Privado.
+  - Ubicación: Urb. Los Corales Mz F Lote 1 / Zarpe en Muelle de Los Pegasos & Marina Manga, Cartagena.
+  - WhatsApp Verificado: `+57 301 7701662` (`573017701662`).
+  - Presencia original: Solo Redes Sociales (`social-only`, Facebook `facebook.com/cartagenavipboats/`), sin página web oficial.
+- **Desarrollo de la Landing Page (`landing-pages/cartagena-vip-boats.html`)**:
+  - **Estándar Maestro Náutico de Ultra Lujo Aplicado**:
+    - Video Hero 100% nítido (`hero-boat.mp4` / Pixabay 1996) sin opacidad (`opacity: 1 !important; filter: none !important; object-position: center 35%;`).
+    - Grano analógico cinematográfico SVG (`.film-grain-overlay`) + `marineCanvas` interactivo con ondas de mar abisal y partículas doradas bioluminiscentes.
+    - Botón flotante de WhatsApp oficial Font Awesome (`fa-brands fa-whatsapp`) en verde `#25D366` con efecto pulse beacon.
+    - **Fleet Showcase VIP**: Destacada como embarcación insignia la **Lancha Firpol 42ft VIP** (hasta 20 pasajeros, doble motor 300HP, baño privado en cabina, asoleadoras acolchadas y sonido JL Audio), junto a Lancha 36ft Diamond y Lancha 30ft Express.
+    - **Destinos & Rutas VIP**: Islas del Rosario & Corales, Fiesta en Cholón, Barú / Playa Blanca y Sunset Cruise Bahía de Cartagena.
+    - **Interactive Booking Form**: Cotizador express dinámico con salida automatizada al WhatsApp (+57 301 7701662).
+- **Despliegue en Producción Vercel**: **`https://lp-cartagena-vip-boats.vercel.app`** (verificado HTTP 200 OK).
+- **Sincronización del Ecosistema de Prospección**:
+  - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
+  - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **157 negocios** registrados.
 
 ---
 

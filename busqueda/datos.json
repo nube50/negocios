@@ -3610,5 +3610,55 @@
     ],
     "propuesta": "https://lp-cartagena-nautica.vercel.app",
     "priority": "hot"
+  },
+  {
+    "id": "b169",
+    "name": "Botes y Yates Cartagena",
+    "cat": "Turismo / Renta de Yates y Lanchas",
+    "addr": "Muelle de Los Pegasos / Bahía de Cartagena, Centro Histórico",
+    "phone": "+57 317 0807710",
+    "phoneClean": "573170807710",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/botesyates_cartagena",
+        "label": "Instagram"
+      },
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573170807710",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-botes-yates-cartagena.vercel.app",
+    "priority": "hot"
+  },
+  {
+    "id": "b170",
+    "name": "Cartagena VIP Boats",
+    "cat": "Turismo / Renta de Yates y Lanchas",
+    "addr": "Urb. Los Corales Mz F Lote 1 / Muelle Los Pegasos & Marina Manga, Cartagena",
+    "phone": "+57 301 7701662",
+    "phoneClean": "573017701662",
+    "webType": "social-only",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/cartagenavipboats/",
+        "label": "Facebook"
+      },
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573017701662",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-cartagena-vip-boats.vercel.app",
+    "priority": "hot"
   }
 ]
