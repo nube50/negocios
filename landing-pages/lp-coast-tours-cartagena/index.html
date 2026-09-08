@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Coast Tours Cartagena — Pasadías en Bote y Tours en Cartagena | Reserva en 1 Clic</title>
+  <meta name="description" content="Alquiler de botes deportivos y tours privados en Cartagena. Salidas desde Muelle La Bodeguita a Islas del Rosario, Cholón, Barú, Bora Bora y Tour de Plancton Luminoso.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Coast Tours Cartagena — Pasadías en Bote y Tours en las Islas">
+  <meta property="og:description" content="Reserva fácil en 1 clic. Botes deportivos de 29 a 33 pies, Cholón, Islas del Rosario y Tour Plancton Luminoso con WhatsApp directo.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=85">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌊</text></svg>">
+
+  <!-- Font Awesome 6.5.1 Oficial (WhatsApp & Redes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, Inter, Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            ocean: {
+              abyssal: '#050D18',
+              navyDeep: '#0A1A2F',
+              navy: '#102A45',
+              cyan: '#00C7C7',
+              cyanDeep: '#00A8BA',
+              cyanGlow: 'rgba(0, 199, 199, 0.4)',
+              amber: '#FF9E00',
+              gold: '#F59E0B',
+              canvas: '#F8FAFC',
+              borderDark: 'rgba(0, 199, 199, 0.15)',
+              card: 'rgba(10, 26, 47, 0.8)'
+            }
+          },
+          fontFamily: {
+            display: ['"Outfit"', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+            mono: ['"Space Mono"', '"JetBrains Mono"', 'monospace']
+          },
+          animation: {
+            'wave-pulse': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float-boat': 'floatBoat 5s ease-in-out infinite'
+          },
+          keyframes: {
+            floatBoat: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-8px) rotate(0.5deg)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* Estilos Náuticos S2 */
+    :root {
+      --color-abyssal: #050D18;
+      --color-navy-deep: #0A1A2F;
+      --color-cyan: #00C7C7;
+      --color-amber: #FF9E00;
+      --color-gold: #F59E0B;
+    }
+
+    body {
+      background-color: var(--color-abyssal);
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .font-mono {
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* Glass Cards Náuticas (21st.dev inspired) */
+    .glass-nautical {
+      background: rgba(10, 26, 47, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 199, 199, 0.18);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .glass-nautical-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-nautical-hover:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 199, 199, 0.45);
+      box-shadow: 0 25px 60px rgba(0, 199, 199, 0.15), 0 0 30px rgba(0, 199, 199, 0.1);
+    }
+
+    .glass-nav {
+      background: rgba(5, 13, 24, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Glowing Text & Gradients */
+    .gradient-text-cyan {
+      background: linear-gradient(135deg, #FFFFFF 20%, #00C7C7 80%, #00A8BA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-amber {
+      background: linear-gradient(135deg, #FFFFFF 20%, #FF9E00 80%, #D97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-glow-cyan {
+      text-shadow: 0 0 20px rgba(0, 199, 199, 0.55);
+    }
+
+    .text-glow-amber {
+      text-shadow: 0 0 20px rgba(255, 158, 0, 0.45);
+    }
+
+    /* Botón Primario Turquesa */
+    .btn-nautical-primary {
+      background: linear-gradient(135deg, #00C7C7 0%, #00A8BA 100%);
+      color: #050D18;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0, 199, 199, 0.35);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-nautical-primary:hover {
+      box-shadow: 0 8px 30px rgba(0, 199, 199, 0.6);
+      transform: scale(1.02);
+    }
+
+    /* Botón Secundario Ámbar */
+    .btn-nautical-amber {
+      background: linear-gradient(135deg, #FF9E00 0%, #E68A00 100%);
+      color: #050D18;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(255, 158, 0, 0.35);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-nautical-amber:hover {
+      box-shadow: 0 8px 30px rgba(255, 158, 0, 0.6);
+      transform: scale(1.02);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050D18;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #102A45;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 199, 199, 0.2);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00A8BA;
+    }
+  
+    /* Grano Analógico Sutil */
+    .film-grain-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.025;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    #marineCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Hero Video Wrap sin reducción de opacidad (100% nítido) */
+    .hero-video-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      opacity: 1 !important;
+      filter: none !important;
+    }
+
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6, 14, 26, 0.15) 0%, transparent 40%, rgba(5, 13, 24, 0.4) 70%, #050D18 100%);
+      pointer-events: none;
+    }
+
+    .hero-title-shadow {
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.85);
+    }
+  </style>
+</head>
+
+<body class="bg-ocean-abyssal text-ocean-canvas antialiased selection:bg-ocean-cyan selection:text-ocean-abyssal">
+
+  <!-- Grano Analógico Sutil & Marine Canvas -->
+  <div class="film-grain-overlay"></div>
+  <canvas id="marineCanvas"></canvas>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-ocean-cyan to-ocean-navy flex items-center justify-center text-ocean-abyssal shadow-lg shadow-ocean-cyan/20 group-hover:scale-105 transition-transform border border-ocean-cyan/30">
+          <i data-lucide="waves" class="w-5 h-5 text-white"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg md:text-xl font-extrabold font-display tracking-tight text-white group-hover:text-ocean-cyan transition-colors">
+            COAST TOURS <span class="gradient-text-cyan">CARTAGENA</span>
+          </span>
+          <span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">Muelle La Bodeguita • Bocagrande</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#experiencias" class="hover:text-ocean-cyan transition-colors flex items-center gap-1.5">
+          <span>Tours & Experiencias</span>
+        </a>
+        <a href="#flota" class="hover:text-ocean-cyan transition-colors flex items-center gap-1.5">
+          <span>Botes Deportivos</span>
+        </a>
+        <a href="#incluye" class="hover:text-ocean-cyan transition-colors flex items-center gap-1.5">
+          <span>Qué Incluye</span>
+        </a>
+        <a href="#cotizador" class="hover:text-ocean-amber transition-colors flex items-center gap-1.5">
+          <span class="text-ocean-amber font-mono text-xs">⚡</span> Cotizador Online
+        </a>
+        <a href="#zarpe" class="hover:text-ocean-cyan transition-colors flex items-center gap-1.5">
+          <span>Muelle La Bodeguita</span>
+        </a>
+      </nav>
+
+      <!-- Right Action & WhatsApp Button -->
+      <div class="flex items-center gap-4">
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full border border-ocean-cyan/30 bg-ocean-navyDeep/80 text-xs font-mono text-ocean-cyan">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Salidas Diarias Activas</span>
+        </div>
+
+        <a href="https://wa.me/573148166599?text=Hola%20Coast%20Tours%20Cartagena,%20deseo%20reservar%20un%20tour%20privado%20en%20bote" target="_blank" class="btn-nautical-primary px-5 py-2.5 rounded-xl text-xs md:text-sm flex items-center gap-2 font-display tracking-wide uppercase">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>Reservar en 1 Clic</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle" class="md:hidden p-2 text-slate-300 hover:text-ocean-cyan" aria-label="Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden glass-nautical border-t border-ocean-borderDark px-6 py-6 space-y-4">
+      <a href="#experiencias" class="block text-slate-200 hover:text-ocean-cyan text-base font-medium mobile-link">Tours: Cholón, Rosario & Plancton</a>
+      <a href="#flota" class="block text-slate-200 hover:text-ocean-cyan text-base font-medium mobile-link">Botes Deportivos (29ft a 33ft)</a>
+      <a href="#incluye" class="block text-slate-200 hover:text-ocean-cyan text-base font-medium mobile-link">Servicios & Todo Incluido</a>
+      <a href="#cotizador" class="block text-ocean-amber hover:text-ocean-gold text-base font-medium mobile-link">Cotizador Dinámico Express</a>
+      <a href="#zarpe" class="block text-slate-200 hover:text-ocean-cyan text-base font-medium mobile-link">Muelle La Bodeguita</a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden z-10">
+    
+    <!-- Hero Video Loop Background (100% Nitidez & Estándar Náutico) -->
+    <div class="hero-video-wrap">
+      <video id="heroBgVideo" autoplay muted loop playsinline preload="auto" poster="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_tiny.jpg">
+        <source src="hero-boat.mp4" type="video/mp4">
+        <source src="https://cdn.pixabay.com/video/2016/01/29/1996-153555261_large.mp4" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/5368/5368-720.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+      
+      <!-- Review / Linktree Upgrade Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-nautical border-ocean-cyan/30 text-xs md:text-sm font-mono text-ocean-cyan mb-8 shadow-xl">
+        <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i>
+        <span class="text-white font-bold">Experiencias Náuticas & Tours Privados</span>
+        <span class="text-slate-400">• Cartagena de Indias</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] font-display max-w-5xl mx-auto hero-title-shadow">
+        Pasadías en Bote y Tours en Cartagena — <span class="gradient-text-cyan text-glow-cyan">Reserva Fácil en 1 Clic</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mt-6 text-lg sm:text-xl text-slate-100 font-normal leading-relaxed max-w-3xl mx-auto font-body hero-title-shadow">
+        Explora las <strong>Islas del Rosario, la fiesta en Cholón, Barú y el mágico Tour Nocturno de Plancton Luminoso</strong> en botes deportivos con zarpe diario desde el Muelle de La Bodeguita.
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#cotizador" class="w-full sm:w-auto btn-nautical-amber px-8 py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-3 font-display uppercase tracking-wider shadow-lg">
+          <i data-lucide="calculator" class="w-5 h-5"></i>
+          <span>Cotizar mi Tour en Vivo</span>
+        </a>
+
+        <a href="#experiencias" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-nautical border-slate-700 hover:border-ocean-cyan text-slate-200 hover:text-ocean-cyan text-sm font-semibold flex items-center justify-center gap-3 transition-all font-display">
+          <i data-lucide="compass" class="w-5 h-5 text-ocean-cyan"></i>
+          <span>Ver Tours & Plancton</span>
+        </a>
+      </div>
+
+      <!-- Quick Telemetry Specs Bar -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto font-mono text-xs border-t border-ocean-borderDark pt-8">
+        <div class="p-3.5 rounded-xl bg-ocean-navyDeep/60 border border-ocean-cyan/20 backdrop-blur-md">
+          <div class="text-ocean-cyan font-bold text-base font-display">100% Privado</div>
+          <div class="text-slate-300 text-[11px] mt-0.5">Bote exclusivo para tu grupo</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-ocean-navyDeep/60 border border-ocean-cyan/20 backdrop-blur-md">
+          <div class="text-ocean-amber font-bold text-base font-display">Plancton Luminoso</div>
+          <div class="text-slate-300 text-[11px] mt-0.5">Tour nocturno bioluminiscente</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-ocean-navyDeep/60 border border-ocean-cyan/20 backdrop-blur-md">
+          <div class="text-emerald-400 font-bold text-base font-display">Capitán & Marinero</div>
+          <div class="text-slate-300 text-[11px] mt-0.5">Tripulación DIMAR a bordo</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-ocean-navyDeep/60 border border-ocean-cyan/20 backdrop-blur-md">
+          <div class="text-white font-bold text-base font-display">Sonido & Hielo Full</div>
+          <div class="text-slate-300 text-[11px] mt-0.5">Bluetooth JL Audio + Nevera</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCES GRID (TOURS PRINCIPALES & PLANCTON) ==================== -->
+  <section id="experiencias" class="py-28 relative z-10 bg-ocean-navyDeep/40 border-y border-ocean-borderDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ocean-navy border border-ocean-cyan/30 text-xs font-mono text-ocean-cyan">
+          <i data-lucide="sun" class="w-3.5 h-3.5"></i>
+          <span>Experiencias Destacadas</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Tours & Pasadías <span class="gradient-text-cyan text-glow-cyan">en Cartagena</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg font-light font-body">
+          Elige entre el ambiente festivo de Cholón, el snorkel en arrecifes de coral o la magia única del mar brillante en la noche.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Tour 1: Cholón Party -->
+        <div class="glass-nautical glass-nautical-hover rounded-3xl overflow-hidden border-ocean-borderDark flex flex-col group">
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=85" alt="Tour Cholón Barú" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-ocean-abyssal via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-ocean-abyssal/80 backdrop-blur-md border border-ocean-amber/40 text-xs font-mono text-ocean-amber font-bold">
+                🎉 FIESTA & RUMBA
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-500/40 text-xs font-mono text-emerald-400 font-bold">
+                DIURNO
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+            <div>
+              <h3 class="text-2xl font-bold font-display text-white mb-2">Tour & Fiesta en Cholón</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                La fiesta náutica más famosa del Caribe. Cabañas dentro del agua, música crossover, comida costeña y el mejor ambiente de yates y botes.
+              </p>
+              
+              <div class="space-y-2.5 font-mono text-xs text-slate-200 border-t border-white/10 pt-4">
+                <div class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-ocean-amber"></i> Horario: 8:30 AM a 4:30 PM</div>
+                <div class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-ocean-amber"></i> Ensenada de Cholón, Isla de Barú</div>
+                <div class="flex items-center gap-2"><i data-lucide="music" class="w-4 h-4 text-ocean-amber"></i> Sonido Pro Bluetooth JL Audio</div>
+                <div class="flex items-center gap-2"><i data-lucide="wine" class="w-4 h-4 text-ocean-amber"></i> Nevera marina con hielo incluido</div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-mono text-slate-400 uppercase">Tarifa Bote Privado</div>
+                <div class="text-xl font-extrabold font-display text-white">Desde $1.400.000 <span class="text-xs font-normal text-slate-400">COP</span></div>
+              </div>
+              <button onclick="selectTour('cholon')" class="btn-nautical-amber px-4 py-2.5 rounded-xl text-xs font-bold font-display uppercase tracking-wider flex items-center gap-1.5">
+                <span>Elegir</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tour 2: Snorkel Islas del Rosario + Bora Bora (MÁS SOLICITADO) -->
+        <div class="glass-nautical glass-nautical-hover rounded-3xl overflow-hidden border-ocean-cyan/50 flex flex-col group relative bg-gradient-to-b from-ocean-navy/80 to-ocean-abyssal">
+          <div class="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 z-20">
+            <span class="px-4 py-1 rounded-full bg-ocean-cyan text-ocean-abyssal font-display text-[11px] font-black uppercase tracking-wider shadow-lg">
+              ★ MÁS SOLICITADO
+            </span>
+          </div>
+
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=85" alt="Snorkel Islas del Rosario" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-ocean-abyssal via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-ocean-abyssal/80 backdrop-blur-md border border-ocean-cyan/30 text-xs font-mono text-ocean-cyan font-bold">
+                🐠 AGUAS CRISTALINAS
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-500/40 text-xs font-mono text-emerald-400 font-bold">
+                FAMILIAR / GRUPOS
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+            <div>
+              <h3 class="text-2xl font-bold font-display text-white mb-2">Snorkel Islas del Rosario & Bora Bora</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Circuito paradisiaco por Isla Grande, piscinas naturales, avistamiento del arrecife de coral, Oceanario y fondeo en beach clubs exclusivos.
+              </p>
+              
+              <div class="space-y-2.5 font-mono text-xs text-slate-200 border-t border-white/10 pt-4">
+                <div class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-ocean-cyan"></i> Horario: 8:30 AM a 4:30 PM</div>
+                <div class="flex items-center gap-2"><i data-lucide="compass" class="w-4 h-4 text-ocean-cyan"></i> Snorkel en avioneta sumergida & corales</div>
+                <div class="flex items-center gap-2"><i data-lucide="palmtree" class="w-4 h-4 text-ocean-cyan"></i> Parada en Bora Bora / Agua Azul</div>
+                <div class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-ocean-cyan"></i> Chalecos y caretas de snorkel</div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-mono text-slate-400 uppercase">Tarifa Bote Privado</div>
+                <div class="text-xl font-extrabold font-display text-ocean-cyan">Desde $1.500.000 <span class="text-xs font-normal text-slate-400">COP</span></div>
+              </div>
+              <button onclick="selectTour('rosario')" class="btn-nautical-primary px-4 py-2.5 rounded-xl text-xs font-bold font-display uppercase tracking-wider flex items-center gap-1.5">
+                <span>Elegir</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tour 3: Plancton Luminoso (NOCTURNO EXCLUSIVO) -->
+        <div class="glass-nautical glass-nautical-hover rounded-3xl overflow-hidden border-purple-500/40 flex flex-col group relative bg-gradient-to-b from-purple-950/40 to-ocean-abyssal">
+          <div class="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 z-20">
+            <span class="px-4 py-1 rounded-full bg-purple-600 text-white font-display text-[11px] font-extrabold uppercase tracking-wider shadow-lg flex items-center gap-1">
+              <i data-lucide="sparkles" class="w-3 h-3"></i> TOUR NOCTURNO
+            </span>
+          </div>
+
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=800&q=85" alt="Tour Plancton Luminoso Cartagena" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-ocean-abyssal via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-purple-900/80 backdrop-blur-md border border-purple-400/40 text-xs font-mono text-purple-300 font-bold">
+                ✨ BIOLUMINISCENCIA
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 rounded-full bg-purple-500/20 backdrop-blur-md border border-purple-500/40 text-xs font-mono text-purple-200 font-bold">
+                BAÑO NOCTURNO
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+            <div>
+              <h3 class="text-2xl font-bold font-display text-white mb-2">Tour Plancton Luminoso</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Una experiencia mágica bajo las estrellas. Navegación nocturna hacia la Laguna de Portonaito en Barú para nadar entre microorganismos brillantes.
+              </p>
+              
+              <div class="space-y-2.5 font-mono text-xs text-slate-200 border-t border-white/10 pt-4">
+                <div class="flex items-center gap-2"><i data-lucide="moon" class="w-4 h-4 text-purple-300"></i> Horario: 5:00 PM a 8:30 PM (Sunset + Noche)</div>
+                <div class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-purple-300"></i> Baño nocturno en aguas bioluminiscentes</div>
+                <div class="flex items-center gap-2"><i data-lucide="eye" class="w-4 h-4 text-purple-300"></i> Charla explicativa & guía profesional</div>
+                <div class="flex items-center gap-2"><i data-lucide="camera" class="w-4 h-4 text-purple-300"></i> Fotos del atardecer caribeño</div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-mono text-slate-400 uppercase">Tarifa Tour Nocturno</div>
+                <div class="text-xl font-extrabold font-display text-purple-300">Desde $950.000 <span class="text-xs font-normal text-slate-400">COP</span></div>
+              </div>
+              <button onclick="selectTour('plancton')" class="btn-nautical-primary px-4 py-2.5 rounded-xl text-xs font-bold font-display uppercase tracking-wider flex items-center gap-1.5">
+                <span>Elegir</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FLOTA DE BOTES DEPORTIVOS (29FT A 33FT) ==================== -->
+  <section id="flota" class="py-28 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ocean-navy border border-ocean-cyan/30 text-xs font-mono text-ocean-cyan">
+          <i data-lucide="ship" class="w-3.5 h-3.5"></i>
+          <span>Embarcaciones Rápidas</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Nuestra Flota <span class="gradient-text-cyan text-glow-cyan">de Botes Deportivos</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg font-light font-body">
+          Botes rápidos y seguros con consola central, asoleadoras acolchadas, toldos de sombra y motores fuera de borda gemelos.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Bote 1: 29ft Sport -->
+        <div class="glass-nautical glass-nautical-hover rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 border-ocean-borderDark">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-ocean-navy text-ocean-cyan text-xs font-mono font-bold border border-ocean-cyan/30">29 PIES</span>
+              <span class="text-xs font-mono text-slate-300">8 - 10 Pasajeros</span>
+            </div>
+            <h3 class="text-2xl font-bold font-display text-white mb-2">Bote 29ft Sport</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+              Diseño ágil y rápido. Perfecto para parejas, familias y grupos pequeños que buscan llegar rápido a las islas.
+            </p>
+            <div class="space-y-2 font-mono text-xs text-slate-300 border-t border-white/10 pt-4">
+              <div>• Motores: 2x 140HP Fuera de borda</div>
+              <div>• Sonido Bluetooth JL Audio</div>
+              <div>• Asoleadora acolchada en proa</div>
+              <div>• Nevera marina con hielo</div>
+            </div>
+          </div>
+          <button onclick="selectBoat('29ft')" class="w-full btn-nautical-primary py-3 rounded-xl text-xs font-bold font-display uppercase tracking-wider">
+            Cotizar Bote 29ft
+          </button>
+        </div>
+
+        <!-- Bote 2: 31ft Open Cruiser (Featured) -->
+        <div class="glass-nautical glass-nautical-hover rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 border-ocean-cyan/50 bg-gradient-to-b from-ocean-navy/80 to-ocean-abyssal relative">
+          <div class="absolute -top-3 right-8">
+            <span class="px-3 py-1 rounded-full bg-ocean-amber text-ocean-abyssal text-[10px] font-extrabold uppercase font-display shadow-md">RECOMENDADO</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-ocean-cyan/20 text-ocean-cyan text-xs font-mono font-bold border border-ocean-cyan/40">31 PIES</span>
+              <span class="text-xs font-mono text-emerald-400 font-bold">10 - 14 Pasajeros</span>
+            </div>
+            <h3 class="text-2xl font-bold font-display text-white mb-2">Bote 31ft Open Cruiser</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+              El favorito de nuestros clientes. Incluye baño privado en consola, sala semicircular en popa y asoleadora tipo cama.
+            </p>
+            <div class="space-y-2 font-mono text-xs text-slate-200 border-t border-white/10 pt-4">
+              <div>• Motores: 2x 200HP Fuera de borda</div>
+              <div>• Baño en consola central</div>
+              <div>• Ducha de agua dulce</div>
+              <div>• Toldo T-Top de sombra extendida</div>
+            </div>
+          </div>
+          <button onclick="selectBoat('31ft')" class="w-full btn-nautical-amber py-3 rounded-xl text-xs font-bold font-display uppercase tracking-wider shadow-lg">
+            Cotizar Bote 31ft
+          </button>
+        </div>
+
+        <!-- Bote 3: 33ft Party Max -->
+        <div class="glass-nautical glass-nautical-hover rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 border-ocean-borderDark">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-ocean-navy text-purple-300 text-xs font-mono font-bold border border-purple-400/30">33 PIES</span>
+              <span class="text-xs font-mono text-slate-300">14 - 16 Pasajeros</span>
+            </div>
+            <h3 class="text-2xl font-bold font-display text-white mb-2">Bote 33ft Party Max</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+              Máxima capacidad y potencia. Equipado con sonido de alta fidelidad para celebraciones de cumpleaños y despedidas.
+            </p>
+            <div class="space-y-2 font-mono text-xs text-slate-300 border-t border-white/10 pt-4">
+              <div>• Motores: 2x 250HP Fuera de borda</div>
+              <div>• Sonido Pro 8 parlantes + Subwoofer</div>
+              <div>• Baño de lujo & Ducha marina</div>
+              <div>• Asoleadoras en proa y popa</div>
+            </div>
+          </div>
+          <button onclick="selectBoat('33ft')" class="w-full btn-nautical-primary py-3 rounded-xl text-xs font-bold font-display uppercase tracking-wider">
+            Cotizar Bote 33ft
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== QUÉ INCLUYE (BENTO GRID ALL-INCLUSIVE) ==================== -->
+  <section id="incluye" class="py-28 relative z-10 bg-ocean-navyDeep/30 border-t border-ocean-borderDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ocean-cyan/10 border border-ocean-cyan/30 text-xs font-mono text-ocean-cyan">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          <span>Todo Incluido & Sin Sorpresas</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white">
+          Todo lo que Incluye tu <span class="gradient-text-cyan text-glow-cyan">Pasadía en Bote</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg font-light font-body">
+          Transparencia absoluta desde el primer mensaje: tripulación certificada, combustible y seguridad marítima garantizada.
+        </p>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        
+        <!-- Bento 1: Capitán y Ayudante -->
+        <div class="glass-nautical p-8 rounded-3xl md:col-span-2 flex flex-col justify-between space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-ocean-cyan/20 border border-ocean-cyan/40 flex items-center justify-center text-ocean-cyan">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold font-display text-white mb-2">Capitán Certificado & Ayudante a Bordo</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Tripulación con licencia oficial DIMAR y años de experiencia navegando el archipiélago. El ayudante asiste en el servicio de bebidas, desembarque en islas y seguridad.
+            </p>
+          </div>
+          <div class="flex items-center gap-3 text-xs font-mono text-ocean-cyan">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>Licencias DIMAR Vigentes • Asistencia en todo el viaje</span>
+          </div>
+        </div>
+
+        <!-- Bento 2: Combustible Full -->
+        <div class="glass-nautical p-8 rounded-3xl flex flex-col justify-between space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+            <i data-lucide="fuel" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Combustible de Ruta</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Gasolina 100% cubierta para todo el itinerario acordado entre islas, Cholón y retorno.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-emerald-400">Cero cobros adicionales</div>
+        </div>
+
+        <!-- Bento 3: Sonido Bluetooth -->
+        <div class="glass-nautical p-8 rounded-3xl flex flex-col justify-between space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-ocean-amber/20 border border-ocean-amber/40 flex items-center justify-center text-ocean-amber">
+            <i data-lucide="music" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Sonido Marino Bluetooth</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Conecta tu teléfono y pon tu playlist favorita con sonido marino potente y nítido.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-ocean-amber">Control total de la música</div>
+        </div>
+
+        <!-- Bento 4: Hielera con Hielo -->
+        <div class="glass-nautical p-8 rounded-3xl flex flex-col justify-between space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-300">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Hielera & Hielo</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Nevera marina grande con hielo suficiente para mantener tus bebidas y cervezas bien frías.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-cyan-300">Ingreso libre de bebidas</div>
+        </div>
+
+        <!-- Bento 5: Baño en Consola -->
+        <div class="glass-nautical p-8 rounded-3xl flex flex-col justify-between space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-purple-300">
+            <i data-lucide="bath" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Baño Privado</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Inodoro marino privado en cabina interior para mayor confort de mujeres y niños.
+            </p>
+          </div>
+          <div class="text-xs font-mono text-purple-300">Disponible en botes 31ft & 33ft</div>
+        </div>
+
+        <!-- Bento 6: Seguridad & Pólizas (Col 2) -->
+        <div class="glass-nautical p-8 rounded-3xl md:col-span-2 flex flex-col justify-between space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+            <i data-lucide="shield" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold font-display text-white mb-2">Seguridad Náutica DIMAR & Pólizas</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Chalecos salvavidas reglamentarios para adultos y niños, botiquín de primeros auxilios, extintores y pólizas de navegación vigentes.
+            </p>
+          </div>
+          <div class="flex items-center gap-3 text-xs font-mono text-emerald-400">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>Navegación 100% Segura y Autorizada por Capitanía</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== COTIZADOR EXPRESS INTERACTIVO (DIRECTO A WHATSAPP) ==================== -->
+  <section id="cotizador" class="py-28 relative z-10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-nautical rounded-3xl p-8 sm:p-14 border-ocean-cyan/40 relative overflow-hidden shadow-2xl">
+        <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-ocean-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-24 -top-24 w-96 h-96 bg-ocean-amber/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ocean-cyan/20 border border-ocean-cyan/40 text-xs font-mono text-ocean-cyan">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            <span>Cotizador Express Online</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+            Calcula tu <span class="gradient-text-cyan text-glow-cyan">Pasadía o Tour</span> en Segundos
+          </h2>
+          <p class="text-slate-300 text-xs sm:text-sm font-light">
+            Olvídate de preguntar a ciegas por WhatsApp. Selecciona tu plan y obtén el valor estimado de inmediato.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          
+          <!-- Controles del Formulario -->
+          <div class="space-y-5">
+            
+            <!-- Selector de Tour / Experiencia -->
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">1. Selecciona la Experiencia / Tour</label>
+              <select id="calc-tour" class="w-full bg-ocean-navyDeep border border-ocean-cyan/30 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-ocean-cyan font-body">
+                <option value="Tour Cholón Party + Islas del Rosario (Día Completo)" data-base="1500000" selected>🎉 Tour Cholón Party + Islas del Rosario (Día Completo)</option>
+                <option value="Snorkel Islas del Rosario + Bora Bora Beach" data-base="1600000">🐠 Snorkel Islas del Rosario + Bora Bora Beach</option>
+                <option value="Tour Nocturno Plancton Luminoso (Atardecer + Noche)" data-base="950000">✨ Tour Nocturno Plancton Luminoso (Atardecer + Noche)</option>
+                <option value="Sunset Cruise Bahía de Cartagena (2 Horas)" data-base="800000">🌅 Sunset Cruise Bahía de Cartagena (2 Horas)</option>
+              </select>
+            </div>
+
+            <!-- Selector de Bote -->
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">2. Tamaño de Bote Recomendado</label>
+              <select id="calc-boat" class="w-full bg-ocean-navyDeep border border-ocean-cyan/30 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-ocean-cyan font-body">
+                <option value="31ft" data-add="200000" data-max="14" selected>⭐ Bote 31ft Open Cruiser (Hasta 14 Pax) — Con Baño</option>
+                <option value="29ft" data-add="0" data-max="10">⚡ Bote 29ft Sport (Hasta 10 Pax)</option>
+                <option value="33ft" data-add="450000" data-max="16">👑 Bote 33ft Party Max (Hasta 16 Pax) — Sonido Pro</option>
+              </select>
+            </div>
+
+            <!-- Pasajeros & Fecha -->
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">3. Personas</label>
+                <input type="number" id="calc-pax" min="1" max="16" value="8" class="w-full bg-ocean-navyDeep border border-ocean-cyan/30 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-ocean-cyan font-mono">
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">4. Fecha</label>
+                <input type="date" id="calc-date" class="w-full bg-ocean-navyDeep border border-ocean-cyan/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-ocean-cyan font-mono">
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Resumen y Output Cotizador -->
+          <div class="bg-ocean-navyDeep/90 rounded-2xl p-6 sm:p-8 border border-ocean-cyan/40 flex flex-col justify-between space-y-6 shadow-xl">
+            
+            <div class="space-y-4">
+              <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                <span class="text-xs font-mono text-slate-400 uppercase">Resumen Estimado</span>
+                <span class="text-xs font-mono text-ocean-cyan font-bold">100% Privado</span>
+              </div>
+
+              <div class="space-y-2 font-mono text-xs text-slate-300">
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Tour:</span>
+                  <span id="summary-tour" class="text-white text-right max-w-[190px] truncate">Cholón + Rosario</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Embarcación:</span>
+                  <span id="summary-boat" class="text-white font-bold">Bote 31ft Open Cruiser</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Grupo:</span>
+                  <span id="summary-pax" class="text-emerald-400 font-bold">8 personas</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Zarpe:</span>
+                  <span class="text-white">Muelle La Bodeguita</span>
+                </div>
+              </div>
+
+              <div class="border-t border-white/10 pt-4 text-center">
+                <div class="text-[11px] font-mono text-slate-400 uppercase">Tarifa Total Estimada</div>
+                <div id="summary-total" class="text-3xl sm:text-4xl font-black font-display gradient-text-cyan my-1">
+                  $1.700.000 <span class="text-sm font-normal text-slate-400 font-mono">COP</span>
+                </div>
+                <div id="summary-perpax" class="text-xs font-mono text-ocean-cyan">
+                  Aprox. $212.500 COP por persona
+                </div>
+              </div>
+            </div>
+
+            <!-- Botón Disparador WhatsApp con Icono Oficial -->
+            <a id="btn-calc-whatsapp" href="#" target="_blank" class="w-full btn-nautical-amber py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2.5 font-display uppercase tracking-wider shadow-xl hover:scale-[1.02] transition-transform">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span>Apartar mi Tour por WhatsApp</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== MUELLE DE ZARPE & UBICACIÓN ==================== -->
+  <section id="zarpe" class="py-24 relative z-10 bg-ocean-navyDeep/40 border-t border-ocean-borderDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ocean-cyan/10 border border-ocean-cyan/30 text-xs font-mono text-ocean-cyan">
+            <i data-lucide="anchor" class="w-3.5 h-3.5"></i>
+            <span>Zarpe Céntrico & Seguro</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+            Punto de Encuentro: <span class="gradient-text-cyan text-glow-cyan">Muelle de La Bodeguita</span>
+          </h2>
+
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Zarpamos directamente desde el muelle turístico principal de Cartagena (Muelle La Bodeguita), a pocos pasos de la Torre del Reloj y el Centro Histórico. Cómodo, vigilado y con fácil acceso en taxi.
+          </p>
+
+          <div class="space-y-3 font-mono text-xs text-slate-200">
+            <div class="p-4 rounded-xl bg-ocean-navyDeep border border-ocean-cyan/20 flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-5 h-5 text-ocean-cyan shrink-0 mt-0.5"></i>
+              <div>
+                <div class="font-bold text-white text-sm">Muelle de La Bodeguita (Puerta 1 a 4)</div>
+                <div class="text-slate-400 text-[11px] mt-0.5">Av. Blas de Lezo, frente al Camellón de los Mártires.</div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-ocean-navyDeep border border-ocean-cyan/20 flex items-start gap-3">
+              <i data-lucide="building" class="w-5 h-5 text-ocean-amber shrink-0 mt-0.5"></i>
+              <div>
+                <div class="font-bold text-white text-sm">Oficina de Atención Bocagrande</div>
+                <div class="text-slate-400 text-[11px] mt-0.5">Cra. 2 #5-2 a 5-134, Bocagrande, Cartagena de Indias.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="https://wa.me/573148166599?text=Hola%20Coast%20Tours%20Cartagena,%20deseo%20confirmar%20la%20puerta%20de%20embarque%20en%20La%20Bodeguita" target="_blank" class="text-ocean-cyan hover:text-white font-mono text-xs flex items-center gap-2 underline underline-offset-4">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>Solicitar ubicación exacta de zarpe por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="glass-nautical rounded-3xl p-4 border-ocean-cyan/30 shadow-2xl relative overflow-hidden">
+            <div class="rounded-2xl overflow-hidden aspect-[16/10] relative">
+              <img src="https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=1200&q=85" alt="Muelle de La Bodeguita y Bahía de Cartagena" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-ocean-abyssal via-transparent to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-ocean-abyssal/90 backdrop-blur-md border border-ocean-cyan/40 flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-mono text-slate-400">Coast Tours Cartagena • Base de Zarpe</div>
+                  <div class="text-sm font-bold font-display text-white">Muelle La Bodeguita, Cartagena de Indias</div>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold border border-emerald-500/40">Zarpe Diario</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-16 relative z-10 border-t border-ocean-borderDark bg-ocean-abyssal text-slate-400 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <div class="space-y-4 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-ocean-cyan to-ocean-navy flex items-center justify-center text-white border border-ocean-cyan/30">
+              <i data-lucide="waves" class="w-4 h-4"></i>
+            </div>
+            <span class="text-base font-bold font-display text-white tracking-tight">
+              COAST TOURS <span class="gradient-text-cyan">CARTAGENA</span>
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs font-body max-w-md leading-relaxed">
+            Agencia náutica especializada en pasadías en bote privado, fiesta en Cholón, tours a Islas del Rosario y la experiencia única de Plancton Luminoso en Cartagena de Indias.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-slate-300 pt-2">
+            <a href="https://tiktok.com/@coasttourscartagena" target="_blank" class="w-9 h-9 rounded-xl bg-ocean-navyDeep flex items-center justify-center hover:text-ocean-cyan hover:border-ocean-cyan/40 border border-white/10 transition-colors" aria-label="TikTok">
+              <i class="fa-brands fa-tiktok text-sm"></i>
+            </a>
+            <a href="https://instagram.com/coasttourscartagena" target="_blank" class="w-9 h-9 rounded-xl bg-ocean-navyDeep flex items-center justify-center hover:text-pink-400 hover:border-pink-500/40 border border-white/10 transition-colors" aria-label="Instagram">
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+            <a href="https://wa.me/573148166599" target="_blank" class="w-9 h-9 rounded-xl bg-ocean-navyDeep flex items-center justify-center hover:text-emerald-400 hover:border-emerald-500/40 border border-white/10 transition-colors" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp text-base"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="text-xs font-bold text-white uppercase tracking-wider">Tours & Experiencias</div>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="#experiencias" class="hover:text-ocean-cyan transition-colors">Tour Cholón Fiesta</a></li>
+            <li><a href="#experiencias" class="hover:text-ocean-cyan transition-colors">Snorkel Islas del Rosario</a></li>
+            <li><a href="#experiencias" class="hover:text-ocean-cyan transition-colors">Tour Plancton Luminoso</a></li>
+            <li><a href="#flota" class="hover:text-ocean-cyan transition-colors">Bote 31ft Open Cruiser</a></li>
+            <li><a href="#flota" class="hover:text-ocean-cyan transition-colors">Bote 29ft Sport</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <div class="text-xs font-bold text-white uppercase tracking-wider">Contacto Directo</div>
+          <div class="space-y-2 text-slate-300">
+            <div><strong>WhatsApp:</strong> +57 314 8166599</div>
+            <div><strong>Tel. Alterno:</strong> +57 324 3197792</div>
+            <div><strong>Zarpe:</strong> Muelle de La Bodeguita, Cartagena</div>
+            <div><strong>Oficina:</strong> Cra. 2 #5-2 a 5-134, Bocagrande</div>
+            <div><strong>Horarios:</strong> Todos los días 7:00 AM - 9:00 PM</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <div>© 2026 Coast Tours Cartagena. Todos los derechos reservados.</div>
+        <div class="flex items-center gap-4">
+          <span>Turismo Náutico Seguro DIMAR</span>
+          <span>•</span>
+          <span>Cartagena de Indias, Colombia</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING WHATSAPP BUTTON (OFICIAL #25D366 & BEACON) ==================== -->
+  <a href="https://wa.me/573148166599?text=Hola%20Coast%20Tours%20Cartagena,%20deseo%20reservar%20un%20tour%20privado%20en%20bote" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group shadow-[0_10px_30px_rgba(37,211,102,0.45)]" aria-label="WhatsApp">
+    <div class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25"></div>
+    <i class="fa-brands fa-whatsapp text-3xl relative z-10"></i>
+    <span class="absolute right-16 px-3.5 py-2 rounded-xl bg-ocean-abyssal text-white text-xs font-mono font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-emerald-500/40 pointer-events-none shadow-2xl flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-[#25D366] animate-pulse"></span>
+      Cotizar Tour por WhatsApp
+    </span>
+  </a>
+
+  <!-- ==================== LOGICA JAVASCRIPT ==================== -->
+  <script>
+    // Inicializar Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    }
+
+    // Helper Selectors desde las Cards
+    function selectTour(tourKey) {
+      const selectTour = document.getElementById('calc-tour');
+      if (selectTour) {
+        if (tourKey === 'cholon') selectTour.selectedIndex = 0;
+        else if (tourKey === 'rosario') selectTour.selectedIndex = 1;
+        else if (tourKey === 'plancton') selectTour.selectedIndex = 2;
+        updateCalculator();
+        const cotizadorSec = document.getElementById('cotizador');
+        if (cotizadorSec) cotizadorSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function selectBoat(boatType) {
+      const selectBoat = document.getElementById('calc-boat');
+      if (selectBoat) {
+        selectBoat.value = boatType;
+        updateCalculator();
+        const cotizadorSec = document.getElementById('cotizador');
+        if (cotizadorSec) cotizadorSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Lógica del Cotizador Dinámico
+    const calcTour = document.getElementById('calc-tour');
+    const calcBoat = document.getElementById('calc-boat');
+    const calcPax = document.getElementById('calc-pax');
+    const calcDate = document.getElementById('calc-date');
+
+    const summaryTour = document.getElementById('summary-tour');
+    const summaryBoat = document.getElementById('summary-boat');
+    const summaryPax = document.getElementById('summary-pax');
+    const summaryTotal = document.getElementById('summary-total');
+    const summaryPerPax = document.getElementById('summary-perpax');
+    const btnCalcWhatsApp = document.getElementById('btn-calc-whatsapp');
+
+    // Fecha de mañana por defecto
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    calcDate.value = tomorrow.toISOString().split('T')[0];
+
+    function updateCalculator() {
+      const tourOpt = calcTour.options[calcTour.selectedIndex];
+      const boatOpt = calcBoat.options[calcBoat.selectedIndex];
+      
+      const basePrice = parseInt(tourOpt.getAttribute('data-base') || '1500000', 10);
+      const addPrice = parseInt(boatOpt.getAttribute('data-add') || '0', 10);
+      const maxPax = parseInt(boatOpt.getAttribute('data-max') || '14', 10);
+      calcPax.max = maxPax;
+
+      let paxVal = parseInt(calcPax.value || '1', 10);
+      if (paxVal > maxPax) {
+        paxVal = maxPax;
+        calcPax.value = maxPax;
+      }
+      if (paxVal < 1) {
+        paxVal = 1;
+        calcPax.value = 1;
+      }
+
+      const totalVal = basePrice + addPrice;
+      const tourVal = calcTour.value.split('(')[0].trim();
+      const boatVal = calcBoat.value === '31ft' ? 'Bote 31ft Open Cruiser' : (calcBoat.value === '29ft' ? 'Bote 29ft Sport' : 'Bote 33ft Party Max');
+      const dateVal = calcDate.value;
+
+      summaryTour.textContent = tourVal;
+      summaryBoat.textContent = boatVal;
+      summaryPax.textContent = `${paxVal} personas`;
+
+      const formattedTotal = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(totalVal);
+      const perPaxValue = Math.round(totalVal / paxVal);
+      const formattedPerPax = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(perPaxValue);
+
+      summaryTotal.innerHTML = `${formattedTotal} <span class="text-sm font-normal text-slate-400 font-mono">COP</span>`;
+      summaryPerPax.textContent = `Aprox. ${formattedPerPax} COP por persona`;
+
+      // Mensaje estructurado para WhatsApp de Coast Tours Cartagena
+      const msg = encodeURIComponent(`Hola Coast Tours Cartagena, deseo reservar un tour en bote:
+• Tour / Experiencia: ${tourVal}
+• Embarcación: ${boatVal}
+• Pasajeros: ${paxVal} personas
+• Fecha: ${dateVal}
+• Tarifa Estimada: ${formattedTotal} COP
+Por favor confirmarme disponibilidad y muelle de zarpe en La Bodeguita.`);
+      
+      btnCalcWhatsApp.href = `https://wa.me/573148166599?text=${msg}`;
+    }
+
+    calcTour.addEventListener('change', updateCalculator);
+    calcBoat.addEventListener('change', updateCalculator);
+    calcPax.addEventListener('input', updateCalculator);
+    calcDate.addEventListener('change', updateCalculator);
+    updateCalculator();
+
+    // Marine Canvas con Brillo Abisal & Plancton Bioluminiscente
+    const canvas = document.getElementById('marineCanvas');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    });
+
+    let mouse = { x: w / 2, y: h / 2 };
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    const particles = [];
+    const particleCount = 65;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        radius: Math.random() * 2 + 1,
+        speedX: (Math.random() - 0.5) * 0.35,
+        speedY: (Math.random() - 0.5) * 0.35,
+        alpha: Math.random() * 0.6 + 0.2
+      });
+    }
+
+    let waveStep = 0;
+
+    function renderMarineCanvas() {
+      ctx.clearRect(0, 0, w, h);
+
+      const bgGrad = ctx.createRadialGradient(
+        mouse.x, mouse.y, 50,
+        w / 2, h / 2, Math.max(w, h) * 0.8
+      );
+      bgGrad.addColorStop(0, 'rgba(0, 199, 199, 0.08)');
+      bgGrad.addColorStop(0.5, 'rgba(10, 26, 47, 0.45)');
+      bgGrad.addColorStop(1, 'rgba(5, 13, 24, 0.95)');
+
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      waveStep += 0.015;
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(0, 199, 199, 0.08)';
+      ctx.lineWidth = 1.5;
+
+      for (let x = 0; x < w; x += 15) {
+        const y = h * 0.35 + Math.sin(x * 0.003 + waveStep) * 25 + Math.cos(x * 0.002 + waveStep * 0.8) * 15;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      for (let p of particles) {
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 199, 199, ${p.alpha})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#00C7C7';
+        ctx.fill();
+      }
+
+      requestAnimationFrame(renderMarineCanvas);
+    }
+    renderMarineCanvas();
+
+    // GSAP ScrollTrigger Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.glass-nautical').forEach((card) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 35,
+        duration: 0.8,
+        ease: 'power2.out'
+      });
+    });
+  </script>
+</body>
+</html>

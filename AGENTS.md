@@ -126,7 +126,7 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 - `datos.json` es espejo de DATA para respaldo manual
 - No requiere build steps, ni npm, ni servidor
 
-## Datos actuales: 157 negocios
+## Datos actuales: 158 negocios
 
 | Tipo | Sin web | Solo redes | Con web | Total |
 |------|---------|------------|---------|-------|
@@ -140,21 +140,22 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 | Bares / Pubs / Discotecas | 0 | 0 | 17 | 17 |
 | Veterinarias / Pet Shops | 7 | 0 | 3 | 10 |
 | **Energía Solar / Paneles Solares** | **0** | **10** | **0** | **10** |
-| **Turismo / Renta de Yates y Lanchas** | **1** | **2** | **0** | **3** |
+| **Turismo / Renta de Yates y Lanchas** | **1** | **3** | **0** | **4** |
 | Otros (paellas, lechona, café, etc.) | 0 | 0 | 4 | 4 |
-| **Total** | **34** | **41** | **82** | **157** |
+| **Total** | **34** | **42** | **82** | **158** |
 
-- IDs activos: b1-b25, b30-b34, b36-b41, b50-b170
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b171
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
 - **Nuevos negocios de Energía Solar agregados en sesión 24 (b158-b167): 10 negocios sin sitio web con redes sociales y WhatsApp verificados**
-- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28 y 29: Cartagena Náutica (b168), Botes y Yates Cartagena (b169) y Cartagena VIP Boats (b170) con LPs desplegadas en Vercel**
+- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27, 28, 29 y 30: Cartagena Náutica (b168), Botes y Yates Cartagena (b169), Cartagena VIP Boats (b170) y Coast Tours Cartagena (b171) con LPs desplegadas en Vercel**
 
 ## Archivos del proyecto
 
 - `busqueda/index.html` — herramienta principal de prospección
 - `busqueda/datos.json` — respaldo JSON de los datos
 - `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
+  - `coast-tours-cartagena.html` — Coast Tours Cartagena (Pasadías en Bote, Cholón & Tour Plancton Luminoso)
   - `cartagena-vip-boats.html` — Cartagena VIP Boats (Alquiler de Botes VIP y Lancha Firpol 42ft)
   - `botes-yates-cartagena.html` — Botes y Yates Cartagena (Alquiler de Botes y Yates)
   - `cartagena-nautica.html` — Cartagena Náutica (Alquiler de Botes, Lanchas y Yates)
@@ -795,10 +796,23 @@ git push origin main
     - **Fleet Showcase VIP**: Destacada como embarcación insignia la **Lancha Firpol 42ft VIP** (hasta 20 pasajeros, doble motor 300HP, baño privado en cabina, asoleadoras acolchadas y sonido JL Audio), junto a Lancha 36ft Diamond y Lancha 30ft Express.
     - **Destinos & Rutas VIP**: Islas del Rosario & Corales, Fiesta en Cholón, Barú / Playa Blanca y Sunset Cruise Bahía de Cartagena.
     - **Interactive Booking Form**: Cotizador express dinámico con salida automatizada al WhatsApp (+57 301 7701662).
-- **Despliegue en Producción Vercel**: **`https://lp-cartagena-vip-boats.vercel.app`** (verificado HTTP 200 OK).
+### Sesión 30 (2026-09-08) — Landing Page de Ultra Lujo & Prospección: Coast Tours Cartagena (b171)
+- **Nuevo Lead Integrado**: **Coast Tours Cartagena** (`b171`) — Pasadías en Bote, Cholón Fiesta & Tour Plancton Luminoso.
+  - Ubicación: Cra. 2 #5-2 a 5-134, Bocagrande / Muelle de La Bodeguita, Cartagena de Indias.
+  - WhatsApp Verificado: `+57 314 8166599` (`573148166599`) | Tel alterno: `+57 324 3197792`.
+  - Presencia original: Solo Redes / Linktree (`social-only`, `linktr.ee/Coasttourscartagena`), sin sitio web propio.
+- **Desarrollo de la Landing Page (`landing-pages/coast-tours-cartagena.html`)**:
+  - **Estándar Maestro Náutico Aplicado**:
+    - Video Hero 100% nítido (`hero-boat.mp4` / Pixabay 1996) sin opacidad (`opacity: 1 !important; filter: none !important; object-position: center 35%;`).
+    - Grano analógico cinematográfico SVG (`.film-grain-overlay`) + `marineCanvas` interactivo con ondas de mar turquesa/abisal y partículas bioluminiscentes.
+    - Botón flotante de WhatsApp oficial Font Awesome (`fa-brands fa-whatsapp`) en verde `#25D366` con efecto pulse beacon.
+    - **Experience Grid**: Destacando Tour Fiesta en Cholón, Snorkel Islas del Rosario + Bora Bora y el exclusivo **Tour Nocturno Plancton Luminoso**.
+    - **Flota Deportiva**: Bote 29ft Sport (10 pax), Bote 31ft Open Cruiser (14 pax con baño) y Bote 33ft Party Max (16 pax con sonido Pro).
+    - **Interactive Booking Form**: Cotizador express dinámico con salida automatizada al WhatsApp (+57 314 8166599).
+- **Despliegue en Producción Vercel**: **`https://lp-coast-tours-cartagena.vercel.app`** (verificado HTTP 200 OK).
 - **Sincronización del Ecosistema de Prospección**:
   - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
-  - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **157 negocios** registrados.
+  - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **158 negocios** registrados.
 
 ---
 

@@ -3660,5 +3660,35 @@
     ],
     "propuesta": "https://lp-cartagena-vip-boats.vercel.app",
     "priority": "hot"
+  },
+  {
+    "id": "b171",
+    "name": "Coast Tours Cartagena",
+    "cat": "Turismo / Renta de Yates y Lanchas",
+    "addr": "Cra. 2 #5-2 a 5-134, Bocagrande / Muelle de La Bodeguita, Cartagena",
+    "phone": "+57 314 8166599",
+    "phoneClean": "573148166599",
+    "webType": "social-only",
+    "webUrl": "https://linktr.ee/Coasttourscartagena",
+    "webLabel": "linktr.ee",
+    "social": [
+      {
+        "platform": "tiktok",
+        "url": "https://tiktok.com/@coasttourscartagena",
+        "label": "TikTok"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/coasttourscartagena",
+        "label": "Instagram"
+      },
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573148166599",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-coast-tours-cartagena.vercel.app",
+    "priority": "hot"
   }
 ]
