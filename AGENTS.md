@@ -167,6 +167,7 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
   - `paola-dimaya.html` — Paola Dimaya Alta Costura
   - `stacia-store.html` — Stacia Store (Luxury Brand, Armenia)
   - `benefit-ropa-tallas-grandes.html` — BeneFit Ropa Tallas Grandes
+- `culturaagentica/` — Landing Page y sitio web oficial de la agencia (**Cultura Agéntica**, en desarrollo activo bajo el **Sistema de Diseño S2**, desplegado en `https://culturaagentica.vercel.app`)
 - `recursos/` — assets/imágenes (vacío, usamos CDN)
 - `opencode.json` — config MCP de Apify
 - `AGENTS.md` — este archivo
@@ -719,6 +720,28 @@ git push origin main
   - `Daily Briefing Matutino (8:30 AM)`: Configurado para entregar exactamente 1 lead caliente por cada una de las 7 categorías (7 prospectos diversificados al día).
   - `auditor-web-prospector`: Habilidad de auditoría técnica instantánea de páginas web obsoletas con generación de pitches demoledores de modernización para WhatsApp.
   - Regla de prioridad: Todos los leads pendientes arrancan estrictamente en **`💤 Tibio`** y solo se promueven a **`🔥 Caliente`** tras recibir respuesta positiva del cliente.
+
+### Sesión 26 (2026-09-08) — Desarrollo y Despliegue Oficial del Sitio Web de la Agencia: Cultura Agéntica (Sistema S2)
+- **Estado Actual**: 🚧 **En Desarrollo Activo / Fase de Iteración & Refinamiento Visual**.
+- **Objetivo**: Crear la Landing Page y plataforma principal de nuestra agencia (**Cultura Agéntica**), la cual es la cara oficial ante el mundo y la propietaria de la suite comercial y de automatización agéntica.
+- **Ubicación & Despliegue**:
+  - Directorio local: `/culturaagentica/` (`index.html`, `vercel.json`, assets multimedia y logos de marca).
+  - Despliegue en producción Vercel: **`https://culturaagentica.vercel.app`** (sincronizado y desplegado desde el servidor Oracle Cloud ARM `cultura`).
+- **Implementación del Sistema de Diseño S2**:
+  - **Paleta de Color Oficial**: Deep Navy (`#1A3750` / `#0F2335` / `#08141F`), Electric Cyan (`#00C7C7` / `#00A8BA`), Kinetic Amber (`#FF9E00`), Canvas Off-White (`#F4F6F8`).
+  - **Tipografía**: `Plus Jakarta Sans` y `Poppins` (Headings), `Inter` (Body), `JetBrains Mono` (HUD, Badges y Telemetría).
+  - **Hero Cinematográfico**: Video neural loop de alta velocidad (`hero-agentic.mp4`) integrado con un lienzo interactivo `neural-canvas` de partículas y conexiones neuronales dinámicas.
+  - **HUD de Telemetría**: Panel de terminal simulado en vivo con el estado del pipeline de prospección nacional.
+  - **Bento Grid de 5 Pilares**:
+    1. Apps & Plataformas Web
+    2. Software a Medida, APIs & Microservicios
+    3. Ecosistemas de IA & Agentes Autónomos *(Especialidad Core)*
+    4. Automatización Operativa & CRMs Inteligentes
+    5. Comunidad Builder & Ecosistema Tecnológico *(Doble ancho con llamado a la acción)*
+  - **Showcase del Motor Comercial & Simulador Interactivo**: Permite testear en tiempo real la generación de URLs parametrizadas hacia las **7 Demos Maestras Dinámicas** de Vercel.
+  - **Comunidad Builder**: Espacio dedicado para la red de creadores y desarrolladores en Colombia y Latam.
+  - **Navegación & Rendimiento**: Integración de Lucide Icons, Lenis Smooth Scroll y animaciones GSAP ScrollTrigger.
+- **Próximos Pasos Agendados**: Ajustes finos de diseño, iteración sobre secciones y optimizaciones visuales solicitadas por el usuario.
 
 ---
 
