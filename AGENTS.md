@@ -140,19 +140,22 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 | Bares / Pubs / Discotecas | 0 | 0 | 17 | 17 |
 | Veterinarias / Pet Shops | 7 | 0 | 3 | 10 |
 | **Energía Solar / Paneles Solares** | **0** | **10** | **0** | **10** |
+| **Turismo / Renta de Yates y Lanchas** | **1** | **0** | **0** | **1** |
 | Otros (paellas, lechona, café, etc.) | 0 | 0 | 4 | 4 |
-| **Total** | **33** | **39** | **82** | **154** |
+| **Total** | **34** | **39** | **82** | **155** |
 
-- IDs activos: b1-b25, b30-b34, b36-b41, b50-b167
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b168
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
 - **Nuevos negocios de Energía Solar agregados en sesión 24 (b158-b167): 10 negocios sin sitio web con redes sociales y WhatsApp verificados**
+- **Nuevo negocio de Turismo / Renta de Yates agregado en sesión 27: Cartagena Náutica (b168) con LP desplegada en Vercel**
 
 ## Archivos del proyecto
 
 - `busqueda/index.html` — herramienta principal de prospección
 - `busqueda/datos.json` — respaldo JSON de los datos
 - `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
+  - `cartagena-nautica.html` — Cartagena Náutica (Alquiler de Botes, Lanchas y Yates)
   - `sun-energy-bogota.html` — Sun Energy Bogotá (Energía Solar Fotovoltaica)
   - `tierra-solar.html` — Tierra Solar Colombia (Energía Solar Fotovoltaica)
   - `atsei-energia-solar.html` — Atsei de Colombia (Energía Solar Fotovoltaica)
@@ -742,6 +745,25 @@ git push origin main
   - **Comunidad Builder**: Espacio dedicado para la red de creadores y desarrolladores en Colombia y Latam.
   - **Navegación & Rendimiento**: Integración de Lucide Icons, Lenis Smooth Scroll y animaciones GSAP ScrollTrigger.
 - **Próximos Pasos Agendados**: Ajustes finos de diseño, iteración sobre secciones y optimizaciones visuales solicitadas por el usuario.
+
+### Sesión 27 (2026-09-08) — Landing Page de Ultra Lujo & Prospección: Cartagena Náutica (Turismo / Renta de Yates)
+- **Nuevo Lead Integrado**: **Cartagena Náutica** (`b168`) — Alquiler de Botes, Lanchas Deportivas y Yates en Cartagena de Indias.
+  - Ubicación: Cl. 32 #10-28, Sector La Matuna / Muelle de Los Pegasos.
+  - WhatsApp Verificado: `+57 302 2283758` (`573022283758`).
+  - Presencia original: Sin sitio web (`no-web`), ficha Google Maps activa con calificación perfecta de 5.0★.
+- **Desarrollo de la Landing Page (`landing-pages/cartagena-nautica.html`)**:
+  - **Sistema de Diseño S2 Náutico**: Paleta Deep Navy (`#050D18` / `#0A1A2F`), Electric Cyan (`#00C7C7`), Kinetic Amber / Gold (`#FF9E00` / `#F59E0B`).
+  - **Componentes 21st.dev**:
+    - **Hero Náutico**: Video loop de navegación caribeña (`hero-boat.mp4`) + canvas animado de ondas marinas + badge 5.0★ Google Reviews.
+    - **Fleet Grid (3D Cards)**: Lanchas deportivas de 30ft (Bravo Sport), 34ft (Sea Ray Luxury Open) y 38ft (Thunder Super Boat) con specs de motores gemelos, capacidad (10-20 pax), sonido JL Audio y baño.
+    - **Destinations Interactive Tabs**: Pestañas interactivas para Islas del Rosario, Ensenada de Cholón, Barú / Agua Azul y Sunset Bahía de Cartagena.
+    - **All-Inclusive Náutico Bento Grid**: Capitán DIMAR, marinero, combustible full, nevera con hielo, chalecos y sonido marino Bluetooth.
+    - **Interactive Quote Calculator**: Cotizador dinámico en vivo que calcula el valor por grupo y por persona en COP, generando enlace directo con mensaje pre-redactado hacia el WhatsApp oficial.
+    - **Muelle de Zarpe & Reseñas**: Indicaciones de abordaje en Muelle Los Pegasos y testimonios 5.0★.
+- **Despliegue en Producción Vercel**: **`https://lp-cartagena-nautica.vercel.app`** (verificado HTTP 200 OK).
+- **Sincronización del Ecosistema de Prospección**:
+  - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
+  - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **155 negocios** registrados.
 
 ---
 

@@ -3590,5 +3590,25 @@
     "lng": -74.0684,
     "propuesta": "https://lp-mati-energia-solar.vercel.app",
     "priority": "hot"
+  },
+  {
+    "id": "b168",
+    "name": "Cartagena Náutica",
+    "cat": "Turismo / Renta de Yates y Lanchas",
+    "addr": "Cl. 32 #10-28, Sector La Matuna / Muelle Los Pegasos, Cartagena",
+    "phone": "+57 302 2283758",
+    "phoneClean": "573022283758",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573022283758",
+        "label": "WhatsApp"
+      }
+    ],
+    "propuesta": "https://lp-cartagena-nautica.vercel.app",
+    "priority": "hot"
   }
 ]
