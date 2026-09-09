@@ -356,18 +356,22 @@
           </div>
 
           <!-- Thumbnails Interactivos -->
-          <div class="grid grid-cols-3 gap-3">
+          <div class="grid grid-cols-4 gap-3">
             <button onclick="changeDomeImage('https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=85')" class="rounded-xl overflow-hidden border border-emerald-500/30 aspect-[4/3] focus:ring-2 focus:ring-emerald-400 group relative">
-              <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=400&q=80" alt="Domo Exterior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-              <span class="absolute inset-0 bg-black/40 flex items-center justify-center text-[11px] font-bold text-white">Exterior & Represa</span>
+              <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=400&q=80" alt="Domo Exterior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+              <span class="absolute inset-0 bg-black/40 flex items-center justify-center text-[10px] font-bold text-white text-center px-1">Domo Exterior</span>
             </button>
             <button onclick="changeDomeImage('https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=85')" class="rounded-xl overflow-hidden border border-emerald-500/30 aspect-[4/3] focus:ring-2 focus:ring-emerald-400 group relative">
               <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=400&q=80" alt="Jacuzzi en Deck" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-              <span class="absolute inset-0 bg-black/40 flex items-center justify-center text-[11px] font-bold text-white">Jacuzzi Climatizado</span>
+              <span class="absolute inset-0 bg-black/40 flex items-center justify-center text-[10px] font-bold text-white text-center px-1">Jacuzzi Deck</span>
             </button>
             <button onclick="changeDomeImage('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=85')" class="rounded-xl overflow-hidden border border-emerald-500/30 aspect-[4/3] focus:ring-2 focus:ring-emerald-400 group relative">
               <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=400&q=80" alt="Malla Catamaran" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-              <span class="absolute inset-0 bg-black/40 flex items-center justify-center text-[11px] font-bold text-white">Malla Catamarán</span>
+              <span class="absolute inset-0 bg-black/40 flex items-center justify-center text-[10px] font-bold text-white text-center px-1">Malla Relax</span>
+            </button>
+            <button onclick="changeDomeImage('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85')" class="rounded-xl overflow-hidden border border-emerald-500/30 aspect-[4/3] focus:ring-2 focus:ring-emerald-400 group relative">
+              <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=400&q=80" alt="Cama King Size" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+              <span class="absolute inset-0 bg-black/40 flex items-center justify-center text-[10px] font-bold text-white text-center px-1">Cama King</span>
             </button>
           </div>
         </div>
@@ -452,7 +456,7 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <!-- Bento 1: Jacuzzi en Deck -->
         <div class="glass-card rounded-3xl p-6 flex flex-col justify-between space-y-4 group">
@@ -504,6 +508,61 @@
             </p>
           </div>
         </div>
+
+        <!-- Bento 4: Malla Catamarán Suspendida -->
+        <div class="glass-card rounded-3xl p-6 flex flex-col justify-between space-y-4 group">
+          <div class="relative h-48 rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=600&q=80" alt="Malla Catamaran" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#061c17] via-transparent to-transparent"></div>
+            <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-teal-500/80 text-white">
+              Vista Panorámica
+            </span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-2">Malla Catamarán</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Descansa suspendido sobre el embalse con almohadones y mantas térmicas para una sesión inolvidable de lectura o fotos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bento 5: Fogata Nocturna & Vino -->
+        <div class="glass-card rounded-3xl p-6 flex flex-col justify-between space-y-4 group">
+          <div class="relative h-48 rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=600&q=80" alt="Fogata Nocturna" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#061c17] via-transparent to-transparent"></div>
+            <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-orange-500/80 text-white">
+              Noche de Estrellas
+            </span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-2">Fogata & Masmelos</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Enciende la fogata privada al anochecer, asa masmelos y disfruta de una copa de vino bajo el cielo estrellado de Guatapé.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bento 6: Cama King Size de Lujo -->
+        <div class="glass-card rounded-3xl p-6 flex flex-col justify-between space-y-4 group">
+          <div class="relative h-48 rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" alt="Cama King Size" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#061c17] via-transparent to-transparent"></div>
+            <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-500/80 text-white">
+              Confort 5★
+            </span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-2">Cama King Size 180°</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Lencería de 400 hilos, cobijas térmicas y ventanal geodésico para despertar con la mejor panorámica del amanecer sobre el lago.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
 
       </div>
 
