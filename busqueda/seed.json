@@ -3825,5 +3825,30 @@
     ],
     "propuesta": "https://lp-tours-cartagena-fantastic-vip.vercel.app",
     "priority": "hot"
+  },
+  {
+    "id": "b178",
+    "name": "Domus Glamping (Guatapé)",
+    "cat": "Glamping / Fincas Turísticas",
+    "addr": "Km 7, Vía El Peñol – Guatapé, El Peñol, Antioquia",
+    "phone": "+57 323 3331615",
+    "phoneClean": "573233331615",
+    "webType": "no-web",
+    "webUrl": "",
+    "webLabel": "",
+    "social": [
+      {
+        "platform": "whatsapp",
+        "url": "https://wa.me/573233331615",
+        "label": "WhatsApp"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/domusglamping",
+        "label": "Instagram"
+      }
+    ],
+    "propuesta": "https://lp-domus-glamping.vercel.app",
+    "priority": "hot"
   }
 ]

@@ -141,20 +141,23 @@ Operación comercial autónoma 24/7 para prospección multi-ciudad (Bogotá, Med
 | Veterinarias / Pet Shops | 7 | 0 | 3 | 10 |
 | **Energía Solar / Paneles Solares** | **0** | **10** | **0** | **10** |
 | **Turismo / Renta de Yates, Catamaranes y Lanchas** | **4** | **5** | **1** | **10** |
+| **Glampings / Fincas Turísticas** | **1** | **0** | **0** | **1** |
 | Otros (paellas, lechona, café, etc.) | 0 | 0 | 4 | 4 |
-| **Total** | **37** | **44** | **83** | **164** |
+| **Total** | **38** | **44** | **83** | **165** |
 
-- IDs activos: b1-b25, b30-b34, b36-b41, b50-b177
+- IDs activos: b1-b25, b30-b34, b36-b41, b50-b178
 - IDs eliminados (gimnasios): b26-b29, b35, b42-b45
 - IDs libres (nunca usados): b46-b49
 - **Nuevos negocios de Energía Solar agregados en sesión 24 (b158-b167): 10 negocios sin sitio web con redes sociales y WhatsApp verificados**
-- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27 a 36 (b168-b177): 10 negocios completos del nicho con LPs de ultra lujo S2 desplegadas en Vercel: Cartagena Náutica (b168), Botes y Yates Cartagena (b169), Cartagena VIP Boats (b170), Coast Tours Cartagena (b171), Catamarán San Juan (b172), Lanchas Cholón (b173), Alquiler de Lanchas y Yates Torices (b174), Alquiler de Lanchas Hawaii (b175), Botes Quinta del Mar (b176) y Tours Cartagena Fantastic VIP (b177)**
+- **Nuevos negocios de Turismo / Renta de Yates agregados en sesiones 27 a 36 (b168-b177): 10 negocios completos del nicho con LPs de ultra lujo S2 desplegadas en Vercel**
+- **Nuevos negocios de Glampings / Fincas Turísticas agregados en sesión 37+ (b178): Domus Glamping Guatapé (b178)**
 
 ## Archivos del proyecto
 
 - `busqueda/index.html` — herramienta principal de prospección
 - `busqueda/datos.json` — respaldo JSON de los datos
 - `landing-pages/` — landing pages de clientes (auto-contenidas, un HTML cada una)
+  - `domus-glamping-guatape.html` — Domus Glamping Guatapé (Domos de Lujo sobre el Embalse)
   - `tours-cartagena-fantastic-vip.html` — Tours Cartagena Fantastic VIP (Lancha Deportiva 38ft VIP)
   - `botes-quinta-del-mar.html` — Botes Quinta del Mar (Flota Propia de Lanchas & Botes Privados desde Bahía Santa Cruz)
   - `alquiler-lanchas-hawaii-cartagena.html` — Alquiler de Lanchas en Cartagena Hawaii (Pasadías Exclusivos & Decoración)
@@ -927,6 +930,25 @@ git push origin main
   - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
   - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **164 negocios** registrados.
   - **Hito alcanzado**: 10 landing pages desplegadas en producción para el nicho Turismo Náutico en Cartagena.
+
+### Sesión 37 (2026-09-09) — Landing page Domus Glamping Guatapé (`b178`) — Inicio Nicho Glampings & Fincas (1/10)
+- **Cliente**: **Domus Glamping (Guatapé)**
+  - Ubicación: Km 7, Vía El Peñol – Guatapé, El Peñol, Antioquia (frente al embalse).
+  - WhatsApp: `+57 323 3331615` (`573233331615`).
+  - Tipo web anterior: `no-web` / Dependencia de OTAs (Booking/Cloudbeds perdiendo hasta 20% en comisiones).
+- **Diseño & Arquitectura S2 Glamping & Eco-Luxury**:
+  - **Hero Media 100% Nítido & Luminoso**: Video local HD (`hero-boat.mp4` / naturaleza y agua cristalina) con `opacity: 1 !important; filter: none !important;`, overlay gradual suave y tipografía de alto contraste (`.hero-title-shadow`).
+  - **Atmósfera Viva de Bosque & Estrellas**: Canvas interactivo con luciérnagas bioluminiscentes reactivas al cursor + textura analógica `.film-grain-overlay`.
+  - **Componentes 21st.dev MCP Clave**:
+    - **Header Glassmorphism**: Logo con badge "Guatapé" + botón de llamada y WhatsApp directo.
+    - **Showcase Interactivo de Domos**: Domo Geodésico Master con ventanal panorámico 180°, jacuzzi en deck exterior, cama King y baño de lujo.
+    - **Amenity Bento Grid**: Jacuzzi climatizado 38°C, Malla catamarán suspendida, Kayaks & Paddle Boards (SUP) 100% incluidos, Desayuno a la carta servido en domo y fogata nocturna.
+    - **Comparador de Tarifas (Directo vs Booking.com)**: Tabla comparativa destacando el ahorro de hasta $225.000 COP por noche reservando directo por WhatsApp.
+    - **Date & Dome Picker Express**: Selector de acomodación, huéspedes, fechas y ocasión conectado a WhatsApp (+57 323 3331615).
+- **Despliegue en Producción Vercel**: **`https://lp-domus-glamping.vercel.app`** (verificado HTTP 200 OK).
+- **Sincronización del Ecosistema de Prospección**:
+  - Actualizado `busqueda/datos.json`, `busqueda/seed.json`, `busqueda/index.html` (DATA_FALLBACK).
+  - Sincronizado en base de datos SQLite en Oracle Cloud ARM (`cultura`), alcanzando **165 negocios** registrados.
 
 ---
 
